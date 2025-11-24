@@ -167,13 +167,15 @@ const HowItWorks = () => {
               </Card>
               <div className="lg:order-2">
                 <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
-                  <h3 className="text-2xl font-heading font-bold mb-4">Data-Driven Care</h3>
+                  <h3 className="text-2xl font-heading font-bold mb-4">Why Data Matters</h3>
                   <p className="text-muted-foreground mb-4">
-                    Traditional manual chest physiotherapy provides no objective data on effectiveness or resident progress. Smart Lung Physio™ changes that.
+                    Manual physiotherapy leaves no measurable record. Smart Lung Physio™ provides the objective data needed to:
                   </p>
-                  <p className="text-muted-foreground">
-                    With quantified outcomes data, medical directors can make evidence-based decisions, demonstrate quality of care to families, and meet evolving regulatory requirements for documentation.
-                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Demonstrate quality to families</li>
+                    <li>• Meet LTC documentation standards</li>
+                    <li>• Support physician-driven respiratory plans</li>
+                  </ul>
                 </div>
               </div>
             </div>
