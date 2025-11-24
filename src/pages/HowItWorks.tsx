@@ -138,24 +138,29 @@ const HowItWorks = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-lg text-muted-foreground">
-                      After each session, all clinical data automatically syncs to the cloud-based dashboard where care teams can review outcomes and track trends.
+                      After each session, results sync automatically to the Smart Lung Physio™ Care Dashboard.
                     </p>
+                    <p className="text-lg font-semibold text-foreground">Care Teams Can Access:</p>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Session Summaries:</strong> Complete record of therapy parameters, duration, and resident tolerance</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Session Details:</strong> Pressure patterns, duration, compliance</span>
                       </li>
                       <li className="flex items-start">
                         <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Trend Analysis:</strong> Visualize respiratory status changes over days, weeks, and months</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">SpO₂ Stability Trends:</strong> Before, during, and after therapy</span>
                       </li>
                       <li className="flex items-start">
                         <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Clinical Reports:</strong> Generate physician-ready documentation for care planning and regulatory compliance</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Resident Progress:</strong> Changes over days and weeks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
+                        <span className="text-muted-foreground"><strong className="text-foreground">Documentation:</strong> Auto-generated notes for physicians, audits, and LTC reporting</span>
                       </li>
                     </ul>
                     <p className="text-lg text-muted-foreground">
-                      Alerts notify care teams of significant changes in respiratory status, enabling early intervention before acute issues develop.
+                      These insights support early intervention, reduce unnecessary transfers, and provide objective proof of quality care.
                     </p>
                   </div>
                 </CardContent>
