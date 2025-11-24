@@ -34,24 +34,25 @@ const HowItWorks = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-lg text-muted-foreground">
-                      Before each therapy session begins, Smart Lung Physio™ conducts a comprehensive respiratory assessment using its multi-parameter sensor array.
+                      Before therapy begins, Smart Lung Physio™ performs a real-time baseline respiratory assessment using its integrated sensor system.
                     </p>
+                    <p className="text-lg font-semibold text-foreground">It Measures:</p>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Lung Capacity:</strong> Measures baseline tidal volume and vital capacity</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Applied Chest Pressure (FSR Sensor):</strong> Ensures therapy is delivered within safe force thresholds for frail residents.</span>
                       </li>
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Airway Resistance:</strong> Evaluates respiratory flow patterns and obstruction</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Oxygen Saturation (SpO₂):</strong> Confirms residents remain stable throughout treatment.</span>
                       </li>
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Oxygen Saturation:</strong> Monitors SpO2 to ensure safety throughout session</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Therapy Zone Detection:</strong> Adaptive system confirms correct device placement and resident tolerance.</span>
                       </li>
                     </ul>
                     <p className="text-lg text-muted-foreground">
-                      This initial assessment takes approximately 60 seconds and establishes a personalized treatment baseline for each resident.
+                      This assessment takes 20–30 seconds and automatically adjusts the therapy level based on the resident's condition.
                     </p>
                   </div>
                 </CardContent>
@@ -59,11 +60,8 @@ const HowItWorks = () => {
               <div className="lg:order-2">
                 <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
                   <h3 className="text-2xl font-heading font-bold mb-4">Why Assessment Matters</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Unlike generic airway clearance devices that use one-size-fits-all settings, Smart Lung Physio™ adapts to each resident's unique physiology.
-                  </p>
                   <p className="text-muted-foreground">
-                    This personalization is critical for frail LTC residents who may have complex comorbidities, varying lung mechanics, and different tolerance levels.
+                    Traditional manual chest physiotherapy cannot measure consistency, force, or tolerance. Smart Lung Physio™ solves this by delivering quantified, repeatable, and resident-specific therapy — reducing risk and improving outcomes.
                   </p>
                 </div>
               </div>
