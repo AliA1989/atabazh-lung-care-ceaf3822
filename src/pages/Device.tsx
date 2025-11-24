@@ -57,49 +57,49 @@ const Device = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center space-y-6 mb-20 animate-fade-in">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight">
-              Sensor-Guided Respiratory Technology
+              Sensor-Guided Chest Percussion Technology
             </h2>
             <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
-              Clinical-grade sensors and adaptive algorithms deliver consistent airway clearance outcomes in long-term care
+              Force-sensing technology guides manual chest physiotherapy for consistent airway clearance in long-term care
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {/* Force Sensor Assessment */}
+            {/* Force Sensor Percussion */}
             <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
               <CardContent className="p-10 space-y-5">
                 <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Gauge className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold tracking-tight">Force Sensor Assessment</h3>
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Force Sensor Percussion</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Proprietary force-sensing resistor (FSR) measures resident effort and lung compliance during therapy. Guides optimal treatment intensity for frail populations.
+                  Proprietary force-sensing resistor (FSR) provides real-time feedback during manual chest percussion, guiding caregivers to apply optimal pressure and rhythm for effective mucus mobilization.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Oxygen Saturation Monitoring */}
+            {/* SpO₂-Integrated Safety */}
             <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
               <CardContent className="p-10 space-y-5">
                 <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Cpu className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold tracking-tight">SpO₂ Integration</h3>
+                <h3 className="text-2xl font-heading font-bold tracking-tight">SpO₂-Integrated Safety</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Continuous pulse oximetry monitoring throughout treatment sessions. Therapy automatically adjusts or pauses if oxygen levels decline below safe thresholds.
+                  Continuous pulse oximetry monitoring throughout therapy sessions. Visual and audio alerts notify caregivers if oxygen saturation drops, ensuring resident safety during treatment.
                 </p>
               </CardContent>
             </Card>
 
-            {/* Adaptive OPEP Therapy */}
+            {/* Guided Therapy Algorithm */}
             <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
               <CardContent className="p-10 space-y-5">
                 <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Waves className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold tracking-tight">Adaptive OPEP Therapy</h3>
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Guided Therapy Algorithm</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Oscillating positive expiratory pressure (OPEP) with variable frequency and amplitude. Algorithm personalizes treatment based on real-time sensor data and resident tolerance.
+                  Intelligent algorithm analyzes FSR and SpO₂ data to provide step-by-step guidance, ensuring caregivers deliver consistent, evidence-based chest physiotherapy across all shifts and skill levels.
                 </p>
               </CardContent>
             </Card>
@@ -112,7 +112,7 @@ const Device = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold tracking-tight">Caregiver Workflow App</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Step-by-step session guidance for PSWs, RPNs, and RNs. Bluetooth-connected app ensures treatment protocols are followed consistently across all shifts.
+                  Mobile app connects to the device via Bluetooth, guiding PSWs, RPNs, and RNs through each treatment session with real-time sensor feedback and automated session documentation.
                 </p>
               </CardContent>
             </Card>
@@ -125,7 +125,7 @@ const Device = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold tracking-tight">Clinical Data Platform</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Cloud dashboard tracks adherence, respiratory trends, and treatment efficacy. Automated reporting for physicians, care coordinators, and regulatory documentation.
+                  Cloud dashboard aggregates treatment data, tracks resident progress, and monitors adherence trends. Generates physician reports and documentation for care plans and regulatory compliance.
                 </p>
               </CardContent>
             </Card>
@@ -138,7 +138,7 @@ const Device = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold tracking-tight">Medical-Grade Safety</h3>
                 <p className="text-foreground/70 leading-relaxed text-base">
-                  Redundant pressure limits, disposable patient interfaces for infection control, and automated fault detection. Health Canada Class II certification in progress.
+                  Built-in safety protocols include force limits, SpO₂ thresholds, and automated session logging. Designed to meet Health Canada Class II medical device requirements for LTC environments.
                 </p>
               </CardContent>
             </Card>
