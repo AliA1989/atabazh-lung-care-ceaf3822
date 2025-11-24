@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Cpu, Smartphone, Waves, Gauge, Database, Shield } from "lucide-react";
 import heroDevice from "@/assets/hero-device.jpg";
-
 const Device = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto">
@@ -19,11 +17,7 @@ const Device = () => {
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
-            <img
-              src={heroDevice}
-              alt="Smart Lung Physio Device"
-              className="rounded-2xl shadow-medium w-full"
-            />
+            <img alt="Smart Lung Physio Device" src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" className="shadow-medium w-full shadow-md rounded opacity-100 object-contain" />
           </div>
         </div>
       </section>
@@ -214,8 +208,6 @@ const Device = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Device;
