@@ -34,7 +34,7 @@ const Home = () => {
             animationDelay: "0.2s"
           }}>
               <div className="absolute inset-0 hero-gradient opacity-20 blur-3xl rounded-full"></div>
-              <img alt="Smart Lung Physio Device with Mobile App" className="relative rounded-2xl shadow-medium w-full" src="/lovable-uploads/8080559f-2463-4422-863d-e2d79325c0ab.png" />
+              <img alt="Smart Lung Physio Device with Mobile App" className="relative rounded-2xl shadow-medium w-full" src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" />
             </div>
           </div>
         </div>
