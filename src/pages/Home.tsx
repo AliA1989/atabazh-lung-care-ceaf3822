@@ -3,10 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3 } from "lucide-react";
 import heroDevice from "@/assets/hero-device.jpg";
-
 const Home = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
@@ -32,13 +30,11 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
               <div className="absolute inset-0 hero-gradient opacity-20 blur-3xl rounded-full"></div>
-              <img
-                src={heroDevice}
-                alt="Smart Lung Physio Device with Mobile App"
-                className="relative rounded-2xl shadow-medium w-full"
-              />
+              <img alt="Smart Lung Physio Device with Mobile App" className="relative rounded-2xl shadow-medium w-full" src="/lovable-uploads/8080559f-2463-4422-863d-e2d79325c0ab.png" />
             </div>
           </div>
         </div>
@@ -238,7 +234,9 @@ const Home = () => {
                       <span className="text-sm font-bold text-primary">42%</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{ width: "42%" }}></div>
+                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{
+                      width: "42%"
+                    }}></div>
                     </div>
                   </div>
                   <div>
@@ -247,7 +245,9 @@ const Home = () => {
                       <span className="text-sm font-bold text-primary">35%</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{ width: "35%" }}></div>
+                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{
+                      width: "35%"
+                    }}></div>
                     </div>
                   </div>
                   <div>
@@ -256,7 +256,9 @@ const Home = () => {
                       <span className="text-sm font-bold text-primary">75%</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2">
-                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{ width: "75%" }}></div>
+                      <div className="bg-gradient-to-r from-primary to-accent h-2 rounded-full" style={{
+                      width: "75%"
+                    }}></div>
                     </div>
                   </div>
                 </div>
@@ -336,8 +338,6 @@ const Home = () => {
           </Card>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
