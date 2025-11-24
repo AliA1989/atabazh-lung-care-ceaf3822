@@ -181,7 +181,7 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/0f8d105f-dff9-4a50-b064-96bab1ef1f72.png" alt="Kamran Azma" className="w-full h-full object-cover" />
+                <img alt="Kamran Azma" className="w-full h-full object-cover" src="/lovable-uploads/bbc3d937-5fd9-4a8e-81c3-7daddf8e211f.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">KAMRAN AZMA</h3>
             </div>
@@ -202,14 +202,14 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" alt="Ali Al-Dadah" className="w-full h-full object-cover" />
+                <img alt="Ali Al-Dadah" className="w-full h-full object-cover" src="/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">ALI AL-DADAH</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/591c2a97-45b1-489f-b1d4-3fdbc0c93a7e.png" alt="Zhansaya Orazbekova" className="w-full h-full object-cover" />
+                <img alt="Zhansaya Orazbekova" className="w-full h-full object-cover" src="/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">ZHANSAYA ORAZBEKOVA</h3>
             </div>
