@@ -12,9 +12,9 @@ const Home = () => {
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-4">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
-                  Respiratory Care,
+                  Transforming Respiratory Care for
                   <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Reimagined
+                    Long-Term Care Homes
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-xl">
