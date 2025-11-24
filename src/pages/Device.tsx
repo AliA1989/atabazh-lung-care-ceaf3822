@@ -39,11 +39,7 @@ const Device = () => {
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-accent/10 blur-2xl rounded-3xl"></div>
             
             <div className="relative">
-              <img 
-                alt="Smart Lung Physio Device" 
-                src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" 
-                className="relative w-full rounded-2xl shadow-2xl drop-shadow-2xl object-contain" 
-              />
+              <img alt="Smart Lung Physio Device" className="relative w-full rounded-2xl shadow-2xl drop-shadow-2xl object-contain" src="/lovable-uploads/69db34aa-9c8e-441d-946d-5466db3b2d23.png" />
             </div>
           </div>
         </div>
