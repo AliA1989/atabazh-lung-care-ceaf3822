@@ -6,18 +6,45 @@ import heroDevice from "@/assets/hero-device.jpg";
 const Device = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto">
-          <div className="text-center space-y-6 mb-12">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold">
-              Smart Lung Physio™
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Premium medical background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center space-y-8 mb-16">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] tracking-tight max-w-5xl mx-auto">
+              Respiratory Care,{" "}
+              <span className="block bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                Reimagined for Long-Term Care
+              </span>
             </h1>
-            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
-              The first automated airway-clearance device designed specifically for long-term care residents
+            <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed font-light">
+              Advanced, sensor-guided airway clearance technology that delivers consistent clinical outcomes while reducing caregiver burden in long-term care settings.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button asChild size="lg" className="hero-gradient border-0 text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
+                <NavLink to="/contact">Request a Demo</NavLink>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-base px-10 py-6 border-2 hover:bg-secondary/80 transition-all">
+                <NavLink to="/how-it-works">How It Works</NavLink>
+              </Button>
+            </div>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <img alt="Smart Lung Physio Device" src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" className="shadow-medium w-full shadow-md rounded opacity-100 object-contain" />
+          
+          {/* Device Image with Premium Styling */}
+          <div className="max-w-5xl mx-auto relative">
+            {/* Subtle premium shadow layers */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent blur-3xl rounded-full scale-110"></div>
+            <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-accent/10 blur-2xl rounded-3xl"></div>
+            
+            <div className="relative">
+              <img 
+                alt="Smart Lung Physio Device" 
+                src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" 
+                className="relative w-full rounded-2xl shadow-2xl drop-shadow-2xl object-contain" 
+              />
+            </div>
           </div>
         </div>
       </section>
