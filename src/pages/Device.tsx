@@ -25,37 +25,28 @@ const Device = () => {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <Button 
-                asChild 
-                size="lg" 
-                className="hero-gradient border-0 text-lg font-semibold px-12 py-7 shadow-2xl hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300"
-              >
+            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6 animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
+              <Button asChild size="lg" className="hero-gradient border-0 text-lg font-semibold px-12 py-7 shadow-2xl hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300">
                 <NavLink to="/contact">Request a Demo</NavLink>
               </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
-                className="text-lg font-semibold px-12 py-7 border-2 border-border bg-background/80 backdrop-blur-sm hover:bg-secondary/50 hover:border-primary/30 hover:scale-105 transition-all duration-300 shadow-lg"
-              >
+              <Button asChild variant="outline" size="lg" className="text-lg font-semibold px-12 py-7 border-2 border-border bg-background/80 backdrop-blur-sm hover:bg-secondary/50 hover:border-primary/30 hover:scale-105 transition-all duration-300 shadow-lg">
                 <NavLink to="/how-it-works">How It Works</NavLink>
               </Button>
             </div>
           </div>
           
           {/* Device Image with Premium Styling */}
-          <div className="max-w-6xl mx-auto relative animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="max-w-6xl mx-auto relative animate-fade-in" style={{
+          animationDelay: "0.4s"
+        }}>
             {/* Enhanced shadow layers for depth */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-accent/10 to-transparent blur-[100px] rounded-full scale-110"></div>
             <div className="absolute -inset-8 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10 blur-3xl rounded-3xl"></div>
             
             <div className="relative bg-gradient-to-br from-background/40 to-secondary/20 backdrop-blur-sm rounded-3xl p-8 shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)] border border-border/50">
-              <img 
-                alt="Smart Lung Physio Device - Advanced respiratory care technology for long-term care" 
-                className="relative w-full rounded-2xl shadow-2xl object-contain hover:scale-[1.02] transition-transform duration-500" 
-                src="/lovable-uploads/69db34aa-9c8e-441d-946d-5466db3b2d23.png" 
-              />
+              <img alt="Smart Lung Physio Device - Advanced respiratory care technology for long-term care" className="relative w-full shadow-2xl object-contain hover:scale-[1.02] transition-transform duration-500 rounded-2xl" src="/lovable-uploads/b37590ae-6519-4ad1-aed4-d406ee701f4b.png" />
             </div>
           </div>
         </div>
