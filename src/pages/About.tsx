@@ -238,7 +238,7 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" alt="Habiba Bougherara" className="w-full h-full object-cover" />
+                <img alt="Habiba Bougherara" className="w-full h-full object-cover" src="/lovable-uploads/77e4f336-d3e3-4070-a6f8-9addf77864b5.jpg" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">HABIBA BOUGHERARA</h3>
