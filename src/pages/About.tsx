@@ -2,10 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Target, Users, Award, MapPin } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto max-w-4xl text-center space-y-6">
@@ -176,66 +174,42 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/0ecd71d1-b36b-4596-b33f-7bf6442af9a7.png" 
-                  alt="Ali Aedinpour"
-                  className="w-full h-full object-cover"
-                />
+                <img alt="Ali Aedinpour" className="w-full h-full object-cover" src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">ALI AEDINPOUR</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/0f8d105f-dff9-4a50-b064-96bab1ef1f72.png" 
-                  alt="Kamran Azma"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/0f8d105f-dff9-4a50-b064-96bab1ef1f72.png" alt="Kamran Azma" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-heading font-bold text-center">KAMRAN AZMA</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/1d41c3ee-7449-4259-88cf-8351f57c10b0.png" 
-                  alt="Ali Azadegan Mehr"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/1d41c3ee-7449-4259-88cf-8351f57c10b0.png" alt="Ali Azadegan Mehr" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-heading font-bold text-center">ALI AZADEGAN MEHR</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/24fa191b-c565-4d2a-8fa8-17e02e532878.png" 
-                  alt="Ali Hosseini"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/24fa191b-c565-4d2a-8fa8-17e02e532878.png" alt="Ali Hosseini" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-heading font-bold text-center">Ali HOSSEINI</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" 
-                  alt="Ali Al-Dadah"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/3e916db3-43ef-4265-a83b-755743324790.png" alt="Ali Al-Dadah" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-heading font-bold text-center">ALI AL-DADAH</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/591c2a97-45b1-489f-b1d4-3fdbc0c93a7e.png" 
-                  alt="Zhansaya Orazbekova"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/591c2a97-45b1-489f-b1d4-3fdbc0c93a7e.png" alt="Zhansaya Orazbekova" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-heading font-bold text-center">ZHANSAYA ORAZBEKOVA</h3>
             </div>
@@ -244,11 +218,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/6bdc72a3-41a5-432d-abd0-08940ff9dc2c.png" 
-                  alt="Rachel Bartholomew"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/6bdc72a3-41a5-432d-abd0-08940ff9dc2c.png" alt="Rachel Bartholomew" className="w-full h-full object-cover" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">RACHEL BARTHOLOMEW</h3>
@@ -258,11 +228,7 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/757e9d56-45b5-4c05-a1ea-ccea0ef3d73e.png" 
-                  alt="Jeff Kofman"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/757e9d56-45b5-4c05-a1ea-ccea0ef3d73e.png" alt="Jeff Kofman" className="w-full h-full object-cover" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">JEFF KOFMAN</h3>
@@ -272,11 +238,7 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img 
-                  src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
-                  alt="Habiba Bougherara"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" alt="Habiba Bougherara" className="w-full h-full object-cover" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">HABIBA BOUGHERARA</h3>
@@ -340,8 +302,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
