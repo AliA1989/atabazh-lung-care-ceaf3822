@@ -2,10 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Brain, TrendingUp } from "lucide-react";
-
 const HowItWorks = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto max-w-4xl text-center space-y-6">
@@ -40,11 +38,11 @@ const HowItWorks = () => {
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Applied Chest Pressure (FSR Sensor):</strong> Ensures therapy is delivered within safe force thresholds for frail residents.</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Applied Chest Pressure (FSR Sensor):</strong>Applied Chest Pressure :</span>
                       </li>
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Oxygen Saturation (SpO₂):</strong> Confirms residents remain stable throughout treatment.</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Oxygen Saturation (SpO₂):</strong>Oxygen Saturation :</span>
                       </li>
                       <li className="flex items-start">
                         <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
@@ -181,8 +179,6 @@ const HowItWorks = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default HowItWorks;
