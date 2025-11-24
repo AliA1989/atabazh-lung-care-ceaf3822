@@ -218,7 +218,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/6bdc72a3-41a5-432d-abd0-08940ff9dc2c.png" alt="Rachel Bartholomew" className="w-full h-full object-cover" />
+                <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src="/lovable-uploads/81a8e47e-c5e2-4ddf-bed7-adaf305c0092.jpg" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">RACHEL BARTHOLOMEW</h3>
