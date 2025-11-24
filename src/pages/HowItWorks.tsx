@@ -77,24 +77,32 @@ const HowItWorks = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-lg text-muted-foreground">
-                      Based on the assessment data, the device delivers automated oscillating positive expiratory pressure (OPEP) therapy tailored to the resident's needs.
+                      After assessment, the device guides caregivers through a structured, sensor-supported airway-clearance protocol.
                     </p>
+                    <p className="text-lg font-semibold text-foreground">Therapy Features</p>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Adaptive Frequency:</strong> Oscillation rate (5-40 Hz) adjusts automatically based on real-time sensor feedback</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Adaptive Pressure Modulation:</strong> FSR sensor maintains optimal chest-wall pressure for mucus mobilization.</span>
                       </li>
                       <li className="flex items-start">
                         <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Pressure Modulation:</strong> Positive pressure (10-25 cmH2O) varies to optimize mucus mobilization without causing discomfort</span>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Guided Technique:</strong> Visual cues on the mobile app coach caregivers to maintain consistent force and timing.</span>
                       </li>
                       <li className="flex items-start">
                         <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Safety Monitoring:</strong> Continuous vitals tracking with automatic session pause if parameters exceed safe thresholds</span>
+                        <div className="text-muted-foreground">
+                          <strong className="text-foreground">Safety Auto-Monitoring:</strong>
+                          <ul className="mt-2 ml-4 space-y-1">
+                            <li>SpO₂ drops → device alerts caregiver</li>
+                            <li>Excessive force → haptic & visual warnings</li>
+                            <li>Resident discomfort → guided pause</li>
+                          </ul>
+                        </div>
                       </li>
                     </ul>
                     <p className="text-lg text-muted-foreground">
-                      Treatment typically lasts 4-5 minutes with the device automatically adjusting intensity throughout the session.
+                      Each treatment session lasts 4–5 minutes, reducing workload while improving consistency.
                     </p>
                   </div>
                 </CardContent>
