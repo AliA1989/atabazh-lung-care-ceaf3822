@@ -23,8 +23,8 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-105">
-              <img src={logo} alt="Atabazh Medical Logo" className="w-full h-full object-cover" />
+            <div className="w-11 h-11 transition-all duration-300 group-hover:scale-105">
+              <img src={logo} alt="Atabazh Medical Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-heading font-bold text-xl text-foreground hidden sm:block">Atabazh Medical</span>
           </NavLink>
