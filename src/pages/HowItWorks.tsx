@@ -109,12 +109,18 @@ const HowItWorks = () => {
               </Card>
               <div className="lg:order-1">
                 <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
-                  <h3 className="text-2xl font-heading font-bold mb-4">The Science Behind OPEP</h3>
+                  <h3 className="text-2xl font-heading font-bold mb-4">The Science Behind the Therapy</h3>
                   <p className="text-muted-foreground mb-4">
-                    Oscillating positive expiratory pressure creates vibrations in the airways that help loosen secretions, prevent airway collapse, and improve lung recruitment.
+                    Focused mechanical stimulation helps:
                   </p>
+                  <ul className="space-y-2 text-muted-foreground mb-4">
+                    <li>• Mobilize mucus</li>
+                    <li>• Improve ventilation</li>
+                    <li>• Support lung expansion</li>
+                    <li>• Reduce pneumonia risk</li>
+                  </ul>
                   <p className="text-muted-foreground">
-                    Combined with positive pressure that helps keep small airways open, this therapy effectively mobilizes mucus while strengthening respiratory muscles—essential for preventing pneumonia in frail residents.
+                    Smart Lung Physio™ provides all of this without the complexity or cost of hospital-grade devices.
                   </p>
                 </div>
               </div>
