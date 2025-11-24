@@ -52,85 +52,93 @@ const Device = () => {
         </div>
       </section>
 
-      {/* Technical Specifications */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold">Advanced Technology</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Medical-grade hardware meets intelligent software for optimal respiratory therapy
+      {/* Clinical Technology Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center space-y-6 mb-20 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight">
+              Sensor-Guided Respiratory Technology
+            </h2>
+            <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
+              Clinical-grade sensors and adaptive algorithms deliver consistent airway clearance outcomes in long-term care
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Cpu className="h-7 w-7 text-primary-foreground" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {/* Force Sensor Assessment */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Gauge className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Real-Time Sensors</h3>
-                <p className="text-muted-foreground">
-                  Multi-parameter respiratory monitoring including flow rate, pressure, volume, and oxygen saturation. Continuous feedback adjusts therapy in real-time.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Force Sensor Assessment</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Proprietary force-sensing resistor (FSR) measures resident effort and lung compliance during therapy. Guides optimal treatment intensity for frail populations.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Waves className="h-7 w-7 text-primary-foreground" />
+            {/* Oxygen Saturation Monitoring */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Cpu className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Adaptive Oscillation</h3>
-                <p className="text-muted-foreground">
-                  Variable frequency (5-40 Hz) and amplitude oscillating positive expiratory pressure. Personalized to each resident's lung mechanics and tolerance.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">SpO₂ Integration</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Continuous pulse oximetry monitoring throughout treatment sessions. Therapy automatically adjusts or pauses if oxygen levels decline below safe thresholds.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Gauge className="h-7 w-7 text-primary-foreground" />
+            {/* Adaptive OPEP Therapy */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Waves className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Precise Control</h3>
-                <p className="text-muted-foreground">
-                  Medical-grade pneumatic system delivers consistent, calibrated pressure (10-25 cmH2O) with safety limits and automatic shutoff protocols.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Adaptive OPEP Therapy</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Oscillating positive expiratory pressure (OPEP) with variable frequency and amplitude. Algorithm personalizes treatment based on real-time sensor data and resident tolerance.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Smartphone className="h-7 w-7 text-primary-foreground" />
+            {/* Caregiver Workflow App */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Smartphone className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Mobile App</h3>
-                <p className="text-muted-foreground">
-                  Intuitive caregiver interface guides therapy sessions step-by-step. Bluetooth connectivity enables real-time monitoring and data sync to cloud dashboard.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Caregiver Workflow App</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Step-by-step session guidance for PSWs, RPNs, and RNs. Bluetooth-connected app ensures treatment protocols are followed consistently across all shifts.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Database className="h-7 w-7 text-primary-foreground" />
+            {/* Clinical Data Platform */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Database className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Clinical Dashboard</h3>
-                <p className="text-muted-foreground">
-                  Cloud-based analytics platform tracks resident progress, therapy adherence, and outcome trends. Generate reports for physicians and regulatory compliance.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Clinical Data Platform</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Cloud dashboard tracks adherence, respiratory trends, and treatment efficacy. Automated reporting for physicians, care coordinators, and regulatory documentation.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft hover:shadow-medium transition-smooth">
-              <CardContent className="p-8 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Shield className="h-7 w-7 text-primary-foreground" />
+            {/* Medical-Grade Safety */}
+            <Card className="group shadow-soft hover:shadow-medium transition-smooth border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/20">
+              <CardContent className="p-10 space-y-5">
+                <div className="w-16 h-16 rounded-2xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold">Safety First</h3>
-                <p className="text-muted-foreground">
-                  Multiple redundant safety systems, infection control features (disposable patient interfaces), and Health Canada medical device certification in progress.
+                <h3 className="text-2xl font-heading font-bold tracking-tight">Medical-Grade Safety</h3>
+                <p className="text-foreground/70 leading-relaxed text-base">
+                  Redundant pressure limits, disposable patient interfaces for infection control, and automated fault detection. Health Canada Class II certification in progress.
                 </p>
               </CardContent>
             </Card>
