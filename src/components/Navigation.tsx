@@ -14,29 +14,28 @@ const Navigation = () => {
     { to: "/clinical-evidence", label: "Clinical Evidence" },
     { to: "/long-term-care", label: "For LTC Homes" },
     { to: "/about", label: "About" },
-    { to: "/news", label: "News & Resources" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/99 backdrop-blur-md border-b border-border/40 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 transition-all duration-300 group-hover:scale-105">
+          <NavLink to="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 transition-all duration-300 group-hover:scale-105">
               <img src={logo} alt="Atabazh Medical Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="font-heading font-bold text-xl text-foreground hidden sm:block">Atabazh Medical</span>
+            <span className="font-heading font-bold text-lg text-foreground hidden sm:block">Atabazh Medical</span>
           </NavLink>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 rounded-lg hover:bg-secondary/60 relative"
-                activeClassName="text-primary bg-secondary/80 font-semibold"
+                className="px-3.5 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-200 rounded-md hover:bg-secondary/50 relative"
+                activeClassName="text-primary bg-secondary/70 font-semibold"
               >
                 {link.label}
               </NavLink>
@@ -44,11 +43,11 @@ const Navigation = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button asChild variant="ghost" size="sm" className="font-medium">
+          <div className="hidden lg:flex items-center gap-2.5">
+            <Button asChild variant="ghost" size="sm" className="font-medium text-sm">
               <NavLink to="/contact">Contact</NavLink>
             </Button>
-            <Button asChild size="sm" className="hero-gradient border-0 shadow-md hover:shadow-lg transition-all duration-300">
+            <Button asChild size="sm" className="hero-gradient border-0 shadow-sm hover:shadow-md transition-all duration-300 text-sm">
               <NavLink to="/contact">Request a Demo</NavLink>
             </Button>
           </div>
