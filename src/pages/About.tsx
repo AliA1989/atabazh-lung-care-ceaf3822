@@ -188,14 +188,14 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/1d41c3ee-7449-4259-88cf-8351f57c10b0.png" alt="Ali Azadegan Mehr" className="w-full h-full object-cover" />
+                <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src="/lovable-uploads/8a752024-6732-4e23-96c5-0455ab48f73e.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">ALI AZADEGAN MEHR</h3>
             </div>
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/24fa191b-c565-4d2a-8fa8-17e02e532878.png" alt="Ali Hosseini" className="w-full h-full object-cover" />
+                <img alt="Ali Hosseini" className="w-full h-full object-cover" src="/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg" />
               </div>
               <h3 className="font-heading font-bold text-center">Ali HOSSEINI</h3>
             </div>
@@ -228,7 +228,7 @@ const About = () => {
 
             <div className="flex flex-col items-center space-y-3">
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img src="/lovable-uploads/757e9d56-45b5-4c05-a1ea-ccea0ef3d73e.png" alt="Jeff Kofman" className="w-full h-full object-cover" />
+                <img alt="Jeff Kofman" className="w-full h-full object-cover" src="/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg" />
               </div>
               <div className="text-center">
                 <h3 className="font-heading font-bold">JEFF KOFMAN</h3>
