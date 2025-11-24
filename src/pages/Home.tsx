@@ -6,35 +6,49 @@ import heroDevice from "@/assets/hero-device.jpg";
 const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Premium medical background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 animate-fade-in">
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
-                  Transforming Respiratory Care for
-                  <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    Long-Term Care Homes
+              <div className="space-y-6">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
+                  Respiratory Care,{" "}
+                  <span className="block bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                    Reimagined for Long-Term Care
                   </span>
                 </h1>
-                <p className="text-xl text-muted-foreground max-w-xl">
-                  Smart Lung Physio™ delivers automated, sensor-guided airway clearance for frail residents—reducing staff workload and improving clinical outcomes.
+                <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-2xl leading-relaxed font-light">
+                  Advanced, sensor-guided airway clearance technology designed to reduce caregiver burden while delivering superior respiratory outcomes for frail residents.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="hero-gradient border-0 text-lg px-8">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Button asChild size="lg" className="hero-gradient border-0 text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
                   <NavLink to="/contact">Request a Demo</NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                  <NavLink to="/how-it-works">Learn More</NavLink>
+                <Button asChild variant="outline" size="lg" className="text-base px-10 py-6 border-2 hover:bg-secondary/80 transition-all">
+                  <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
             </div>
-            <div className="relative animate-fade-in" style={{
+            <div className="relative animate-fade-in lg:scale-110" style={{
             animationDelay: "0.2s"
           }}>
-              <div className="absolute inset-0 hero-gradient opacity-20 blur-3xl rounded-full"></div>
-              <img alt="Smart Lung Physio Device with Mobile App" className="relative rounded-2xl shadow-medium w-full" src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" />
+              {/* Subtle premium shadow layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent blur-3xl rounded-full scale-110"></div>
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-accent/10 blur-2xl rounded-3xl"></div>
+              
+              {/* Device image with premium shadow */}
+              <div className="relative">
+                <img 
+                  alt="Smart Lung Physio Device with Mobile App" 
+                  className="relative rounded-2xl shadow-2xl w-full drop-shadow-2xl" 
+                  src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
+                />
+              </div>
             </div>
           </div>
         </div>
