@@ -18,7 +18,7 @@ const Home = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-xl">
-                  Smart Lung Physio™ delivers automated, sensor-guided airway clearance therapy for frail residents in long-term care homes.
+                  Smart Lung Physio™ delivers automated, sensor-guided airway clearance for frail residents—reducing staff workload and improving clinical outcomes.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
