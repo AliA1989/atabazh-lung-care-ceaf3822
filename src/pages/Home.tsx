@@ -27,15 +27,6 @@ const Home = () => {
           backgroundRepeat: "repeat"
         }}></div>
         
-        {/* Trusted Badge - Top Right */}
-        <div className="absolute top-8 right-8 z-20 hidden lg:block">
-          <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 shadow-soft">
-            <p className="text-xs font-medium text-foreground/80 tracking-wide">
-              Health Canada Class II (pending) • Canadian-Made
-            </p>
-          </div>
-        </div>
-        
         <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Content */}
