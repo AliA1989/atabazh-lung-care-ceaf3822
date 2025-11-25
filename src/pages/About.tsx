@@ -295,7 +295,7 @@ const About = () => {
               <img alt="MaRS Discovery District" className="h-full w-auto object-contain" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/h2i.png" alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" />
+              <img alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
               <img src="/lovable-uploads/mta.png" alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" />
