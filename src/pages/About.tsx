@@ -298,13 +298,13 @@ const About = () => {
               <img alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/mta.png" alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" />
+              <img alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/elevateip.png" alt="ElevateIP with ISED Canada" className="h-full w-auto object-contain" />
+              
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/ibz.png" alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" />
+              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" src="/lovable-uploads/f2dff98a-eaa4-4e6d-98a2-60ac5342b2a9.jpg" />
             </div>
           </div>
         </div>
