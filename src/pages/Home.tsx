@@ -6,14 +6,21 @@ import heroDevice from "@/assets/hero-device.jpg";
 const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Premium medical background with subtle diagonal pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-background pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-135 from-transparent via-primary/3 to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: "linear-gradient(135deg, hsl(var(--primary)) 25%, transparent 25%), linear-gradient(225deg, hsl(var(--primary)) 25%, transparent 25%), linear-gradient(45deg, hsl(var(--primary)) 25%, transparent 25%), linear-gradient(315deg, hsl(var(--primary)) 25%, transparent 25%)",
-          backgroundPosition: "40px 0, 40px 0, 0 0, 0 0",
-          backgroundSize: "80px 80px",
+      <section className="relative py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Soft diagonal gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff] via-[#ffffff] to-[#ffffff] pointer-events-none"></div>
+        
+        {/* High-tech waveform/airflow pattern in brand blue-grey at low opacity */}
+        <div className="absolute inset-0 opacity-[0.12]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q 12.5 30, 25 50 T 50 50 T 75 50 T 100 50' stroke='%23004e8c' stroke-width='0.5' fill='none' opacity='0.4'/%3E%3Cpath d='M0 30 Q 12.5 10, 25 30 T 50 30 T 75 30 T 100 30' stroke='%23004e8c' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3Cpath d='M0 70 Q 12.5 50, 25 70 T 50 70 T 75 70 T 100 70' stroke='%23004e8c' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3Ccircle cx='15' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='35' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='65' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='85' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3C/svg%3E")`,
+          backgroundSize: "200px 200px",
+          backgroundRepeat: "repeat"
+        }}></div>
+        
+        {/* Mobile: smaller pattern */}
+        <div className="absolute inset-0 opacity-[0.08] md:opacity-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 7.5 20, 15 30 T 30 30 T 45 30 T 60 30' stroke='%23004e8c' stroke-width='0.4' fill='none' opacity='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: "120px 120px",
           backgroundRepeat: "repeat"
         }}></div>
         
@@ -45,10 +52,10 @@ const Home = () => {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
+                <Button asChild size="lg" className="bg-[#004e8c] text-white hover:bg-[#004e8c]/90 text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
                   <NavLink to="/contact">Request a Demo</NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-base px-10 py-6 border-2 border-primary/30 hover:bg-secondary/80 hover:border-primary/50 transition-all">
+                <Button asChild variant="outline" size="lg" className="bg-white text-[#004e8c] border-2 border-[#004e8c] hover:bg-[#004e8c]/5 text-base px-10 py-6 transition-all">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
@@ -67,15 +74,17 @@ const Home = () => {
             <div className="relative animate-fade-in lg:scale-105" style={{
               animationDelay: "0.2s"
             }}>
-              {/* Subtle premium glow effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent blur-3xl rounded-full scale-110"></div>
-              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/5 to-accent/10 blur-2xl rounded-3xl"></div>
+              {/* Soft diagonal gradient behind device */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff]/60 via-white/40 to-white/20 blur-2xl rounded-3xl scale-110"></div>
               
-              {/* Device image with rounded corners and drop shadow */}
+              {/* Device image with crisp drop shadow and rounded corners */}
               <div className="relative">
                 <img 
                   alt="Smart Lung Physio Device with Mobile App" 
-                  className="relative rounded-3xl shadow-2xl w-full drop-shadow-2xl border border-border/20" 
+                  className="relative rounded-xl w-full border border-border/10" 
+                  style={{
+                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)"
+                  }}
                   src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
                 />
               </div>
