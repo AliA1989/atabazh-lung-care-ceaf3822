@@ -49,32 +49,32 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="shadow-medium">
               <CardContent className="p-8">
-                <h2 className="text-3xl font-heading font-bold mb-6">Request a Demo</h2>
+                <h2 className="text-3xl font-heading font-bold mb-6">Request a Product Demo</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" required placeholder="John" />
+                      <Input id="firstName" required placeholder="Sarah" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" required placeholder="Smith" />
+                      <Input id="lastName" required placeholder="Thompson" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" required placeholder="john.smith@facility.ca" />
+                    <Input id="email" type="email" required placeholder="s.thompson@ltcfacility.ca" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="(416) 555-0123" />
+                    <Input id="phone" type="tel" placeholder="(416) 555-0198" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="organization">Organization/Facility Name *</Label>
-                    <Input id="organization" required placeholder="Your LTC Facility" />
+                    <Input id="organization" required placeholder="Toronto LTC Health Centre" />
                   </div>
 
                   <div className="space-y-2">
@@ -116,7 +116,7 @@ const Contact = () => {
                     <Textarea 
                       id="message" 
                       required 
-                      placeholder="Tell us about your facility and what you'd like to learn..."
+                      placeholder="Tell us about your facility's respiratory care needs and current workflows..."
                       rows={5}
                     />
                   </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    By submitting this form, you agree to our privacy policy and consent to be contacted by Atabazh Medical.
+                    By submitting, you consent to be contacted by Atabazh Medical regarding Smart Lung Physio™ and agree to our privacy policy.
                   </p>
                 </form>
               </CardContent>
@@ -170,13 +170,10 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-heading font-bold mb-1">Email</h3>
-                          <p className="text-muted-foreground mb-2">
-                            <a href="mailto:info@atabazh.com" className="hover:text-primary transition-smooth">
-                              info@atabazh.com
+                          <p className="text-muted-foreground">
+                            <a href="mailto:support@atabazh-med.com" className="hover:text-primary transition-smooth">
+                              support@atabazh-med.com
                             </a>
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            For press inquiries: <a href="mailto:press@atabazh.com" className="hover:text-primary transition-smooth">press@atabazh.com</a>
                           </p>
                         </div>
                       </div>
@@ -192,12 +189,12 @@ const Contact = () => {
                         <div>
                           <h3 className="font-heading font-bold mb-1">Phone</h3>
                           <p className="text-muted-foreground">
-                            <a href="tel:+14165551234" className="hover:text-primary transition-smooth">
-                              +1 (416) 555-1234
+                            <a href="tel:+14375576846" className="hover:text-primary transition-smooth">
+                              +1 (437) 557-6846
                             </a>
                           </p>
                           <p className="text-sm text-muted-foreground mt-1">
-                            Monday - Friday: 9am - 5pm EST
+                            Monday–Friday, 9 AM–5 PM EST
                           </p>
                         </div>
                       </div>
@@ -208,18 +205,18 @@ const Contact = () => {
 
               <Card className="shadow-medium hero-gradient border-0 text-primary-foreground">
                 <CardContent className="p-8 space-y-4">
-                  <h3 className="text-2xl font-heading font-bold">Quick Response Guarantee</h3>
+                  <h3 className="text-2xl font-heading font-bold">Enterprise Support</h3>
                   <p className="opacity-95">
-                    We typically respond to all inquiries within 24 hours during business days. For urgent clinical questions or technical support, please call us directly.
+                    Our team responds to all inquiries within one business day. For clinical questions, implementation support, or technical assistance, contact us by phone or email during business hours.
                   </p>
                 </CardContent>
               </Card>
 
               <Card className="shadow-soft">
                 <CardContent className="p-6">
-                  <h3 className="font-heading font-bold mb-3">Prefer to Schedule a Call?</h3>
+                  <h3 className="font-heading font-bold mb-3">Schedule a Consultation</h3>
                   <p className="text-muted-foreground mb-4">
-                    Book a time directly on our calendar for a personalized discussion about your facility's needs.
+                    Book a time with our clinical team to discuss implementation, training, and integration with your facility's care protocols.
                   </p>
                   <Button variant="outline" className="w-full">
                     Schedule a Call
