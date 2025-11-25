@@ -290,21 +290,18 @@ const About = () => {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-heading font-bold text-center mb-16">Ecosystem Support & Grants</h2>
           
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 animate-fade-in">
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="MaRS Discovery District" className="h-full w-auto object-contain" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 animate-fade-in">
+            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
+              <img alt="MaRS Discovery District" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
+            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
+              <img alt="Health Innovation Hub (H2i)" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
+            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
+              <img alt="Manitoba Technology Accelerator" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              
-            </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" src="/lovable-uploads/f5526801-1f44-41a4-81a7-9eb7cde49628.jpg" />
+            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
+              <img alt="Innovation Boost Zone (IBZ)" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/f5526801-1f44-41a4-81a7-9eb7cde49628.jpg" />
             </div>
           </div>
         </div>
