@@ -285,6 +285,31 @@ const About = () => {
         </div>
       </section>
 
+      {/* Ecosystem Support & Grants */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-heading font-bold text-center mb-16">Ecosystem Support & Grants</h2>
+          
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 animate-fade-in">
+            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="/lovable-uploads/mars.png" alt="MaRS Discovery District" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="/lovable-uploads/h2i.png" alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="/lovable-uploads/mta.png" alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="/lovable-uploads/elevateip.png" alt="ElevateIP with ISED Canada" className="h-full w-auto object-contain" />
+            </div>
+            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img src="/lovable-uploads/ibz.png" alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto max-w-4xl text-center space-y-8">
