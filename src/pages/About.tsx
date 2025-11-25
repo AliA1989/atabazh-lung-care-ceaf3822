@@ -304,7 +304,7 @@ const About = () => {
               
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" src="/lovable-uploads/ibz.png" />
+              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" src="/lovable-uploads/f5526801-1f44-41a4-81a7-9eb7cde49628.jpg" />
             </div>
           </div>
         </div>
