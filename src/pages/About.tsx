@@ -292,7 +292,7 @@ const About = () => {
           
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 animate-fade-in">
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img src="/lovable-uploads/mars.png" alt="MaRS Discovery District" className="h-full w-auto object-contain" />
+              <img alt="MaRS Discovery District" className="h-full w-auto object-contain" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
             </div>
             <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
               <img src="/lovable-uploads/h2i.png" alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" />
