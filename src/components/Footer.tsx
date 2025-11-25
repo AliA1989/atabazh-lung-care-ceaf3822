@@ -4,27 +4,27 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border/50">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+    <footer className="bg-background border-t border-border/40">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 lg:gap-20">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-4 mb-7">
               <img 
                 src={logo} 
                 alt="Atabazh Medical Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
-              <span className="font-heading font-bold text-xl text-foreground">Atabazh Medical</span>
+              <span className="font-heading font-bold text-2xl text-foreground leading-tight">Atabazh Medical</span>
             </div>
-            <p className="text-sm text-muted-foreground/80 leading-relaxed max-w-xs">
+            <p className="text-[13px] text-muted-foreground/75 leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>
           </div>
 
           {/* Product Column */}
           <div>
-            <h3 className="font-heading font-bold text-base text-foreground mb-6">Product</h3>
+            <h3 className="font-heading font-bold text-[15px] text-foreground mb-7 tracking-wide">Product</h3>
             <ul className="space-y-3">
               <li>
                 <NavLink 
@@ -55,7 +55,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading font-bold text-base text-foreground mb-6">Company</h3>
+            <h3 className="font-heading font-bold text-[15px] text-foreground mb-7 tracking-wide">Company</h3>
             <ul className="space-y-3">
               <li>
                 <NavLink 
@@ -86,7 +86,7 @@ const Footer = () => {
 
           {/* Get Started Column */}
           <div>
-            <h3 className="font-heading font-bold text-base text-foreground mb-6">Get Started</h3>
+            <h3 className="font-heading font-bold text-[15px] text-foreground mb-7 tracking-wide">Get Started</h3>
             <ul className="space-y-3">
               <li>
                 <NavLink 
@@ -109,22 +109,22 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom Bar */}
-        <Separator className="my-12 bg-border/50" />
+        <Separator className="my-16 bg-border/40" />
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-muted-foreground/60">
+          <p className="text-[13px] text-muted-foreground/65">
             © {new Date().getFullYear()} Atabazh Medical Inc. All rights reserved.
           </p>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-10">
             <a 
               href="#" 
-              className="text-sm text-muted-foreground/60 hover:text-foreground transition-smooth"
+              className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
             >
               Privacy Policy
             </a>
             <a 
               href="#" 
-              className="text-sm text-muted-foreground/60 hover:text-foreground transition-smooth"
+              className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
             >
               Terms of Service
             </a>
