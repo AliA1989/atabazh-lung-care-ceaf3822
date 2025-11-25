@@ -6,21 +6,24 @@ import heroDevice from "@/assets/hero-device.jpg";
 const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Soft diagonal gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff] via-[#ffffff] to-[#ffffff] pointer-events-none"></div>
-        
-        {/* High-tech waveform/airflow pattern in brand blue-grey at low opacity */}
-        <div className="absolute inset-0 opacity-[0.12]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 50 Q 12.5 30, 25 50 T 50 50 T 75 50 T 100 50' stroke='%23004e8c' stroke-width='0.5' fill='none' opacity='0.4'/%3E%3Cpath d='M0 30 Q 12.5 10, 25 30 T 50 30 T 75 30 T 100 30' stroke='%23004e8c' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3Cpath d='M0 70 Q 12.5 50, 25 70 T 50 70 T 75 70 T 100 70' stroke='%23004e8c' stroke-width='0.3' fill='none' opacity='0.3'/%3E%3Ccircle cx='15' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='35' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='65' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3Ccircle cx='85' cy='50' r='1.5' fill='%23004e8c' opacity='0.2'/%3E%3C/svg%3E")`,
-          backgroundSize: "200px 200px",
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
+        {/* Wave-airflow pattern in light grey behind text area */}
+        <div className="absolute inset-0 bg-[#F5F5F5] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-100" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='80' viewBox='0 0 120 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q 15 25, 30 40 T 60 40 T 90 40 T 120 40' stroke='%23E0E0E0' stroke-width='0.8' fill='none' opacity='0.6'/%3E%3Cpath d='M0 25 Q 15 10, 30 25 T 60 25 T 90 25 T 120 25' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 55 Q 15 40, 30 55 T 60 55 T 90 55 T 120 55' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 15 Q 15 5, 30 15 T 60 15 T 90 15 T 120 15' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3Cpath d='M0 65 Q 15 50, 30 65 T 60 65 T 90 65 T 120 65' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3C/svg%3E")`,
+          backgroundSize: "240px 160px",
           backgroundRepeat: "repeat"
         }}></div>
         
-        {/* Mobile: smaller pattern */}
-        <div className="absolute inset-0 opacity-[0.08] md:opacity-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 7.5 20, 15 30 T 30 30 T 45 30 T 60 30' stroke='%23004e8c' stroke-width='0.4' fill='none' opacity='0.5'/%3E%3C/svg%3E")`,
-          backgroundSize: "120px 120px",
+        {/* Diagonal gradient overlay from brand-blue at 10% opacity to white */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: "linear-gradient(135deg, rgba(0, 78, 140, 0.1) 0%, rgba(255, 255, 255, 0) 100%)"
+        }}></div>
+        
+        {/* Mobile: simplified pattern */}
+        <div className="absolute inset-0 opacity-100 md:opacity-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 10 20, 20 30 T 40 30 T 60 30 T 80 30' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: "160px 120px",
           backgroundRepeat: "repeat"
         }}></div>
         
@@ -38,24 +41,24 @@ const Home = () => {
             {/* Left: Content */}
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
-                <h1 className="text-[2.75rem] md:text-[3.25rem] lg:text-[3.5rem] font-heading font-bold leading-[1.1] tracking-tight">
+                <h1 className="text-[3rem] md:text-[3.25rem] lg:text-[3.5rem] font-heading font-bold leading-[1.1] tracking-tight">
                   Respiratory Care,{" "}
-                  <span className="block bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent font-extrabold">
+                  <span className="block font-extrabold" style={{ color: "#003D6E" }}>
                     Reimagined
                   </span>
                   {" "}for Long-Term Care.
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl leading-relaxed">
-                  Advanced, sensor-guided airway clearance technology that delivers superior respiratory outcomes while reducing caregiver burden in long-term care settings.
+                  Advanced sensor-guided airway-clearance technology designed to reduce caregiver burden while delivering superior respiratory outcomes.
                 </p>
               </div>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild size="lg" className="bg-[#004e8c] text-white hover:bg-[#004e8c]/90 text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
+                <Button asChild size="lg" className="bg-[#004e8c] text-white hover:bg-[#003D6E] text-base px-10 py-6 shadow-lg hover:shadow-xl transition-all">
                   <NavLink to="/contact">Request a Demo</NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-white text-[#004e8c] border-2 border-[#004e8c] hover:bg-[#004e8c]/5 text-base px-10 py-6 transition-all">
+                <Button asChild variant="outline" size="lg" className="bg-white text-[#004e8c] border-2 border-[#004e8c] hover:bg-[#F5F5F5] text-base px-10 py-6 transition-all">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
@@ -71,19 +74,20 @@ const Home = () => {
             </div>
             
             {/* Right: Device Image */}
-            <div className="relative animate-fade-in lg:scale-105" style={{
+            <div className="relative animate-fade-in lg:scale-110" style={{
               animationDelay: "0.2s"
             }}>
-              {/* Soft diagonal gradient behind device */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff]/60 via-white/40 to-white/20 blur-2xl rounded-3xl scale-110"></div>
+              {/* Soft gradient behind device for depth */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff]/40 via-white/30 to-white/10 blur-2xl rounded-3xl scale-105"></div>
               
-              {/* Device image with crisp drop shadow and rounded corners */}
+              {/* Device image - slightly larger with crisp drop shadow and 12px rounded corners */}
               <div className="relative">
                 <img 
                   alt="Smart Lung Physio Device with Mobile App" 
-                  className="relative rounded-xl w-full border border-border/10" 
+                  className="relative w-full rounded-xl" 
                   style={{
-                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)"
+                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+                    borderRadius: "12px"
                   }}
                   src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
                 />
