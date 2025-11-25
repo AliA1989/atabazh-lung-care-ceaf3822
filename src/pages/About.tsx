@@ -286,25 +286,28 @@ const About = () => {
       </section>
 
       {/* Ecosystem Support & Grants */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-16">Ecosystem Support & Grants</h2>
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-3xl font-heading font-bold text-center mb-3">Ecosystem Support & Grants</h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Proudly supported by Canada's leading innovation and healthcare accelerators.
+          </p>
           
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 animate-fade-in">
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="MaRS Discovery District" className="h-full w-auto object-contain" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center animate-fade-in">
+            <div className="h-20 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img alt="MaRS Discovery District" className="h-full w-auto object-contain max-w-full" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
+            <div className="h-20 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img alt="Health Innovation Hub (H2i)" className="h-full w-auto object-contain max-w-full" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
+            <div className="h-20 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img alt="Manitoba Technology Accelerator" className="h-full w-auto object-contain max-w-full" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              
+            <div className="h-20 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 md:col-start-1">
+              <img alt="ElevateIP" className="h-full w-auto object-contain max-w-full" src="/lovable-uploads/placeholder-logo.png" />
             </div>
-            <div className="h-16 w-auto flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain" src="/lovable-uploads/f2dff98a-eaa4-4e6d-98a2-60ac5342b2a9.jpg" />
+            <div className="h-20 w-full flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <img alt="Innovation Boost Zone (IBZ)" className="h-full w-auto object-contain max-w-full" src="/lovable-uploads/f2dff98a-eaa4-4e6d-98a2-60ac5342b2a9.jpg" />
             </div>
           </div>
         </div>
