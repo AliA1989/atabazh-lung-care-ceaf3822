@@ -1,5 +1,6 @@
 import { NavLink } from "./NavLink";
 import { Separator } from "./ui/separator";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,11 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center shadow-soft">
-                <span className="text-primary-foreground font-heading font-bold text-2xl">A</span>
-              </div>
+              <img 
+                src={logo} 
+                alt="Atabazh Medical Logo" 
+                className="h-12 w-auto object-contain"
+              />
               <span className="font-heading font-bold text-xl text-foreground">Atabazh Medical</span>
             </div>
             <p className="text-sm text-muted-foreground/80 leading-relaxed max-w-xs">
