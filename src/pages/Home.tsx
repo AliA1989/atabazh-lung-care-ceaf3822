@@ -418,38 +418,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold">What Care Teams Are Saying</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="shadow-soft">
-              <CardContent className="p-8 space-y-4">
-                <p className="text-lg italic text-muted-foreground">
-                  "Smart Lung Physio has been transformative for our respiratory care program. We're seeing better outcomes while giving our staff more time to focus on resident care."
-                </p>
-                <div>
-                  <p className="font-heading font-semibold">Dr. Sarah Chen</p>
-                  <p className="text-sm text-muted-foreground">Medical Director, Evergreen LTC</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="shadow-soft">
-              <CardContent className="p-8 space-y-4">
-                <p className="text-lg italic text-muted-foreground">
-                  "The ease of use is incredible. Our PSWs were comfortable with it after just one training session, and residents tolerate it much better than manual therapy."
-                </p>
-                <div>
-                  <p className="font-heading font-semibold">Maria Rodriguez, RPN</p>
-                  <p className="text-sm text-muted-foreground">Director of Care, Maplewood Manor</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
