@@ -285,7 +285,7 @@ const Home = () => {
               <div className="grid grid-cols-2 gap-4">
                 {/* Image 1: ICU patient with monitoring equipment */}
                 <div 
-                  className="aspect-square overflow-hidden"
+                  className="aspect-[4/3] overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
@@ -295,12 +295,12 @@ const Home = () => {
                   <img 
                     src="/lovable-uploads/clinical-icu-monitoring.png" 
                     alt="ICU patient receiving chest therapy with monitoring equipment" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 {/* Image 2: Female patient receiving therapy on upper back */}
                 <div 
-                  className="aspect-square overflow-hidden"
+                  className="aspect-[4/3] overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
@@ -310,12 +310,12 @@ const Home = () => {
                   <img 
                     src="/lovable-uploads/clinical-female-therapy.png" 
                     alt="Female patient receiving respiratory therapy" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 {/* Image 3: Supine patient therapy on chest */}
                 <div 
-                  className="aspect-square overflow-hidden"
+                  className="aspect-[4/3] overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
@@ -325,12 +325,12 @@ const Home = () => {
                   <img 
                     src="/lovable-uploads/clinical-supine-therapy.png" 
                     alt="Supine patient receiving chest therapy" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 {/* Image 4: Forward-leaning position therapy */}
                 <div 
-                  className="aspect-square overflow-hidden"
+                  className="aspect-[4/3] overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
@@ -340,7 +340,7 @@ const Home = () => {
                   <img 
                     src="/lovable-uploads/clinical-seated-therapy.png" 
                     alt="Seated patient receiving shoulder therapy" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
