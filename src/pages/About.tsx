@@ -4,6 +4,7 @@ import { NavLink } from "@/components/NavLink";
 import { Target, Users, Award, MapPin } from "lucide-react";
 import rachelBartholomewPhoto from "@/assets/team/rachel-bartholomew.png";
 import habibaBougheraraPhoto from "@/assets/team/habiba-bougherara.png";
+import aliAzadeganPhoto from "@/assets/team/ali-azadegan.png";
 const About = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -201,7 +202,7 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
                 <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src="/lovable-uploads/8a752024-6732-4e23-96c5-0455ab48f73e.jpg" />
+                  <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src={aliAzadeganPhoto} />
                 </div>
               </div>
               <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Azadegan Mehr</h3>
