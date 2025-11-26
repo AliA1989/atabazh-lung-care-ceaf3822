@@ -22,10 +22,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 transition-all duration-300 group-hover:scale-105">
-              <img src={logo} alt="Atabazh Medical Logo" className="w-full h-full object-contain" />
-            </div>
-            <span className="font-heading font-bold text-lg text-foreground hidden sm:block">Atabazh Medical</span>
+            <img 
+              src={logo} 
+              alt="Atabazh Medical Logo" 
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              style={{ imageRendering: 'crisp-edges' }}
+            />
+            <span className="font-heading font-semibold text-lg text-foreground tracking-wide hidden sm:block">ATABAZH MED</span>
           </NavLink>
 
           {/* Desktop Navigation */}
