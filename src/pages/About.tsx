@@ -164,86 +164,118 @@ const About = () => {
       </section>
 
       {/* Team Highlight */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-7xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-6">Our Team</h2>
-          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 section-gradient">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-heading font-bold text-center mb-4">Our Team</h2>
+          <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
             A multidisciplinary team united by a passion for improving care for the frail elderly
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Ali Aedinpour" className="w-full h-full object-cover" src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg" />
+          {/* Core Team - Row 1 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10 mb-20">
+            {/* Ali Aedinpour */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Ali Aedinpour" className="w-full h-full object-cover" src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">ALI AEDINPOUR</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Aedinpour</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Founder</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Kamran Azma" className="w-full h-full object-cover" src="/lovable-uploads/bbc3d937-5fd9-4a8e-81c3-7daddf8e211f.jpg" />
+            {/* Kamran Azma */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Kamran Azma" className="w-full h-full object-cover" src="/lovable-uploads/bbc3d937-5fd9-4a8e-81c3-7daddf8e211f.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">KAMRAN AZMA</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Kamran Azma</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Physiotherapy & Clinical Research</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src="/lovable-uploads/8a752024-6732-4e23-96c5-0455ab48f73e.jpg" />
+            {/* Ali Azadegan Mehr */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src="/lovable-uploads/8a752024-6732-4e23-96c5-0455ab48f73e.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">ALI AZADEGAN MEHR</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Azadegan Mehr</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Mechanical Design</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Ali Hosseini" className="w-full h-full object-cover" src="/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg" />
+            {/* Ali Hosseini */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Ali Hosseini" className="w-full h-full object-cover" src="/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">Ali HOSSEINI</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Hosseini</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Electronics</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Ali Al-Dadah" className="w-full h-full object-cover" src="/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg" />
+            {/* Ali Al-Dadah */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Ali Al-Dadah" className="w-full h-full object-cover" src="/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">ALI AL-DADAH</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Al-Dadah</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Data & Machine Learning</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Zhansaya Orazbekova" className="w-full h-full object-cover" src="/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg" />
+            {/* Zhansaya Orazbekova */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Zhansaya Orazbekova" className="w-full h-full object-cover" src="/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg" />
+                </div>
               </div>
-              <h3 className="font-heading font-bold text-center">ZHANSAYA ORAZBEKOVA</h3>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Zhansaya Orazbekova</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Business Development</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src="/lovable-uploads/81a8e47e-c5e2-4ddf-bed7-adaf305c0092.jpg" />
+          {/* Advisors - Row 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 max-w-3xl mx-auto">
+            {/* Rachel Bartholomew */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src="/lovable-uploads/81a8e47e-c5e2-4ddf-bed7-adaf305c0092.jpg" />
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="font-heading font-bold">RACHEL BARTHOLOMEW</h3>
-                <p className="text-sm text-muted-foreground tracking-wider">ADVISOR</p>
-              </div>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Rachel Bartholomew</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Health Innovation & Commercialization Advisor</p>
+              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Jeff Kofman" className="w-full h-full object-cover" src="/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg" />
+            {/* Jeff Kofman */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Jeff Kofman" className="w-full h-full object-cover" src="/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg" />
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="font-heading font-bold">JEFF KOFMAN</h3>
-                <p className="text-sm text-muted-foreground tracking-wider">ADVISOR</p>
-              </div>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Jeff Kofman</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Advisor</p>
+              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
             </div>
 
-            <div className="flex flex-col items-center space-y-3">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20">
-                <img alt="Habiba Bougherara" className="w-full h-full object-cover" src="/lovable-uploads/77e4f336-d3e3-4070-a6f8-9addf77864b5.jpg" />
+            {/* Habiba Bougherara */}
+            <div className="flex flex-col items-center">
+              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
+                <div className="w-24 h-24 rounded-full overflow-hidden">
+                  <img alt="Habiba Bougherara" className="w-full h-full object-cover" src="/lovable-uploads/77e4f336-d3e3-4070-a6f8-9addf77864b5.jpg" />
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="font-heading font-bold">HABIBA BOUGHERARA</h3>
-                <p className="text-sm text-muted-foreground tracking-wider">ADVISOR</p>
-              </div>
+              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Habiba Bougherara</h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Scientific & Regulatory Advisor</p>
+              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
             </div>
           </div>
         </div>
