@@ -1,102 +1,258 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { Target, Users, Award, MapPin } from "lucide-react";
+import { 
+  Target, 
+  Users, 
+  Award, 
+  MapPin, 
+  Eye, 
+  Heart, 
+  FlaskConical, 
+  Settings, 
+  Handshake, 
+  Lightbulb, 
+  Accessibility,
+  Building2,
+  Stethoscope,
+  Quote
+} from "lucide-react";
 import rachelBartholomewPhoto from "@/assets/team/rachel-bartholomew.png";
 import habibaBougheraraPhoto from "@/assets/team/habiba-bougherara.png";
 import aliAzadeganPhoto from "@/assets/team/ali-azadegan.png";
 import kamranAzmaPhoto from "@/assets/team/kamran-azma.png";
-const About = () => {
-  return <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold">
-            About Atabazh Medical
-          </h1>
-          <p className="text-2xl text-muted-foreground">
-            A Canadian medical device startup on a mission to transform respiratory care in long-term care homes
-          </p>
-        </div>
-      </section>
 
-      {/* Company Story */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-heading font-bold">Our Story</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Atabazh Medical was founded in 2022 by a team of biomedical engineers, respiratory therapists, and long-term care operators who witnessed firsthand the devastating impact of respiratory complications in frail elderly residents.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We saw care teams stretched to their limits, unable to provide the respiratory interventions they knew their residents needed. We saw families watching their loved ones decline from preventable respiratory infections. And we saw the enormous human and financial costs of repeated hospital transfers.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We knew there had to be a better way—one that leveraged technology to deliver effective therapy while respecting the operational realities of long-term care.
-              </p>
-            </div>
-            <Card className="shadow-medium">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-lg mb-1">Headquarters</h3>
-                      <p className="text-muted-foreground">Toronto, Ontario, Canada</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
-                      <Users className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-lg mb-1">Team</h3>
-                      <p className="text-muted-foreground">15+ engineers, clinicians, and operations specialists</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
-                      <Award className="h-6 w-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-lg mb-1">Recognition</h3>
-                      <p className="text-muted-foreground">MaRS Discovery District Innovation Cohort, 2023</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+const About = () => {
+  const values = [
+    {
+      icon: Heart,
+      title: "Resident-First",
+      description: "Every design decision starts with what's best for frail elderly residents. Comfort, dignity, and effectiveness guide our engineering."
+    },
+    {
+      icon: FlaskConical,
+      title: "Evidence-Based",
+      description: "We validate every claim with rigorous clinical studies. Our commitment to scientific integrity builds trust with care teams and regulators."
+    },
+    {
+      icon: Settings,
+      title: "Operational Realism",
+      description: "We design for the real world of long-term care—understaffed, fast-paced, with diverse staff skill levels and high resident acuity."
+    },
+    {
+      icon: Handshake,
+      title: "Partnership",
+      description: "We collaborate closely with LTC operators, frontline staff, and clinical leaders to ensure our solutions truly meet their needs."
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "We leverage cutting-edge technology—sensors, AI, cloud computing—but only when it delivers tangible benefits for residents and caregivers."
+    },
+    {
+      icon: Accessibility,
+      title: "Accessibility",
+      description: "Advanced care shouldn't be limited to well-resourced facilities. We work to make our technology accessible across the LTC ecosystem."
+    }
+  ];
+
+  const coreTeam = [
+    {
+      name: "Ali Aedinpour",
+      role: "Founder",
+      image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
+    },
+    {
+      name: "Kamran Azma",
+      role: "Physiotherapy & Clinical Research",
+      image: kamranAzmaPhoto
+    },
+    {
+      name: "Ali Azadegan Mehr",
+      role: "Mechanical Design",
+      image: aliAzadeganPhoto
+    },
+    {
+      name: "Ali Hosseini",
+      role: "Electronics",
+      image: "/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg"
+    },
+    {
+      name: "Ali Al-Dadah",
+      role: "Data & Machine Learning",
+      image: "/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg"
+    },
+    {
+      name: "Zhansaya Orazbekova",
+      role: "Business Development",
+      image: "/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg"
+    }
+  ];
+
+  const advisors = [
+    {
+      name: "Rachel Bartholomew",
+      role: "Health Innovation & Commercialization",
+      image: rachelBartholomewPhoto
+    },
+    {
+      name: "Jeff Kofman",
+      role: "Strategic Advisor",
+      image: "/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg"
+    },
+    {
+      name: "Habiba Bougherara",
+      role: "Scientific & Regulatory",
+      image: habibaBougheraraPhoto
+    }
+  ];
+
+  const partners = [
+    {
+      name: "MaRS Discovery District",
+      description: "Member of the Health Innovation Program, providing access to mentorship, funding opportunities, and innovation ecosystem connections",
+      icon: Building2
+    },
+    {
+      name: "Ontario Long-Term Care Association",
+      description: "Collaborative partnership providing insights into LTC operational challenges and access to pilot facility networks",
+      icon: Users
+    },
+    {
+      name: "Clinical Advisory Board",
+      description: "Leading Canadian geriatricians, respiratory specialists, and LTC medical directors guiding our clinical development",
+      icon: Stethoscope
+    }
+  ];
+
+  const ecosystemLogos = [
+    { src: "/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg", alt: "MaRS Discovery District" },
+    { src: "/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png", alt: "Health Innovation Hub (H2i)" },
+    { src: "/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png", alt: "Manitoba Technology Accelerator" },
+    { src: "/lovable-uploads/f5526801-1f44-41a4-81a7-9eb7cde49628.jpg", alt: "Innovation Boost Zone (IBZ)" }
+  ];
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Hero Section - Enhanced with medical background */}
+      <section className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Abstract medical background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004E8C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+        
+        <div className="container relative mx-auto max-w-5xl text-center">
+          <div className="animate-fade-in space-y-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight">
+              About <span className="text-primary">Atabazh Medical</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A Canadian medical device startup on a mission to transform respiratory care in long-term care homes
+            </p>
+            <p className="text-base md:text-lg text-primary font-medium tracking-wide">
+              Built by engineers, respiratory therapists, and LTC operators.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="shadow-medium">
-              <CardContent className="p-10 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Target className="h-7 w-7 text-primary-foreground" />
+      {/* Our Story - Enhanced layout */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
+            {/* Story Text - 3 columns */}
+            <div className="lg:col-span-3 space-y-6 animate-fade-in">
+              <h2 className="text-3xl lg:text-4xl font-heading font-bold">Our Story</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Atabazh Medical was founded in 2022 by a team of biomedical engineers, respiratory therapists, and long-term care operators who witnessed firsthand the devastating impact of respiratory complications in frail elderly residents.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We saw care teams stretched to their limits, families watching their loved ones decline, and the enormous human and financial costs of repeated hospital transfers. We knew there had to be a better way.
+              </p>
+              
+              {/* Quote Block */}
+              <div className="relative pl-6 border-l-4 border-primary/30 py-4 my-8">
+                <Quote className="absolute -left-3 -top-2 h-6 w-6 text-primary/40" />
+                <blockquote className="text-lg italic text-foreground/80">
+                  "Technology that respects the operational realities of long-term care while delivering evidence-based therapy."
+                </blockquote>
+                <cite className="block mt-2 text-sm text-muted-foreground font-medium">— Our founding principle</cite>
+              </div>
+            </div>
+
+            {/* Info Cards - 2 columns */}
+            <div className="lg:col-span-2 space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <Card className="shadow-medium hover:shadow-strong transition-all duration-300 border-border/50">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-base mb-1">Headquarters</h3>
+                      <p className="text-muted-foreground text-sm">Toronto, Ontario, Canada</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium hover:shadow-strong transition-all duration-300 border-border/50">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-base mb-1">Team</h3>
+                      <p className="text-muted-foreground text-sm">15+ engineers, clinicians, and operations specialists</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-medium hover:shadow-strong transition-all duration-300 border-border/50">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-base mb-1">Recognition</h3>
+                      <p className="text-muted-foreground text-sm">MaRS Discovery District Innovation Cohort, 2023</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision - Premium two-column layout */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <Card className="group shadow-medium hover:shadow-strong transition-all duration-300 border-border/50 bg-card hover:-translate-y-1">
+              <CardContent className="p-8 lg:p-10 space-y-5">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Target className="h-7 w-7 text-primary" />
                 </div>
-                <h2 className="text-3xl font-heading font-bold">Our Mission</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <h2 className="text-2xl lg:text-3xl font-heading font-bold">Our Mission</h2>
+                <p className="text-muted-foreground leading-relaxed">
                   To improve the quality of life for frail elderly residents in long-term care by making evidence-based respiratory therapy accessible, efficient, and effective through innovative technology.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-medium">
-              <CardContent className="p-10 space-y-4">
-                <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-                  <Award className="h-7 w-7 text-primary-foreground" />
+            <Card className="group shadow-medium hover:shadow-strong transition-all duration-300 border-border/50 bg-card hover:-translate-y-1">
+              <CardContent className="p-8 lg:p-10 space-y-5">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <Eye className="h-7 w-7 text-primary" />
                 </div>
-                <h2 className="text-3xl font-heading font-bold">Our Vision</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  A future where every long-term care resident receives optimal respiratory care, where caregivers have the tools they need to deliver excellent care efficiently, and where preventable respiratory complications are rare rather than routine.
+                <h2 className="text-2xl lg:text-3xl font-heading font-bold">Our Vision</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  A future where every long-term care resident receives optimal respiratory care, where caregivers have the tools they need, and where preventable respiratory complications are rare rather than routine.
                 </p>
               </CardContent>
             </Card>
@@ -104,262 +260,199 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Values - Two rows of three cards with icons */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Our Values</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The principles that guide everything we do
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <Card 
+                  key={value.title} 
+                  className="group shadow-soft hover:shadow-medium transition-all duration-300 border-border/50 hover:-translate-y-1 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-6 space-y-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                    </div>
+                    <h3 className="text-lg font-heading font-bold">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section - Enhanced with larger photos */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Our Team</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A multidisciplinary team of engineers, clinicians, and operators united by a passion for improving care for the frail elderly
+            </p>
+          </div>
+          
+          {/* Core Team */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 mb-14">
+            {coreTeam.map((member, index) => (
+              <div 
+                key={member.name} 
+                className="flex flex-col items-center text-center group animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-32 h-32 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-primary/20 to-secondary/40 p-1.5 mb-4 group-hover:scale-105 transition-transform duration-300 shadow-medium">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{member.name}</h3>
+                <p className="text-xs text-muted-foreground font-medium leading-tight">{member.role}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Advisors */}
+          <div className="border-t border-border/50 pt-12">
+            <h3 className="text-center text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mb-10">Advisors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+              {advisors.map((advisor, index) => (
+                <div 
+                  key={advisor.name} 
+                  className="flex flex-col items-center text-center group animate-fade-in"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <div className="w-32 h-32 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-primary/20 to-secondary/40 p-1.5 mb-4 group-hover:scale-105 transition-transform duration-300 shadow-medium">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                      <img 
+                        src={advisor.image} 
+                        alt={advisor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{advisor.name}</h3>
+                  <p className="text-xs text-muted-foreground font-medium leading-tight">{advisor.role}</p>
+                  <span className="text-[10px] text-primary/70 tracking-[0.25em] mt-2 uppercase font-medium">Advisor</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Partners - Premium card layout */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Our Values</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Strategic Partners & Advisors</h2>
+            <p className="text-lg text-muted-foreground">
+              Collaborating with leading organizations to advance respiratory care
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Resident-First</h3>
-                <p className="text-muted-foreground">
-                  Every design decision starts with what's best for frail elderly residents. Comfort, dignity, and effectiveness guide our engineering.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Evidence-Based</h3>
-                <p className="text-muted-foreground">
-                  We validate every claim with rigorous clinical studies. Our commitment to scientific integrity builds trust with care teams and regulators.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Operational Realism</h3>
-                <p className="text-muted-foreground">
-                  We design for the real world of long-term care—understaffed, fast-paced, with diverse staff skill levels and high resident acuity.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Partnership</h3>
-                <p className="text-muted-foreground">
-                  We collaborate closely with LTC operators, frontline staff, and clinical leaders to ensure our solutions truly meet their needs.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Innovation</h3>
-                <p className="text-muted-foreground">
-                  We leverage cutting-edge technology—sensors, AI, cloud computing—but only when it delivers tangible benefits for residents and caregivers.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-heading font-bold">Accessibility</h3>
-                <p className="text-muted-foreground">
-                  Advanced care shouldn't be limited to well-resourced facilities. We work to make our technology accessible across the LTC ecosystem.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
+            {partners.map((partner, index) => {
+              const Icon = partner.icon;
+              return (
+                <Card 
+                  key={partner.name}
+                  className="group shadow-medium hover:shadow-strong transition-all duration-300 border-border/50 hover:-translate-y-1 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardContent className="p-6 space-y-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-heading font-bold text-base">{partner.name}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {partner.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Team Highlight */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-4">Our Team</h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
-            A multidisciplinary team united by a passion for improving care for the frail elderly
-          </p>
+      {/* Ecosystem Support - Clean horizontal grid */}
+      <section className="py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-secondary/20">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-2xl lg:text-3xl font-heading font-bold text-center mb-10">Ecosystem Support & Grants</h2>
           
-          {/* Core Team - Row 1 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10 mb-20">
-            {/* Ali Aedinpour */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Ali Aedinpour" className="w-full h-full object-cover" src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg" />
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+            {ecosystemLogos.map((logo, index) => (
+              <div 
+                key={logo.alt}
+                className="group flex items-center justify-center p-6 lg:p-8 bg-card rounded-2xl border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/30 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt}
+                  className="h-16 lg:h-20 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
               </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Aedinpour</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Founder</p>
-            </div>
-
-            {/* Kamran Azma */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Kamran Azma" className="w-full h-full object-cover" src={kamranAzmaPhoto} />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Kamran Azma</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Physiotherapy & Clinical Research</p>
-            </div>
-
-            {/* Ali Azadegan Mehr */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Ali Azadegan Mehr" className="w-full h-full object-cover" src={aliAzadeganPhoto} />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Azadegan Mehr</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Mechanical Design</p>
-            </div>
-
-            {/* Ali Hosseini */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Ali Hosseini" className="w-full h-full object-cover" src="/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg" />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Hosseini</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Electronics</p>
-            </div>
-
-            {/* Ali Al-Dadah */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Ali Al-Dadah" className="w-full h-full object-cover" src="/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg" />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Ali Al-Dadah</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Data & Machine Learning</p>
-            </div>
-
-            {/* Zhansaya Orazbekova */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Zhansaya Orazbekova" className="w-full h-full object-cover" src="/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg" />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Zhansaya Orazbekova</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Business Development</p>
-            </div>
-          </div>
-
-          {/* Advisors - Row 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10 max-w-3xl mx-auto">
-            {/* Rachel Bartholomew */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src={rachelBartholomewPhoto} />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Rachel Bartholomew</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Health Innovation & Commercialization Advisor</p>
-              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
-            </div>
-
-            {/* Jeff Kofman */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Jeff Kofman" className="w-full h-full object-cover" src="/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg" />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Jeff Kofman</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Advisor</p>
-              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
-            </div>
-
-            {/* Habiba Bougherara */}
-            <div className="flex flex-col items-center">
-              <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Habiba Bougherara" className="w-full h-full object-cover" src={habibaBougheraraPhoto} />
-                </div>
-              </div>
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Habiba Bougherara</h3>
-              <p className="text-xs text-muted-foreground font-medium mt-1 text-center">Scientific & Regulatory Advisor</p>
-              <p className="text-[10px] text-muted-foreground/70 tracking-[0.25em] mt-1 uppercase">A D V I S O R</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Partnerships */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">Strategic Partners & Advisors</h2>
-          
-          <div className="space-y-6">
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-heading font-bold mb-2">MaRS Discovery District</h3>
-                <p className="text-muted-foreground">
-                  Member of the Health Innovation Program, providing access to mentorship, funding opportunities, and innovation ecosystem connections
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-heading font-bold mb-2">Ontario Long-Term Care Association</h3>
-                <p className="text-muted-foreground">
-                  Collaborative partnership providing insights into LTC operational challenges and access to pilot facility networks
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-soft">
-              <CardContent className="p-6">
-                <h3 className="font-heading font-bold mb-2">Clinical Advisory Board</h3>
-                <p className="text-muted-foreground">
-                  Leading Canadian geriatricians, respiratory specialists, and LTC medical directors guiding our clinical development and validation
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Ecosystem Support & Grants */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-16">Ecosystem Support & Grants</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 animate-fade-in">
-            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
-              <img alt="MaRS Discovery District" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/cd29e1b2-c38e-4475-9f1d-e50fd4bb379e.jpg" />
-            </div>
-            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
-              <img alt="Health Innovation Hub (H2i)" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/af47ef87-8f2a-4bb9-a473-738fdd6831e8.png" />
-            </div>
-            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
-              <img alt="Manitoba Technology Accelerator" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/a07b3808-0d34-4344-9731-b063532a7cd0.png" />
-            </div>
-            <div className="flex items-center justify-center p-6 bg-card rounded-lg border border-border/40 shadow-soft hover:shadow-medium transition-all duration-300 hover:border-primary/20">
-              <img alt="Innovation Boost Zone (IBZ)" className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" src="/lovable-uploads/f5526801-1f44-41a4-81a7-9eb7cde49628.jpg" />
+      {/* Final CTA - Bold and prominent */}
+      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+        
+        <div className="container relative mx-auto max-w-4xl text-center">
+          <div className="space-y-8 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground">
+              Join Us in Transforming LTC Respiratory Care
+            </h2>
+            <p className="text-xl lg:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
+              Whether you're a care provider, investor, or potential partner, we'd love to connect
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 text-lg px-10 py-6 shadow-strong font-semibold"
+              >
+                <NavLink to="/contact">Get in Touch</NavLink>
+              </Button>
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6 font-semibold bg-transparent"
+              >
+                <NavLink to="/news">Latest News & Updates</NavLink>
+              </Button>
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold">Join Us in Transforming LTC Respiratory Care</h2>
-          <p className="text-xl text-muted-foreground">
-            Whether you're a care provider, investor, or potential partner, we'd love to connect
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="hero-gradient border-0 text-lg px-8">
-              <NavLink to="/contact">Get in Touch</NavLink>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <NavLink to="/news">Latest News & Updates</NavLink>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>;
+    </div>
+  );
 };
+
 export default About;
