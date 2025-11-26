@@ -22,14 +22,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-3">
           {/* Logo and Brand Name */}
-          <NavLink to="/" className="flex items-center gap-3 group">
+          <NavLink to="/" className="flex items-center gap-4 group">
             <img 
               src={logo} 
               alt="Atabazh Medical Logo" 
-              className="h-10 w-10 object-contain rounded-full"
+              className="h-[52px] w-[52px] object-contain rounded-full"
               style={{ imageRendering: 'crisp-edges' }}
             />
-            <span className="font-sans font-medium text-base text-foreground tracking-[0.15em] uppercase hidden sm:block">
+            <span className="font-sans font-medium text-sm text-foreground tracking-[0.15em] uppercase hidden sm:block">
               ATABAZH MED
             </span>
           </NavLink>
