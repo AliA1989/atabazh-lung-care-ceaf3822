@@ -21,21 +21,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3 group">
-            <div 
-              className="flex items-center justify-center px-3 py-1.5 rounded-lg bg-white border border-[#e5e7eb] transition-all duration-300 group-hover:shadow-md"
-              style={{ 
-                boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
-                height: '38px'
-              }}
-            >
-              <img 
-                src={logo} 
-                alt="Atabazh Medical Logo" 
-                className="h-6 w-auto object-contain" 
-                style={{ imageRendering: 'crisp-edges' }}
-              />
-            </div>
+          <NavLink to="/" className="flex items-center gap-2.5 group">
+            <img 
+              src={logo} 
+              alt="Atabazh Medical Logo" 
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              style={{ imageRendering: 'crisp-edges' }}
+            />
             <span className="font-heading font-semibold text-lg text-foreground tracking-wide hidden sm:block">ATABAZH MED</span>
           </NavLink>
 
