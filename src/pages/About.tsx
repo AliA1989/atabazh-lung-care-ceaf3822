@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Target, Users, Award, MapPin } from "lucide-react";
 import rachelBartholomewPhoto from "@/assets/team/rachel-bartholomew.png";
+import habibaBougheraraPhoto from "@/assets/team/habiba-bougherara.png";
 const About = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -271,7 +272,7 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
                 <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Habiba Bougherara" className="w-full h-full object-cover" src="/lovable-uploads/77e4f336-d3e3-4070-a6f8-9addf77864b5.jpg" />
+                  <img alt="Habiba Bougherara" className="w-full h-full object-cover" src={habibaBougheraraPhoto} />
                 </div>
               </div>
               <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Habiba Bougherara</h3>
