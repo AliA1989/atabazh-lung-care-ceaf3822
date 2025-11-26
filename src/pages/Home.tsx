@@ -285,47 +285,63 @@ const Home = () => {
               <div className="grid grid-cols-2 gap-4">
                 {/* Image 1: ICU patient with monitoring equipment */}
                 <div 
-                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  className="aspect-square overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
                     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
                   }}
                 >
-                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: ICU patient with monitoring</span>
+                  <img 
+                    src="/lovable-uploads/clinical-icu-monitoring.png" 
+                    alt="ICU patient receiving chest therapy with monitoring equipment" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 2: Female patient receiving therapy on upper back */}
                 <div 
-                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  className="aspect-square overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
                     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
                   }}
                 >
-                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Upper back therapy</span>
+                  <img 
+                    src="/lovable-uploads/clinical-female-therapy.png" 
+                    alt="Female patient receiving respiratory therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 3: Supine patient therapy on chest */}
                 <div 
-                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  className="aspect-square overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
                     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
                   }}
                 >
-                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Supine chest therapy</span>
+                  <img 
+                    src="/lovable-uploads/clinical-supine-therapy.png" 
+                    alt="Supine patient receiving chest therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 4: Forward-leaning position therapy */}
                 <div 
-                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  className="aspect-square overflow-hidden"
                   style={{ 
                     border: "1px solid #e6e6e6",
                     borderRadius: "10px",
                     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
                   }}
                 >
-                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Forward-leaning therapy</span>
+                  <img 
+                    src="/lovable-uploads/clinical-seated-therapy.png" 
+                    alt="Seated patient receiving shoulder therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               {/* Footer Note */}
