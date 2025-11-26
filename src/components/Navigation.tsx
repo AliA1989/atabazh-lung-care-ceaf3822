@@ -35,24 +35,24 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo and Brand Name */}
-          <NavLink to="/" className="flex items-center gap-3 group">
+          <NavLink to="/" className="flex items-center gap-4 group">
             <img 
               src={logo} 
               alt="Atabazh Medical Logo" 
-              className="h-12 w-12 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+              className="h-14 w-14 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-heading font-semibold text-sm text-foreground tracking-wider uppercase hidden sm:block">
+            <span className="font-heading font-bold text-sm text-foreground tracking-wide uppercase hidden sm:block">
               ATABAZH MED
             </span>
           </NavLink>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative py-1"
+                className="text-[13px] font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative py-1 group"
                 activeClassName="text-primary"
               >
                 {link.label}
