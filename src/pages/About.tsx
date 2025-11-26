@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Target, Users, Award, MapPin } from "lucide-react";
+import rachelBartholomewPhoto from "@/assets/team/rachel-bartholomew.png";
 const About = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -246,7 +247,7 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="w-28 h-28 rounded-full bg-[hsl(145,40%,90%)] flex items-center justify-center mb-4 shadow-md">
                 <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src="/lovable-uploads/81a8e47e-c5e2-4ddf-bed7-adaf305c0092.jpg" />
+                  <img alt="Rachel Bartholomew" className="w-full h-full object-cover" src={rachelBartholomewPhoto} />
                 </div>
               </div>
               <h3 className="font-heading font-bold text-sm uppercase tracking-wide text-center">Rachel Bartholomew</h3>
