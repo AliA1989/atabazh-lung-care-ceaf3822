@@ -463,46 +463,33 @@ const About = () => {
         </div>
       </section>
 
-      {/* Ecosystem Support - Premium partner showcase */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/15 to-background" />
-        
-        <div className="container relative mx-auto max-w-6xl">
+      {/* Ecosystem Support - Ultra-minimal premium design */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-5xl">
           {/* Section Header */}
-          <div className="text-center mb-12 animate-fade-in">
-            <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
-              Trusted & Recognized
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">
+          <div className="text-center mb-16 lg:mb-20 animate-fade-in">
+            <h2 className="text-3xl lg:text-4xl font-heading font-bold tracking-tight mb-5">
               Supported by Canada's Leading Innovation & Health Ecosystems
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Recognized and supported through national innovation programs, clinical partnerships, and med-tech accelerators.
             </p>
           </div>
           
-          {/* Partner Logos Grid - Single row of 4 large cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+          {/* Partner Logos - Single centered row, minimal style */}
+          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
             {ecosystemLogos.map((logo, index) => (
               <div 
                 key={logo.alt}
-                className="group relative bg-card rounded-3xl border border-border/50 shadow-medium hover:shadow-strong transition-all duration-500 hover:-translate-y-1.5 animate-fade-in overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group flex items-center justify-center animate-fade-in"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative flex items-center justify-center p-8 lg:p-10 min-h-[160px] lg:min-h-[180px]">
-                  <img 
-                    src={logo.src} 
-                    alt={logo.alt}
-                    className="h-24 lg:h-32 w-auto max-w-[90%] object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                  />
-                </div>
-                
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt}
+                  className="h-16 lg:h-20 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-500"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
               </div>
             ))}
           </div>
