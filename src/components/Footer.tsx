@@ -67,14 +67,6 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink 
-                  to="/news" 
-                  className="text-sm text-muted-foreground/70 hover:text-primary transition-smooth block"
-                >
-                  News & Resources
-                </NavLink>
-              </li>
-              <li>
-                <NavLink 
                   to="/contact" 
                   className="text-sm text-muted-foreground/70 hover:text-primary transition-smooth block"
                 >
@@ -111,29 +103,30 @@ const Footer = () => {
         {/* Footer Bottom Bar */}
         <Separator className="my-16 bg-border/40" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-10">
-            <a 
-              href="#" 
-              className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
-            >
-              Privacy Policy
-            </a>
-            <a 
-              href="#" 
-              className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
-            >
-              Terms of Service
-            </a>
-          </div>
+        <div className="flex justify-center items-center gap-10">
+          <a 
+            href="#" 
+            className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
+          >
+            Privacy Policy
+          </a>
+          <a 
+            href="#" 
+            className="text-[13px] text-muted-foreground/65 hover:text-foreground transition-smooth"
+          >
+            Terms of Service
+          </a>
         </div>
 
-        {/* Legal Line */}
-        <div className="text-center pt-4 mt-6 border-t border-border/20">
-          <p className="text-xs text-muted-foreground/60 leading-relaxed">
+        {/* Legal Section Divider */}
+        <div className="w-full h-px bg-border my-5" />
+
+        {/* Legal Section */}
+        <div className="text-center">
+          <p className="text-[12px] text-muted-foreground leading-relaxed">
             Smart Lung Physio™ — U.S. Utility Patent Pending (Application No. 19/278,634)
           </p>
-          <p className="text-xs text-muted-foreground/60 mt-1">
+          <p className="text-[12px] text-muted-foreground mt-1">
             © 2025 Atabazh Med. All rights reserved.
           </p>
         </div>
