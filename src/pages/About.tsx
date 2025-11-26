@@ -58,33 +58,39 @@ const About = () => {
 
   const coreTeam = [
     {
-      name: "Ali Aedinpour",
+      name: "Ali Abedinpour",
       role: "Founder",
+      description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
       image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
     },
     {
       name: "Kamran Azma",
       role: "Physiotherapy & Clinical Research",
+      description: "Bringing decades of respiratory physiotherapy expertise to validate safe, effective therapy delivery.",
       image: kamranAzmaPhoto
     },
     {
       name: "Ali Azadegan Mehr",
       role: "Mechanical Design",
+      description: "Designing hardware that balances comfort, efficiency, and precise airway-clearance performance.",
       image: aliAzadeganPhoto
     },
     {
       name: "Ali Hosseini",
       role: "Electronics",
+      description: "Building reliable sensor systems and embedded hardware for real-time therapy adaptation.",
       image: "/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg"
     },
     {
       name: "Ali Al-Dadah",
       role: "Data & Machine Learning",
+      description: "Developing intelligent treatment algorithms that personalize airway-clearance therapy.",
       image: "/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg"
     },
     {
       name: "Zhansaya Orazbekova",
       role: "Business Development",
+      description: "Connecting clinical needs with operational workflows to bring Atabazh's innovation into real LTC environments.",
       image: "/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg"
     }
   ];
@@ -92,17 +98,20 @@ const About = () => {
   const advisors = [
     {
       name: "Rachel Bartholomew",
-      role: "Health Innovation & Commercialization",
+      role: "Commercialization Advisor",
+      description: "Guiding market entry, partnerships, and investor readiness for scalable med-tech growth.",
       image: rachelBartholomewPhoto
     },
     {
       name: "Jeff Kofman",
       role: "Strategic Advisor",
+      description: "Supporting operational strategy and product positioning across the LTC ecosystem.",
       image: "/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg"
     },
     {
-      name: "Habiba Bougherara",
-      role: "Scientific & Regulatory",
+      name: "Dr. Habiba Bougherara",
+      role: "Scientific & Regulatory Advisor",
+      description: "Ensuring scientific rigor and regulatory alignment throughout device development and validation.",
       image: habibaBougheraraPhoto
     }
   ];
@@ -295,61 +304,123 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section - Enhanced with larger photos */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Our Team</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A multidisciplinary team of engineers, clinicians, and operators united by a passion for improving care for the frail elderly
+      {/* Team Section - Premium innovative design */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/30" />
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+          backgroundSize: '32px 32px'
+        }} />
+        
+        <div className="container relative mx-auto max-w-7xl">
+          {/* Section Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
+              The People Behind the Innovation
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-6">Our Team</h2>
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A multidisciplinary team united by a mission to reimagine respiratory care for aging populations.
             </p>
           </div>
           
-          {/* Core Team */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 mb-14">
+          {/* Core Team Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
             {coreTeam.map((member, index) => (
               <div 
                 key={member.name} 
-                className="flex flex-col items-center text-center group animate-fade-in"
+                className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/40 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-2 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-32 h-32 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-primary/20 to-secondary/40 p-1.5 mb-4 group-hover:scale-105 transition-transform duration-300 shadow-medium">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative flex flex-col items-center text-center">
+                  {/* Photo with gradient ring */}
+                  <div className="relative mb-6">
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/50 to-secondary opacity-60 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+                    <div className="relative w-36 h-36 lg:w-40 lg:h-40 rounded-full p-1 bg-gradient-to-br from-primary/80 to-secondary/60 group-hover:scale-105 transition-transform duration-500">
+                      <div className="w-full h-full rounded-full overflow-hidden bg-background shadow-lg">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
                   </div>
+                  
+                  {/* Name with gradient underline */}
+                  <div className="mb-3">
+                    <h3 className="font-heading font-bold text-lg lg:text-xl tracking-wide mb-2">{member.name}</h3>
+                    <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
+                  </div>
+                  
+                  {/* Role badge */}
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+                    {member.role}
+                  </span>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {member.description}
+                  </p>
                 </div>
-                <h3 className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{member.name}</h3>
-                <p className="text-xs text-muted-foreground font-medium leading-tight">{member.role}</p>
               </div>
             ))}
           </div>
 
-          {/* Advisors */}
-          <div className="border-t border-border/50 pt-12">
-            <h3 className="text-center text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium mb-10">Advisors</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          {/* Advisors Section */}
+          <div className="relative">
+            {/* Divider */}
+            <div className="flex items-center justify-center mb-14">
+              <div className="h-px w-24 bg-gradient-to-r from-transparent to-border/60" />
+              <span className="px-6 text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">Advisors</span>
+              <div className="h-px w-24 bg-gradient-to-l from-transparent to-border/60" />
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
               {advisors.map((advisor, index) => (
                 <div 
                   key={advisor.name} 
-                  className="flex flex-col items-center text-center group animate-fade-in"
+                  className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/40 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-2 animate-fade-in"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  <div className="w-32 h-32 lg:w-36 lg:h-36 rounded-full bg-gradient-to-br from-primary/20 to-secondary/40 p-1.5 mb-4 group-hover:scale-105 transition-transform duration-300 shadow-medium">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                      <img 
-                        src={advisor.image} 
-                        alt={advisor.name}
-                        className="w-full h-full object-cover"
-                      />
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    {/* Photo with gradient ring */}
+                    <div className="relative mb-6">
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/50 to-secondary opacity-50 group-hover:opacity-90 blur-sm transition-opacity duration-500" />
+                      <div className="relative w-32 h-32 lg:w-36 lg:h-36 rounded-full p-1 bg-gradient-to-br from-primary/70 to-secondary/50 group-hover:scale-105 transition-transform duration-500">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-background shadow-lg">
+                          <img 
+                            src={advisor.image} 
+                            alt={advisor.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
                     </div>
+                    
+                    {/* Name with gradient underline */}
+                    <div className="mb-3">
+                      <h3 className="font-heading font-bold text-lg tracking-wide mb-2">{advisor.name}</h3>
+                      <div className="h-0.5 w-10 mx-auto bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+                    </div>
+                    
+                    {/* Role badge */}
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-secondary-foreground border border-border/40 mb-4">
+                      {advisor.role}
+                    </span>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {advisor.description}
+                    </p>
                   </div>
-                  <h3 className="font-heading font-bold text-sm uppercase tracking-wide mb-1">{advisor.name}</h3>
-                  <p className="text-xs text-muted-foreground font-medium leading-tight">{advisor.role}</p>
-                  <span className="text-[10px] text-primary/70 tracking-[0.25em] mt-2 uppercase font-medium">Advisor</span>
                 </div>
               ))}
             </div>
