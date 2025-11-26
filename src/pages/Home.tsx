@@ -6,29 +6,26 @@ import heroDevice from "@/assets/hero-device.jpg";
 const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{
-      paddingTop: "80px",
-      paddingBottom: "80px"
-    }}>
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
         {/* Wave-airflow pattern in light grey behind text area */}
         <div className="absolute inset-0 bg-[#F5F5F5] pointer-events-none"></div>
         <div className="absolute inset-0 opacity-100" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='80' viewBox='0 0 120 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q 15 25, 30 40 T 60 40 T 90 40 T 120 40' stroke='%23E0E0E0' stroke-width='0.8' fill='none' opacity='0.6'/%3E%3Cpath d='M0 25 Q 15 10, 30 25 T 60 25 T 90 25 T 120 25' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 55 Q 15 40, 30 55 T 60 55 T 90 55 T 120 55' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 15 Q 15 5, 30 15 T 60 15 T 90 15 T 120 15' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3Cpath d='M0 65 Q 15 50, 30 65 T 60 65 T 90 65 T 120 65' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3C/svg%3E")`,
-        backgroundSize: "240px 160px",
-        backgroundRepeat: "repeat"
-      }}></div>
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='120' height='80' viewBox='0 0 120 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 Q 15 25, 30 40 T 60 40 T 90 40 T 120 40' stroke='%23E0E0E0' stroke-width='0.8' fill='none' opacity='0.6'/%3E%3Cpath d='M0 25 Q 15 10, 30 25 T 60 25 T 90 25 T 120 25' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 55 Q 15 40, 30 55 T 60 55 T 90 55 T 120 55' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.4'/%3E%3Cpath d='M0 15 Q 15 5, 30 15 T 60 15 T 90 15 T 120 15' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3Cpath d='M0 65 Q 15 50, 30 65 T 60 65 T 90 65 T 120 65' stroke='%23EEEEEE' stroke-width='0.4' fill='none' opacity='0.3'/%3E%3C/svg%3E")`,
+          backgroundSize: "240px 160px",
+          backgroundRepeat: "repeat"
+        }}></div>
         
         {/* Diagonal gradient overlay from brand-blue at 10% opacity to white */}
         <div className="absolute inset-0 pointer-events-none" style={{
-        background: "linear-gradient(135deg, rgba(0, 78, 140, 0.1) 0%, rgba(255, 255, 255, 0) 100%)"
-      }}></div>
+          background: "linear-gradient(135deg, rgba(0, 78, 140, 0.1) 0%, rgba(255, 255, 255, 0) 100%)"
+        }}></div>
         
         {/* Mobile: simplified pattern */}
         <div className="absolute inset-0 opacity-100 md:opacity-0" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 10 20, 20 30 T 40 30 T 60 30 T 80 30' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.5'/%3E%3C/svg%3E")`,
-        backgroundSize: "160px 120px",
-        backgroundRepeat: "repeat"
-      }}></div>
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='60' viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 Q 10 20, 20 30 T 40 30 T 60 30 T 80 30' stroke='%23E0E0E0' stroke-width='0.6' fill='none' opacity='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: "160px 120px",
+          backgroundRepeat: "repeat"
+        }}></div>
         
         <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -37,9 +34,7 @@ const Home = () => {
               <div className="space-y-6">
                 <h1 className="text-[3rem] md:text-[3.25rem] lg:text-[3.5rem] font-heading font-bold leading-[1.1] tracking-tight">
                   Respiratory Care,{" "}
-                  <span className="block font-extrabold" style={{
-                  color: "#003D6E"
-                }}>
+                  <span className="block font-extrabold" style={{ color: "#003D6E" }}>
                     Reimagined
                   </span>
                   {" "}for Long-Term Care.
@@ -71,17 +66,22 @@ const Home = () => {
             
             {/* Right: Device Image */}
             <div className="relative animate-fade-in lg:scale-110" style={{
-            animationDelay: "0.2s"
-          }}>
+              animationDelay: "0.2s"
+            }}>
               {/* Soft gradient behind device for depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff]/40 via-white/30 to-white/10 blur-2xl rounded-3xl scale-105"></div>
               
               {/* Device image - slightly larger with crisp drop shadow and 12px rounded corners */}
               <div className="relative">
-                <img alt="Smart Lung Physio Device with Mobile App" className="relative w-full rounded-xl" style={{
-                boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
-                borderRadius: "12px"
-              }} src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" />
+                <img 
+                  alt="Smart Lung Physio Device with Mobile App" 
+                  className="relative w-full rounded-xl" 
+                  style={{
+                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+                    borderRadius: "12px"
+                  }}
+                  src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
+                />
               </div>
             </div>
           </div>
@@ -284,36 +284,64 @@ const Home = () => {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 {/* Image 1: ICU patient with monitoring equipment */}
-                <div className="aspect-[4/3] overflow-hidden" style={{
-                border: "1px solid #e6e6e6",
-                borderRadius: "10px",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
-              }}>
-                  <img src="/lovable-uploads/clinical-icu-monitoring.png" alt="ICU patient receiving chest therapy with monitoring equipment" className="w-full h-full object-top object-contain" />
+                <div 
+                  className="aspect-square overflow-hidden"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <img 
+                    src="/lovable-uploads/clinical-icu-monitoring.png" 
+                    alt="ICU patient receiving chest therapy with monitoring equipment" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 2: Female patient receiving therapy on upper back */}
-                <div className="aspect-[4/3] overflow-hidden" style={{
-                border: "1px solid #e6e6e6",
-                borderRadius: "10px",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
-              }}>
-                  <img src="/lovable-uploads/clinical-female-therapy.png" alt="Female patient receiving respiratory therapy" className="w-full h-full object-cover object-center" />
+                <div 
+                  className="aspect-square overflow-hidden"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <img 
+                    src="/lovable-uploads/clinical-female-therapy.png" 
+                    alt="Female patient receiving respiratory therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 3: Supine patient therapy on chest */}
-                <div className="aspect-[4/3] overflow-hidden" style={{
-                border: "1px solid #e6e6e6",
-                borderRadius: "10px",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
-              }}>
-                  <img src="/lovable-uploads/clinical-supine-therapy.png" alt="Supine patient receiving chest therapy" className="w-full h-full object-cover object-center" />
+                <div 
+                  className="aspect-square overflow-hidden"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <img 
+                    src="/lovable-uploads/clinical-supine-therapy.png" 
+                    alt="Supine patient receiving chest therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {/* Image 4: Forward-leaning position therapy */}
-                <div className="aspect-[4/3] overflow-hidden" style={{
-                border: "1px solid #e6e6e6",
-                borderRadius: "10px",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
-              }}>
-                  <img src="/lovable-uploads/clinical-seated-therapy.png" alt="Seated patient receiving shoulder therapy" className="w-full h-full object-cover object-top" />
+                <div 
+                  className="aspect-square overflow-hidden"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <img 
+                    src="/lovable-uploads/clinical-seated-therapy.png" 
+                    alt="Seated patient receiving shoulder therapy" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               {/* Footer Note */}
