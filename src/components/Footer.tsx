@@ -4,17 +4,17 @@ import logo from "@/assets/logo.png";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-secondary/50 to-background border-t border-border/30">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10 py-12 lg:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-3 mb-5">
+            <div className="flex items-center space-x-3 mb-4">
               <img 
                 src={logo} 
                 alt="Atabazh Medical Logo" 
-                className="h-14 w-14 object-contain rounded-full"
+                className="h-16 w-16 object-contain rounded-full"
               />
-              <span className="font-heading font-bold text-lg text-foreground tracking-tight">Atabazh Medical</span>
+              <span className="font-heading font-bold text-base text-foreground tracking-tight">Atabazh Medical</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-12" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-8" />
         
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
