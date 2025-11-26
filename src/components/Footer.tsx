@@ -112,9 +112,6 @@ const Footer = () => {
         <Separator className="my-16 bg-border/40" />
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[13px] text-muted-foreground/65">
-            © {new Date().getFullYear()} Atabazh Medical Inc. All rights reserved.
-          </p>
           <div className="flex items-center gap-10">
             <a 
               href="#" 
@@ -129,6 +126,16 @@ const Footer = () => {
               Terms of Service
             </a>
           </div>
+        </div>
+
+        {/* Legal Line */}
+        <div className="text-center pt-4 mt-6 border-t border-border/20">
+          <p className="text-xs text-muted-foreground/60 leading-relaxed">
+            Smart Lung Physio™ — U.S. Utility Patent Pending (Application No. 19/278,634)
+          </p>
+          <p className="text-xs text-muted-foreground/60 mt-1">
+            © 2025 Atabazh Med. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
