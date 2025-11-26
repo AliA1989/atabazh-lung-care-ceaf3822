@@ -239,6 +239,104 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Clinical Use in Real Care Settings Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#f9fafb]">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column: Text Content */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold">Clinical Use in Real Care Settings</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Smart Lung Physio™ began as a bedside airway-clearance prototype tested directly in ICU, hospital, and clinical environments. These early evaluations helped refine therapy strength, comfort, and placement — shaping the current long-term care version of the device.
+              </p>
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-foreground font-medium">Bedside Therapy</p>
+                    <p className="text-muted-foreground">
+                      Early prototypes were tested directly at the bedside with real patients and respiratory teams.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-foreground font-medium">Multiple Positions</p>
+                    <p className="text-muted-foreground">
+                      Supine, seated, and forward-leaning positions were evaluated for comfort and secretion clearance.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-foreground font-medium">Prototype to Product</p>
+                    <p className="text-muted-foreground">
+                      Clinical insights shaped the design of today's Smart Lung Physio™, optimized for long-term care workflows.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 2x2 Image Grid */}
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Image 1: ICU patient with monitoring equipment */}
+                <div 
+                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: ICU patient with monitoring</span>
+                </div>
+                {/* Image 2: Female patient receiving therapy on upper back */}
+                <div 
+                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Upper back therapy</span>
+                </div>
+                {/* Image 3: Supine patient therapy on chest */}
+                <div 
+                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Supine chest therapy</span>
+                </div>
+                {/* Image 4: Forward-leaning position therapy */}
+                <div 
+                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                  style={{ 
+                    border: "1px solid #e6e6e6",
+                    borderRadius: "10px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)"
+                  }}
+                >
+                  <span className="text-muted-foreground text-sm text-center px-4">Placeholder: Forward-leaning therapy</span>
+                </div>
+              </div>
+              {/* Footer Note */}
+              <p className="text-xs text-muted-foreground text-center pt-2 italic">
+                Images shown are from early clinical prototype evaluations and informed the design of the current Smart Lung Physio™ system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Clinical Evidence Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto">
