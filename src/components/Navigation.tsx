@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-horizontal.png";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,16 +34,13 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo and Brand Name */}
-          <NavLink to="/" className="flex items-center gap-4 group">
+          {/* Logo */}
+          <NavLink to="/" className="flex items-center group">
             <img 
               src={logo} 
-              alt="Atabazh Medical Logo" 
-              className="h-14 w-14 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+              alt="Atabazh Medical" 
+              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
-            <span className="font-heading font-bold text-sm text-foreground tracking-wide uppercase hidden sm:block">
-              ATABAZH MED
-            </span>
           </NavLink>
 
           {/* Desktop Navigation */}
