@@ -39,7 +39,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Atabazh Medical" 
-              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </NavLink>
 
