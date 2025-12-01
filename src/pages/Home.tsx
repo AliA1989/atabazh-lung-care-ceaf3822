@@ -334,10 +334,10 @@ const Home = () => {
             <div className="space-y-3 scroll-animate">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { src: "/lovable-uploads/clinical-icu-monitoring.png", alt: "ICU patient receiving chest therapy with monitoring equipment" },
-                  { src: "/lovable-uploads/clinical-female-therapy.png", alt: "Female patient receiving respiratory therapy" },
-                  { src: "/lovable-uploads/clinical-supine-therapy.png", alt: "Supine patient receiving chest therapy" },
-                  { src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png", alt: "Seated patient receiving shoulder therapy" }
+                  { src: "/clinical-icu-monitoring-anon.png", alt: "Clinician using Smart Lung Physio™ device on patient's chest in an ICU setting with monitoring equipment" },
+                  { src: "/clinical-female-therapy-anon.png", alt: "Patient receiving Smart Lung Physio™ respiratory therapy in a clinical setting" },
+                  { src: "/clinical-supine-therapy-anon.png", alt: "Clinician administering Smart Lung Physio™ chest therapy to supine patient" },
+                  { src: "/clinical-seated-therapy-anon.png", alt: "Clinician using Smart Lung Physio™ device on seated patient's upper chest" }
                 ].map((img, index) => (
                   <div 
                     key={index} 
@@ -351,8 +351,8 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground text-center italic">
-                Images shown are from early clinical prototype evaluations.
+              <p className="text-[11px] text-muted-foreground/70 text-center mt-2">
+                Faces are anonymized for privacy. Images are from early Smart Lung Physio™ prototype evaluations.
               </p>
             </div>
           </div>
