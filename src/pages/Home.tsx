@@ -77,30 +77,14 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Right Column: Premium Product Visualization */}
-            <div className="relative order-1 lg:order-2 flex items-center justify-center">
-              {/* Multi-layer ambient glow for depth */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[90%] h-[90%] bg-gradient-to-br from-primary/[0.12] via-primary/[0.05] to-transparent rounded-full blur-[60px]" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[70%] h-[70%] bg-gradient-to-tl from-[#c8ddf0]/30 via-transparent to-transparent rounded-full blur-[40px]" />
-              </div>
-              
-              {/* Product Image with premium shadows */}
-              <div className="relative w-full max-w-xl lg:max-w-2xl">
-                <img 
-                  alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
-                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_30px_60px_rgba(0,50,100,0.18)] hover:drop-shadow-[0_40px_80px_rgba(0,50,100,0.22)] transition-all duration-700 hover:scale-[1.02]" 
-                  src={heroProductComposition} 
-                />
-                
-                {/* Rim light effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-transparent to-white/10 pointer-events-none z-20" />
-                
-                {/* Subtle reflection on surface */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-12 bg-gradient-to-t from-primary/[0.04] via-foreground/[0.02] to-transparent blur-md rounded-full" />
-              </div>
+            {/* Right Column: Floating Product - No Container */}
+            <div className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+              {/* Product floating directly on gradient - increased size by 20% */}
+              <img 
+                alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
+                className="w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,40,80,0.12)] hover:drop-shadow-[0_35px_70px_rgba(0,40,80,0.16)] transition-all duration-700 hover:scale-[1.01]" 
+                src={heroProductComposition} 
+              />
             </div>
           </div>
         </div>
