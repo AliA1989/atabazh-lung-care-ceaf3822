@@ -78,11 +78,7 @@ const Home = () => {
             </div>
 
             {/* Right Column: Raw Product Image - No Wrapper, Blended into Background */}
-            <img 
-              alt="Smart Lung Physio™ device with companion mobile app screens" 
-              src={heroProductComposition}
-              className="order-1 lg:order-2 w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto object-contain animate-float mix-blend-multiply"
-            />
+            <img alt="Smart Lung Physio™ device with companion mobile app screens" className="order-1 lg:order-2 w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto object-contain animate-float mix-blend-multiply" src="/lovable-uploads/7962b2c2-f79a-4062-9a6d-2a239f2b3b29.png" />
           </div>
         </div>
       </section>
