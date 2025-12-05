@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
-import heroPremiumClinical from "@/assets/hero-premium-clinical.png";
+import heroProductComposition from "@/assets/hero-product-composition.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -29,30 +29,30 @@ const Home = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Full-Bleed Premium Clinical Style */}
-      <section className="relative min-h-[100vh] flex flex-col pt-20 overflow-hidden">
-        {/* Clean soft grey background matching the image */}
-        <div className="absolute inset-0 bg-[#e8e8ea]" />
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-20 overflow-hidden">
+        {/* Clean soft grey background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f5f5f7] via-[#f0f0f2] to-[#e8e8ea]" />
 
-        {/* Content Container */}
-        <div className="relative z-10 flex-1 flex flex-col">
-          {/* Top Content Area */}
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16">
-            <div className="max-w-2xl space-y-6 animate-fade-in">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Content */}
+            <div className="space-y-6 lg:space-y-7 animate-fade-in order-2 lg:order-1">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-primary/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">Health Canada Class II (pending)</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-sm border border-border/30">
+                <span className="text-sm font-medium text-muted-foreground">Health Canada Physio™ — Sensor-Guided (pending)</span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] font-heading font-extrabold leading-[1.08] tracking-tight text-foreground">
-                Reinventing Airway Clearance for Long-Term Care.
+              <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground">
+                Reinventing Airway<br />
+                Clearance for<br />
+                Long-Term Care
               </h1>
               
               {/* Subheadline */}
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-                A sensor-guided airway-clearance system that reduces caregiver workload and improves resident outcomes.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                Sensor-guided airway-clearance technology that reduces caregiver workload while improving resident outcomes.
               </p>
               
               {/* CTA Buttons */}
@@ -60,18 +60,17 @@ const Home = () => {
                 <Button 
                   asChild 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-base font-semibold px-8 py-6 h-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-base font-semibold px-8 py-6 h-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
                 >
-                  <NavLink to="/contact" className="flex items-center gap-2">
+                  <NavLink to="/contact">
                     Request a Demo
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </NavLink>
                 </Button>
                 <Button 
                   asChild 
                   variant="outline" 
                   size="lg" 
-                  className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 text-primary hover:bg-white hover:border-primary/40 rounded-full text-base font-semibold px-8 py-6 h-auto hover:scale-[1.02] transition-all duration-300"
+                  className="bg-white border-2 border-primary text-primary hover:bg-primary/5 rounded-full text-base font-semibold px-8 py-6 h-auto hover:scale-[1.02] transition-all duration-300"
                 >
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
@@ -82,17 +81,17 @@ const Home = () => {
                 Trusted by clinicians, built for caregivers, designed for LTC.
               </p>
             </div>
-          </div>
 
-          {/* Full-Width Hero Image */}
-          <div className="relative mt-8 lg:mt-12 flex-1 min-h-[400px] lg:min-h-[500px]">
-            <img 
-              src={heroPremiumClinical}
-              alt="Smart Lung Physio™ device held in hand alongside companion mobile app showing real-time vitals monitoring" 
-              className="w-full h-full object-cover object-center"
-            />
-            {/* Subtle top gradient fade for seamless blend */}
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#e8e8ea] to-transparent pointer-events-none" />
+            {/* Right Column: Product Composition */}
+            <div className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg lg:max-w-none lg:w-[120%] lg:-mr-20">
+                <img 
+                  src={heroProductComposition}
+                  alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
