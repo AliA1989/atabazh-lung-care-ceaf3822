@@ -74,9 +74,9 @@ const Home = () => {
 
             {/* Right Column: Product Image - Floating with Soft Shadow */}
             <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
-              <img alt="Smart Lung Physio™ device with companion mobile app screens" className="w-full max-w-[500px] lg:max-w-[550px] h-auto animate-float drop-shadow-2xl" style={{
+              <img alt="Smart Lung Physio™ device with companion mobile app screens" style={{
               filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
-            }} src="/lovable-uploads/c8fbf4ef-6951-44e2-9299-23c4ad0e54fe.png" />
+            }} className="w-full max-w-[500px] lg:max-w-[550px] h-auto animate-float drop-shadow-2xl border-primary shadow-none opacity-100 object-scale-down" src="/lovable-uploads/743a679c-da0d-45a1-a1d2-0e579643f44f.png" />
             </div>
           </div>
         </div>
