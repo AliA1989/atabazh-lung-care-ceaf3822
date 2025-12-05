@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Cpu, Smartphone, Waves, Gauge, Database, Shield } from "lucide-react";
 import heroDevice from "@/assets/hero-device.jpg";
+import HowItWorksSection from "@/components/HowItWorksSection";
+
 const Device = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -51,6 +53,9 @@ const Device = () => {
           </div>
         </div>
       </section>
+
+      {/* How Smart Lung Physio Works Section */}
+      <HowItWorksSection />
 
       {/* Clinical Technology Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background">
