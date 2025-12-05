@@ -80,9 +80,6 @@ export default {
         'card-hover': 'var(--shadow-card-hover)',
         'glow': 'var(--shadow-glow)',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
