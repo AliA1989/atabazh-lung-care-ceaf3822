@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
-import heroProductComposition from "@/assets/hero-product-composition.png";
+import heroPremiumClinical from "@/assets/hero-premium-clinical.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -29,35 +29,34 @@ const Home = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Ultra Premium Apple Style */}
-      <section className="relative min-h-[94vh] flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Pure clean background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
+      {/* Hero Section - Full-Bleed Premium Clinical Style */}
+      <section className="relative min-h-[100vh] flex flex-col pt-20 overflow-hidden">
+        {/* Clean soft grey background matching the image */}
+        <div className="absolute inset-0 bg-[#e8e8ea]" />
 
-        <div className="container mx-auto relative z-10 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Content Only */}
-            <div className="space-y-8">
+        {/* Content Container */}
+        <div className="relative z-10 flex-1 flex flex-col">
+          {/* Top Content Area */}
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16">
+            <div className="max-w-2xl space-y-6 animate-fade-in">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 animate-fade-in">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-primary/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">Health Canada Class II (pending)</span>
               </div>
               
               {/* Headline */}
-              <div className="space-y-6">
-                <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                  Reinventing Airway Clearance for Long-Term Care.
-                </h1>
-                
-                {/* Subheadline */}
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  A sensor-guided airway-clearance system that reduces caregiver workload and improves resident outcomes.
-                </p>
-              </div>
+              <h1 className="text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem] font-heading font-extrabold leading-[1.08] tracking-tight text-foreground">
+                Reinventing Airway Clearance for Long-Term Care.
+              </h1>
+              
+              {/* Subheadline */}
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                A sensor-guided airway-clearance system that reduces caregiver workload and improves resident outcomes.
+              </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button 
                   asChild 
                   size="lg" 
@@ -72,51 +71,28 @@ const Home = () => {
                   asChild 
                   variant="outline" 
                   size="lg" 
-                  className="bg-background border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 rounded-full text-base font-semibold px-8 py-6 h-auto hover:scale-[1.02] transition-all duration-300"
+                  className="bg-white/80 backdrop-blur-sm border-2 border-primary/20 text-primary hover:bg-white hover:border-primary/40 rounded-full text-base font-semibold px-8 py-6 h-auto hover:scale-[1.02] transition-all duration-300"
                 >
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
 
               {/* Trust Sentence */}
-              <p className="text-sm text-muted-foreground/70 font-medium animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <p className="text-sm text-muted-foreground/80 font-medium pt-2">
                 Trusted by clinicians, built for caregivers, designed for LTC.
               </p>
             </div>
-            
-            {/* Right Column: Premium Floating Product */}
-            <div className="relative flex items-center justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              {/* Multi-layer glow system for premium effect */}
-              
-              {/* Outer ambient glow */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[140%] h-[140%] bg-gradient-radial from-white/80 via-white/40 to-transparent rounded-full blur-[100px]" />
-              </div>
-              
-              {/* Primary device glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-primary/10 via-primary/5 to-transparent rounded-full blur-[60px]" />
-              
-              {/* Secondary highlight glow */}
-              <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-white/90 via-white/30 to-transparent rounded-full blur-[80px]" />
-              
-              {/* Product Image with premium styling */}
-              <div className="relative z-10">
-                <img 
-                  src={heroProductComposition}
-                  alt="Smart Lung Physio™ device with companion mobile app showing real-time vitals monitoring" 
-                  className="relative w-full max-w-[650px] lg:max-w-[700px] xl:max-w-[750px] mx-auto transform hover:scale-[1.02] transition-transform duration-700 ease-out"
-                  style={{
-                    filter: 'drop-shadow(0 40px 80px rgba(0, 0, 0, 0.12)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.06))',
-                  }}
-                />
-                
-                {/* Subtle reflection effect */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent pointer-events-none rounded-3xl"
-                  style={{ mixBlendMode: 'overlay' }}
-                />
-              </div>
-            </div>
+          </div>
+
+          {/* Full-Width Hero Image */}
+          <div className="relative mt-8 lg:mt-12 flex-1 min-h-[400px] lg:min-h-[500px]">
+            <img 
+              src={heroPremiumClinical}
+              alt="Smart Lung Physio™ device held in hand alongside companion mobile app showing real-time vitals monitoring" 
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Subtle top gradient fade for seamless blend */}
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#e8e8ea] to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
