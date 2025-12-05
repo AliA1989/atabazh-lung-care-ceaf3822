@@ -1,29 +1,19 @@
 import deviceSystem from "@/assets/device-system.png";
-
 const HowItWorksSection = () => {
-  const steps = [
-    {
-      number: "01",
-      title: "Force-Sensing Percussion",
-      description:
-        "Caregiver applies the device to the chest. Built-in force-sensing resistors (FSR) detect pressure in real time, guiding caregivers to maintain optimal therapeutic force.",
-    },
-    {
-      number: "02",
-      title: "SpO₂-Integrated Safety",
-      description:
-        "Continuous oxygen-saturation monitoring protects residents during therapy sessions. The device and app alert caregivers instantly if SpO₂ drops or heart rate becomes unsafe.",
-    },
-    {
-      number: "03",
-      title: "Intelligent Therapy Algorithm",
-      description:
-        "The system analyzes force + SpO₂ data and provides step-by-step guidance through the mobile app, ensuring consistent, evidence-based airway-clearance across all staff skill levels.",
-    },
-  ];
-
-  return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background overflow-hidden">
+  const steps = [{
+    number: "01",
+    title: "Force-Sensing Percussion",
+    description: "Caregiver applies the device to the chest. Built-in force-sensing resistors (FSR) detect pressure in real time, guiding caregivers to maintain optimal therapeutic force."
+  }, {
+    number: "02",
+    title: "SpO₂-Integrated Safety",
+    description: "Continuous oxygen-saturation monitoring protects residents during therapy sessions. The device and app alert caregivers instantly if SpO₂ drops or heart rate becomes unsafe."
+  }, {
+    number: "03",
+    title: "Intelligent Therapy Algorithm",
+    description: "The system analyzes force + SpO₂ data and provides step-by-step guidance through the mobile app, ensuring consistent, evidence-based airway-clearance across all staff skill levels."
+  }];
+  return <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center space-y-6 mb-16 animate-fade-in">
@@ -48,12 +38,10 @@ const HowItWorksSection = () => {
             </div>
             
             {/* Device image with shadow */}
-            <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <img
-                src={deviceSystem}
-                alt="Smart Lung Physio device with companion mobile app showing real-time SpO₂ and pressure feedback"
-                className="w-full max-w-lg drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform duration-500"
-              />
+            <div className="relative z-10 animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
+              <img alt="Smart Lung Physio device with companion mobile app showing real-time SpO₂ and pressure feedback" className="w-full max-w-lg drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-transform duration-500" src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" />
               {/* Caption */}
               <p className="text-center mt-8 text-sm md:text-base text-foreground/60 font-medium tracking-wide">
                 Live pressure feedback • SpO₂ safety • Guided therapy
@@ -63,12 +51,9 @@ const HowItWorksSection = () => {
 
           {/* Steps - Shows second on mobile */}
           <div className="order-2 lg:order-1 space-y-10">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className="relative animate-fade-in"
-                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-              >
+            {steps.map((step, index) => <div key={step.number} className="relative animate-fade-in" style={{
+            animationDelay: `${0.1 * (index + 1)}s`
+          }}>
                 {/* Step card */}
                 <div className="flex gap-6 group">
                   {/* Step number */}
@@ -92,16 +77,11 @@ const HowItWorksSection = () => {
                 </div>
 
                 {/* Subtle divider (except last) */}
-                {index < steps.length - 1 && (
-                  <div className="ml-7 mt-8 h-px bg-gradient-to-r from-border via-border/50 to-transparent"></div>
-                )}
-              </div>
-            ))}
+                {index < steps.length - 1 && <div className="ml-7 mt-8 h-px bg-gradient-to-r from-border via-border/50 to-transparent"></div>}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HowItWorksSection;
