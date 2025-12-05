@@ -4,6 +4,7 @@ import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroProductComposition from "@/assets/hero-product-composition.png";
+import HowItWorksSection from "@/components/HowItWorksSection";
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
@@ -223,60 +224,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section - Larger Numbers, Arrows */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-3 mb-14 scroll-animate">
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Simple Process</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">How It Works</h2>
-            <p className="text-lg text-muted-foreground">Simple, effective respiratory care in three steps</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
-            {/* Connection arrows */}
-            <div className="hidden md:flex absolute top-[60px] left-[30%] right-[30%] items-center justify-between px-8 z-0">
-              <div className="flex-1 h-0.5 bg-gradient-to-r from-primary/30 to-primary/50" />
-              <ChevronRight className="w-5 h-5 text-primary/50 -mx-1" />
-              <div className="flex-1 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30" />
-              <ChevronRight className="w-5 h-5 text-primary/50 -mx-1" />
-              <div className="flex-1 h-0.5 bg-primary/30" />
-            </div>
-            
-            {[{
-            step: "1",
-            title: "Assess",
-            description: "Smart sensors automatically evaluate the resident's respiratory status and lung capacity before each session."
-          }, {
-            step: "2",
-            title: "Treat",
-            description: "Device delivers personalized airway clearance therapy, adapting pressure and rhythm in real-time based on sensor feedback."
-          }, {
-            step: "3",
-            title: "Review",
-            description: "Clinical data syncs to the cloud dashboard. Care teams review progress, trends, and outcomes across all residents."
-          }].map((item, index) => <div key={index} className="scroll-animate relative z-10" style={{
-            animationDelay: `${index * 0.15}s`
-          }}>
-                <div className="text-center space-y-5 group">
-                  <div className="relative mx-auto w-fit">
-                    <div className="w-[120px] h-[120px] mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-5xl font-heading font-bold text-primary-foreground shadow-xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow">
-                      {item.step}
-                    </div>
-                    <div className="absolute inset-0 w-[120px] h-[120px] mx-auto rounded-full border-2 border-primary/20 animate-pulse-soft" />
-                  </div>
-                  <h3 className="text-xl font-heading font-bold">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
-                </div>
-              </div>)}
-          </div>
-          
-          <div className="text-center mt-12 scroll-animate">
-            <Button asChild size="lg" variant="outline" className="rounded-full text-base px-8 py-5 h-auto border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-              <NavLink to="/how-it-works">Learn More About the Technology</NavLink>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* How Smart Lung Physio Works - Premium Clinical Section */}
+      <HowItWorksSection />
 
       {/* Clinical Use Section - Tighter Grid */}
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/40 to-background">
