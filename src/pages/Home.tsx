@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
+import heroProductComposition from "@/assets/hero-product-composition.png";
+import logoImage from "@/assets/logo.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -28,80 +30,102 @@ const Home = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Full Width, High Impact */}
-      <section className="relative min-h-[88vh] flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20 px-4 sm:px-6 lg:px-8">
-        {/* Premium gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-accent/20" />
+      {/* Hero Section - Ultra Premium Apple/WHOOP Style */}
+      <section className="relative min-h-[92vh] flex items-center pt-24 pb-20 lg:pt-28 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Clean light background with subtle texture */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--secondary))] via-background to-background" />
         
-        {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px] animate-pulse-soft" />
-        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[80px] animate-float" />
-
-        {/* Subtle wave pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23004E8C' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        {/* Subtle wave pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.015]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004E8C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
 
-        <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Content */}
-            <div className="space-y-8">
-              <div className="space-y-5">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 animate-fade-in-down">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-semibold text-primary">Health Canada Class II (pending)</span>
-                </div>
-                
-                <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-heading font-extrabold leading-[1.02] tracking-tight opacity-0 animate-fade-in-up">
-                  Respiratory Care,{" "}
-                  <span className="relative inline-block">
-                    <span className="gradient-text">Reimagined</span>
-                    <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                      <path d="M1 5.5C47 2 97 2 199 5.5" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" className="opacity-40" />
-                    </svg>
+        <div className="container mx-auto relative z-10 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Column: Branding + Content */}
+            <div className="space-y-8 lg:space-y-10">
+              {/* Logo + Brand */}
+              <div className="space-y-3 animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <img 
+                    src={logoImage} 
+                    alt="Atabazh MED Logo" 
+                    className="h-12 w-12 object-contain"
+                  />
+                  <span className="text-xl font-heading font-bold tracking-tight text-foreground">
+                    Atabazh MED
                   </span>
-                  <br />
-                  <span className="text-foreground/90">for Long-Term Care.</span>
+                </div>
+                <p className="text-sm text-muted-foreground font-medium tracking-wide">
+                  Smart Lung Physio™ — Sensor-Guided Airway Clearance
+                </p>
+              </div>
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+                <span className="text-xs font-semibold text-primary uppercase tracking-wider">Health Canada Class II (pending)</span>
+              </div>
+              
+              {/* Headline */}
+              <div className="space-y-6">
+                <h1 className="text-[2.75rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4rem] xl:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  Reinventing Airway Clearance for Long-Term Care.
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
-                  Sensor-guided airway-clearance technology that reduces caregiver burden while delivering superior outcomes.
+                {/* Subheadline */}
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                  A sensor-guided airway-clearance system that reduces caregiver workload and improves resident outcomes.
                 </p>
               </div>
               
-              {/* CTA Buttons - Larger and more prominent */}
-              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <Button 
                   asChild 
                   size="lg" 
-                  className="btn-primary rounded-full text-lg px-10 py-7 h-auto group shadow-lg hover:shadow-xl"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-base font-semibold px-8 py-6 h-auto shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
                 >
-                  <NavLink to="/contact" className="flex items-center gap-3">
+                  <NavLink to="/contact" className="flex items-center gap-2">
                     Request a Demo
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </NavLink>
                 </Button>
                 <Button 
                   asChild 
                   variant="outline" 
                   size="lg" 
-                  className="btn-outline-primary rounded-full text-lg px-10 py-7 h-auto"
+                  className="bg-background border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 rounded-full text-base font-semibold px-8 py-6 h-auto hover:scale-[1.02] transition-all duration-300"
                 >
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
+
+              {/* Trust Sentence */}
+              <p className="text-sm text-muted-foreground/70 font-medium animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                Trusted by clinicians, built for caregivers, designed for LTC.
+              </p>
             </div>
             
-            {/* Right: Device Image - Larger with motion */}
-            <div className="relative opacity-0 animate-slide-in-right delay-400">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary-light/8 blur-3xl scale-110 animate-pulse-soft" />
+            {/* Right Column: Product Composition */}
+            <div className="relative lg:pl-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              {/* Soft white glow behind product */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[120%] h-[120%] bg-gradient-radial from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl" />
+              </div>
               
-              <div className="relative animate-float">
-                <div className="absolute -inset-6 bg-gradient-to-br from-primary/8 to-transparent rounded-3xl" />
+              {/* Secondary glow for depth */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-white/60 rounded-full blur-[80px]" />
+              
+              {/* Product Image */}
+              <div className="relative">
                 <img 
-                  alt="Smart Lung Physio Device with Mobile App" 
-                  className="relative w-full max-w-[600px] mx-auto rounded-2xl shadow-2xl"
-                  src="/lovable-uploads/7f9eeca4-1724-4aec-941a-3076a034e2f7.png" 
+                  src={heroProductComposition}
+                  alt="Smart Lung Physio™ device with companion mobile app showing real-time vitals monitoring" 
+                  className="relative w-full max-w-[580px] mx-auto drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1))'
+                  }}
                 />
               </div>
             </div>
