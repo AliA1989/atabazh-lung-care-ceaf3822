@@ -23,73 +23,66 @@ const Home = () => {
     return () => observerRef.current?.disconnect();
   }, []);
   return <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Premium Apple-Style */}
-      <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 lg:pt-20 overflow-hidden">
-        {/* Soft Clinical Gradient Background - Silver to Soft Blue */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f0f2f5] via-[#e8edf3] to-[#dce4ed]" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.03] via-transparent to-primary/[0.06]" />
-        
-        {/* Premium ambient light orbs */}
-        <div className="absolute top-10 right-[15%] w-[700px] h-[700px] bg-gradient-to-br from-primary/[0.08] via-primary/[0.03] to-transparent rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-[#d0e3f5]/40 via-[#c8ddf0]/20 to-transparent rounded-full blur-[80px]" />
-        <div className="absolute top-[40%] left-[50%] w-[400px] h-[400px] bg-gradient-radial from-[#e0ebf5]/30 to-transparent rounded-full blur-[60px]" />
+      {/* Hero Section - Premium Clean Medical Device Style */}
+      <section className="relative min-h-[70vh] lg:min-h-[75vh] flex items-center pt-28 pb-16 lg:pt-24 lg:pb-12 overflow-hidden">
+        {/* Clean White to Light Grey Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f8f9fb] to-[#f1f3f6]" />
 
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Column: Content */}
-            <div className="space-y-8 animate-fade-in order-2 lg:order-1">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left Column: Content - Vertically Centered Block */}
+            <div className="space-y-6 animate-fade-in order-2 lg:order-1">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-background/70 backdrop-blur-xl border border-border/30 shadow-soft">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-sm font-medium text-foreground/80">Health Canada Class II Medical Device (pending)</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-border/40 shadow-sm">
+                <span className="text-sm font-medium text-foreground/70">Health Canada Class II</span>
+                <span className="text-sm text-muted-foreground">|</span>
+                <span className="text-sm font-medium text-foreground/70">Medical Device (pending)</span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-[2.75rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground">
+              <h1 className="text-[2.5rem] sm:text-[3rem] lg:text-[3.5rem] font-heading font-extrabold leading-[1.1] tracking-tight text-[#0a1628]">
                 Reinventing Airway
                 <br />
-                <span className="gradient-text">Clearance</span> for
+                <span className="text-primary">Clearance</span> for
                 <br />
                 Long-Term Care
               </h1>
               
               {/* Subheadline */}
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Sensor-guided airway-clearance technology that reduces caregiver workload and improves resident outcomes.
               </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full text-base font-semibold px-10 py-7 h-auto shadow-large hover:shadow-glow hover:scale-[1.02] transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full text-base font-semibold px-8 py-6 h-auto shadow-md hover:shadow-lg transition-all duration-300">
                   <NavLink to="/contact">
                     Request a Demo
                   </NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-background/50 backdrop-blur-sm border-2 border-border/50 text-foreground hover:bg-background hover:border-primary/40 rounded-full text-base font-semibold px-10 py-7 h-auto hover:scale-[1.02] transition-all duration-300">
+                <Button asChild variant="outline" size="lg" className="bg-white border-2 border-border text-foreground hover:bg-secondary hover:border-primary/30 rounded-full text-base font-semibold px-8 py-6 h-auto transition-all duration-300">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
 
               {/* Trust Sentence */}
-              <p className="text-sm text-muted-foreground font-medium pt-2 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary/70" />
+              <p className="text-sm text-muted-foreground font-medium pt-1 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-primary/60" />
                 Trusted by clinicians, built for caregivers, designed for LTC.
               </p>
             </div>
 
-            {/* Right Column: Raw Product Image - No Container, Transparent Background */}
-            <img 
-              alt="Smart Lung Physio™ device with companion mobile app screens" 
-              src="/lovable-uploads/7962b2c2-f79a-4062-9a6d-2a239f2b3b29.png"
-              className="order-1 lg:order-2 w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto block animate-float"
-              style={{
-                background: 'transparent',
-                border: 'none',
-                boxShadow: 'none',
-                padding: 0,
-                borderRadius: 0
-              }}
-            />
+            {/* Right Column: Product Image - Floating with Soft Shadow */}
+            <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+              <img 
+                alt="Smart Lung Physio™ device with companion mobile app screens" 
+                src="/lovable-uploads/7962b2c2-f79a-4062-9a6d-2a239f2b3b29.png"
+                className="w-full max-w-[500px] lg:max-w-[550px] h-auto animate-float drop-shadow-2xl"
+                style={{
+                  filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15))'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
