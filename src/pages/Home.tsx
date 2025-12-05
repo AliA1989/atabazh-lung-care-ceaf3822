@@ -85,11 +85,7 @@ const Home = () => {
               
               {/* Product Image */}
               <div className="relative w-full max-w-xl lg:max-w-2xl">
-                <img 
-                  alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
-                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] hover:drop-shadow-[0_35px_60px_rgba(0,0,0,0.2)] transition-all duration-500 hover:scale-[1.02]" 
-                  src={heroProductComposition} 
-                />
+                <img alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" className="w-full h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] hover:drop-shadow-[0_35px_60px_rgba(0,0,0,0.2)] transition-all duration-500 hover:scale-[1.02]" src="/lovable-uploads/f6cf34e0-4b22-4a14-84cf-f66cc91882f8.png" />
                 
                 {/* Subtle reflection */}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-gradient-to-t from-foreground/[0.03] to-transparent blur-sm rounded-full" />
