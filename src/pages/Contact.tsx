@@ -7,16 +7,68 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { z } from "zod";
+
+// Contact form validation schema
+const contactFormSchema = z.object({
+  firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
+  lastName: z.string().trim().min(1, "Last name is required").max(50, "Last name must be less than 50 characters"),
+  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone number must be less than 20 characters").optional().or(z.literal("")),
+  organization: z.string().trim().min(1, "Organization name is required").max(100, "Organization name must be less than 100 characters"),
+  role: z.string().min(1, "Please select your role"),
+  inquiry: z.string().min(1, "Please select an inquiry type"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
+  const [role, setRole] = useState("");
+  const [inquiry, setInquiry] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrors({});
 
-    // Simulate form submission
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get("firstName") as string,
+      lastName: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      organization: formData.get("organization") as string,
+      role: role,
+      inquiry: inquiry,
+      message: formData.get("message") as string,
+    };
+
+    // Validate form data
+    const result = contactFormSchema.safeParse(data);
+    
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactFormData, string>> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as keyof ContactFormData;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      setIsSubmitting(false);
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate form submission (replace with actual backend call when ready)
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     toast({
@@ -25,6 +77,8 @@ const Contact = () => {
     });
 
     setIsSubmitting(false);
+    setRole("");
+    setInquiry("");
     (e.target as HTMLFormElement).reset();
   };
 
@@ -54,32 +108,37 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" required placeholder="Sarah" />
+                      <Input id="firstName" name="firstName" placeholder="Sarah" maxLength={50} />
+                      {errors.firstName && <p className="text-sm text-destructive">{errors.firstName}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" required placeholder="Thompson" />
+                      <Input id="lastName" name="lastName" placeholder="Thompson" maxLength={50} />
+                      {errors.lastName && <p className="text-sm text-destructive">{errors.lastName}</p>}
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" required placeholder="s.thompson@ltcfacility.ca" />
+                    <Input id="email" name="email" type="email" placeholder="s.thompson@ltcfacility.ca" maxLength={255} />
+                    {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="(416) 555-0198" />
+                    <Input id="phone" name="phone" type="tel" placeholder="(416) 555-0198" maxLength={20} />
+                    {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="organization">Organization/Facility Name *</Label>
-                    <Input id="organization" required placeholder="Toronto LTC Health Centre" />
+                    <Input id="organization" name="organization" placeholder="Toronto LTC Health Centre" maxLength={100} />
+                    {errors.organization && <p className="text-sm text-destructive">{errors.organization}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="role">Your Role *</Label>
-                    <Select required>
+                    <Select value={role} onValueChange={setRole}>
                       <SelectTrigger id="role">
                         <SelectValue placeholder="Select your role" />
                       </SelectTrigger>
@@ -92,11 +151,12 @@ const Contact = () => {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
+                    {errors.role && <p className="text-sm text-destructive">{errors.role}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="inquiry">Inquiry Type *</Label>
-                    <Select required>
+                    <Select value={inquiry} onValueChange={setInquiry}>
                       <SelectTrigger id="inquiry">
                         <SelectValue placeholder="Select inquiry type" />
                       </SelectTrigger>
@@ -109,16 +169,19 @@ const Contact = () => {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
+                    {errors.inquiry && <p className="text-sm text-destructive">{errors.inquiry}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
                     <Textarea 
                       id="message" 
-                      required 
+                      name="message"
                       placeholder="Tell us about your facility's respiratory care needs and current workflows..."
                       rows={5}
+                      maxLength={2000}
                     />
+                    {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
                   </div>
 
                   <Button 
