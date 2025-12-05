@@ -4,7 +4,6 @@ import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
 import heroProductComposition from "@/assets/hero-product-composition.png";
-import logoImage from "@/assets/logo.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -30,57 +29,35 @@ const Home = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Ultra Premium Apple/WHOOP Style */}
-      <section className="relative min-h-[92vh] flex items-center pt-24 pb-20 lg:pt-28 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Clean light background with subtle texture */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--secondary))] via-background to-background" />
-        
-        {/* Subtle wave pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004E8C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+      {/* Hero Section - Ultra Premium Apple Style */}
+      <section className="relative min-h-[94vh] flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Pure clean background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
 
         <div className="container mx-auto relative z-10 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Column: Branding + Content */}
-            <div className="space-y-8 lg:space-y-10">
-              {/* Logo + Brand */}
-              <div className="space-y-3 animate-fade-in">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src={logoImage} 
-                    alt="Atabazh MED Logo" 
-                    className="h-12 w-12 object-contain"
-                  />
-                  <span className="text-xl font-heading font-bold tracking-tight text-foreground">
-                    Atabazh MED
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground font-medium tracking-wide">
-                  Smart Lung Physio™ — Sensor-Guided Airway Clearance
-                </p>
-              </div>
-
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Content Only */}
+            <div className="space-y-8">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 animate-fade-in">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
                 <span className="text-xs font-semibold text-primary uppercase tracking-wider">Health Canada Class II (pending)</span>
               </div>
               
               {/* Headline */}
               <div className="space-y-6">
-                <h1 className="text-[2.75rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4rem] xl:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
                   Reinventing Airway Clearance for Long-Term Care.
                 </h1>
                 
                 {/* Subheadline */}
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
                   A sensor-guided airway-clearance system that reduces caregiver workload and improves resident outcomes.
                 </p>
               </div>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <Button 
                   asChild 
                   size="lg" 
@@ -102,30 +79,41 @@ const Home = () => {
               </div>
 
               {/* Trust Sentence */}
-              <p className="text-sm text-muted-foreground/70 font-medium animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <p className="text-sm text-muted-foreground/70 font-medium animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 Trusted by clinicians, built for caregivers, designed for LTC.
               </p>
             </div>
             
-            {/* Right Column: Product Composition */}
-            <div className="relative lg:pl-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              {/* Soft white glow behind product */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[120%] h-[120%] bg-gradient-radial from-primary/8 via-primary/3 to-transparent rounded-full blur-3xl" />
+            {/* Right Column: Premium Floating Product */}
+            <div className="relative flex items-center justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              {/* Multi-layer glow system for premium effect */}
+              
+              {/* Outer ambient glow */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[140%] h-[140%] bg-gradient-radial from-white/80 via-white/40 to-transparent rounded-full blur-[100px]" />
               </div>
               
-              {/* Secondary glow for depth */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-white/60 rounded-full blur-[80px]" />
+              {/* Primary device glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-primary/10 via-primary/5 to-transparent rounded-full blur-[60px]" />
               
-              {/* Product Image */}
-              <div className="relative">
+              {/* Secondary highlight glow */}
+              <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-white/90 via-white/30 to-transparent rounded-full blur-[80px]" />
+              
+              {/* Product Image with premium styling */}
+              <div className="relative z-10">
                 <img 
                   src={heroProductComposition}
                   alt="Smart Lung Physio™ device with companion mobile app showing real-time vitals monitoring" 
-                  className="relative w-full max-w-[580px] mx-auto drop-shadow-2xl"
+                  className="relative w-full max-w-[650px] lg:max-w-[700px] xl:max-w-[750px] mx-auto transform hover:scale-[1.02] transition-transform duration-700 ease-out"
                   style={{
-                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1))'
+                    filter: 'drop-shadow(0 40px 80px rgba(0, 0, 0, 0.12)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.06))',
                   }}
+                />
+                
+                {/* Subtle reflection effect */}
+                <div 
+                  className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent pointer-events-none rounded-3xl"
+                  style={{ mixBlendMode: 'overlay' }}
                 />
               </div>
             </div>
