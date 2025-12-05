@@ -25,29 +25,30 @@ const Home = () => {
   return <div className="min-h-screen overflow-hidden">
       {/* Hero Section - Premium Apple-Style */}
       <section className="relative min-h-[92vh] lg:min-h-screen flex items-center pt-24 lg:pt-20 overflow-hidden">
-        {/* Premium Clinical Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f8f9fa] via-[#e9ecef] to-[#dee2e6]" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.02] via-transparent to-primary/[0.04]" />
+        {/* Soft Clinical Gradient Background - Silver to Soft Blue */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f0f2f5] via-[#e8edf3] to-[#dce4ed]" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.03] via-transparent to-primary/[0.06]" />
         
-        {/* Subtle ambient light effects */}
-        <div className="absolute top-20 right-1/4 w-[600px] h-[600px] bg-gradient-radial from-primary/[0.06] to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-gradient-radial from-blue-200/20 to-transparent rounded-full blur-3xl" />
+        {/* Premium ambient light orbs */}
+        <div className="absolute top-10 right-[15%] w-[700px] h-[700px] bg-gradient-to-br from-primary/[0.08] via-primary/[0.03] to-transparent rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-[#d0e3f5]/40 via-[#c8ddf0]/20 to-transparent rounded-full blur-[80px]" />
+        <div className="absolute top-[40%] left-[50%] w-[400px] h-[400px] bg-gradient-radial from-[#e0ebf5]/30 to-transparent rounded-full blur-[60px]" />
 
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column: Content */}
             <div className="space-y-8 animate-fade-in order-2 lg:order-1">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-white/50 shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-background/70 backdrop-blur-xl border border-border/30 shadow-soft">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-sm font-medium text-foreground/80">Health Canada Class II Medical Device (pending)</span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-[2.75rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-heading font-extrabold leading-[1.02] tracking-tight text-foreground">
+              <h1 className="text-[2.75rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-heading font-extrabold leading-[1.05] tracking-tight text-foreground">
                 Reinventing Airway
                 <br />
-                <span className="bg-gradient-to-r from-primary via-primary to-primary-light bg-clip-text text-transparent">Clearance</span> for
+                <span className="gradient-text">Clearance</span> for
                 <br />
                 Long-Term Care
               </h1>
@@ -58,37 +59,47 @@ const Home = () => {
               </p>
               
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-3">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-base font-semibold px-10 py-7 h-auto shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full text-base font-semibold px-10 py-7 h-auto shadow-large hover:shadow-glow hover:scale-[1.02] transition-all duration-300">
                   <NavLink to="/contact">
                     Request a Demo
                   </NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-white/60 backdrop-blur-sm border-2 border-foreground/15 text-foreground hover:bg-white hover:border-primary/30 rounded-full text-base font-semibold px-10 py-7 h-auto hover:scale-[1.02] transition-all duration-300">
+                <Button asChild variant="outline" size="lg" className="bg-background/50 backdrop-blur-sm border-2 border-border/50 text-foreground hover:bg-background hover:border-primary/40 rounded-full text-base font-semibold px-10 py-7 h-auto hover:scale-[1.02] transition-all duration-300">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
 
               {/* Trust Sentence */}
-              <p className="text-sm text-muted-foreground font-medium pt-1 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary/60" />
+              <p className="text-sm text-muted-foreground font-medium pt-2 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-primary/70" />
                 Trusted by clinicians, built for caregivers, designed for LTC.
               </p>
             </div>
 
             {/* Right Column: Premium Product Visualization */}
             <div className="relative order-1 lg:order-2 flex items-center justify-center">
-              {/* Ambient glow behind product */}
+              {/* Multi-layer ambient glow for depth */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[80%] h-[80%] bg-gradient-radial from-primary/10 via-primary/5 to-transparent rounded-full blur-2xl" />
+                <div className="w-[90%] h-[90%] bg-gradient-to-br from-primary/[0.12] via-primary/[0.05] to-transparent rounded-full blur-[60px]" />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[70%] h-[70%] bg-gradient-to-tl from-[#c8ddf0]/30 via-transparent to-transparent rounded-full blur-[40px]" />
               </div>
               
-              {/* Product Image */}
+              {/* Product Image with premium shadows */}
               <div className="relative w-full max-w-xl lg:max-w-2xl">
-                <img alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" className="w-full h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] hover:drop-shadow-[0_35px_60px_rgba(0,0,0,0.2)] transition-all duration-500 hover:scale-[1.02]" src="/lovable-uploads/f6cf34e0-4b22-4a14-84cf-f66cc91882f8.png" />
+                <img 
+                  alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
+                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_30px_60px_rgba(0,50,100,0.18)] hover:drop-shadow-[0_40px_80px_rgba(0,50,100,0.22)] transition-all duration-700 hover:scale-[1.02]" 
+                  src={heroProductComposition} 
+                />
                 
-                {/* Subtle reflection */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[70%] h-8 bg-gradient-to-t from-foreground/[0.03] to-transparent blur-sm rounded-full" />
+                {/* Rim light effect */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-transparent to-white/10 pointer-events-none z-20" />
+                
+                {/* Subtle reflection on surface */}
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[60%] h-12 bg-gradient-to-t from-primary/[0.04] via-foreground/[0.02] to-transparent blur-md rounded-full" />
               </div>
             </div>
           </div>
