@@ -79,10 +79,10 @@ const Home = () => {
 
             {/* Right Column: Floating Product - No Container */}
             <div className="relative order-1 lg:order-2 flex items-center justify-center lg:justify-end">
-              {/* Product floating directly on gradient - increased size by 20% */}
+              {/* Product floating directly on gradient - increased size by 20% with subtle float animation */}
               <img 
                 alt="Smart Lung Physio™ device with companion mobile app screens showing real-time monitoring" 
-                className="w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,40,80,0.12)] hover:drop-shadow-[0_35px_70px_rgba(0,40,80,0.16)] transition-all duration-700 hover:scale-[1.01]" 
+                className="w-[115%] sm:w-[110%] lg:w-[120%] max-w-none h-auto object-contain relative z-10 drop-shadow-[0_25px_50px_rgba(0,40,80,0.12)] hover:drop-shadow-[0_35px_70px_rgba(0,40,80,0.16)] animate-float" 
                 src={heroProductComposition} 
               />
             </div>
