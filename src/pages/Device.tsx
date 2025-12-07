@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Smartphone, Database, Shield } from "lucide-react";
 import HowItWorksSection from "@/components/HowItWorksSection";
-
 const Device = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-background via-background to-secondary/10">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-background pointer-events-none"></div>
@@ -24,7 +22,9 @@ const Device = () => {
               Advanced, sensor-guided airway clearance technology that delivers consistent clinical outcomes while reducing caregiver burden.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
               <Button asChild size="lg" className="hero-gradient border-0 text-lg font-semibold px-10 py-6 shadow-xl hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300">
                 <NavLink to="/contact">Request a Demo</NavLink>
               </Button>
@@ -42,11 +42,7 @@ const Device = () => {
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent blur-[60px] rounded-full scale-110"></div>
             <div className="relative bg-gradient-to-br from-background/60 to-secondary/20 backdrop-blur-sm rounded-2xl p-6 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.25)] border border-border/40">
-              <img 
-                alt="Smart Lung Physio Device - Advanced respiratory care technology for long-term care" 
-                className="w-full object-contain rounded-xl" 
-                src="/lovable-uploads/b37590ae-6519-4ad1-aed4-d406ee701f4b.png" 
-              />
+              <img alt="Smart Lung Physio Device - Advanced respiratory care technology for long-term care" className="w-full object-contain rounded-xl" src="/lovable-uploads/01f67823-cf67-482a-af68-892844b66843.png" />
             </div>
           </div>
         </div>
@@ -204,8 +200,6 @@ const Device = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Device;
