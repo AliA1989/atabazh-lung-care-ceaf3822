@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
-import heroNurse from "@/assets/hero-nurse.png";
+import heroNurse from "@/assets/hero-nurse-seamless.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -81,18 +81,13 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right: Nurse Image */}
+            {/* Right: Nurse Image - Seamless Integration */}
             <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-in-up delay-150">
-              <div className="relative">
-                {/* Subtle glow behind image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl scale-90" />
-                
-                <img 
-                  src={heroNurse} 
-                  alt="Healthcare professional holding Smart Lung Physio device and mobile app" 
-                  className="relative z-10 w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
-                />
-              </div>
+              <img 
+                src={heroNurse} 
+                alt="Healthcare professional holding Smart Lung Physio device and mobile app" 
+                className="relative z-10 w-full max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain"
+              />
             </div>
           </div>
         </div>
