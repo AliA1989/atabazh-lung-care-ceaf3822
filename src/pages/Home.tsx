@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
+import heroNurse from "@/assets/hero-nurse.png";
+
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
@@ -21,36 +23,34 @@ const Home = () => {
     });
     return () => observerRef.current?.disconnect();
   }, []);
+
   return <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Full Width Banner with Integrated Image */}
+      {/* Hero Section - Split Layout */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Full-width hero banner image as background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/hero-banner-final.png')`,
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-          }}
-        />
+        {/* Premium gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/30 to-primary/5" />
         
-        {/* Gradient overlay for text readability on left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent lg:via-background/70" />
+        {/* Subtle mesh pattern overlay */}
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+                           radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.05) 0%, transparent 50%)`,
+        }} />
         
         {/* Subtle animated orb for depth */}
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] animate-pulse-soft" />
+        <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] animate-pulse-soft" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/40 rounded-full blur-[100px]" />
 
-        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="max-w-2xl">
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Content */}
-            <div className="space-y-8">
-              <div className="space-y-5">
+            <div className="space-y-8 lg:pr-8">
+              <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 backdrop-blur-sm animate-fade-in-down">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   <span className="text-sm font-semibold text-primary">Health Canada Class II (pending)</span>
                 </div>
                 
-                <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-heading font-extrabold leading-[1.02] tracking-tight opacity-0 animate-fade-in-up">
+                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-heading font-extrabold leading-[1.08] tracking-tight opacity-0 animate-fade-in-up text-foreground">
                   Respiratory Care,{" "}
                   <span className="relative inline-block">
                     <span className="gradient-text">Reimagined</span>
@@ -62,22 +62,36 @@ const Home = () => {
                   <span className="text-foreground/90">for Long-Term Care.</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
+                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed opacity-0 animate-fade-in-up delay-200">
                   Sensor-guided airway-clearance technology that reduces caregiver burden while delivering superior outcomes.
                 </p>
               </div>
               
-              {/* CTA Buttons - Larger and more prominent */}
+              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
-                <Button asChild size="lg" className="btn-primary rounded-full text-lg px-10 py-7 h-auto group shadow-lg hover:shadow-xl">
+                <Button asChild size="lg" className="btn-primary rounded-full text-base px-8 py-6 h-auto group shadow-lg hover:shadow-xl">
                   <NavLink to="/contact" className="flex items-center gap-3">
                     Request a Demo
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="btn-outline-primary rounded-full text-lg px-10 py-7 h-auto backdrop-blur-sm">
+                <Button asChild variant="outline" size="lg" className="rounded-full text-base px-8 py-6 h-auto border-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
+              </div>
+            </div>
+
+            {/* Right: Nurse Image */}
+            <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-in-up delay-150">
+              <div className="relative">
+                {/* Subtle glow behind image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl scale-90" />
+                
+                <img 
+                  src={heroNurse} 
+                  alt="Healthcare professional holding Smart Lung Physio device and mobile app" 
+                  className="relative z-10 w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
           </div>
