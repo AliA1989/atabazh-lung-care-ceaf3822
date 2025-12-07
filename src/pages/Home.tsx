@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
+import heroNurseImage from "@/assets/hero-nurse.png";
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
@@ -83,7 +84,7 @@ const Home = () => {
               
               <div className="relative animate-float">
                 <div className="absolute -inset-6 bg-gradient-to-br from-primary/8 to-transparent rounded-3xl" />
-                <img alt="Smart Lung Physio Device with Mobile App" src="/lovable-uploads/0f1f7304-fb6d-4cd2-b55e-af6a8f606a04.png" className="relative w-full max-w-[600px] mx-auto rounded-2xl shadow-2xl border-0 object-scale-down" />
+                <img alt="Nurse holding Smart Lung Physio device and mobile app" src={heroNurseImage} className="relative w-full max-w-[600px] mx-auto rounded-2xl shadow-2xl border-0 object-cover" />
               </div>
             </div>
           </div>
