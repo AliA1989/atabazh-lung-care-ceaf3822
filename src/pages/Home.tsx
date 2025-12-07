@@ -22,26 +22,29 @@ const Home = () => {
     return () => observerRef.current?.disconnect();
   }, []);
   return <div className="min-h-screen overflow-hidden">
-      {/* Hero Section - Full Width, High Impact */}
-      <section className="relative min-h-[88vh] flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20 px-4 sm:px-6 lg:px-8">
-        {/* Premium gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-accent/20" />
+      {/* Hero Section - Full Width Banner with Integrated Image */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Full-width hero banner image as background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/hero-nurse-banner.png')`,
+            backgroundPosition: 'right center',
+          }}
+        />
         
-        {/* Animated gradient orbs */}
-        <div className="absolute top-1/4 right-1/3 w-[500px] h-[500px] bg-primary/8 rounded-full blur-[100px] animate-pulse-soft" />
-        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-primary-light/10 rounded-full blur-[80px] animate-float" />
+        {/* Gradient overlay for text readability on left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent lg:via-background/70" />
+        
+        {/* Subtle animated orb for depth */}
+        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] animate-pulse-soft" />
 
-        {/* Subtle wave pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23004E8C' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`
-      }} />
-
-        <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div className="max-w-2xl">
             {/* Left: Content */}
             <div className="space-y-8">
               <div className="space-y-5">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 animate-fade-in-down">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 backdrop-blur-sm animate-fade-in-down">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   <span className="text-sm font-semibold text-primary">Health Canada Class II (pending)</span>
                 </div>
@@ -71,19 +74,9 @@ const Home = () => {
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </NavLink>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="btn-outline-primary rounded-full text-lg px-10 py-7 h-auto">
+                <Button asChild variant="outline" size="lg" className="btn-outline-primary rounded-full text-lg px-10 py-7 h-auto backdrop-blur-sm">
                   <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
-              </div>
-            </div>
-            
-            {/* Right: Device Image - Larger with motion */}
-            <div className="relative opacity-0 animate-slide-in-right delay-400">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary-light/8 blur-3xl scale-110 animate-pulse-soft" />
-              
-              <div className="relative animate-float">
-                <div className="absolute -inset-6 bg-gradient-to-br from-primary/8 to-transparent rounded-3xl" />
-                <img alt="Smart Lung Physio Device with Mobile App" src="/lovable-uploads/0f1f7304-fb6d-4cd2-b55e-af6a8f606a04.png" className="relative w-full max-w-[600px] mx-auto rounded-2xl shadow-2xl border-0 object-scale-down" />
               </div>
             </div>
           </div>
