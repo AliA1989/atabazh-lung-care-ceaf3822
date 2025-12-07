@@ -26,10 +26,11 @@ const Home = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Full-width hero banner image as background */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/hero-nurse-banner.png')`,
-            backgroundPosition: 'right center',
+            backgroundImage: `url('/lovable-uploads/hero-banner-3x1.png')`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
           }}
         />
         
