@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { useEffect, useRef } from "react";
-import heroNurse from "@/assets/hero-nurse-cutout.png";
+import heroNurse from "@/assets/hero-nurse-premium.png";
 
 const Home = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -27,18 +27,22 @@ const Home = () => {
   return <div className="min-h-screen overflow-hidden">
       {/* Hero Section - Split Layout */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Unified gradient background - white left to pale medical blue right */}
+        {/* Full-width hero image as background */}
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            background: 'linear-gradient(to right, #FFFFFF 0%, #FFFFFF 35%, #F0F7FC 55%, #E3F0F8 75%, #D9ECF5 100%)'
+            backgroundImage: `url(${heroNurse})`,
+            backgroundPosition: 'right center'
           }} 
         />
         
-        {/* Very subtle mesh overlay for depth */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.06) 0%, transparent 40%)`,
-        }} />
+        {/* Subtle gradient overlay for text readability on left */}
+        <div 
+          className="absolute inset-0" 
+          style={{
+            background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.3) 50%, transparent 60%)'
+          }} 
+        />
 
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -81,14 +85,8 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right: Nurse Image - Seamless Integration */}
-            <div className="relative flex justify-center lg:justify-end opacity-0 animate-fade-in-up delay-150">
-              <img 
-                src={heroNurse} 
-                alt="Healthcare professional holding Smart Lung Physio device and mobile app" 
-                className="relative z-10 w-full max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain"
-              />
-            </div>
+            {/* Right: Empty space for background nurse image */}
+            <div className="hidden lg:block" />
           </div>
         </div>
       </section>
