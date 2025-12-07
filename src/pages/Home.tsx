@@ -28,7 +28,7 @@ const Home = () => {
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: `url('/lovable-uploads/hero-banner-v3.png')`,
+            backgroundImage: `url('/lovable-uploads/hero-banner-v4.png')`,
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
           }}
