@@ -9,7 +9,6 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { z } from "zod";
 
-// Contact form validation schema
 const contactFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
   lastName: z.string().trim().min(1, "Last name is required").max(50, "Last name must be less than 50 characters"),
@@ -47,7 +46,6 @@ const Contact = () => {
       message: formData.get("message") as string,
     };
 
-    // Validate form data
     const result = contactFormSchema.safeParse(data);
     
     if (!result.success) {
@@ -68,12 +66,11 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission (replace with actual backend call when ready)
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      title: "Message Sent",
+      description: "Thank you for contacting us. We'll respond within 24 hours.",
     });
 
     setIsSubmitting(false);
@@ -88,10 +85,10 @@ const Contact = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-4xl text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Get in Touch
+            Contact Us
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Ready to transform respiratory care at your facility? We'd love to hear from you.
+            We welcome inquiries from LTC operators, clinical partners, and healthcare innovation stakeholders.
           </p>
         </div>
       </section>
@@ -103,7 +100,7 @@ const Contact = () => {
             {/* Contact Form */}
             <Card>
               <CardContent className="p-8">
-                <h2 className="text-2xl md:text-3xl font-bold mb-6">Request a Product Demo</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
@@ -120,7 +117,7 @@ const Contact = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" name="email" type="email" placeholder="s.thompson@ltcfacility.ca" maxLength={255} />
+                    <Input id="email" name="email" type="email" placeholder="s.thompson@example.com" maxLength={255} />
                     {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                   </div>
 
@@ -131,8 +128,8 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="organization">Organization/Facility Name *</Label>
-                    <Input id="organization" name="organization" placeholder="Toronto LTC Health Centre" maxLength={100} />
+                    <Label htmlFor="organization">Organization *</Label>
+                    <Input id="organization" name="organization" placeholder="Organization name" maxLength={100} />
                     {errors.organization && <p className="text-sm text-destructive">{errors.organization}</p>}
                   </div>
 
@@ -147,7 +144,9 @@ const Contact = () => {
                         <SelectItem value="medical-director">Medical Director</SelectItem>
                         <SelectItem value="director-of-care">Director of Care</SelectItem>
                         <SelectItem value="respiratory-therapist">Respiratory Therapist</SelectItem>
-                        <SelectItem value="other-clinical">Other Clinical Role</SelectItem>
+                        <SelectItem value="clinical">Clinical Role</SelectItem>
+                        <SelectItem value="investor">Investor</SelectItem>
+                        <SelectItem value="partner">Partner/Vendor</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -161,10 +160,10 @@ const Contact = () => {
                         <SelectValue placeholder="Select inquiry type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="demo">Request a Demo</SelectItem>
-                        <SelectItem value="pilot">Pilot Program Interest</SelectItem>
-                        <SelectItem value="pricing">Pricing Information</SelectItem>
+                        <SelectItem value="general">General Inquiry</SelectItem>
+                        <SelectItem value="pilot">Pilot Discussion</SelectItem>
                         <SelectItem value="clinical">Clinical Questions</SelectItem>
+                        <SelectItem value="partnership">Partnership Inquiry</SelectItem>
                         <SelectItem value="press">Press/Media</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
@@ -177,7 +176,7 @@ const Contact = () => {
                     <Textarea 
                       id="message" 
                       name="message"
-                      placeholder="Tell us about your facility's respiratory care needs and current workflows..."
+                      placeholder="How can we help?"
                       rows={5}
                       maxLength={2000}
                     />
@@ -195,7 +194,7 @@ const Contact = () => {
                   </Button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    By submitting, you consent to be contacted by Atabazh Medical regarding Smart Lung Physio™ and agree to our privacy policy.
+                    By submitting, you consent to be contacted by Atabazh Medical Inc. regarding your inquiry.
                   </p>
                 </form>
               </CardContent>
@@ -268,46 +267,13 @@ const Contact = () => {
 
               <Card className="bg-primary text-primary-foreground">
                 <CardContent className="p-6 space-y-3">
-                  <h3 className="text-xl font-semibold">Enterprise Support</h3>
+                  <h3 className="text-xl font-semibold">Response Time</h3>
                   <p className="text-sm opacity-90">
-                    Our team responds to all inquiries within one business day. For clinical questions, implementation support, or technical assistance, contact us by phone or email during business hours.
+                    We aim to respond to all inquiries within one business day. For clinical questions or partnership discussions, please include relevant context in your message.
                   </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-3">Schedule a Consultation</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Book a time with our clinical team to discuss implementation, training, and integration with your facility's care protocols.
-                  </p>
-                  <Button variant="outline" className="w-full">
-                    Schedule a Call
-                  </Button>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Quick Links */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-bold">Have Questions?</h2>
-          <p className="text-muted-foreground">
-            Before reaching out, you might find answers in our comprehensive resources
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <Button asChild variant="outline" size="lg">
-              <a href="#">FAQ</a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#" download>Product Brochure</a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#" download>Clinical Evidence</a>
-            </Button>
           </div>
         </div>
       </section>

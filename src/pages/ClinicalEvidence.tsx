@@ -10,7 +10,7 @@ const ClinicalEvidence = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-4xl text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">
-            Early Clinical Insights
+            Clinical Insights
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground">
             Preliminary observations from initial pilot deployments in Canadian long-term care settings
@@ -18,13 +18,13 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      {/* Section 1: What We've Observed in Early Pilots */}
+      {/* Context Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">What We've Observed in Early Pilots</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Early Observations</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Initial deployments have shown encouraging directional signals across key respiratory care metrics
+              Initial deployments have provided directional signals. Formal validation studies are planned.
             </p>
           </div>
 
@@ -57,8 +57,8 @@ const ClinicalEvidence = () => {
                   <Clock className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <div className="text-4xl font-bold text-primary">~75%</div>
-                <h3 className="text-lg font-semibold">Time Savings</h3>
-                <p className="text-sm text-muted-foreground">Estimated caregiver time reduction compared to manual chest physiotherapy</p>
+                <h3 className="text-lg font-semibold">Time Reduction</h3>
+                <p className="text-sm text-muted-foreground">Compared to traditional manual chest physiotherapy methods</p>
               </CardContent>
             </Card>
 
@@ -67,26 +67,26 @@ const ClinicalEvidence = () => {
                 <div className="w-16 h-16 mx-auto rounded-full bg-primary flex items-center justify-center">
                   <Users className="h-8 w-8 text-primary-foreground" />
                 </div>
-                <div className="text-4xl font-bold text-primary">High</div>
-                <h3 className="text-lg font-semibold">Staff Acceptance</h3>
-                <p className="text-sm text-muted-foreground">Care teams consistently rated the device as easy to learn and integrate</p>
+                <div className="text-4xl font-bold text-primary">Positive</div>
+                <h3 className="text-lg font-semibold">Staff Feedback</h3>
+                <p className="text-sm text-muted-foreground">Care teams rated the device as accessible and practical</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Operational & Care Impact */}
+      {/* Operational Observations Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Operational & Care Impact</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Operational Observations</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <Card>
               <CardContent className="p-8">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4">Workflow Observations</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">Workflow Integration</h3>
                 <p className="text-muted-foreground mb-4">
-                  Initial deployments suggest potential for meaningful time savings in daily respiratory care routines:
+                  Initial deployments suggest potential time savings in daily respiratory care routines:
                 </p>
                 <div className="bg-secondary/50 p-6 rounded-xl space-y-4">
                   <div>
@@ -101,21 +101,21 @@ const ClinicalEvidence = () => {
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-4">
-                  These time savings may allow care teams to deliver more consistent respiratory support across their resident population.
+                  These time savings may allow care teams to deliver more consistent respiratory support.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-8">
-                <h3 className="text-xl md:text-2xl font-semibold mb-4">Care Team Feedback</h3>
+                <h3 className="text-xl md:text-2xl font-semibold mb-4">Staff Feedback</h3>
                 <p className="text-muted-foreground mb-4">
-                  Preliminary feedback from care staff during pilot deployments has been encouraging:
+                  Preliminary feedback from care staff during pilot deployments:
                 </p>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Staff reported the device was easy to learn and operate</span>
+                    <span>Staff reported the device was accessible and practical to operate</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
@@ -123,11 +123,11 @@ const ClinicalEvidence = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Care teams appreciated automated session documentation</span>
+                    <span>Care teams found automated session documentation useful</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Integration into existing care routines was generally smooth</span>
+                    <span>Integration into existing care routines was generally straightforward</span>
                   </li>
                 </ul>
               </CardContent>
@@ -136,18 +136,18 @@ const ClinicalEvidence = () => {
 
           <Card className="mt-8">
             <CardContent className="p-8">
-              <h3 className="text-xl md:text-2xl font-semibold mb-4">Observed Trends in Respiratory Events</h3>
+              <h3 className="text-xl md:text-2xl font-semibold mb-4">Observed Trends</h3>
               <p className="text-muted-foreground mb-4">
                 During early pilot observations, signals suggest the device may support reduced respiratory complications:
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
-                  <span><strong className="text-foreground">Hospital transfers:</strong> Pilot observations suggest an approximate 40% reduction in respiratory-related hospital transfers during the observation period</span>
+                  <span><strong className="text-foreground">Hospital transfers:</strong> Pilot observations suggest a directional reduction in respiratory-related hospital transfers during the observation period</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
-                  <span><strong className="text-foreground">Acute episodes:</strong> Preliminary findings indicate fewer acute respiratory events among observed high-risk residents</span>
+                  <span><strong className="text-foreground">Acute episodes:</strong> Preliminary findings indicate fewer acute respiratory events among observed residents</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-0.5">•</span>
@@ -162,10 +162,10 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      {/* Section 3: Safety & Tolerability Signals */}
+      {/* Safety & Tolerability Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Safety & Tolerability Signals</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Safety Observations</h2>
           
           <Card>
             <CardContent className="p-8">
@@ -174,7 +174,7 @@ const ClinicalEvidence = () => {
                   <Shield className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">Early Safety Observations</h3>
+                  <h3 className="text-xl font-semibold mb-2">Early Safety Profile</h3>
                   <p className="text-muted-foreground">
                     Throughout pilot deployments, the device demonstrated a favorable tolerability profile with no serious device-related adverse events reported.
                   </p>
@@ -198,7 +198,7 @@ const ClinicalEvidence = () => {
                     <li>• Real-time SpO₂ monitoring with automatic pause</li>
                     <li>• Pressure-limiting safeguards</li>
                     <li>• Designed for frail elderly populations</li>
-                    <li>• Clear visual and audio alerts for caregivers</li>
+                    <li>• Visual and audio alerts for caregivers</li>
                   </ul>
                 </div>
               </div>
@@ -207,10 +207,10 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      {/* Section 4: Evidence in Progress */}
+      {/* Evidence Roadmap Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Evidence in Progress</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Validation Roadmap</h2>
           
           <div className="space-y-6">
             <Card>
@@ -220,9 +220,9 @@ const ClinicalEvidence = () => {
                     <FlaskConical className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Ongoing Validation Efforts</h3>
+                    <h3 className="text-xl font-semibold mb-2">Ongoing Activities</h3>
                     <p className="text-muted-foreground">
-                      We are committed to building a robust evidence base through structured clinical validation. Current and planned activities include:
+                      We are committed to building a robust evidence base through structured clinical validation.
                     </p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ const ClinicalEvidence = () => {
                     <FileText className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-medium text-base mb-1">
-                        Pilot Deployment Summary: Early Observations and Next Steps
+                        Pilot Deployment Summary: Early Observations
                       </h4>
                       <p className="text-sm text-muted-foreground">
                         Internal report, Atabazh Medical Inc., 2024
@@ -317,14 +317,14 @@ const ClinicalEvidence = () => {
         <div className="container mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">Interested in Learning More?</h2>
           <p className="text-lg text-muted-foreground">
-            We welcome conversations with clinicians, researchers, and care organizations interested in respiratory care innovation
+            We welcome conversations with clinicians, researchers, and care organizations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <NavLink to="/contact">Get in Touch</NavLink>
+              <NavLink to="/contact">Contact Us</NavLink>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <NavLink to="/device">Explore the Device</NavLink>
+              <NavLink to="/device">View Device Details</NavLink>
             </Button>
           </div>
         </div>
