@@ -17,8 +17,6 @@ import {
   Stethoscope,
   Quote
 } from "lucide-react";
-import rachelBartholomewPhoto from "@/assets/team/rachel-bartholomew.png";
-import habibaBougheraraPhoto from "@/assets/team/habiba-bougherara.png";
 import aliAzadeganPhoto from "@/assets/team/ali-azadegan.png";
 import kamranAzmaPhoto from "@/assets/team/kamran-azma.png";
 
@@ -85,22 +83,10 @@ const About = () => {
 
   const advisors = [
     {
-      name: "Rachel Bartholomew",
-      role: "Commercialization Advisor",
-      description: "Guiding market entry, partnerships, and investor readiness for scalable med-tech growth.",
-      image: rachelBartholomewPhoto
-    },
-    {
       name: "Jeff Kofman",
       role: "Strategic Advisor",
       description: "Supporting operational strategy and product positioning across the LTC ecosystem.",
       image: "/lovable-uploads/ff1a4ae8-54b1-434b-be7d-695eea8cc597.jpg"
-    },
-    {
-      name: "Dr. Habiba Bougherara",
-      role: "Scientific & Regulatory Advisor",
-      description: "Ensuring scientific rigor and regulatory alignment throughout device development and validation.",
-      image: habibaBougheraraPhoto
     }
   ];
 
@@ -368,7 +354,7 @@ const About = () => {
               <div className="h-px w-24 bg-gradient-to-l from-transparent to-border/60" />
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <div className="flex justify-center">
               {advisors.map((advisor, index) => (
                 <div 
                   key={advisor.name} 
