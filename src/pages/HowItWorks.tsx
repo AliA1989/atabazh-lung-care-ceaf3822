@@ -1,205 +1,243 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Brain, TrendingUp } from "lucide-react";
+import { Activity, Brain, TrendingUp, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { useState } from "react";
+
 const HowItWorks = () => {
-  return <div className="min-h-screen pt-20">
+  const [openStep, setOpenStep] = useState<number | null>(null);
+
+  const toggleStep = (step: number) => {
+    setOpenStep(openStep === step ? null : step);
+  };
+
+  return (
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
             How It Works
           </h1>
-          <p className="text-2xl text-muted-foreground">
-            Smart Lung Physio™ combines advanced sensors, adaptive algorithms, and intuitive design for effective respiratory care
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            A three-step approach to sensor-guided airway clearance—designed for consistency, safety, and simplicity.
           </p>
         </div>
       </section>
 
       {/* Three-Step Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="space-y-16">
-            {/* Step 1 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Card className="shadow-medium lg:order-1">
-                <CardContent className="p-12">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 rounded-full hero-gradient flex items-center justify-center text-3xl font-heading font-bold text-primary-foreground">
-                      1
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-5xl">
+          <div className="space-y-8">
+            
+            {/* Step 1: Assess */}
+            <Card className="border border-border/50 shadow-sm overflow-hidden">
+              <CardContent className="p-0">
+                {/* Primary Content - Always Visible */}
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl font-heading font-bold text-primary">1</span>
                     </div>
-                    <h2 className="text-4xl font-heading font-bold">Assess</h2>
+                    <div className="flex-1 space-y-3">
+                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                        Assess
+                      </h2>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        The device captures baseline readings—applied pressure, oxygen saturation, and placement confirmation—before therapy begins.
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-4">
-                    <p className="text-lg text-muted-foreground">
-                      Before therapy begins, Smart Lung Physio™ performs a real-time baseline respiratory assessment using its integrated sensor system.
-                    </p>
-                    <p className="text-lg font-semibold text-foreground">It Measures:</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Applied Chest Pressure (FSR Sensor):</strong>Applied Chest Pressure :</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Oxygen Saturation (SpO₂):</strong>Oxygen Saturation :</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Activity className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Therapy Zone Detection:</strong> Adaptive system confirms correct device placement and resident tolerance.</span>
-                      </li>
-                    </ul>
-                    <p className="text-lg text-muted-foreground">
-                      This assessment takes 20–30 seconds and automatically adjusts the therapy level based on the resident's condition.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="lg:order-2">
-                <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
-                  <h3 className="text-2xl font-heading font-bold mb-4">Why Assessment Matters</h3>
-                  <p className="text-muted-foreground">
-                    Traditional manual chest physiotherapy cannot measure consistency, force, or tolerance. Smart Lung Physio™ solves this by delivering quantified, repeatable, and resident-specific therapy — reducing risk and improving outcomes.
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            {/* Step 2 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Card className="shadow-medium lg:order-2">
-                <CardContent className="p-12">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 rounded-full hero-gradient flex items-center justify-center text-3xl font-heading font-bold text-primary-foreground">
-                      2
+                {/* Expandable Details */}
+                <Collapsible open={openStep === 1} onOpenChange={() => toggleStep(1)}>
+                  <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
+                    <span>View technical details</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openStep === 1 ? 'rotate-180' : ''}`} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-8 lg:px-10 py-6 bg-secondary/10 border-t border-border/20 space-y-4">
+                      <p className="text-sm font-medium text-foreground">Sensor Measurements:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <Activity className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Applied Chest Pressure (FSR Sensor):</strong> Measures force applied to the chest wall in real time.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <Activity className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Oxygen Saturation (SpO₂):</strong> Monitors blood oxygen levels throughout the session.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <Activity className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Therapy Zone Detection:</strong> Confirms correct device placement and resident tolerance.
+                          </span>
+                        </li>
+                      </ul>
+                      <p className="text-sm text-muted-foreground pt-2">
+                        Assessment takes 20–30 seconds and is designed to help adjust therapy levels based on the resident's condition.
+                      </p>
                     </div>
-                    <h2 className="text-4xl font-heading font-bold">Treat</h2>
-                  </div>
-                  <div className="space-y-4">
-                    <p className="text-lg text-muted-foreground">
-                      After assessment, the device guides caregivers through a structured, sensor-supported airway-clearance protocol.
-                    </p>
-                    <p className="text-lg font-semibold text-foreground">Therapy Features</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Adaptive Pressure Modulation:</strong> FSR sensor maintains optimal chest-wall pressure for mucus mobilization.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Guided Technique:</strong> Visual cues on the mobile app coach caregivers to maintain consistent force and timing.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Brain className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <div className="text-muted-foreground">
-                          <strong className="text-foreground">Safety Auto-Monitoring:</strong>
-                          <ul className="mt-2 ml-4 space-y-1">
-                            <li>SpO₂ drops → device alerts caregiver</li>
-                            <li>Excessive force → haptic & visual warnings</li>
-                            <li>Resident discomfort → guided pause</li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                    <p className="text-lg text-muted-foreground">
-                      Each treatment session lasts 4–5 minutes, reducing workload while improving consistency.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="lg:order-1">
-                <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
-                  <h3 className="text-2xl font-heading font-bold mb-4">The Science Behind the Therapy</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Focused mechanical stimulation helps:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground mb-4">
-                    <li>• Mobilize mucus</li>
-                    <li>• Improve ventilation</li>
-                    <li>• Support lung expansion</li>
-                    <li>• Reduce pneumonia risk</li>
-                  </ul>
-                  <p className="text-muted-foreground">
-                    Smart Lung Physio™ provides all of this without the complexity or cost of hospital-grade devices.
-                  </p>
-                </div>
-              </div>
-            </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </CardContent>
+            </Card>
 
-            {/* Step 3 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <Card className="shadow-medium lg:order-1">
-                <CardContent className="p-12">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 rounded-full hero-gradient flex items-center justify-center text-3xl font-heading font-bold text-primary-foreground">
-                      3
+            {/* Step 2: Treat */}
+            <Card className="border border-border/50 shadow-sm overflow-hidden">
+              <CardContent className="p-0">
+                {/* Primary Content - Always Visible */}
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl font-heading font-bold text-primary">2</span>
                     </div>
-                    <h2 className="text-4xl font-heading font-bold">Review</h2>
+                    <div className="flex-1 space-y-3">
+                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                        Treat
+                      </h2>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Caregivers follow a guided protocol with real-time feedback on pressure, timing, and resident safety.
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-4">
-                    <p className="text-lg text-muted-foreground">
-                      After each session, results sync automatically to the Smart Lung Physio™ Care Dashboard.
-                    </p>
-                    <p className="text-lg font-semibold text-foreground">Care Teams Can Access:</p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start">
-                        <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Session Details:</strong> Pressure patterns, duration, compliance</span>
-                      </li>
-                      <li className="flex items-start">
-                        <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">SpO₂ Stability Trends:</strong> Before, during, and after therapy</span>
-                      </li>
-                      <li className="flex items-start">
-                        <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Resident Progress:</strong> Changes over days and weeks</span>
-                      </li>
-                      <li className="flex items-start">
-                        <TrendingUp className="h-6 w-6 text-primary flex-shrink-0 mr-3 mt-1" />
-                        <span className="text-muted-foreground"><strong className="text-foreground">Documentation:</strong> Auto-generated notes for physicians, audits, and LTC reporting</span>
-                      </li>
-                    </ul>
-                    <p className="text-lg text-muted-foreground">
-                      These insights support early intervention, reduce unnecessary transfers, and provide objective proof of quality care.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              <div className="lg:order-2">
-                <div className="bg-secondary/50 p-8 rounded-2xl shadow-soft">
-                  <h3 className="text-2xl font-heading font-bold mb-4">Why Data Matters</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Manual physiotherapy leaves no measurable record. Smart Lung Physio™ provides the objective data needed to:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Demonstrate quality to families</li>
-                    <li>• Meet LTC documentation standards</li>
-                    <li>• Support physician-driven respiratory plans</li>
-                  </ul>
                 </div>
-              </div>
-            </div>
+
+                {/* Expandable Details */}
+                <Collapsible open={openStep === 2} onOpenChange={() => toggleStep(2)}>
+                  <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
+                    <span>View technical details</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openStep === 2 ? 'rotate-180' : ''}`} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-8 lg:px-10 py-6 bg-secondary/10 border-t border-border/20 space-y-4">
+                      <p className="text-sm font-medium text-foreground">Therapy Features:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <Brain className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Pressure Feedback:</strong> FSR sensor helps maintain appropriate chest-wall pressure during percussion.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <Brain className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Guided Technique:</strong> Visual cues on the mobile app support caregivers in maintaining consistent force and timing.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <Brain className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <div className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Safety Monitoring:</strong>
+                            <ul className="mt-2 ml-4 space-y-1 text-muted-foreground">
+                              <li>• SpO₂ drop alerts</li>
+                              <li>• Excessive force warnings</li>
+                              <li>• Guided pause prompts</li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <p className="text-sm text-muted-foreground pt-2">
+                        Each treatment session typically lasts 4–5 minutes.
+                      </p>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </CardContent>
+            </Card>
+
+            {/* Step 3: Review */}
+            <Card className="border border-border/50 shadow-sm overflow-hidden">
+              <CardContent className="p-0">
+                {/* Primary Content - Always Visible */}
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl font-heading font-bold text-primary">3</span>
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                        Review
+                      </h2>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Session data syncs to a dashboard for care teams to track compliance, review trends, and support documentation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Expandable Details */}
+                <Collapsible open={openStep === 3} onOpenChange={() => toggleStep(3)}>
+                  <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
+                    <span>View technical details</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openStep === 3 ? 'rotate-180' : ''}`} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <div className="px-8 lg:px-10 py-6 bg-secondary/10 border-t border-border/20 space-y-4">
+                      <p className="text-sm font-medium text-foreground">Dashboard Access:</p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start gap-3">
+                          <TrendingUp className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Session Details:</strong> Pressure patterns, duration, and protocol compliance.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <TrendingUp className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">SpO₂ Trends:</strong> Before, during, and after therapy readings.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <TrendingUp className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Resident Progress:</strong> Changes over days and weeks.
+                          </span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <TrendingUp className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            <strong className="text-foreground">Documentation Support:</strong> Session notes for physicians, audits, and LTC reporting.
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold">Ready to Learn More?</h2>
-          <p className="text-xl text-muted-foreground">
-            See how Smart Lung Physio™ can transform respiratory care at your facility
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-3xl text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Learn More
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Have questions about how Smart Lung Physio™ may support respiratory care at your facility?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="hero-gradient border-0 text-lg px-8">
-              <NavLink to="/contact">Request a Demo</NavLink>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <NavLink to="/contact">Get in Touch</NavLink>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+            <Button asChild size="lg" variant="outline">
               <NavLink to="/clinical-evidence">View Clinical Evidence</NavLink>
             </Button>
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default HowItWorks;
