@@ -46,36 +46,27 @@ const Home = () => {
               <div className="space-y-5">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 backdrop-blur-sm animate-fade-in-down">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-semibold text-primary">Health Canada Class II (pending)</span>
+                  <span className="text-sm font-semibold text-primary">Medical Device in Development</span>
                 </div>
                 
                 <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-heading font-extrabold leading-[1.02] tracking-tight opacity-0 animate-fade-in-up">
-                  Respiratory Care,{" "}
-                  <span className="relative inline-block">
-                    <span className="gradient-text">Reimagined</span>
-                    <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                      <path d="M1 5.5C47 2 97 2 199 5.5" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" className="opacity-40" />
-                    </svg>
-                  </span>
+                  Assisted Chest Physiotherapy{" "}
                   <br />
-                  <span className="text-foreground/90">for Long-Term Care.</span>
+                  <span className="text-foreground/90">for Long-Term Care Facilities</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
-                  Sensor-guided airway-clearance technology that reduces caregiver burden while delivering superior outcomes.
+                  Smart Lung Physio is a sensor-guided device that helps caregivers deliver consistent airway-clearance therapy — reducing manual effort and improving documentation.
                 </p>
               </div>
               
-              {/* CTA Buttons - Larger and more prominent */}
+              {/* CTA Button - Single focused action */}
               <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
                 <Button asChild size="lg" className="btn-primary rounded-full text-lg px-10 py-7 h-auto group shadow-lg hover:shadow-xl">
                   <NavLink to="/contact" className="flex items-center gap-3">
-                    Request a Demo
+                    Contact for Collaboration
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </NavLink>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="btn-outline-primary rounded-full text-lg px-10 py-7 h-auto backdrop-blur-sm">
-                  <NavLink to="/how-it-works">How It Works</NavLink>
                 </Button>
               </div>
             </div>
