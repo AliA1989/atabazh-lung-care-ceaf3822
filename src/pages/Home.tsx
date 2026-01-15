@@ -45,7 +45,7 @@ const Home = () => {
                   <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Medical Device in Development</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
                   Smart Lung Physio
                   <br />
                   <span className="text-muted-foreground">Sensor-Guided Chest Physiotherapy</span>
@@ -74,7 +74,7 @@ const Home = () => {
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto">
           <div className="text-center space-y-3 mb-12 scroll-animate">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">The Challenge</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">The Challenge</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Long-term care facilities face critical respiratory care obstacles
             </p>
@@ -101,7 +101,7 @@ const Home = () => {
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="text-lg font-heading font-bold">{item.title}</h3>
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
@@ -117,7 +117,7 @@ const Home = () => {
             <div className="space-y-6 scroll-animate">
               <div className="space-y-3">
                 <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Our Solution</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   Smart Lung Physio™
                 </h2>
               </div>
@@ -127,7 +127,7 @@ const Home = () => {
               <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                 The system automatically assesses each resident's respiratory status, adapts treatment in real-time, and generates objective clinical data for care teams.
               </p>
-              <Button asChild size="lg" className="btn-primary rounded-full group">
+              <Button asChild size="lg" className="rounded-lg group">
                 <NavLink to="/device" className="flex items-center gap-2">
                   Explore the Device
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -160,7 +160,7 @@ const Home = () => {
                       <div className="w-11 h-11 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <item.icon className="h-5 w-5 text-primary-foreground" />
                       </div>
-                      <h3 className="font-heading font-bold text-base">{item.title}</h3>
+                      <h3 className="font-semibold text-base">{item.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </CardContent>
                   </Card>
@@ -175,7 +175,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="text-center space-y-3 mb-12 scroll-animate">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">Key Benefits</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Key Benefits</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Transforming respiratory care delivery in long-term care homes
             </p>
@@ -202,7 +202,7 @@ const Home = () => {
                     <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center group-hover:scale-110 group-hover:shadow-glow transition-all duration-300">
                       <item.icon className="h-7 w-7 text-primary-foreground group-hover:scale-110 transition-transform" />
                     </div>
-                    <h3 className="text-xl font-heading font-bold">{item.title}</h3>
+                    <h3 className="text-xl font-semibold">{item.title}</h3>
                     <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
                   </CardContent>
                 </Card>
@@ -216,7 +216,7 @@ const Home = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center space-y-3 mb-14 scroll-animate">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Simple Process</span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">How It Works</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">How It Works</h2>
             <p className="text-lg text-muted-foreground">Simple, effective respiratory care in three steps</p>
           </div>
           
@@ -250,16 +250,15 @@ const Home = () => {
                     <div className="w-[120px] h-[120px] mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-5xl font-heading font-bold text-primary-foreground shadow-xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow">
                       {item.step}
                     </div>
-                    <div className="absolute inset-0 w-[120px] h-[120px] mx-auto rounded-full border-2 border-primary/20 animate-pulse-soft" />
                   </div>
-                  <h3 className="text-xl font-heading font-bold">{item.title}</h3>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
                 </div>
               </div>)}
           </div>
           
           <div className="text-center mt-12 scroll-animate">
-            <Button asChild size="lg" variant="outline" className="rounded-full text-base px-8 py-5 h-auto border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+            <Button asChild size="lg" variant="outline" className="rounded-lg text-base px-8">
               <NavLink to="/how-it-works">Learn More About the Technology</NavLink>
             </Button>
           </div>
@@ -274,7 +273,7 @@ const Home = () => {
             <div className="space-y-6 scroll-animate">
               <div className="space-y-3">
                 <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Proven in Practice</span>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold leading-tight">Clinical Use in Real Care Settings</h2>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">Clinical Use in Real Care Settings</h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Smart Lung Physio™ began as a bedside airway-clearance prototype tested directly in ICU, hospital, and clinical environments. These early evaluations helped refine therapy strength, comfort, and placement.

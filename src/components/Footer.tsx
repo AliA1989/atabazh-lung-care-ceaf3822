@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-secondary/50 to-background border-t border-border/30">
+    <footer className="bg-secondary/30 border-t border-border/30">
       <div className="container mx-auto px-6 sm:px-8 lg:px-10 py-12 lg:py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo and Tagline */}
@@ -12,9 +12,9 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Atabazh Medical Logo" 
-                className="h-16 w-16 object-contain rounded-full"
+                className="h-14 w-14 object-contain rounded-full"
               />
-              <span className="font-heading font-bold text-base text-foreground tracking-tight">Atabazh Medical</span>
+              <span className="font-semibold text-base text-foreground">Atabazh Medical</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
@@ -23,7 +23,7 @@ const Footer = () => {
 
           {/* Product Column */}
           <div>
-            <h3 className="font-heading font-bold text-sm text-foreground mb-5 uppercase tracking-wider">Product</h3>
+            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Product</h3>
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
@@ -44,7 +44,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading font-bold text-sm text-foreground mb-5 uppercase tracking-wider">Company</h3>
+            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
@@ -64,7 +64,7 @@ const Footer = () => {
 
           {/* Get Started Column */}
           <div>
-            <h3 className="font-heading font-bold text-sm text-foreground mb-5 uppercase tracking-wider">Get Started</h3>
+            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
                 { to: "/contact", label: "Request a Demo" },
@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent my-8" />
+        <div className="h-px bg-border my-8" />
         
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
