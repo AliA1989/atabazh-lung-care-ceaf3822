@@ -247,7 +247,7 @@ const Home = () => {
           }}>
                 <div className="text-center space-y-5 group">
                   <div className="relative mx-auto w-fit">
-                    <div className="w-[120px] h-[120px] mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-5xl font-heading font-bold text-primary-foreground shadow-xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow">
+                    <div className="w-[120px] h-[120px] mx-auto rounded-full bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-5xl font-bold text-primary-foreground shadow-xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow">
                       {item.step}
                     </div>
                   </div>
@@ -327,28 +327,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Clinical Evidence Section - More Compact */}
+      {/* Early Clinical Insights Section - Regulatory-Safe */}
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-6 scroll-animate">
               <div className="space-y-3">
-                <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Research & Results</span>
-                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold leading-tight">Backed by Clinical Evidence</h2>
+                <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Early Insights</span>
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight">Preliminary Pilot Observations</h2>
               </div>
               <p className="text-base text-muted-foreground leading-relaxed">
-                Smart Lung Physio™ has been validated in pilot studies across multiple long-term care facilities, demonstrating significant improvements in key clinical outcomes.
+                Initial deployments in Canadian long-term care settings have shown encouraging directional signals. Formal validation studies are in progress.
               </p>
               <div className="space-y-4">
                 {[{
-                stat: "42% reduction",
-                desc: "in hospital transfers for respiratory complications"
+                stat: "~40% reduction",
+                desc: "observed in respiratory-related hospital transfers"
               }, {
-                stat: "35% fewer",
-                desc: "acute respiratory exacerbations among high-risk residents"
+                stat: "~35% fewer",
+                desc: "acute respiratory episodes among observed residents"
               }, {
-                stat: "75% time savings",
-                desc: "for caregivers compared to manual chest physiotherapy"
+                stat: "~75% time savings",
+                desc: "estimated vs. traditional manual chest physiotherapy"
               }].map((item, index) => <div key={index} className="flex items-start space-x-3 group">
                     <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <CheckCircle className="h-4 w-4 text-primary" />
@@ -358,9 +358,12 @@ const Home = () => {
                     </p>
                   </div>)}
               </div>
+              <p className="text-xs text-muted-foreground italic">
+                Based on internal pilot observations. Not from peer-reviewed trials.
+              </p>
               <Button asChild size="lg" className="btn-primary rounded-full group">
                 <NavLink to="/clinical-evidence" className="flex items-center gap-2">
-                  View Full Clinical Data
+                  View Early Insights
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </NavLink>
               </Button>
@@ -369,14 +372,14 @@ const Home = () => {
             <div className="scroll-animate">
               <Card className="shadow-xl border-0 bg-card overflow-hidden">
                 <CardContent className="p-8 space-y-6">
-                  <h3 className="text-xl font-heading font-bold">Pilot Study Highlights</h3>
+                  <h3 className="text-xl font-bold">Observed Trends from Pilots</h3>
                   <div className="space-y-5">
                     {[{
-                    label: "Hospital Transfer Reduction",
-                    value: 42,
+                    label: "Fewer Hospital Transfers",
+                    value: 40,
                     color: "from-primary to-primary-light"
                   }, {
-                    label: "Exacerbation Reduction",
+                    label: "Fewer Acute Episodes",
                     value: 35,
                     color: "from-primary-light to-primary"
                   }, {
@@ -386,7 +389,7 @@ const Home = () => {
                   }].map((item, index) => <div key={index} className="space-y-2">
                         <div className="flex justify-between items-baseline">
                           <span className="text-sm font-medium text-foreground">{item.label}</span>
-                          <span className="text-2xl font-heading font-bold text-primary">{item.value}%</span>
+                          <span className="text-2xl font-bold text-primary">~{item.value}%</span>
                         </div>
                         <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
                           <div className={`h-full rounded-full bg-gradient-to-r ${item.color} transition-all duration-1000 ease-out`} style={{
@@ -395,6 +398,9 @@ const Home = () => {
                         </div>
                       </div>)}
                   </div>
+                  <p className="text-xs text-muted-foreground text-center pt-2 border-t border-border">
+                    Preliminary observations from pilot deployments
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -408,7 +414,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="scroll-animate space-y-6">
               <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider">Designed for You</span>
-              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold leading-tight">Purpose-Built for Long-Term Care</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight">Purpose-Built for Long-Term Care</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Unlike generic medical devices, Smart Lung Physio™ was designed from the ground up to integrate seamlessly into LTC workflows. We understand the unique challenges you face—staffing constraints, resident acuity, regulatory requirements, and budget pressures.
               </p>
@@ -446,7 +452,7 @@ const Home = () => {
                       <div className="w-10 h-10 mx-auto rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
                         <item.icon className="w-5 h-5 text-primary" />
                       </div>
-                      <h4 className="font-heading font-bold text-sm">{item.title}</h4>
+                      <h4 className="font-bold text-sm">{item.title}</h4>
                       <p className="text-xs text-muted-foreground">{item.desc}</p>
                     </CardContent>
                   </Card>)}
@@ -470,7 +476,7 @@ const Home = () => {
             }} />
               
               <CardContent className="relative py-16 px-8 md:py-20 md:px-16 lg:py-24 lg:px-20 text-center space-y-8">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-heading font-bold text-primary-foreground leading-tight max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-primary-foreground leading-tight max-w-3xl mx-auto">
                   Ready to Transform Your Respiratory Care?
                 </h2>
                 <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-primary-foreground/90">

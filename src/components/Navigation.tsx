@@ -20,7 +20,7 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
     { to: "/how-it-works", label: "How It Works" },
-    { to: "/clinical-evidence", label: "Clinical Evidence" },
+    { to: "/clinical-evidence", label: "Clinical Insights" },
     { to: "/long-term-care", label: "For LTC Homes" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
