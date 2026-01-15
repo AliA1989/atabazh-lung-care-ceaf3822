@@ -529,6 +529,41 @@ const About = () => {
         </div>
       </section>
 
+      {/* Working With Students */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10 animate-fade-in">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Working With Students</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Collaborating with early-career talent in med-tech development
+            </p>
+          </div>
+          
+          <Card className="shadow-medium border-border/50 animate-fade-in">
+            <CardContent className="p-8 lg:p-10 space-y-6">
+              <div className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">
+                  Atabazh Medical collaborates with students and early-career professionals who are interested in medical device development, respiratory care technology, and health innovation.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We are building Smart Lung Physio—a sensor-guided device designed to automate airway-clearance therapy for long-term care residents. Our work spans mechanical design, embedded systems, clinical validation, and regulatory development.
+                </p>
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <h3 className="font-semibold text-base mb-3 flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary" />
+                  Opportunities
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Internship and project-based opportunities will open soon. Please connect with the founder on LinkedIn to stay updated.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Final CTA - Bold and prominent */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background */}
