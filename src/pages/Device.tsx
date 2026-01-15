@@ -37,16 +37,7 @@ const Device = () => {
       </section>
 
       {/* Demonstration Image */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary/5">
-        <div className="container mx-auto max-w-5xl">
-          <div className="relative animate-fade-in">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent blur-[60px] rounded-full scale-110"></div>
-            <div className="relative bg-gradient-to-br from-background/60 to-secondary/20 backdrop-blur-sm rounded-2xl p-6 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.25)] border border-border/40">
-              <img alt="Smart Lung Physio Device - Advanced respiratory care technology for long-term care" className="w-full object-contain rounded-xl" src="/lovable-uploads/01f67823-cf67-482a-af68-892844b66843.png" />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* How Smart Lung Physio Works Section */}
       <HowItWorksSection />
