@@ -26,15 +26,14 @@ const Home = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Full-width hero banner image as background */}
         <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
+          className="absolute inset-0 bg-contain bg-no-repeat bg-right"
           style={{
-            backgroundImage: `url('/lovable-uploads/hero-nurse-banner.png')`,
-            backgroundPosition: '85% center',
+            backgroundImage: `url('/lovable-uploads/hero-nurse-device.png')`,
           }}
         />
         
-        {/* Clean overlay for text readability */}
-        <div className="absolute inset-0 bg-background/90 lg:bg-gradient-to-r lg:from-background lg:via-background/85 lg:to-transparent" />
+        {/* Clean background for text area on mobile */}
+        <div className="absolute inset-0 bg-background lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/60 lg:to-transparent" />
 
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-2xl">
