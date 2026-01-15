@@ -33,39 +33,36 @@ const Home = () => {
           }}
         />
         
-        {/* Gradient overlay for text readability on left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 lg:via-background/80 lg:to-transparent" />
-        
-        {/* Subtle animated orb for depth */}
-        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] animate-pulse-soft" />
+        {/* Clean overlay for text readability */}
+        <div className="absolute inset-0 bg-background/90 lg:bg-gradient-to-r lg:from-background lg:via-background/85 lg:to-transparent" />
 
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-2xl">
             {/* Left: Content */}
             <div className="space-y-8">
               <div className="space-y-5">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 border border-primary/15 backdrop-blur-sm animate-fade-in-down">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm font-semibold text-primary">Medical Device in Development</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-muted border border-border">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Medical Device in Development</span>
                 </div>
                 
-                <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-heading font-extrabold leading-[1.02] tracking-tight opacity-0 animate-fade-in-up">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight tracking-tight">
                   Smart Lung Physio
                   <br />
-                  <span className="text-foreground/90">Sensor-Guided Chest Physiotherapy</span>
+                  <span className="text-muted-foreground">Sensor-Guided Chest Physiotherapy</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
+                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
                   A medical device designed to assist caregivers in delivering consistent airway-clearance therapy for long-term care residents.
                 </p>
               </div>
               
-              {/* CTA Button - Single focused action */}
-              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-300">
-                <Button asChild size="lg" className="btn-primary rounded-full text-lg px-10 py-7 h-auto group shadow-lg hover:shadow-xl">
-                  <NavLink to="/contact" className="flex items-center gap-3">
+              {/* CTA Button - Clean and minimal */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="rounded-md text-base px-8 py-6 h-auto">
+                  <NavLink to="/contact" className="flex items-center gap-2">
                     Contact for Collaboration
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4" />
                   </NavLink>
                 </Button>
               </div>
