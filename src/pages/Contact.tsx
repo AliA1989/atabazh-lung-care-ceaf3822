@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { z } from "zod";
 
 const contactFormSchema = z.object({
@@ -257,6 +257,29 @@ const Contact = () => {
                           </p>
                           <p className="text-xs text-muted-foreground mt-1">
                             Monday–Friday, 9 AM–5 PM EST
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                          <Linkedin className="h-6 w-6 text-primary-foreground" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1">LinkedIn</h3>
+                          <p className="text-sm text-muted-foreground">
+                            <a 
+                              href="https://www.linkedin.com/company/atabazh-medical-inc" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-primary transition-colors"
+                            >
+                              Atabazh Medical Inc.
+                            </a>
                           </p>
                         </div>
                       </div>

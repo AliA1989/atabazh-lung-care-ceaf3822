@@ -15,7 +15,8 @@ import {
   Accessibility,
   Building2,
   Stethoscope,
-  Quote
+  Quote,
+  Linkedin
 } from "lucide-react";
 import aliAzadeganPhoto from "@/assets/team/ali-azadegan.png";
 import kamranAzmaPhoto from "@/assets/team/kamran-azma.png";
@@ -58,7 +59,8 @@ const About = () => {
     name: "Ali Abedinpour",
     role: "Founder",
     description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
-    image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
+    image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg",
+    linkedin: "https://www.linkedin.com/in/ali-abedinpour/"
   };
 
   const technicalTeam = [
@@ -342,9 +344,20 @@ const About = () => {
                   </span>
                   
                   {/* Description */}
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed mb-4">
                     {founder.description}
                   </p>
+                  
+                  {/* LinkedIn Link */}
+                  <a 
+                    href={founder.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    <span>Connect on LinkedIn</span>
+                  </a>
                 </div>
               </div>
             </div>

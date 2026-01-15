@@ -1,5 +1,6 @@
 import { NavLink } from "./NavLink";
 import logo from "@/assets/logo.png";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -19,6 +20,16 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>
+            <a 
+              href="https://www.linkedin.com/company/atabazh-medical-inc" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-sm text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Follow Atabazh Medical on LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+              <span>Follow us on LinkedIn</span>
+            </a>
           </div>
 
           {/* Product Column */}
