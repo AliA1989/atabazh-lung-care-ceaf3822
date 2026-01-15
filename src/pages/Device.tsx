@@ -13,23 +13,23 @@ const Device = () => {
         <div className="container mx-auto relative z-10 max-w-7xl">
           <div className="text-center space-y-8 mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-extrabold leading-[1.05] tracking-tight max-w-5xl mx-auto">
-              Respiratory Care,{" "}
+              Smart Lung Physio™{" "}
               <span className="block mt-2 bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-                Reimagined for Long-Term Care
+                Sensor-Guided Airway Clearance
               </span>
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-light px-4">
-              Advanced, sensor-guided airway clearance technology that delivers consistent clinical outcomes while reducing caregiver burden.
+              A medical device under development designed to support assisted airway clearance in long-term care settings through real-time sensor feedback and guided workflows.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in" style={{
             animationDelay: "0.2s"
           }}>
               <Button asChild size="lg" className="hero-gradient border-0 text-lg font-semibold px-10 py-6 shadow-xl hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.4)] hover:scale-105 transition-all duration-300">
-                <NavLink to="/contact">Request a Demo</NavLink>
+                <NavLink to="/contact">Learn More</NavLink>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg font-semibold px-10 py-6 border-2 border-border bg-background/80 backdrop-blur-sm hover:bg-secondary/50 hover:border-primary/30 hover:scale-105 transition-all duration-300 shadow-lg">
-                <NavLink to="/how-it-works">How It Works</NavLink>
+                <NavLink to="/how-it-works">Technical Overview</NavLink>
               </Button>
             </div>
           </div>
@@ -56,10 +56,10 @@ const Device = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight">
-              Smart Lung Physio™ Technology Highlights
+              System Components
             </h2>
             <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto font-light leading-relaxed">
-              A unified hardware–software system engineered for consistent, safe, and efficient airway-clearance care in long-term care homes.
+              An integrated hardware and software platform designed to support structured airway-clearance protocols in long-term care environments.
             </p>
           </div>
           
@@ -70,9 +70,9 @@ const Device = () => {
                 <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Smartphone className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-heading font-bold tracking-tight">Caregiver Workflow App</h3>
+                <h3 className="text-xl font-heading font-bold tracking-tight">Companion Mobile App</h3>
                 <p className="text-foreground/70 leading-relaxed text-sm">
-                  Mobile app connects via Bluetooth, guiding PSWs, RPNs, and RNs through each session with real-time feedback and automated documentation.
+                  Connects via Bluetooth to provide step-by-step workflow guidance and session documentation for care staff.
                 </p>
               </CardContent>
             </Card>
@@ -83,9 +83,9 @@ const Device = () => {
                 <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Database className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-heading font-bold tracking-tight">Clinical Data Platform</h3>
+                <h3 className="text-xl font-heading font-bold tracking-tight">Data Dashboard</h3>
                 <p className="text-foreground/70 leading-relaxed text-sm">
-                  Cloud dashboard aggregates treatment data, tracks resident progress, and generates physician reports for care plans and regulatory compliance.
+                  Cloud-based interface for viewing session data, generating reports, and supporting care documentation workflows.
                 </p>
               </CardContent>
             </Card>
@@ -96,9 +96,9 @@ const Device = () => {
                 <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Shield className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-heading font-bold tracking-tight">Medical-Grade Safety</h3>
+                <h3 className="text-xl font-heading font-bold tracking-tight">Safety Features</h3>
                 <p className="text-foreground/70 leading-relaxed text-sm">
-                  Built-in safety protocols include force limits, SpO₂ thresholds, and automated logging—designed to meet Health Canada Class II requirements.
+                  Includes configurable force limits, SpO₂ monitoring integration, and session logging. Device is being developed to align with Health Canada Class II requirements.
                 </p>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ const Device = () => {
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 section-gradient">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center space-y-3 mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">Designed for LTC Operations</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">Designed for Care Environments</h2>
           </div>
 
           <div className="space-y-6">
@@ -118,9 +118,9 @@ const Device = () => {
               <CardContent className="p-6 lg:p-8">
                 <div className="grid md:grid-cols-2 gap-6 items-center">
                   <div className="space-y-3">
-                    <h3 className="text-2xl lg:text-3xl font-heading font-bold">Minimal Training Required</h3>
+                    <h3 className="text-2xl lg:text-3xl font-heading font-bold">Structured Training Approach</h3>
                     <p className="text-base text-muted-foreground">
-                      Caregivers learn to operate the device in under 30 minutes. The mobile app provides step-by-step guidance with visual cues and audio prompts ensuring correct technique.
+                      The system is designed to support caregiver onboarding with guided workflows, visual prompts, and built-in instructional content.
                     </p>
                   </div>
                   <div className="bg-secondary/50 p-6 rounded-xl">
@@ -171,9 +171,9 @@ const Device = () => {
                     </ul>
                   </div>
                   <div className="space-y-3 order-1 md:order-2">
-                    <h3 className="text-2xl lg:text-3xl font-heading font-bold">Workflow Integration</h3>
+                    <h3 className="text-2xl lg:text-3xl font-heading font-bold">Portability and Hygiene</h3>
                     <p className="text-base text-muted-foreground">
-                      Smart Lung Physio™ fits seamlessly into existing care routines. Portable design for room-to-room use with single-use patient interfaces and straightforward cleaning procedures.
+                      Compact, battery-powered form factor designed for bedside use. Single-use patient interfaces and standard cleaning protocols support infection control requirements.
                     </p>
                   </div>
                 </div>
@@ -186,16 +186,16 @@ const Device = () => {
       {/* CTA Section */}
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">See It in Action</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">Get in Touch</h2>
           <p className="text-lg text-muted-foreground">
-            Request a demonstration at your facility or schedule a virtual walkthrough with our clinical team.
+            For clinical partnerships, pilot inquiries, or technical questions, please reach out to our team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="hero-gradient border-0 text-lg px-8">
-              <NavLink to="/contact">Request a Demo</NavLink>
+              <NavLink to="/contact">Contact Us</NavLink>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <NavLink to="/how-it-works">Learn How It Works</NavLink>
+              <NavLink to="/how-it-works">Technical Overview</NavLink>
             </Button>
           </div>
         </div>
