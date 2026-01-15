@@ -21,7 +21,7 @@ const HowItWorks = () => {
             How It Works
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            A three-step approach to sensor-guided airway clearance—designed for consistency, safety, and simplicity.
+            A three-step approach to sensor-guided airway clearance—designed for consistency, safety, and practical use.
           </p>
         </div>
       </section>
@@ -34,7 +34,6 @@ const HowItWorks = () => {
             {/* Step 1: Assess */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -51,7 +50,6 @@ const HowItWorks = () => {
                   </div>
                 </div>
 
-                {/* Expandable Details */}
                 <Collapsible open={openStep === 1} onOpenChange={() => toggleStep(1)}>
                   <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
                     <span>View technical details</span>
@@ -81,7 +79,7 @@ const HowItWorks = () => {
                         </li>
                       </ul>
                       <p className="text-sm text-muted-foreground pt-2">
-                        Assessment takes 20–30 seconds and is designed to help adjust therapy levels based on the resident's condition.
+                        Assessment takes 20–30 seconds and is designed to help set appropriate therapy levels.
                       </p>
                     </div>
                   </CollapsibleContent>
@@ -92,7 +90,6 @@ const HowItWorks = () => {
             {/* Step 2: Treat */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -109,7 +106,6 @@ const HowItWorks = () => {
                   </div>
                 </div>
 
-                {/* Expandable Details */}
                 <Collapsible open={openStep === 2} onOpenChange={() => toggleStep(2)}>
                   <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
                     <span>View technical details</span>
@@ -122,7 +118,7 @@ const HowItWorks = () => {
                         <li className="flex items-start gap-3">
                           <Brain className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-muted-foreground">
-                            <strong className="text-foreground">Pressure Feedback:</strong> FSR sensor helps maintain appropriate chest-wall pressure during percussion.
+                            <strong className="text-foreground">Pressure Feedback:</strong> FSR sensor supports appropriate chest-wall pressure during therapy.
                           </span>
                         </li>
                         <li className="flex items-start gap-3">
@@ -137,7 +133,7 @@ const HowItWorks = () => {
                             <strong className="text-foreground">Safety Monitoring:</strong>
                             <ul className="mt-2 ml-4 space-y-1 text-muted-foreground">
                               <li>• SpO₂ drop alerts</li>
-                              <li>• Excessive force warnings</li>
+                              <li>• Pressure limit warnings</li>
                               <li>• Guided pause prompts</li>
                             </ul>
                           </div>
@@ -155,7 +151,6 @@ const HowItWorks = () => {
             {/* Step 3: Review */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -166,13 +161,12 @@ const HowItWorks = () => {
                         Review
                       </h2>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        Session data syncs to a dashboard for care teams to track compliance, review trends, and support documentation.
+                        Session data syncs to a dashboard for care teams to track sessions, review trends, and support documentation.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Expandable Details */}
                 <Collapsible open={openStep === 3} onOpenChange={() => toggleStep(3)}>
                   <CollapsibleTrigger className="w-full px-8 lg:px-10 py-4 border-t border-border/30 bg-secondary/20 hover:bg-secondary/40 transition-colors flex items-center justify-between text-sm font-medium text-muted-foreground">
                     <span>View technical details</span>
@@ -203,7 +197,7 @@ const HowItWorks = () => {
                         <li className="flex items-start gap-3">
                           <TrendingUp className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-muted-foreground">
-                            <strong className="text-foreground">Documentation Support:</strong> Session notes for physicians, audits, and LTC reporting.
+                            <strong className="text-foreground">Documentation Support:</strong> Session records for care notes and reporting.
                           </span>
                         </li>
                       </ul>
@@ -224,14 +218,14 @@ const HowItWorks = () => {
             Learn More
           </h2>
           <p className="text-lg text-muted-foreground">
-            Have questions about how Smart Lung Physio™ may support respiratory care at your facility?
+            Questions about how Smart Lung Physio™ may fit your facility's respiratory care approach?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Button asChild size="lg">
-              <NavLink to="/contact">Get in Touch</NavLink>
+              <NavLink to="/contact">Contact Us</NavLink>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <NavLink to="/clinical-evidence">View Clinical Evidence</NavLink>
+              <NavLink to="/clinical-evidence">View Clinical Insights</NavLink>
             </Button>
           </div>
         </div>
