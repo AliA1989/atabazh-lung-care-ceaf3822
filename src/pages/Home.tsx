@@ -34,7 +34,7 @@ const Home = () => {
         />
         
         {/* Gradient overlay for text readability on left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent lg:via-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 lg:via-background/80 lg:to-transparent" />
         
         {/* Subtle animated orb for depth */}
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] animate-pulse-soft" />
