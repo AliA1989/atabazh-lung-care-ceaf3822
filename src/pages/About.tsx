@@ -80,18 +80,6 @@ const About = () => {
       role: "Electronics",
       description: "Building reliable sensor systems and embedded hardware for real-time therapy adaptation.",
       image: "/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg"
-    },
-    {
-      name: "Ali Al-Dadah",
-      role: "Data & Machine Learning",
-      description: "Developing intelligent treatment algorithms that personalize airway-clearance therapy.",
-      image: "/lovable-uploads/5558ffd6-3d45-4255-83f6-48bdc547d9b1.jpg"
-    },
-    {
-      name: "Zhansaya Orazbekova",
-      role: "Business Development",
-      description: "Connecting clinical needs with operational workflows to bring Atabazh's innovation into real LTC environments.",
-      image: "/lovable-uploads/1e94173d-585a-45c7-9170-6100bb5e677a.jpg"
     }
   ];
 
@@ -153,7 +141,7 @@ const About = () => {
         
         <div className="container relative mx-auto max-w-5xl text-center">
           <div className="animate-fade-in space-y-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               About <span className="text-primary">Atabazh Medical</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -172,12 +160,12 @@ const About = () => {
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
             {/* Story Text - 3 columns */}
             <div className="lg:col-span-3 space-y-6 animate-fade-in">
-              <h2 className="text-3xl lg:text-4xl font-heading font-bold">Our Story</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Our Story</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Atabazh Medical was founded in 2022 by a team of biomedical engineers, respiratory therapists, and long-term care operators who witnessed firsthand the devastating impact of respiratory complications in frail elderly residents.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We saw care teams stretched to their limits, families watching their loved ones decline, and the enormous human and financial costs of repeated hospital transfers. We knew there had to be a better way.
+                Our founder spent time walking the halls of LTC homes—observing workflows, speaking with frontline staff, and understanding the daily realities that shape resident care. We saw care teams stretched to their limits, families watching their loved ones decline, and the enormous human and financial costs of repeated hospital transfers. We knew there had to be a better way.
               </p>
               
               {/* Quote Block */}
@@ -199,7 +187,7 @@ const About = () => {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-base mb-1">Headquarters</h3>
+                      <h3 className="font-bold text-base mb-1">Headquarters</h3>
                       <p className="text-muted-foreground text-sm">Toronto, Ontario, Canada</p>
                     </div>
                   </div>
@@ -213,7 +201,7 @@ const About = () => {
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-base mb-1">Team</h3>
+                      <h3 className="font-bold text-base mb-1">Team</h3>
                       <p className="text-muted-foreground text-sm">15+ engineers, clinicians, and operations specialists</p>
                     </div>
                   </div>
@@ -227,7 +215,7 @@ const About = () => {
                       <Award className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-base mb-1">Recognition</h3>
+                      <h3 className="font-bold text-base mb-1">Recognition</h3>
                       <p className="text-muted-foreground text-sm">MaRS Discovery District Innovation Cohort, 2023</p>
                     </div>
                   </div>
@@ -247,7 +235,7 @@ const About = () => {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Target className="h-7 w-7 text-primary" />
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-heading font-bold">Our Mission</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   To improve the quality of life for frail elderly residents in long-term care by making evidence-based respiratory therapy accessible, efficient, and effective through innovative technology.
                 </p>
@@ -259,7 +247,7 @@ const About = () => {
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Eye className="h-7 w-7 text-primary" />
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-heading font-bold">Our Vision</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold">Our Vision</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   A future where every long-term care resident receives optimal respiratory care, where caregivers have the tools they need, and where preventable respiratory complications are rare rather than routine.
                 </p>
@@ -273,7 +261,7 @@ const About = () => {
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Our Values</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Values</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
@@ -292,7 +280,7 @@ const About = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                       <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
-                    <h3 className="text-lg font-heading font-bold">{value.title}</h3>
+                    <h3 className="text-lg font-bold">{value.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {value.description}
                     </p>
@@ -319,7 +307,7 @@ const About = () => {
             <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
               The People Behind the Innovation
             </p>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold mb-6">Our Team</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Team</h2>
             <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A multidisciplinary team united by a mission to reimagine respiratory care for aging populations.
             </p>
@@ -353,7 +341,7 @@ const About = () => {
                   
                   {/* Name with gradient underline */}
                   <div className="mb-3">
-                    <h3 className="font-heading font-bold text-lg lg:text-xl tracking-wide mb-2">{member.name}</h3>
+                    <h3 className="font-bold text-lg lg:text-xl tracking-wide mb-2">{member.name}</h3>
                     <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
                   </div>
                   
@@ -407,7 +395,7 @@ const About = () => {
                     
                     {/* Name with gradient underline */}
                     <div className="mb-3">
-                      <h3 className="font-heading font-bold text-lg tracking-wide mb-2">{advisor.name}</h3>
+                      <h3 className="font-bold text-lg tracking-wide mb-2">{advisor.name}</h3>
                       <div className="h-0.5 w-10 mx-auto bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
                     </div>
                     
@@ -432,7 +420,7 @@ const About = () => {
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold mb-4">Strategic Partners & Advisors</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Strategic Partners & Advisors</h2>
             <p className="text-lg text-muted-foreground">
               Collaborating with leading organizations to advance respiratory care
             </p>
@@ -451,7 +439,7 @@ const About = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="font-heading font-bold text-base">{partner.name}</h3>
+                    <h3 className="font-bold text-base">{partner.name}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {partner.description}
                     </p>
@@ -468,7 +456,7 @@ const About = () => {
         <div className="container mx-auto max-w-5xl">
           {/* Section Header */}
           <div className="text-center mb-16 lg:mb-20 animate-fade-in">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold tracking-tight mb-5">
+            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-5">
               Supported by Canada's Leading Innovation & Health Ecosystems
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -506,7 +494,7 @@ const About = () => {
         
         <div className="container relative mx-auto max-w-4xl text-center">
           <div className="space-y-8 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground">
               Join Us in Transforming LTC Respiratory Care
             </h2>
             <p className="text-xl lg:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">
