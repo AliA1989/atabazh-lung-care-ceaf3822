@@ -85,26 +85,26 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-bold">
             Get in Touch
           </h1>
-          <p className="text-2xl text-muted-foreground">
+          <p className="text-lg md:text-xl text-muted-foreground">
             Ready to transform respiratory care at your facility? We'd love to hear from you.
           </p>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="shadow-medium">
+            <Card>
               <CardContent className="p-8">
-                <h2 className="text-3xl font-heading font-bold mb-6">Request a Product Demo</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Request a Product Demo</h2>
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>
@@ -187,7 +187,7 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     size="lg" 
-                    className="w-full hero-gradient border-0"
+                    className="w-full"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
@@ -202,19 +202,19 @@ const Contact = () => {
             </Card>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
-                <h2 className="text-3xl font-heading font-bold mb-6">Contact Information</h2>
-                <div className="space-y-6">
-                  <Card className="shadow-soft">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6">Contact Information</h2>
+                <div className="space-y-4">
+                  <Card>
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
                           <MapPin className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-heading font-bold mb-1">Address</h3>
-                          <p className="text-muted-foreground">
+                          <h3 className="font-semibold mb-1">Address</h3>
+                          <p className="text-sm text-muted-foreground">
                             MaRS Discovery District<br />
                             101 College Street, Suite 200<br />
                             Toronto, ON M5G 1L7<br />
@@ -225,16 +225,16 @@ const Contact = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="shadow-soft">
+                  <Card>
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
                           <Mail className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-heading font-bold mb-1">Email</h3>
-                          <p className="text-muted-foreground">
-                            <a href="mailto:support@atabazh-med.com" className="hover:text-primary transition-smooth">
+                          <h3 className="font-semibold mb-1">Email</h3>
+                          <p className="text-sm text-muted-foreground">
+                            <a href="mailto:support@atabazh-med.com" className="hover:text-primary transition-colors">
                               support@atabazh-med.com
                             </a>
                           </p>
@@ -243,20 +243,20 @@ const Contact = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="shadow-soft">
+                  <Card>
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-lg hero-gradient flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
                           <Phone className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>
-                          <h3 className="font-heading font-bold mb-1">Phone</h3>
-                          <p className="text-muted-foreground">
-                            <a href="tel:+14375576846" className="hover:text-primary transition-smooth">
+                          <h3 className="font-semibold mb-1">Phone</h3>
+                          <p className="text-sm text-muted-foreground">
+                            <a href="tel:+14375576846" className="hover:text-primary transition-colors">
                               +1 (437) 557-6846
                             </a>
                           </p>
-                          <p className="text-sm text-muted-foreground mt-1">
+                          <p className="text-xs text-muted-foreground mt-1">
                             Monday–Friday, 9 AM–5 PM EST
                           </p>
                         </div>
@@ -266,19 +266,19 @@ const Contact = () => {
                 </div>
               </div>
 
-              <Card className="shadow-medium hero-gradient border-0 text-primary-foreground">
-                <CardContent className="p-8 space-y-4">
-                  <h3 className="text-2xl font-heading font-bold">Enterprise Support</h3>
-                  <p className="opacity-95">
+              <Card className="bg-primary text-primary-foreground">
+                <CardContent className="p-6 space-y-3">
+                  <h3 className="text-xl font-semibold">Enterprise Support</h3>
+                  <p className="text-sm opacity-90">
                     Our team responds to all inquiries within one business day. For clinical questions, implementation support, or technical assistance, contact us by phone or email during business hours.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="shadow-soft">
+              <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-heading font-bold mb-3">Schedule a Consultation</h3>
-                  <p className="text-muted-foreground mb-4">
+                  <h3 className="font-semibold mb-3">Schedule a Consultation</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
                     Book a time with our clinical team to discuss implementation, training, and integration with your facility's care protocols.
                   </p>
                   <Button variant="outline" className="w-full">
@@ -292,10 +292,10 @@ const Contact = () => {
       </section>
 
       {/* FAQ Quick Links */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 section-gradient">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <h2 className="text-3xl font-heading font-bold">Have Questions?</h2>
-          <p className="text-lg text-muted-foreground">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl text-center space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold">Have Questions?</h2>
+          <p className="text-muted-foreground">
             Before reaching out, you might find answers in our comprehensive resources
           </p>
           <div className="grid sm:grid-cols-3 gap-4">

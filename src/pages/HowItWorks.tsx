@@ -17,7 +17,7 @@ const HowItWorks = () => {
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-4xl text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
             How It Works
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -32,16 +32,16 @@ const HowItWorks = () => {
           <div className="space-y-8">
             
             {/* Step 1: Assess */}
-            <Card className="border border-border/50 shadow-sm overflow-hidden">
+            <Card className="overflow-hidden">
               <CardContent className="p-0">
                 {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl font-heading font-bold text-primary">1</span>
+                      <span className="text-2xl font-bold text-primary">1</span>
                     </div>
                     <div className="flex-1 space-y-3">
-                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                         Assess
                       </h2>
                       <p className="text-lg text-muted-foreground leading-relaxed">
@@ -90,16 +90,16 @@ const HowItWorks = () => {
             </Card>
 
             {/* Step 2: Treat */}
-            <Card className="border border-border/50 shadow-sm overflow-hidden">
+            <Card className="overflow-hidden">
               <CardContent className="p-0">
                 {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl font-heading font-bold text-primary">2</span>
+                      <span className="text-2xl font-bold text-primary">2</span>
                     </div>
                     <div className="flex-1 space-y-3">
-                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                         Treat
                       </h2>
                       <p className="text-lg text-muted-foreground leading-relaxed">
@@ -153,16 +153,16 @@ const HowItWorks = () => {
             </Card>
 
             {/* Step 3: Review */}
-            <Card className="border border-border/50 shadow-sm overflow-hidden">
+            <Card className="overflow-hidden">
               <CardContent className="p-0">
                 {/* Primary Content - Always Visible */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl font-heading font-bold text-primary">3</span>
+                      <span className="text-2xl font-bold text-primary">3</span>
                     </div>
                     <div className="flex-1 space-y-3">
-                      <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                         Review
                       </h2>
                       <p className="text-lg text-muted-foreground leading-relaxed">
@@ -220,14 +220,14 @@ const HowItWorks = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="container mx-auto max-w-3xl text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             Learn More
           </h2>
           <p className="text-lg text-muted-foreground">
             Have questions about how Smart Lung Physio™ may support respiratory care at your facility?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button asChild size="lg">
               <NavLink to="/contact">Get in Touch</NavLink>
             </Button>
             <Button asChild size="lg" variant="outline">
