@@ -50,13 +50,13 @@ const Home = () => {
                 </div>
                 
                 <h1 className="text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[5rem] font-heading font-extrabold leading-[1.02] tracking-tight opacity-0 animate-fade-in-up">
-                  Assisted Chest Physiotherapy{" "}
+                  Smart Lung Physio
                   <br />
-                  <span className="text-foreground/90">for Long-Term Care Facilities</span>
+                  <span className="text-foreground/90">Sensor-Guided Chest Physiotherapy</span>
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-xl leading-relaxed opacity-0 animate-fade-in-up delay-200">
-                  Smart Lung Physio is a sensor-guided device that helps caregivers deliver consistent airway-clearance therapy — reducing manual effort and improving documentation.
+                  A medical device designed to assist caregivers in delivering consistent airway-clearance therapy for long-term care residents.
                 </p>
               </div>
               
