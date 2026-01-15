@@ -54,13 +54,14 @@ const About = () => {
     }
   ];
 
-  const coreTeam = [
-    {
-      name: "Ali Abedinpour",
-      role: "Founder",
-      description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
-      image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
-    },
+  const founder = {
+    name: "Ali Abedinpour",
+    role: "Founder",
+    description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
+    image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
+  };
+
+  const technicalTeam = [
     {
       name: "Kamran Azma",
       role: "Physiotherapy & Clinical Research",
@@ -299,26 +300,30 @@ const About = () => {
             </p>
           </div>
           
-          {/* Core Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
-            {coreTeam.map((member, index) => (
+          {/* Founder & Leadership Section */}
+          <div className="mb-16">
+            <div className="flex items-center justify-center mb-10">
+              <div className="h-px w-20 bg-gradient-to-r from-transparent to-border/60" />
+              <span className="px-6 text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">Founder & Leadership</span>
+              <div className="h-px w-20 bg-gradient-to-l from-transparent to-border/60" />
+            </div>
+            
+            <div className="flex justify-center">
               <div 
-                key={member.name} 
-                className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/40 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-border/40 shadow-medium hover:shadow-strong transition-all duration-500 hover:-translate-y-2 animate-fade-in max-w-md"
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative flex flex-col items-center text-center">
-                  {/* Photo with gradient ring */}
+                  {/* Photo with gradient ring - larger for founder */}
                   <div className="relative mb-6">
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/50 to-secondary opacity-60 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
-                    <div className="relative w-36 h-36 lg:w-40 lg:h-40 rounded-full p-1 bg-gradient-to-br from-primary/80 to-secondary/60 group-hover:scale-105 transition-transform duration-500">
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/50 to-secondary opacity-70 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+                    <div className="relative w-44 h-44 lg:w-48 lg:h-48 rounded-full p-1 bg-gradient-to-br from-primary/80 to-secondary/60 group-hover:scale-105 transition-transform duration-500">
                       <div className="w-full h-full rounded-full overflow-hidden bg-background shadow-lg">
                         <img 
-                          src={member.image} 
-                          alt={member.name}
+                          src={founder.image} 
+                          alt={founder.name}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -327,22 +332,76 @@ const About = () => {
                   
                   {/* Name with gradient underline */}
                   <div className="mb-3">
-                    <h3 className="font-bold text-lg lg:text-xl tracking-wide mb-2">{member.name}</h3>
-                    <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    <h3 className="font-bold text-xl lg:text-2xl tracking-wide mb-2">{founder.name}</h3>
+                    <div className="h-0.5 w-14 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
                   </div>
                   
                   {/* Role badge */}
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
-                    {member.role}
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+                    {founder.role}
                   </span>
                   
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {member.description}
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    {founder.description}
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
+          </div>
+          
+          {/* Core Technical Team Section */}
+          <div className="mb-20">
+            <div className="flex items-center justify-center mb-10">
+              <div className="h-px w-20 bg-gradient-to-r from-transparent to-border/60" />
+              <span className="px-6 text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium">Core Technical Team</span>
+              <div className="h-px w-20 bg-gradient-to-l from-transparent to-border/60" />
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+              {technicalTeam.map((member, index) => (
+                <div 
+                  key={member.name} 
+                  className="group relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border/40 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    {/* Photo with gradient ring */}
+                    <div className="relative mb-6">
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/50 to-secondary opacity-60 group-hover:opacity-100 blur-sm transition-opacity duration-500" />
+                      <div className="relative w-36 h-36 lg:w-40 lg:h-40 rounded-full p-1 bg-gradient-to-br from-primary/80 to-secondary/60 group-hover:scale-105 transition-transform duration-500">
+                        <div className="w-full h-full rounded-full overflow-hidden bg-background shadow-lg">
+                          <img 
+                            src={member.image} 
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Name with gradient underline */}
+                    <div className="mb-3">
+                      <h3 className="font-bold text-lg lg:text-xl tracking-wide mb-2">{member.name}</h3>
+                      <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    </div>
+                    
+                    {/* Role badge */}
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+                      {member.role}
+                    </span>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Advisors Section */}
