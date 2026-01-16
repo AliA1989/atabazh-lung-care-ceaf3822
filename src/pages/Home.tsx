@@ -3,17 +3,36 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
+  const heroImageRef = useRef<HTMLDivElement>(null);
+  const [parallaxY, setParallaxY] = useState(0);
+
+  // Subtle parallax effect for hero image
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Max 8px movement, very subtle
+      const newParallaxY = Math.min(scrollY * 0.03, 8);
+      setParallaxY(newParallaxY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+        {/* Hero image with cinematic zoom and parallax */}
         <div 
-          className="absolute inset-0 bg-contain bg-no-repeat bg-right opacity-80 saturate-[0.85]"
+          ref={heroImageRef}
+          className="absolute inset-0 bg-contain bg-no-repeat bg-right opacity-80 saturate-[0.85] animate-hero-zoom will-change-transform"
           style={{
             backgroundImage: `url('/lovable-uploads/hero-nurse-device.png')`,
+            transform: `translateY(${parallaxY}px)`,
           }}
         />
         <div className="absolute inset-0 bg-background lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/70 lg:to-transparent" />
@@ -22,28 +41,52 @@ const Home = () => {
           <div className="max-w-2xl">
             <div className="space-y-10">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted border border-border">
+                {/* Badge with pulse animation */}
+                <div 
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted border border-border opacity-0 animate-badge-pulse"
+                  style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
+                {/* Headline with fade-in animation */}
+                <h1 
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground opacity-0 animate-hero-fade-in"
+                >
                   Smart Lung Physio
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground font-normal">
+                
+                {/* Subheadline with delayed fade-in */}
+                <p 
+                  className="text-xl md:text-2xl text-muted-foreground font-normal opacity-0 animate-hero-fade-in"
+                  style={{ animationDelay: '120ms' }}
+                >
                   Sensor-Guided Chest Physiotherapy
                 </p>
                 
-                <p className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed pt-2">
+                {/* Description with delayed fade-in */}
+                <p 
+                  className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed pt-2 opacity-0 animate-hero-fade-in"
+                  style={{ animationDelay: '180ms' }}
+                >
                   A medical device designed to support consistent airway-clearance therapy for long-term care residents through real-time sensor feedback.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="rounded text-base px-8 py-6 h-auto">
+              {/* CTA with delayed fade-in and micro-interaction */}
+              <div 
+                className="flex flex-col sm:flex-row gap-4 opacity-0 animate-hero-fade-in"
+                style={{ animationDelay: '220ms' }}
+              >
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="rounded text-base px-8 py-6 h-auto group transition-shadow duration-200 hover:shadow-md"
+                >
                   <NavLink to="/contact" className="flex items-center gap-2">
                     Contact Us
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </NavLink>
                 </Button>
               </div>
