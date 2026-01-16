@@ -60,7 +60,7 @@ const About = () => {
     role: "Founder",
     description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
     image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg",
-    linkedin: "https://www.linkedin.com/in/ali-abedinpour/"
+    linkedin: "https://www.linkedin.com/in/aliabedinpour/"
   };
 
   const technicalTeam = [
