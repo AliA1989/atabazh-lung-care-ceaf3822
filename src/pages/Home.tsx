@@ -5,9 +5,30 @@ import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Hea
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useEffect, useRef, useState } from "react";
 
+const HERO_DESCRIPTORS = [
+  "Designed for LTC workflows",
+  "Sensor-guided protocol",
+  "Medical device in development"
+];
+
 const Home = () => {
   const heroImageRef = useRef<HTMLDivElement>(null);
   const [parallaxY, setParallaxY] = useState(0);
+  const [descriptorIndex, setDescriptorIndex] = useState(0);
+  const [isDescriptorVisible, setIsDescriptorVisible] = useState(true);
+
+  // Rotate through descriptors every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsDescriptorVisible(false);
+      setTimeout(() => {
+        setDescriptorIndex((prev) => (prev + 1) % HERO_DESCRIPTORS.length);
+        setIsDescriptorVisible(true);
+      }, 300); // Fade out duration
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Subtle parallax effect for hero image
   useEffect(() => {
@@ -70,6 +91,15 @@ const Home = () => {
                     Physio
                   </span>
                 </h1>
+                
+                {/* Rotating descriptor */}
+                <p 
+                  className={`text-xs md:text-sm uppercase tracking-widest text-muted-foreground/70 transition-opacity duration-300 ${
+                    isDescriptorVisible ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  {HERO_DESCRIPTORS[descriptorIndex]}
+                </p>
                 
                 {/* Subheadline with delayed fade-in */}
                 <p 
