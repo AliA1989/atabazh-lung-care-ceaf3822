@@ -50,11 +50,20 @@ const Home = () => {
                   <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
                 </div>
                 
-                {/* Headline with fade-in animation */}
+                {/* Headline with fade-in animation and accent underline */}
                 <h1 
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground opacity-0 animate-hero-fade-in"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-foreground opacity-0 animate-hero-fade-in"
                 >
-                  Smart Lung Physio
+                  Smart{" "}
+                  <span className="relative inline-block">
+                    Lung
+                    <span 
+                      className="absolute left-0 bottom-1 md:bottom-2 w-full h-[3px] md:h-1 bg-primary/70 rounded-full animate-underline-draw"
+                      style={{ animationDelay: '400ms' }}
+                      aria-hidden="true"
+                    />
+                  </span>{" "}
+                  Physio
                 </h1>
                 
                 {/* Subheadline with delayed fade-in */}

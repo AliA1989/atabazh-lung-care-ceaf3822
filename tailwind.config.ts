@@ -237,8 +237,12 @@ export default {
 				'0%': { transform: 'scale(1)' },
 				'50%': { transform: 'scale(1.03)' },
 				'100%': { transform: 'scale(1)' }
+			},
+			'underline-draw': {
+				'0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+				'100%': { transform: 'scaleX(1)', transformOrigin: 'left' }
 			}
-  		},
+		},
 		animation: {
 			'accordion-down': 'accordion-down 0.2s ease-out',
 			'accordion-up': 'accordion-up 0.2s ease-out',
@@ -253,7 +257,8 @@ export default {
 			shimmer: 'shimmer 2s linear infinite',
 			'hero-fade-in': 'hero-fade-in 450ms ease-out forwards',
 			'badge-pulse': 'badge-pulse 1.2s ease-in-out forwards',
-			'hero-zoom': 'hero-zoom 10s ease-in-out infinite'
+			'hero-zoom': 'hero-zoom 10s ease-in-out infinite',
+			'underline-draw': 'underline-draw 700ms ease-out forwards'
 		}
   	}
   },
