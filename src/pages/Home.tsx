@@ -2,27 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const Home = () => {
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: "0px 0px -30px 0px"
-    });
-    document.querySelectorAll(".scroll-animate").forEach(el => {
-      observerRef.current?.observe(el);
-    });
-    return () => observerRef.current?.disconnect();
-  }, []);
   
   return (
     <div className="min-h-screen">
@@ -73,12 +55,14 @@ const Home = () => {
       {/* The Challenge Section */}
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-16 scroll-animate">
+          <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Operational Challenge</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Long-term care facilities face significant respiratory care constraints
-            </p>
-          </div>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Long-term care facilities face significant respiratory care constraints
+              </p>
+            </ScrollReveal>
+          </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             {[
@@ -98,7 +82,7 @@ const Home = () => {
                 description: "Frail elderly residents with multiple comorbidities require careful, individualized respiratory support."
               }
             ].map((item, index) => (
-              <div key={index} className="scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
+              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
                 <Card className="h-full bg-card border-border hover:border-primary/20 transition-colors duration-150">
                   <CardContent className="p-8 lg:p-10 space-y-5">
                     <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
@@ -108,7 +92,7 @@ const Home = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -118,7 +102,7 @@ const Home = () => {
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="space-y-8 scroll-animate">
+            <ScrollReveal className="space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Our Approach</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">
@@ -137,7 +121,7 @@ const Home = () => {
                   <ChevronRight className="w-4 h-4" />
                 </NavLink>
               </Button>
-            </div>
+            </ScrollReveal>
             
             <div className="grid grid-cols-2 gap-6">
               {[
@@ -162,7 +146,7 @@ const Home = () => {
                   desc: "Automatic session logging for care records"
                 }
               ].map((item, index) => (
-                <div key={index} className="scroll-animate" style={{ animationDelay: `${index * 0.08}s` }}>
+                <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
                   <Card className="h-full border-border hover:border-primary/20 transition-colors duration-150 bg-card">
                     <CardContent className="p-6 space-y-4">
                       <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
@@ -172,7 +156,7 @@ const Home = () => {
                       <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                     </CardContent>
                   </Card>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -182,13 +166,15 @@ const Home = () => {
       {/* Design Goals Section */}
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="container mx-auto">
-          <div className="text-center space-y-4 mb-16 scroll-animate">
+          <ScrollReveal className="text-center space-y-4 mb-16">
             <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Design Goals</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Intended Benefits</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Designed to address key challenges in long-term care respiratory support
-            </p>
-          </div>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Designed to address key challenges in long-term care respiratory support
+              </p>
+            </ScrollReveal>
+          </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             {[
@@ -208,7 +194,7 @@ const Home = () => {
                 description: "Automatic session logging provides objective data for care teams and records."
               }
             ].map((item, index) => (
-              <div key={index} className="scroll-animate" style={{ animationDelay: `${index * 0.1}s` }}>
+              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
                 <Card className="h-full border-border hover:border-primary/20 transition-colors duration-150 bg-card">
                   <CardContent className="p-8 lg:p-10 space-y-5">
                     <div className="w-12 h-12 rounded bg-primary flex items-center justify-center">
@@ -218,7 +204,7 @@ const Home = () => {
                     <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
                   </CardContent>
                 </Card>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -227,11 +213,13 @@ const Home = () => {
       {/* How It Works Section */}
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-4 mb-20 scroll-animate">
+          <ScrollReveal className="text-center space-y-4 mb-20">
             <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Process Overview</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">How It Works</h2>
-            <p className="text-lg text-muted-foreground">A three-step approach to sensor-guided therapy</p>
-          </div>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-muted-foreground">A three-step approach to sensor-guided therapy</p>
+            </ScrollReveal>
+          </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-10 lg:gap-16 relative">
             <div className="hidden md:flex absolute top-[48px] left-[25%] right-[25%] items-center justify-between z-0">
@@ -256,7 +244,7 @@ const Home = () => {
                 description: "Session data is logged automatically. Care teams can review therapy records and observe trends over time."
               }
             ].map((item, index) => (
-              <div key={index} className="scroll-animate relative z-10" style={{ animationDelay: `${index * 0.15}s` }}>
+              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150} className="relative z-10">
                 <div className="text-center space-y-6">
                   <div className="relative mx-auto w-fit">
                     <div className="w-24 h-24 mx-auto rounded-full bg-primary flex items-center justify-center text-4xl font-bold text-primary-foreground">
@@ -266,15 +254,15 @@ const Home = () => {
                   <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
           
-          <div className="text-center mt-16 scroll-animate">
+          <ScrollReveal className="text-center mt-16">
             <Button asChild size="lg" variant="outline" className="rounded text-base px-8">
               <NavLink to="/how-it-works">Technical Details</NavLink>
             </Button>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -282,7 +270,7 @@ const Home = () => {
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="space-y-8 scroll-animate">
+            <ScrollReveal className="space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Development</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Tested in Clinical Settings</h2>
@@ -316,9 +304,9 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="space-y-4 scroll-animate">
+            <ScrollReveal className="space-y-4" delay={100}>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   {
@@ -346,7 +334,7 @@ const Home = () => {
               <p className="text-xs text-muted-foreground text-center">
                 Images from early clinical prototype evaluations.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -355,7 +343,7 @@ const Home = () => {
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="space-y-8 scroll-animate">
+            <ScrollReveal className="space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Early Observations</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Preliminary Pilot Data</h2>
@@ -397,9 +385,9 @@ const Home = () => {
                   <ChevronRight className="w-4 h-4" />
                 </NavLink>
               </Button>
-            </div>
+            </ScrollReveal>
             
-            <div className="scroll-animate">
+            <ScrollReveal delay={100}>
               <Card className="border-border bg-card">
                 <CardContent className="p-8 lg:p-10 space-y-8">
                   <h3 className="text-xl font-semibold text-foreground">Observed Trends from Pilots</h3>
@@ -437,7 +425,7 @@ const Home = () => {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -446,7 +434,7 @@ const Home = () => {
       <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="scroll-animate space-y-8">
+            <ScrollReveal className="space-y-8">
               <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Purpose-Built</span>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Designed for Long-Term Care</h2>
               <p className="text-base text-muted-foreground leading-relaxed">
@@ -461,9 +449,9 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4" />
                 </NavLink>
               </Button>
-            </div>
+            </ScrollReveal>
             
-            <div className="scroll-animate">
+            <ScrollReveal delay={100}>
               <div className="grid grid-cols-2 gap-6">
                 {[
                   {
@@ -498,7 +486,7 @@ const Home = () => {
                   </Card>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -506,22 +494,26 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-28 lg:py-36 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-3xl">
-          <div className="scroll-animate text-center space-y-10">
+          <ScrollReveal className="text-center space-y-10">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               Interested in Learning More?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              We welcome conversations with LTC operators, clinical partners, and healthcare innovation stakeholders.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button asChild size="lg" className="rounded text-base px-10 py-6 h-auto">
-                <NavLink to="/contact">Contact Us</NavLink>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded text-base px-10 py-6 h-auto">
-                <NavLink to="/about">About Our Team</NavLink>
-              </Button>
-            </div>
-          </div>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                We welcome conversations with LTC operators, clinical partners, and healthcare innovation stakeholders.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button asChild size="lg" className="rounded text-base px-10 py-6 h-auto">
+                  <NavLink to="/contact">Contact Us</NavLink>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded text-base px-10 py-6 h-auto">
+                  <NavLink to="/about">About Our Team</NavLink>
+                </Button>
+              </div>
+            </ScrollReveal>
+          </ScrollReveal>
         </div>
       </section>
     </div>
