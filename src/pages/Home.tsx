@@ -22,60 +22,82 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Premium medical-tech aesthetic */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-        {/* Left side - White background */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-[55%] bg-background z-0" />
+      {/* Hero Section - Modern MedTech Aesthetic */}
+      <section className="relative min-h-[95vh] lg:min-h-screen flex items-center overflow-hidden">
+        {/* Full background - Soft blue gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
         
-        {/* Right side - Gradient blue background */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[45%] bg-gradient-to-br from-[hsl(200,85%,60%)] via-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] z-0 hidden lg:block">
-          {/* Animated EKG/heartbeat line pattern */}
-          <svg 
-            className="absolute inset-0 w-full h-full opacity-20"
-            preserveAspectRatio="none"
-          >
+        {/* Large organic swoosh shape - top right */}
+        <div className="absolute -top-40 -right-40 w-[900px] h-[900px] z-0">
+          <svg viewBox="0 0 800 800" className="w-full h-full" preserveAspectRatio="none">
             <defs>
-              <pattern id="ekg-pattern" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
-                <path 
-                  d="M0,50 L30,50 L35,50 L40,20 L45,80 L50,35 L55,65 L60,50 L90,50 L95,50 L100,20 L105,80 L110,35 L115,65 L120,50 L150,50 L155,50 L160,20 L165,80 L170,35 L175,65 L180,50 L200,50" 
-                  stroke="white" 
-                  strokeWidth="1.5" 
-                  fill="none"
-                  className="animate-pulse-soft"
-                />
-              </pattern>
+              <linearGradient id="swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(200, 80%, 65%)" stopOpacity="0.4" />
+                <stop offset="50%" stopColor="hsl(205, 75%, 55%)" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="hsl(210, 70%, 50%)" stopOpacity="0.2" />
+              </linearGradient>
             </defs>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#ekg-pattern)" />
+            <path 
+              d="M400,0 C600,0 800,200 800,400 C800,600 600,800 400,800 C200,800 100,650 150,450 C200,250 200,0 400,0 Z" 
+              fill="url(#swoosh-gradient)"
+            />
           </svg>
-          
-          {/* Subtle gradient overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
         </div>
         
-        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        {/* Secondary swoosh - smaller, lighter */}
+        <div className="absolute top-20 right-0 w-[600px] h-[600px] z-0 opacity-60">
+          <svg viewBox="0 0 600 600" className="w-full h-full" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="swoosh-gradient-2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(195, 85%, 70%)" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="hsl(200, 80%, 60%)" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="450" cy="200" rx="350" ry="280" fill="url(#swoosh-gradient-2)" />
+          </svg>
+        </div>
+        
+        {/* Horizontal EKG line running across the hero - subtle depth effect */}
+        <div className="absolute inset-0 flex items-center z-[1] pointer-events-none overflow-hidden">
+          <svg 
+            className="w-[200%] h-32 opacity-[0.08]"
+            viewBox="0 0 2000 100"
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M0,50 L200,50 L210,50 L220,20 L230,80 L240,35 L250,65 L260,50 L400,50 L410,50 L420,15 L430,85 L440,30 L450,70 L460,50 L600,50 L610,50 L620,20 L630,80 L640,35 L650,65 L660,50 L800,50 L810,50 L820,15 L830,85 L840,30 L850,70 L860,50 L1000,50 L1010,50 L1020,20 L1030,80 L1040,35 L1050,65 L1060,50 L1200,50 L1210,50 L1220,15 L1230,85 L1240,30 L1250,70 L1260,50 L1400,50 L1410,50 L1420,20 L1430,80 L1440,35 L1450,65 L1460,50 L1600,50 L1610,50 L1620,15 L1630,85 L1640,30 L1650,70 L1660,50 L1800,50 L1810,50 L1820,20 L1830,80 L1840,35 L1850,65 L1860,50 L2000,50" 
+              stroke="hsl(210, 80%, 45%)" 
+              strokeWidth="3" 
+              fill="none"
+              className="animate-pulse-soft"
+            />
+          </svg>
+        </div>
+        
+        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 py-24 lg:py-0">
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
             {/* Left side: Text content */}
-            <div className="space-y-7 max-w-xl lg:max-w-none lg:pr-8">
+            <div className="space-y-8 max-w-xl lg:max-w-none lg:pr-10">
               {/* Badge */}
               <div 
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100/80 border border-amber-200/60 opacity-0 animate-fade-in"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-amber-100/90 border border-amber-200/70 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
               >
                 <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
                 <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">Medical Device in Development</span>
               </div>
               
-              {/* Primary headline */}
+              {/* Primary headline - slate grey text */}
               <h1 
-                className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-tight text-foreground opacity-0 animate-fade-in"
+                className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-slate-800 opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
                 Standardized chest physiotherapy<br className="hidden md:block" /> for long-term care
               </h1>
               
-              {/* Subheadline */}
+              {/* Subheadline - slate grey */}
               <p 
-                className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg"
+                className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
                 Real-time pressure feedback helps staff deliver consistent sessions and supports care documentation.
@@ -83,13 +105,13 @@ const Home = () => {
               
               {/* Supporting bullets */}
               <ul 
-                className="space-y-3.5 opacity-0 animate-fade-in"
+                className="space-y-4 opacity-0 animate-fade-in"
                 style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
               >
                 {HERO_BULLETS.map((bullet, index) => (
-                  <li key={index} className="flex items-center gap-3 text-[15px] text-foreground/90">
-                    <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <bullet.icon className="w-3.5 h-3.5 text-primary" />
+                  <li key={index} className="flex items-center gap-3.5 text-[15px] text-slate-700">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[hsl(200,70%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <bullet.icon className="w-3.5 h-3.5 text-white" />
                     </div>
                     {bullet.text}
                   </li>
@@ -98,21 +120,21 @@ const Home = () => {
               
               {/* Differentiation line */}
               <p 
-                className="text-sm text-muted-foreground/80 border-l-2 border-primary/40 pl-4 opacity-0 animate-fade-in max-w-md"
-                style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
+                className="text-sm text-slate-500 border-l-3 border-[hsl(200,70%,55%)] pl-4 opacity-0 animate-fade-in max-w-md"
+                style={{ animationDelay: '280ms', animationFillMode: 'forwards', borderLeftWidth: '3px' }}
               >
                 Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
               </p>
               
-              {/* CTAs */}
+              {/* CTAs - enhanced shadows */}
               <div 
-                className="flex flex-col sm:flex-row gap-4 pt-3 opacity-0 animate-fade-in"
+                className="flex flex-col sm:flex-row gap-5 pt-4 opacity-0 animate-fade-in"
                 style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
                 <Button 
                   asChild 
                   size="lg" 
-                  className="rounded-full text-base px-8 py-6 h-auto group transition-all duration-200 hover:shadow-lg bg-primary hover:bg-primary-dark"
+                  className="rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-[hsl(210,80%,45%)]/25 hover:shadow-xl hover:shadow-[hsl(210,80%,45%)]/30 hover:-translate-y-0.5"
                 >
                   <NavLink to="/contact" className="flex items-center gap-2">
                     Request a demo
@@ -123,46 +145,64 @@ const Home = () => {
                   asChild 
                   variant="outline"
                   size="lg" 
-                  className="rounded-full text-base px-8 py-6 h-auto border-border hover:bg-muted/50 transition-colors duration-200"
+                  className="rounded-full text-base px-9 py-7 h-auto bg-white/80 backdrop-blur-sm border-slate-200 hover:bg-white hover:border-slate-300 transition-all duration-300 shadow-md shadow-slate-900/5 hover:shadow-lg hover:-translate-y-0.5 text-slate-700"
                 >
                   <NavLink to="/how-it-works">
-                    See how it works <span className="text-muted-foreground ml-1">(45 sec)</span>
+                    See how it works <span className="text-slate-400 ml-1">(45 sec)</span>
                   </NavLink>
                 </Button>
               </div>
             </div>
             
-            {/* Right side: Hero image with session card */}
+            {/* Right side: Hero image with tech elements */}
             <div 
               className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Hero image container */}
-              <div className="relative pl-8">
+              {/* Tech ring background element */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[420px] h-[420px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
+                <div className="absolute w-[360px] h-[360px] rounded-full border border-[hsl(200,70%,60%)]/20" />
+                <div className="absolute w-[480px] h-[480px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+              </div>
+              
+              {/* Medical icon overlays - subtle tech elements */}
+              <div className="absolute top-8 right-16 w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
+                <Activity className="w-5 h-5 text-[hsl(200,70%,50%)]" />
+              </div>
+              <div className="absolute bottom-24 left-8 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
+                <Heart className="w-4 h-4 text-[hsl(200,70%,50%)]" />
+              </div>
+              
+              {/* Hero image container with soft mask */}
+              <div className="relative">
+                {/* Soft gradient backdrop behind image */}
+                <div className="absolute inset-0 -m-6 rounded-[40px] bg-gradient-to-br from-white/40 to-[hsl(200,60%,90%)]/40 backdrop-blur-sm" />
+                
                 <img 
                   src="/lovable-uploads/hero-nurse-device.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
                   className="w-full max-w-md h-auto object-contain relative z-10 drop-shadow-2xl"
                 />
                 
-                {/* Floating session card - positioned on the phone display area */}
+                {/* Floating session card - Glassmorphism effect */}
                 <div 
-                  className={`absolute bottom-1/3 left-0 bg-white border border-border/30 rounded-xl p-4 shadow-xl transition-all duration-700 z-20 ${
+                  className={`absolute bottom-1/4 -left-6 backdrop-blur-xl bg-white/70 border border-white/90 rounded-2xl p-5 shadow-2xl shadow-slate-900/10 transition-all duration-700 z-20 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <div className="space-y-2.5 min-w-[155px]">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                      <span className="text-[12px] font-semibold text-foreground">Session completed</span>
+                  <div className="space-y-3 min-w-[165px]">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
+                      <span className="text-[13px] font-semibold text-slate-800">Session completed</span>
                     </div>
-                    <div className="space-y-1.5 text-[11px]">
-                      <div className="flex items-center gap-1.5 text-muted-foreground">
-                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                    <div className="space-y-2 text-[12px]">
+                      <div className="flex items-center gap-2 text-slate-600">
+                        <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
                         <span>Pressure: within range</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-muted-foreground">
-                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                      <div className="flex items-center gap-2 text-slate-600">
+                        <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
                         <span>Logged for records</span>
                       </div>
                     </div>
@@ -172,6 +212,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+        
+        {/* Bottom fade to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
       {/* The Challenge Section */}
