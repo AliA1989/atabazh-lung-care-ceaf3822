@@ -86,9 +86,9 @@ const Home = () => {
                 Standardized chest physiotherapy<br className="hidden md:block" /> for long-term care
               </h1>
               
-              {/* Subheadline - slate grey */}
+              {/* Subheadline - slate grey - reduced gap with mt-4 instead of space-y-8 */}
               <p 
-                className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg"
+                className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg !mt-4"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
                 Real-time pressure feedback helps staff deliver consistent sessions and supports care documentation.
