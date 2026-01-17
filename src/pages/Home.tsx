@@ -198,9 +198,9 @@ const Home = () => {
             >
               {/* Tech ring background element - positioned to the right */}
               <div className="absolute inset-0 flex items-center justify-center translate-x-8">
-                <div className="w-[500px] h-[500px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
-                <div className="absolute w-[430px] h-[430px] rounded-full border border-[hsl(200,70%,60%)]/20" />
-                <div className="absolute w-[570px] h-[570px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+                <div className="w-[620px] h-[620px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
+                <div className="absolute w-[530px] h-[530px] rounded-full border border-[hsl(200,70%,60%)]/20" />
+                <div className="absolute w-[710px] h-[710px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
               </div>
               
               {/* Medical icon overlay - bottom left only */}
