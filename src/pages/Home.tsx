@@ -222,30 +222,6 @@ const Home = () => {
                   className="w-full max-w-[740px] h-auto object-contain drop-shadow-2xl"
                 />
               </div>
-              
-              {/* Floating session card - Strong Glassmorphism effect */}
-              <div 
-                className={`absolute bottom-1/3 left-4 backdrop-blur-2xl bg-white/75 border-2 border-white/60 rounded-2xl p-5 shadow-2xl shadow-slate-900/15 transition-all duration-700 z-20 ${
-                  isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div className="space-y-3 min-w-[165px]">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
-                    <span className="text-[13px] font-semibold text-slate-800">Session completed</span>
-                  </div>
-                  <div className="space-y-2 text-[12px]">
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
-                      <span>Pressure: within range</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
-                      <span>Logged for records</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
