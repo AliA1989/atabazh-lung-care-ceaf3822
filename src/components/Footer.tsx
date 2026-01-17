@@ -4,37 +4,39 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary/30 border-t border-border/30">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-10 py-12 lg:py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,45%,95%)] to-[hsl(210,50%,93%)] border-t border-slate-200/50">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-14 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center space-x-3 mb-5">
               <img 
                 src={logo} 
                 alt="Atabazh Medical Logo" 
-                className="h-14 w-14 object-contain rounded-full"
+                className="h-14 w-14 object-contain rounded-full shadow-md"
               />
-              <span className="font-semibold text-base text-foreground">Atabazh Medical</span>
+              <span className="font-semibold text-base text-slate-800">Atabazh Medical</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>
             <a 
               href="https://www.linkedin.com/company/atabazh-medical-inc" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center gap-2 mt-5 text-sm text-slate-500 hover:text-blue-600 transition-colors"
               aria-label="Follow Atabazh Medical on LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                <Linkedin className="h-4 w-4 text-blue-700" />
+              </div>
               <span>Follow us on LinkedIn</span>
             </a>
           </div>
 
           {/* Product Column */}
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Product</h3>
+            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Product</h3>
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
@@ -44,7 +46,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -55,7 +57,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Company</h3>
+            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
@@ -64,7 +66,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -75,7 +77,7 @@ const Footer = () => {
 
           {/* Get Started Column */}
           <div>
-            <h3 className="font-semibold text-sm text-foreground mb-5 uppercase tracking-wider">Get Started</h3>
+            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
                 { to: "/contact", label: "Request a Demo" },
@@ -84,7 +86,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -95,30 +97,30 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-border my-8" />
+        <div className="h-px bg-slate-200/70 my-10" />
         
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-8">
             <a 
               href="#" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm text-slate-500 hover:text-slate-700 transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <a 
               href="#" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm text-slate-500 hover:text-slate-700 transition-colors duration-200"
             >
               Terms of Service
             </a>
           </div>
           
           <div className="text-center md:text-right space-y-1">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-slate-500">
               Smart Lung Physio™ — U.S. Utility Patent Pending (Application No. 19/278,634)
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-slate-500">
               © 2025 Atabazh Med. All rights reserved.
             </p>
           </div>
