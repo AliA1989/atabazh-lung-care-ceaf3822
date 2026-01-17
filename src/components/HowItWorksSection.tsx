@@ -38,36 +38,43 @@ const HowItWorksSection = () => {
               <div className="w-[450px] h-[450px] bg-gradient-radial from-primary/8 via-primary/4 to-transparent rounded-full blur-3xl"></div>
             </div>
             
-            {/* Device image with adjacent card */}
-            <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <img 
-                alt="Smart Lung Physio device with companion mobile app" 
-                className="w-full max-w-md drop-shadow-lg" 
-                src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" 
-              />
-              
-              {/* Session summary card - adjacent to bottom-right, not overlapping */}
-              <div 
-                className="absolute -bottom-3 -right-3 translate-y-full bg-card border border-border/60 rounded-xl p-4 shadow-md max-w-[200px] animate-fade-in" 
-                style={{ animationDelay: "0.5s", marginTop: "10px" }}
-              >
-                <div className="space-y-2.5">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="text-xs font-medium text-foreground">Session Complete</span>
-                  </div>
-                  <div className="text-[11px] text-muted-foreground space-y-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Guidance followed</span>
+            {/* Unified product + card container */}
+            <div className="relative z-10 animate-fade-in pb-16 pr-4" style={{ animationDelay: "0.2s" }}>
+              {/* Shared visual container with subtle background */}
+              <div className="relative">
+                {/* Product image */}
+                <img 
+                  alt="Smart Lung Physio device with companion mobile app" 
+                  className="w-full max-w-md drop-shadow-lg" 
+                  src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" 
+                />
+                
+                {/* Session card - anchored to bottom-right, extending slightly outside */}
+                <div 
+                  className="absolute bottom-0 right-0 translate-x-2 translate-y-[calc(100%-8px)] bg-card border border-border/50 rounded-xl p-3.5 shadow-sm animate-fade-in"
+                  style={{ animationDelay: "0.5s" }}
+                >
+                  {/* Subtle connector - visual link to image */}
+                  <div className="absolute -top-2 right-6 w-4 h-4 bg-card border-l border-t border-border/50 rotate-45 -z-10"></div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                      <span className="text-[11px] font-medium text-foreground">Session Complete</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Vitals within range</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Logged for care records</span>
+                    <div className="text-[10px] text-muted-foreground space-y-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 text-[9px]">✓</span>
+                        <span>Guidance followed</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 text-[9px]">✓</span>
+                        <span>Vitals within range</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-emerald-600 text-[9px]">✓</span>
+                        <span>Logged for records</span>
+                      </div>
                     </div>
                   </div>
                 </div>
