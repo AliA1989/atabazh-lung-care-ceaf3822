@@ -33,13 +33,13 @@ const Navigation = () => {
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <NavLink to="/" className="flex items-center group">
             <img 
               src={logo} 
               alt="Atabazh Medical" 
-              className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </NavLink>
 
