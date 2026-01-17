@@ -22,16 +22,16 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Redesigned */}
-      <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
+      {/* Hero Section - Compact, clinical */}
+      <section className="relative bg-background overflow-hidden">
         {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-background to-background" />
         
-        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           {/* Text-dominant grid: 55% text, 45% visual */}
-          <div className="grid lg:grid-cols-[1fr_0.75fr] gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-[1fr_0.7fr] gap-12 lg:gap-16 items-center">
             {/* Left side: Text content - primary focus */}
-            <div className="space-y-8 max-w-xl lg:max-w-none">
+            <div className="space-y-6 max-w-xl lg:max-w-none">
               {/* Badge */}
               <div 
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/60 border border-border opacity-0 animate-fade-in"
@@ -108,61 +108,53 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right side: Product visual - supporting role */}
+            {/* Right side: Product visual - clean, sharp */}
             <div 
               className="relative opacity-0 animate-fade-in hidden lg:block"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
               {/* Device-focused visual container */}
-              <div className="relative max-w-sm mx-auto">
-                {/* Image with clinical treatment - cropped focus on device/hands area */}
-                <div className="relative overflow-hidden rounded-2xl bg-muted/20">
-                  {/* Gradient mask to de-emphasize upper portion (face area) */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-transparent z-10 pointer-events-none" />
-                  
+              <div className="relative">
+                {/* Clean image - full quality, no heavy effects */}
+                <div className="relative rounded-xl overflow-hidden shadow-sm border border-border/50">
                   <img 
                     src="/lovable-uploads/hero-nurse-device.png" 
                     alt="Smart Lung Physio device interface" 
-                    className="w-full object-cover object-bottom opacity-90 saturate-[0.9]"
-                    style={{ 
-                      clipPath: 'inset(15% 0 0 0)',
-                      marginTop: '-15%'
-                    }}
+                    className="w-full h-auto"
                   />
+                  {/* Subtle top fade to soften face area without degrading quality */}
+                  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/40 to-transparent pointer-events-none" />
                 </div>
                 
                 {/* Floating session summary card - qualitative indicators */}
                 <div 
-                  className={`absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-md max-w-[200px] transition-all duration-500 ${
+                  className={`absolute bottom-4 -left-4 bg-card border border-border rounded-lg p-3 shadow-sm max-w-[180px] transition-all duration-500 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-green-600" />
-                    <span className="text-xs font-medium text-foreground">Session completed</span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-600" />
+                    <span className="text-[11px] font-medium text-foreground">Session completed</span>
                   </div>
-                  <div className="space-y-2 text-xs">
-                    <div className="flex items-start gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Pressure: within guided range</span>
+                  <div className="space-y-1.5 text-[11px]">
+                    <div className="flex items-start gap-1.5">
+                      <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">Pressure: within range</span>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Logged for documentation</span>
+                    <div className="flex items-start gap-1.5">
+                      <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">Logged for records</span>
                     </div>
                   </div>
                 </div>
-                
-                {/* Subtle depth element */}
-                <div className="absolute -z-10 top-1/2 left-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Challenge Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* The Challenge Section - reduced top padding for flow */}
+      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Operational Challenge</h2>
