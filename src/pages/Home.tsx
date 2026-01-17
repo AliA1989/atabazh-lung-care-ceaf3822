@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Hand, FileText, Workflow } from "lucide-react";
+import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
-  { icon: Hand, text: "Real-time hand pressure guidance" },
-  { icon: Users, text: "Reduces variability between staff" },
-  { icon: FileText, text: "Session summaries for documentation" },
-  { icon: Workflow, text: "Designed for long-term care workflows" },
+  { icon: Repeat, text: "Consistent pressure guidance across all staff" },
+  { icon: ClipboardList, text: "Structured workflow for each session" },
+  { icon: FileCheck, text: "Automatic session documentation" },
 ];
 
 const Home = () => {
@@ -41,12 +40,12 @@ const Home = () => {
                 <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
               </div>
               
-              {/* Primary headline - Outcome first */}
+              {/* Primary headline - Outcome-driven, operational */}
               <h1 
                 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-foreground opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
-                Sensor-guided chest physiotherapy for long-term care
+                Standardized chest physiotherapy for long-term care
               </h1>
               
               {/* Subheadline */}
@@ -54,12 +53,12 @@ const Home = () => {
                 className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed opacity-0 animate-fade-in"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
-                Real-time pressure feedback helps staff deliver consistent sessions and supports documentation.
+                Real-time pressure feedback helps staff deliver consistent sessions and supports care documentation.
               </p>
               
               {/* Supporting bullets */}
               <ul 
-                className="space-y-3 pt-2 opacity-0 animate-fade-in"
+                className="space-y-3 opacity-0 animate-fade-in"
                 style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
               >
                 {HERO_BULLETS.map((bullet, index) => (
@@ -72,10 +71,18 @@ const Home = () => {
                 ))}
               </ul>
               
+              {/* Differentiation line */}
+              <p 
+                className="text-sm text-muted-foreground/80 border-l-2 border-primary/30 pl-4 opacity-0 animate-fade-in"
+                style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
+              >
+                Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
+              </p>
+              
               {/* CTAs */}
               <div 
-                className="flex flex-col sm:flex-row gap-4 pt-4 opacity-0 animate-fade-in"
-                style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
+                className="flex flex-col sm:flex-row gap-4 pt-2 opacity-0 animate-fade-in"
+                style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
                 <Button 
                   asChild 
@@ -94,7 +101,7 @@ const Home = () => {
                   className="rounded-lg text-base px-7 py-6 h-auto border-border hover:bg-muted/50 transition-colors duration-200"
                 >
                   <NavLink to="/how-it-works">
-                    See how it works
+                    See how it works <span className="text-muted-foreground ml-1">(45 sec)</span>
                   </NavLink>
                 </Button>
               </div>
@@ -113,27 +120,24 @@ const Home = () => {
                   className="w-full max-w-lg mx-auto lg:max-w-none rounded-2xl"
                 />
                 
-                {/* Floating session summary card */}
+                {/* Floating session summary card - qualitative indicators */}
                 <div 
-                  className={`absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-card border border-border rounded-xl p-4 shadow-lg max-w-[200px] transition-all duration-500 ${
+                  className={`absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-card border border-border rounded-xl p-4 shadow-lg max-w-[220px] transition-all duration-500 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Session Complete</span>
+                    <div className="w-2 h-2 rounded-full bg-green-500" />
+                    <span className="text-xs font-medium text-foreground">Session completed</span>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs text-muted-foreground">Duration</span>
-                      <span className="text-sm font-semibold text-foreground">8:32</span>
+                  <div className="space-y-2.5 text-xs">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">Pressure feedback: within guided range</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs text-muted-foreground">Pressure consistency</span>
-                      <span className="text-sm font-semibold text-primary">94%</span>
-                    </div>
-                    <div className="h-1.5 bg-muted rounded-full overflow-hidden mt-1">
-                      <div className="h-full w-[94%] bg-primary rounded-full" />
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">Session logged for documentation</span>
                     </div>
                   </div>
                 </div>
