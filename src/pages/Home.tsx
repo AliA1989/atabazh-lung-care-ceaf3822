@@ -205,7 +205,7 @@ const Home = () => {
               
               {/* Hero image - larger, no container, with fade blend */}
               <div 
-                className="relative -translate-x-4"
+                className="relative -translate-x-12"
                 style={{ 
                   maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 92%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 92%)'
@@ -214,7 +214,7 @@ const Home = () => {
                 <img 
                   src="/lovable-uploads/hero-nurse-device.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-full max-w-[740px] h-auto object-contain drop-shadow-2xl"
+                  className="w-full max-w-[960px] h-auto object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
