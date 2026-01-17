@@ -22,36 +22,60 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Compact, clinical */}
-      <section className="relative bg-background overflow-hidden">
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-background to-background" />
+      {/* Hero Section - Premium medical-tech aesthetic */}
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
+        {/* Left side - White background */}
+        <div className="absolute inset-y-0 left-0 w-full lg:w-[55%] bg-background z-0" />
         
-        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          {/* Text-dominant grid: ~55% text, ~45% visual */}
-          <div className="grid lg:grid-cols-[1fr_0.8fr] gap-10 lg:gap-14 items-center">
-            {/* Left side: Text content - primary focus */}
-            <div className="space-y-6 max-w-xl lg:max-w-none">
+        {/* Right side - Gradient blue background */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[45%] bg-gradient-to-br from-[hsl(200,85%,60%)] via-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] z-0 hidden lg:block">
+          {/* Animated EKG/heartbeat line pattern */}
+          <svg 
+            className="absolute inset-0 w-full h-full opacity-20"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <pattern id="ekg-pattern" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
+                <path 
+                  d="M0,50 L30,50 L35,50 L40,20 L45,80 L50,35 L55,65 L60,50 L90,50 L95,50 L100,20 L105,80 L110,35 L115,65 L120,50 L150,50 L155,50 L160,20 L165,80 L170,35 L175,65 L180,50 L200,50" 
+                  stroke="white" 
+                  strokeWidth="1.5" 
+                  fill="none"
+                  className="animate-pulse-soft"
+                />
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#ekg-pattern)" />
+          </svg>
+          
+          {/* Subtle gradient overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+        </div>
+        
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            {/* Left side: Text content */}
+            <div className="space-y-7 max-w-xl lg:max-w-none lg:pr-8">
               {/* Badge */}
               <div 
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/60 border border-border opacity-0 animate-fade-in"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100/80 border border-amber-200/60 opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">Medical Device in Development</span>
               </div>
               
-              {/* Primary headline - Outcome-driven, operational */}
+              {/* Primary headline */}
               <h1 
-                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-foreground opacity-0 animate-fade-in"
+                className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-tight text-foreground opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
-                Standardized chest physiotherapy for long-term care
+                Standardized chest physiotherapy<br className="hidden md:block" /> for long-term care
               </h1>
               
               {/* Subheadline */}
               <p 
-                className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed opacity-0 animate-fade-in"
+                className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
                 Real-time pressure feedback helps staff deliver consistent sessions and supports care documentation.
@@ -59,13 +83,13 @@ const Home = () => {
               
               {/* Supporting bullets */}
               <ul 
-                className="space-y-3 opacity-0 animate-fade-in"
+                className="space-y-3.5 opacity-0 animate-fade-in"
                 style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
               >
                 {HERO_BULLETS.map((bullet, index) => (
-                  <li key={index} className="flex items-center gap-3 text-sm md:text-base text-foreground/80">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <bullet.icon className="w-3 h-3 text-primary" />
+                  <li key={index} className="flex items-center gap-3 text-[15px] text-foreground/90">
+                    <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <bullet.icon className="w-3.5 h-3.5 text-primary" />
                     </div>
                     {bullet.text}
                   </li>
@@ -74,7 +98,7 @@ const Home = () => {
               
               {/* Differentiation line */}
               <p 
-                className="text-sm text-muted-foreground/80 border-l-2 border-primary/30 pl-4 opacity-0 animate-fade-in"
+                className="text-sm text-muted-foreground/80 border-l-2 border-primary/40 pl-4 opacity-0 animate-fade-in max-w-md"
                 style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
               >
                 Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
@@ -82,13 +106,13 @@ const Home = () => {
               
               {/* CTAs */}
               <div 
-                className="flex flex-col sm:flex-row gap-4 pt-2 opacity-0 animate-fade-in"
+                className="flex flex-col sm:flex-row gap-4 pt-3 opacity-0 animate-fade-in"
                 style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
                 <Button 
                   asChild 
                   size="lg" 
-                  className="rounded-lg text-base px-7 py-6 h-auto group transition-all duration-200 hover:shadow-md"
+                  className="rounded-full text-base px-8 py-6 h-auto group transition-all duration-200 hover:shadow-lg bg-primary hover:bg-primary-dark"
                 >
                   <NavLink to="/contact" className="flex items-center gap-2">
                     Request a demo
@@ -99,7 +123,7 @@ const Home = () => {
                   asChild 
                   variant="outline"
                   size="lg" 
-                  className="rounded-lg text-base px-7 py-6 h-auto border-border hover:bg-muted/50 transition-colors duration-200"
+                  className="rounded-full text-base px-8 py-6 h-auto border-border hover:bg-muted/50 transition-colors duration-200"
                 >
                   <NavLink to="/how-it-works">
                     See how it works <span className="text-muted-foreground ml-1">(45 sec)</span>
@@ -108,42 +132,39 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right side: Product visual - clean, sharp */}
+            {/* Right side: Hero image with session card */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:block"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Device-focused visual container - slightly larger */}
-              <div className="relative lg:scale-[1.02] origin-center">
-                {/* Clean image - full quality, natural presentation */}
-                <div className="relative rounded-xl overflow-hidden shadow-sm border border-border/40">
-                  <img 
-                    src="/lovable-uploads/hero-nurse-device.png" 
-                    alt="Smart Lung Physio device interface" 
-                    className="w-full h-auto"
-                  />
-                  {/* Very subtle top fade - minimal, preserves clarity */}
-                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background/30 to-transparent pointer-events-none" />
-                </div>
+              {/* Hero image container */}
+              <div className="relative pl-8">
+                <img 
+                  src="/lovable-uploads/hero-nurse-device.png" 
+                  alt="Healthcare professional demonstrating Smart Lung Physio device" 
+                  className="w-full max-w-md h-auto object-contain relative z-10 drop-shadow-2xl"
+                />
                 
-                {/* Floating session summary card - qualitative indicators */}
+                {/* Floating session card - positioned on the phone display area */}
                 <div 
-                  className={`absolute bottom-4 -left-4 bg-card border border-border rounded-lg p-3 shadow-sm max-w-[180px] transition-all duration-500 ${
+                  className={`absolute bottom-1/3 left-0 bg-white border border-border/30 rounded-xl p-4 shadow-xl transition-all duration-700 z-20 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-600" />
-                    <span className="text-[11px] font-medium text-foreground">Session completed</span>
-                  </div>
-                  <div className="space-y-1.5 text-[11px]">
-                    <div className="flex items-start gap-1.5">
-                      <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Pressure: within range</span>
+                  <div className="space-y-2.5 min-w-[155px]">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span className="text-[12px] font-semibold text-foreground">Session completed</span>
                     </div>
-                    <div className="flex items-start gap-1.5">
-                      <CheckCircle className="w-3 h-3 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Logged for records</span>
+                    <div className="space-y-1.5 text-[11px]">
+                      <div className="flex items-center gap-1.5 text-muted-foreground">
+                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                        <span>Pressure: within range</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-muted-foreground">
+                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                        <span>Logged for records</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -153,11 +174,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* The Challenge Section - reduced top padding for flow */}
-      <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* The Challenge Section */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Operational Challenge</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground">The Operational Challenge</h2>
             <ScrollReveal delay={100}>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Long-term care facilities face significant respiratory care constraints
@@ -165,7 +186,7 @@ const Home = () => {
             </ScrollReveal>
           </ScrollReveal>
           
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 icon: Users,
@@ -184,12 +205,12 @@ const Home = () => {
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
-                <Card className="h-full bg-card border-border hover:border-primary/20 transition-colors duration-150">
+                <Card className="h-full bg-gradient-to-br from-[hsl(200,85%,97%)] to-[hsl(210,70%,95%)] border-[hsl(200,60%,85%)] hover:border-primary/40 transition-all duration-200 hover:shadow-lg group">
                   <CardContent className="p-8 lg:p-10 space-y-5">
-                    <div className="w-12 h-12 rounded bg-primary/10 flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                      <item.icon className="h-7 w-7 text-primary" />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                    <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
