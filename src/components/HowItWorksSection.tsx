@@ -32,40 +32,43 @@ const HowItWorksSection = () => {
         {/* Two-column layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Product Image - Shows first on mobile */}
-          <div className="order-1 lg:order-2 relative flex justify-center items-center">
-            {/* Soft spotlight glow */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[450px] h-[450px] bg-gradient-radial from-primary/8 via-primary/4 to-transparent rounded-full blur-3xl"></div>
+          <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start">
+            {/* Product image container */}
+            <div className="relative flex justify-center items-center">
+              {/* Soft spotlight glow */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[450px] h-[450px] bg-gradient-radial from-primary/8 via-primary/4 to-transparent rounded-full blur-3xl"></div>
+              </div>
+              
+              {/* Device image */}
+              <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+                <img 
+                  alt="Smart Lung Physio device with companion mobile app" 
+                  className="w-full max-w-md drop-shadow-lg" 
+                  src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" 
+                />
+              </div>
             </div>
             
-            {/* Device image with session overlay */}
-            <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <img 
-                alt="Smart Lung Physio device with companion mobile app" 
-                className="w-full max-w-md drop-shadow-lg" 
-                src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" 
-              />
-              
-              {/* Floating session summary card - outcome-oriented */}
-              <div className="absolute -bottom-4 -right-4 lg:right-0 bg-card/95 backdrop-blur-sm border border-border/60 rounded-xl p-4 shadow-lg max-w-[180px] animate-fade-in" style={{ animationDelay: "0.5s" }}>
-                <div className="space-y-2.5">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="text-xs font-medium text-foreground">Session Complete</span>
+            {/* Session summary card - positioned below image */}
+            <div className="mt-6 bg-card/95 backdrop-blur-sm border border-border/60 rounded-xl p-4 shadow-lg max-w-[220px] animate-fade-in" style={{ animationDelay: "0.5s" }}>
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+                  <span className="text-xs font-medium text-foreground">Session Complete</span>
+                </div>
+                <div className="text-[11px] text-muted-foreground space-y-1.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-600">✓</span>
+                    <span>Guidance followed</span>
                   </div>
-                  <div className="text-[11px] text-muted-foreground space-y-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Guidance followed</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Vitals within range</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-emerald-600">✓</span>
-                      <span>Logged for care records</span>
-                    </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-600">✓</span>
+                    <span>Vitals within range</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-emerald-600">✓</span>
+                    <span>Logged for care records</span>
                   </div>
                 </div>
               </div>
