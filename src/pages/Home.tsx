@@ -219,7 +219,7 @@ const Home = () => {
                 <img 
                   src="/lovable-uploads/hero-nurse-device.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-full max-w-[620px] h-auto object-contain drop-shadow-2xl"
+                  className="w-full max-w-[740px] h-auto object-contain drop-shadow-2xl"
                 />
               </div>
               
