@@ -39,7 +39,14 @@ const Device = () => {
       {/* How Smart Lung Physio Works Section */}
       <HowItWorksSection />
 
-      {/* System Components Section */}
+      {/* Transition line */}
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground/80 italic">
+            — Built around this simple workflow —
+          </p>
+        </div>
+      </div>
       <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-secondary/5 to-background">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4 mb-12 animate-fade-in">
