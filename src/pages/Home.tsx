@@ -193,7 +193,7 @@ const Home = () => {
             
             {/* Right side: Hero image with tech elements */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-end"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-end self-center"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
               {/* Tech ring background element - positioned to the right */}
@@ -203,10 +203,7 @@ const Home = () => {
                 <div className="absolute w-[570px] h-[570px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
               </div>
               
-              {/* Medical icon overlays - subtle tech elements */}
-              <div className="absolute top-4 right-8 w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
-                <Activity className="w-5 h-5 text-[hsl(200,70%,50%)]" />
-              </div>
+              {/* Medical icon overlay - bottom left only */}
               <div className="absolute bottom-32 left-0 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
                 <Heart className="w-4 h-4 text-[hsl(200,70%,50%)]" />
               </div>
