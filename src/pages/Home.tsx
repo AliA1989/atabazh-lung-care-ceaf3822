@@ -28,9 +28,10 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-background to-background" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left side: Text content */}
-            <div className="space-y-8 max-w-xl">
+          {/* Text-dominant grid: 55% text, 45% visual */}
+          <div className="grid lg:grid-cols-[1fr_0.75fr] gap-16 lg:gap-24 items-center">
+            {/* Left side: Text content - primary focus */}
+            <div className="space-y-8 max-w-xl lg:max-w-none">
               {/* Badge */}
               <div 
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/60 border border-border opacity-0 animate-fade-in"
@@ -107,43 +108,53 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right side: Product visual */}
+            {/* Right side: Product visual - supporting role */}
             <div 
-              className="relative lg:pl-8 opacity-0 animate-fade-in"
+              className="relative opacity-0 animate-fade-in hidden lg:block"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Device and app visual */}
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/hero-nurse-device.png" 
-                  alt="Smart Lung Physio device in use" 
-                  className="w-full max-w-lg mx-auto lg:max-w-none rounded-2xl"
-                />
+              {/* Device-focused visual container */}
+              <div className="relative max-w-sm mx-auto">
+                {/* Image with clinical treatment - cropped focus on device/hands area */}
+                <div className="relative overflow-hidden rounded-2xl bg-muted/20">
+                  {/* Gradient mask to de-emphasize upper portion (face area) */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-transparent z-10 pointer-events-none" />
+                  
+                  <img 
+                    src="/lovable-uploads/hero-nurse-device.png" 
+                    alt="Smart Lung Physio device interface" 
+                    className="w-full object-cover object-bottom opacity-90 saturate-[0.9]"
+                    style={{ 
+                      clipPath: 'inset(15% 0 0 0)',
+                      marginTop: '-15%'
+                    }}
+                  />
+                </div>
                 
                 {/* Floating session summary card - qualitative indicators */}
                 <div 
-                  className={`absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-card border border-border rounded-xl p-4 shadow-lg max-w-[220px] transition-all duration-500 ${
+                  className={`absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-md max-w-[200px] transition-all duration-500 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500" />
+                    <div className="w-2 h-2 rounded-full bg-green-600" />
                     <span className="text-xs font-medium text-foreground">Session completed</span>
                   </div>
-                  <div className="space-y-2.5 text-xs">
+                  <div className="space-y-2 text-xs">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Pressure feedback: within guided range</span>
+                      <span className="text-muted-foreground">Pressure: within guided range</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">Session logged for documentation</span>
+                      <span className="text-muted-foreground">Logged for documentation</span>
                     </div>
                   </div>
                 </div>
                 
-                {/* Subtle decorative element */}
-                <div className="absolute -z-10 top-1/2 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+                {/* Subtle depth element */}
+                <div className="absolute -z-10 top-1/2 left-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
               </div>
             </div>
           </div>
