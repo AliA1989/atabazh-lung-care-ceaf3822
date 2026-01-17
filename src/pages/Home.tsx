@@ -208,13 +208,13 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
-      {/* The Challenge Section */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background">
+      {/* The Challenge Section - Clean White */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-foreground">The Operational Challenge</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">The Operational Challenge</h2>
             <ScrollReveal delay={100}>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 Long-term care facilities face significant respiratory care constraints
               </p>
             </ScrollReveal>
@@ -239,13 +239,13 @@ const Home = () => {
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
-                <Card className="h-full bg-gradient-to-br from-[hsl(200,85%,97%)] to-[hsl(210,70%,95%)] border-[hsl(200,60%,85%)] hover:border-primary/40 transition-all duration-200 hover:shadow-lg group">
+                <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 group rounded-2xl">
                   <CardContent className="p-8 lg:p-10 space-y-5">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                      <item.icon className="h-7 w-7 text-primary" />
+                    <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <item.icon className="h-7 w-7 text-blue-700" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -254,24 +254,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Approach Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+      {/* Our Approach Section - Soft Blue Gradient */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">
               <div className="space-y-4">
-                <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Our Approach</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">
+                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Our Approach</span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">
                   Smart Lung Physio™
                 </h2>
               </div>
-              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
                 An automated airway-clearance device designed specifically for long-term care settings. The system uses integrated sensors to guide therapy delivery, with the goal of supporting consistent respiratory care across care teams.
               </p>
-              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
                 The device is designed to assess respiratory status, adapt treatment parameters, and generate session documentation for care records.
               </p>
-              <Button asChild size="lg" className="rounded">
+              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                 <NavLink to="/device" className="flex items-center gap-2">
                   Learn About the Device
                   <ChevronRight className="w-4 h-4" />
@@ -303,13 +303,13 @@ const Home = () => {
                 }
               ].map((item, index) => (
                 <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
-                  <Card className="h-full border-border hover:border-primary/20 transition-colors duration-150 bg-card">
+                  <Card className="h-full backdrop-blur-xl bg-white/70 border border-white/60 shadow-lg shadow-slate-900/5 hover:shadow-xl transition-all duration-300 rounded-2xl">
                     <CardContent className="p-6 space-y-4">
-                      <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
-                        <item.icon className="h-5 w-5 text-primary-foreground" />
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md shadow-blue-500/30">
+                        <item.icon className="h-5 w-5 text-white" />
                       </div>
-                      <h3 className="font-semibold text-base text-foreground">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                      <h3 className="font-semibold text-base text-slate-800">{item.title}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                     </CardContent>
                   </Card>
                 </ScrollReveal>
@@ -319,14 +319,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Design Goals Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* Design Goals Section - Clean White */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Design Goals</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Intended Benefits</h2>
+            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Design Goals</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Intended Benefits</h2>
             <ScrollReveal delay={100}>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 Designed to address key challenges in long-term care respiratory support
               </p>
             </ScrollReveal>
@@ -351,13 +351,13 @@ const Home = () => {
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
-                <Card className="h-full border-border hover:border-primary/20 transition-colors duration-150 bg-card">
+                <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl transition-all duration-300 rounded-2xl">
                   <CardContent className="p-8 lg:p-10 space-y-5">
-                    <div className="w-12 h-12 rounded bg-primary flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-primary-foreground" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md shadow-blue-500/30">
+                      <item.icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">{item.description}</p>
+                    <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-sm">{item.description}</p>
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -366,21 +366,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+      {/* How It Works Section - Soft Blue Gradient */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal className="text-center space-y-4 mb-20">
-            <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Process Overview</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">How It Works</h2>
+            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Process Overview</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">How It Works</h2>
             <ScrollReveal delay={100}>
-              <p className="text-lg text-muted-foreground">A three-step approach to sensor-guided therapy</p>
+              <p className="text-lg text-slate-600">A three-step approach to sensor-guided therapy</p>
             </ScrollReveal>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-10 lg:gap-16 relative">
             <div className="hidden md:flex absolute top-[48px] left-[25%] right-[25%] items-center justify-between z-0">
-              <div className="flex-1 h-px bg-border" />
-              <div className="flex-1 h-px bg-border" />
+              <div className="flex-1 h-px bg-blue-200" />
+              <div className="flex-1 h-px bg-blue-200" />
             </div>
             
             {[
@@ -403,35 +403,35 @@ const Home = () => {
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150} className="relative z-10">
                 <div className="text-center space-y-6">
                   <div className="relative mx-auto w-fit">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-primary flex items-center justify-center text-4xl font-bold text-primary-foreground">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-4xl font-bold text-white shadow-xl shadow-blue-500/30">
                       {item.step}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
           
           <ScrollReveal className="text-center mt-16">
-            <Button asChild size="lg" variant="outline" className="rounded text-base px-8">
+            <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-white/80 backdrop-blur-sm border-2 border-white/60 shadow-lg hover:shadow-xl hover:bg-white hover:-translate-y-0.5 transition-all duration-300 text-slate-700">
               <NavLink to="/how-it-works">Technical Details</NavLink>
             </Button>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Development Context Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* Development Context Section - Clean White */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">
               <div className="space-y-4">
-                <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Development</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Tested in Clinical Settings</h2>
+                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Development</span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Tested in Clinical Settings</h2>
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed">
                 Smart Lung Physio™ began as a prototype tested in ICU, hospital, and clinical environments. These early evaluations informed therapy parameters, comfort considerations, and device placement.
               </p>
               <div className="space-y-5 pt-2">
@@ -450,12 +450,12 @@ const Home = () => {
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="h-3.5 w-3.5 text-primary" />
+                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-blue-700" />
                     </div>
                     <div>
-                      <p className="text-foreground font-medium text-sm">{item.title}</p>
-                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                      <p className="text-slate-800 font-medium text-sm">{item.title}</p>
+                      <p className="text-slate-600 text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -482,12 +482,12 @@ const Home = () => {
                     alt: "Seated patient receiving shoulder therapy"
                   }
                 ].map((img, index) => (
-                  <div key={index} className="aspect-square overflow-hidden rounded border border-border">
-                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover opacity-90 saturate-[0.9]" />
+                  <div key={index} className="aspect-square overflow-hidden rounded-2xl border border-white/60 shadow-lg">
+                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground text-center">
+              <p className="text-xs text-slate-500 text-center">
                 Images from early clinical prototype evaluations.
               </p>
             </ScrollReveal>
@@ -495,16 +495,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Early Observations Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+      {/* Early Observations Section - Soft Blue Gradient */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">
               <div className="space-y-4">
-                <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Early Observations</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Preliminary Pilot Data</h2>
+                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Early Observations</span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Preliminary Pilot Data</h2>
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed">
                 Initial pilot deployments in Canadian long-term care settings have provided directional data. Formal validation studies are planned.
               </p>
               <div className="space-y-5">
@@ -523,19 +523,19 @@ const Home = () => {
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="h-3.5 w-3.5 text-primary" />
+                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-blue-700" />
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground font-medium">{item.stat}</strong> {item.desc}
+                    <p className="text-sm text-slate-600">
+                      <strong className="text-slate-800 font-semibold">{item.stat}</strong> {item.desc}
                     </p>
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-slate-500">
                 Based on internal pilot observations. Not from peer-reviewed clinical trials.
               </p>
-              <Button asChild size="lg" className="rounded">
+              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                 <NavLink to="/clinical-evidence" className="flex items-center gap-2">
                   View Clinical Insights
                   <ChevronRight className="w-4 h-4" />
@@ -544,9 +544,9 @@ const Home = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={100}>
-              <Card className="border-border bg-card">
+              <Card className="backdrop-blur-xl bg-white/70 border-2 border-white/60 shadow-2xl shadow-slate-900/10 rounded-2xl">
                 <CardContent className="p-8 lg:p-10 space-y-8">
-                  <h3 className="text-xl font-semibold text-foreground">Observed Trends from Pilots</h3>
+                  <h3 className="text-xl font-semibold text-slate-800">Observed Trends from Pilots</h3>
                   <div className="space-y-6">
                     {[
                       {
@@ -564,19 +564,19 @@ const Home = () => {
                     ].map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex justify-between items-baseline">
-                          <span className="text-sm font-medium text-foreground">{item.label}</span>
-                          <span className="text-xl font-semibold text-primary">~{item.value}%</span>
+                          <span className="text-sm font-medium text-slate-700">{item.label}</span>
+                          <span className="text-xl font-bold text-blue-600">~{item.value}%</span>
                         </div>
-                        <div className="w-full bg-muted rounded h-2 overflow-hidden">
+                        <div className="w-full bg-blue-100 rounded-full h-2.5 overflow-hidden">
                           <div 
-                            className="h-full rounded bg-primary transition-all duration-1000 ease-out" 
+                            className="h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-1000 ease-out" 
                             style={{ width: `${item.value}%` }} 
                           />
                         </div>
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground text-center pt-4 border-t border-border">
+                  <p className="text-xs text-slate-500 text-center pt-4 border-t border-slate-200">
                     Preliminary observations from internal pilot deployments
                   </p>
                 </CardContent>
@@ -586,20 +586,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* LTC Focus Section */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/40">
+      {/* LTC Focus Section - Clean White */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">
-              <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider">Purpose-Built</span>
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-foreground">Designed for Long-Term Care</h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Purpose-Built</span>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Designed for Long-Term Care</h2>
+              <p className="text-base text-slate-600 leading-relaxed">
                 Unlike general respiratory devices, Smart Lung Physio™ was developed specifically for the long-term care environment—accounting for staffing realities, resident acuity, and operational constraints.
               </p>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed">
                 The device is designed to require minimal training, integrate into existing care routines, and provide documentation for care records.
               </p>
-              <Button asChild size="lg" className="rounded">
+              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                 <NavLink to="/long-term-care" className="flex items-center gap-2">
                   LTC Implementation Details
                   <ArrowRight className="w-4 h-4" />
@@ -631,13 +631,13 @@ const Home = () => {
                     desc: "Automatic session records"
                   }
                 ].map((item, index) => (
-                  <Card key={index} className="border-border hover:border-primary/20 transition-colors duration-150">
+                  <Card key={index} className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl">
                     <CardContent className="p-6 text-center space-y-4">
-                      <div className="w-10 h-10 mx-auto rounded bg-primary/10 flex items-center justify-center">
-                        <item.icon className="w-5 h-5 text-primary" />
+                      <div className="w-12 h-12 mx-auto rounded-xl bg-blue-100 flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-blue-700" />
                       </div>
-                      <h4 className="font-semibold text-sm text-foreground">{item.title}</h4>
-                      <p className="text-xs text-muted-foreground">{item.desc}</p>
+                      <h4 className="font-semibold text-sm text-slate-800">{item.title}</h4>
+                      <p className="text-xs text-slate-600">{item.desc}</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -647,24 +647,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-28 lg:py-36 px-4 sm:px-6 lg:px-8">
+      {/* CTA Section - Soft Blue Gradient */}
+      <section className="py-28 lg:py-36 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal className="text-center space-y-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
               Interested in Learning More?
             </h2>
             <ScrollReveal delay={100}>
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              <p className="text-lg text-slate-600 max-w-xl mx-auto">
                 We welcome conversations with LTC operators, clinical partners, and healthcare innovation stakeholders.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button asChild size="lg" className="rounded text-base px-10 py-6 h-auto">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
+                <Button asChild size="lg" className="rounded-full text-base px-10 py-7 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
                   <NavLink to="/contact">Contact Us</NavLink>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded text-base px-10 py-6 h-auto">
+                <Button asChild size="lg" className="rounded-full text-base px-10 py-7 h-auto bg-white/80 backdrop-blur-sm border-2 border-white/60 shadow-lg hover:shadow-xl hover:bg-white hover:-translate-y-0.5 transition-all duration-300 text-slate-700">
                   <NavLink to="/about">About Our Team</NavLink>
                 </Button>
               </div>
