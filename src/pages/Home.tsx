@@ -28,8 +28,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-background to-background" />
         
         <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          {/* Text-dominant grid: 55% text, 45% visual */}
-          <div className="grid lg:grid-cols-[1fr_0.7fr] gap-12 lg:gap-16 items-center">
+          {/* Text-dominant grid: ~55% text, ~45% visual */}
+          <div className="grid lg:grid-cols-[1fr_0.8fr] gap-10 lg:gap-14 items-center">
             {/* Left side: Text content - primary focus */}
             <div className="space-y-6 max-w-xl lg:max-w-none">
               {/* Badge */}
@@ -113,17 +113,17 @@ const Home = () => {
               className="relative opacity-0 animate-fade-in hidden lg:block"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Device-focused visual container */}
-              <div className="relative">
-                {/* Clean image - full quality, no heavy effects */}
-                <div className="relative rounded-xl overflow-hidden shadow-sm border border-border/50">
+              {/* Device-focused visual container - slightly larger */}
+              <div className="relative lg:scale-[1.02] origin-center">
+                {/* Clean image - full quality, natural presentation */}
+                <div className="relative rounded-xl overflow-hidden shadow-sm border border-border/40">
                   <img 
                     src="/lovable-uploads/hero-nurse-device.png" 
                     alt="Smart Lung Physio device interface" 
                     className="w-full h-auto"
                   />
-                  {/* Subtle top fade to soften face area without degrading quality */}
-                  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/40 to-transparent pointer-events-none" />
+                  {/* Very subtle top fade - minimal, preserves clarity */}
+                  <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background/30 to-transparent pointer-events-none" />
                 </div>
                 
                 {/* Floating session summary card - qualitative indicators */}
