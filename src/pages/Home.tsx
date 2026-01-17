@@ -49,17 +49,63 @@ const Home = () => {
           </svg>
         </div>
         
-        {/* Horizontal EKG line - more visible */}
-        <div className="absolute inset-0 flex items-center z-[2] pointer-events-none overflow-hidden">
+        {/* Abstract glowing wave pattern - modern tech pulse */}
+        <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+          {/* Multiple layered wave patterns for depth */}
           <svg 
-            className="w-[200%] h-40 opacity-[0.15]"
-            viewBox="0 0 2000 100"
+            className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 opacity-[0.08]"
+            viewBox="0 0 1400 200"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(200, 80%, 50%)" stopOpacity="0" />
+                <stop offset="30%" stopColor="hsl(200, 80%, 60%)" stopOpacity="1" />
+                <stop offset="70%" stopColor="hsl(210, 85%, 55%)" stopOpacity="1" />
+                <stop offset="100%" stopColor="hsl(210, 80%, 50%)" stopOpacity="0" />
+              </linearGradient>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            {/* Primary flowing wave */}
+            <path 
+              d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100 C1400,60 1600,140 1800,100" 
+              stroke="url(#wave-gradient-1)" 
+              strokeWidth="3" 
+              fill="none"
+              filter="url(#glow)"
+              className="animate-pulse-soft"
+            />
+          </svg>
+          {/* Secondary subtle wave - offset */}
+          <svg 
+            className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 translate-y-8 opacity-[0.05]"
+            viewBox="0 0 1400 200"
             preserveAspectRatio="none"
           >
             <path 
-              d="M0,50 L200,50 L210,50 L220,20 L230,80 L240,35 L250,65 L260,50 L400,50 L410,50 L420,15 L430,85 L440,30 L450,70 L460,50 L600,50 L610,50 L620,20 L630,80 L640,35 L650,65 L660,50 L800,50 L810,50 L820,15 L830,85 L840,30 L850,70 L860,50 L1000,50 L1010,50 L1020,20 L1030,80 L1040,35 L1050,65 L1060,50 L1200,50 L1210,50 L1220,15 L1230,85 L1240,30 L1250,70 L1260,50 L1400,50 L1410,50 L1420,20 L1430,80 L1440,35 L1450,65 L1460,50 L1600,50 L1610,50 L1620,15 L1630,85 L1640,30 L1650,70 L1660,50 L1800,50 L1810,50 L1820,20 L1830,80 L1840,35 L1850,65 L1860,50 L2000,50" 
-              stroke="hsl(210, 80%, 40%)" 
-              strokeWidth="2.5" 
+              d="M0,100 C150,130 350,70 550,100 C750,130 950,70 1150,100 C1350,130 1550,70 1750,100" 
+              stroke="hsl(205, 75%, 55%)" 
+              strokeWidth="2" 
+              fill="none"
+              filter="url(#glow)"
+            />
+          </svg>
+          {/* Tertiary wave - wider, slower feeling */}
+          <svg 
+            className="absolute top-1/2 left-0 w-[200%] h-[500px] -translate-y-1/2 -translate-y-4 opacity-[0.04]"
+            viewBox="0 0 1400 200"
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M0,100 C350,50 700,150 1050,100 C1400,50 1750,150 2100,100" 
+              stroke="hsl(210, 70%, 60%)" 
+              strokeWidth="4" 
               fill="none"
             />
           </svg>
@@ -69,13 +115,13 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-10 items-center">
             {/* Left side: Text content */}
             <div className="space-y-8 max-w-xl lg:max-w-none lg:pr-10">
-              {/* Badge */}
+              {/* Badge - Monochromatic blue palette */}
               <div 
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-amber-100/90 border border-amber-200/70 shadow-sm opacity-0 animate-fade-in"
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-blue-50/90 border border-blue-100/70 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
               >
-                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">Medical Device in Development</span>
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-xs font-semibold text-blue-600/90 uppercase tracking-wider">Medical Device in Development</span>
               </div>
               
               {/* Primary headline - slate grey text */}
@@ -165,16 +211,22 @@ const Home = () => {
                 <Heart className="w-4 h-4 text-[hsl(200,70%,50%)]" />
               </div>
               
-              {/* Hero image container with soft mask */}
+              {/* Hero image container with soft gradient mask */}
               <div className="relative">
                 {/* Soft gradient backdrop behind image */}
                 <div className="absolute inset-0 -m-6 rounded-[40px] bg-gradient-to-br from-white/40 to-[hsl(200,60%,90%)]/40 backdrop-blur-sm" />
                 
-                <img 
-                  src="/lovable-uploads/hero-nurse-device.png" 
-                  alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-full max-w-md h-auto object-contain relative z-10 drop-shadow-2xl"
-                />
+                {/* Image with gradient mask for seamless blending */}
+                <div className="relative z-10" style={{ 
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)'
+                }}>
+                  <img 
+                    src="/lovable-uploads/hero-nurse-device.png" 
+                    alt="Healthcare professional demonstrating Smart Lung Physio device" 
+                    className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
                 
                 {/* Floating session card - Strong Glassmorphism effect */}
                 <div 
