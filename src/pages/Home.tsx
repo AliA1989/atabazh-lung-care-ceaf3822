@@ -1,138 +1,145 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight } from "lucide-react";
+import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Hand, FileText, Workflow } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-const HERO_DESCRIPTORS = [
-  "Designed for LTC workflows",
-  "Sensor-guided protocol",
-  "Medical device in development"
+const HERO_BULLETS = [
+  { icon: Hand, text: "Real-time hand pressure guidance" },
+  { icon: Users, text: "Reduces variability between staff" },
+  { icon: FileText, text: "Session summaries for documentation" },
+  { icon: Workflow, text: "Designed for long-term care workflows" },
 ];
 
 const Home = () => {
-  const heroImageRef = useRef<HTMLDivElement>(null);
-  const [parallaxY, setParallaxY] = useState(0);
-  const [descriptorIndex, setDescriptorIndex] = useState(0);
-  const [isDescriptorVisible, setIsDescriptorVisible] = useState(true);
+  const [isPulseVisible, setIsPulseVisible] = useState(false);
 
-  // Rotate through descriptors every 3 seconds
+  // Subtle pulse animation for the session card
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsDescriptorVisible(false);
-      setTimeout(() => {
-        setDescriptorIndex((prev) => (prev + 1) % HERO_DESCRIPTORS.length);
-        setIsDescriptorVisible(true);
-      }, 300); // Fade out duration
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Subtle parallax effect for hero image
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Max 8px movement, very subtle
-      const newParallaxY = Math.min(scrollY * 0.03, 8);
-      setParallaxY(newParallaxY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timer = setTimeout(() => setIsPulseVisible(true), 800);
+    return () => clearTimeout(timer);
   }, []);
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Hero image with cinematic zoom and parallax */}
-        <div 
-          ref={heroImageRef}
-          className="absolute inset-0 bg-contain bg-no-repeat bg-right opacity-80 saturate-[0.85] animate-hero-zoom will-change-transform"
-          style={{
-            backgroundImage: `url('/lovable-uploads/hero-nurse-device.png')`,
-            transform: `translateY(${parallaxY}px)`,
-          }}
-        />
-        <div className="absolute inset-0 bg-background lg:bg-transparent lg:bg-gradient-to-r lg:from-background lg:via-background/70 lg:to-transparent" />
-
-        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
-          <div className="max-w-2xl">
-            <div className="space-y-10">
-              <div className="space-y-6">
-                {/* Badge with pulse animation */}
-                <div 
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted border border-border opacity-0 animate-badge-pulse"
-                  style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
-                </div>
-                
-                {/* Headline with premium styling */}
-                <h1 
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wide text-foreground"
-                >
-                  Smart{" "}
-                  <span className="relative inline-block">
-                    Lung
-                    <span 
-                      className="absolute left-0 bottom-1 md:bottom-2 w-full h-[3px] md:h-1 bg-primary/70 rounded-full animate-underline-draw"
-                      style={{ animationDelay: '400ms' }}
-                      aria-hidden="true"
-                    />
-                  </span>{" "}
-                  <span 
-                    className="bg-gradient-to-r from-primary via-primary/80 to-slate-500 bg-clip-text text-transparent opacity-0 animate-fade-in"
-                    style={{ animationDuration: '300ms' }}
-                  >
-                    Physio
-                  </span>
-                </h1>
-                
-                {/* Rotating descriptor */}
-                <p 
-                  className={`text-xs md:text-sm uppercase tracking-widest text-muted-foreground/70 transition-opacity duration-300 ${
-                    isDescriptorVisible ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  {HERO_DESCRIPTORS[descriptorIndex]}
-                </p>
-                
-                {/* Subheadline with delayed fade-in */}
-                <p 
-                  className="text-xl md:text-2xl text-muted-foreground font-normal opacity-0 animate-hero-fade-in"
-                  style={{ animationDelay: '120ms' }}
-                >
-                  Sensor-Guided Chest Physiotherapy
-                </p>
-                
-                {/* Description with delayed fade-in */}
-                <p 
-                  className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed pt-2 opacity-0 animate-hero-fade-in"
-                  style={{ animationDelay: '180ms' }}
-                >
-                  A medical device designed to support consistent airway-clearance therapy for long-term care residents through real-time sensor feedback.
-                </p>
+      {/* Hero Section - Redesigned */}
+      <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
+        {/* Subtle background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-background to-background" />
+        
+        <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left side: Text content */}
+            <div className="space-y-8 max-w-xl">
+              {/* Badge */}
+              <div 
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/60 border border-border opacity-0 animate-fade-in"
+                style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Medical Device in Development</span>
               </div>
               
-              {/* CTA with delayed fade-in and micro-interaction */}
+              {/* Primary headline - Outcome first */}
+              <h1 
+                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-foreground opacity-0 animate-fade-in"
+                style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
+              >
+                Sensor-guided chest physiotherapy for long-term care
+              </h1>
+              
+              {/* Subheadline */}
+              <p 
+                className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed opacity-0 animate-fade-in"
+                style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
+              >
+                Real-time pressure feedback helps staff deliver consistent sessions and supports documentation.
+              </p>
+              
+              {/* Supporting bullets */}
+              <ul 
+                className="space-y-3 pt-2 opacity-0 animate-fade-in"
+                style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
+              >
+                {HERO_BULLETS.map((bullet, index) => (
+                  <li key={index} className="flex items-center gap-3 text-sm md:text-base text-foreground/80">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <bullet.icon className="w-3 h-3 text-primary" />
+                    </div>
+                    {bullet.text}
+                  </li>
+                ))}
+              </ul>
+              
+              {/* CTAs */}
               <div 
-                className="flex flex-col sm:flex-row gap-4 opacity-0 animate-hero-fade-in"
-                style={{ animationDelay: '220ms' }}
+                className="flex flex-col sm:flex-row gap-4 pt-4 opacity-0 animate-fade-in"
+                style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
               >
                 <Button 
                   asChild 
                   size="lg" 
-                  className="rounded text-base px-8 py-6 h-auto group transition-shadow duration-200 hover:shadow-md"
+                  className="rounded-lg text-base px-7 py-6 h-auto group transition-all duration-200 hover:shadow-md"
                 >
                   <NavLink to="/contact" className="flex items-center gap-2">
-                    Contact Us
+                    Request a demo
                     <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </NavLink>
                 </Button>
+                <Button 
+                  asChild 
+                  variant="outline"
+                  size="lg" 
+                  className="rounded-lg text-base px-7 py-6 h-auto border-border hover:bg-muted/50 transition-colors duration-200"
+                >
+                  <NavLink to="/how-it-works">
+                    See how it works
+                  </NavLink>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Right side: Product visual */}
+            <div 
+              className="relative lg:pl-8 opacity-0 animate-fade-in"
+              style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
+            >
+              {/* Device and app visual */}
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/hero-nurse-device.png" 
+                  alt="Smart Lung Physio device in use" 
+                  className="w-full max-w-lg mx-auto lg:max-w-none rounded-2xl"
+                />
+                
+                {/* Floating session summary card */}
+                <div 
+                  className={`absolute -bottom-4 -left-4 md:bottom-8 md:-left-8 bg-card border border-border rounded-xl p-4 shadow-lg max-w-[200px] transition-all duration-500 ${
+                    isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Session Complete</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-muted-foreground">Duration</span>
+                      <span className="text-sm font-semibold text-foreground">8:32</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-muted-foreground">Pressure consistency</span>
+                      <span className="text-sm font-semibold text-primary">94%</span>
+                    </div>
+                    <div className="h-1.5 bg-muted rounded-full overflow-hidden mt-1">
+                      <div className="h-full w-[94%] bg-primary rounded-full" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Subtle decorative element */}
+                <div className="absolute -z-10 top-1/2 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
               </div>
             </div>
           </div>
