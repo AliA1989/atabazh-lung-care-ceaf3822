@@ -27,49 +27,40 @@ const Home = () => {
         {/* Full background - Soft blue gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
         
-        {/* Large organic swoosh shape - top right */}
-        <div className="absolute -top-40 -right-40 w-[900px] h-[900px] z-0">
-          <svg viewBox="0 0 800 800" className="w-full h-full" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(200, 80%, 65%)" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="hsl(205, 75%, 55%)" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="hsl(210, 70%, 50%)" stopOpacity="0.2" />
-              </linearGradient>
-            </defs>
-            <path 
-              d="M400,0 C600,0 800,200 800,400 C800,600 600,800 400,800 C200,800 100,650 150,450 C200,250 200,0 400,0 Z" 
-              fill="url(#swoosh-gradient)"
-            />
-          </svg>
+        {/* Bold circular gradient container for nurse - darker blue */}
+        <div className="absolute top-0 right-0 w-[70%] h-full z-0 hidden lg:block">
+          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,75%,75%)] via-[hsl(200,70%,80%)] to-transparent rounded-bl-[40%]" />
+          {/* Inner darker gradient circle */}
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[10%] w-[700px] h-[700px]">
+            <div className="w-full h-full rounded-full bg-gradient-to-br from-[hsl(200,65%,82%)] via-[hsl(205,70%,75%)] to-[hsl(210,75%,68%)] opacity-90" />
+          </div>
         </div>
         
-        {/* Secondary swoosh - smaller, lighter */}
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] z-0 opacity-60">
+        {/* Large organic swoosh shape - top right accent */}
+        <div className="absolute -top-20 -right-20 w-[600px] h-[600px] z-[1] hidden lg:block">
           <svg viewBox="0 0 600 600" className="w-full h-full" preserveAspectRatio="none">
             <defs>
-              <linearGradient id="swoosh-gradient-2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="hsl(195, 85%, 70%)" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="hsl(200, 80%, 60%)" stopOpacity="0.1" />
+              <linearGradient id="swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(200, 80%, 70%)" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="hsl(210, 75%, 60%)" stopOpacity="0.3" />
               </linearGradient>
             </defs>
-            <ellipse cx="450" cy="200" rx="350" ry="280" fill="url(#swoosh-gradient-2)" />
+            <ellipse cx="400" cy="200" rx="300" ry="250" fill="url(#swoosh-gradient)" />
           </svg>
         </div>
         
-        {/* Horizontal EKG line running across the hero - subtle depth effect */}
-        <div className="absolute inset-0 flex items-center z-[1] pointer-events-none overflow-hidden">
+        {/* Horizontal EKG line - more visible */}
+        <div className="absolute inset-0 flex items-center z-[2] pointer-events-none overflow-hidden">
           <svg 
-            className="w-[200%] h-32 opacity-[0.08]"
+            className="w-[200%] h-40 opacity-[0.15]"
             viewBox="0 0 2000 100"
             preserveAspectRatio="none"
           >
             <path 
               d="M0,50 L200,50 L210,50 L220,20 L230,80 L240,35 L250,65 L260,50 L400,50 L410,50 L420,15 L430,85 L440,30 L450,70 L460,50 L600,50 L610,50 L620,20 L630,80 L640,35 L650,65 L660,50 L800,50 L810,50 L820,15 L830,85 L840,30 L850,70 L860,50 L1000,50 L1010,50 L1020,20 L1030,80 L1040,35 L1050,65 L1060,50 L1200,50 L1210,50 L1220,15 L1230,85 L1240,30 L1250,70 L1260,50 L1400,50 L1410,50 L1420,20 L1430,80 L1440,35 L1450,65 L1460,50 L1600,50 L1610,50 L1620,15 L1630,85 L1640,30 L1650,70 L1660,50 L1800,50 L1810,50 L1820,20 L1830,80 L1840,35 L1850,65 L1860,50 L2000,50" 
-              stroke="hsl(210, 80%, 45%)" 
-              strokeWidth="3" 
+              stroke="hsl(210, 80%, 40%)" 
+              strokeWidth="2.5" 
               fill="none"
-              className="animate-pulse-soft"
             />
           </svg>
         </div>
@@ -110,8 +101,8 @@ const Home = () => {
               >
                 {HERO_BULLETS.map((bullet, index) => (
                   <li key={index} className="flex items-center gap-3.5 text-[15px] text-slate-700">
-                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[hsl(200,70%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <bullet.icon className="w-3.5 h-3.5 text-white" />
+                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <bullet.icon className="w-3.5 h-3.5 text-blue-700" />
                     </div>
                     {bullet.text}
                   </li>
@@ -185,9 +176,9 @@ const Home = () => {
                   className="w-full max-w-md h-auto object-contain relative z-10 drop-shadow-2xl"
                 />
                 
-                {/* Floating session card - Glassmorphism effect */}
+                {/* Floating session card - Strong Glassmorphism effect */}
                 <div 
-                  className={`absolute bottom-1/4 -left-6 backdrop-blur-xl bg-white/70 border border-white/90 rounded-2xl p-5 shadow-2xl shadow-slate-900/10 transition-all duration-700 z-20 ${
+                  className={`absolute bottom-1/4 -left-6 backdrop-blur-2xl bg-white/75 border-2 border-white/60 rounded-2xl p-5 shadow-2xl shadow-slate-900/15 transition-all duration-700 z-20 ${
                     isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
