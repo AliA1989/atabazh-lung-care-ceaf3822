@@ -2,18 +2,18 @@ const HowItWorksSection = () => {
   const steps = [{
     number: "01",
     title: "Assess & Set Targets",
-    description: "Review resident parameters and select a session profile in the app.",
-    detail: "Force-sensing and SpO₂ thresholds configured per care plan"
+    description: "Open the app, review resident parameters, and select the appropriate session profile.",
+    detail: "Force and SpO₂ thresholds configured per care plan"
   }, {
     number: "02",
-    title: "Treat with Real-Time Guidance",
-    description: "Apply the device while following on-screen prompts for guided range and positioning.",
-    detail: "Live pressure feedback and vitals monitoring layer"
+    title: "Perform Guided Therapy",
+    description: "Apply manual chest physiotherapy while following on-screen prompts for positioning and pressure.",
+    detail: "Live feedback helps maintain consistent technique"
   }, {
     number: "03",
-    title: "Document & Review",
-    description: "Session summary logged automatically for care records and clinical review.",
-    detail: "Duration, force patterns, and SpO₂ trends captured"
+    title: "Complete & Document",
+    description: "End the session and confirm the summary is logged for care records.",
+    detail: "Duration, patterns, and vitals captured automatically"
   }];
 
   return (
@@ -25,7 +25,7 @@ const HowItWorksSection = () => {
             How It Works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A structured workflow for guided chest percussion in long-term care settings.
+            Three simple steps to deliver consistent, guided chest physiotherapy.
           </p>
         </div>
 
@@ -46,25 +46,25 @@ const HowItWorksSection = () => {
                 src="/lovable-uploads/ae461a86-7d11-4d64-92d1-ce91833c8990.png" 
               />
               
-              {/* Floating session summary card */}
-              <div className="absolute -bottom-4 -right-4 lg:right-0 bg-card/95 backdrop-blur-sm border border-border/60 rounded-xl p-4 shadow-lg max-w-[200px] animate-fade-in" style={{ animationDelay: "0.5s" }}>
-                <div className="space-y-2">
+              {/* Floating session summary card - outcome-oriented */}
+              <div className="absolute -bottom-4 -right-4 lg:right-0 bg-card/95 backdrop-blur-sm border border-border/60 rounded-xl p-4 shadow-lg max-w-[180px] animate-fade-in" style={{ animationDelay: "0.5s" }}>
+                <div className="space-y-2.5">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                    <span className="text-xs font-medium text-foreground">Session Logged</span>
+                    <span className="text-xs font-medium text-foreground">Session Complete</span>
                   </div>
-                  <div className="text-[11px] text-muted-foreground space-y-1">
-                    <div className="flex justify-between">
-                      <span>Duration</span>
-                      <span className="font-medium text-foreground/80">4:32</span>
+                  <div className="text-[11px] text-muted-foreground space-y-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-600">✓</span>
+                      <span>Guidance followed</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>SpO₂ range</span>
-                      <span className="font-medium text-foreground/80">94–97%</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-600">✓</span>
+                      <span>Vitals within range</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Force avg</span>
-                      <span className="font-medium text-foreground/80">Within range</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-600">✓</span>
+                      <span>Logged for care records</span>
                     </div>
                   </div>
                 </div>
