@@ -193,61 +193,58 @@ const Home = () => {
             
             {/* Right side: Hero image with tech elements */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-end"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Tech ring background element */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[420px] h-[420px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
-                <div className="absolute w-[360px] h-[360px] rounded-full border border-[hsl(200,70%,60%)]/20" />
-                <div className="absolute w-[480px] h-[480px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+              {/* Tech ring background element - positioned to the right */}
+              <div className="absolute inset-0 flex items-center justify-center translate-x-8">
+                <div className="w-[500px] h-[500px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
+                <div className="absolute w-[430px] h-[430px] rounded-full border border-[hsl(200,70%,60%)]/20" />
+                <div className="absolute w-[570px] h-[570px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
               </div>
               
               {/* Medical icon overlays - subtle tech elements */}
-              <div className="absolute top-8 right-16 w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
+              <div className="absolute top-4 right-8 w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
                 <Activity className="w-5 h-5 text-[hsl(200,70%,50%)]" />
               </div>
-              <div className="absolute bottom-24 left-8 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
+              <div className="absolute bottom-32 left-0 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/80 shadow-lg flex items-center justify-center">
                 <Heart className="w-4 h-4 text-[hsl(200,70%,50%)]" />
               </div>
               
-              {/* Hero image container with soft gradient mask */}
-              <div className="relative">
-                {/* Soft gradient backdrop behind image */}
-                <div className="absolute inset-0 -m-6 rounded-[40px] bg-gradient-to-br from-white/40 to-[hsl(200,60%,90%)]/40 backdrop-blur-sm" />
-                
-                {/* Image with gradient mask for seamless blending */}
-                <div className="relative z-10" style={{ 
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)'
-                }}>
-                  <img 
-                    src="/lovable-uploads/hero-nurse-device.png" 
-                    alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                    className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
-                
-                {/* Floating session card - Strong Glassmorphism effect */}
-                <div 
-                  className={`absolute bottom-1/4 -left-6 backdrop-blur-2xl bg-white/75 border-2 border-white/60 rounded-2xl p-5 shadow-2xl shadow-slate-900/15 transition-all duration-700 z-20 ${
-                    isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}
-                >
-                  <div className="space-y-3 min-w-[165px]">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
-                      <span className="text-[13px] font-semibold text-slate-800">Session completed</span>
+              {/* Hero image - larger, no container, with fade blend */}
+              <div 
+                className="relative translate-x-4"
+                style={{ 
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 92%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 92%)'
+                }}
+              >
+                <img 
+                  src="/lovable-uploads/hero-nurse-device.png" 
+                  alt="Healthcare professional demonstrating Smart Lung Physio device" 
+                  className="w-full max-w-[520px] h-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+              
+              {/* Floating session card - Strong Glassmorphism effect */}
+              <div 
+                className={`absolute bottom-1/3 left-4 backdrop-blur-2xl bg-white/75 border-2 border-white/60 rounded-2xl p-5 shadow-2xl shadow-slate-900/15 transition-all duration-700 z-20 ${
+                  isPulseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                <div className="space-y-3 min-w-[165px]">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50" />
+                    <span className="text-[13px] font-semibold text-slate-800">Session completed</span>
+                  </div>
+                  <div className="space-y-2 text-[12px]">
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
+                      <span>Pressure: within range</span>
                     </div>
-                    <div className="space-y-2 text-[12px]">
-                      <div className="flex items-center gap-2 text-slate-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
-                        <span>Pressure: within range</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
-                        <span>Logged for records</span>
-                      </div>
+                    <div className="flex items-center gap-2 text-slate-600">
+                      <CheckCircle className="w-3.5 h-3.5 text-[hsl(200,70%,50%)] flex-shrink-0" />
+                      <span>Logged for records</span>
                     </div>
                   </div>
                 </div>
