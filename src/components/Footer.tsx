@@ -9,11 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center mb-5">
+            <div className="flex items-start mb-5">
               <img 
                 src={logo} 
                 alt="Atabazh Med Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
