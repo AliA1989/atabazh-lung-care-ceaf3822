@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -67,17 +68,49 @@ const Contact = () => {
       return;
     }
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert({
+          first_name: result.data.firstName,
+          last_name: result.data.lastName,
+          email: result.data.email,
+          phone: result.data.phone || null,
+          organization: result.data.organization,
+          role: result.data.role,
+          inquiry: result.data.inquiry,
+          message: result.data.message,
+        });
 
-    toast({
-      title: "Message Sent",
-      description: "Thank you for contacting us. We'll respond within 24 hours.",
-    });
+      if (error) {
+        console.error('Error submitting contact form:', error);
+        toast({
+          title: "Submission Failed",
+          description: "We couldn't send your message. Please try again later.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
 
-    setIsSubmitting(false);
-    setRole("");
-    setInquiry("");
-    (e.target as HTMLFormElement).reset();
+      toast({
+        title: "Message Sent",
+        description: "Thank you for contacting us. We'll respond within 24 hours.",
+      });
+
+      setRole("");
+      setInquiry("");
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
