@@ -112,10 +112,10 @@ const Home = () => {
         </div>
         
         <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 py-24 lg:py-0">
-          {/* FLEXBOX FIX: items-center ensures perfect vertical centering between columns */}
-          <div className="flex flex-col lg:flex-row lg:items-center gap-14 lg:gap-6">
-            {/* Left side: Text content */}
-            <div className="space-y-8 max-w-xl lg:max-w-none lg:pr-10 lg:w-[45%] lg:flex-shrink-0">
+          {/* FLEXBOX: Perfect vertical centering between text and image */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-14 lg:gap-8">
+            {/* Left side: Text content - vertically centered with image */}
+            <div className="space-y-8 max-w-xl lg:max-w-none lg:pr-6 lg:w-[42%] lg:flex-shrink-0 flex flex-col justify-center">
               {/* Badge - Monochromatic blue palette */}
               <div 
                 className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-blue-50/90 border border-blue-100/70 shadow-sm opacity-0 animate-fade-in"
@@ -192,30 +192,30 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right side: Hero image - SIGNIFICANTLY LARGER (40-50% increase) */}
+            {/* Right side: Hero image - LARGE, vertically centered */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[55%]"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[58%] self-center"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
               {/* Tech ring background element - scaled up for larger image */}
-              <div className="absolute inset-0 flex items-center justify-center translate-x-12">
-                <div className="w-[850px] h-[850px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
-                <div className="absolute w-[750px] h-[750px] rounded-full border border-[hsl(200,70%,60%)]/20" />
-                <div className="absolute w-[950px] h-[950px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+              <div className="absolute inset-0 flex items-center justify-center translate-x-8">
+                <div className="w-[800px] h-[800px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
+                <div className="absolute w-[700px] h-[700px] rounded-full border border-[hsl(200,70%,60%)]/20" />
+                <div className="absolute w-[900px] h-[900px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
               </div>
               
-              {/* Hero image - AGGRESSIVELY LARGER: ~1400px max-width (was 960px = 45% increase) */}
+              {/* Hero image - Large and centered */}
               <div 
-                className="relative"
+                className="relative flex items-center justify-center"
                 style={{ 
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 95%)'
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)'
                 }}
               >
                 <img 
                   src="/lovable-uploads/hero-nurse-device.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-full max-w-[1400px] h-auto object-contain drop-shadow-2xl scale-110"
+                  className="w-full max-w-[1300px] h-auto object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
