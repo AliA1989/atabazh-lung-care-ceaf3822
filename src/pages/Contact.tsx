@@ -106,8 +106,8 @@ const Contact = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
-      {/* Contact Form & Info - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Contact Form & Info - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}

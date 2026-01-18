@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { 
   Target, 
   Users, 
@@ -157,8 +158,7 @@ const About = () => {
 
       {/* Our Story - Enhanced with design system */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Soft gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(210,50%,98%)] to-background" />
+        {/* Unified background - removed explicit white */}
         
         <div className="container relative mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -262,7 +262,6 @@ const About = () => {
 
       {/* Values - Glassmorphism cards */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(210,50%,98%)] to-background" />
         
         <div className="container relative mx-auto max-w-6xl">
           <div className="text-center mb-14">
@@ -482,8 +481,7 @@ const About = () => {
 
       {/* Strategic Partners - Premium glassmorphism cards */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(210,50%,98%)] to-background" />
-        
+        {/* Unified background styling */}
         <div className="container relative mx-auto max-w-5xl">
           <div className="text-center mb-14">
             <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
@@ -563,7 +561,7 @@ const About = () => {
 
       {/* Working With Students - Glassmorphism style */}
       <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(210,50%,98%)] to-background" />
+        {/* Unified background styling */}
         
         <div className="container relative mx-auto max-w-4xl">
           <div className="text-center mb-10 animate-fade-in">

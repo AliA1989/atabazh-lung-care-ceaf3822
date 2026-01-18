@@ -4,7 +4,7 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,45%,95%)] to-[hsl(210,50%,93%)] border-t border-slate-200/50">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700/50">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-14 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Logo and Tagline */}
@@ -13,22 +13,22 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Atabazh Medical Logo" 
-                className="h-14 w-14 object-contain rounded-full shadow-md"
+                className="h-14 w-14 object-contain rounded-full shadow-lg ring-2 ring-white/10"
               />
-              <span className="font-semibold text-base text-slate-800">Atabazh Medical</span>
+              <span className="font-semibold text-base text-white">Atabazh Medical</span>
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>
             <a 
               href="https://www.linkedin.com/company/atabazh-medical-inc" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-5 text-sm text-slate-500 hover:text-blue-600 transition-colors"
+              className="inline-flex items-center gap-2 mt-5 text-sm text-slate-400 hover:text-blue-400 transition-colors"
               aria-label="Follow Atabazh Medical on LinkedIn"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                <Linkedin className="h-4 w-4 text-blue-700" />
+              <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                <Linkedin className="h-4 w-4 text-blue-400" />
               </div>
               <span>Follow us on LinkedIn</span>
             </a>
@@ -36,7 +36,7 @@ const Footer = () => {
 
           {/* Product Column */}
           <div>
-            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Product</h3>
+            <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Product</h3>
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
@@ -46,7 +46,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Company</h3>
+            <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Company</h3>
             <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
@@ -66,7 +66,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -77,7 +77,7 @@ const Footer = () => {
 
           {/* Get Started Column */}
           <div>
-            <h3 className="font-semibold text-sm text-slate-800 mb-5 uppercase tracking-wider">Get Started</h3>
+            <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
                 { to: "/contact", label: "Request a Demo" },
@@ -86,7 +86,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -97,20 +97,20 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-slate-200/70 my-10" />
+        <div className="h-px bg-slate-700/50 my-10" />
         
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-8">
             <a 
               href="#" 
-              className="text-sm text-slate-500 hover:text-slate-700 transition-colors duration-200"
+              className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <a 
               href="#" 
-              className="text-sm text-slate-500 hover:text-slate-700 transition-colors duration-200"
+              className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200"
             >
               Terms of Service
             </a>

@@ -269,8 +269,8 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
-      {/* The Challenge Section - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* The Challenge Section - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">The Operational Challenge</h2>
@@ -380,8 +380,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Design Goals Section - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Design Goals Section - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
             <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Design Goals</span>
@@ -483,8 +483,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Development Context Section - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Development Context Section - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">
@@ -647,8 +647,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* LTC Focus Section - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* LTC Focus Section - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal className="space-y-8">

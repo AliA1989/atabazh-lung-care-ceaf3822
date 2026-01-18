@@ -135,8 +135,8 @@ const Device = () => {
         </div>
       </section>
 
-      {/* Designed for Care Settings - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Designed for Care Settings - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Designed for Care Settings</h2>
