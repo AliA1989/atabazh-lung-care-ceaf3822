@@ -553,40 +553,36 @@ const About = () => {
         </div>
       </section>
 
-      {/* Ecosystem Support - Premium minimal design */}
-      <section className="relative py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Soft blue gradient background */}
+      {/* Ecosystem Support - Premium Trust Bar */}
+      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Soft gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,97%)] via-[hsl(200,50%,95%)] to-[hsl(220,40%,96%)]" />
         <div className="absolute top-10 left-20 w-64 h-64 bg-gradient-to-br from-primary/8 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-20 w-72 h-72 bg-gradient-to-tl from-[hsl(200,60%,90%)]/30 to-transparent rounded-full blur-3xl" />
         
-        <div className="container relative mx-auto max-w-5xl">
-          {/* Section Header */}
-          <div className="text-center mb-16 lg:mb-20 animate-fade-in">
-            <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
-              Recognized & Supported
+        <div className="container relative mx-auto max-w-6xl">
+          {/* Section Header - Subtle, professional styling */}
+          <div className="text-center mb-14 lg:mb-16 animate-fade-in">
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-500 font-medium mb-3">
+              Recognized & Supported By
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight mb-5">
-              Supported by Canada's Leading Innovation & Health Ecosystems
+            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] text-slate-600 font-medium max-w-2xl mx-auto">
+              Canada's Leading Innovation & Health Ecosystems
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Recognized and supported through national innovation programs, clinical partnerships, and med-tech accelerators.
-            </p>
           </div>
           
-          {/* Partner Logos - Single centered row, minimal style */}
-          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
+          {/* Partner Logos - Premium Trust Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 lg:gap-20">
             {ecosystemLogos.map((logo, index) => (
               <div 
                 key={logo.alt}
                 className="group flex items-center justify-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <img 
                   src={logo.src} 
                   alt={logo.alt}
-                  className="h-16 lg:h-20 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-500"
-                  style={{ filter: 'grayscale(100%)' }}
+                  className="h-12 md:h-14 lg:h-16 w-auto max-w-[140px] md:max-w-[160px] object-contain transition-all duration-500 ease-out grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
                 />
               </div>
             ))}
