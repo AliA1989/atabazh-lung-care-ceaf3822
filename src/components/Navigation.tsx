@@ -36,11 +36,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center group">
+          <NavLink to="/" className="flex items-center group shrink-0">
             <img 
               src={logo} 
               alt="Atabazh Medical" 
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-12 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </NavLink>
 

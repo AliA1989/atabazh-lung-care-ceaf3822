@@ -9,14 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-start mb-5">
-              <img 
-                src={logo} 
-                alt="Atabazh Med Logo" 
-                className="h-10 w-40 object-contain"
-                style={{ mixBlendMode: 'screen', filter: 'invert(1) brightness(2)' }}
-              />
-            </div>
+            <img 
+              src={logo} 
+              alt="Atabazh Med Logo" 
+              className="h-12 w-auto object-contain object-left mb-5"
+              style={{ mixBlendMode: 'screen', filter: 'invert(1) brightness(2)' }}
+            />
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>
