@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo-horizontal.png";
+import logo from "@/assets/logo-new.png";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
