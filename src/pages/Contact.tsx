@@ -83,7 +83,9 @@ const Contact = () => {
         });
 
       if (error) {
-        console.error('Error submitting contact form:', error);
+        if (import.meta.env.DEV) {
+          console.error('Error submitting contact form:', error);
+        }
         toast({
           title: "Submission Failed",
           description: "We couldn't send your message. Please try again later.",
@@ -102,7 +104,9 @@ const Contact = () => {
       setInquiry("");
       (e.target as HTMLFormElement).reset();
     } catch (error) {
-      console.error('Unexpected error:', error);
+      if (import.meta.env.DEV) {
+        console.error('Unexpected error:', error);
+      }
       toast({
         title: "Submission Failed",
         description: "An unexpected error occurred. Please try again.",
