@@ -192,30 +192,30 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right side: Hero image - LARGE, vertically centered */}
+            {/* Right side: Hero image - Height-based sizing for impact */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[58%] self-center"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[55%] self-center"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Tech ring background element - scaled up for larger image */}
-              <div className="absolute inset-0 flex items-center justify-center translate-x-8">
-                <div className="w-[800px] h-[800px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
-                <div className="absolute w-[700px] h-[700px] rounded-full border border-[hsl(200,70%,60%)]/20" />
-                <div className="absolute w-[900px] h-[900px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+              {/* Tech ring background element - centered with image */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[700px] h-[700px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
+                <div className="absolute w-[600px] h-[600px] rounded-full border border-[hsl(200,70%,60%)]/20" />
+                <div className="absolute w-[800px] h-[800px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
               </div>
               
-              {/* Hero image - Large and centered */}
+              {/* Hero image - Height-based sizing: 85vh with max-height constraint */}
               <div 
                 className="relative flex items-center justify-center"
                 style={{ 
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 65%, transparent 95%)'
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 98%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 98%)'
                 }}
               >
                 <img 
-                  src="/lovable-uploads/hero-nurse-device.png" 
+                  src="/lovable-uploads/hero-nurse-clean.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-full max-w-[1300px] h-auto object-contain drop-shadow-2xl"
+                  className="w-auto h-[85vh] max-h-[800px] object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
