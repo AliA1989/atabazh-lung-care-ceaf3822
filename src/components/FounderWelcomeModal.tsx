@@ -115,8 +115,15 @@ const FounderWelcomeModal = () => {
             Connect with me on LinkedIn
           </Button>
 
+          {/* Collaboration Note - Secondary message */}
+          <div className="mt-6 pt-5 border-t border-slate-200/60">
+            <p className="text-xs text-slate-400 italic leading-relaxed">
+              Atabazh Medical collaborates with students and early-career professionals interested in medical device development and health innovation.
+            </p>
+          </div>
+
           {/* Subtle dismiss text */}
-          <p className="mt-4 text-xs text-slate-400">
+          <p className="mt-4 text-xs text-slate-400/70">
             Click anywhere outside to dismiss
           </p>
         </div>
