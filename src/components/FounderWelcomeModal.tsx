@@ -102,7 +102,7 @@ const FounderWelcomeModal = () => {
               Hi, I'm Ali Abedinpour
             </h3>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-              Welcome to Atabazh Med. We are proud to be recognized by Canada's leading health ecosystems as we innovate Smart Lung Physio™. I invite you to connect with me directly to discuss our technology and vision.
+              Welcome to Atabazh Med. We are innovating respiratory care and actively collaborating with students and early-career talent in MedTech. Let's connect!
             </p>
           </div>
 
@@ -114,18 +114,6 @@ const FounderWelcomeModal = () => {
             <Linkedin className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
             Connect with me on LinkedIn
           </Button>
-
-          {/* Collaboration Note - Secondary message */}
-          <div className="mt-6 pt-5 border-t border-slate-200/60">
-            <p className="text-xs text-slate-400 italic leading-relaxed">
-              Atabazh Medical collaborates with students and early-career professionals interested in medical device development and health innovation.
-            </p>
-          </div>
-
-          {/* Subtle dismiss text */}
-          <p className="mt-4 text-xs text-slate-400/70">
-            Click anywhere outside to dismiss
-          </p>
         </div>
       </div>
 
