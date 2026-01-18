@@ -553,36 +553,46 @@ const About = () => {
         </div>
       </section>
 
-      {/* Ecosystem Support - Premium Trust Bar */}
-      <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Soft gradient background */}
+      {/* Ecosystem Support - Premium Trust Bar with Soft Glow */}
+      <section className="relative py-28 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Base soft blue gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,97%)] via-[hsl(200,50%,95%)] to-[hsl(220,40%,96%)]" />
-        <div className="absolute top-10 left-20 w-64 h-64 bg-gradient-to-br from-primary/8 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-20 w-72 h-72 bg-gradient-to-tl from-[hsl(200,60%,90%)]/30 to-transparent rounded-full blur-3xl" />
+        
+        {/* Soft radial white glow - the "cloud of light" effect */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 30%, rgba(255,255,255,0.3) 55%, rgba(255,255,255,0) 75%)'
+          }}
+        />
+        
+        {/* Subtle ambient orbs */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 bg-gradient-to-tl from-[hsl(200,60%,90%)]/20 to-transparent rounded-full blur-3xl" />
         
         <div className="container relative mx-auto max-w-6xl">
           {/* Section Header - Subtle, professional styling */}
-          <div className="text-center mb-14 lg:mb-16 animate-fade-in">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-500 font-medium mb-3">
+          <div className="text-center mb-16 lg:mb-20 animate-fade-in">
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-400 font-medium mb-3">
               Recognized & Supported By
             </p>
-            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] text-slate-600 font-medium max-w-2xl mx-auto">
+            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] text-slate-500 font-medium max-w-2xl mx-auto">
               Canada's Leading Innovation & Health Ecosystems
             </h2>
           </div>
           
-          {/* Partner Logos - Premium Trust Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 lg:gap-20">
+          {/* Partner Logos - Floating on the white glow */}
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16 lg:gap-24 py-8">
             {ecosystemLogos.map((logo, index) => (
               <div 
                 key={logo.alt}
-                className="group flex items-center justify-center animate-fade-in"
+                className="flex items-center justify-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <img 
                   src={logo.src} 
                   alt={logo.alt}
-                  className="h-12 md:h-14 lg:h-16 w-auto max-w-[140px] md:max-w-[160px] object-contain transition-all duration-500 ease-out grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+                  className="h-12 md:h-14 lg:h-16 w-auto max-w-[140px] md:max-w-[160px] object-contain transition-all duration-500 ease-out grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-pointer"
                 />
               </div>
             ))}
