@@ -99,31 +99,27 @@ const HowItWorksSection = () => {
                 src="/lovable-uploads/product-system-new.png" 
               />
               
-              {/* Glassmorphism Session Complete card - floating overlay */}
+              {/* Glassmorphism Session Complete card - subtle floating accent */}
               <div 
-                className="absolute -bottom-4 -right-4 lg:bottom-8 lg:-right-8 backdrop-blur-xl bg-white/70 border border-white/50 rounded-2xl p-4 shadow-[0_8px_32px_rgba(0,60,120,0.15)] animate-fade-in"
+                className="absolute -bottom-6 right-4 lg:-bottom-2 lg:right-8 backdrop-blur-lg bg-white/50 border border-white/40 rounded-xl p-3 shadow-[0_6px_24px_rgba(0,60,120,0.12)] animate-fade-in opacity-85"
                 style={{ animationDelay: "0.5s" }}
               >
                 {/* Frosted glass inner glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-primary/5 rounded-2xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-primary/5 rounded-xl pointer-events-none" />
                 
-                <div className="relative space-y-2.5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></div>
-                    <span className="text-sm font-semibold text-foreground">Session Complete</span>
+                <div className="relative space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></div>
+                    <span className="text-xs font-semibold text-foreground/90">Session Complete</span>
                   </div>
-                  <div className="text-xs text-muted-foreground space-y-1.5">
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-500 font-medium">✓</span>
+                  <div className="text-[10px] text-muted-foreground/80 space-y-1">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-500 text-[9px]">✓</span>
                       <span>Guidance followed</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-500 font-medium">✓</span>
-                      <span>Vitals within range</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-emerald-500 font-medium">✓</span>
-                      <span>Logged for records</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-emerald-500 text-[9px]">✓</span>
+                      <span>Vitals in range</span>
                     </div>
                   </div>
                 </div>
