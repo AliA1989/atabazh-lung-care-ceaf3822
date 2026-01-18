@@ -13,7 +13,8 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Atabazh Med Logo" 
-                className="h-10 w-auto object-contain brightness-0 invert"
+                className="h-10 w-40 object-contain"
+                style={{ mixBlendMode: 'screen', filter: 'invert(1) brightness(2)' }}
               />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
