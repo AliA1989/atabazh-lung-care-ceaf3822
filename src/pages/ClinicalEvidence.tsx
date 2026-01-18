@@ -31,8 +31,8 @@ const ClinicalEvidence = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
-      {/* Early Observations - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Early Observations - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
           <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Early Observations</h2>
@@ -149,8 +149,8 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      {/* Safety Observations - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* Safety Observations - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800 text-center mb-12">Safety Observations</h2>
@@ -284,7 +284,7 @@ const ClinicalEvidence = () => {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-8 px-6 sm:px-8 lg:px-12 bg-white border-t border-slate-100">
+      <section className="py-8 px-6 sm:px-8 lg:px-12 border-t border-slate-200/50">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-start gap-3 text-sm text-slate-500">
             <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5 text-slate-400" />
@@ -295,8 +295,8 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      {/* CTA - Clean White */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      {/* CTA - Unified styling */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-4xl text-center space-y-8">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Interested in Learning More?</h2>
