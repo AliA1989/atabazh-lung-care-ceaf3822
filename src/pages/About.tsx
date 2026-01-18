@@ -327,7 +327,20 @@ const About = () => {
             </div>
             
             <div className="flex justify-center">
-              <div className="group relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 lg:p-10 border border-white/50 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-2 animate-fade-in max-w-md">
+              <div 
+                className="group relative bg-white/60 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/80 transition-all duration-500 hover:-translate-y-2 animate-fade-in max-w-md"
+                style={{ 
+                  boxShadow: '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 12px 40px -8px hsl(210 80% 50% / 0.25), 0 8px 24px -4px hsl(210 80% 60% / 0.15)';
+                  e.currentTarget.style.borderColor = 'hsl(210 80% 85% / 0.8)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)';
+                  e.currentTarget.style.borderColor = 'hsl(0 0% 100% / 0.8)';
+                }}
+              >
                 <div className="relative flex flex-col items-center text-center">
                   {/* Photo with gradient mask fade */}
                   <div className="relative mb-6">
@@ -345,7 +358,7 @@ const About = () => {
                   
                   {/* Name with gradient underline */}
                   <div className="mb-3">
-                    <h3 className="font-bold text-xl lg:text-2xl text-slate-800 tracking-wide mb-2">{founder.name}</h3>
+                    <h3 className="font-bold text-xl lg:text-2xl text-[hsl(215,50%,25%)] tracking-wide mb-2">{founder.name}</h3>
                     <div className="h-0.5 w-14 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
                   </div>
                   
@@ -355,7 +368,7 @@ const About = () => {
                   </span>
                   
                   {/* Description */}
-                  <p className="text-base text-slate-600 leading-relaxed mb-4">
+                  <p className="text-base text-slate-500 leading-relaxed mb-4">
                     {founder.description}
                   </p>
                   
@@ -386,8 +399,19 @@ const About = () => {
               {technicalTeam.map((member, index) => (
                 <div 
                   key={member.name} 
-                  className="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/50 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="group relative bg-white/60 backdrop-blur-xl rounded-2xl p-6 lg:p-8 border border-white/80 transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                  style={{ 
+                    animationDelay: `${index * 0.1}s`,
+                    boxShadow: '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 12px 40px -8px hsl(210 80% 50% / 0.25), 0 8px 24px -4px hsl(210 80% 60% / 0.15)';
+                    e.currentTarget.style.borderColor = 'hsl(210 80% 85% / 0.8)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)';
+                    e.currentTarget.style.borderColor = 'hsl(0 0% 100% / 0.8)';
+                  }}
                 >
                   <div className="relative flex flex-col items-center text-center">
                     {/* Photo with gradient ring and fade mask */}
@@ -406,7 +430,7 @@ const About = () => {
                     
                     {/* Name with gradient underline */}
                     <div className="mb-3">
-                      <h3 className="font-bold text-lg lg:text-xl text-slate-800 tracking-wide mb-2">{member.name}</h3>
+                      <h3 className="font-bold text-lg lg:text-xl text-[hsl(215,50%,25%)] tracking-wide mb-2">{member.name}</h3>
                       <div className="h-0.5 w-12 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
                     </div>
                     
@@ -416,7 +440,7 @@ const About = () => {
                     </span>
                     
                     {/* Description */}
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-500 leading-relaxed">
                       {member.description}
                     </p>
                   </div>
@@ -438,8 +462,19 @@ const About = () => {
               {advisors.map((advisor, index) => (
                 <div 
                   key={advisor.name} 
-                  className="group relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/50 shadow-soft hover:shadow-medium transition-all duration-500 hover:-translate-y-2 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.15}s` }}
+                  className="group relative bg-white/60 backdrop-blur-xl rounded-2xl p-6 lg:p-8 border border-white/80 transition-all duration-500 hover:-translate-y-2 animate-fade-in"
+                  style={{ 
+                    animationDelay: `${index * 0.15}s`,
+                    boxShadow: '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 12px 40px -8px hsl(210 80% 50% / 0.25), 0 8px 24px -4px hsl(210 80% 60% / 0.15)';
+                    e.currentTarget.style.borderColor = 'hsl(210 80% 85% / 0.8)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 8px 32px -8px hsl(210 80% 50% / 0.15), 0 4px 16px -4px hsl(210 80% 60% / 0.1)';
+                    e.currentTarget.style.borderColor = 'hsl(0 0% 100% / 0.8)';
+                  }}
                 >
                   <div className="relative flex flex-col items-center text-center">
                     {/* Photo with gradient ring and fade mask */}
@@ -458,17 +493,17 @@ const About = () => {
                     
                     {/* Name with gradient underline */}
                     <div className="mb-3">
-                      <h3 className="font-bold text-lg text-slate-800 tracking-wide mb-2">{advisor.name}</h3>
+                      <h3 className="font-bold text-lg text-[hsl(215,50%,25%)] tracking-wide mb-2">{advisor.name}</h3>
                       <div className="h-0.5 w-10 mx-auto bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
                     </div>
                     
                     {/* Role badge */}
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200 mb-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/20 mb-4">
                       {advisor.role}
                     </span>
                     
                     {/* Description */}
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-500 leading-relaxed">
                       {advisor.description}
                     </p>
                   </div>
