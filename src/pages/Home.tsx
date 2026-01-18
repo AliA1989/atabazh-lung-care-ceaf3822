@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Play, Info } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
@@ -22,6 +23,8 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
+      {/* Founder Welcome Modal - Shows once per session */}
+      <FounderWelcomeModal />
       {/* Hero Section - Premium MedTech Glassmorphism Aesthetic */}
       <section className="relative min-h-[95vh] lg:min-h-screen flex items-center overflow-hidden">
         {/* Full background - Refined soft blue gradient with subtle radial */}
