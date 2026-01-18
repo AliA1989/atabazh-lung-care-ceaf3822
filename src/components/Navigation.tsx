@@ -19,9 +19,6 @@ const Navigation = () => {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
-    { to: "/how-it-works", label: "How It Works" },
-    { to: "/clinical-evidence", label: "Clinical Insights" },
-    { to: "/long-term-care", label: "For LTC Homes" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ];
@@ -29,33 +26,36 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? "bg-white/70 backdrop-blur-2xl shadow-lg shadow-slate-900/5 border-b border-white/50" 
-        : "bg-white/30 backdrop-blur-xl border-b border-white/30"
+        ? "bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-900/5 border-b border-white/10" 
+        : "bg-white/20 backdrop-blur-lg border-b border-white/10"
     }`}>
       {/* Glassmorphism overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-white/60 pointer-events-none" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+      <div className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${
+        scrolled ? "bg-gradient-to-r from-white/50 via-white/40 to-white/50" : "bg-transparent"
+      }`} />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <NavLink to="/" className="flex items-center group">
             <img 
               src={logo} 
               alt="Atabazh Medical" 
-              className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </NavLink>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Desktop Navigation - Centered with wider gaps */}
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-[13px] font-medium text-muted-foreground hover:text-primary transition-colors duration-200 relative py-1 group"
+                className="text-[13px] font-semibold text-slate-600 hover:text-primary transition-all duration-300 relative py-2 group tracking-wide"
                 activeClassName="text-primary"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                {/* Dot indicator on hover */}
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-300 group-hover:scale-100" />
               </NavLink>
             ))}
           </div>
@@ -64,11 +64,11 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center">
             <Button 
               asChild 
-              className="rounded-full bg-primary text-primary-foreground hover:bg-primary-dark px-6 py-2.5 text-sm font-semibold shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-0.5 group"
+              className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-7 py-2.5 text-sm font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               <NavLink to="/contact" className="flex items-center gap-2">
                 Request a Demo
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </NavLink>
             </Button>
           </div>
@@ -76,7 +76,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="lg:hidden p-2.5 rounded-full text-foreground hover:bg-secondary transition-colors duration-200"
+            className="lg:hidden p-2.5 rounded-full text-slate-700 hover:bg-white/50 transition-colors duration-200"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -87,24 +87,24 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border/20 bg-white/98 backdrop-blur-xl shadow-large animate-fade-in">
-          <div className="container mx-auto px-4 py-5 space-y-1">
+        <div className="lg:hidden border-t border-white/10 bg-white/95 backdrop-blur-xl shadow-2xl animate-fade-in">
+          <div className="container mx-auto px-4 py-6 space-y-1">
             {navLinks.map((link, index) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="block px-4 py-3.5 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-secondary/50 rounded-xl transition-all duration-200"
-                activeClassName="text-primary bg-primary/5 font-semibold"
+                className="block px-4 py-3.5 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
+                activeClassName="text-primary bg-primary/5"
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 {link.label}
               </NavLink>
             ))}
-            <div className="pt-5 border-t border-border/20 mt-4">
+            <div className="pt-6 border-t border-slate-100 mt-4">
               <Button 
                 asChild 
-                className="w-full rounded-full bg-primary text-primary-foreground shadow-soft hover:shadow-medium py-3 font-semibold"
+                className="w-full rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 py-3 font-semibold"
               >
                 <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
                   Request a Demo
