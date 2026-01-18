@@ -393,12 +393,32 @@
   }
 }
 
+@keyframes pulse-wave {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-20px);
+  }
+}
+
 @keyframes parallax {
   0% {
     transform: translateY(0) scale(1);
   }
   100% {
     transform: translateY(-20px) scale(1.02);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

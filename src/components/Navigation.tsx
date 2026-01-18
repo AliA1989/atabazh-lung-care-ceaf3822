@@ -27,11 +27,13 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? "bg-white/90 backdrop-blur-xl shadow-medium border-b border-border/10" 
-        : "bg-transparent"
+        ? "bg-white/70 backdrop-blur-2xl shadow-lg shadow-slate-900/5 border-b border-white/50" 
+        : "bg-white/30 backdrop-blur-xl border-b border-white/30"
     }`}>
+      {/* Glassmorphism overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-white/60 pointer-events-none" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}

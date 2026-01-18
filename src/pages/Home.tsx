@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList } from "lucide-react";
+import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Play, Info } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useEffect, useState } from "react";
 
@@ -22,94 +22,102 @@ const Home = () => {
   
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Modern MedTech Aesthetic */}
+      {/* Hero Section - Premium MedTech Glassmorphism Aesthetic */}
       <section className="relative min-h-[95vh] lg:min-h-screen flex items-center overflow-hidden">
-        {/* Full background - Soft blue gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
+        {/* Full background - Refined soft blue gradient with subtle radial */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,35%,98%)] via-[hsl(200,45%,96%)] to-[hsl(210,55%,92%)] z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(200,60%,90%)_0%,_transparent_60%)] z-0" />
         
-        {/* Bold circular gradient container for nurse - darker blue */}
+        {/* Bold circular gradient container for nurse - refined colors */}
         <div className="absolute top-0 right-0 w-[70%] h-full z-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,75%,75%)] via-[hsl(200,70%,80%)] to-transparent rounded-bl-[40%]" />
-          {/* Inner darker gradient circle */}
+          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,70%,78%)] via-[hsl(200,65%,82%)] to-transparent rounded-bl-[40%]" />
+          {/* Inner gradient circle with glow */}
           <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[10%] w-[700px] h-[700px]">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-[hsl(200,65%,82%)] via-[hsl(205,70%,75%)] to-[hsl(210,75%,68%)] opacity-90" />
+            <div className="w-full h-full rounded-full bg-gradient-to-br from-[hsl(200,60%,85%)] via-[hsl(205,65%,78%)] to-[hsl(210,70%,72%)] opacity-85 blur-sm" />
           </div>
         </div>
         
-        {/* Large organic swoosh shape - top right accent */}
+        {/* Premium organic swoosh shape - top right accent */}
         <div className="absolute -top-20 -right-20 w-[600px] h-[600px] z-[1] hidden lg:block">
           <svg viewBox="0 0 600 600" className="w-full h-full" preserveAspectRatio="none">
             <defs>
               <linearGradient id="swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(200, 80%, 70%)" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="hsl(210, 75%, 60%)" stopOpacity="0.3" />
+                <stop offset="0%" stopColor="hsl(200, 75%, 75%)" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="hsl(210, 70%, 65%)" stopOpacity="0.25" />
               </linearGradient>
             </defs>
             <ellipse cx="400" cy="200" rx="300" ry="250" fill="url(#swoosh-gradient)" />
           </svg>
         </div>
         
-        {/* Abstract glowing wave pattern - modern tech pulse */}
+        {/* Refined glowing wave pattern - finer lines with slow pulse animation */}
         <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
-          {/* Multiple layered wave patterns for depth */}
           <svg 
-            className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 opacity-[0.08]"
-            viewBox="0 0 1400 200"
+            className="absolute top-1/2 left-0 w-[250%] h-[500px] -translate-y-1/2 opacity-[0.12]"
+            viewBox="0 0 1800 200"
             preserveAspectRatio="none"
           >
             <defs>
               <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="hsl(200, 80%, 50%)" stopOpacity="0" />
-                <stop offset="30%" stopColor="hsl(200, 80%, 60%)" stopOpacity="1" />
-                <stop offset="70%" stopColor="hsl(210, 85%, 55%)" stopOpacity="1" />
+                <stop offset="0%" stopColor="hsl(200, 85%, 55%)" stopOpacity="0" />
+                <stop offset="20%" stopColor="hsl(200, 85%, 65%)" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="hsl(205, 90%, 60%)" stopOpacity="1" />
+                <stop offset="80%" stopColor="hsl(210, 85%, 55%)" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="hsl(210, 80%, 50%)" stopOpacity="0" />
               </linearGradient>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <filter id="glow-strong" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
                 <feMerge>
+                  <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
-            {/* Primary flowing wave */}
+            {/* Primary flowing wave - finer, glowing */}
             <path 
-              d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100 C1400,60 1600,140 1800,100" 
+              d="M0,100 C180,50 360,150 540,100 C720,50 900,150 1080,100 C1260,50 1440,150 1620,100 C1800,50 1980,150 2160,100" 
               stroke="url(#wave-gradient-1)" 
-              strokeWidth="3" 
+              strokeWidth="1.5" 
               fill="none"
-              filter="url(#glow)"
-              className="animate-pulse-soft"
+              filter="url(#glow-strong)"
+              style={{ animation: 'pulse-wave 4s ease-in-out infinite' }}
             />
           </svg>
-          {/* Secondary subtle wave - offset */}
+          {/* Secondary finer wave */}
           <svg 
-            className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 translate-y-8 opacity-[0.05]"
-            viewBox="0 0 1400 200"
+            className="absolute top-1/2 left-0 w-[250%] h-[400px] -translate-y-1/2 translate-y-6 opacity-[0.08]"
+            viewBox="0 0 1800 200"
             preserveAspectRatio="none"
           >
             <path 
-              d="M0,100 C150,130 350,70 550,100 C750,130 950,70 1150,100 C1350,130 1550,70 1750,100" 
-              stroke="hsl(205, 75%, 55%)" 
+              d="M0,100 C120,130 280,70 440,100 C600,130 760,70 920,100 C1080,130 1240,70 1400,100 C1560,130 1720,70 1880,100" 
+              stroke="hsl(205, 80%, 60%)" 
+              strokeWidth="1" 
+              fill="none"
+              filter="url(#glow-strong)"
+              style={{ animation: 'pulse-wave 5s ease-in-out infinite reverse' }}
+            />
+          </svg>
+          {/* Tertiary subtle wave */}
+          <svg 
+            className="absolute top-1/2 left-0 w-[200%] h-[600px] -translate-y-1/2 -translate-y-8 opacity-[0.05]"
+            viewBox="0 0 1600 200"
+            preserveAspectRatio="none"
+          >
+            <path 
+              d="M0,100 C400,40 800,160 1200,100 C1600,40 2000,160 2400,100" 
+              stroke="hsl(210, 75%, 65%)" 
               strokeWidth="2" 
               fill="none"
-              filter="url(#glow)"
-            />
-          </svg>
-          {/* Tertiary wave - wider, slower feeling */}
-          <svg 
-            className="absolute top-1/2 left-0 w-[200%] h-[500px] -translate-y-1/2 -translate-y-4 opacity-[0.04]"
-            viewBox="0 0 1400 200"
-            preserveAspectRatio="none"
-          >
-            <path 
-              d="M0,100 C350,50 700,150 1050,100 C1400,50 1750,150 2100,100" 
-              stroke="hsl(210, 70%, 60%)" 
-              strokeWidth="4" 
-              fill="none"
+              style={{ animation: 'pulse-wave 7s ease-in-out infinite' }}
             />
           </svg>
         </div>
+        
+        {/* Ambient light overlay - soft directional lighting */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent z-[3] pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,_hsl(200,70%,90%)_0%,_transparent_70%)] opacity-40 blur-3xl z-[1]" />
         
         <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 py-24 lg:py-0">
           {/* FLEXBOX: Perfect vertical centering between text and image */}
@@ -156,55 +164,85 @@ const Home = () => {
                 ))}
               </ul>
               
-              {/* Differentiation line */}
-              <p 
-                className="text-sm text-slate-500 border-l-3 border-[hsl(200,70%,55%)] pl-4 opacity-0 animate-fade-in max-w-md"
-                style={{ animationDelay: '280ms', animationFillMode: 'forwards', borderLeftWidth: '3px' }}
+              {/* Differentiation - Glassmorphism card with icon */}
+              <div 
+                className="relative opacity-0 animate-fade-in max-w-md"
+                style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
               >
-                Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
-              </p>
+                <div className="relative px-5 py-4 rounded-2xl bg-gradient-to-br from-[hsl(200,70%,95%)]/80 to-[hsl(210,60%,92%)]/60 backdrop-blur-xl border border-white/60 shadow-lg shadow-[hsl(200,70%,50%)]/10">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center flex-shrink-0 shadow-md shadow-[hsl(200,70%,50%)]/30">
+                      <Info className="w-5 h-5 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
+                    </p>
+                  </div>
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(200,80%,70%)]/10 to-transparent pointer-events-none" />
+                </div>
+              </div>
               
-              {/* CTAs - enhanced shadows */}
+              {/* CTAs - Premium polished buttons */}
               <div 
                 className="flex flex-col sm:flex-row gap-5 pt-4 opacity-0 animate-fade-in"
                 style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
+                {/* Primary button with gradient and colored shadow */}
                 <Button 
                   asChild 
                   size="lg" 
-                  className="rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-[hsl(210,80%,45%)]/25 hover:shadow-xl hover:shadow-[hsl(210,80%,45%)]/30 hover:-translate-y-0.5"
+                  className="relative rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,80%,55%)] via-[hsl(205,85%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,85%,50%)] hover:via-[hsl(205,90%,45%)] hover:to-[hsl(210,85%,40%)] shadow-xl shadow-[hsl(205,80%,45%)]/35 hover:shadow-2xl hover:shadow-[hsl(205,80%,45%)]/45 hover:-translate-y-1 overflow-hidden"
                 >
-                  <NavLink to="/contact" className="flex items-center gap-2">
+                  <NavLink to="/contact" className="flex items-center gap-2.5 relative z-10">
                     Request a demo
-                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    {/* Shine effect */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   </NavLink>
                 </Button>
+                {/* Secondary button with glassmorphism and play icon */}
                 <Button 
                   asChild 
                   variant="outline"
                   size="lg" 
-                  className="rounded-full text-base px-9 py-7 h-auto bg-white/80 backdrop-blur-sm border-slate-200 hover:bg-white hover:border-slate-300 transition-all duration-300 shadow-md shadow-slate-900/5 hover:shadow-lg hover:-translate-y-0.5 text-slate-700"
+                  className="relative rounded-full text-base px-9 py-7 h-auto bg-white/50 backdrop-blur-xl border-2 border-white/70 hover:bg-white/70 hover:border-white/90 transition-all duration-300 shadow-lg shadow-slate-900/5 hover:shadow-xl hover:-translate-y-1 text-slate-700 group overflow-hidden"
                 >
-                  <NavLink to="/how-it-works">
-                    See how it works <span className="text-slate-400 ml-1">(45 sec)</span>
+                  <NavLink to="/how-it-works" className="flex items-center gap-3 relative z-10">
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center shadow-md shadow-[hsl(200,70%,50%)]/25 group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-3.5 h-3.5 text-white ml-0.5" fill="white" />
+                    </span>
+                    See how it works
+                    {/* Subtle glass reflection */}
+                    <span className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </NavLink>
                 </Button>
               </div>
             </div>
             
-            {/* Right side: Hero image - Proportionate sizing with breathing room */}
+            {/* Right side: Hero image with glowing halo effect */}
             <div 
               className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[52%] xl:w-[55%] self-center flex-shrink-0"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Tech ring background element - proportionate to image */}
+              {/* Glowing halo/aura effect behind nurse */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[550px] h-[550px] rounded-full border-2 border-[hsl(200,60%,70%)]/30 animate-pulse-soft" />
-                <div className="absolute w-[470px] h-[470px] rounded-full border border-[hsl(200,70%,60%)]/20" />
-                <div className="absolute w-[630px] h-[630px] rounded-full border border-dashed border-[hsl(200,50%,75%)]/25" />
+                {/* Outer glow ring */}
+                <div className="absolute w-[650px] h-[650px] rounded-full bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,75%,70%)]/20 to-transparent blur-3xl animate-pulse-soft" />
+                {/* Middle glow */}
+                <div className="absolute w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[hsl(200,80%,80%)]/40 to-[hsl(210,70%,85%)]/20 blur-2xl" style={{ animation: 'pulse-wave 5s ease-in-out infinite reverse' }} />
+                {/* Inner bright glow */}
+                <div className="absolute w-[400px] h-[400px] rounded-full bg-[hsl(200,75%,88%)]/50 blur-xl" />
               </div>
               
-              {/* Hero image - 75-80vh with breathing room, responsive scaling */}
+              {/* Tech ring elements - finer, more refined */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[580px] h-[580px] rounded-full border border-[hsl(200,70%,75%)]/40 animate-pulse-soft" />
+                <div className="absolute w-[480px] h-[480px] rounded-full border border-[hsl(200,75%,70%)]/25" />
+                <div className="absolute w-[680px] h-[680px] rounded-full border border-dashed border-[hsl(200,60%,80%)]/20" style={{ animation: 'spin 60s linear infinite' }} />
+              </div>
+              
+              {/* Hero image with enhanced lighting */}
               <div 
                 className="relative flex items-center justify-center py-8"
                 style={{ 
@@ -212,10 +250,15 @@ const Home = () => {
                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 75%, transparent 98%)'
                 }}
               >
+                {/* Edge lighting effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 rounded-full blur-sm pointer-events-none" />
                 <img 
                   src="/lovable-uploads/hero-nurse-clean.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="w-auto h-[70vh] max-h-[680px] min-h-[400px] object-contain drop-shadow-2xl"
+                  className="relative w-auto h-[70vh] max-h-[680px] min-h-[400px] object-contain drop-shadow-2xl"
+                  style={{ 
+                    filter: 'drop-shadow(0 20px 40px hsl(200, 50%, 30%, 0.15)) drop-shadow(0 8px 16px hsl(200, 60%, 40%, 0.1))'
+                  }}
                 />
               </div>
             </div>
