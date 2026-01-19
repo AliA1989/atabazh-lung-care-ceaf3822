@@ -59,8 +59,9 @@ const About = () => {
 
   const founder = {
     name: "Ali Abedinpour",
-    role: "Founder",
-    description: "Combining engineering, clinical insight, and real LTC problem-solving to shape the future of automated respiratory therapy.",
+    role: "Founder & CEO",
+    description: "Biomedical engineer with expertise in medical device development and respiratory care technology. Combines engineering innovation with deep understanding of LTC operational challenges.",
+    background: "Engineering + Healthcare Operations",
     image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg",
     linkedin: "https://www.linkedin.com/in/aliabedinpour/"
   };
@@ -68,8 +69,9 @@ const About = () => {
   const technicalTeam = [
     {
       name: "Kamran Azma",
-      role: "Physiotherapy & Clinical Research",
-      description: "Bringing decades of respiratory physiotherapy expertise to validate safe, effective therapy delivery.",
+      role: "Clinical Research Lead",
+      description: "Respiratory physiotherapist with decades of clinical experience. Ensures therapy protocols are evidence-based and clinically effective.",
+      background: "Physiotherapy & Clinical Science",
       image: kamranAzmaPhoto
     },
     {
@@ -80,7 +82,7 @@ const About = () => {
     },
     {
       name: "Ali Hosseini",
-      role: "Electronics",
+      role: "Electronics & Sensors",
       description: "Building reliable sensor systems and embedded hardware for real-time therapy adaptation.",
       image: "/lovable-uploads/adbddd44-a6d5-43e8-a107-e82d88bc3ef3.jpg"
     }
@@ -312,11 +314,25 @@ const About = () => {
             <p className="text-sm uppercase tracking-[0.2em] text-primary font-medium mb-4">
               The People Behind the Innovation
             </p>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">Our Team</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-6">Meet the Leadership Team</h2>
             <p className="text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              A multidisciplinary team united by a mission to reimagine respiratory care for aging populations.
+              A multidisciplinary team combining engineering expertise with clinical experience—our competitive advantage in transforming respiratory care.
             </p>
           </div>
+          
+          {/* Founder-Market Fit Highlight */}
+          <ScrollReveal className="mb-16">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 lg:p-10 text-white">
+              <div className="flex items-center gap-3 mb-4">
+                <Award className="h-6 w-6" />
+                <span className="text-sm font-semibold uppercase tracking-wider opacity-90">Founder-Market Fit</span>
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4">Why Our Team Wins</h3>
+              <p className="text-blue-100 leading-relaxed max-w-4xl">
+                Our leadership combines deep engineering expertise in medical device development with frontline clinical experience in respiratory care. The founder's biomedical engineering background paired with our clinical lead's decades of physiotherapy practice creates a unique understanding of both the technology requirements and the real-world care delivery challenges in long-term care settings.
+              </p>
+            </div>
+          </ScrollReveal>
           
           {/* Founder & Leadership Section */}
           <div className="mb-16">
@@ -363,8 +379,13 @@ const About = () => {
                   </div>
                   
                   {/* Role badge */}
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-primary/80 text-white shadow-soft mb-4">
+                  <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-primary/80 text-white shadow-soft mb-2">
                     {founder.role}
+                  </span>
+                  
+                  {/* Background badge */}
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100 mb-4">
+                    {founder.background}
                   </span>
                   
                   {/* Description */}

@@ -141,7 +141,8 @@ const Home = () => {
                 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-slate-800 opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
-                Standardized chest physiotherapy<br className="hidden md:block" /> for long-term care
+                Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
+                <span className="text-primary">for Care Facilities & Beyond</span>
               </h1>
               
               {/* Subheadline - slate grey - reduced gap with mt-4 instead of space-y-8 */}
@@ -149,7 +150,7 @@ const Home = () => {
                 className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg !mt-4"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
-                Real-time pressure feedback helps staff deliver consistent sessions and supports care documentation.
+                Smart Lung Physio™ delivers real-time FSR-guided chest percussion with SpO₂ monitoring—designed for long-term care facilities with potential for home-based remote patient monitoring.
               </p>
               
               {/* Supporting bullets */}
@@ -272,6 +273,56 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
+      {/* Market Opportunity - TAM Section for Investors */}
+      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-[hsl(210,50%,15%)] via-[hsl(210,45%,18%)] to-[hsl(205,40%,20%)]">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <ScrollReveal className="space-y-6">
+              <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-wider">Market Opportunity</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <span className="text-blue-400">1.5 Billion</span> People Impacted Globally
+              </h2>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Chronic respiratory conditions affect over 1.5 billion people worldwide. Long-term care facilities alone manage millions of residents with complex respiratory needs—creating a significant opportunity for technology-enabled care solutions.
+              </p>
+              <div className="grid grid-cols-2 gap-6 pt-4">
+                {[
+                  { stat: "$50B+", label: "Respiratory Care Market" },
+                  { stat: "4M+", label: "LTC Residents in North America" },
+                  { stat: "30%", label: "LTC Residents with Respiratory Conditions" },
+                  { stat: "2-3x", label: "Higher Hospital Transfer Rates" }
+                ].map((item, index) => (
+                  <div key={index} className="text-center lg:text-left">
+                    <p className="text-2xl lg:text-3xl font-bold text-blue-400">{item.stat}</p>
+                    <p className="text-sm text-slate-400">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={100} className="relative">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                <h3 className="text-xl font-semibold text-white mb-6">Why Smart Lung Physio™</h3>
+                <ul className="space-y-4">
+                  {[
+                    "First sensor-guided chest percussion device for LTC",
+                    "Addresses staffing constraints with workflow efficiency",
+                    "Potential to reduce costly hospital transfers",
+                    "Scalable SaaS model with hardware placement",
+                    "Clear regulatory pathway (Health Canada Class II)"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* The Challenge Section - Unified styling */}
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
@@ -379,6 +430,90 @@ const Home = () => {
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mechanism of Action - For Clinicians */}
+      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(210,60%,98%)] via-[hsl(200,50%,96%)] to-[hsl(220,40%,94%)]">
+        <div className="container mx-auto max-w-6xl">
+          <ScrollReveal className="text-center space-y-4 mb-16">
+            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">For Clinicians</span>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Mechanism of Action</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              How Smart Lung Physio™ technology delivers sensor-guided airway clearance
+            </p>
+          </ScrollReveal>
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <ScrollReveal className="space-y-6">
+              <div className="space-y-8">
+                {[
+                  {
+                    title: "Force-Sensing Resistor (FSR) Guidance",
+                    description: "Integrated FSR sensors detect applied percussion pressure in real-time, providing visual feedback to caregivers to ensure consistent therapeutic force delivery. The system calibrates to optimal pressure ranges based on clinical guidelines for chest physiotherapy.",
+                    icon: Activity
+                  },
+                  {
+                    title: "Continuous SpO₂ Monitoring",
+                    description: "Pulse oximetry integration monitors oxygen saturation throughout therapy sessions. The system alerts caregivers to any drops below configurable thresholds, ensuring patient safety during airway clearance procedures.",
+                    icon: Heart
+                  },
+                  {
+                    title: "Adaptive Therapy Algorithm",
+                    description: "The device combines force and SpO₂ data to guide caregivers through structured percussion sequences. The algorithm adapts to real-time patient response, supporting evidence-based therapy delivery.",
+                    icon: TrendingUp
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-5">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
+                      <item.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-semibold text-slate-800">{item.title}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={100}>
+              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl rounded-2xl overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
+                    <div className="flex items-center gap-3">
+                      <Shield className="h-6 w-6 text-white" />
+                      <h3 className="text-lg font-semibold text-white">Data Security & Compliance</h3>
+                    </div>
+                  </div>
+                  <div className="p-6 lg:p-8 space-y-6">
+                    <p className="text-slate-600 leading-relaxed">
+                      Smart Lung Physio™ is designed with healthcare data security as a priority.
+                    </p>
+                    <ul className="space-y-3">
+                      {[
+                        "Cloud-based data storage with encryption at rest and in transit",
+                        "Role-based access controls for care teams",
+                        "Audit trails for all session data",
+                        "Designed for PIPEDA compliance (Canada)",
+                        "Health Canada Class II medical device pathway"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
+                          <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pt-4 border-t border-slate-200">
+                      <p className="text-xs text-slate-500">
+                        Regulatory documentation and technical specifications available upon request.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
           </div>
         </div>
       </section>
