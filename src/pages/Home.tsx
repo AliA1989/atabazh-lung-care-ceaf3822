@@ -5,7 +5,7 @@ import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Hea
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import BreathingGlow from "@/components/BreathingGlow";
-import AppPhoneMockup from "@/components/AppPhoneMockup";
+import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
@@ -273,41 +273,46 @@ const Home = () => {
       </section>
 
       {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="py-16 lg:py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-background via-[hsl(200,40%,97%)] to-background">
+      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-background via-[hsl(200,35%,96%)] to-background overflow-hidden">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left side: App mockup with animations */}
-            <ScrollReveal className="flex justify-center lg:justify-start">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* Left side: Premium phone mockup */}
+            <ScrollReveal className="flex justify-center lg:justify-center">
               <div className="relative">
-                {/* Glow effect behind phone */}
+                {/* Ambient glow behind phone */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[280px] h-[400px] rounded-[40px] bg-gradient-to-br from-[hsl(200,70%,80%)]/40 to-[hsl(210,60%,85%)]/20 blur-2xl" />
+                  <div className="w-[320px] h-[500px] rounded-[60px] bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,65%,80%)]/20 to-[hsl(210,60%,85%)]/10 blur-3xl" />
                 </div>
-                <AppPhoneMockup className="relative z-10 scale-[1.4] origin-center" />
+                {/* Spotlight effect */}
+                <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsl(200,80%,90%)_0%,_transparent_60%)] opacity-50 blur-2xl" />
+                <PremiumPhoneMockup className="relative z-10" />
               </div>
             </ScrollReveal>
             
             {/* Right side: Content */}
             <ScrollReveal delay={100} className="space-y-6">
               <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider">Real-Time Monitoring</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
                 Live Feedback at Your Fingertips
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 The Smart Lung Physio™ companion app provides real-time visualization of therapy sessions, including pressure waveforms, SpO₂ levels, and heart rate monitoring—all synced to the cloud for comprehensive documentation.
               </p>
-              <ul className="space-y-4 pt-2">
+              <ul className="space-y-5 pt-4">
                 {[
-                  { icon: Activity, text: "Live pressure waveform visualization" },
-                  { icon: Heart, text: "Continuous SpO₂ and heart rate tracking" },
-                  { icon: Shield, text: "HIPAA-compliant cloud data storage" },
-                  { icon: BarChart3, text: "Session history and trend analytics" }
+                  { icon: Activity, text: "Live pressure waveform visualization", desc: "Real-time force feedback during therapy" },
+                  { icon: Heart, text: "Continuous SpO₂ and heart rate tracking", desc: "Vital sign monitoring for patient safety" },
+                  { icon: Shield, text: "HIPAA-compliant cloud data storage", desc: "Secure, encrypted session records" },
+                  { icon: BarChart3, text: "Session history and trend analytics", desc: "Track progress over time" }
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3.5 text-slate-700">
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-4 h-4 text-primary" />
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0 border border-primary/10">
+                      <item.icon className="w-5 h-5 text-primary" />
                     </div>
-                    {item.text}
+                    <div>
+                      <p className="font-semibold text-slate-800">{item.text}</p>
+                      <p className="text-sm text-slate-500">{item.desc}</p>
+                    </div>
                   </li>
                 ))}
               </ul>
