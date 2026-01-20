@@ -4,6 +4,8 @@ import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Play, Info } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
+import BreathingGlow from "@/components/BreathingGlow";
+import AppPhoneMockup from "@/components/AppPhoneMockup";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
@@ -229,18 +231,15 @@ const Home = () => {
               className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[52%] xl:w-[55%] self-center flex-shrink-0"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Glowing halo/aura effect behind nurse */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Outer glow ring */}
-                <div className="absolute w-[650px] h-[650px] rounded-full bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,75%,70%)]/20 to-transparent blur-3xl animate-pulse-soft" />
-                {/* Middle glow */}
-                <div className="absolute w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[hsl(200,80%,80%)]/40 to-[hsl(210,70%,85%)]/20 blur-2xl" style={{ animation: 'pulse-wave 5s ease-in-out infinite reverse' }} />
-                {/* Inner bright glow */}
-                <div className="absolute w-[400px] h-[400px] rounded-full bg-[hsl(200,75%,88%)]/50 blur-xl" />
-              </div>
+              {/* Breathing Glow Animation - behind everything */}
+              <BreathingGlow 
+                className="z-0" 
+                size={650} 
+                duration={4}
+              />
               
               {/* Tech ring elements - finer, more refined */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center z-[1]">
                 <div className="w-[580px] h-[580px] rounded-full border border-[hsl(200,70%,75%)]/40 animate-pulse-soft" />
                 <div className="absolute w-[480px] h-[480px] rounded-full border border-[hsl(200,75%,70%)]/25" />
                 <div className="absolute w-[680px] h-[680px] rounded-full border border-dashed border-[hsl(200,60%,80%)]/20" style={{ animation: 'spin 60s linear infinite' }} />
@@ -248,7 +247,7 @@ const Home = () => {
               
               {/* Hero image with enhanced lighting */}
               <div 
-                className="relative flex items-center justify-center py-8"
+                className="relative flex items-center justify-center py-8 z-[2]"
                 style={{ 
                   maskImage: 'linear-gradient(to bottom, black 0%, black 75%, transparent 98%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 75%, transparent 98%)'
@@ -264,6 +263,14 @@ const Home = () => {
                     filter: 'drop-shadow(0 20px 40px hsl(200, 50%, 30%, 0.15)) drop-shadow(0 8px 16px hsl(200, 60%, 40%, 0.1))'
                   }}
                 />
+              </div>
+              
+              {/* Animated App Phone Mockup - positioned to the right of the nurse */}
+              <div 
+                className="absolute right-4 xl:right-12 bottom-[15%] z-[5] opacity-0 animate-fade-in"
+                style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}
+              >
+                <AppPhoneMockup />
               </div>
             </div>
           </div>
