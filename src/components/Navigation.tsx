@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo-new.png";
+import logo from "@/assets/atabazh-logo.svg";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +19,11 @@ const Navigation = () => {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
+    { to: "/how-it-works", label: "How It Works" },
+    { to: "/clinical-evidence", label: "Evidence" },
+    { to: "/long-term-care", label: "LTC Homes" },
     { to: "/about", label: "About" },
+    { to: "/news", label: "News" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -36,21 +40,29 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center group shrink-0">
+          <NavLink to="/" className="flex items-center gap-3 group shrink-0" aria-label="Atabazh Med home">
             <img 
               src={logo} 
-              alt="Atabazh Medical" 
-              className="h-12 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              alt="" 
+              className="h-10 w-10 lg:h-11 lg:w-11 rounded-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
             />
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="text-sm lg:text-[15px] font-bold tracking-[0.08em] text-slate-900 uppercase">
+                Atabazh
+              </span>
+              <span className="mt-1 text-[10px] lg:text-[11px] font-semibold tracking-[0.22em] text-primary uppercase">
+                Med
+              </span>
+            </div>
           </NavLink>
 
           {/* Desktop Navigation - Centered with wider gaps */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-[13px] font-semibold text-slate-600 hover:text-primary transition-all duration-300 relative py-2 group tracking-wide"
+                className="text-[12px] xl:text-[13px] font-semibold text-slate-600 hover:text-primary transition-all duration-300 relative py-2 group tracking-wide whitespace-nowrap"
                 activeClassName="text-primary"
               >
                 {link.label}

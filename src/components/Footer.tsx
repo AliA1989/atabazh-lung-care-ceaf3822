@@ -1,5 +1,5 @@
 import { NavLink } from "./NavLink";
-import logo from "@/assets/logo-new.png";
+import logo from "@/assets/atabazh-logo.svg";
 import { Linkedin } from "lucide-react";
 
 const Footer = () => {
@@ -9,12 +9,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <img 
-              src={logo} 
-              alt="Atabazh Med Logo" 
-              className="h-12 w-auto object-contain object-left mb-5"
-              style={{ mixBlendMode: 'screen', filter: 'invert(1) brightness(2)' }}
-            />
+            <NavLink to="/" className="inline-flex items-center gap-3 mb-5" aria-label="Atabazh Med home">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 ring-1 ring-white/20">
+                <img 
+                  src={logo} 
+                  alt="" 
+                  className="h-10 w-10 object-contain"
+                />
+              </span>
+              <span className="flex flex-col leading-none">
+                <span className="text-base font-bold tracking-[0.08em] text-white uppercase">
+                  Atabazh
+                </span>
+                <span className="mt-1.5 text-[11px] font-semibold tracking-[0.24em] text-blue-300 uppercase">
+                  Med
+                </span>
+              </span>
+            </NavLink>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Automated respiratory care for long-term care homes across Canada.
             </p>

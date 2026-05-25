@@ -27,7 +27,7 @@ export function ScrollReveal({
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-[350ms] ease-out',
+        'transition-all duration-300 ease-out',
         delayClass,
         isVisible 
           ? 'opacity-100 translate-y-0' 
@@ -57,7 +57,7 @@ export function RevealGroup({
       {React.Children.map(children, (child, index) => (
         <div
           className={cn(
-            'transition-all duration-[350ms] ease-out',
+            'transition-all duration-300 ease-out',
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-3'
