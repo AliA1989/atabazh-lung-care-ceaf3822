@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { X, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const STORAGE_KEY = "hasSeenWelcome";
+const STORAGE_KEY = "hasSeenWelcomeFloatingCard";
 
 const FounderWelcomeModal = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,32 +45,24 @@ const FounderWelcomeModal = () => {
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Floating founder card */}
       <div 
-        className={`fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 transition-opacity duration-300 ${
-          isClosing ? "opacity-0" : "opacity-100"
-        }`}
-        onClick={handleClose}
-      />
-      
-      {/* Modal */}
-      <div 
-        className={`fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-md transition-all duration-300 ease-out ${
+        className={`fixed bottom-5 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm sm:bottom-6 sm:right-6 transition-all duration-300 ease-out ${
           isClosing 
             ? "opacity-0 translate-y-4 scale-95" 
             : "opacity-100 translate-y-0 scale-100"
         }`}
         style={{
-          animation: isClosing ? undefined : "slideUp 0.4s ease-out"
+          animation: isClosing ? undefined : "slideInCorner 0.4s ease-out"
         }}
       >
         <div 
-          className="relative rounded-3xl border border-white/60 p-8 text-center"
+          className="relative rounded-2xl border border-white/70 p-5 text-left"
           style={{
-            background: "rgba(255, 255, 255, 0.85)",
+            background: "rgba(255, 255, 255, 0.92)",
             backdropFilter: "blur(16px)",
             WebkitBackdropFilter: "blur(16px)",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5) inset"
+            boxShadow: "0 18px 45px -18px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.5) inset"
           }}
         >
           {/* Close Button */}
@@ -79,54 +71,54 @@ const FounderWelcomeModal = () => {
             className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100/50 transition-colors duration-200"
             aria-label="Close"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
           </button>
 
-          {/* Avatar */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/60 to-[hsl(200,60%,70%)] opacity-70 blur-sm" />
-              <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-white shadow-lg">
-                <img 
-                  src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg" 
+          <div className="flex gap-4 pr-7">
+            {/* Avatar */}
+            <div className="relative flex-shrink-0">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/60 to-[hsl(200,60%,70%)] opacity-60 blur-sm" />
+              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-4 ring-white shadow-lg">
+                <img
+                  src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
                   alt="Ali Abedinpour"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
-          </div>
 
-          {/* Content */}
-          <div className="space-y-4 mb-8">
-            <h3 className="text-2xl font-bold text-[hsl(215,50%,25%)]">
-              Hi, I'm Ali Abedinpour
-            </h3>
-            <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-              Welcome to Atabazh Med. We are innovating respiratory care and actively collaborating with students and early-career talent in MedTech. Let's connect!
-            </p>
+            {/* Content */}
+            <div className="space-y-2">
+              <h3 className="text-base font-bold text-[hsl(215,50%,25%)]">
+                Hi, I'm Ali Abedinpour
+              </h3>
+              <p className="text-slate-600 leading-relaxed text-sm">
+                Welcome to Atabazh Med. We're building better respiratory care for long-term care teams.
+              </p>
+            </div>
           </div>
 
           {/* LinkedIn CTA Button */}
           <Button
             onClick={handleLinkedInClick}
-            className="w-full bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold py-6 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group"
+            className="mt-5 w-full bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold py-5 rounded-xl transition-all duration-300 hover:shadow-lg group"
           >
-            <Linkedin className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-            Connect with me on LinkedIn
+            <Linkedin className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
+            Connect on LinkedIn
           </Button>
         </div>
       </div>
 
-      {/* Slide-up animation keyframes */}
+      {/* Corner card animation keyframes */}
       <style>{`
-        @keyframes slideUp {
+        @keyframes slideInCorner {
           from {
             opacity: 0;
-            transform: translate(-50%, -45%) scale(0.95);
+            transform: translateY(16px) scale(0.96);
           }
           to {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+            transform: translateY(0) scale(1);
           }
         }
       `}</style>
