@@ -20,10 +20,7 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
     { to: "/how-it-works", label: "How It Works" },
-    { to: "/clinical-evidence", label: "Evidence" },
-    { to: "/long-term-care", label: "LTC Homes" },
     { to: "/about", label: "About" },
-    { to: "/news", label: "News" },
     { to: "/contact", label: "Contact" },
   ];
 
@@ -40,17 +37,19 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3 group shrink-0" aria-label="Atabazh Med home">
-            <img 
-              src={logo} 
-              alt="" 
-              className="h-10 w-10 lg:h-11 lg:w-11 rounded-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-            />
+          <NavLink to="/" className="flex items-center gap-3.5 group shrink-0" aria-label="Atabazh Med home">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80 transition-transform duration-300 group-hover:scale-[1.03] lg:h-[3.25rem] lg:w-[3.25rem]">
+              <img 
+                src={logo} 
+                alt="" 
+                className="h-10 w-10 object-contain contrast-125 saturate-110 lg:h-11 lg:w-11"
+              />
+            </span>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="text-sm lg:text-[15px] font-bold tracking-[0.08em] text-slate-900 uppercase">
+              <span className="text-[15px] lg:text-base font-bold tracking-[0.08em] text-slate-950 uppercase">
                 Atabazh
               </span>
-              <span className="mt-1 text-[10px] lg:text-[11px] font-semibold tracking-[0.22em] text-primary uppercase">
+              <span className="mt-1 text-[11px] lg:text-xs font-semibold tracking-[0.22em] text-primary uppercase">
                 Med
               </span>
             </div>
