@@ -12,6 +12,7 @@ import springLogo from "@/assets/support/spring.svg";
 import marsLogo from "@/assets/support/mars.svg";
 import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
+import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
@@ -212,7 +213,7 @@ const Home = () => {
                 }}
               >
                 <img 
-                  src="/lovable-uploads/hero-nurse-clean.png" 
+                  src={heroDeviceImage} 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
                   className="relative w-auto h-[63vh] max-h-[590px] min-h-[360px] object-contain drop-shadow-2xl"
                   style={{ 
