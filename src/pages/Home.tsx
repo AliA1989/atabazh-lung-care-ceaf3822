@@ -4,7 +4,6 @@ import { NavLink } from "@/components/NavLink";
 import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Play, Info } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
-import BreathingGlow from "@/components/BreathingGlow";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
 import techAllianceLogo from "@/assets/support/techalliance.svg";
 import mitacsLogo from "@/assets/support/mitacs.svg";
@@ -44,38 +43,15 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Founder Welcome Modal - Shows once per session */}
       <FounderWelcomeModal />
-      {/* Hero Section - Premium MedTech Glassmorphism Aesthetic */}
-      <section className="relative min-h-[92vh] lg:min-h-[96vh] flex items-center overflow-hidden">
-        {/* Full background - Refined soft blue gradient with subtle radial */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,35%,98%)] via-[hsl(200,45%,96%)] to-[hsl(210,55%,92%)] z-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(200,60%,90%)_0%,_transparent_60%)] z-0" />
-        
-        {/* Bold circular gradient container for nurse - refined colors */}
-        <div className="absolute top-0 right-0 w-[70%] h-full z-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,70%,78%)] via-[hsl(200,65%,82%)] to-transparent rounded-bl-[40%]" />
-          {/* Inner gradient circle with glow */}
-          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[10%] w-[700px] h-[700px]">
-            <div className="w-full h-full rounded-full bg-gradient-to-br from-[hsl(200,60%,85%)] via-[hsl(205,65%,78%)] to-[hsl(210,70%,72%)] opacity-85 blur-sm" />
-          </div>
-        </div>
-        
-        {/* Premium organic swoosh shape - top right accent */}
-        <div className="absolute -top-20 -right-20 w-[600px] h-[600px] z-[1] hidden lg:block">
-          <svg viewBox="0 0 600 600" className="w-full h-full" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="swoosh-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="hsl(200, 75%, 75%)" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="hsl(210, 70%, 65%)" stopOpacity="0.25" />
-              </linearGradient>
-            </defs>
-            <ellipse cx="400" cy="200" rx="300" ry="250" fill="url(#swoosh-gradient)" />
-          </svg>
-        </div>
+      {/* Hero Section - clinical product introduction */}
+      <section className="relative min-h-[82vh] lg:min-h-[86vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)]">
+        <div className="absolute inset-y-0 right-0 hidden w-[58%] bg-gradient-to-l from-[hsl(205,58%,82%)] via-[hsl(204,52%,91%)] to-transparent lg:block" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:56px_56px] opacity-[0.16] lg:block" />
         
         {/* Refined glowing wave pattern - finer lines with slow pulse animation */}
         <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
           <svg 
-            className="absolute top-1/2 left-0 w-[250%] h-[500px] -translate-y-1/2 opacity-[0.12]"
+            className="absolute top-1/2 left-0 w-[250%] h-[500px] -translate-y-1/2 opacity-[0.055]"
             viewBox="0 0 1800 200"
             preserveAspectRatio="none"
           >
@@ -108,7 +84,7 @@ const Home = () => {
           </svg>
           {/* Secondary finer wave */}
           <svg 
-            className="absolute top-1/2 left-0 w-[250%] h-[400px] -translate-y-1/2 translate-y-6 opacity-[0.08]"
+            className="absolute top-1/2 left-0 w-[250%] h-[400px] -translate-y-1/2 translate-y-6 opacity-[0.045]"
             viewBox="0 0 1800 200"
             preserveAspectRatio="none"
           >
@@ -123,7 +99,7 @@ const Home = () => {
           </svg>
           {/* Tertiary subtle wave */}
           <svg 
-            className="absolute top-1/2 left-0 w-[200%] h-[600px] -translate-y-1/2 -translate-y-8 opacity-[0.05]"
+            className="absolute top-1/2 left-0 w-[200%] h-[600px] -translate-y-1/2 -translate-y-8 opacity-[0.03]"
             viewBox="0 0 1600 200"
             preserveAspectRatio="none"
           >
@@ -137,147 +113,110 @@ const Home = () => {
           </svg>
         </div>
         
-        {/* Ambient light overlay - soft directional lighting */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent z-[3] pointer-events-none" />
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,_hsl(200,70%,90%)_0%,_transparent_70%)] opacity-40 blur-3xl z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
-        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 pt-24 pb-28 lg:pt-24 lg:pb-32">
-          {/* FLEXBOX: Perfect vertical centering between text and image */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-14 lg:gap-8">
-            {/* Left side: Text content - vertically centered with image */}
-            <div className="space-y-8 max-w-xl lg:max-w-none lg:pr-6 lg:w-[42%] lg:flex-shrink-0 flex flex-col justify-center">
-              {/* Badge - Monochromatic blue palette */}
+        <div className="container mx-auto relative z-10 max-w-7xl px-6 sm:px-8 lg:px-12 pt-20 pb-16 lg:pt-20 lg:pb-20">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-12">
+            <div className="space-y-5 max-w-2xl lg:max-w-none lg:pr-4 lg:w-[45%] lg:flex-shrink-0 flex flex-col justify-center">
               <div 
-                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-blue-50/90 border border-blue-100/70 shadow-sm opacity-0 animate-fade-in"
+                className="inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
               >
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                <span className="text-xs font-semibold text-blue-600/90 uppercase tracking-wider">Medical Device in Development</span>
+                <span className="w-2 h-2 rounded-full bg-blue-600" />
+                <span className="text-xs font-semibold text-blue-700 uppercase tracking-[0.18em]">Medical device in development</span>
               </div>
               
-              {/* Primary headline - slate grey text */}
               <h1 
-                className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-slate-800 opacity-0 animate-fade-in"
+                className="text-4xl md:text-5xl lg:text-[3.05rem] xl:text-[3.25rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
                 Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
                 <span className="text-primary">for Care Facilities & Beyond</span>
               </h1>
               
-              {/* Subheadline - slate grey - reduced gap with mt-4 instead of space-y-8 */}
               <p 
-                className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-lg !mt-4"
+                className="text-base lg:text-[1.05rem] text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-xl !mt-2"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
                 Smart Lung Physio™ delivers real-time FSR-guided chest percussion with SpO₂ monitoring—designed for long-term care facilities with potential for home-based remote patient monitoring.
               </p>
               
-              {/* Supporting bullets */}
               <ul 
-                className="space-y-4 opacity-0 animate-fade-in"
+                className="grid gap-2.5 opacity-0 animate-fade-in"
                 style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
               >
                 {HERO_BULLETS.map((bullet, index) => (
-                  <li key={index} className="flex items-center gap-3.5 text-[15px] text-slate-700">
-                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
-                      <bullet.icon className="w-3.5 h-3.5 text-blue-700" />
+                  <li key={index} className="flex items-center gap-3 text-[15px] font-medium text-slate-700">
+                    <div className="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <bullet.icon className="w-4 h-4 text-primary" />
                     </div>
                     {bullet.text}
                   </li>
                 ))}
               </ul>
               
-              {/* Differentiation - Glassmorphism card with icon */}
               <div 
-                className="relative opacity-0 animate-fade-in max-w-md"
+                className="relative opacity-0 animate-fade-in max-w-xl"
                 style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
               >
-                <div className="relative px-5 py-4 rounded-2xl bg-gradient-to-br from-[hsl(200,70%,95%)]/80 to-[hsl(210,60%,92%)]/60 backdrop-blur-xl border border-white/60 shadow-lg shadow-[hsl(200,70%,50%)]/10">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center flex-shrink-0 shadow-md shadow-[hsl(200,70%,50%)]/30">
-                      <Info className="w-5 h-5 text-white" />
-                    </div>
-                    <p className="text-sm text-slate-700 leading-relaxed">
-                      Unlike traditional manual chest physiotherapy, Smart Lung Physio provides real-time guidance during each session.
+                <div className="relative border-l-2 border-primary bg-white/60 py-3 pl-4 pr-5 shadow-sm shadow-slate-900/5 backdrop-blur">
+                  <div className="flex items-start gap-3">
+                    <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                    <p className="text-sm font-medium text-slate-700 leading-relaxed">
+                      Built to guide caregivers with objective pressure feedback during each therapy session.
                     </p>
                   </div>
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[hsl(200,80%,70%)]/10 to-transparent pointer-events-none" />
                 </div>
               </div>
               
-              {/* CTAs - Premium polished buttons */}
               <div 
-                className="flex flex-col sm:flex-row gap-5 pt-4 opacity-0 animate-fade-in"
+                className="flex flex-col sm:flex-row gap-3 pt-1 opacity-0 animate-fade-in"
                 style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
-                {/* Primary button with gradient and colored shadow */}
                 <Button 
                   asChild 
                   size="lg" 
-                  className="relative rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,80%,55%)] via-[hsl(205,85%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,85%,50%)] hover:via-[hsl(205,90%,45%)] hover:to-[hsl(210,85%,40%)] shadow-xl shadow-[hsl(205,80%,45%)]/35 hover:shadow-2xl hover:shadow-[hsl(205,80%,45%)]/45 hover:-translate-y-1 overflow-hidden"
+                  className="relative rounded-full text-base px-7 py-4 h-auto group transition-all duration-300 bg-primary hover:bg-primary-dark shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
                 >
                   <NavLink to="/contact" className="flex items-center gap-2.5 relative z-10">
                     Request a demo
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    {/* Shine effect */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   </NavLink>
                 </Button>
-                {/* Secondary button with glassmorphism and play icon */}
                 <Button 
                   asChild 
                   variant="outline"
                   size="lg" 
-                  className="relative rounded-full text-base px-9 py-7 h-auto bg-white/50 backdrop-blur-xl border-2 border-white/70 hover:bg-white/70 hover:border-white/90 transition-all duration-300 shadow-lg shadow-slate-900/5 hover:shadow-xl hover:-translate-y-1 text-slate-700 group overflow-hidden"
+                  className="relative rounded-full text-base px-7 py-4 h-auto bg-white/80 backdrop-blur border border-slate-200 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-slate-700 group overflow-hidden"
                 >
                   <NavLink to="/how-it-works" className="flex items-center gap-3 relative z-10">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[hsl(200,75%,55%)] to-[hsl(210,80%,45%)] flex items-center justify-center shadow-md shadow-[hsl(200,70%,50%)]/25 group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-3.5 h-3.5 text-white ml-0.5" fill="white" />
+                    <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <Play className="w-3.5 h-3.5 text-primary ml-0.5" fill="currentColor" />
                     </span>
                     See how it works
-                    {/* Subtle glass reflection */}
-                    <span className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </NavLink>
                 </Button>
               </div>
             </div>
             
-            {/* Right side: Hero image with glowing halo effect */}
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[52%] xl:w-[55%] self-center flex-shrink-0"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[51%] xl:w-[53%] self-center flex-shrink-0"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              {/* Breathing Glow Animation - behind everything */}
-              <BreathingGlow 
-                className="z-0" 
-                size={650} 
-                duration={4}
-              />
-              
-              {/* Tech ring elements - finer, more refined */}
-              <div className="absolute inset-0 flex items-center justify-center z-[1]">
-                <div className="w-[580px] h-[580px] rounded-full border border-[hsl(200,70%,75%)]/40 animate-pulse-soft" />
-                <div className="absolute w-[480px] h-[480px] rounded-full border border-[hsl(200,75%,70%)]/25" />
-                <div className="absolute w-[680px] h-[680px] rounded-full border border-dashed border-[hsl(200,60%,80%)]/20" style={{ animation: 'spin 60s linear infinite' }} />
-              </div>
-              
-              {/* Hero image with enhanced lighting */}
+              <div className="absolute inset-x-10 bottom-16 h-px bg-gradient-to-r from-transparent via-slate-400/30 to-transparent" />
               <div 
-                className="relative flex items-center justify-center py-8 z-[2]"
+                className="relative flex items-center justify-center py-4 z-[2]"
                 style={{ 
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 75%, transparent 98%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 75%, transparent 98%)'
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 99%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 99%)'
                 }}
               >
-                {/* Edge lighting effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 rounded-full blur-sm pointer-events-none" />
                 <img 
                   src="/lovable-uploads/hero-nurse-clean.png" 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="relative w-auto h-[70vh] max-h-[680px] min-h-[400px] object-contain drop-shadow-2xl"
+                  className="relative w-auto h-[63vh] max-h-[590px] min-h-[360px] object-contain drop-shadow-2xl"
                   style={{ 
-                    filter: 'drop-shadow(0 20px 40px hsl(200, 50%, 30%, 0.15)) drop-shadow(0 8px 16px hsl(200, 60%, 40%, 0.1))'
+                    filter: 'drop-shadow(0 24px 42px hsl(210, 35%, 25%, 0.16))'
                   }}
                 />
               </div>
@@ -286,7 +225,7 @@ const Home = () => {
         </div>
         
         {/* Bottom fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[hsl(204,45%,97%)] via-white/85 to-transparent z-[5]" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(204,45%,97%)] via-white/80 to-transparent z-[5]" />
       </section>
 
       {/* Support Ecosystem Section */}
