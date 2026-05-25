@@ -333,18 +333,18 @@ const Home = () => {
 
       {/* App Experience Section - Real-time Monitoring Interface */}
       <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            {/* Left side: Premium phone mockup */}
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] gap-14 lg:gap-16 items-center">
+            {/* Left side: Tablet therapy dashboard */}
             <ScrollReveal className="flex justify-center lg:justify-center">
-              <div className="relative">
-                {/* Ambient glow behind phone */}
+              <div className="relative w-full">
+                {/* Ambient glow behind tablet */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[320px] h-[500px] rounded-[60px] bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,65%,80%)]/20 to-[hsl(210,60%,85%)]/10 blur-3xl" />
+                  <div className="h-[320px] w-[640px] max-w-full rounded-[60px] bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,65%,80%)]/20 to-[hsl(210,60%,85%)]/10 blur-3xl" />
                 </div>
                 {/* Spotlight effect */}
-                <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[radial-gradient(circle,_hsl(200,80%,90%)_0%,_transparent_60%)] opacity-50 blur-2xl" />
-                <PremiumPhoneMockup className="relative z-10" />
+                <div className="absolute -top-16 left-1/2 h-[360px] w-[560px] max-w-full -translate-x-1/2 bg-[radial-gradient(circle,_hsl(200,80%,90%)_0%,_transparent_60%)] opacity-60 blur-2xl" />
+                <PremiumPhoneMockup className="relative z-10 mx-auto" />
               </div>
             </ScrollReveal>
             
@@ -541,193 +541,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Mechanism of Action - For Clinicians */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(210,60%,98%)] via-[hsl(200,50%,96%)] to-[hsl(220,40%,94%)]">
-        <div className="container mx-auto max-w-6xl">
-          <ScrollReveal className="text-center space-y-4 mb-16">
-            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">For Clinicians</span>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Mechanism of Action</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              How Smart Lung Physio™ technology delivers sensor-guided airway clearance
-            </p>
-          </ScrollReveal>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <ScrollReveal className="space-y-6">
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Force-Sensing Resistor (FSR) Guidance",
-                    description: "Integrated FSR sensors detect applied percussion pressure in real-time, providing visual feedback to caregivers to ensure consistent therapeutic force delivery. The system calibrates to optimal pressure ranges based on clinical guidelines for chest physiotherapy.",
-                    icon: Activity
-                  },
-                  {
-                    title: "Continuous SpO₂ Monitoring",
-                    description: "Pulse oximetry integration monitors oxygen saturation throughout therapy sessions. The system alerts caregivers to any drops below configurable thresholds, ensuring patient safety during airway clearance procedures.",
-                    icon: Heart
-                  },
-                  {
-                    title: "Adaptive Therapy Algorithm",
-                    description: "The device combines force and SpO₂ data to guide caregivers through structured percussion sequences. The algorithm adapts to real-time patient response, supporting evidence-based therapy delivery.",
-                    icon: TrendingUp
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex gap-5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
-                      <item.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold text-slate-800">{item.title}</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl rounded-2xl overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6">
-                    <div className="flex items-center gap-3">
-                      <Shield className="h-6 w-6 text-white" />
-                      <h3 className="text-lg font-semibold text-white">Data Security & Compliance</h3>
-                    </div>
-                  </div>
-                  <div className="p-6 lg:p-8 space-y-6">
-                    <p className="text-slate-600 leading-relaxed">
-                      Smart Lung Physio™ is designed with healthcare data security as a priority.
-                    </p>
-                    <ul className="space-y-3">
-                      {[
-                        "Cloud-based data storage with encryption at rest and in transit",
-                        "Role-based access controls for care teams",
-                        "Audit trails for all session data",
-                        "Designed for PIPEDA compliance (Canada)",
-                        "Health Canada Class II medical device pathway"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="pt-4 border-t border-slate-200">
-                      <p className="text-xs text-slate-500">
-                        Regulatory documentation and technical specifications available upon request.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Design Goals Section - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
-        <div className="container mx-auto">
-          <ScrollReveal className="text-center space-y-4 mb-16">
-            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Design Goals</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Intended Benefits</h2>
-            <ScrollReveal delay={100}>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Designed to address key challenges in long-term care respiratory support
-              </p>
-            </ScrollReveal>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            {[
-              {
-                icon: Clock,
-                title: "Workflow Integration",
-                description: "Designed to fit within existing care routines with structured, guided therapy sessions."
-              },
-              {
-                icon: TrendingUp,
-                title: "Consistent Delivery",
-                description: "Sensor feedback supports consistent therapy application across different caregivers."
-              },
-              {
-                icon: BarChart3,
-                title: "Care Documentation",
-                description: "Automatic session logging provides objective data for care teams and records."
-              }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
-                <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl transition-all duration-300 rounded-2xl">
-                  <CardContent className="p-8 lg:p-10 space-y-5">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md shadow-blue-500/30">
-                      <item.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal className="text-center space-y-4 mb-20">
-            <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Process Overview</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">How It Works</h2>
-            <ScrollReveal delay={100}>
-              <p className="text-lg text-slate-600">A three-step approach to sensor-guided therapy</p>
-            </ScrollReveal>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-3 gap-10 lg:gap-16 relative">
-            <div className="hidden md:flex absolute top-[48px] left-[25%] right-[25%] items-center justify-between z-0">
-              <div className="flex-1 h-px bg-blue-200" />
-              <div className="flex-1 h-px bg-blue-200" />
-            </div>
-            
-            {[
-              {
-                step: "1",
-                title: "Assess",
-                description: "Sensors capture baseline readings including applied pressure, oxygen saturation, and placement confirmation."
-              },
-              {
-                step: "2",
-                title: "Treat",
-                description: "Guided therapy delivery with real-time feedback on pressure and technique. Built-in safety monitoring throughout."
-              },
-              {
-                step: "3",
-                title: "Review",
-                description: "Session data is logged automatically. Care teams can review therapy records and observe trends over time."
-              }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150} className="relative z-10">
-                <div className="text-center space-y-6">
-                  <div className="relative mx-auto w-fit">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-4xl font-bold text-white shadow-xl shadow-blue-500/30">
-                      {item.step}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed max-w-[280px] mx-auto">{item.description}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-          
-          <ScrollReveal className="text-center mt-16">
-            <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-white/80 backdrop-blur-sm border-2 border-white/60 shadow-lg hover:shadow-xl hover:bg-white hover:-translate-y-0.5 transition-all duration-300 text-slate-700">
-              <NavLink to="/how-it-works">Technical Details</NavLink>
-            </Button>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Development Context Section - Unified styling */}
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto">
@@ -796,97 +609,6 @@ const Home = () => {
               <p className="text-xs text-slate-500 text-center">
                 Images from early clinical prototype evaluations.
               </p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Early Observations Section - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <ScrollReveal className="space-y-8">
-              <div className="space-y-4">
-                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Early Observations</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Preliminary Pilot Data</h2>
-              </div>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Initial pilot deployments in Canadian long-term care settings have provided directional data. Formal validation studies are planned.
-              </p>
-              <div className="space-y-5">
-                {[
-                  {
-                    stat: "~40% reduction",
-                    desc: "observed in respiratory-related hospital transfers during pilot period"
-                  },
-                  {
-                    stat: "~35% fewer",
-                    desc: "acute respiratory episodes among observed residents"
-                  },
-                  {
-                    stat: "~75% time reduction",
-                    desc: "compared to traditional manual chest physiotherapy"
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-blue-700" />
-                    </div>
-                    <p className="text-sm text-slate-600">
-                      <strong className="text-slate-800 font-semibold">{item.stat}</strong> {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-slate-500">
-                Based on internal pilot observations. Not from peer-reviewed clinical trials.
-              </p>
-              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                <NavLink to="/clinical-evidence" className="flex items-center gap-2">
-                  View Clinical Insights
-                  <ChevronRight className="w-4 h-4" />
-                </NavLink>
-              </Button>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={100}>
-              <Card className="backdrop-blur-xl bg-white/70 border-2 border-white/60 shadow-2xl shadow-slate-900/10 rounded-2xl">
-                <CardContent className="p-8 lg:p-10 space-y-8">
-                  <h3 className="text-xl font-semibold text-slate-800">Observed Trends from Pilots</h3>
-                  <div className="space-y-6">
-                    {[
-                      {
-                        label: "Fewer Hospital Transfers",
-                        value: 40
-                      },
-                      {
-                        label: "Fewer Acute Episodes",
-                        value: 35
-                      },
-                      {
-                        label: "Time Reduction",
-                        value: 75
-                      }
-                    ].map((item, index) => (
-                      <div key={index} className="space-y-2">
-                        <div className="flex justify-between items-baseline">
-                          <span className="text-sm font-medium text-slate-700">{item.label}</span>
-                          <span className="text-xl font-bold text-blue-600">~{item.value}%</span>
-                        </div>
-                        <div className="w-full bg-blue-100 rounded-full h-2.5 overflow-hidden">
-                          <div 
-                            className="h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-1000 ease-out" 
-                            style={{ width: `${item.value}%` }} 
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-slate-500 text-center pt-4 border-t border-slate-200">
-                    Preliminary observations from internal pilot deployments
-                  </p>
-                </CardContent>
-              </Card>
             </ScrollReveal>
           </div>
         </div>
