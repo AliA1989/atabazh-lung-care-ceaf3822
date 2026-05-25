@@ -16,9 +16,9 @@ import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
-  { icon: Repeat, text: "Consistent pressure guidance across all staff" },
-  { icon: ClipboardList, text: "Structured workflow for each session" },
-  { icon: FileCheck, text: "Automatic session documentation" },
+  { icon: Repeat, text: "Consistent therapy guidance across care teams" },
+  { icon: ClipboardList, text: "Structured workflow for every session" },
+  { icon: FileCheck, text: "Automatic progress documentation" },
 ];
 
 const SUPPORT_ORGANIZATIONS = [
@@ -45,7 +45,7 @@ const Home = () => {
       {/* Founder Welcome Modal - Shows once per session */}
       <FounderWelcomeModal />
       {/* Hero Section - clinical product introduction */}
-      <section className="relative min-h-[82vh] lg:min-h-[86vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)]">
+      <section className="relative min-h-[80vh] lg:min-h-[84vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)]">
         <div className="absolute inset-y-0 right-0 hidden w-[58%] bg-gradient-to-l from-[hsl(205,58%,82%)] via-[hsl(204,52%,91%)] to-transparent lg:block" />
         <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:56px_56px] opacity-[0.16] lg:block" />
         
@@ -116,9 +116,9 @@ const Home = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
-        <div className="container mx-auto relative z-10 max-w-7xl px-6 sm:px-8 lg:px-12 pt-20 pb-16 lg:pt-20 lg:pb-20">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-12">
-            <div className="space-y-5 max-w-2xl lg:max-w-none lg:pr-4 lg:w-[45%] lg:flex-shrink-0 flex flex-col justify-center">
+        <div className="container mx-auto relative z-10 max-w-7xl px-6 sm:px-8 lg:px-12 pt-[4.5rem] pb-14 lg:pt-[4.5rem] lg:pb-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-10">
+            <div className="space-y-4 max-w-2xl lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
               <div 
                 className="inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
@@ -128,7 +128,7 @@ const Home = () => {
               </div>
               
               <h1 
-                className="text-4xl md:text-5xl lg:text-[3.05rem] xl:text-[3.25rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in"
+                className="text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
                 Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
@@ -139,7 +139,7 @@ const Home = () => {
                 className="text-base lg:text-[1.05rem] text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-xl !mt-2"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
-                Smart Lung Physio™ delivers real-time FSR-guided chest percussion with SpO₂ monitoring—designed for long-term care facilities with potential for home-based remote patient monitoring.
+                Smart Lung Physio™ brings guided airway-clearance therapy, live care insights, and simple session documentation to long-term care teams, with future potential for connected home support.
               </p>
               
               <ul 
@@ -164,7 +164,7 @@ const Home = () => {
                   <div className="flex items-start gap-3">
                     <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                     <p className="text-sm font-medium text-slate-700 leading-relaxed">
-                      Built to guide caregivers with objective pressure feedback during each therapy session.
+                      Built to help caregivers deliver more consistent therapy with clear, real-time guidance during each session.
                     </p>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const Home = () => {
             </div>
             
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[51%] xl:w-[53%] self-center flex-shrink-0"
+              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[50%] xl:w-[51%] self-center flex-shrink-0"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
               <div className="absolute inset-x-10 bottom-16 h-px bg-gradient-to-r from-transparent via-slate-400/30 to-transparent" />
@@ -215,7 +215,7 @@ const Home = () => {
                 <img 
                   src={heroDeviceImage} 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="relative w-auto h-[63vh] max-h-[590px] min-h-[360px] object-contain drop-shadow-2xl"
+                  className="relative w-auto h-[58vh] max-h-[550px] min-h-[350px] object-contain drop-shadow-2xl"
                   style={{ 
                     filter: 'drop-shadow(0 24px 42px hsl(210, 35%, 25%, 0.16))'
                   }}
@@ -230,7 +230,7 @@ const Home = () => {
       </section>
 
       {/* Support Ecosystem Section */}
-      <section className="relative -mt-24 overflow-hidden pt-14 pb-16 lg:-mt-28 lg:pt-16 lg:pb-20 bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)]">
+      <section className="relative -mt-24 overflow-hidden pt-14 pb-10 lg:-mt-28 lg:pt-16 lg:pb-12 bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
         <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
@@ -272,7 +272,7 @@ const Home = () => {
       </section>
 
       {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background overflow-hidden">
+      <section className="py-14 lg:py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background overflow-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] gap-14 lg:gap-16 items-center">
             {/* Left side: Tablet therapy dashboard */}
@@ -295,12 +295,12 @@ const Home = () => {
                 Live Feedback at Your Fingertips
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                The Smart Lung Physio™ companion app provides real-time visualization of therapy sessions, including pressure waveforms, SpO₂ levels, and heart rate monitoring—all synced to the cloud for comprehensive documentation.
+                The Smart Lung Physio™ companion app provides a live view of each therapy session, including treatment guidance, patient wellness signals, and care-team documentation synced securely to the cloud.
               </p>
               <ul className="space-y-5 pt-4">
                 {[
-                  { icon: Activity, text: "Live pressure waveform visualization", desc: "Real-time force feedback during therapy" },
-                  { icon: Heart, text: "Continuous SpO₂ and heart rate tracking", desc: "Vital sign monitoring for patient safety" },
+                  { icon: Activity, text: "Live therapy guidance", desc: "Clear feedback while care is being delivered" },
+                  { icon: Heart, text: "Patient wellness tracking", desc: "Helpful context for comfort and safety" },
                   { icon: Shield, text: "HIPAA-compliant cloud data storage", desc: "Secure, encrypted session records" },
                   { icon: BarChart3, text: "Session history and trend analytics", desc: "Track progress over time" }
                 ].map((item, index) => (
@@ -352,7 +352,7 @@ const Home = () => {
                 <h3 className="text-xl font-semibold text-white mb-6">Why Smart Lung Physio™</h3>
                 <ul className="space-y-4">
                   {[
-                    "First sensor-guided chest percussion device for LTC",
+                    "Guided airway-clearance platform for LTC",
                     "Addresses staffing constraints with workflow efficiency",
                     "Potential to reduce costly hospital transfers",
                     "Scalable SaaS model with hardware placement",
@@ -428,7 +428,7 @@ const Home = () => {
                 </h2>
               </div>
               <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
-                An automated airway-clearance device designed specifically for long-term care settings. The system uses integrated sensors to guide therapy delivery, with the goal of supporting consistent respiratory care across care teams.
+                An automated airway-clearance device designed specifically for long-term care settings. The system provides guided therapy support, with the goal of helping care teams deliver consistent respiratory care across residents and shifts.
               </p>
               <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
                 The device is designed to assess respiratory status, adapt treatment parameters, and generate session documentation for care records.

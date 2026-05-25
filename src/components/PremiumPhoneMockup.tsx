@@ -9,14 +9,14 @@ interface PremiumPhoneMockupProps {
 const rhythmBars = [18, 34, 46, 58, 42, 52, 36, 48, 28, 40, 22, 30, 18, 26, 16, 24];
 
 const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
-  const [spo2, setSpo2] = useState(94);
+  const [oxygenLevel, setOxygenLevel] = useState(94);
   const [heartRate, setHeartRate] = useState(72);
   const [force, setForce] = useState(19.2);
   const forcePosition = Math.min(70, Math.max(30, force * 2.65));
 
   useEffect(() => {
-    const spo2Interval = setInterval(() => {
-      setSpo2((prev) => (prev === 94 ? 95 : 94));
+    const oxygenInterval = setInterval(() => {
+      setOxygenLevel((prev) => (prev === 94 ? 95 : 94));
     }, 2800);
 
     const heartInterval = setInterval(() => {
@@ -34,7 +34,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
     }, 1600);
 
     return () => {
-      clearInterval(spo2Interval);
+      clearInterval(oxygenInterval);
       clearInterval(heartInterval);
       clearInterval(forceInterval);
     };
@@ -82,7 +82,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
           <div className="border-b border-slate-200 p-4 sm:p-5 md:border-b-0 md:border-r">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">Applied Force</p>
+                <p className="text-sm font-bold uppercase tracking-[0.24em] text-slate-500">Therapy Pressure</p>
                 <div className="mt-3 flex items-baseline gap-3">
                   <span className="font-sans tabular-nums text-6xl font-bold leading-none text-slate-800 sm:text-7xl">
                     {force.toFixed(1)}
@@ -96,7 +96,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
               </div>
                 <div className="text-right">
                   <p className="font-sans tabular-nums text-sm font-bold text-slate-600 sm:text-base">Target 15 - 20 N</p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">FSR calibrated</p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">Calibrated</p>
                 </div>
             </div>
 
@@ -184,13 +184,13 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
                   <span className="relative h-3 w-3 rounded-full bg-slate-700 shadow-sm shadow-blue-600/40" />
                 </div>
                 <p className="text-base font-bold uppercase tracking-[0.22em] text-slate-700">
-                  SpO<span className="align-sub text-[0.65em]">2</span>
+                  Vitals
                   <span className="mx-1 text-slate-300">·</span>
                   <span className="text-slate-700">Live</span>
                 </p>
               </div>
               <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-sans tabular-nums text-sm font-bold text-slate-700 shadow-sm shadow-blue-900/5">
-                Alert floor 92%
+                Clinical floor set
               </span>
             </div>
 
@@ -203,14 +203,14 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
                     cy="110"
                     r="84"
                     fill="none"
-                    stroke="url(#spo2Gradient)"
+                    stroke="url(#oxygenGradient)"
                     strokeWidth="18"
                     strokeLinecap="round"
                     strokeDasharray="390 528"
                     className="transition-all duration-700"
                   />
                   <defs>
-                    <linearGradient id="spo2Gradient" x1="20%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="oxygenGradient" x1="20%" y1="0%" x2="100%" y2="100%">
                       <stop stopColor="#2f5f89" />
                       <stop offset="1" stopColor="#6fa8cf" />
                     </linearGradient>
@@ -218,7 +218,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <div className="flex items-end">
-                    <span className="font-sans tabular-nums text-5xl font-bold text-slate-900">{spo2}</span>
+                    <span className="font-sans tabular-nums text-5xl font-bold text-slate-900">{oxygenLevel}</span>
                     <span className="mb-3 ml-1 text-2xl font-bold text-slate-500">%</span>
                   </div>
                   <p className="font-sans tabular-nums text-sm font-bold uppercase tracking-[0.18em] text-slate-700">Stable</p>
@@ -243,11 +243,11 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
                     <Activity className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">60 S Range</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Oxygen Range</p>
                     <p className="font-sans tabular-nums text-3xl font-bold text-slate-900">
                       92-96 <span className="text-base text-slate-500">%</span>
                     </p>
-                    <p className="text-[11px] font-semibold text-slate-500">No desaturation event</p>
+                    <p className="text-[11px] font-semibold text-slate-500">No oxygen dip detected</p>
                   </div>
                 </div>
               </div>
@@ -255,10 +255,10 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
 
             <div className="mt-6">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Trace · Last 60 S</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-slate-500">Trend · Last 60 S</p>
                 <div className="flex items-center gap-4 font-sans tabular-nums text-xs font-bold text-slate-500">
-                  <span className="flex items-center gap-1"><span className="h-1 w-5 rounded-full bg-slate-700" />SpO₂</span>
-                  <span className="flex items-center gap-1"><span className="h-1 w-5 rounded-full bg-slate-300" />Floor</span>
+                  <span className="flex items-center gap-1"><span className="h-1 w-5 rounded-full bg-slate-700" />Oxygen</span>
+                  <span className="flex items-center gap-1"><span className="h-1 w-5 rounded-full bg-slate-300" />Baseline</span>
                 </div>
               </div>
               <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
