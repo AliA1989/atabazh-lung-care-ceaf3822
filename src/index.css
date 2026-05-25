@@ -422,6 +422,30 @@
   }
 }
 
+@keyframes support-logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.support-logo-track {
+  animation: support-logo-marquee 38s linear infinite;
+}
+
+.support-logo-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .support-logo-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Scroll-triggered animations */
 .scroll-animate {
   opacity: 0;

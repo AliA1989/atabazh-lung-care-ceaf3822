@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title">
+  <title>Health Innovation Hub</title>
+  <g fill="none" stroke="#08295a" stroke-width="16" stroke-linejoin="round">
+    <path d="M160 52c-70 0-126 56-126 126s56 126 126 126h76c24 0 43-20 41-44l-16-169c-2-22-21-39-43-39h-58z"/>
+  </g>
+  <g fill="#08295a">
+    <path d="M86 111h39v67h64v-67h39v159h-39v-70h-64v70H86z"/>
+    <text x="228" y="140" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="800">2</text>
+    <text x="315" y="125" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">Health</text>
+    <text x="315" y="195" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800" fill="#0789a3">Innovation</text>
+    <text x="315" y="265" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">Hub</text>
+  </g>
+  <circle cx="153" cy="151" r="22" fill="#0789a3"/>
+  <rect x="145" y="215" width="28" height="66" fill="#0789a3"/>
+</svg>

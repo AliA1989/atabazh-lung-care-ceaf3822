@@ -6,12 +6,29 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import BreathingGlow from "@/components/BreathingGlow";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
+import techAllianceLogo from "@/assets/support/techalliance.svg";
+import mitacsLogo from "@/assets/support/mitacs.svg";
+import lab2MarketValidateLogo from "@/assets/support/lab2market-validate.webp";
+import springLogo from "@/assets/support/spring.svg";
+import marsLogo from "@/assets/support/mars.svg";
+import h2iLogo from "@/assets/support/h2i.svg";
+import ibzLogo from "@/assets/support/ibz.svg";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
   { icon: Repeat, text: "Consistent pressure guidance across all staff" },
   { icon: ClipboardList, text: "Structured workflow for each session" },
   { icon: FileCheck, text: "Automatic session documentation" },
+];
+
+const SUPPORT_ORGANIZATIONS = [
+  { name: "MaRS Discovery District", src: marsLogo, square: true },
+  { name: "Health Innovation Hub", src: h2iLogo },
+  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[230px] max-h-none max-w-none" },
+  { name: "Spring", src: springLogo, square: true },
+  { name: "TechAlliance", src: techAllianceLogo },
+  { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
+  { name: "Mitacs", src: mitacsLogo },
 ];
 
 const Home = () => {
@@ -28,7 +45,7 @@ const Home = () => {
       {/* Founder Welcome Modal - Shows once per session */}
       <FounderWelcomeModal />
       {/* Hero Section - Premium MedTech Glassmorphism Aesthetic */}
-      <section className="relative min-h-[95vh] lg:min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[92vh] lg:min-h-[96vh] flex items-center overflow-hidden">
         {/* Full background - Refined soft blue gradient with subtle radial */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,35%,98%)] via-[hsl(200,45%,96%)] to-[hsl(210,55%,92%)] z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(200,60%,90%)_0%,_transparent_60%)] z-0" />
@@ -124,7 +141,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent z-[3] pointer-events-none" />
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[radial-gradient(circle,_hsl(200,70%,90%)_0%,_transparent_70%)] opacity-40 blur-3xl z-[1]" />
         
-        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 py-24 lg:py-0">
+        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 pt-24 pb-28 lg:pt-24 lg:pb-32">
           {/* FLEXBOX: Perfect vertical centering between text and image */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-14 lg:gap-8">
             {/* Left side: Text content - vertically centered with image */}
@@ -269,11 +286,53 @@ const Home = () => {
         </div>
         
         {/* Bottom fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
+        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[hsl(204,45%,97%)] via-white/85 to-transparent z-[5]" />
+      </section>
+
+      {/* Support Ecosystem Section */}
+      <section className="relative -mt-24 overflow-hidden pt-14 pb-16 lg:-mt-28 lg:pt-16 lg:pb-20 bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)]">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
+        <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
+          <ScrollReveal className="text-center">
+            <span className="block text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-500/80">
+              Recognized & Supported By
+            </span>
+            <h2 className="mx-auto mt-3 max-w-5xl text-xl md:text-2xl font-semibold tracking-[0.14em] uppercase text-slate-600">
+              Canada's Innovation & Health Ecosystems
+            </h2>
+          </ScrollReveal>
+        </div>
+
+        <div className="relative z-10 mt-9 py-3">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[hsl(204,45%,97%)] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[hsl(204,45%,97%)] to-transparent" />
+
+          <div className="support-logo-track flex w-max items-center gap-14 px-10">
+            {[...SUPPORT_ORGANIZATIONS, ...SUPPORT_ORGANIZATIONS].map((org, index) => (
+              <div
+                key={`${org.name}-${index}`}
+                className={`${org.square ? "w-36" : "w-72"} flex h-28 flex-shrink-0 items-center justify-center overflow-hidden px-2 transition duration-300`}
+              >
+                {org.src ? (
+                  <img
+                    src={org.src}
+                    alt={org.name}
+                    className={`${org.logoClassName ?? `${org.square ? "max-h-[88px]" : "max-h-[82px]"} max-w-full`} object-contain opacity-95 drop-shadow-sm transition duration-300 hover:scale-[1.04] hover:opacity-100`}
+                  />
+                ) : (
+                  <span className={`text-center text-lg font-semibold tracking-wide transition-colors duration-300 ${org.brandClassName ?? "text-slate-500"}`}>
+                    {org.name}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-background via-[hsl(200,35%,96%)] to-background overflow-hidden">
+      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background overflow-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* Left side: Premium phone mockup */}

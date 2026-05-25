@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+  <title>Spring</title>
+  <rect width="240" height="240" fill="#0b9278"/>
+  <text
+    x="120"
+    y="135"
+    fill="#ffffff"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="72"
+    font-weight="700"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    transform="scale(0.78 1.18) translate(34 -18)"
+  >
+    Spring
+  </text>
+</svg>
