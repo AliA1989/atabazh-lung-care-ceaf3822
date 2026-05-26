@@ -141,6 +141,13 @@ const Home = () => {
               >
                 Smart Lung Physio™ brings guided airway-clearance therapy, live care insights, and simple session documentation to long-term care teams, with future potential for connected home support.
               </p>
+
+              <p
+                className="w-fit rounded-full border border-slate-200 bg-white/65 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 shadow-sm opacity-0 animate-fade-in"
+                style={{ animationDelay: '230ms', animationFillMode: 'forwards' }}
+              >
+                Smart Lung Physio™ — U.S. Utility Patent Pending
+              </p>
               
               <ul 
                 className="grid gap-2.5 opacity-0 animate-fade-in"
