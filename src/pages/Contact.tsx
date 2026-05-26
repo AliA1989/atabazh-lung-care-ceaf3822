@@ -9,7 +9,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { supabase } from "@/integrations/supabase/client";
+
+const CONTACT_EMAIL = "aliabedinpour16@gmail.com";
+const CONTACT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 const contactFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -69,35 +71,40 @@ const Contact = () => {
     }
 
     try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert({
-          first_name: result.data.firstName,
-          last_name: result.data.lastName,
-          email: result.data.email,
-          phone: result.data.phone || null,
-          organization: result.data.organization,
-          role: result.data.role,
-          inquiry: result.data.inquiry,
-          message: result.data.message,
-        });
+      const response = await fetch(CONTACT_FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Atabazh inquiry: ${result.data.inquiry}`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: result.data.email,
+          "First Name": result.data.firstName,
+          "Last Name": result.data.lastName,
+          "Email Address": result.data.email,
+          "Phone Number": result.data.phone || "Not provided",
+          Organization: result.data.organization,
+          Role: result.data.role,
+          "Inquiry Type": result.data.inquiry,
+          Message: result.data.message,
+        }),
+      });
 
-      if (error) {
+      const submitResult = await response.json().catch(() => null);
+
+      if (!response.ok || submitResult?.success === false) {
         if (import.meta.env.DEV) {
-          console.error('Error submitting contact form:', error);
+          console.error("Error submitting contact form:", submitResult);
         }
-        toast({
-          title: "Submission Failed",
-          description: "We couldn't send your message. Please try again later.",
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
-        return;
+        throw new Error("Email submission failed");
       }
 
       toast({
         title: "Message Sent",
-        description: "Thank you for contacting us. We'll respond within 24 hours.",
+        description: `Thank you. Your message was sent to ${CONTACT_EMAIL}.`,
       });
 
       setRole("");
@@ -109,7 +116,7 @@ const Contact = () => {
       }
       toast({
         title: "Submission Failed",
-        description: "An unexpected error occurred. Please try again.",
+        description: `Please email us directly at ${CONTACT_EMAIL}.`,
         variant: "destructive",
       });
     } finally {
@@ -308,8 +315,8 @@ const Contact = () => {
                         icon: Mail,
                         title: "Email",
                         content: (
-                          <a href="mailto:support@atabazh-med.com" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
-                            support@atabazh-med.com
+                          <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+                            {CONTACT_EMAIL}
                           </a>
                         )
                       },
