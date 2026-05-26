@@ -24,7 +24,7 @@ const HERO_BULLETS = [
 const SUPPORT_ORGANIZATIONS = [
   { name: "MaRS Discovery District", src: marsLogo, square: true },
   { name: "Health Innovation Hub", src: h2iLogo },
-  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[230px] max-h-none max-w-none" },
+  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[170px] max-h-none max-w-none md:h-[230px]" },
   { name: "Spring", src: springLogo, square: true },
   { name: "TechAlliance", src: techAllianceLogo },
   { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
@@ -45,7 +45,7 @@ const Home = () => {
       {/* Founder Welcome Modal - Shows once per session */}
       <FounderWelcomeModal />
       {/* Hero Section - clinical product introduction */}
-      <section className="relative min-h-[80vh] lg:min-h-[84vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)]">
+      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)] lg:min-h-[84vh]">
         <div className="absolute inset-y-0 right-0 hidden w-[58%] bg-gradient-to-l from-[hsl(205,58%,82%)] via-[hsl(204,52%,91%)] to-transparent lg:block" />
         <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:56px_56px] opacity-[0.16] lg:block" />
         
@@ -116,11 +116,11 @@ const Home = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
-        <div className="container mx-auto relative z-10 max-w-7xl px-6 sm:px-8 lg:px-12 pt-[4.5rem] pb-14 lg:pt-[4.5rem] lg:pb-16">
+        <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-24 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-16">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-10">
-            <div className="space-y-4 max-w-2xl lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
+            <div className="space-y-3.5 max-w-2xl sm:space-y-4 lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
               <div 
-                className="inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 shadow-sm opacity-0 animate-fade-in"
+                className="inline-flex w-fit max-w-full items-center gap-2.5 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
               >
                 <span className="w-2 h-2 rounded-full bg-blue-600" />
@@ -128,7 +128,7 @@ const Home = () => {
               </div>
               
               <h1 
-                className="text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in"
+                className="text-[2.2rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem]"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
                 Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
@@ -143,7 +143,7 @@ const Home = () => {
               </p>
 
               <p
-                className="w-fit rounded-full border border-slate-200 bg-white/65 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 shadow-sm opacity-0 animate-fade-in"
+                className="w-fit max-w-full rounded-full border border-slate-200 bg-white/65 px-3.5 py-2 text-[11px] font-semibold uppercase leading-relaxed tracking-[0.11em] text-slate-500 shadow-sm opacity-0 animate-fade-in sm:text-xs sm:tracking-[0.14em]"
                 style={{ animationDelay: '230ms', animationFillMode: 'forwards' }}
               >
                 Smart Lung Physio™ — U.S. Utility Patent Pending
@@ -164,7 +164,7 @@ const Home = () => {
               </ul>
               
               <div 
-                className="relative opacity-0 animate-fade-in max-w-xl"
+                className="relative hidden opacity-0 animate-fade-in max-w-xl sm:block"
                 style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
               >
                 <div className="relative border-l-2 border-primary bg-white/60 py-3 pl-4 pr-5 shadow-sm shadow-slate-900/5 backdrop-blur">
@@ -178,13 +178,13 @@ const Home = () => {
               </div>
               
               <div 
-                className="flex flex-col sm:flex-row gap-3 pt-1 opacity-0 animate-fade-in"
+                className="flex flex-col gap-3 pt-1 opacity-0 animate-fade-in sm:flex-row"
                 style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
                 <Button 
                   asChild 
                   size="lg" 
-                  className="relative rounded-full text-base px-7 py-4 h-auto group transition-all duration-300 bg-primary hover:bg-primary-dark shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 overflow-hidden"
+                  className="relative h-auto w-full rounded-full px-7 py-4 text-base group transition-all duration-300 bg-primary hover:bg-primary-dark shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 overflow-hidden sm:w-auto"
                 >
                   <NavLink to="/contact" className="flex items-center gap-2.5 relative z-10">
                     Request a demo
@@ -195,7 +195,7 @@ const Home = () => {
                   asChild 
                   variant="outline"
                   size="lg" 
-                  className="relative rounded-full text-base px-7 py-4 h-auto bg-white/80 backdrop-blur border border-slate-200 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 text-slate-700 group overflow-hidden"
+                  className="relative h-auto w-full rounded-full border border-slate-200 bg-white/80 px-7 py-4 text-base text-slate-700 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-md group overflow-hidden sm:w-auto"
                 >
                   <NavLink to="/how-it-works" className="flex items-center gap-3 relative z-10">
                     <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
@@ -204,6 +204,18 @@ const Home = () => {
                     See how it works
                   </NavLink>
                 </Button>
+              </div>
+
+              <div
+                className="relative mx-auto mt-4 w-full max-w-[300px] opacity-0 animate-fade-in lg:hidden"
+                style={{ animationDelay: '360ms', animationFillMode: 'forwards' }}
+              >
+                <div className="absolute inset-x-8 bottom-5 h-8 rounded-full bg-slate-600/20 blur-2xl" />
+                <img
+                  src={heroDeviceImage}
+                  alt="Healthcare professional demonstrating Smart Lung Physio device"
+                  className="relative mx-auto h-auto max-h-[280px] w-full object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
             
@@ -237,7 +249,7 @@ const Home = () => {
       </section>
 
       {/* Support Ecosystem Section */}
-      <section className="relative -mt-24 overflow-hidden pt-14 pb-10 lg:-mt-28 lg:pt-16 lg:pb-12 bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-10 lg:-mt-28 lg:pb-12 lg:pt-16">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
         <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
@@ -245,21 +257,21 @@ const Home = () => {
             <span className="block text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-500/80">
               Recognized & Supported By
             </span>
-            <h2 className="mx-auto mt-3 max-w-5xl text-xl md:text-2xl font-semibold tracking-[0.14em] uppercase text-slate-600">
+            <h2 className="mx-auto mt-3 max-w-5xl text-lg font-semibold uppercase tracking-[0.08em] text-slate-600 md:text-2xl md:tracking-[0.14em]">
               Canada's Innovation & Health Ecosystems
             </h2>
           </ScrollReveal>
         </div>
 
-        <div className="relative z-10 mt-9 py-3">
+        <div className="relative z-10 mt-7 py-2 md:mt-9 md:py-3">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[hsl(204,45%,97%)] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[hsl(204,45%,97%)] to-transparent" />
 
-          <div className="support-logo-track flex w-max items-center gap-14 px-10">
+          <div className="support-logo-track flex w-max items-center gap-8 px-8 md:gap-14 md:px-10">
             {[...SUPPORT_ORGANIZATIONS, ...SUPPORT_ORGANIZATIONS].map((org, index) => (
               <div
                 key={`${org.name}-${index}`}
-                className={`${org.square ? "w-36" : "w-72"} flex h-28 flex-shrink-0 items-center justify-center overflow-hidden px-2 transition duration-300`}
+                className={`${org.square ? "w-28 md:w-36" : "w-56 md:w-72"} flex h-24 flex-shrink-0 items-center justify-center overflow-hidden px-2 transition duration-300 md:h-28`}
               >
                 {org.src ? (
                   <img
@@ -279,11 +291,11 @@ const Home = () => {
       </section>
 
       {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="py-14 lg:py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background overflow-hidden">
+      <section className="overflow-hidden bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background px-6 py-12 sm:px-8 lg:px-12 lg:py-20">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] gap-14 lg:gap-16 items-center">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] lg:gap-16 items-center">
             {/* Left side: Tablet therapy dashboard */}
-            <ScrollReveal className="flex justify-center lg:justify-center">
+            <ScrollReveal className="order-2 flex justify-center lg:order-1 lg:justify-center">
               <div className="relative w-full">
                 {/* Ambient glow behind tablet */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -296,12 +308,12 @@ const Home = () => {
             </ScrollReveal>
             
             {/* Right side: Content */}
-            <ScrollReveal delay={100} className="space-y-6">
+            <ScrollReveal delay={100} className="order-1 space-y-5 lg:order-2 lg:space-y-6">
               <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider">Real-Time Monitoring</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
                 Live Feedback at Your Fingertips
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
                 The Smart Lung Physio™ companion app provides a live view of each therapy session, including treatment guidance, patient wellness signals, and care-team documentation synced securely to the cloud.
               </p>
               <ul className="space-y-5 pt-4">
@@ -328,18 +340,18 @@ const Home = () => {
       </section>
 
       {/* Market Opportunity - TAM Section for Investors */}
-      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-[hsl(210,50%,15%)] via-[hsl(210,45%,18%)] to-[hsl(205,40%,20%)]">
+      <section className="px-6 py-14 sm:px-8 lg:px-12 lg:py-28 bg-gradient-to-r from-[hsl(210,50%,15%)] via-[hsl(210,45%,18%)] to-[hsl(205,40%,20%)]">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <ScrollReveal className="space-y-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-6">
               <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-wider">Market Opportunity</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
                 <span className="text-blue-400">1.5 Billion</span> People Impacted Globally
               </h2>
-              <p className="text-lg text-slate-300 leading-relaxed">
+              <p className="text-base leading-relaxed text-slate-300 md:text-lg">
                 Chronic respiratory conditions affect over 1.5 billion people worldwide. Long-term care facilities alone manage millions of residents with complex respiratory needs—creating a significant opportunity for technology-enabled care solutions.
               </p>
-              <div className="grid grid-cols-2 gap-6 pt-4">
+              <div className="grid grid-cols-2 gap-4 pt-2 sm:gap-6 lg:pt-4">
                 {[
                   { stat: "$50B+", label: "Respiratory Care Market" },
                   { stat: "4M+", label: "LTC Residents in North America" },
@@ -355,9 +367,9 @@ const Home = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={100} className="relative">
-              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-6">Why Smart Lung Physio™</h3>
-                <ul className="space-y-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:p-8 lg:rounded-3xl">
+                <h3 className="mb-5 text-lg font-semibold text-white sm:mb-6 sm:text-xl">Why Smart Lung Physio™</h3>
+                <ul className="space-y-3.5 sm:space-y-4">
                   {[
                     "Guided airway-clearance platform for LTC",
                     "Addresses staffing constraints with workflow efficiency",
@@ -378,9 +390,9 @@ const Home = () => {
       </section>
 
       {/* The Challenge Section - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
         <div className="container mx-auto">
-          <ScrollReveal className="text-center space-y-4 mb-16">
+          <ScrollReveal className="mb-10 space-y-3 text-center sm:mb-16 sm:space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">The Operational Challenge</h2>
             <ScrollReveal delay={100}>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -409,7 +421,7 @@ const Home = () => {
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
                 <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 group rounded-2xl">
-                  <CardContent className="p-8 lg:p-10 space-y-5">
+                  <CardContent className="space-y-4 p-6 sm:p-8 lg:p-10 lg:space-y-5">
                     <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                       <item.icon className="h-7 w-7 text-blue-700" />
                     </div>
@@ -424,10 +436,10 @@ const Home = () => {
       </section>
 
       {/* Our Approach Section - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <ScrollReveal className="space-y-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Our Approach</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">
@@ -440,7 +452,7 @@ const Home = () => {
               <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
                 The device is designed to assess respiratory status, adapt treatment parameters, and generate session documentation for care records.
               </p>
-              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+              <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/device" className="flex items-center gap-2">
                   Learn About the Device
                   <ChevronRight className="w-4 h-4" />
@@ -448,7 +460,7 @@ const Home = () => {
               </Button>
             </ScrollReveal>
             
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {[
                 {
                   icon: Activity,
@@ -473,7 +485,7 @@ const Home = () => {
               ].map((item, index) => (
                 <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
                   <Card className="h-full backdrop-blur-xl bg-white/70 border border-white/60 shadow-lg shadow-slate-900/5 hover:shadow-xl transition-all duration-300 rounded-2xl">
-                    <CardContent className="p-6 space-y-4">
+                    <CardContent className="space-y-3 p-4 sm:p-6 sm:space-y-4">
                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md shadow-blue-500/30">
                         <item.icon className="h-5 w-5 text-white" />
                       </div>
@@ -489,10 +501,10 @@ const Home = () => {
       </section>
 
       {/* Development Context Section - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <ScrollReveal className="space-y-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Development</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Tested in Clinical Settings</h2>
@@ -562,10 +574,10 @@ const Home = () => {
       </section>
 
       {/* LTC Focus Section - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <ScrollReveal className="space-y-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-8">
               <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Purpose-Built</span>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Designed for Long-Term Care</h2>
               <p className="text-base text-slate-600 leading-relaxed">
@@ -574,7 +586,7 @@ const Home = () => {
               <p className="text-base text-slate-600 leading-relaxed">
                 The device is designed to require minimal training, integrate into existing care routines, and provide documentation for care records.
               </p>
-              <Button asChild size="lg" className="rounded-full text-base px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+              <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/long-term-care" className="flex items-center gap-2">
                   LTC Implementation Details
                   <ArrowRight className="w-4 h-4" />
@@ -583,7 +595,7 @@ const Home = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={100}>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {[
                   {
                     icon: Clock,
@@ -607,7 +619,7 @@ const Home = () => {
                   }
                 ].map((item, index) => (
                   <Card key={index} className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl">
-                    <CardContent className="p-6 text-center space-y-4">
+                    <CardContent className="space-y-3 p-4 text-center sm:p-6 sm:space-y-4">
                       <div className="w-12 h-12 mx-auto rounded-xl bg-blue-100 flex items-center justify-center">
                         <item.icon className="w-5 h-5 text-blue-700" />
                       </div>
@@ -623,9 +635,9 @@ const Home = () => {
       </section>
 
       {/* CTA Section - Soft Blue Gradient */}
-      <section className="py-28 lg:py-36 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-36 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto max-w-3xl">
-          <ScrollReveal className="text-center space-y-10">
+          <ScrollReveal className="space-y-6 text-center sm:space-y-10">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
               Interested in Learning More?
             </h2>
@@ -635,11 +647,11 @@ const Home = () => {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
-                <Button asChild size="lg" className="rounded-full text-base px-10 py-7 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center pt-2 sm:pt-4">
+                <Button asChild size="lg" className="h-auto rounded-full px-10 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:py-7">
                   <NavLink to="/contact">Contact Us</NavLink>
                 </Button>
-                <Button asChild size="lg" className="rounded-full text-base px-10 py-7 h-auto bg-white/80 backdrop-blur-sm border-2 border-white/60 shadow-lg hover:shadow-xl hover:bg-white hover:-translate-y-0.5 transition-all duration-300 text-slate-700">
+                <Button asChild size="lg" className="h-auto rounded-full border-2 border-white/60 bg-white/80 px-10 py-5 text-base text-slate-700 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl sm:py-7">
                   <NavLink to="/about">About Our Team</NavLink>
                 </Button>
               </div>

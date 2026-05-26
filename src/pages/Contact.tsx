@@ -127,7 +127,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Master Design System */}
-      <section className="relative py-24 lg:py-32 overflow-hidden pt-32">
+      <section className="relative overflow-hidden py-16 pt-28 lg:py-32 lg:pt-32">
         {/* Soft blue gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
         
@@ -138,11 +138,11 @@ const Contact = () => {
           </svg>
         </div>
         
-        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12 max-w-4xl text-center space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 animate-fade-in">
+        <div className="container mx-auto relative z-10 max-w-4xl space-y-4 px-6 text-center sm:px-8 lg:px-12 lg:space-y-6">
+          <h1 className="text-4xl font-bold text-slate-800 animate-fade-in md:text-5xl lg:text-6xl">
             Contact Us
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 animate-fade-in md:text-xl">
             We welcome inquiries from LTC operators, clinical partners, and healthcare innovation stakeholders.
           </p>
         </div>
@@ -151,14 +151,14 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
+      <section className="px-6 py-14 sm:px-8 lg:px-12 lg:py-32">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
             {/* Contact Form */}
             <ScrollReveal>
               <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
-                <CardContent className="p-8 lg:p-10">
-                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">Send Us a Message</h2>
+                <CardContent className="p-5 sm:p-8 lg:p-10">
+                  <h2 className="mb-6 text-2xl font-bold text-slate-800 md:mb-8 md:text-3xl">Send Us a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">

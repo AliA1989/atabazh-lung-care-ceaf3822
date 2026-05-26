@@ -41,8 +41,8 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
   }, []);
 
   return (
-    <div className={`relative w-full max-w-[760px] md:h-[520px] lg:h-[485px] ${className}`}>
-      <div className="relative w-full md:absolute md:left-1/2 md:top-0 md:w-[860px] md:-translate-x-1/2 md:origin-top md:scale-[0.7] lg:scale-[0.65]">
+    <div className={`relative h-[370px] w-full max-w-[760px] overflow-visible sm:h-[500px] md:h-[520px] lg:h-[485px] ${className}`}>
+      <div className="absolute left-1/2 top-0 w-[860px] -translate-x-1/2 origin-top scale-[0.33] sm:scale-[0.52] md:scale-[0.7] lg:scale-[0.65]">
         <div className="absolute inset-x-8 -bottom-8 h-16 rounded-full bg-slate-700/18 blur-3xl" />
         <div className="relative rounded-[36px] bg-gradient-to-br from-slate-100 via-white to-slate-300 p-3 shadow-2xl shadow-slate-900/16 ring-1 ring-white/90">
           <div className="absolute left-1/2 top-1.5 z-20 h-1.5 w-14 -translate-x-1/2 rounded-full bg-slate-300/70" />
