@@ -47,7 +47,7 @@ const FounderWelcomeModal = () => {
     <>
       {/* Floating founder card */}
       <div 
-        className={`fixed bottom-5 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm sm:bottom-6 sm:right-6 transition-all duration-300 ease-out ${
+        className={`fixed bottom-5 right-4 z-50 w-[calc(100vw-2rem)] max-w-[430px] sm:bottom-6 sm:right-6 transition-all duration-300 ease-out ${
           isClosing 
             ? "opacity-0 translate-y-4 scale-95" 
             : "opacity-100 translate-y-0 scale-100"
@@ -57,42 +57,48 @@ const FounderWelcomeModal = () => {
         }}
       >
         <div 
-          className="relative rounded-2xl border border-white/70 p-5 text-left"
+          className="relative overflow-hidden rounded-2xl border border-slate-200/80 p-5 text-left sm:p-6"
           style={{
-            background: "rgba(255, 255, 255, 0.92)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            boxShadow: "0 18px 45px -18px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.5) inset"
+            background: "rgba(255, 255, 255, 0.96)",
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            boxShadow: "0 22px 55px -26px rgba(15, 23, 42, 0.38), 0 1px 0 rgba(255, 255, 255, 0.72) inset"
           }}
         >
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
+
           {/* Close Button */}
           <button
             onClick={handleClose}
-            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100/50 transition-colors duration-200"
+            className="absolute right-4 top-4 rounded-full p-2 text-slate-400 transition-colors duration-200 hover:bg-slate-100/70 hover:text-slate-600"
             aria-label="Close"
           >
             <X className="h-4 w-4" />
           </button>
 
-          <div className="flex gap-4 pr-7">
+          <div className="flex gap-4 pr-7 sm:gap-5">
             {/* Avatar */}
             <div className="relative flex-shrink-0">
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-primary/60 to-[hsl(200,60%,70%)] opacity-60 blur-sm" />
-              <div className="relative w-16 h-16 rounded-full overflow-hidden ring-4 ring-white shadow-lg">
+              <div className="relative h-[74px] w-[74px] overflow-hidden rounded-full bg-slate-100 ring-4 ring-white shadow-[0_10px_28px_-18px_rgba(15,23,42,0.65)] sm:h-20 sm:w-20">
                 <img
                   src="/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg"
                   alt="Ali Abedinpour"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover grayscale-[20%]"
                 />
               </div>
             </div>
 
             {/* Content */}
-            <div className="space-y-2">
-              <h3 className="text-base font-bold text-[hsl(215,50%,25%)]">
+            <div className="space-y-2.5">
+              <div className="space-y-1">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary/80">
+                  Founder Welcome
+                </p>
+                <h3 className="text-lg font-bold leading-tight text-[hsl(215,50%,25%)] sm:text-xl">
                 Hi, I'm Ali Abedinpour
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+                </h3>
+              </div>
+              <p className="text-sm leading-relaxed text-slate-600 sm:text-[15px]">
                 Welcome to Atabazh Med. We're building better respiratory care for long-term care teams.
               </p>
             </div>
@@ -101,7 +107,7 @@ const FounderWelcomeModal = () => {
           {/* LinkedIn CTA Button */}
           <Button
             onClick={handleLinkedInClick}
-            className="mt-5 w-full bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold py-5 rounded-xl transition-all duration-300 hover:shadow-lg group"
+            className="group mt-5 h-auto w-full rounded-xl bg-[#0A66C2] py-3.5 font-semibold text-white shadow-sm shadow-[#0A66C2]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#004182] hover:shadow-lg hover:shadow-[#0A66C2]/20"
           >
             <Linkedin className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
             Connect on LinkedIn
