@@ -10,11 +10,11 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
             <NavLink to="/" className="inline-flex items-center gap-4 mb-5 group" aria-label="Atabazh Med home">
-              <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg shadow-slate-950/20 ring-1 ring-white/30 transition-transform duration-300 group-hover:scale-[1.03]">
+              <span className="flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
                 <img 
                   src={logo} 
                   alt="" 
-                  className="h-14 w-14 object-contain contrast-125 saturate-110"
+                  className="h-[3.75rem] w-[3.75rem] object-contain contrast-125 saturate-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.28)]"
                 />
               </span>
               <span className="flex flex-col leading-none">

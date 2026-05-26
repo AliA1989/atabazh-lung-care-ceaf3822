@@ -38,11 +38,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-3.5 group shrink-0" aria-label="Atabazh Med home">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/80 transition-transform duration-300 group-hover:scale-[1.03] lg:h-[3.25rem] lg:w-[3.25rem]">
+            <span className="flex h-12 w-12 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] lg:h-[3.25rem] lg:w-[3.25rem]">
               <img 
                 src={logo} 
                 alt="" 
-                className="h-10 w-10 object-contain contrast-125 saturate-110 lg:h-11 lg:w-11"
+                className="h-11 w-11 object-contain contrast-125 saturate-110 drop-shadow-[0_1px_2px_rgba(15,23,42,0.18)] lg:h-12 lg:w-12"
               />
             </span>
             <div className="hidden sm:flex flex-col leading-none">
