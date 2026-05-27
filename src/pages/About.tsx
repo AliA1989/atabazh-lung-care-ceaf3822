@@ -44,10 +44,52 @@ const focusAreas = [
 const founder = {
   name: "Ali Abedinpour",
   role: "Founder & CEO",
-  background: "Biomedical Engineer & Medical-Device Entrepreneur",
+  background: "Engineering + Healthcare Operations",
   image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg",
   linkedin: "https://www.linkedin.com/in/aliabedinpour/",
 };
+
+const technicalContributors = [
+  {
+    name: "Kamran Azma",
+    role: "Respiratory Care & Clinical Workflow Contributor",
+    description:
+      "Supports respiratory-care workflow review, therapy-protocol discussion, and clinical usability considerations for Smart Lung Physio™.",
+  },
+  {
+    name: "Ali Azadegan Mehr",
+    role: "Mechanical Design Contributor",
+    description:
+      "Supports mechanical design, ergonomic considerations, hardware refinement, and prototype development for Smart Lung Physio™.",
+  },
+  {
+    name: "Ali Hosseini",
+    role: "Electronics & Sensor Integration Contributor",
+    description:
+      "Supports electronics, sensor integration, embedded hardware review, and prototype testing for Smart Lung Physio™.",
+  },
+  {
+    name: "Ahmed Tabl",
+    role: "Embedded Systems & Biomechanics Contributor",
+    description:
+      "Supports sensor-data analysis, embedded-systems review, biomechanics-informed testing, and prototype validation planning for Smart Lung Physio™.",
+  },
+  {
+    name: "Tara Shah",
+    role: "Regulatory & Pilot Readiness Contributor",
+    description:
+      "Supports regulatory-readiness research, clinical workflow mapping, stakeholder research, pilot-preparation documentation, and evidence planning for Smart Lung Physio™.",
+  },
+];
+
+const strategicAdvisors = [
+  {
+    name: "Jeff Kofman",
+    role: "Strategic Advisor",
+    description:
+      "Supports operational strategy, stakeholder positioning, and commercialization planning across the long-term care ecosystem.",
+  },
+];
 
 const About = () => {
   return (
@@ -234,7 +276,7 @@ const About = () => {
               Leadership
             </p>
             <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
-              Practical leadership for medical-device development.
+              Practical leadership for early-stage medical-device development.
             </h2>
           </ScrollReveal>
 
@@ -263,7 +305,7 @@ const About = () => {
 
             <ScrollReveal delay={100} className="space-y-5">
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                Ali leads product strategy, customer discovery, partnership development, and regulatory-readiness planning for Smart Lung Physio™.
+                Biomedical engineer and medical-device entrepreneur focused on practical respiratory-care technology for long-term care and home-care settings. Leads product strategy, customer discovery, partnership development, regulatory-readiness planning, and commercialization strategy for Smart Lung Physio™.
               </p>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
                 Founded by Ali Abedinpour, Atabazh Medical is focused on building healthcare technology that is practical, evidence-informed, and designed around real care workflows.
@@ -273,24 +315,59 @@ const About = () => {
         </div>
       </section>
 
-      {/* Current Contributors */}
+      {/* Technical & Clinical Contributors */}
       <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <Card className="border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm">
-              <CardContent className="space-y-4 p-6 sm:p-8 lg:p-10">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                  Current Contributors
-                </p>
-                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                  Atabazh Medical works with student contributors and project-based collaborators who support research, documentation, engineering, regulatory-readiness, and pilot-preparation activities for Smart Lung Physio™.
-                </p>
-                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                  Individual contributors are listed publicly only when their role and permission have been confirmed.
-                </p>
-              </CardContent>
-            </Card>
+        <div className="container mx-auto max-w-6xl">
+          <ScrollReveal className="mx-auto mb-10 max-w-3xl text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Technical & Clinical Contributors
+            </p>
+            <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
+              Project-based support across engineering, workflow, and readiness activities.
+            </h2>
           </ScrollReveal>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {technicalContributors.map((member, index) => (
+              <ScrollReveal key={member.name} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
+                <Card className="h-full border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <CardContent className="space-y-3 p-6">
+                    <p className="text-lg font-bold text-slate-800">{member.name}</p>
+                    <p className="text-sm font-semibold leading-relaxed text-primary">{member.role}</p>
+                    <p className="text-sm leading-relaxed text-slate-600">{member.description}</p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Advisory */}
+      <section className="px-6 pb-16 sm:px-8 lg:px-12 lg:pb-20">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal className="mb-10 text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Strategic Advisory
+            </p>
+            <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
+              Operational and commercialization guidance.
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {strategicAdvisors.map((advisor) => (
+              <ScrollReveal key={advisor.name}>
+                <Card className="h-full border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm">
+                  <CardContent className="space-y-3 p-6 sm:p-8">
+                    <p className="text-lg font-bold text-slate-800">{advisor.name}</p>
+                    <p className="text-sm font-semibold text-primary">{advisor.role}</p>
+                    <p className="text-sm leading-relaxed text-slate-600">{advisor.description}</p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
