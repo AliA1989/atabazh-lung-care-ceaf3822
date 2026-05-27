@@ -342,7 +342,7 @@ const About = () => {
                 </NavLink>
               </Button>
               <p className="text-sm font-medium text-white/85">
-                Contact: <a href="mailto:ali@atabazh-med.com" className="underline underline-offset-4">ali@atabazh-med.com</a>
+                Contact: <a href="mailto:support@atabazh-med.com" className="underline underline-offset-4">support@atabazh-med.com</a>
               </p>
             </div>
           </ScrollReveal>
