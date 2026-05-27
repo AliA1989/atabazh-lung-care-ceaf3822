@@ -3,10 +3,13 @@ import { NavLink } from "./NavLink";
 import { Button } from "./ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import logo from "@/assets/atabazh-logo.svg";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const primaryCtaLabel = pathname === "/about" ? "Book a Discovery Call" : "Request a Demo";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +81,7 @@ const Navigation = () => {
               className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 px-7 py-2.5 text-sm font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               <NavLink to="/contact" className="flex items-center gap-2">
-                Request a Demo
+                {primaryCtaLabel}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </NavLink>
             </Button>
@@ -118,7 +121,7 @@ const Navigation = () => {
                 className="w-full rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 py-3 font-semibold"
               >
                 <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Request a Demo
+                  {primaryCtaLabel}
                 </NavLink>
               </Button>
             </div>

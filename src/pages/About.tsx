@@ -31,7 +31,7 @@ const focusAreas = [
     icon: Activity,
     title: "Real-Time Sensing",
     description:
-      "Built with sensing and feedback concepts intended to help caregivers monitor session delivery and adjust within defined care workflows.",
+      "Built with real-time sensing and feedback intended to help caregivers monitor session delivery and adjust within defined care workflows.",
   },
   {
     icon: ClipboardList,
@@ -67,7 +67,7 @@ const About = () => {
               Building practical respiratory-care technology for long-term care and home-care settings.
             </h1>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
-              Atabazh Medical Inc. is a Canadian medical-device startup developing practical respiratory-care technology for long-term care, home care, and clinical partners.
+              Atabazh Medical Inc. is a Canadian medical-device startup developing respiratory-care technology for long-term care and home-care settings.
             </p>
           </ScrollReveal>
         </div>
@@ -82,16 +82,16 @@ const About = () => {
                 Why We Exist
               </p>
               <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
-                Respiratory care is a clinical need, but the gap is often operational.
+                Respiratory care is a clinical need, but in long-term care and home care, the gap is often operational.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={100} className="space-y-5 text-slate-600">
               <p className="text-base leading-relaxed md:text-lg">
-                Long-term care and home-care teams often support adults who have difficulty clearing pulmonary secretions, while also managing staffing pressure, inconsistent workflows, documentation burden, and limited access to specialized respiratory support.
+                Care teams support adults who have difficulty clearing pulmonary secretions while managing staffing pressure, inconsistent workflows, documentation burden, and limited access to specialized respiratory support.
               </p>
               <p className="text-base leading-relaxed md:text-lg">
-                The challenge is not only whether airway-clearance support is clinically useful. It is whether care teams can deliver repeatable routines across shifts, document what happened, and make care delivery easier to coordinate.
+                The challenge is not only whether airway-clearance support is useful. It is whether care teams can deliver repeatable routines across shifts, document what happened, and coordinate care without adding unnecessary workload.
               </p>
               <div className="grid gap-3 pt-2 sm:grid-cols-2">
                 {[
@@ -148,7 +148,7 @@ const About = () => {
                   <div className="grid gap-3">
                     {[
                       "Guided therapy delivery",
-                      "Real-time sensing concepts",
+                      "Real-time sensing and feedback",
                       "Structured session workflow",
                       "Session documentation support",
                       "Consistent and measurable support",
@@ -225,10 +225,19 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founder */}
+      {/* Leadership */}
       <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,97%)] via-[hsl(200,50%,95%)] to-[hsl(220,40%,96%)]" />
         <div className="container relative mx-auto max-w-6xl">
+          <ScrollReveal className="mb-10 text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Leadership
+            </p>
+            <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
+              Practical leadership for medical-device development.
+            </h2>
+          </ScrollReveal>
+
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
             <ScrollReveal>
               <Card className="mx-auto max-w-sm border-white/80 bg-white/70 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
@@ -253,20 +262,57 @@ const About = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100} className="space-y-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                Founder
-              </p>
-              <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
-                Practical, evidence-informed technology designed around real care workflows.
-              </h2>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                Founded by Ali Abedinpour, a biomedical engineer and medical-device entrepreneur, Atabazh Medical is focused on building healthcare technology that is practical, evidence-informed, and designed around real care workflows.
+                Ali leads product strategy, customer discovery, partnership development, and regulatory-readiness planning for Smart Lung Physio™.
               </p>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                The company’s work is guided by conversations with care providers, clinical collaborators, long-term care leaders, home-care stakeholders, innovation partners, and investors who understand the operational realities of respiratory support.
+                Founded by Ali Abedinpour, Atabazh Medical is focused on building healthcare technology that is practical, evidence-informed, and designed around real care workflows.
               </p>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Current Contributors */}
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <Card className="border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm">
+              <CardContent className="space-y-4 p-6 sm:p-8 lg:p-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                  Current Contributors
+                </p>
+                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+                  Atabazh Medical works with student contributors and project-based collaborators who support research, documentation, engineering, regulatory-readiness, and pilot-preparation activities for Smart Lung Physio™.
+                </p>
+                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+                  Individual contributors are listed publicly only when their role and permission have been confirmed.
+                </p>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Academic & Innovation Collaboration */}
+      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,98%)] via-[hsl(200,50%,96%)] to-[hsl(220,40%,94%)]" />
+        <div className="container relative mx-auto max-w-5xl">
+          <ScrollReveal>
+            <Card className="border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm">
+              <CardContent className="space-y-4 p-6 sm:p-8 lg:p-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                  Academic & Innovation Collaboration
+                </p>
+                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+                  Atabazh Medical is actively engaged in academic and innovation-based collaboration to support customer discovery, regulatory-readiness planning, clinical workflow research, and early validation preparation for Smart Lung Physio™.
+                </p>
+                <p className="text-base leading-relaxed text-slate-600 md:text-lg">
+                  Current collaboration activities include student project work, capstone-based research, market validation, regulatory-readiness analysis, and stakeholder discovery with healthcare and aging-care professionals.
+                </p>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
         </div>
       </section>
 

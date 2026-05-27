@@ -1,8 +1,12 @@
 import { NavLink } from "./NavLink";
 import logo from "@/assets/atabazh-logo.svg";
 import { Linkedin } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const primaryCtaLabel = pathname === "/about" ? "Book a Discovery Call" : "Request a Demo";
+
   return (
     <footer className="bg-[#1e3a5f] border-t border-[#2a4a70]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-14 lg:py-16">
@@ -90,7 +94,7 @@ const Footer = () => {
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
-                { to: "/contact", label: "Request a Demo" },
+                { to: "/contact", label: primaryCtaLabel },
                 { to: "/long-term-care", label: "For LTC Homes" }
               ].map((link) => (
                 <li key={link.to}>
