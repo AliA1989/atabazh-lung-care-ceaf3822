@@ -307,9 +307,6 @@ const About = () => {
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
                 Biomedical engineer and medical-device entrepreneur focused on practical respiratory-care technology for long-term care and home-care settings. Leads product strategy, customer discovery, partnership development, regulatory-readiness planning, and commercialization strategy for Smart Lung Physio™.
               </p>
-              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                Founded by Ali Abedinpour, Atabazh Medical is focused on building healthcare technology that is practical, evidence-informed, and designed around real care workflows.
-              </p>
             </ScrollReveal>
           </div>
         </div>
