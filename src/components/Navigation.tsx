@@ -33,21 +33,21 @@ const Navigation = () => {
         scrolled ? "bg-gradient-to-r from-white/50 via-white/40 to-white/50" : "bg-transparent"
       }`} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-16 items-center justify-between sm:h-20">
           {/* Logo */}
-          <NavLink to="/" className="group flex shrink-0 items-center gap-3.5" aria-label="Atabazh Med home">
-            <span className="flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] lg:h-16 lg:w-16">
+          <NavLink to="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3.5" aria-label="Atabazh Med home">
+            <span className="flex h-11 w-11 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] sm:h-14 sm:w-14 lg:h-16 lg:w-16">
               <img 
                 src={logo} 
                 alt="" 
-                className="h-[3.25rem] w-[3.25rem] object-contain contrast-125 saturate-110 drop-shadow-[0_2px_5px_rgba(15,23,42,0.16)] lg:h-[3.75rem] lg:w-[3.75rem]"
+                className="h-10 w-10 object-contain contrast-125 saturate-110 drop-shadow-[0_2px_5px_rgba(15,23,42,0.16)] sm:h-[3.25rem] sm:w-[3.25rem] lg:h-[3.75rem] lg:w-[3.75rem]"
               />
             </span>
-            <div className="hidden flex-col leading-none sm:flex">
-              <span className="text-base font-bold uppercase tracking-[0.1em] text-slate-950 lg:text-[1.05rem]">
+            <div className="flex flex-col leading-none">
+              <span className="text-[13px] font-bold uppercase tracking-[0.09em] text-slate-950 sm:text-base sm:tracking-[0.1em] lg:text-[1.05rem]">
                 Atabazh
               </span>
-              <span className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-primary lg:text-xs">
+              <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.26em] text-primary sm:mt-1.5 sm:text-[11px] sm:tracking-[0.3em] lg:text-xs">
                 Med
               </span>
             </div>

@@ -24,7 +24,7 @@ const HERO_BULLETS = [
 const SUPPORT_ORGANIZATIONS = [
   { name: "MaRS Discovery District", src: marsLogo, square: true },
   { name: "Health Innovation Hub", src: h2iLogo },
-  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[170px] max-h-none max-w-none md:h-[230px]" },
+  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[118px] max-h-none max-w-none sm:h-[150px] md:h-[230px]" },
   { name: "Spring", src: springLogo, square: true },
   { name: "TechAlliance", src: techAllianceLogo },
   { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
@@ -116,7 +116,7 @@ const Home = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
-        <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-24 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-12">
+        <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-20 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-10">
             <div className="space-y-3.5 max-w-2xl sm:space-y-4 lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
               <div 
@@ -128,7 +128,7 @@ const Home = () => {
               </div>
               
               <h1 
-                className="text-[2.2rem] font-bold leading-[1.05] tracking-tight text-slate-900 opacity-0 animate-fade-in sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem]"
+                className="text-[2rem] font-bold leading-[1.06] tracking-tight text-slate-900 opacity-0 animate-fade-in sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem]"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
                 Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
@@ -261,7 +261,7 @@ const Home = () => {
       </section>
 
       {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="overflow-hidden bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background px-6 py-12 sm:px-8 lg:px-12 lg:py-20">
+      <section className="overflow-hidden bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background px-4 py-12 sm:px-8 lg:px-12 lg:py-20">
         <div className="container mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] lg:gap-16 items-center">
             {/* Left side: Tablet therapy dashboard */}
@@ -280,7 +280,7 @@ const Home = () => {
             {/* Right side: Content */}
             <ScrollReveal delay={100} className="order-1 space-y-5 lg:order-2 lg:space-y-6">
               <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider">Real-Time Monitoring</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
+              <h2 className="text-[2rem] md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
                 Live Feedback at Your Fingertips
               </h2>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">

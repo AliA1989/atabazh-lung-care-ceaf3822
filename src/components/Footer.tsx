@@ -5,16 +5,16 @@ import { Linkedin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-[#1e3a5f] border-t border-[#2a4a70]">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-14 lg:py-16">
+      <div className="container mx-auto px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <NavLink to="/" className="group mb-6 inline-flex items-center gap-4" aria-label="Atabazh Med home">
-              <span className="flex h-[4.5rem] w-[4.5rem] items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
+            <NavLink to="/" className="group mb-6 inline-flex items-center gap-3.5 sm:gap-4" aria-label="Atabazh Med home">
+              <span className="flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] sm:h-[4.5rem] sm:w-[4.5rem]">
                 <img 
                   src={logo} 
                   alt="" 
-                  className="h-[4.25rem] w-[4.25rem] object-contain brightness-0 invert opacity-90 drop-shadow-[0_2px_10px_rgba(125,211,252,0.18)]"
+                  className="h-[3.25rem] w-[3.25rem] object-contain brightness-0 invert opacity-90 drop-shadow-[0_2px_10px_rgba(125,211,252,0.18)] sm:h-[4.25rem] sm:w-[4.25rem]"
                 />
               </span>
               <span className="flex flex-col leading-none pt-0.5">
