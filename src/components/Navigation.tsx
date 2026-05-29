@@ -35,19 +35,19 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3.5 group shrink-0" aria-label="Atabazh Med home">
-            <span className="flex h-12 w-12 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] lg:h-[3.25rem] lg:w-[3.25rem]">
+          <NavLink to="/" className="group flex shrink-0 items-center gap-3.5" aria-label="Atabazh Med home">
+            <span className="flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] lg:h-16 lg:w-16">
               <img 
                 src={logo} 
                 alt="" 
-                className="h-11 w-11 object-contain contrast-125 saturate-110 drop-shadow-[0_1px_2px_rgba(15,23,42,0.18)] lg:h-12 lg:w-12"
+                className="h-[3.25rem] w-[3.25rem] object-contain contrast-125 saturate-110 drop-shadow-[0_2px_5px_rgba(15,23,42,0.16)] lg:h-[3.75rem] lg:w-[3.75rem]"
               />
             </span>
-            <div className="hidden sm:flex flex-col leading-none">
-              <span className="text-[15px] lg:text-base font-bold tracking-[0.08em] text-slate-950 uppercase">
+            <div className="hidden flex-col leading-none sm:flex">
+              <span className="text-base font-bold uppercase tracking-[0.1em] text-slate-950 lg:text-[1.05rem]">
                 Atabazh
               </span>
-              <span className="mt-1 text-[11px] lg:text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+              <span className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-primary lg:text-xs">
                 Med
               </span>
             </div>
