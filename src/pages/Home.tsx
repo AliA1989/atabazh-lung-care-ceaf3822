@@ -176,23 +176,6 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              
-              <div 
-                className="flex flex-col gap-3 pt-1 opacity-0 animate-fade-in sm:flex-row"
-                style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
-              >
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="relative h-auto w-full rounded-full px-7 py-4 text-base group transition-all duration-300 bg-primary hover:bg-primary-dark shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 overflow-hidden sm:w-auto"
-                >
-                  <NavLink to="/contact" className="flex items-center gap-2.5 relative z-10">
-                    Request a demo
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </NavLink>
-                </Button>
-              </div>
-
               <div
                 className="relative mx-auto mt-4 w-full max-w-[300px] opacity-0 animate-fade-in lg:hidden"
                 style={{ animationDelay: '360ms', animationFillMode: 'forwards' }}
