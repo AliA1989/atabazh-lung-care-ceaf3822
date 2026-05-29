@@ -6,27 +6,27 @@ const Footer = () => {
   return (
     <footer className="bg-[#1e3a5f] border-t border-[#2a4a70]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-14 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <NavLink to="/" className="inline-flex items-center gap-4 mb-5 group" aria-label="Atabazh Med home">
-              <span className="flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
+            <NavLink to="/" className="group mb-6 inline-flex items-center gap-4" aria-label="Atabazh Med home">
+              <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/80 bg-white/95 shadow-lg shadow-slate-950/20 ring-1 ring-blue-100/60 transition-transform duration-300 group-hover:scale-[1.03]">
                 <img 
                   src={logo} 
                   alt="" 
-                  className="h-[3.75rem] w-[3.75rem] object-contain contrast-125 saturate-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.28)]"
+                  className="h-12 w-12 object-contain contrast-110 saturate-110"
                 />
               </span>
-              <span className="flex flex-col leading-none">
-                <span className="text-lg font-bold tracking-[0.08em] text-white uppercase">
+              <span className="flex flex-col leading-none pt-0.5">
+                <span className="text-xl font-bold uppercase tracking-[0.1em] text-white">
                   Atabazh
                 </span>
-                <span className="mt-1.5 text-xs font-semibold tracking-[0.24em] text-blue-300 uppercase">
+                <span className="mt-2 text-xs font-semibold uppercase tracking-[0.28em] text-blue-200">
                   Med
                 </span>
               </span>
             </NavLink>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
+            <p className="max-w-[18rem] text-sm leading-relaxed text-slate-300/85">
               Developing practical respiratory-care technology for long-term care and home-care settings.
             </p>
             <a 
