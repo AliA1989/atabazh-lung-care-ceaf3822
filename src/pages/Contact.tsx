@@ -10,8 +10,9 @@ import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const CONTACT_EMAIL = "aliabedinpour16@gmail.com";
-const CONTACT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+const PUBLIC_CONTACT_EMAIL = "support@atabazh-med.com";
+const CONTACT_FORM_RECIPIENT = "aliabedinpour16@gmail.com";
+const CONTACT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_FORM_RECIPIENT}`;
 
 const contactFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -104,7 +105,7 @@ const Contact = () => {
 
       toast({
         title: "Message Sent",
-        description: `Thank you. Your message was sent to ${CONTACT_EMAIL}.`,
+        description: "Thank you. Your message was sent successfully.",
       });
 
       setRole("");
@@ -116,7 +117,7 @@ const Contact = () => {
       }
       toast({
         title: "Submission Failed",
-        description: `Please email us directly at ${CONTACT_EMAIL}.`,
+        description: `Please email us directly at ${PUBLIC_CONTACT_EMAIL}.`,
         variant: "destructive",
       });
     } finally {
@@ -315,8 +316,8 @@ const Contact = () => {
                         icon: Mail,
                         title: "Email",
                         content: (
-                          <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
-                            {CONTACT_EMAIL}
+                          <a href={`mailto:${PUBLIC_CONTACT_EMAIL}`} className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+                            {PUBLIC_CONTACT_EMAIL}
                           </a>
                         )
                       },
