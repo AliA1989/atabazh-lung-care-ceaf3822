@@ -45,7 +45,7 @@ const Home = () => {
       {/* Founder Welcome Modal - Shows once per session */}
       <FounderWelcomeModal />
       {/* Hero Section - clinical product introduction */}
-      <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)] lg:min-h-[84vh]">
+      <section className="relative flex min-h-[74vh] items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)] lg:min-h-[76vh]">
         <div className="absolute inset-y-0 right-0 hidden w-[58%] bg-gradient-to-l from-[hsl(205,58%,82%)] via-[hsl(204,52%,91%)] to-transparent lg:block" />
         <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:56px_56px] opacity-[0.16] lg:block" />
         
@@ -116,7 +116,7 @@ const Home = () => {
         
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
-        <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-24 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-16">
+        <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-24 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-10">
             <div className="space-y-3.5 max-w-2xl sm:space-y-4 lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
               <div 
@@ -204,7 +204,7 @@ const Home = () => {
                 <img 
                   src={heroDeviceImage} 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="relative w-auto h-[58vh] max-h-[550px] min-h-[350px] object-contain drop-shadow-2xl"
+                  className="relative w-auto h-[52vh] max-h-[500px] min-h-[330px] object-contain drop-shadow-2xl"
                   style={{ 
                     filter: 'drop-shadow(0 24px 42px hsl(210, 35%, 25%, 0.16))'
                   }}
@@ -225,10 +225,10 @@ const Home = () => {
         <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
           <ScrollReveal className="text-center">
             <span className="block text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-500/80">
-              Recognized & Supported By
+              Ecosystem Engagement
             </span>
             <h2 className="mx-auto mt-3 max-w-5xl text-lg font-semibold uppercase tracking-[0.08em] text-slate-600 md:text-2xl md:tracking-[0.14em]">
-              Canada's Innovation & Health Ecosystems
+              Connected to Canada's health innovation community
             </h2>
           </ScrollReveal>
         </div>

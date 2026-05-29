@@ -134,7 +134,7 @@ const Device = () => {
                     </div>
                     <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
                       <ul className="space-y-3 text-sm">
-                        {["Intuitive touchscreen interface", "Video tutorials in the app", "Automated session quality checks", "Technical support available"].map((item, i) => (
+                        {["Intuitive touchscreen interface", "Video tutorials in the app", "Session guidance and documentation prompts", "Technical support available"].map((item, i) => (
                           <li key={i} className="flex items-start text-slate-700">
                             <span className="text-blue-600 font-bold mr-3">✓</span>
                             <span>{item}</span>
