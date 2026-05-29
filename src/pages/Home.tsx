@@ -494,24 +494,24 @@ const Home = () => {
             <ScrollReveal className="space-y-5 lg:space-y-8">
               <div className="space-y-4">
                 <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Development</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Tested in Clinical Settings</h2>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Clinical Workflow Learning</h2>
               </div>
               <p className="text-base text-slate-600 leading-relaxed">
-                Smart Lung Physio™ began as a prototype tested in ICU, hospital, and clinical environments. These early evaluations informed therapy parameters, comfort considerations, and device placement.
+                Early Smart Lung Physio™ prototypes were reviewed in clinical environments to better understand workflow needs, caregiver usability, patient positioning, and practical design considerations.
               </p>
               <div className="space-y-5 pt-2">
                 {[
                   {
-                    title: "Bedside Evaluation",
-                    desc: "Early prototypes were assessed at the bedside with clinical supervision."
+                    title: "Bedside Workflow Review",
+                    desc: "Prototype use was observed in supervised care settings to understand setup, handling, and workflow fit."
                   },
                   {
-                    title: "Multiple Positions",
-                    desc: "Supine, seated, and forward-leaning positions were evaluated for comfort and feasibility."
+                    title: "Positioning Considerations",
+                    desc: "Supine, seated, and forward-leaning positions informed comfort, placement, and practical use considerations."
                   },
                   {
-                    title: "Iterative Design",
-                    desc: "Clinical feedback shaped the current design, now optimized for long-term care workflows."
+                    title: "Iterative Development",
+                    desc: "Feedback from early prototype work continues to guide design decisions for long-term care workflows."
                   }
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -553,7 +553,7 @@ const Home = () => {
                 ))}
               </div>
               <p className="text-xs text-slate-500 text-center">
-                Images from early clinical prototype evaluations.
+                Images from early prototype and workflow review activities.
               </p>
             </ScrollReveal>
           </div>
