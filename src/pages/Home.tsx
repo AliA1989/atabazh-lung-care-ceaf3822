@@ -293,8 +293,12 @@ const Home = () => {
                   { icon: Shield, text: "HIPAA-compliant cloud data storage", desc: "Secure, encrypted session records" },
                   { icon: BarChart3, text: "Session history and trend analytics", desc: "Track progress over time" }
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0 border border-primary/10">
+                  <li
+                    key={index}
+                    className="group flex items-start gap-4 opacity-0 animate-feature-in"
+                    style={{ animationDelay: `${180 + index * 120}ms`, animationFillMode: "forwards" }}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0 border border-primary/10 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-primary/20 group-hover:bg-primary/10 group-hover:shadow-lg group-hover:shadow-primary/10">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>

@@ -300,6 +300,32 @@
     animation: parallax 20s ease-in-out infinite alternate;
   }
 
+  .animate-tablet-float {
+    animation: tabletFloat 7s ease-in-out infinite;
+  }
+
+  .animate-tablet-shadow {
+    animation: tabletShadow 7s ease-in-out infinite;
+  }
+
+  .animate-session-scan {
+    animation: sessionScan 4.6s ease-in-out infinite;
+  }
+
+  .animate-live-dot {
+    animation: liveDot 2.2s ease-in-out infinite;
+  }
+
+  .animate-trace-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: traceDraw 3.4s ease-out infinite;
+  }
+
+  .animate-feature-in {
+    animation: featureIn 0.65s ease-out forwards;
+  }
+
   /* Staggered animation delays */
   .delay-100 { animation-delay: 0.1s; }
   .delay-200 { animation-delay: 0.2s; }
@@ -413,6 +439,77 @@
   }
 }
 
+@keyframes tabletFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes tabletShadow {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.52;
+    transform: scaleX(0.94);
+  }
+}
+
+@keyframes sessionScan {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  18%, 62% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(520%);
+    opacity: 0;
+  }
+}
+
+@keyframes liveDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(0.86);
+  }
+}
+
+@keyframes traceDraw {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0.55;
+  }
+  45%, 78% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.82;
+  }
+}
+
+@keyframes featureIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -443,6 +540,18 @@
   .support-logo-track {
     animation: none;
     transform: none;
+  }
+
+  .animate-tablet-float,
+  .animate-tablet-shadow,
+  .animate-session-scan,
+  .animate-live-dot,
+  .animate-trace-draw,
+  .animate-feature-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    stroke-dashoffset: 0;
   }
 }
 

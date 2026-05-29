@@ -43,8 +43,8 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
   return (
     <div className={`relative h-[370px] w-full max-w-[760px] overflow-visible sm:h-[500px] md:h-[520px] lg:h-[485px] ${className}`}>
       <div className="absolute left-1/2 top-0 w-[860px] -translate-x-1/2 origin-top scale-[0.33] sm:scale-[0.52] md:scale-[0.7] lg:scale-[0.65]">
-        <div className="absolute inset-x-8 -bottom-8 h-16 rounded-full bg-slate-700/18 blur-3xl" />
-        <div className="relative rounded-[36px] bg-gradient-to-br from-slate-100 via-white to-slate-300 p-3 shadow-2xl shadow-slate-900/16 ring-1 ring-white/90">
+        <div className="absolute inset-x-8 -bottom-8 h-16 rounded-full bg-slate-700/18 blur-3xl animate-tablet-shadow" />
+        <div className="relative rounded-[36px] bg-gradient-to-br from-slate-100 via-white to-slate-300 p-3 shadow-2xl shadow-slate-900/16 ring-1 ring-white/90 animate-tablet-float">
           <div className="absolute left-1/2 top-1.5 z-20 h-1.5 w-14 -translate-x-1/2 rounded-full bg-slate-300/70" />
           <div className="absolute right-5 top-1/2 z-20 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-slate-800/70 ring-2 ring-slate-300/70" />
           <div className="relative overflow-hidden rounded-[26px] border border-slate-200 bg-white shadow-inner shadow-slate-900/5 ring-1 ring-slate-900/5">
@@ -74,8 +74,9 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
           </div>
         </div>
 
-        <div className="relative h-1.5 bg-slate-100">
+            <div className="relative h-1.5 overflow-hidden bg-slate-100">
           <div className="h-full w-[45%] bg-gradient-to-r from-slate-600 to-blue-500" />
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-transparent via-white/70 to-transparent animate-session-scan" />
         </div>
 
         <div className="relative grid bg-white/90 md:grid-cols-[1.05fr_1fr]">
@@ -181,7 +182,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
               <div className="flex items-center gap-3">
                 <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 ring-1 ring-slate-200">
                   <span className="absolute h-7 w-7 rounded-full bg-slate-200/60 animate-ping" />
-                  <span className="relative h-3 w-3 rounded-full bg-slate-700 shadow-sm shadow-blue-600/40" />
+                  <span className="relative h-3 w-3 rounded-full bg-slate-700 shadow-sm shadow-blue-600/40 animate-live-dot" />
                 </div>
                 <p className="text-base font-bold uppercase tracking-[0.22em] text-slate-700">
                   Vitals
@@ -270,7 +271,7 @@ const PremiumPhoneMockup = ({ className = "" }: PremiumPhoneMockupProps) => {
                     </linearGradient>
                   </defs>
                   <path d="M0 128 C45 112 70 142 112 124 S178 112 224 112 278 98 318 104 368 86 420 92 474 106 520 82 L520 190 L0 190 Z" fill="url(#traceFill)" />
-                  <path d="M0 128 C45 112 70 142 112 124 S178 112 224 112 278 98 318 104 368 86 420 92 474 106 520 82" fill="none" stroke="#2f5f89" strokeWidth="8" strokeLinecap="round" />
+                  <path className="animate-trace-draw" d="M0 128 C45 112 70 142 112 124 S178 112 224 112 278 98 318 104 368 86 420 92 474 106 520 82" fill="none" stroke="#2f5f89" strokeWidth="8" strokeLinecap="round" pathLength="1" />
                   <path d="M0 88 H520" stroke="#b7d4e6" strokeWidth="2" strokeDasharray="5 8" opacity="0.75" />
                   <path d="M0 166 H520" stroke="#cbd5e1" strokeWidth="2" strokeDasharray="6 8" opacity="0.8" />
                   <text x="8" y="92" className="fill-slate-500 font-sans tabular-nums text-sm">96</text>
