@@ -1,8 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { Smartphone, Database, Shield, ArrowRight, ChevronRight } from "lucide-react";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import { Smartphone, Database, Shield, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const Device = () => {
@@ -63,14 +62,6 @@ const Device = () => {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </NavLink>
               </Button>
-              <Button 
-                asChild 
-                variant="outline"
-                size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto bg-white/80 backdrop-blur-sm border-slate-200 hover:bg-white hover:border-slate-300 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-slate-700"
-              >
-                <NavLink to="/how-it-works">Technical Details</NavLink>
-              </Button>
             </div>
           </div>
         </div>
@@ -78,18 +69,6 @@ const Device = () => {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
-
-      {/* How Smart Lung Physio Works Section */}
-      <HowItWorksSection />
-
-      {/* Transition line */}
-      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center">
-          <p className="text-sm text-slate-500 italic">
-            — Built around this simple workflow —
-          </p>
-        </div>
-      </div>
 
       {/* System Components - Soft Blue Gradient */}
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
@@ -214,14 +193,6 @@ const Device = () => {
                   Contact Us
                   <ArrowRight className="w-4 h-4" />
                 </NavLink>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline"
-                size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto bg-white/80 border-slate-200 hover:bg-white hover:border-slate-300 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 text-slate-700"
-              >
-                <NavLink to="/how-it-works">Technical Details</NavLink>
               </Button>
             </div>
           </ScrollReveal>

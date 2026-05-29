@@ -22,7 +22,6 @@ const Navigation = () => {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
-    { to: "/how-it-works", label: "How It Works" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ];

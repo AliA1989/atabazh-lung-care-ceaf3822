@@ -53,7 +53,6 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
-                { to: "/how-it-works", label: "How It Works" },
                 { to: "/clinical-evidence", label: "Clinical Insights" },
                 { to: "/long-term-care", label: "For LTC Homes" }
               ].map((link) => (

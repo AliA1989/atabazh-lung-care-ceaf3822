@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Play, Info } from "lucide-react";
+import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Info } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
@@ -189,19 +189,6 @@ const Home = () => {
                   <NavLink to="/contact" className="flex items-center gap-2.5 relative z-10">
                     Request a demo
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </NavLink>
-                </Button>
-                <Button 
-                  asChild 
-                  variant="outline"
-                  size="lg" 
-                  className="relative h-auto w-full rounded-full border border-slate-200 bg-white/80 px-7 py-4 text-base text-slate-700 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-md group overflow-hidden sm:w-auto"
-                >
-                  <NavLink to="/how-it-works" className="flex items-center gap-3 relative z-10">
-                    <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <Play className="w-3.5 h-3.5 text-primary ml-0.5" fill="currentColor" />
-                    </span>
-                    See how it works
                   </NavLink>
                 </Button>
               </div>
