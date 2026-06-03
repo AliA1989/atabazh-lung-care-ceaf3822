@@ -1,13 +1,24 @@
-import { ClipboardList, Microscope, ShieldCheck, University, Users } from "lucide-react";
+import { ClipboardList, Microscope, Presentation, ShieldCheck, University, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const validationStats = [
   { value: "50+", label: "Stakeholder Interviews" },
   { value: "3", label: "Prototype Generations" },
-  { value: "1", label: "U.S. Utility Patent Filed" },
-  { value: "Multiple", label: "Academic & Industry Collaborations" },
+  { value: "U.S.", label: "Utility Patent Filed" },
+  { value: "3", label: "Research & Technology Presentations" },
 ];
+
+const technologyMilestone = {
+  icon: Presentation,
+  title: "World Congress of Biomechanics TTPC Invitation",
+  content: [
+    "Invited to present Smart Lung Physio technology",
+    "Poster Competition section",
+    "Translational Technology Pitch Competition (TTPC)",
+    "World Congress of Biomechanics",
+  ],
+};
 
 const validationCards = [
   {
@@ -46,12 +57,13 @@ const validationCards = [
   },
   {
     icon: Microscope,
-    title: "Scientific Activities",
-    badge: "Evidence",
+    title: "Scientific Dissemination & Recognition",
+    badge: "Presentations",
     content: [
       "NACFC 2026 abstract accepted for presentation",
-      "Respiratory care research dissemination",
-      "Evidence generation activities",
+      "AI4PH 2026 accepted as a poster presentation",
+      "World Congress of Biomechanics TTPC poster competition invitation",
+      "Research focused on airway clearance variability, risk flagging, and technology-supported respiratory care",
     ],
   },
   {
@@ -93,6 +105,36 @@ const ResearchValidationSection = () => {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={120} className="mt-8">
+          <div className="relative overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-sky-50 p-6 shadow-xl shadow-blue-900/5 sm:p-7 lg:p-8">
+            <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-200/30 blur-3xl" />
+            <div className="relative grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-700 to-sky-500 shadow-lg shadow-blue-500/20">
+                  <technologyMilestone.icon className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
+                    Technology Milestone
+                  </span>
+                  <h3 className="mt-2 text-xl font-bold leading-tight text-slate-900 sm:text-2xl">
+                    {technologyMilestone.title}
+                  </h3>
+                </div>
+              </div>
+
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {technologyMilestone.content.map((line) => (
+                  <li key={line} className="flex gap-3 rounded-2xl border border-white/80 bg-white/70 p-3 text-sm font-medium text-slate-700 shadow-sm shadow-blue-900/5">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:mt-10 lg:grid-cols-3">
           {validationCards.map((item, index) => (
