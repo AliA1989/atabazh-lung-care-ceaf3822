@@ -49,7 +49,7 @@ const validationCards = [
     title: "Scientific Activities",
     badge: "Evidence",
     content: [
-      "NACFC 2026 abstract submitted for peer review",
+      "NACFC 2026 abstract accepted for presentation",
       "Respiratory care research dissemination",
       "Evidence generation activities",
     ],
