@@ -5,6 +5,7 @@ import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Hea
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
+import ResearchValidationSection from "@/components/ResearchValidationSection";
 import techAllianceLogo from "@/assets/support/techalliance.svg";
 import mitacsLogo from "@/assets/support/mitacs.svg";
 import lab2MarketValidateLogo from "@/assets/support/lab2market-validate.webp";
@@ -362,6 +363,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <ResearchValidationSection />
 
       {/* The Challenge Section - Unified styling */}
       <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
