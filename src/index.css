@@ -536,36 +536,21 @@
   animation-play-state: paused;
 }
 
-.validation-connection {
-  stroke: rgba(2, 132, 199, 0.24);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-dasharray: 6 12;
-  animation: validationFlow 4.8s linear infinite;
-  transition: stroke 300ms ease, stroke-width 300ms ease, filter 300ms ease, opacity 300ms ease;
-}
-
-.validation-connection-active {
-  stroke: rgba(2, 132, 199, 0.9);
-  stroke-width: 2.5;
-  filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.45));
-}
-
-@keyframes validationFlow {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: -72;
-  }
-}
-
 .validation-hub-pulse {
   animation: validationHubPulse 2.2s ease-in-out infinite;
 }
 
 .validation-device-float {
   animation: validationDeviceFloat 5.5s ease-in-out infinite;
+}
+
+.validation-orbit {
+  animation: validationOrbitGlow 6s ease-in-out infinite;
+}
+
+.validation-loading-bar {
+  animation: validationLoadingBar 2.8s ease-in-out infinite;
+  transform-origin: left center;
 }
 
 @keyframes validationHubPulse {
@@ -590,6 +575,34 @@
   }
 }
 
+@keyframes validationOrbitGlow {
+  0%,
+  100% {
+    opacity: 0.32;
+    transform: translateX(-50%) scale(0.96);
+  }
+  50% {
+    opacity: 0.72;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@keyframes validationLoadingBar {
+  0%,
+  100% {
+    transform: scaleX(0.38);
+    opacity: 0.55;
+  }
+  45% {
+    transform: scaleX(0.82);
+    opacity: 1;
+  }
+  72% {
+    transform: scaleX(0.62);
+    opacity: 0.82;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .support-logo-track {
     animation: none;
@@ -608,12 +621,10 @@
     stroke-dashoffset: 0;
   }
 
-  .validation-connection {
-    animation: none;
-  }
-
   .validation-hub-pulse,
-  .validation-device-float {
+  .validation-device-float,
+  .validation-orbit,
+  .validation-loading-bar {
     animation: none;
   }
 }
