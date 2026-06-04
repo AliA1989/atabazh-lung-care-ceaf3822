@@ -560,6 +560,36 @@
   }
 }
 
+.validation-hub-pulse {
+  animation: validationHubPulse 2.2s ease-in-out infinite;
+}
+
+.validation-device-float {
+  animation: validationDeviceFloat 5.5s ease-in-out infinite;
+}
+
+@keyframes validationHubPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.45);
+    opacity: 0.85;
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(56, 189, 248, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes validationDeviceFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .support-logo-track {
     animation: none;
@@ -579,6 +609,11 @@
   }
 
   .validation-connection {
+    animation: none;
+  }
+
+  .validation-hub-pulse,
+  .validation-device-float {
     animation: none;
   }
 }
