@@ -537,7 +537,7 @@
 }
 
 .validation-connection {
-  stroke: rgba(125, 211, 252, 0.26);
+  stroke: rgba(2, 132, 199, 0.24);
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-dasharray: 6 12;
@@ -546,9 +546,9 @@
 }
 
 .validation-connection-active {
-  stroke: rgba(125, 211, 252, 0.9);
+  stroke: rgba(2, 132, 199, 0.9);
   stroke-width: 2.5;
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.55));
+  filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.45));
 }
 
 @keyframes validationFlow {
