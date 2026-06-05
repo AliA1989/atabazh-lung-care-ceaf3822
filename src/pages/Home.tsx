@@ -13,6 +13,8 @@ import springLogo from "@/assets/support/spring.svg";
 import marsLogo from "@/assets/support/mars.svg";
 import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
+import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
+import elevateIpLogo from "@/assets/support/elevate-ip.svg";
 import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
@@ -24,10 +26,12 @@ const HERO_BULLETS = [
 
 const SUPPORT_ORGANIZATIONS = [
   { name: "MaRS Discovery District", src: marsLogo, square: true },
-  { name: "Health Innovation Hub", src: h2iLogo },
+  { name: "Health Innovation Hub", src: h2iLogo, logoClassName: "h-[114px] max-h-none max-w-none sm:h-[144px] md:h-[184px]" },
   { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[118px] max-h-none max-w-none sm:h-[150px] md:h-[230px]" },
   { name: "Spring", src: springLogo, square: true },
   { name: "TechAlliance", src: techAllianceLogo },
+  { name: "Innovation Factory", src: innovationFactoryLogo, logoClassName: "h-[112px] max-h-none max-w-none sm:h-[140px] md:h-[180px]" },
+  { name: "ElevateIP", src: elevateIpLogo, logoClassName: "h-[120px] max-h-none max-w-none sm:h-[152px] md:h-[198px]" },
   { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
   { name: "Mitacs", src: mitacsLogo },
 ];
