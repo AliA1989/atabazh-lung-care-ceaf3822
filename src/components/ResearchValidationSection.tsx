@@ -104,12 +104,12 @@ const pathways = [
     brandName: "VentureMatch",
     brandSub: "Placements",
     brandTone: "text-slate-950",
-    category: "Customer & Clinical Insights",
+    category: "Workflow & User Need Insights",
     icon: Handshake,
     badgeTone: "bg-amber-50 text-amber-700",
     description:
       "Discovery activities capturing care-team needs, workflow constraints, clinical context, and early market assumptions.",
-    deliverables: ["Clinical Workflow Analysis", "50+ Stakeholder Interviews", "User Need Validation", "Clinical Feedback"],
+    deliverables: ["Workflow Analysis", "50+ Stakeholder Interviews", "User Need Review", "Care-Team Feedback"],
   },
   {
     short: "McM",

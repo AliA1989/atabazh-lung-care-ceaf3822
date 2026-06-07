@@ -141,10 +141,10 @@ const Contact = () => {
         
         <div className="container mx-auto relative z-10 max-w-4xl space-y-4 px-6 text-center sm:px-8 lg:px-12 lg:space-y-6">
           <h1 className="text-4xl font-bold text-slate-800 animate-fade-in md:text-5xl lg:text-6xl">
-            Contact Us
+            Discuss Pilot Fit or Collaboration
           </h1>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 animate-fade-in md:text-xl">
-            We welcome inquiries from LTC operators, clinical partners, and healthcare innovation stakeholders.
+            We welcome inquiries from LTC operators, clinical partners, rehabilitation and respiratory-care stakeholders, grant reviewers, investors, and healthcare innovation teams.
           </p>
         </div>
         
@@ -159,7 +159,7 @@ const Contact = () => {
             <ScrollReveal>
               <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
                 <CardContent className="p-5 sm:p-8 lg:p-10">
-                  <h2 className="mb-6 text-2xl font-bold text-slate-800 md:mb-8 md:text-3xl">Send Us a Message</h2>
+                  <h2 className="mb-6 text-2xl font-bold text-slate-800 md:mb-8 md:text-3xl">Send a Collaboration Inquiry</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -267,7 +267,7 @@ const Contact = () => {
                       <Textarea 
                         id="message" 
                         name="message"
-                        placeholder="How can we help?"
+                        placeholder="Tell us about your care setting, collaboration interest, or pilot-readiness question."
                         rows={5}
                         maxLength={2000}
                         className="rounded-xl border-slate-200 focus:border-blue-400 focus:ring-blue-400/20"
@@ -281,7 +281,7 @@ const Contact = () => {
                       className="w-full rounded-full py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-300"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmitting ? "Sending..." : "Send Inquiry"}
                       <Send className="h-5 w-5 ml-2" />
                     </Button>
 
@@ -297,7 +297,7 @@ const Contact = () => {
             <ScrollReveal delay={100}>
               <div className="space-y-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">Contact Information</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-8">Atabazh Medical</h2>
                   <div className="space-y-4">
                     {[
                       {
@@ -367,9 +367,9 @@ const Contact = () => {
 
                 <Card className="bg-gradient-to-br from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] text-white rounded-2xl shadow-xl">
                   <CardContent className="p-6 space-y-3">
-                    <h3 className="text-xl font-semibold">Response Time</h3>
+                    <h3 className="text-xl font-semibold">What to Include</h3>
                     <p className="text-sm opacity-90">
-                      We aim to respond to all inquiries within one business day. For clinical questions or partnership discussions, please include relevant context in your message.
+                      For pilot or clinical workflow discussions, include your care setting, resident population, workflow question, and preferred follow-up window.
                     </p>
                   </CardContent>
                 </Card>

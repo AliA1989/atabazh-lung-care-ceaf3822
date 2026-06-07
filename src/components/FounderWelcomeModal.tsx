@@ -99,7 +99,7 @@ const FounderWelcomeModal = () => {
                 </h3>
               </div>
               <p className="text-sm leading-relaxed text-slate-600 sm:text-[15px]">
-                Welcome to Atabazh Med. We're building better respiratory care for long-term care teams.
+                Welcome to Atabazh Med. We're building workflow-informed respiratory-care technology for long-term care teams.
               </p>
             </div>
           </div>

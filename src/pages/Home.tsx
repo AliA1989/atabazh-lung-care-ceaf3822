@@ -19,9 +19,9 @@ import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
 const HERO_BULLETS = [
-  { icon: Repeat, text: "Consistent therapy guidance across care teams" },
-  { icon: ClipboardList, text: "Structured workflow for every session" },
-  { icon: FileCheck, text: "Automatic progress documentation" },
+  { icon: Repeat, text: "Guided airway-clearance support for care teams" },
+  { icon: ClipboardList, text: "Structured workflow for supervised sessions" },
+  { icon: FileCheck, text: "Practical documentation support" },
 ];
 
 const SUPPORT_ORGANIZATIONS = [
@@ -136,15 +136,15 @@ const Home = () => {
                 className="text-[2rem] font-bold leading-[1.06] tracking-tight text-slate-900 opacity-0 animate-fade-in sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem]"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
-                Sensor-Guided Respiratory Therapy<br className="hidden md:block" /> 
-                <span className="text-primary">for Care Facilities & Beyond</span>
+                Guided Airway-Clearance Support<br className="hidden md:block" /> 
+                <span className="text-primary">for Long-Term Care Teams</span>
               </h1>
               
               <p 
                 className="text-base lg:text-[1.05rem] text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-xl !mt-2"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
-                Smart Lung Physio™ brings guided airway-clearance therapy, live care insights, and simple session documentation to long-term care teams, with future potential for connected home support.
+                Smart Lung Physio™ is being developed to help trained caregivers deliver more consistent airway-clearance support through guided setup, real-time feedback, and practical session documentation.
               </p>
 
               <p
@@ -176,7 +176,7 @@ const Home = () => {
                   <div className="flex items-start gap-3">
                     <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                     <p className="text-sm font-medium text-slate-700 leading-relaxed">
-                      Built to help caregivers deliver more consistent therapy with clear, real-time guidance during each session.
+                      Built around staffing pressure, resident complexity, and the need for repeatable respiratory-care routines across shifts.
                     </p>
                   </div>
                 </div>
@@ -323,19 +323,19 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
             <ScrollReveal className="space-y-5 lg:space-y-6">
-              <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-wider">Market Opportunity</span>
+              <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-wider">Long-Term Care Need</span>
               <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-                <span className="text-blue-400">1.5 Billion</span> People Impacted Globally
+                Respiratory Care Is a Workflow Challenge
               </h2>
               <p className="text-base leading-relaxed text-slate-300 md:text-lg">
-                Chronic respiratory conditions affect over 1.5 billion people worldwide. Long-term care facilities alone manage millions of residents with complex respiratory needs—creating a significant opportunity for technology-enabled care solutions.
+                Long-term care homes support residents with complex respiratory needs while managing staffing pressure, documentation demands, and limited access to specialized respiratory support. Smart Lung Physio™ is positioned as a practical workflow tool for supervised care environments.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2 sm:gap-6 lg:pt-4">
                 {[
-                  { stat: "$50B+", label: "Respiratory Care Market" },
-                  { stat: "4M+", label: "LTC Residents in North America" },
-                  { stat: "30%", label: "LTC Residents with Respiratory Conditions" },
-                  { stat: "2-3x", label: "Higher Hospital Transfer Rates" }
+                  { stat: "50+", label: "Stakeholder interviews" },
+                  { stat: "3", label: "Prototype generations" },
+                  { stat: "6", label: "Validation workstreams" },
+                  { stat: "10+", label: "Years of development history" }
                 ].map((item, index) => (
                   <div key={index} className="text-center lg:text-left">
                     <p className="text-2xl lg:text-3xl font-bold text-blue-400">{item.stat}</p>
@@ -347,14 +347,14 @@ const Home = () => {
             
             <ScrollReveal delay={100} className="relative">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:p-8 lg:rounded-3xl">
-                <h3 className="mb-5 text-lg font-semibold text-white sm:mb-6 sm:text-xl">Why Smart Lung Physio™</h3>
+                <h3 className="mb-5 text-lg font-semibold text-white sm:mb-6 sm:text-xl">Why Smart Lung Physio™ Fits LTC Workflow</h3>
                 <ul className="space-y-3.5 sm:space-y-4">
                   {[
-                    "Guided airway-clearance platform for LTC",
-                    "Addresses staffing constraints with workflow efficiency",
-                    "Potential to reduce costly hospital transfers",
-                    "Scalable SaaS model with hardware placement",
-                    "Clear regulatory pathway (Health Canada Class II)"
+                    "Guided airway-clearance support for trained caregivers",
+                    "Structured session flow designed for repeatable routines",
+                    "Real-time feedback to support safer, more consistent delivery",
+                    "Documentation support for care-team communication",
+                    "Regulatory-readiness planning underway"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-300">
                       <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
@@ -377,7 +377,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">The Operational Challenge</h2>
             <ScrollReveal delay={100}>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Long-term care facilities face significant respiratory care constraints
+                Respiratory care delivery in LTC is shaped by staffing, time, documentation, and resident complexity.
               </p>
             </ScrollReveal>
           </ScrollReveal>
@@ -392,12 +392,12 @@ const Home = () => {
               {
                 icon: Clock,
                 title: "Time Requirements",
-                description: "Traditional airway clearance methods require 20+ minutes per session—time that care teams often cannot allocate."
+                  description: "Manual airway-clearance routines can be difficult to repeat consistently when care teams are balancing many resident needs."
               },
               {
                 icon: Heart,
                 title: "Complex Resident Needs",
-                description: "Frail elderly residents with multiple comorbidities require careful, individualized respiratory support."
+                  description: "Residents with frailty and multiple conditions require careful, supervised support aligned with clinical judgment."
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
@@ -422,20 +422,20 @@ const Home = () => {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
             <ScrollReveal className="space-y-5 lg:space-y-8">
               <div className="space-y-4">
-                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Our Approach</span>
+                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Guided Airway Clearance Support</span>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">
-                  Smart Lung Physio™
+                  A Practical Tool for Supervised Care Settings
                 </h2>
               </div>
               <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
-                An automated airway-clearance device designed specifically for long-term care settings. The system provides guided therapy support, with the goal of helping care teams deliver consistent respiratory care across residents and shifts.
+                Smart Lung Physio™ is a sensor-guided airway-clearance support system being developed for long-term care and supervised care settings. It is intended to help trained caregivers follow structured routines with clearer setup, feedback, and documentation.
               </p>
               <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
-                The device is designed to assess respiratory status, adapt treatment parameters, and generate session documentation for care records.
+                The system is designed to support caregiver-guided sessions, capture relevant session information, and make airway-clearance workflows easier to repeat across shifts.
               </p>
               <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/device" className="flex items-center gap-2">
-                  Learn About the Device
+                  View Device Workflow
                   <ChevronRight className="w-4 h-4" />
                 </NavLink>
               </Button>
@@ -446,12 +446,12 @@ const Home = () => {
                 {
                   icon: Activity,
                   title: "Sensor-Guided",
-                  desc: "Real-time feedback supports consistent therapy delivery"
+                  desc: "Real-time feedback supports caregiver-guided delivery"
                 },
                 {
                   icon: Clock,
-                  title: "Designed for Efficiency",
-                  desc: "Intended to reduce session time compared to manual methods"
+                  title: "Workflow-Aware",
+                  desc: "Built around practical routines in supervised care"
                 },
                 {
                   icon: Shield,
@@ -461,7 +461,7 @@ const Home = () => {
                 {
                   icon: BarChart3,
                   title: "Documentation",
-                  desc: "Automatic session logging for care records"
+                  desc: "Session records designed to support care communication"
                 }
               ].map((item, index) => (
                 <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
@@ -618,7 +618,7 @@ const Home = () => {
               </p>
               <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/long-term-care" className="flex items-center gap-2">
-                  LTC Implementation Details
+                  View LTC Implementation Details
                   <ArrowRight className="w-4 h-4" />
                 </NavLink>
               </Button>
@@ -635,11 +635,11 @@ const Home = () => {
                   {
                     icon: Shield,
                     title: "Safety Focused",
-                    desc: "Built-in monitoring and limits"
+                    desc: "Feedback and limits designed for supervised use"
                   },
                   {
                     icon: Users,
-                    title: "Minimal Training",
+                    title: "Caregiver Guided",
                     desc: "Structured workflow guidance"
                   },
                   {
@@ -669,17 +669,17 @@ const Home = () => {
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal className="space-y-6 text-center sm:space-y-10">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
-              Interested in Learning More?
+              Discuss Pilot Readiness or Clinical Collaboration
             </h2>
             <ScrollReveal delay={100}>
               <p className="text-lg text-slate-600 max-w-xl mx-auto">
-                We welcome conversations with LTC operators, clinical partners, and healthcare innovation stakeholders.
+                We welcome conversations with LTC operators, clinical partners, rehabilitation teams, respiratory-care stakeholders, and healthcare innovation reviewers.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center pt-2 sm:pt-4">
                 <Button asChild size="lg" className="h-auto rounded-full px-10 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:py-7">
-                  <NavLink to="/contact">Contact Us</NavLink>
+                  <NavLink to="/contact">Discuss a Pilot</NavLink>
                 </Button>
                 <Button asChild size="lg" className="h-auto rounded-full border-2 border-white/60 bg-white/80 px-10 py-5 text-base text-slate-700 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl sm:py-7">
                   <NavLink to="/about">About Our Team</NavLink>

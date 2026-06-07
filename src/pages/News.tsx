@@ -24,7 +24,7 @@ const News = () => {
             News & Resources
           </h1>
           <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in">
-            Latest updates, research publications, and educational resources from Atabazh Medical
+            Company updates, research milestones, and workflow resources from Atabazh Medical.
           </p>
         </div>
         
@@ -35,28 +35,28 @@ const News = () => {
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-10">Latest News</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-10">Company & Research Updates</h2>
           </ScrollReveal>
           
           <div className="space-y-6">
             {[
               {
-                date: "November 15, 2024",
-                category: "Company News",
-                title: "Atabazh Medical Completes $2.5M Seed Round to Expand Smart Lung Physio™ Pilot Program",
-                summary: "Toronto-based medical device startup Atabazh Medical announced the close of a $2.5 million seed financing round led by healthcare-focused venture firms. The funding will accelerate pilot deployments across Canadian LTC facilities and support Health Canada regulatory submission."
-              },
-              {
-                date: "October 8, 2024",
+                date: "June 2026",
                 category: "Research",
-                title: "Pilot Study Results Presented at Canadian Association on Gerontology Annual Conference",
-                summary: "Atabazh Medical research team presented promising pilot study data showing 42% reduction in hospital transfers for respiratory complications. The multi-site study included 156 LTC residents across 4 Ontario facilities."
+                title: "NACFC 2026 Abstract Accepted for Presentation",
+                summary: "Smart Lung Physio™-related research on airway-clearance variability and workflow inefficiencies has been accepted for presentation at NACFC 2026."
               },
               {
-                date: "September 20, 2024",
-                category: "Partnership",
-                title: "Partnership with Ontario Long-Term Care Association to Advance Respiratory Innovation",
-                summary: "Atabazh Medical has formalized a strategic partnership with the Ontario Long-Term Care Association to facilitate Smart Lung Physio™ pilot programs and gather real-world implementation insights from member facilities."
+                date: "June 2026",
+                category: "Research",
+                title: "AI4PH 2026 Poster Presentation Accepted",
+                summary: "Atabazh Medical is preparing a poster presentation focused on technology-supported risk flagging and respiratory-care workflow considerations."
+              },
+              {
+                date: "June 2026",
+                category: "Technology Translation",
+                title: "World Congress of Biomechanics TTPC Poster Competition Invitation",
+                summary: "Smart Lung Physio™ has been invited for presentation in the Poster Competition section of the World Congress of Biomechanics Translational Technology Pitch Competition."
               }
             ].map((news, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
@@ -110,10 +110,10 @@ const News = () => {
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Smart Lung Physio™ Product Overview", desc: "Comprehensive 2-page overview of device features, clinical benefits, and implementation process for LTC decision-makers.", type: "PDF" },
-              { title: "Clinical Evidence Summary", desc: "Detailed review of pilot study methodology, results, and implications for respiratory care in long-term care settings.", type: "PDF" },
-              { title: "ROI Calculator for LTC Facilities", desc: "Interactive tool to estimate financial impact of Smart Lung Physio™ implementation based on your facility's specific parameters.", type: "PDF" },
-              { title: "Device Demonstration Video", desc: "5-minute walkthrough of Smart Lung Physio™ setup, therapy session, and data review process narrated by clinical team.", type: "Video" }
+              { title: "Smart Lung Physio™ Product Overview", desc: "A concise overview of the device concept, workflow focus, development status, and relevance for supervised care settings.", type: "PDF" },
+              { title: "Workflow Learning Brief", desc: "A regulatory-safe summary of stakeholder discovery, caregiver usability themes, and pilot-readiness questions.", type: "PDF" },
+              { title: "LTC Workflow Discussion Guide", desc: "A practical guide for LTC leaders evaluating respiratory-care routines, documentation needs, and implementation fit.", type: "PDF" },
+              { title: "Device Demonstration Video", desc: "A short walkthrough of guided setup, caregiver prompts, session feedback, and documentation concepts.", type: "Video" }
             ].map((resource, index) => (
               <ScrollReveal key={index} delay={index < 2 ? (index === 0 ? 0 : 100) : (index === 2 ? 100 : 150)}>
                 <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl h-full hover:shadow-2xl transition-all duration-300">
@@ -135,7 +135,7 @@ const News = () => {
                       size="sm" 
                       className="w-full rounded-full border-slate-200 hover:bg-white/80"
                     >
-                      {resource.type === "Video" ? "Watch Video" : "Download"} <ExternalLink className="h-4 w-4 ml-2" />
+                      {resource.type === "Video" ? "Request Demo Video" : "Request Resource"} <ExternalLink className="h-4 w-4 ml-2" />
                     </Button>
                   </CardContent>
                 </Card>
@@ -151,9 +151,9 @@ const News = () => {
           <ScrollReveal>
             <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
               <CardContent className="p-8 md:p-12 text-center space-y-6">
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Media & Press Inquiries</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Media & Collaboration Inquiries</h2>
                 <p className="text-slate-600 max-w-2xl mx-auto">
-                  For press inquiries, interview requests, or to access our media kit including high-resolution images, company background, and executive bios, please contact our communications team.
+                  For media questions, research discussions, pilot collaboration, or company background, please contact Atabazh Medical.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
@@ -162,7 +162,7 @@ const News = () => {
                     className="rounded-full px-8 py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25"
                   >
                     <NavLink to="/contact" className="flex items-center gap-2">
-                      Contact Media Team
+                      Contact Atabazh Medical
                       <ArrowRight className="w-4 h-4" />
                     </NavLink>
                   </Button>
@@ -172,7 +172,7 @@ const News = () => {
                     variant="outline"
                     className="rounded-full px-8 py-6 h-auto bg-white/80 border-slate-200 hover:bg-white"
                   >
-                    <a href="#" download>Download Media Kit</a>
+                    <NavLink to="/contact">Request Collaboration Brief</NavLink>
                   </Button>
                 </div>
               </CardContent>
@@ -187,7 +187,7 @@ const News = () => {
           <ScrollReveal>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-800">Stay Updated</h2>
             <p className="text-slate-600">
-              Subscribe to receive the latest news, research updates, and resources from Atabazh Medical
+              Receive company updates, research milestones, and collaboration opportunities from Atabazh Medical.
             </p>
             <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
               <CardContent className="p-6">

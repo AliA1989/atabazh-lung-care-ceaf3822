@@ -19,7 +19,7 @@ const Navigation = () => {
     { to: "/", label: "Home" },
     { to: "/device", label: "Smart Lung Physio™" },
     { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/contact", label: "Discuss a Pilot" },
   ];
 
   return (

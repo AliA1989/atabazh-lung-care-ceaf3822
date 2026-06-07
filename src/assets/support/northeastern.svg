@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Northeastern University">
+  <rect width="240" height="240" fill="transparent"/>
+  <path
+    fill="#d41f2d"
+    d="M31 39h54l92 92V57c0-12-7-19-22-19h-7v-9h61v9h-6c-14 0-21 7-21 19v154h-8L59 96v95c0 12 7 19 22 19h7v9H27v-9h6c14 0 21-7 21-19V68L39 53c-6-6-11-8-18-8h-5v-6h15z"
+  />
+  <text x="28" y="115" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#111827">
+    Northeastern
+  </text>
+  <text x="28" y="131" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#111827">
+    University
+  </text>
+</svg>

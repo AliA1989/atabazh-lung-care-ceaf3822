@@ -27,7 +27,7 @@ const Footer = () => {
               </span>
             </NavLink>
             <p className="max-w-[18rem] text-sm leading-relaxed text-slate-300/85">
-              Developing practical respiratory-care technology for long-term care and home-care settings.
+              Developing workflow-informed respiratory-care technology for long-term care and supervised care settings.
             </p>
             <a 
               href="https://www.linkedin.com/company/atabazh-medical-inc" 
@@ -49,8 +49,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
-                { to: "/clinical-evidence", label: "Clinical Insights" },
-                { to: "/long-term-care", label: "For LTC Homes" }
+                { to: "/clinical-evidence", label: "Research & Workflow Learning" },
+                { to: "/long-term-care", label: "LTC Implementation" }
               ].map((link) => (
                 <li key={link.to}>
                   <NavLink 
@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
-                { to: "/contact", label: "Contact" }
+                { to: "/contact", label: "Discuss a Pilot" }
               ].map((link) => (
                 <li key={link.to}>
                   <NavLink 
@@ -90,7 +90,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/contact", label: "Book a Discovery Call" },
-                { to: "/long-term-care", label: "For LTC Homes" }
+                { to: "/long-term-care", label: "View LTC Fit" }
               ].map((link) => (
                 <li key={link.to}>
                   <NavLink 
@@ -130,7 +130,7 @@ const Footer = () => {
               Smart Lung Physio™ — U.S. Utility Patent Pending (Application No. 19/278,634)
             </p>
             <p className="text-xs text-slate-500">
-              © 2025 Atabazh Med. All rights reserved.
+              © 2026 Atabazh Med. All rights reserved.
             </p>
           </div>
         </div>
