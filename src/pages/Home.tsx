@@ -481,76 +481,128 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Development Context Section - Unified styling */}
-      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
+      {/* Development Context Section - workflow learning and LTC readiness */}
+      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-[hsl(204,48%,97%)] to-[hsl(205,48%,92%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:64px_64px] opacity-[0.12]" />
+        <div className="absolute right-[-12rem] top-20 -z-10 h-96 w-96 rounded-full bg-blue-200/35 blur-3xl" />
         <div className="container mx-auto">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
-            <ScrollReveal className="space-y-5 lg:space-y-8">
+          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 xl:gap-20">
+            <ScrollReveal className="space-y-6 lg:space-y-8">
               <div className="space-y-4">
-                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Development</span>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Clinical Workflow Learning</h2>
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-white/75 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
+                  <span className="h-2 w-2 rounded-full bg-blue-600" />
+                  Workflow learning
+                </span>
+                <h2 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-4xl lg:text-[2.65rem]">
+                  Designed Around How Respiratory Care Is Actually Delivered
+                </h2>
               </div>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Early Smart Lung Physio™ prototypes were reviewed in clinical environments to better understand workflow needs, caregiver usability, patient positioning, and practical design considerations.
+              <p className="max-w-2xl text-base leading-relaxed text-slate-600 lg:text-lg">
+                Smart Lung Physio™ has been shaped through early prototype reviews in supervised clinical environments, helping us understand caregiver workflow, patient positioning, bedside setup, and practical deployment barriers.
               </p>
-              <div className="space-y-5 pt-2">
-                {[
-                  {
-                    title: "Bedside Workflow Review",
-                    desc: "Prototype use was observed in supervised care settings to understand setup, handling, and workflow fit."
-                  },
-                  {
-                    title: "Positioning Considerations",
-                    desc: "Supine, seated, and forward-leaning positions informed comfort, placement, and practical use considerations."
-                  },
-                  {
-                    title: "Iterative Development",
-                    desc: "Feedback from early prototype work continues to guide design decisions for long-term care workflows."
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="w-7 h-7 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle className="h-4 w-4 text-blue-700" />
-                    </div>
-                    <div>
-                      <p className="text-slate-800 font-medium text-sm">{item.title}</p>
-                      <p className="text-slate-600 text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">What We Learned</p>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">
+                    These workflow insights continue to inform current product development for caregiver-guided use in long-term care settings.
+                  </p>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {[
+                    {
+                      icon: Clock,
+                      title: "Bedside Setup",
+                      desc: "How quickly the device can be positioned, adjusted, and used during routine care."
+                    },
+                    {
+                      icon: Users,
+                      title: "Caregiver Handling",
+                      desc: "How staff interact with the device while managing patient comfort and safety."
+                    },
+                    {
+                      icon: Activity,
+                      title: "Patient Positioning",
+                      desc: "How supine, seated, and forward-leaning positions affect placement and usability."
+                    },
+                    {
+                      icon: ClipboardList,
+                      title: "Workflow Fit",
+                      desc: "How the device can integrate into long-term care routines with minimal disruption."
+                    }
+                  ].map((item, index) => (
+                    <Card key={index} className="group h-full rounded-2xl border border-white/70 bg-white/78 shadow-lg shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10">
+                      <CardContent className="space-y-3 p-4 sm:p-5">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                          <item.icon className="h-5 w-5" />
+                        </div>
+                        <div className="space-y-1.5">
+                          <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                          <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </ScrollReveal>
 
             <ScrollReveal className="space-y-4" delay={100}>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  {
-                    src: "/lovable-uploads/clinical-icu-monitoring.png",
-                    alt: "ICU patient receiving chest therapy with monitoring equipment"
-                  },
-                  {
-                    src: "/lovable-uploads/clinical-female-therapy.png",
-                    alt: "Female patient receiving respiratory therapy"
-                  },
-                  {
-                    src: "/lovable-uploads/clinical-supine-therapy.png",
-                    alt: "Supine patient receiving chest therapy"
-                  },
-                  {
-                    src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
-                    alt: "Seated patient receiving shoulder therapy"
-                  }
-                ].map((img, index) => (
-                  <div key={index} className="aspect-square overflow-hidden rounded-2xl border border-white/60 shadow-lg">
-                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-                  </div>
-                ))}
+              <div className="rounded-[1.75rem] border border-white/70 bg-white/60 p-3 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:p-4">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {[
+                    {
+                      src: "/lovable-uploads/clinical-icu-monitoring.png",
+                      alt: "Early prototype workflow review in a supervised care setting"
+                    },
+                    {
+                      src: "/lovable-uploads/clinical-female-therapy.png",
+                      alt: "Prototype positioning review during respiratory care workflow"
+                    },
+                    {
+                      src: "/lovable-uploads/clinical-supine-therapy.png",
+                      alt: "Supine positioning review with early Smart Lung Physio prototype"
+                    },
+                    {
+                      src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
+                      alt: "Seated workflow review with early prototype setup"
+                    }
+                  ].map((img, index) => (
+                    <div key={index} className="group aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="text-xs text-slate-500 text-center">
-                Images from early prototype and workflow review activities.
+              <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
+                Early prototype and workflow review activities informing current product development.
               </p>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal className="mt-10 lg:mt-16" delay={150}>
+            <div className="grid overflow-hidden rounded-2xl border border-blue-100 bg-white/78 shadow-xl shadow-blue-900/10 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                "10+ years of development",
+                "Prototype reviewed in supervised care settings",
+                "Designed for caregiver-guided use",
+                "Built for long-term care workflow realities"
+              ].map((item, index) => (
+                <div key={item} className={`flex items-center gap-3 px-5 py-4 ${index > 0 ? "border-t border-blue-50 sm:border-t-0 sm:border-l" : ""} ${index === 2 ? "lg:border-l" : ""}`}>
+                  <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                    <CheckCircle className="h-4 w-4" />
+                  </div>
+                  <p className="text-sm font-semibold leading-snug text-slate-800">{item}</p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -562,10 +614,7 @@ const Home = () => {
               <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Purpose-Built</span>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Designed for Long-Term Care</h2>
               <p className="text-base text-slate-600 leading-relaxed">
-                Unlike general respiratory devices, Smart Lung Physio™ was developed specifically for the long-term care environment—accounting for staffing realities, resident acuity, and operational constraints.
-              </p>
-              <p className="text-base text-slate-600 leading-relaxed">
-                The device is designed to require minimal training, integrate into existing care routines, and provide documentation for care records.
+                Long-term care teams face increasing resident complexity, staffing pressure, and limited time for respiratory interventions. Smart Lung Physio™ is being developed to help caregivers deliver more consistent airway clearance support through guided setup, safety-focused feedback, and practical documentation.
               </p>
               <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/long-term-care" className="flex items-center gap-2">
