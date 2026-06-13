@@ -19,6 +19,7 @@ import ahmedTablImage from "@/assets/team/ahmed-tabl.jpg";
 import jeffKofmanImage from "@/assets/team/jeff-kofman.png";
 import kamranAzmaImage from "@/assets/team/kamran-azma.png";
 import taraShahImage from "@/assets/team/tara-shah.jpeg";
+import valentinaCeballosImage from "@/assets/team/valentina-ceballos-jimenez.jpeg";
 import asuLogo from "@/assets/support/asu.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import lab2MarketLogo from "@/assets/support/lab2market-validate.webp";
@@ -87,6 +88,12 @@ const technicalContributors = [
     role: "Regulatory & Pilot Readiness Contributor",
     description: "Supports pilot-readiness planning, stakeholder research, workflow mapping, and regulatory documentation activities.",
     image: taraShahImage,
+  },
+  {
+    name: "Valentina Ceballos Jimenez",
+    role: "Pilot Readiness & Workflow Integration Fellow",
+    description: "Supports pilot-ready package development, long-term care workflow integration, and deployment-readiness documentation.",
+    image: valentinaCeballosImage,
   },
 ];
 

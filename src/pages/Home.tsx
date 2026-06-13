@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList, Info } from "lucide-react";
+import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
@@ -18,10 +18,10 @@ import elevateIpLogo from "@/assets/support/elevate-ip.svg";
 import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
-const HERO_BULLETS = [
-  { icon: Repeat, text: "Guided airway-clearance support for care teams" },
-  { icon: ClipboardList, text: "Structured workflow for supervised sessions" },
-  { icon: FileCheck, text: "Practical documentation support" },
+const HERO_POINTS = [
+  { icon: Repeat, text: "Guided setup for trained caregivers" },
+  { icon: Activity, text: "Real-time feedback during supervised sessions" },
+  { icon: FileCheck, text: "Structured documentation for care continuity" },
 ];
 
 const SUPPORT_ORGANIZATIONS = [
@@ -38,13 +38,64 @@ const SUPPORT_ORGANIZATIONS = [
 
 const Home = () => {
   const [isPulseVisible, setIsPulseVisible] = useState(false);
+  const [activeWorkflowIndex, setActiveWorkflowIndex] = useState(0);
+
+  const workflowInsights = [
+    {
+      icon: Clock,
+      title: "Bedside Setup",
+      desc: "Position, adjust, and begin care with less workflow friction.",
+      src: "/lovable-uploads/clinical-icu-monitoring.png",
+      alt: "Early prototype workflow review in a supervised care setting",
+      label: "Bedside setup",
+      caption: "Close-up review of device placement, setup sequence, and bedside handling.",
+      mainCrop: "scale-[1.72] object-[47%_79%] group-hover:scale-[1.78]",
+      thumbCrop: "scale-[1.45] object-[47%_79%] group-hover:scale-[1.5]",
+    },
+    {
+      icon: Users,
+      title: "Caregiver Handling",
+      desc: "Support staff interaction while maintaining comfort and safety.",
+      src: "/lovable-uploads/clinical-female-therapy.png",
+      alt: "Prototype positioning review during respiratory care workflow",
+      label: "Handling",
+      caption: "Reviewing how staff hold, position, and operate the device during routine care.",
+      mainCrop: "scale-[1.52] object-[82%_58%] group-hover:scale-[1.58]",
+      thumbCrop: "scale-[1.5] object-[82%_58%] group-hover:scale-[1.56]",
+    },
+    {
+      icon: Activity,
+      title: "Patient Positioning",
+      desc: "Account for supine, seated, and forward-leaning routines.",
+      src: "/lovable-uploads/clinical-supine-therapy.png",
+      alt: "Supine positioning review with early Smart Lung Physio prototype",
+      label: "Positioning",
+      caption: "Studying placement and usability across common care positions.",
+      mainCrop: "scale-[1.62] object-[38%_72%] group-hover:scale-[1.68]",
+      thumbCrop: "scale-[1.58] object-[38%_72%] group-hover:scale-[1.64]",
+    },
+    {
+      icon: ClipboardList,
+      title: "Workflow Fit",
+      desc: "Fit into repeatable long-term care routines.",
+      src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
+      alt: "Seated workflow review with early prototype setup",
+      label: "Workflow fit",
+      caption: "Exploring how the device fits into repeatable supervised-care routines.",
+      mainCrop: "scale-[1.55] object-[78%_72%] group-hover:scale-[1.61]",
+      thumbCrop: "scale-[1.52] object-[78%_72%] group-hover:scale-[1.58]",
+    },
+  ];
+
+  const activeWorkflow = workflowInsights[activeWorkflowIndex];
+  const supportingWorkflowImages = workflowInsights.filter((_, index) => index !== activeWorkflowIndex);
 
   // Subtle pulse animation for the session card
   useEffect(() => {
     const timer = setTimeout(() => setIsPulseVisible(true), 800);
     return () => clearTimeout(timer);
   }, []);
-  
+
   return (
     <div className="min-h-screen">
       {/* Founder Welcome Modal - Shows once per session */}
@@ -122,8 +173,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/35 to-transparent z-[3] pointer-events-none" />
         
         <div className="container mx-auto relative z-10 max-w-7xl px-5 pb-10 pt-20 sm:px-8 sm:pt-[4.5rem] lg:px-12 lg:pb-12">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-10">
-            <div className="space-y-3.5 max-w-2xl sm:space-y-4 lg:max-w-none lg:pr-4 lg:w-[46%] lg:flex-shrink-0 flex flex-col justify-center">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 lg:gap-12">
+            <div className="max-w-2xl space-y-4 sm:space-y-5 lg:max-w-none lg:w-[46%] lg:flex-shrink-0 lg:pr-4">
               <div 
                 className="inline-flex w-fit max-w-full items-center gap-2.5 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 shadow-sm opacity-0 animate-fade-in"
                 style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}
@@ -136,7 +187,7 @@ const Home = () => {
                 className="text-[2rem] font-bold leading-[1.06] tracking-tight text-slate-900 opacity-0 animate-fade-in sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.15rem]"
                 style={{ animationDelay: '150ms', animationFillMode: 'forwards' }}
               >
-                Guided Airway-Clearance Support<br className="hidden md:block" /> 
+                Guided Airway-Clearance Support<br className="hidden md:block" />{" "}
                 <span className="text-primary">for Long-Term Care Teams</span>
               </h1>
               
@@ -144,7 +195,7 @@ const Home = () => {
                 className="text-base lg:text-[1.05rem] text-slate-600 font-normal leading-relaxed opacity-0 animate-fade-in max-w-xl !mt-2"
                 style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
               >
-                Smart Lung Physio™ is being developed to help trained caregivers deliver more consistent airway-clearance support through guided setup, real-time feedback, and practical session documentation.
+                Smart Lung Physio™ is being developed for supervised care settings where respiratory routines need to be easier to deliver, document, and repeat across care teams.
               </p>
 
               <p
@@ -154,31 +205,46 @@ const Home = () => {
                 Smart Lung Physio™ — U.S. Utility Patent Pending
               </p>
               
-              <ul 
-                className="grid gap-2.5 opacity-0 animate-fade-in"
+              <div
+                className="flex flex-col gap-3 opacity-0 animate-fade-in sm:flex-row sm:items-center"
                 style={{ animationDelay: '250ms', animationFillMode: 'forwards' }}
               >
-                {HERO_BULLETS.map((bullet, index) => (
-                  <li key={index} className="flex items-center gap-3 text-[15px] font-medium text-slate-700">
-                    <div className="w-8 h-8 rounded-lg border border-slate-200 bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <bullet.icon className="w-4 h-4 text-primary" />
-                    </div>
-                    {bullet.text}
+                <Button asChild size="lg" className="h-auto rounded-full bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3.5 text-sm font-semibold shadow-xl shadow-blue-700/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-700 hover:to-blue-800 sm:px-7 sm:text-base">
+                  <NavLink to="/contact" className="flex items-center gap-2">
+                    Discuss a Pilot
+                    <ArrowRight className="h-4 w-4" />
+                  </NavLink>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="h-auto rounded-full border-blue-100 bg-white/70 px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-white sm:px-7 sm:text-base">
+                  <NavLink to="/device" className="flex items-center gap-2">
+                    View Product Details
+                    <ChevronRight className="h-4 w-4" />
+                  </NavLink>
+                </Button>
+              </div>
+
+              <ul
+                className="grid max-w-xl gap-2.5 opacity-0 animate-fade-in"
+                style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
+              >
+                {HERO_POINTS.map((point) => (
+                  <li key={point.text} className="flex items-center gap-3 text-[15px] font-medium text-slate-700">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-white text-primary shadow-sm">
+                      <point.icon className="h-4 w-4" />
+                    </span>
+                    <span>{point.text}</span>
                   </li>
                 ))}
               </ul>
               
               <div 
                 className="relative hidden opacity-0 animate-fade-in max-w-xl sm:block"
-                style={{ animationDelay: '280ms', animationFillMode: 'forwards' }}
+                style={{ animationDelay: '320ms', animationFillMode: 'forwards' }}
               >
-                <div className="relative border-l-2 border-primary bg-white/60 py-3 pl-4 pr-5 shadow-sm shadow-slate-900/5 backdrop-blur">
-                  <div className="flex items-start gap-3">
-                    <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                    <p className="text-sm font-medium text-slate-700 leading-relaxed">
-                      Built around staffing pressure, resident complexity, and the need for repeatable respiratory-care routines across shifts.
-                    </p>
-                  </div>
+                <div className="relative border-l-2 border-primary bg-white/55 py-3 pl-4 pr-5 shadow-sm shadow-slate-900/5 backdrop-blur">
+                  <p className="text-sm font-medium leading-relaxed text-slate-700">
+                    Built around staffing pressure, resident complexity, and the need for repeatable respiratory-care routines across shifts.
+                  </p>
                 </div>
               </div>
               <div
@@ -199,6 +265,9 @@ const Home = () => {
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
               <div className="absolute inset-x-10 bottom-16 h-px bg-gradient-to-r from-transparent via-slate-400/30 to-transparent" />
+              <div className="absolute inset-0 z-[1] flex items-center justify-center">
+                <div className="h-[24rem] w-[24rem] rounded-full bg-blue-300/20 blur-3xl xl:h-[28rem] xl:w-[28rem]" />
+              </div>
               <div 
                 className="relative flex items-center justify-center py-4 z-[2]"
                 style={{ 
@@ -209,7 +278,7 @@ const Home = () => {
                 <img 
                   src={heroDeviceImage} 
                   alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="relative w-auto h-[52vh] max-h-[500px] min-h-[330px] object-contain drop-shadow-2xl"
+                  className="relative w-auto h-[54vh] max-h-[520px] min-h-[340px] object-contain drop-shadow-2xl"
                   style={{ 
                     filter: 'drop-shadow(0 24px 42px hsl(210, 35%, 25%, 0.16))'
                   }}
@@ -508,40 +577,41 @@ const Home = () => {
                   <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">Focused insights informing caregiver-guided product development.</p>
                 </div>
                 <div className="grid gap-3">
-                  {[
-                    {
-                      icon: Clock,
-                      title: "Bedside Setup",
-                      desc: "Position, adjust, and begin care with less workflow friction."
-                    },
-                    {
-                      icon: Users,
-                      title: "Caregiver Handling",
-                      desc: "Support staff interaction while maintaining comfort and safety."
-                    },
-                    {
-                      icon: Activity,
-                      title: "Patient Positioning",
-                      desc: "Account for supine, seated, and forward-leaning routines."
-                    },
-                    {
-                      icon: ClipboardList,
-                      title: "Workflow Fit",
-                      desc: "Fit into repeatable long-term care routines."
-                    }
-                  ].map((item, index) => (
-                    <Card key={index} className="group rounded-2xl border border-white/70 bg-white/80 shadow-md shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-900/10">
-                      <CardContent className="flex gap-4 p-4">
-                        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                  {workflowInsights.map((item, index) => {
+                    const isActive = activeWorkflowIndex === index;
+                    return (
+                      <button
+                        key={item.title}
+                        type="button"
+                        onClick={() => setActiveWorkflowIndex(index)}
+                        onFocus={() => setActiveWorkflowIndex(index)}
+                        onMouseEnter={() => setActiveWorkflowIndex(index)}
+                        className={`group rounded-2xl border text-left shadow-md shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-900/10 ${
+                          isActive
+                            ? "border-blue-200 bg-white shadow-lg shadow-blue-900/10"
+                            : "border-white/70 bg-white/80 hover:border-blue-100"
+                        }`}
+                        aria-pressed={isActive}
+                      >
+                        <div className="flex gap-4 p-4">
+                          <div className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl ring-1 transition duration-300 ${
+                            isActive
+                              ? "bg-blue-600 text-white ring-blue-600"
+                              : "bg-blue-50 text-blue-700 ring-blue-100 group-hover:bg-blue-600 group-hover:text-white"
+                          }`}>
                           <item.icon className="h-5 w-5" />
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                              {isActive && <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />}
+                            </div>
+                            <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
+                          </div>
                         </div>
-                        <div className="space-y-1">
-                          <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-                          <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </ScrollReveal>
@@ -557,49 +627,37 @@ const Home = () => {
                   <div className="grid gap-3 sm:grid-cols-[1.18fr_0.82fr] sm:gap-4">
                     <div className="group relative min-h-[19rem] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10 sm:min-h-[27rem]">
                       <img
-                        src="/lovable-uploads/clinical-icu-monitoring.png"
-                        alt="Early prototype workflow review in a supervised care setting"
+                        src={activeWorkflow.src}
+                        alt={activeWorkflow.alt}
                         loading="lazy"
-                        className="h-full w-full scale-[1.72] object-cover object-[47%_79%] transition duration-700 group-hover:scale-[1.78]"
+                        className={`h-full w-full object-cover transition duration-700 ${activeWorkflow.mainCrop}`}
                       />
                       <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-slate-950/78 via-slate-950/20 to-transparent p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">Bedside setup</p>
-                        <p className="mt-1 text-sm font-medium text-white">Early prototype review informing placement and caregiver workflow.</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">{activeWorkflow.label}</p>
+                        <p className="mt-1 text-sm font-medium text-white">{activeWorkflow.caption}</p>
                       </div>
                     </div>
                     <div className="grid gap-3 sm:gap-4">
-                      {[
-                        {
-                          src: "/lovable-uploads/clinical-female-therapy.png",
-                          alt: "Prototype positioning review during respiratory care workflow",
-                          label: "Handling",
-                          crop: "scale-[1.5] object-[82%_58%] group-hover:scale-[1.56]"
-                        },
-                        {
-                          src: "/lovable-uploads/clinical-supine-therapy.png",
-                          alt: "Supine positioning review with early Smart Lung Physio prototype",
-                          label: "Positioning",
-                          crop: "scale-[1.58] object-[38%_72%] group-hover:scale-[1.64]"
-                        },
-                        {
-                          src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
-                          alt: "Seated workflow review with early prototype setup",
-                          label: "Workflow fit",
-                          crop: "scale-[1.52] object-[78%_72%] group-hover:scale-[1.58]"
-                        }
-                      ].map((img) => (
-                        <div key={img.label} className="group relative aspect-[1.7/1] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10 sm:aspect-auto">
+                      {supportingWorkflowImages.map((img) => (
+                        <button
+                          key={img.label}
+                          type="button"
+                          onClick={() => setActiveWorkflowIndex(workflowInsights.findIndex((item) => item.title === img.title))}
+                          onFocus={() => setActiveWorkflowIndex(workflowInsights.findIndex((item) => item.title === img.title))}
+                          onMouseEnter={() => setActiveWorkflowIndex(workflowInsights.findIndex((item) => item.title === img.title))}
+                          className="group relative aspect-[1.7/1] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 text-left shadow-md shadow-slate-900/10 transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-900/10 sm:aspect-auto"
+                        >
                           <img
                             src={img.src}
                             alt={img.alt}
                             loading="lazy"
-                            className={`h-full w-full object-cover transition duration-700 ${img.crop}`}
+                            className={`h-full w-full object-cover transition duration-700 ${img.thumbCrop}`}
                           />
                           <div className="absolute inset-0 z-20 bg-gradient-to-t from-slate-950/54 via-transparent to-transparent opacity-90" />
                           <div className="absolute bottom-3 left-3 z-30 rounded-full bg-white/88 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur">
                             {img.label}
                           </div>
-                        </div>
+                        </button>
                       ))}
                     </div>
                   </div>
