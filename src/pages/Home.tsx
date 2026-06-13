@@ -482,62 +482,60 @@ const Home = () => {
       </section>
 
       {/* Development Context Section - workflow learning and LTC readiness */}
-      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
+      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-28">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-[hsl(204,48%,97%)] to-[hsl(205,48%,92%)]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,_hsl(210,35%,88%)_1px,_transparent_1px),linear-gradient(180deg,_hsl(210,35%,88%)_1px,_transparent_1px)] bg-[size:64px_64px] opacity-[0.12]" />
         <div className="absolute right-[-12rem] top-20 -z-10 h-96 w-96 rounded-full bg-blue-200/35 blur-3xl" />
         <div className="container mx-auto">
-          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 xl:gap-20">
-            <ScrollReveal className="space-y-6 lg:space-y-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 xl:gap-20">
+            <ScrollReveal className="space-y-6 lg:space-y-7">
               <div className="space-y-4">
-                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-white/75 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
                   <span className="h-2 w-2 rounded-full bg-blue-600" />
                   Workflow learning
                 </span>
-                <h2 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-4xl lg:text-[2.65rem]">
-                  Designed Around How Respiratory Care Is Actually Delivered
+                <h2 className="max-w-3xl text-3xl font-bold leading-tight tracking-tight text-slate-900 md:text-4xl lg:text-[2.55rem]">
+                  Built with Real Clinical Workflow Insights
                 </h2>
               </div>
-              <p className="max-w-2xl text-base leading-relaxed text-slate-600 lg:text-lg">
-                Smart Lung Physio™ has been shaped through early prototype reviews in supervised clinical environments, helping us understand caregiver workflow, patient positioning, bedside setup, and practical deployment barriers.
+              <p className="max-w-xl text-base leading-relaxed text-slate-600 lg:text-lg">
+                Early supervised prototype reviews helped shape practical decisions around setup, handling, positioning, and bedside workflow.
               </p>
 
               <div className="space-y-4">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">What We Learned</p>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">
-                    These workflow insights continue to inform current product development for caregiver-guided use in long-term care settings.
-                  </p>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">Focused insights informing caregiver-guided product development.</p>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-3">
                   {[
                     {
                       icon: Clock,
                       title: "Bedside Setup",
-                      desc: "How quickly the device can be positioned, adjusted, and used during routine care."
+                      desc: "Position, adjust, and begin care with less workflow friction."
                     },
                     {
                       icon: Users,
                       title: "Caregiver Handling",
-                      desc: "How staff interact with the device while managing patient comfort and safety."
+                      desc: "Support staff interaction while maintaining comfort and safety."
                     },
                     {
                       icon: Activity,
                       title: "Patient Positioning",
-                      desc: "How supine, seated, and forward-leaning positions affect placement and usability."
+                      desc: "Account for supine, seated, and forward-leaning routines."
                     },
                     {
                       icon: ClipboardList,
                       title: "Workflow Fit",
-                      desc: "How the device can integrate into long-term care routines with minimal disruption."
+                      desc: "Fit into repeatable long-term care routines."
                     }
                   ].map((item, index) => (
-                    <Card key={index} className="group h-full rounded-2xl border border-white/70 bg-white/78 shadow-lg shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10">
-                      <CardContent className="space-y-3 p-4 sm:p-5">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                    <Card key={index} className="group rounded-2xl border border-white/70 bg-white/80 shadow-md shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-900/10">
+                      <CardContent className="flex gap-4 p-4">
+                        <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-100 transition duration-300 group-hover:bg-blue-600 group-hover:text-white">
                           <item.icon className="h-5 w-5" />
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="space-y-1">
                           <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
                           <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
                         </div>
@@ -549,50 +547,77 @@ const Home = () => {
             </ScrollReveal>
 
             <ScrollReveal className="space-y-4" delay={100}>
-              <div className="rounded-[1.75rem] border border-white/70 bg-white/60 p-3 shadow-2xl shadow-blue-900/10 backdrop-blur-xl sm:p-4">
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {[
-                    {
-                      src: "/lovable-uploads/clinical-icu-monitoring.png",
-                      alt: "Early prototype workflow review in a supervised care setting"
-                    },
-                    {
-                      src: "/lovable-uploads/clinical-female-therapy.png",
-                      alt: "Prototype positioning review during respiratory care workflow"
-                    },
-                    {
-                      src: "/lovable-uploads/clinical-supine-therapy.png",
-                      alt: "Supine positioning review with early Smart Lung Physio prototype"
-                    },
-                    {
-                      src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
-                      alt: "Seated workflow review with early prototype setup"
-                    }
-                  ].map((img, index) => (
-                    <div key={index} className="group aspect-[1.08/1] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10">
+              <div className="relative">
+                <div className="absolute -left-5 top-8 hidden h-24 w-24 rounded-full bg-blue-300/25 blur-2xl sm:block" />
+                <div className="absolute -right-6 bottom-12 hidden h-32 w-32 rounded-full bg-cyan-200/35 blur-3xl sm:block" />
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/64 p-3 shadow-2xl shadow-blue-900/12 backdrop-blur-xl sm:p-4">
+                  <div className="absolute left-6 top-6 z-10 rounded-full border border-white/70 bg-white/85 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-slate-600 shadow-sm backdrop-blur">
+                    Supervised review
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-[1.18fr_0.82fr] sm:gap-4">
+                    <div className="group relative min-h-[19rem] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10 sm:min-h-[27rem]">
                       <img
-                        src={img.src}
-                        alt={img.alt}
+                        src="/lovable-uploads/clinical-icu-monitoring.png"
+                        alt="Early prototype workflow review in a supervised care setting"
                         loading="lazy"
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]"
+                        className="h-full w-full scale-[1.72] object-cover object-[47%_79%] transition duration-700 group-hover:scale-[1.78]"
                       />
+                      <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-slate-950/78 via-slate-950/20 to-transparent p-5">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-100">Bedside setup</p>
+                        <p className="mt-1 text-sm font-medium text-white">Early prototype review informing placement and caregiver workflow.</p>
+                      </div>
                     </div>
-                  ))}
+                    <div className="grid gap-3 sm:gap-4">
+                      {[
+                        {
+                          src: "/lovable-uploads/clinical-female-therapy.png",
+                          alt: "Prototype positioning review during respiratory care workflow",
+                          label: "Handling",
+                          crop: "scale-[1.5] object-[82%_58%] group-hover:scale-[1.56]"
+                        },
+                        {
+                          src: "/lovable-uploads/clinical-supine-therapy.png",
+                          alt: "Supine positioning review with early Smart Lung Physio prototype",
+                          label: "Positioning",
+                          crop: "scale-[1.58] object-[38%_72%] group-hover:scale-[1.64]"
+                        },
+                        {
+                          src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
+                          alt: "Seated workflow review with early prototype setup",
+                          label: "Workflow fit",
+                          crop: "scale-[1.52] object-[78%_72%] group-hover:scale-[1.58]"
+                        }
+                      ].map((img) => (
+                        <div key={img.label} className="group relative aspect-[1.7/1] overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-md shadow-slate-900/10 sm:aspect-auto">
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            loading="lazy"
+                            className={`h-full w-full object-cover transition duration-700 ${img.crop}`}
+                          />
+                          <div className="absolute inset-0 z-20 bg-gradient-to-t from-slate-950/54 via-transparent to-transparent opacity-90" />
+                          <div className="absolute bottom-3 left-3 z-30 rounded-full bg-white/88 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm backdrop-blur">
+                            {img.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
+              <p className="mx-auto max-w-lg px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
                 Early prototype and workflow review activities informing current product development.
               </p>
             </ScrollReveal>
           </div>
 
-          <ScrollReveal className="mt-10 lg:mt-16" delay={150}>
-            <div className="grid overflow-hidden rounded-2xl border border-blue-100 bg-white/78 shadow-xl shadow-blue-900/10 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
+          <ScrollReveal className="mt-10 lg:mt-14" delay={150}>
+            <div className="grid overflow-hidden rounded-2xl border border-blue-100 bg-white/82 shadow-xl shadow-blue-900/10 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
               {[
                 "10+ years of development",
-                "Prototype reviewed in supervised care settings",
-                "Designed for caregiver-guided use",
-                "Built for long-term care workflow realities"
+                "Supervised prototype review",
+                "Caregiver-guided design",
+                "Long-term care workflow fit"
               ].map((item, index) => (
                 <div key={item} className={`flex items-center gap-3 px-5 py-4 ${index > 0 ? "border-t border-blue-50 sm:border-t-0 sm:border-l" : ""} ${index === 2 ? "lg:border-l" : ""}`}>
                   <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
