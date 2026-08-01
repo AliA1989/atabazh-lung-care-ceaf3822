@@ -38,10 +38,8 @@ const ProductFilm = () => {
   };
 
   return (
-    <div className="relative z-[2] mx-auto w-full max-w-[760px]">
-      <div className="pointer-events-none absolute inset-8 rounded-[2.5rem] bg-blue-400/20 blur-3xl" />
-
-      <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/90 bg-slate-950 shadow-[0_32px_70px_-28px_rgba(15,23,42,0.52)] ring-1 ring-slate-900/10 sm:rounded-[1.75rem]">
+    <div className="relative w-full">
+      <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/60 bg-[#e2e2e2] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.45)] sm:rounded-[1.75rem] lg:rounded-none lg:border-0 lg:shadow-none lg:[mask-image:linear-gradient(to_right,transparent_0%,black_13%,black_100%)]">
         <video
           ref={videoRef}
           className="h-full w-full cursor-pointer object-cover"
