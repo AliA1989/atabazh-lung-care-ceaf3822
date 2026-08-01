@@ -13,6 +13,7 @@ import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import elevateIpLogo from "@/assets/support/elevate-ip.svg";
+import { publicAsset } from "@/lib/publicAsset";
 
 const SUPPORT_ORGANIZATIONS = [
   { name: "MaRS Discovery District", src: marsLogo, square: true },
@@ -32,7 +33,7 @@ const Home = () => {
       icon: Clock,
       title: "Bedside Setup",
       desc: "Clear placement and a simpler start.",
-      src: "/media/workflow-bedside.webp",
+      src: publicAsset("media/workflow-bedside.webp"),
       alt: "Early prototype workflow review in a supervised care setting",
       crop: "scale-[1.22] object-[47%_72%]",
     },
@@ -40,7 +41,7 @@ const Home = () => {
       icon: Users,
       title: "Caregiver Handling",
       desc: "Practical handling during supervised care.",
-      src: "/media/workflow-handling.webp",
+      src: publicAsset("media/workflow-handling.webp"),
       alt: "Prototype positioning review during respiratory care workflow",
       crop: "scale-[1.16] object-[76%_58%]",
     },
@@ -48,7 +49,7 @@ const Home = () => {
       icon: Activity,
       title: "Patient Positioning",
       desc: "Reviewed across common care positions.",
-      src: "/media/workflow-positioning.webp",
+      src: publicAsset("media/workflow-positioning.webp"),
       alt: "Supine positioning review with early Smart Lung Physio prototype",
       crop: "scale-[1.2] object-[38%_68%]",
     },
@@ -56,7 +57,7 @@ const Home = () => {
       icon: ClipboardList,
       title: "Workflow Fit",
       desc: "Designed around repeatable team routines.",
-      src: "/media/workflow-fit.webp",
+      src: publicAsset("media/workflow-fit.webp"),
       alt: "Seated workflow review with early prototype setup",
       crop: "scale-[1.18] object-[74%_68%]",
     },
