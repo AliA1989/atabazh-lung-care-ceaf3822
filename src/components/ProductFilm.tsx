@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { publicAsset } from "@/lib/publicAsset";
 
 const ProductFilm = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -43,8 +44,8 @@ const ProductFilm = () => {
         <video
           ref={videoRef}
           className="h-full w-full cursor-pointer object-cover"
-          src="/media/smart-lung-physio-concept-film.mp4"
-          poster="/media/smart-lung-physio-concept-poster.webp"
+          src={publicAsset("media/smart-lung-physio-concept-film.mp4")}
+          poster={publicAsset("media/smart-lung-physio-concept-poster.webp")}
           preload="metadata"
           autoPlay
           playsInline

@@ -26,6 +26,7 @@ import lab2MarketLogo from "@/assets/support/lab2market-validate.webp";
 import marsLogo from "@/assets/support/mars.svg";
 import northeasternLogo from "@/assets/support/northeastern.svg";
 import tmuLogo from "@/assets/support/tmu.svg";
+import { publicAsset } from "@/lib/publicAsset";
 
 const focusAreas = [
   {
@@ -58,7 +59,7 @@ const founder = {
   name: "Ali Abedinpour",
   role: "Founder & CEO",
   background: "Biomedical Engineer & Medical-Device Entrepreneur",
-  image: "/media/founder-ali-abedinpour.jpg",
+  image: publicAsset("media/founder-ali-abedinpour.jpg"),
   linkedin: "https://www.linkedin.com/in/aliabedinpour/",
   description:
     "Biomedical engineer and medical-device entrepreneur leading Smart Lung Physio™ product strategy, clinical engagement, commercialization planning, and long-term care market development.",
