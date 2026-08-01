@@ -58,89 +58,69 @@ const ProductFilm = () => {
   };
 
   return (
-    <section
-      aria-labelledby="product-film-title"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-[hsl(204,45%,97%)] to-[hsl(202,42%,96%)] px-5 py-14 sm:px-8 lg:px-12 lg:py-24"
-    >
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[34rem] w-[54rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/15 blur-3xl" />
+    <div className="relative z-[2] mx-auto w-full max-w-[680px]">
+      <div className="pointer-events-none absolute inset-8 rounded-[2.5rem] bg-blue-400/20 blur-3xl" />
 
-      <div className="container relative mx-auto max-w-6xl">
-        <div className="mx-auto mb-8 max-w-3xl text-center lg:mb-11">
-          <span className="inline-flex items-center rounded-full border border-blue-100 bg-white/85 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-700 shadow-sm">
-            Product concept film
-          </span>
-          <h2
-            id="product-film-title"
-            className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl"
-          >
-            See Smart Lung Physio™ in Action
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            A visual introduction to sensor-guided airway-clearance support designed around supervised care workflows.
-          </p>
+      <div
+        ref={frameRef}
+        className="group relative aspect-video overflow-hidden rounded-2xl border border-white/90 bg-slate-950 shadow-[0_32px_70px_-28px_rgba(15,23,42,0.52)] ring-1 ring-slate-900/10 sm:rounded-[1.75rem]"
+      >
+        <video
+          ref={videoRef}
+          className="h-full w-full object-cover"
+          src="/media/smart-lung-physio-concept-film.mp4"
+          poster="/media/smart-lung-physio-concept-poster.webp"
+          preload="metadata"
+          playsInline
+          muted
+          loop
+          aria-label="Smart Lung Physio product concept film"
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+        />
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/78 via-slate-950/25 to-transparent opacity-85 transition-opacity duration-300 group-hover:opacity-100" />
+
+        <div className="absolute left-3 top-3 rounded-full border border-white/25 bg-slate-950/50 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-md sm:left-5 sm:top-5 sm:text-[11px]">
+          Product concept film
         </div>
 
-        <div
-          ref={frameRef}
-          className="group relative aspect-video overflow-hidden rounded-2xl border border-white/80 bg-slate-950 shadow-[0_34px_80px_-34px_rgba(15,23,42,0.45)] ring-1 ring-slate-900/5 sm:rounded-[2rem]"
-        >
-          <video
-            ref={videoRef}
-            className="h-full w-full object-cover"
-            src="/media/smart-lung-physio-concept-film.mp4"
-            poster="/media/smart-lung-physio-concept-poster.webp"
-            preload="metadata"
-            playsInline
-            muted
-            loop
-            aria-label="Smart Lung Physio product concept film"
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-          />
-
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
-
-          <div className="absolute left-4 top-4 rounded-full border border-white/20 bg-slate-950/45 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md sm:left-6 sm:top-6 sm:text-xs">
-            Concept visualization
-          </div>
-
-          <div className="absolute inset-x-4 bottom-4 flex items-center justify-between sm:inset-x-6 sm:bottom-6">
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={togglePlayback}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                aria-label={isPlaying ? "Pause product film" : "Play product film"}
-              >
-                {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="ml-0.5 h-4 w-4" />}
-              </button>
-              <button
-                type="button"
-                onClick={toggleSound}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                aria-label={isMuted ? "Turn sound on" : "Mute product film"}
-              >
-                {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-              </button>
-              <span className="ml-1 hidden text-xs font-medium tracking-wide text-white/85 sm:inline">00:10</span>
-            </div>
-
+        <div className="absolute inset-x-3 bottom-3 flex items-center justify-between sm:inset-x-5 sm:bottom-5">
+          <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={openFullscreen}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-              aria-label="View product film fullscreen"
+              onClick={togglePlayback}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:h-10 sm:w-10"
+              aria-label={isPlaying ? "Pause product film" : "Play product film"}
             >
-              <Maximize2 className="h-4 w-4" />
+              {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="ml-0.5 h-4 w-4" />}
             </button>
+            <button
+              type="button"
+              onClick={toggleSound}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:h-10 sm:w-10"
+              aria-label={isMuted ? "Turn sound on" : "Mute product film"}
+            >
+              {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+            </button>
+            <span className="ml-1 hidden text-xs font-medium tracking-wide text-white/85 sm:inline">00:10</span>
           </div>
-        </div>
 
-        <p className="mx-auto mt-5 max-w-4xl text-center text-xs leading-relaxed text-slate-500 sm:text-sm">
-          Product concept visualization. Smart Lung Physio™ is a medical device under development. Features and interface shown are illustrative and subject to validation and regulatory review.
-        </p>
+          <button
+            type="button"
+            onClick={openFullscreen}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md transition hover:scale-105 hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:h-10 sm:w-10"
+            aria-label="View product film fullscreen"
+          >
+            <Maximize2 className="h-4 w-4" />
+          </button>
+        </div>
       </div>
-    </section>
+
+      <p className="mx-auto mt-3 max-w-xl text-center text-[10px] leading-relaxed text-slate-500 sm:text-xs">
+        Concept visualization · Medical device under development · Features shown are illustrative and subject to validation and regulatory review.
+      </p>
+    </div>
   );
 };
 

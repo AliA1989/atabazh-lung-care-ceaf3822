@@ -16,7 +16,6 @@ import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import elevateIpLogo from "@/assets/support/elevate-ip.svg";
-import heroDeviceImage from "@/assets/hero-device.webp";
 import { useEffect, useState } from "react";
 
 const HERO_POINTS = [
@@ -248,43 +247,13 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div
-                className="relative mx-auto mt-4 w-full max-w-[300px] opacity-0 animate-fade-in lg:hidden"
-                style={{ animationDelay: '360ms', animationFillMode: 'forwards' }}
-              >
-                <div className="absolute inset-x-8 bottom-5 h-8 rounded-full bg-slate-600/20 blur-2xl" />
-                <img
-                  src={heroDeviceImage}
-                  alt="Healthcare professional demonstrating Smart Lung Physio device"
-                  className="relative mx-auto h-auto max-h-[280px] w-full object-contain drop-shadow-2xl"
-                />
-              </div>
             </div>
             
             <div 
-              className="relative opacity-0 animate-fade-in hidden lg:flex items-center justify-center lg:w-[50%] xl:w-[51%] self-center flex-shrink-0"
+              className="relative flex w-full flex-shrink-0 items-center justify-center self-center opacity-0 animate-fade-in lg:w-[50%] xl:w-[51%]"
               style={{ animationDelay: '350ms', animationFillMode: 'forwards' }}
             >
-              <div className="absolute inset-x-10 bottom-16 h-px bg-gradient-to-r from-transparent via-slate-400/30 to-transparent" />
-              <div className="absolute inset-0 z-[1] flex items-center justify-center">
-                <div className="h-[24rem] w-[24rem] rounded-full bg-blue-300/20 blur-3xl xl:h-[28rem] xl:w-[28rem]" />
-              </div>
-              <div 
-                className="relative flex items-center justify-center py-4 z-[2]"
-                style={{ 
-                  maskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 99%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 99%)'
-                }}
-              >
-                <img 
-                  src={heroDeviceImage} 
-                  alt="Healthcare professional demonstrating Smart Lung Physio device" 
-                  className="relative w-auto h-[54vh] max-h-[520px] min-h-[340px] object-contain drop-shadow-2xl"
-                  style={{ 
-                    filter: 'drop-shadow(0 24px 42px hsl(210, 35%, 25%, 0.16))'
-                  }}
-                />
-              </div>
+              <ProductFilm />
             </div>
           </div>
         </div>
@@ -293,10 +262,8 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(204,45%,97%)] via-white/80 to-transparent z-[5]" />
       </section>
 
-      <ProductFilm />
-
       {/* Support Ecosystem Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-10 lg:pb-12 lg:pt-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-10 lg:-mt-28 lg:pb-12 lg:pt-16">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
         <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
