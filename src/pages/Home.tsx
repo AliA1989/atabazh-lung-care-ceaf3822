@@ -13,7 +13,6 @@ import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import elevateIpLogo from "@/assets/support/elevate-ip.svg";
-import { useState } from "react";
 
 const SUPPORT_ORGANIZATIONS = [
   { name: "MaRS Discovery District", src: marsLogo, square: true },
@@ -28,8 +27,6 @@ const SUPPORT_ORGANIZATIONS = [
 ];
 
 const Home = () => {
-  const [activeWorkflowIndex, setActiveWorkflowIndex] = useState(0);
-
   const workflowInsights = [
     {
       icon: Clock,
@@ -37,8 +34,7 @@ const Home = () => {
       desc: "Clear placement and a simpler start.",
       src: "/media/workflow-bedside.webp",
       alt: "Early prototype workflow review in a supervised care setting",
-      label: "Bedside setup",
-      mainCrop: "scale-[1.72] object-[47%_79%] group-hover:scale-[1.76]",
+      crop: "scale-[1.22] object-[47%_72%]",
     },
     {
       icon: Users,
@@ -46,8 +42,7 @@ const Home = () => {
       desc: "Practical handling during supervised care.",
       src: "/media/workflow-handling.webp",
       alt: "Prototype positioning review during respiratory care workflow",
-      label: "Handling",
-      mainCrop: "scale-[1.52] object-[82%_58%] group-hover:scale-[1.56]",
+      crop: "scale-[1.16] object-[76%_58%]",
     },
     {
       icon: Activity,
@@ -55,8 +50,7 @@ const Home = () => {
       desc: "Reviewed across common care positions.",
       src: "/media/workflow-positioning.webp",
       alt: "Supine positioning review with early Smart Lung Physio prototype",
-      label: "Positioning",
-      mainCrop: "scale-[1.62] object-[38%_72%] group-hover:scale-[1.66]",
+      crop: "scale-[1.2] object-[38%_68%]",
     },
     {
       icon: ClipboardList,
@@ -64,22 +58,18 @@ const Home = () => {
       desc: "Designed around repeatable team routines.",
       src: "/media/workflow-fit.webp",
       alt: "Seated workflow review with early prototype setup",
-      label: "Workflow fit",
-      mainCrop: "scale-[1.55] object-[78%_72%] group-hover:scale-[1.59]",
+      crop: "scale-[1.18] object-[74%_68%]",
     },
   ];
-
-  const activeWorkflow = workflowInsights[activeWorkflowIndex];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative isolate overflow-hidden bg-[#f7fbfd]">
-        <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-full bg-[radial-gradient(circle_at_78%_38%,rgba(56,189,248,0.24),transparent_34%),radial-gradient(circle_at_92%_72%,rgba(37,99,235,0.12),transparent_28%)]" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[58%] bg-[linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_left,black,transparent)] lg:block" />
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(110deg,#fafaf9_0%,#f2f2f1_48%,#dedede_100%)]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-[58%] bg-[radial-gradient(circle_at_18%_42%,rgba(255,255,255,0.95),transparent_58%)]" />
 
-        <div className="container mx-auto grid min-h-[44rem] max-w-7xl items-center gap-12 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16 lg:px-12 lg:pb-20 lg:pt-32 xl:gap-20">
-          <div className="max-w-xl">
+        <div className="container mx-auto grid min-h-[44rem] max-w-[90rem] items-center gap-10 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-8 lg:px-12 lg:pb-20 lg:pt-32">
+          <div className="relative z-10 max-w-xl">
             <div
               className="flex items-center gap-3 opacity-0 animate-fade-in"
               style={{ animationDelay: "80ms", animationFillMode: "forwards" }}
@@ -130,14 +120,14 @@ const Home = () => {
           </div>
 
           <div
-            className="relative flex w-full items-center justify-center opacity-0 animate-fade-in"
+            className="relative flex w-full items-center justify-center opacity-0 animate-fade-in lg:-mr-10 xl:-mr-20"
             style={{ animationDelay: "260ms", animationFillMode: "forwards" }}
           >
             <ProductFilm />
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/70 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/55 to-transparent" />
       </section>
 
       {/* Support Ecosystem Section */}
@@ -296,83 +286,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Field-led design */}
-      <section className="relative isolate overflow-hidden bg-slate-950 px-6 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(37,99,235,0.24),transparent_31%),radial-gradient(circle_at_86%_72%,rgba(14,165,233,0.13),transparent_28%)]" />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(rgba(148,163,184,0.06)_1px,transparent_1px)] bg-[size:72px_72px]" />
-
+      {/* Design in context */}
+      <section className="border-y border-slate-100 bg-white px-6 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-7xl">
           <ScrollReveal className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-sky-300">Design in Context</p>
-            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.03em] sm:text-4xl lg:text-5xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">Design in Context</p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.03em] text-slate-950 sm:text-4xl lg:text-[2.75rem]">
               Shaped by the way care actually happens.
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-              Early supervised reviews inform four practical design priorities.
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
+              Four practical priorities from early supervised workflow reviews.
             </p>
           </ScrollReveal>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-[1.35fr_0.65fr] lg:gap-8">
-            <ScrollReveal>
-              <div className="group relative min-h-[25rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900 shadow-2xl shadow-black/30 sm:min-h-[32rem] lg:min-h-[36rem]">
-                <img
-                  key={activeWorkflow.src}
-                  src={activeWorkflow.src}
-                  alt={activeWorkflow.alt}
-                  loading="lazy"
-                  className={`absolute inset-0 h-full w-full object-cover transition duration-700 ${activeWorkflow.mainCrop}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/5 to-slate-950/15" />
-
-                <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-slate-950/70 px-3 py-2 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white backdrop-blur sm:left-7 sm:top-7">
-                  {(activeWorkflowIndex + 1).toString().padStart(2, "0")} / 04 · Supervised review
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">{activeWorkflow.label}</p>
-                  <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{activeWorkflow.title}</h3>
-                  <p className="mt-2 max-w-xl text-sm leading-6 text-slate-200 sm:text-base">{activeWorkflow.desc}</p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-              {workflowInsights.map((item, index) => {
-                const isActive = activeWorkflowIndex === index;
-
-                return (
-                  <button
-                    key={item.title}
-                    type="button"
-                    onClick={() => setActiveWorkflowIndex(index)}
-                    onFocus={() => setActiveWorkflowIndex(index)}
-                    onMouseEnter={() => setActiveWorkflowIndex(index)}
-                    className={`group flex min-h-28 items-center gap-4 rounded-2xl border p-4 text-left transition duration-300 sm:p-5 ${
-                      isActive
-                        ? "border-white bg-white text-slate-950 shadow-xl shadow-black/20"
-                        : "border-white/10 bg-white/[0.04] text-white hover:border-white/25 hover:bg-white/[0.08]"
-                    }`}
-                    aria-pressed={isActive}
-                  >
-                    <span className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl transition ${
-                      isActive ? "bg-blue-700 text-white" : "bg-white/10 text-sky-300 group-hover:bg-white/15"
-                    }`}>
-                      <item.icon className="h-5 w-5" />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {workflowInsights.map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 50}>
+                <article className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                  <div className="relative aspect-[5/3] overflow-hidden bg-slate-200">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                      className={`h-full w-full object-cover ${item.crop}`}
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-slate-700 backdrop-blur">
+                      {(index + 1).toString().padStart(2, "0")}
                     </span>
-                    <span className="min-w-0">
-                      <span className={`block text-[0.65rem] font-bold uppercase tracking-[0.2em] ${isActive ? "text-blue-700" : "text-slate-500"}`}>
-                        {(index + 1).toString().padStart(2, "0")}
-                      </span>
-                      <span className="mt-1 block text-sm font-semibold sm:text-base">{item.title}</span>
-                      <span className={`mt-1 block text-xs leading-5 ${isActive ? "text-slate-600" : "text-slate-400"}`}>{item.desc}</span>
+                  </div>
+                  <div className="flex gap-3 p-4">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+                      <item.icon className="h-4 w-4" />
                     </span>
-                  </button>
-                );
-              })}
-            </ScrollReveal>
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</p>
+                    </div>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
           </div>
 
-          <p className="mt-5 text-center text-xs leading-5 text-slate-500">
+          <p className="mt-6 text-center text-xs leading-5 text-slate-400">
             Early prototype workflow reviews; not clinical validation.
           </p>
         </div>
