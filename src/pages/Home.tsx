@@ -5,6 +5,7 @@ import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Hea
 import { ScrollReveal } from "@/components/ScrollReveal";
 import FounderWelcomeModal from "@/components/FounderWelcomeModal";
 import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
+import ProductFilm from "@/components/ProductFilm";
 import ResearchValidationSection from "@/components/ResearchValidationSection";
 import techAllianceLogo from "@/assets/support/techalliance.svg";
 import mitacsLogo from "@/assets/support/mitacs.svg";
@@ -292,8 +293,10 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[hsl(204,45%,97%)] via-white/80 to-transparent z-[5]" />
       </section>
 
+      <ProductFilm />
+
       {/* Support Ecosystem Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-10 lg:-mt-28 lg:pb-12 lg:pt-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[hsl(204,45%,97%)] via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-10 lg:pb-12 lg:pt-16">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
         <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
