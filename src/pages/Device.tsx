@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Smartphone, Database, Shield, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import DeviceProductShowcase from "@/components/DeviceProductShowcase";
 
 const Device = () => {
   return (
@@ -69,6 +70,8 @@ const Device = () => {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
+
+      <DeviceProductShowcase />
 
       {/* System Components - Soft Blue Gradient */}
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
