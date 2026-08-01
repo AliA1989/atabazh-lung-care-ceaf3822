@@ -17,7 +17,7 @@ import {
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const networkStats = [
-  { value: "6", label: "Validation Pathways", icon: Network, tone: "text-sky-600 bg-sky-50" },
+  { value: "6", label: "Development Pathways", icon: Network, tone: "text-sky-600 bg-sky-50" },
   { value: "2", label: "Countries (CA & US)", icon: Globe2, tone: "text-indigo-600 bg-indigo-50" },
   { value: "1", label: "Unified Mission", icon: Activity, tone: "text-emerald-600 bg-emerald-50" },
 ];
@@ -26,15 +26,15 @@ const pipelineStats = [
   { value: "50+", label: "Stakeholder Interviews", eyebrow: "Discovery", icon: Users, tone: "text-indigo-600 bg-indigo-50" },
   { value: "3", label: "Prototype Generations", eyebrow: "Hardware", icon: Cpu, tone: "text-sky-600 bg-sky-50" },
   { value: "U.S.", label: "Utility Patent Filed", eyebrow: "Intellectual Property", icon: FileText, tone: "text-amber-600 bg-amber-50" },
-  { value: "3", label: "Research & Technology Presentations", eyebrow: "Dissemination", icon: LineChart, tone: "text-emerald-600 bg-emerald-50" },
+  { value: "2", label: "Accepted Presentations", eyebrow: "Dissemination", icon: LineChart, tone: "text-emerald-600 bg-emerald-50" },
 ];
 
 const pathways = [
   {
     short: "McG",
-    name: "McGill University",
+    name: "McGill student placement",
     brandName: "McGill",
-    brandSub: "University",
+    brandSub: "Student Placement",
     brandTone: "text-red-700",
     category: "Pilot Readiness & Evidence",
     icon: ClipboardList,
@@ -73,15 +73,15 @@ const pathways = [
     brandName: "Northeastern",
     brandSub: "University Toronto",
     brandTone: "text-red-700",
-    category: "Regulatory Strategy & Compliance",
+    category: "Regulatory Pathway & Quality Planning",
     icon: ShieldCheck,
     badgeTone: "bg-red-50 text-red-700",
     description:
-      "Regulatory-readiness planning focused on pathway assessment, documentation structure, quality planning, and submission preparation.",
+      "Regulatory pathway planning focused on assessment, documentation structure, quality-system needs, and future submission requirements.",
     deliverables: [
       "Regulatory Strategy",
       "Documentation Framework",
-      "Health Canada Submission Readiness",
+      "Health Canada Pathway Planning",
       "Quality Planning",
     ],
   },
@@ -96,7 +96,7 @@ const pathways = [
     badgeTone: "bg-blue-50 text-blue-700",
     description:
       "Engineering-focused development work supporting prototype refinement, technical review, and iterative device improvement.",
-    deliverables: ["Mechanical Design", "Prototyping", "Engineering Validation", "Iterative Refinement"],
+    deliverables: ["Mechanical Design", "Prototyping", "Engineering Testing", "Iterative Refinement"],
   },
   {
     short: "VM",
@@ -146,18 +146,12 @@ const timeline = [
   },
   {
     step: "03",
-    eyebrow: "Scientific Poster",
-    title: "AI4PH 2026",
-    body: "Accepted as a poster presentation for AI-supported multi-sensor risk flagging during airway-clearance therapy.",
-  },
-  {
-    step: "04",
     eyebrow: "Technology Pitch",
     title: "WCB TTPC",
     body: "Invited to present in the Poster Competition section of the World Congress of Biomechanics Translational Technology Pitch Competition.",
   },
   {
-    step: "05",
+    step: "04",
     eyebrow: "Readiness",
     title: "IP & Regulatory Mapping",
     body: "U.S. Utility Patent filed and regulatory pathway assessment underway.",
@@ -167,14 +161,14 @@ const timeline = [
 const pillars = [
   {
     eyebrow: "Workflow Evidence",
-    title: "Clinical Problem Validation",
+    title: "Clinical Problem Discovery",
     icon: ClipboardList,
     tone: "text-sky-600 bg-sky-50",
     items: [
       "Long-term care workflow assessment",
       "Airway-clearance delivery analysis",
       "Caregiver burden exploration",
-      "Treatment consistency and workflow gap identification",
+      "Delivery consistency and workflow gap identification",
     ],
   },
   {
@@ -184,9 +178,8 @@ const pillars = [
     tone: "text-indigo-600 bg-indigo-50",
     items: [
       "NACFC 2026 abstract accepted for presentation",
-      "AI4PH 2026 accepted as a poster presentation",
       "WCB TTPC invitation",
-      "Research focused on variability and risk flagging",
+      "Research focused on delivery variability",
     ],
   },
   {
@@ -257,16 +250,16 @@ const ResearchValidationSection = () => {
         <ScrollReveal className="mx-auto max-w-4xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white/80 px-4 py-2 text-xs font-bold text-primary shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-sky-500" />
-            Research & Validation
+            Research & Development
           </span>
           <h2 className="mx-auto mt-5 max-w-4xl text-3xl font-bold leading-[1.08] text-slate-900 md:text-5xl lg:text-6xl">
-            Validation workstreams for
+            Development workstreams for
             <span className="block bg-gradient-to-r from-sky-600 via-primary to-indigo-600 bg-clip-text text-transparent">
               Smart Lung Physio
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-slate-600 md:text-[1.05rem]">
-            A clear view of the academic, technical, clinical-workflow, regulatory-readiness, and market-validation
+            A clear view of the academic, technical, clinical-workflow, regulatory-readiness, and market-learning
             activities supporting Smart Lung Physio development.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-slate-500">
@@ -275,7 +268,7 @@ const ResearchValidationSection = () => {
 
           <div className="mt-7 inline-flex rounded-xl border border-slate-200 bg-slate-100/80 p-1 shadow-inner">
             {[
-              { id: "validation" as const, label: "Validation Network", icon: Network },
+              { id: "validation" as const, label: "Development Network", icon: Network },
               { id: "pipeline" as const, label: "Research Pipeline", icon: LineChart },
             ].map((tab) => (
               <button
@@ -320,7 +313,7 @@ const ResearchValidationSection = () => {
 
             <ScrollReveal delay={140} className="mt-12">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-slate-900 md:text-[1.85rem]">Interactive validation hub</h3>
+                <h3 className="text-2xl font-bold text-slate-900 md:text-[1.85rem]">Interactive development hub</h3>
                 <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 md:text-base">
                   Select a pathway to see the specific responsibilities connected to Smart Lung Physio development.
                 </p>
@@ -369,25 +362,26 @@ const ResearchValidationSection = () => {
                   <div className="relative z-10 flex justify-end">
                     <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-bold text-sky-200 backdrop-blur">
                       <span className="validation-hub-pulse h-2.5 w-2.5 rounded-full bg-sky-400" />
-                      Live Validation Mode
+                      Workstream View
                     </span>
                   </div>
 
                   <div className="relative z-10 mt-8 flex min-h-[21rem] flex-col items-center justify-center">
-                    <div className="validation-device-float relative w-full max-w-[21.5rem]">
+                    <div className="validation-device-float relative flex w-full max-w-[21.5rem] flex-col items-center justify-center rounded-[2rem] border border-sky-300/15 bg-white/[0.06] px-8 py-10 text-center shadow-[0_30px_60px_rgba(0,0,0,0.35)] backdrop-blur">
                       <div className="absolute inset-8 rounded-full bg-sky-400/20 blur-3xl" />
-                      <img
-                        src="/lovable-uploads/product-system-new.png"
-                        alt="Smart Lung Physio device and companion app"
-                        className="relative z-10 mx-auto h-auto w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
-                      />
+                      <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-3xl bg-sky-400/10 text-sky-200 ring-1 ring-sky-300/20">
+                        <Activity className="h-10 w-10" aria-hidden="true" />
+                      </div>
+                      <p className="relative z-10 mt-6 text-xs font-bold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</p>
+                      <p className="relative z-10 mt-2 text-2xl font-bold text-white">Product Development</p>
+                      <p className="relative z-10 mt-3 max-w-xs text-sm leading-relaxed text-slate-300">Concept and prototype work under active review</p>
                     </div>
 
                     <div className="mt-7 grid w-full max-w-md grid-cols-3 gap-3">
                       {[
-                        ["Pathway", "Synced"],
-                        ["Signal", "Stable"],
-                        ["Readiness", "Mapping"],
+                        ["Pathway", "Mapped"],
+                        ["Status", "Active"],
+                        ["Readiness", "Planning"],
                       ].map(([label, value]) => (
                         <div key={label} className="rounded-xl border border-white/10 bg-white/[0.055] px-3 py-3 text-center backdrop-blur">
                           <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">{label}</p>
@@ -429,7 +423,7 @@ const ResearchValidationSection = () => {
                   </ul>
 
                   <div className="mt-7 rounded-xl bg-slate-50 p-4 text-sm leading-relaxed text-slate-600">
-                    <span className="font-bold text-primary">Validation focus:</span> reducing uncertainty across workflow,
+                    <span className="font-bold text-primary">Development focus:</span> reducing uncertainty across workflow,
                     usability, technical readiness, documentation, and commercial adoption planning.
                   </div>
                 </div>
@@ -541,7 +535,7 @@ const ResearchValidationSection = () => {
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-sky-200">Validation Focus</p>
                   <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-200">
                     Reducing variability in airway-clearance delivery, supporting caregiver workflow, and enabling more
-                    objective respiratory-care support.
+                    structured respiratory-care support.
                   </p>
                 </div>
               </div>

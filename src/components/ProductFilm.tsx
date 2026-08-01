@@ -64,6 +64,9 @@ const ProductFilm = () => {
             }
           }}
         />
+        <div className="pointer-events-none absolute bottom-2 right-2 z-10 rounded-lg border border-white/15 bg-slate-950/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur sm:bottom-3 sm:right-3 sm:text-xs">
+          Concept Film
+        </div>
       </div>
 
     </div>

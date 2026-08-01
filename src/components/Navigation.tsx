@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/atabazh-logo.svg";
+import logo from "@/assets/atabazh-logo.webp";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,10 +16,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/device", label: "Smart Lung Physio™" },
+    { to: "/device", label: "Product" },
+    { to: "/clinical-evidence", label: "Evidence" },
+    { to: "/long-term-care", label: "Long-Term Care" },
     { to: "/about", label: "About" },
-    { to: "/contact", label: "Discuss a Pilot" },
+    { to: "/contact", label: "Contact", emphasis: true },
   ];
 
   return (
@@ -54,17 +55,20 @@ const Navigation = () => {
           </NavLink>
 
           {/* Desktop Navigation - Centered with wider gaps */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <div className="hidden items-center gap-3 lg:flex xl:gap-5">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="text-[12px] xl:text-[13px] font-semibold text-slate-600 hover:text-primary transition-all duration-300 relative py-2 group tracking-wide whitespace-nowrap"
-                activeClassName="text-primary"
+                className={link.emphasis
+                  ? "rounded-full bg-blue-700 px-5 py-2.5 text-xs font-semibold tracking-wide text-white shadow-md shadow-blue-700/20 transition hover:-translate-y-0.5 hover:bg-blue-800"
+                  : "group relative whitespace-nowrap py-2 text-xs font-semibold tracking-wide text-slate-600 transition-all duration-300 hover:text-primary xl:text-[13px]"}
+                activeClassName={link.emphasis ? "bg-blue-800" : "text-primary"}
               >
                 {link.label}
-                {/* Dot indicator on hover */}
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary scale-0 transition-transform duration-300 group-hover:scale-100" />
+                {!link.emphasis && (
+                  <span className="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 scale-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-100" />
+                )}
               </NavLink>
             ))}
           </div>
@@ -75,6 +79,8 @@ const Navigation = () => {
             className="lg:hidden p-2.5 rounded-full text-slate-700 hover:bg-white/50 transition-colors duration-200"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -83,14 +89,16 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-white/95 backdrop-blur-xl shadow-2xl animate-fade-in">
+        <div id="mobile-navigation" className="lg:hidden border-t border-white/10 bg-white/95 backdrop-blur-xl shadow-2xl animate-fade-in">
           <div className="container mx-auto px-4 py-6 space-y-1">
             {navLinks.map((link, index) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="block px-4 py-3.5 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-200"
-                activeClassName="text-primary bg-primary/5"
+                className={link.emphasis
+                  ? "mt-3 block rounded-xl bg-blue-700 px-4 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-800"
+                  : "block rounded-xl px-4 py-3.5 text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-primary/5 hover:text-primary"}
+                activeClassName={link.emphasis ? "bg-blue-800" : "text-primary bg-primary/5"}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >

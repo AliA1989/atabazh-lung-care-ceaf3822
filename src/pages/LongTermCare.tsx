@@ -81,7 +81,7 @@ const LongTermCare = () => {
               { icon: Users, title: "Staffing Constraints", desc: "Limited staff availability makes time-intensive manual chest physiotherapy difficult to deliver consistently." },
               { icon: Activity, title: "Complex Resident Needs", desc: "Residents with multiple comorbidities and frailty require careful, individualized respiratory support." },
               { icon: DollarSign, title: "Resource Pressures", desc: "Operating budgets are limited while respiratory-care needs continue to increase across many resident populations." },
-              { icon: FileText, title: "Documentation Requirements", desc: "Regulatory expectations and quality indicators require objective data and documented care practices." },
+              { icon: FileText, title: "Documentation Needs", desc: "Care teams need clear records that support handoffs, internal review, and accountable care workflows." },
               { icon: Shield, title: "Infection Control", desc: "Respiratory-care workflows must account for cleaning, patient interfaces, staff safety, and practical bedside use." },
               { icon: Clock, title: "Training Challenges", desc: "Staff turnover means continuous training needs. Complex devices create barriers to consistent use." }
             ].map((item, index) => (
