@@ -62,8 +62,11 @@ const ProductFilm = () => {
             }
           }}
         />
-        <div className="pointer-events-none absolute bottom-2 right-2 z-10 rounded-lg border border-white/15 bg-slate-950/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-lg backdrop-blur sm:bottom-3 sm:right-3 sm:text-xs">
-          Concept Film
+        <div className="pointer-events-none absolute bottom-2 right-2 z-10 rounded-xl border border-white/15 bg-slate-950/90 px-3 py-2 text-right text-white shadow-lg backdrop-blur sm:bottom-3 sm:right-3">
+          <span className="block text-[10px] font-bold uppercase tracking-[0.16em] sm:text-xs">Concept Film</span>
+          <span className="mt-0.5 block text-[8px] font-medium tracking-normal text-slate-200 sm:text-[9px]">
+            Based on our functional prototype
+          </span>
         </div>
       </div>
 
