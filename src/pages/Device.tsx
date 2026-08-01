@@ -48,7 +48,7 @@ const Device = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              A medical device under development designed to support assisted airway clearance in long-term care and supervised care settings through real-time sensing, guided setup, and structured session documentation.
+              A medical device under development exploring sensor-guided setup, assisted airway-clearance workflows, and structured session documentation for long-term care and supervised care settings.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4 animate-fade-in">
@@ -76,7 +76,7 @@ const Device = () => {
           <ScrollReveal className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">A Workflow System for Caregiver-Guided Sessions</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Hardware, software, and documentation support designed to make supervised airway-clearance routines easier to guide, repeat, and review.
+              Hardware, software, and documentation concepts being developed to support guided, repeatable, and reviewable supervised airway-clearance routines.
             </p>
           </ScrollReveal>
           
@@ -85,17 +85,17 @@ const Device = () => {
               {
                 icon: Smartphone,
                 title: "Companion App",
-                description: "Connects via Bluetooth to provide step-by-step setup guidance, session prompts, and documentation support for trained care staff."
+                description: "Bluetooth-enabled prototype work is exploring step-by-step setup guidance, session prompts, and documentation support for trained care staff."
               },
               {
                 icon: Database,
                 title: "Session Dashboard",
-                description: "Cloud-based interface intended to help care teams review session history, generate summaries, and support care documentation."
+                description: "Interface concept intended to help care teams review session history, generate summaries, and support care documentation. Security and privacy architecture remain under development."
               },
               {
                 icon: Shield,
                 title: "Safety-Focused Feedback",
-                description: "Designed with configurable force limits, oxygen-saturation monitoring integration, and session logging. Regulatory-readiness planning is underway."
+                description: "Development priorities include configurable force limits, planned oxygen-saturation context, and session logging. These features remain subject to engineering validation and regulatory review."
               }
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
@@ -153,7 +153,7 @@ const Device = () => {
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="order-2 md:order-1 bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
                       <ul className="space-y-3 text-sm">
-                        {["Compact, portable design", "Battery-powered for bedside use", "Disposable patient interfaces", "Standard cleaning protocols"].map((item, i) => (
+                        {["Portable handheld prototype", "Current prototype uses mains power", "Removable patient-contact interface concept", "Cleaning and material requirements under review"].map((item, i) => (
                           <li key={i} className="flex items-start text-slate-700">
                             <span className="text-blue-600 font-bold mr-3">✓</span>
                             <span>{item}</span>
@@ -164,7 +164,7 @@ const Device = () => {
                     <div className="space-y-4 order-1 md:order-2">
                       <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Portability and Hygiene</h3>
                       <p className="text-base text-slate-600">
-                        Compact form factor designed for bedside use. Patient-interface and cleaning workflows are being developed with supervised care environments in mind.
+                        The current handheld prototype is mains-powered. Portability, patient-interface materials, and cleaning workflows are being evaluated for supervised care environments.
                       </p>
                     </div>
                   </div>

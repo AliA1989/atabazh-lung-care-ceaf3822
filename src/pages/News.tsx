@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { FileText, Calendar, ExternalLink, ArrowRight } from "lucide-react";
+import { FileText, Calendar, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const News = () => {
@@ -48,12 +48,6 @@ const News = () => {
               },
               {
                 date: "June 2026",
-                category: "Research",
-                title: "AI4PH 2026 Poster Presentation Accepted",
-                summary: "Atabazh Medical is preparing a poster presentation focused on technology-supported risk flagging and respiratory-care workflow considerations."
-              },
-              {
-                date: "June 2026",
                 category: "Technology Translation",
                 title: "World Congress of Biomechanics TTPC Poster Competition Invitation",
                 summary: "Smart Lung Physio™ has been invited for presentation in the Poster Competition section of the World Congress of Biomechanics Translational Technology Pitch Competition."
@@ -84,13 +78,9 @@ const News = () => {
                         <p className="text-sm text-slate-600 leading-relaxed">
                           {news.summary}
                         </p>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="rounded-full border-slate-200 hover:bg-white/80"
-                        >
-                          Read More <ExternalLink className="h-4 w-4 ml-2" />
-                        </Button>
+                        <p className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">
+                          Update summary
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -105,7 +95,10 @@ const News = () => {
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-10">Educational Resources</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800">Resources in Preparation</h2>
+            <p className="mb-10 mt-3 max-w-3xl text-slate-600">
+              These materials are being prepared and are not yet available as public downloads. Contact us to request an update or discuss a specific use case.
+            </p>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -130,12 +123,11 @@ const News = () => {
                     <p className="text-sm text-slate-600 leading-relaxed">
                       {resource.desc}
                     </p>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="w-full rounded-full border-slate-200 hover:bg-white/80"
-                    >
-                      {resource.type === "Video" ? "Request Demo Video" : "Request Resource"} <ExternalLink className="h-4 w-4 ml-2" />
+                    <Button asChild variant="outline" size="sm" className="w-full rounded-full border-slate-200 hover:bg-white/80">
+                      <NavLink to="/contact">
+                        {resource.type === "Video" ? "Request Demo Video" : "Request Resource"}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </NavLink>
                     </Button>
                   </CardContent>
                 </Card>
@@ -189,27 +181,12 @@ const News = () => {
             <p className="text-slate-600">
               Receive company updates, research milestones, and collaboration opportunities from Atabazh Medical.
             </p>
-            <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
-              <CardContent className="p-6">
-                <form className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="flex-1 px-5 py-3.5 rounded-full border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400/30 focus:border-blue-400"
-                  />
-                  <Button 
-                    type="submit" 
-                    size="lg"
-                    className="rounded-full px-8 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25"
-                  >
-                    Subscribe
-                  </Button>
-                </form>
-                <p className="text-xs text-slate-500 mt-4">
-                  We respect your privacy. Unsubscribe anytime.
-                </p>
-              </CardContent>
-            </Card>
+            <Button asChild size="lg" className="rounded-full bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] px-8 shadow-lg shadow-blue-500/25">
+              <NavLink to="/contact" className="inline-flex items-center gap-2">
+                Request Company Updates
+                <ArrowRight className="h-4 w-4" />
+              </NavLink>
+            </Button>
           </ScrollReveal>
         </div>
       </section>

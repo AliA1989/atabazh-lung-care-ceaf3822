@@ -9,10 +9,9 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { NavLink } from "@/components/NavLink";
 
 const PUBLIC_CONTACT_EMAIL = "support@atabazh-med.com";
-const CONTACT_FORM_RECIPIENT = "aliabedinpour16@gmail.com";
-const CONTACT_FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_FORM_RECIPIENT}`;
 
 const contactFormSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -23,6 +22,7 @@ const contactFormSchema = z.object({
   role: z.string().min(1, "Please select your role"),
   inquiry: z.string().min(1, "Please select an inquiry type"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+  privacyAccepted: z.boolean().refine((value) => value, "Please confirm that you have read the Privacy Policy"),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -34,12 +34,21 @@ const Contact = () => {
   const [role, setRole] = useState("");
   const [inquiry, setInquiry] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrors({});
 
     const formData = new FormData(e.currentTarget);
+    const honeypot = String(formData.get("_honey") ?? "").trim();
+
+    if (honeypot) {
+      toast({ title: "Message Sent", description: "Thank you. Your inquiry has been received." });
+      e.currentTarget.reset();
+      setIsSubmitting(false);
+      return;
+    }
+
     const data = {
       firstName: formData.get("firstName") as string,
       lastName: formData.get("lastName") as string,
@@ -49,6 +58,7 @@ const Contact = () => {
       role: role,
       inquiry: inquiry,
       message: formData.get("message") as string,
+      privacyAccepted: formData.get("privacyAccepted") === "on",
     };
 
     const result = contactFormSchema.safeParse(data);
@@ -71,58 +81,24 @@ const Contact = () => {
       return;
     }
 
-    try {
-      const response = await fetch(CONTACT_FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `New Atabazh inquiry: ${result.data.inquiry}`,
-          _template: "table",
-          _captcha: "false",
-          _replyto: result.data.email,
-          "First Name": result.data.firstName,
-          "Last Name": result.data.lastName,
-          "Email Address": result.data.email,
-          "Phone Number": result.data.phone || "Not provided",
-          Organization: result.data.organization,
-          Role: result.data.role,
-          "Inquiry Type": result.data.inquiry,
-          Message: result.data.message,
-        }),
-      });
+    const subject = `Atabazh inquiry: ${result.data.inquiry}`;
+    const body = [
+      `Name: ${result.data.firstName} ${result.data.lastName}`,
+      `Organization: ${result.data.organization}`,
+      `Role: ${result.data.role}`,
+      `Email: ${result.data.email}`,
+      `Phone: ${result.data.phone || "Not provided"}`,
+      `Inquiry type: ${result.data.inquiry}`,
+      "",
+      result.data.message,
+    ].join("\n");
 
-      const submitResult = await response.json().catch(() => null);
-
-      if (!response.ok || submitResult?.success === false) {
-        if (import.meta.env.DEV) {
-          console.error("Error submitting contact form:", submitResult);
-        }
-        throw new Error("Email submission failed");
-      }
-
-      toast({
-        title: "Message Sent",
-        description: "Thank you. Your message was sent successfully.",
-      });
-
-      setRole("");
-      setInquiry("");
-      (e.target as HTMLFormElement).reset();
-    } catch (error) {
-      if (import.meta.env.DEV) {
-        console.error('Unexpected error:', error);
-      }
-      toast({
-        title: "Submission Failed",
-        description: `Please email us directly at ${PUBLIC_CONTACT_EMAIL}.`,
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `mailto:${PUBLIC_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setIsSubmitting(false);
+    toast({
+      title: "Email Draft Prepared",
+      description: `Review and send the message from your email app to ${PUBLIC_CONTACT_EMAIL}.`,
+    });
   };
 
   return (
@@ -161,6 +137,7 @@ const Contact = () => {
                 <CardContent className="p-5 sm:p-8 lg:p-10">
                   <h2 className="mb-6 text-2xl font-bold text-slate-800 md:mb-8 md:text-3xl">Send a Collaboration Inquiry</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName" className="text-slate-700">First Name *</Label>
@@ -273,6 +250,23 @@ const Contact = () => {
                         className="rounded-xl border-slate-200 focus:border-blue-400 focus:ring-blue-400/20"
                       />
                       {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
+                      <p className="text-xs leading-relaxed text-slate-500">
+                        Do not include patient names, health-card numbers, medical records, or other identifiable health information.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="flex items-start gap-3 text-sm leading-relaxed text-slate-600">
+                        <input
+                          type="checkbox"
+                          name="privacyAccepted"
+                          className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-700 focus:ring-blue-600"
+                        />
+                        <span>
+                          I have read the <NavLink to="/privacy" className="font-semibold text-blue-700 underline underline-offset-4">Privacy Policy</NavLink> and consent to Atabazh Medical using my information to respond to this inquiry.
+                        </span>
+                      </label>
+                      {errors.privacyAccepted && <p className="text-sm text-red-500">{errors.privacyAccepted}</p>}
                     </div>
 
                     <Button 
@@ -281,12 +275,12 @@ const Contact = () => {
                       className="w-full rounded-full py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-300"
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Inquiry"}
+                      {isSubmitting ? "Preparing..." : "Prepare Email"}
                       <Send className="h-5 w-5 ml-2" />
                     </Button>
 
-                    <p className="text-xs text-slate-500 text-center">
-                      By submitting, you consent to be contacted by Atabazh Medical Inc. regarding your inquiry.
+                    <p className="text-center text-xs leading-relaxed text-slate-500">
+                      Submitting opens a draft in your default email app. This website does not send your information to a third-party form processor.
                     </p>
                   </form>
                 </CardContent>
@@ -305,10 +299,8 @@ const Contact = () => {
                         title: "Address",
                         content: (
                           <p className="text-sm text-slate-600">
-                            MaRS Discovery District<br />
-                            101 College Street, Suite 200<br />
-                            Toronto, ON M5G 1L7<br />
-                            Canada
+                            Ontario, Canada<br />
+                            Meetings by appointment
                           </p>
                         )
                       },
@@ -329,7 +321,7 @@ const Contact = () => {
                             <a href="tel:+14375576846" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
                               +1 (437) 557-6846
                             </a>
-                            <p className="text-xs text-slate-500 mt-1">Monday–Friday, 9 AM–5 PM EST</p>
+                            <p className="text-xs text-slate-500 mt-1">Monday–Friday, 9 AM–5 PM ET</p>
                           </>
                         )
                       },

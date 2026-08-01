@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
-import { Activity, Clock, TrendingUp, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList } from "lucide-react";
+import { Activity, Clock, Shield, CheckCircle, BarChart3, Users, Heart, ArrowRight, ChevronRight, Repeat, FileCheck, ClipboardList } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import FounderWelcomeModal from "@/components/FounderWelcomeModal";
-import PremiumPhoneMockup from "@/components/PremiumPhoneMockup";
 import ProductFilm from "@/components/ProductFilm";
-import ResearchValidationSection from "@/components/ResearchValidationSection";
 import techAllianceLogo from "@/assets/support/techalliance.svg";
 import mitacsLogo from "@/assets/support/mitacs.svg";
 import lab2MarketValidateLogo from "@/assets/support/lab2market-validate.webp";
@@ -16,11 +13,11 @@ import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import elevateIpLogo from "@/assets/support/elevate-ip.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const HERO_POINTS = [
   { icon: Repeat, text: "Guided setup for trained caregivers" },
-  { icon: Activity, text: "Real-time feedback during supervised sessions" },
+  { icon: Activity, text: "Sensor-feedback concept for supervised sessions" },
   { icon: FileCheck, text: "Structured documentation for care continuity" },
 ];
 
@@ -37,7 +34,6 @@ const SUPPORT_ORGANIZATIONS = [
 ];
 
 const Home = () => {
-  const [isPulseVisible, setIsPulseVisible] = useState(false);
   const [activeWorkflowIndex, setActiveWorkflowIndex] = useState(0);
 
   const workflowInsights = [
@@ -45,7 +41,7 @@ const Home = () => {
       icon: Clock,
       title: "Bedside Setup",
       desc: "Position, adjust, and begin care with less workflow friction.",
-      src: "/lovable-uploads/clinical-icu-monitoring.png",
+      src: "/media/workflow-bedside.webp",
       alt: "Early prototype workflow review in a supervised care setting",
       label: "Bedside setup",
       caption: "Close-up review of device placement, setup sequence, and bedside handling.",
@@ -55,8 +51,8 @@ const Home = () => {
     {
       icon: Users,
       title: "Caregiver Handling",
-      desc: "Support staff interaction while maintaining comfort and safety.",
-      src: "/lovable-uploads/clinical-female-therapy.png",
+      desc: "Support staff interaction with attention to handling and comfort.",
+      src: "/media/workflow-handling.webp",
       alt: "Prototype positioning review during respiratory care workflow",
       label: "Handling",
       caption: "Reviewing how staff hold, position, and operate the device during routine care.",
@@ -67,7 +63,7 @@ const Home = () => {
       icon: Activity,
       title: "Patient Positioning",
       desc: "Account for supine, seated, and forward-leaning routines.",
-      src: "/lovable-uploads/clinical-supine-therapy.png",
+      src: "/media/workflow-positioning.webp",
       alt: "Supine positioning review with early Smart Lung Physio prototype",
       label: "Positioning",
       caption: "Studying placement and usability across common care positions.",
@@ -78,7 +74,7 @@ const Home = () => {
       icon: ClipboardList,
       title: "Workflow Fit",
       desc: "Fit into repeatable long-term care routines.",
-      src: "/lovable-uploads/d1085550-1fd7-4426-a23c-d2f8b8d7324a.png",
+      src: "/media/workflow-fit.webp",
       alt: "Seated workflow review with early prototype setup",
       label: "Workflow fit",
       caption: "Exploring how the device fits into repeatable supervised-care routines.",
@@ -90,16 +86,8 @@ const Home = () => {
   const activeWorkflow = workflowInsights[activeWorkflowIndex];
   const supportingWorkflowImages = workflowInsights.filter((_, index) => index !== activeWorkflowIndex);
 
-  // Subtle pulse animation for the session card
-  useEffect(() => {
-    const timer = setTimeout(() => setIsPulseVisible(true), 800);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen">
-      {/* Founder Welcome Modal - Shows once per session */}
-      <FounderWelcomeModal />
       {/* Hero Section - clinical product introduction */}
       <section className="relative flex min-h-[74vh] items-center overflow-hidden bg-gradient-to-br from-white via-[hsl(204,45%,97%)] to-[hsl(205,45%,91%)] lg:min-h-[76vh]">
         <div className="absolute inset-y-0 right-0 hidden w-[58%] bg-gradient-to-l from-[hsl(205,58%,82%)] via-[hsl(204,52%,91%)] to-transparent lg:block" />
@@ -202,7 +190,7 @@ const Home = () => {
                 className="w-fit max-w-full rounded-full border border-slate-200 bg-white/65 px-3.5 py-2 text-[11px] font-semibold uppercase leading-relaxed tracking-[0.11em] text-slate-500 shadow-sm opacity-0 animate-fade-in sm:text-xs sm:tracking-[0.14em]"
                 style={{ animationDelay: '230ms', animationFillMode: 'forwards' }}
               >
-                Smart Lung Physio™ — U.S. Utility Patent Pending
+                Smart Lung Physio™ — U.S. utility patent application filed
               </p>
               
               <div
@@ -302,112 +290,10 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <p className="relative z-10 mx-auto mt-5 max-w-3xl px-6 text-center text-xs leading-relaxed text-slate-500">
+          Logos identify programs, ecosystem participation, or development support. They do not indicate clinical endorsement or product validation.
+        </p>
       </section>
-
-      {/* App Experience Section - Real-time Monitoring Interface */}
-      <section className="overflow-hidden bg-gradient-to-b from-[hsl(200,35%,96%)] via-[hsl(200,35%,96%)] to-background px-4 py-12 sm:px-8 lg:px-12 lg:py-20">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(360px,0.75fr)] lg:gap-16 items-center">
-            {/* Left side: Tablet therapy dashboard */}
-            <ScrollReveal className="order-2 flex justify-center lg:order-1 lg:justify-center">
-              <div className="relative w-full">
-                {/* Ambient glow behind tablet */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-[320px] w-[640px] max-w-full rounded-[60px] bg-gradient-to-br from-[hsl(200,70%,75%)]/30 via-[hsl(205,65%,80%)]/20 to-[hsl(210,60%,85%)]/10 blur-3xl" />
-                </div>
-                {/* Spotlight effect */}
-                <div className="absolute -top-16 left-1/2 h-[360px] w-[560px] max-w-full -translate-x-1/2 bg-[radial-gradient(circle,_hsl(200,80%,90%)_0%,_transparent_60%)] opacity-60 blur-2xl" />
-                <PremiumPhoneMockup className="relative z-10 mx-auto" />
-              </div>
-            </ScrollReveal>
-            
-            {/* Right side: Content */}
-            <ScrollReveal delay={100} className="order-1 space-y-5 lg:order-2 lg:space-y-6">
-              <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider">Real-Time Monitoring</span>
-              <h2 className="text-[2rem] md:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
-                Live Feedback at Your Fingertips
-              </h2>
-              <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                The Smart Lung Physio™ companion app provides a live view of each therapy session, including treatment guidance, patient wellness signals, and care-team documentation synced securely to the cloud.
-              </p>
-              <ul className="space-y-5 pt-4">
-                {[
-                  { icon: Activity, text: "Live therapy guidance", desc: "Clear feedback while care is being delivered" },
-                  { icon: Heart, text: "Patient wellness tracking", desc: "Helpful context for comfort and safety" },
-                  { icon: Shield, text: "HIPAA-compliant cloud data storage", desc: "Secure, encrypted session records" },
-                  { icon: BarChart3, text: "Session history and trend analytics", desc: "Track progress over time" }
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="group flex items-start gap-4 opacity-0 animate-feature-in"
-                    style={{ animationDelay: `${180 + index * 120}ms`, animationFillMode: "forwards" }}
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0 border border-primary/10 transition duration-300 group-hover:-translate-y-0.5 group-hover:border-primary/20 group-hover:bg-primary/10 group-hover:shadow-lg group-hover:shadow-primary/10">
-                      <item.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-800">{item.text}</p>
-                      <p className="text-sm text-slate-500">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Market Opportunity - TAM Section for Investors */}
-      <section className="px-6 py-14 sm:px-8 lg:px-12 lg:py-28 bg-gradient-to-r from-[hsl(210,50%,15%)] via-[hsl(210,45%,18%)] to-[hsl(205,40%,20%)]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-            <ScrollReveal className="space-y-5 lg:space-y-6">
-              <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-wider">Long-Term Care Need</span>
-              <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-                Respiratory Care Is a Workflow Challenge
-              </h2>
-              <p className="text-base leading-relaxed text-slate-300 md:text-lg">
-                Long-term care homes support residents with complex respiratory needs while managing staffing pressure, documentation demands, and limited access to specialized respiratory support. Smart Lung Physio™ is positioned as a practical workflow tool for supervised care environments.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-2 sm:gap-6 lg:pt-4">
-                {[
-                  { stat: "50+", label: "Stakeholder interviews" },
-                  { stat: "3", label: "Prototype generations" },
-                  { stat: "6", label: "Validation workstreams" },
-                  { stat: "10+", label: "Years of development history" }
-                ].map((item, index) => (
-                  <div key={index} className="text-center lg:text-left">
-                    <p className="text-2xl lg:text-3xl font-bold text-blue-400">{item.stat}</p>
-                    <p className="text-sm text-slate-400">{item.label}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={100} className="relative">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:p-8 lg:rounded-3xl">
-                <h3 className="mb-5 text-lg font-semibold text-white sm:mb-6 sm:text-xl">Why Smart Lung Physio™ Fits LTC Workflow</h3>
-                <ul className="space-y-3.5 sm:space-y-4">
-                  {[
-                    "Guided airway-clearance support for trained caregivers",
-                    "Structured session flow designed for repeatable routines",
-                    "Real-time feedback to support safer, more consistent delivery",
-                    "Documentation support for care-team communication",
-                    "Regulatory-readiness planning underway"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-slate-300">
-                      <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <ResearchValidationSection />
 
       {/* The Challenge Section - Unified styling */}
       <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
@@ -485,7 +371,7 @@ const Home = () => {
                 {
                   icon: Activity,
                   title: "Sensor-Guided",
-                  desc: "Real-time feedback supports caregiver-guided delivery"
+                  desc: "Sensor feedback is being evaluated for guided delivery"
                 },
                 {
                   icon: Clock,
@@ -642,7 +528,7 @@ const Home = () => {
           <ScrollReveal className="mt-10 lg:mt-14" delay={150}>
             <div className="grid overflow-hidden rounded-2xl border border-blue-100 bg-white/82 shadow-xl shadow-blue-900/10 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
               {[
-                "10+ years of development",
+                "Iterative prototype development",
                 "Supervised prototype review",
                 "Caregiver-guided design",
                 "Long-term care workflow fit"
@@ -667,7 +553,7 @@ const Home = () => {
               <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Purpose-Built</span>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Designed for Long-Term Care</h2>
               <p className="text-base text-slate-600 leading-relaxed">
-                Long-term care teams face increasing resident complexity, staffing pressure, and limited time for respiratory interventions. Smart Lung Physio™ is being developed to help caregivers deliver more consistent airway clearance support through guided setup, safety-focused feedback, and practical documentation.
+                Long-term care teams face increasing resident complexity, staffing pressure, and limited time for respiratory-care routines. Smart Lung Physio™ is being developed to support more structured airway-clearance workflows through guided setup, safety-focused feedback concepts, and practical documentation.
               </p>
               <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
                 <NavLink to="/long-term-care" className="flex items-center gap-2">
@@ -682,8 +568,8 @@ const Home = () => {
                 {[
                   {
                     icon: Clock,
-                    title: "Efficient Setup",
-                    desc: "Designed for quick deployment"
+                    title: "Setup Focus",
+                    desc: "Simplified bedside workflow under evaluation"
                   },
                   {
                     icon: Shield,
@@ -698,7 +584,7 @@ const Home = () => {
                   {
                     icon: BarChart3,
                     title: "Documentation",
-                    desc: "Automatic session records"
+                    desc: "Structured session records"
                   }
                 ].map((item, index) => (
                   <Card key={index} className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl">

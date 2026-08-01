@@ -38,19 +38,19 @@ const focusAreas = [
     icon: ShieldCheck,
     title: "Consistency",
     description:
-      "Developed to support more consistent, localized mechanical chest percussion for adults who have difficulty clearing pulmonary secretions.",
+      "Being developed to support more consistent, localized mechanical chest percussion for adults who have difficulty clearing pulmonary secretions.",
   },
   {
     icon: Activity,
-    title: "Real-Time Sensing",
+    title: "Sensor Feedback Development",
     description:
-      "Built with real-time sensing and feedback intended to help caregivers monitor session delivery and adjust within defined care workflows.",
+      "Prototype sensing and feedback are being developed to support review of session delivery within defined care workflows.",
   },
   {
     icon: ClipboardList,
     title: "Documentation Support",
     description:
-      "Intended to reduce documentation burden by supporting structured session records and clearer communication across care teams.",
+      "Intended to support structured session records and clearer communication across care teams.",
   },
 ];
 
@@ -58,7 +58,7 @@ const founder = {
   name: "Ali Abedinpour",
   role: "Founder & CEO",
   background: "Biomedical Engineer & Medical-Device Entrepreneur",
-  image: "/lovable-uploads/079da378-496f-4ba6-82b7-ff2adf75d7f8.jpg",
+  image: "/media/founder-ali-abedinpour.jpg",
   linkedin: "https://www.linkedin.com/in/aliabedinpour/",
   description:
     "Biomedical engineer and medical-device entrepreneur leading Smart Lung Physio™ product strategy, clinical engagement, commercialization planning, and long-term care market development.",
@@ -199,10 +199,10 @@ const About = () => {
                 Smart Lung Physio™
               </h2>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                Smart Lung Physio™ is a sensor-guided airway-clearance support device designed to help trained caregivers deliver more consistent, localized mechanical chest percussion for adults who have difficulty clearing pulmonary secretions.
+                Smart Lung Physio™ is a sensor-guided airway-clearance support device under development, intended to help trained caregivers deliver more structured, localized mechanical chest percussion for adults who have difficulty clearing pulmonary secretions.
               </p>
               <p className="text-base leading-relaxed text-slate-600 md:text-lg">
-                The system is being developed to support guided therapy delivery, real-time sensing, session structure, documentation support, and more measurable airway-clearance workflows.
+                The system is being developed to support guided session workflows, sensor feedback, documentation, and more measurable airway-clearance delivery.
               </p>
             </ScrollReveal>
 
@@ -220,11 +220,11 @@ const About = () => {
                   </div>
                   <div className="grid gap-3">
                     {[
-                      "Guided therapy delivery",
-                      "Real-time sensing and feedback",
+                      "Guided session workflow",
+                      "Sensor-feedback development",
                       "Structured session workflow",
                       "Session documentation support",
-                      "Consistent and measurable support",
+                      "Structured and reviewable support",
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-3 rounded-xl bg-slate-50/80 px-4 py-3">
                         <Stethoscope className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />

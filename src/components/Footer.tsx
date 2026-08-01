@@ -1,5 +1,5 @@
 import { NavLink } from "./NavLink";
-import logo from "@/assets/atabazh-logo.svg";
+import logo from "@/assets/atabazh-logo.webp";
 import { Linkedin } from "lucide-react";
 
 const Footer = () => {
@@ -49,7 +49,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
-                { to: "/clinical-evidence", label: "Research & Workflow Learning" },
+                { to: "/clinical-evidence", label: "Evidence & Development" },
                 { to: "/long-term-care", label: "LTC Implementation" }
               ].map((link) => (
                 <li key={link.to}>
@@ -70,6 +70,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
+                { to: "/news", label: "News & Resources" },
                 { to: "/contact", label: "Discuss a Pilot" }
               ].map((link) => (
                 <li key={link.to}>
@@ -111,26 +112,20 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-8">
-            <a 
-              href="#" 
-              className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200"
-            >
+            <NavLink to="/privacy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
               Privacy Policy
-            </a>
-            <a 
-              href="#" 
-              className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200"
-            >
-              Terms of Service
-            </a>
+            </NavLink>
+            <NavLink to="/terms" className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
+              Website Terms
+            </NavLink>
           </div>
           
           <div className="text-center md:text-right space-y-1">
             <p className="text-xs text-slate-500">
-              Smart Lung Physio™ — U.S. Utility Patent Pending (Application No. 19/278,634)
+              Smart Lung Physio™ is under development and is not cleared for sale.
             </p>
             <p className="text-xs text-slate-500">
-              © 2026 Atabazh Med. All rights reserved.
+              © 2026 Atabazh Medical Inc. All rights reserved.
             </p>
           </div>
         </div>

@@ -13,6 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import ResearchValidationSection from "@/components/ResearchValidationSection";
 
 const learningCards = [
   {
@@ -94,6 +95,8 @@ const ClinicalEvidence = () => {
           </div>
         </div>
       </section>
+
+      <ResearchValidationSection />
 
       <section className="bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)] px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
         <div className="container mx-auto max-w-5xl">
