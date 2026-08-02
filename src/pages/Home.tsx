@@ -1,479 +1,422 @@
-import {
-  Activity,
-  ArrowRight,
-  CheckCircle2,
-  CircleDot,
-  ClipboardCheck,
-  Gauge,
-  Hand,
-  Layers3,
-  MoveRight,
-  ShieldCheck,
-  Sparkles,
-  Users,
-  Wifi,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
+import { Activity, Clock, Shield, BarChart3, Users, Heart, ArrowRight, ChevronRight, ClipboardList } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import ProductFilm from "@/components/ProductFilm";
-import { publicAsset } from "@/lib/publicAsset";
+import techAllianceLogo from "@/assets/support/techalliance.svg";
 import mitacsLogo from "@/assets/support/mitacs.svg";
 import lab2MarketValidateLogo from "@/assets/support/lab2market-validate.webp";
+import springLogo from "@/assets/support/spring.svg";
 import marsLogo from "@/assets/support/mars.svg";
 import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
+import elevateIpLogo from "@/assets/support/elevate-ip.svg";
+import { publicAsset } from "@/lib/publicAsset";
 
-const productFlow = [
-  {
-    number: "01",
-    title: "Position",
-    description: "Guide setup at the intended treatment area.",
-  },
-  {
-    number: "02",
-    title: "Deliver",
-    description: "Support a structured, caregiver-guided session.",
-  },
-  {
-    number: "03",
-    title: "Record",
-    description: "Create a clearer session record for the care team.",
-  },
-];
-
-const developmentStatus = [
-  {
-    label: "Functional prototype",
-    detail: "Built and used in early workflow reviews",
-    status: "Completed",
-    tone: "text-emerald-700 bg-emerald-50 border-emerald-200",
-  },
-  {
-    label: "Force-sensing architecture",
-    detail: "Caregiver input and device output kept distinct",
-    status: "In development",
-    tone: "text-blue-700 bg-blue-50 border-blue-200",
-  },
-  {
-    label: "Bench characterization",
-    detail: "Measurement and operating-range work underway",
-    status: "Active",
-    tone: "text-cyan-700 bg-cyan-50 border-cyan-200",
-  },
-  {
-    label: "Clinical validation",
-    detail: "Formal clinical evaluation has not yet been completed",
-    status: "Planned",
-    tone: "text-amber-700 bg-amber-50 border-amber-200",
-  },
-];
-
-const supportOrganizations = [
-  { name: "MaRS Discovery District", src: marsLogo },
-  { name: "Health Innovation Hub", src: h2iLogo },
-  { name: "Innovation Boost Zone", src: ibzLogo },
-  { name: "Innovation Factory", src: innovationFactoryLogo },
+const SUPPORT_ORGANIZATIONS = [
+  { name: "MaRS Discovery District", src: marsLogo, square: true },
+  { name: "Health Innovation Hub", src: h2iLogo, logoClassName: "h-[114px] max-h-none max-w-none sm:h-[144px] md:h-[184px]" },
+  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-[118px] max-h-none max-w-none sm:h-[150px] md:h-[230px]" },
+  { name: "Spring", src: springLogo, square: true },
+  { name: "TechAlliance", src: techAllianceLogo },
+  { name: "Innovation Factory", src: innovationFactoryLogo, logoClassName: "h-[112px] max-h-none max-w-none sm:h-[140px] md:h-[180px]" },
+  { name: "ElevateIP", src: elevateIpLogo, logoClassName: "h-[120px] max-h-none max-w-none sm:h-[152px] md:h-[198px]" },
   { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
   { name: "Mitacs", src: mitacsLogo },
 ];
 
 const Home = () => {
-  return (
-    <div className="min-h-screen overflow-hidden bg-white">
-      <section className="relative isolate overflow-hidden bg-[#07111f] px-5 pb-16 pt-28 text-white sm:px-8 lg:px-12 lg:pb-24 lg:pt-32">
-        <div className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(rgba(148,163,184,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.055)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_92%)]" />
-        <div className="pointer-events-none absolute -right-40 top-[-15rem] -z-10 h-[42rem] w-[42rem] rounded-full bg-blue-600/25 blur-[120px]" />
-        <div className="pointer-events-none absolute -left-44 bottom-[-15rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-500/10 blur-[110px]" />
+  const workflowInsights = [
+    {
+      icon: Clock,
+      title: "Bedside Setup",
+      desc: "Clear placement and a simpler start.",
+      src: publicAsset("media/workflow-bedside.webp"),
+      alt: "Early prototype workflow review in a supervised care setting",
+      crop: "scale-[1.22] object-[47%_72%]",
+    },
+    {
+      icon: Users,
+      title: "Caregiver Handling",
+      desc: "Practical handling during supervised care.",
+      src: publicAsset("media/workflow-handling.webp"),
+      alt: "Prototype positioning review during respiratory care workflow",
+      crop: "scale-[1.16] object-[76%_58%]",
+    },
+    {
+      icon: Activity,
+      title: "Patient Positioning",
+      desc: "Reviewed across common care positions.",
+      src: publicAsset("media/workflow-positioning.webp"),
+      alt: "Supine positioning review with early Smart Lung Physio prototype",
+      crop: "scale-[1.2] object-[38%_68%]",
+    },
+    {
+      icon: ClipboardList,
+      title: "Workflow Fit",
+      desc: "Designed around repeatable team routines.",
+      src: publicAsset("media/workflow-fit.webp"),
+      alt: "Seated workflow review with early prototype setup",
+      crop: "scale-[1.18] object-[74%_68%]",
+    },
+  ];
 
-        <div className="mx-auto grid min-h-[44rem] max-w-[92rem] items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
-          <div className="relative z-10 max-w-2xl">
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(110deg,#fafaf9_0%,#f2f2f1_48%,#dedede_100%)]">
+        <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-[58%] bg-[radial-gradient(circle_at_18%_42%,rgba(255,255,255,0.95),transparent_58%)]" />
+
+        <div className="container mx-auto grid min-h-[44rem] max-w-[90rem] items-center gap-10 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-8 lg:px-12 lg:pb-20 lg:pt-32">
+          <div className="relative z-10 max-w-xl">
             <div
-              className="inline-flex items-center gap-2.5 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3.5 py-2 opacity-0 animate-fade-in"
-              style={{ animationDelay: "60ms", animationFillMode: "forwards" }}
+              className="flex items-center gap-3 opacity-0 animate-fade-in"
+              style={{ animationDelay: "80ms", animationFillMode: "forwards" }}
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-50" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />
-              </span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200 sm:text-xs">
-                Functional prototype program
-              </span>
+              <span className="h-px w-9 bg-blue-600" />
+              <span className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700">Smart Lung Physio™</span>
             </div>
 
             <h1
-              className="mt-7 max-w-2xl text-[3rem] font-bold leading-[0.98] tracking-[-0.055em] text-white opacity-0 animate-fade-in sm:text-6xl lg:text-[4.7rem]"
-              style={{ animationDelay: "110ms", animationFillMode: "forwards" }}
+              className="mt-6 text-[2.65rem] font-bold leading-[1.02] tracking-[-0.045em] text-slate-950 opacity-0 animate-fade-in sm:text-5xl lg:text-[3.65rem] xl:text-[4rem]"
+              style={{ animationDelay: "130ms", animationFillMode: "forwards" }}
             >
-              Know the force. <span className="text-sky-300">Guide the workflow.</span>
+              Airway-clearance support, designed around <span className="text-blue-700">care teams.</span>
             </h1>
 
             <p
-              className="mt-7 max-w-xl text-base leading-7 text-slate-300 opacity-0 animate-fade-in sm:text-lg sm:leading-8"
-              style={{ animationDelay: "160ms", animationFillMode: "forwards" }}
+              className="mt-6 max-w-lg text-base leading-7 text-slate-600 opacity-0 animate-fade-in sm:text-lg"
+              style={{ animationDelay: "180ms", animationFillMode: "forwards" }}
             >
-              Smart Lung Physio™ is a caregiver-guided airway-clearance system in development—bringing force-aware setup and structured session records into supervised respiratory care.
+              A sensor-guided device concept for more structured respiratory-care workflows in long-term care.
             </p>
 
             <div
-              className="mt-9 flex flex-col gap-3 opacity-0 animate-fade-in sm:flex-row sm:items-center"
-              style={{ animationDelay: "210ms", animationFillMode: "forwards" }}
+              className="mt-8 flex flex-col gap-3 opacity-0 animate-fade-in sm:flex-row sm:items-center"
+              style={{ animationDelay: "230ms", animationFillMode: "forwards" }}
             >
-              <Button asChild size="lg" className="h-auto rounded-full bg-white px-7 py-4 text-sm font-bold text-slate-950 shadow-2xl shadow-blue-950/40 transition hover:-translate-y-0.5 hover:bg-sky-50 sm:text-base">
+              <Button asChild size="lg" className="h-auto rounded-full bg-blue-700 px-7 py-4 text-sm font-semibold shadow-xl shadow-blue-800/20 transition hover:-translate-y-0.5 hover:bg-blue-800 sm:text-base">
                 <NavLink to="/device" className="flex items-center gap-2">
-                  See the System
+                  Explore the Device
                   <ArrowRight className="h-4 w-4" />
                 </NavLink>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="h-auto rounded-full border border-white/15 bg-white/5 px-6 py-4 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 sm:text-base">
-                <NavLink to="/contact">Discuss an Evaluation</NavLink>
+              <Button asChild variant="ghost" size="lg" className="h-auto rounded-full px-6 py-4 text-sm font-semibold text-slate-700 transition hover:bg-white/70 sm:text-base">
+                <NavLink to="/contact" className="flex items-center gap-2">
+                  Discuss Collaboration
+                  <ChevronRight className="h-4 w-4" />
+                </NavLink>
               </Button>
             </div>
 
-            <div
-              className="mt-10 grid max-w-xl grid-cols-3 divide-x divide-white/10 border-t border-white/10 pt-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: "260ms", animationFillMode: "forwards" }}
+            <p
+              className="mt-7 flex items-center gap-2 text-xs font-medium text-slate-500 opacity-0 animate-fade-in"
+              style={{ animationDelay: "280ms", animationFillMode: "forwards" }}
             >
-              {[
-                ["100+", "Discovery conversations"],
-                ["3", "Prototype generations"],
-                ["LTC", "First care setting"],
-              ].map(([value, label]) => (
-                <div key={label} className="px-3 first:pl-0 sm:px-5 sm:first:pl-0">
-                  <p className="text-xl font-bold tracking-tight text-white sm:text-2xl">{value}</p>
-                  <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">{label}</p>
-                </div>
-              ))}
-            </div>
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+              Medical device under development · Not cleared for sale
+            </p>
           </div>
 
           <div
-            className="relative w-full opacity-0 animate-fade-in lg:translate-x-4"
-            style={{ animationDelay: "220ms", animationFillMode: "forwards" }}
+            className="relative flex w-full items-center justify-center opacity-0 animate-fade-in lg:-mr-10 xl:-mr-20"
+            style={{ animationDelay: "260ms", animationFillMode: "forwards" }}
           >
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-blue-500/25 via-cyan-400/5 to-transparent blur-2xl" />
             <ProductFilm />
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-[92rem] items-center gap-4 border-t border-white/10 pt-6 text-[10px] font-medium uppercase tracking-[0.14em] text-slate-500 sm:text-xs">
-          <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-          Medical device under development · Not cleared for sale
-        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/55 to-transparent" />
       </section>
 
-      <section className="border-b border-slate-200 bg-white px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:items-center lg:gap-16">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700">The system in one view</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">
-                From bedside setup to a clearer record.
-              </h2>
-            </div>
-
-            <div className="relative grid gap-7 sm:grid-cols-3 sm:gap-0">
-              <div className="pointer-events-none absolute left-[12%] right-[12%] top-5 hidden h-px bg-gradient-to-r from-blue-200 via-blue-500 to-cyan-400 sm:block" />
-              {productFlow.map((step, index) => (
-                <div key={step.title} className="relative flex gap-4 sm:block sm:px-6">
-                  <span className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-blue-200 bg-white text-xs font-bold text-blue-700 shadow-sm">
-                    {step.number}
-                  </span>
-                  <div className="sm:mt-5">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-bold text-slate-950">{step.title}</h3>
-                      {index < productFlow.length - 1 && <MoveRight className="hidden h-4 w-4 text-slate-300 lg:block" />}
-                    </div>
-                    <p className="mt-1.5 text-sm leading-6 text-slate-500">{step.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-[#f5f7f9] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-          <ScrollReveal>
-            <figure className="relative aspect-[4/4.6] overflow-hidden rounded-[2rem] border border-slate-200 bg-[#dedede] shadow-[0_35px_90px_-45px_rgba(15,23,42,0.45)] sm:aspect-[5/4] lg:aspect-[4/4.6]">
-              <img
-                src={publicAsset("media/smart-lung-physio-product-showcase-poster.webp")}
-                alt="Smart Lung Physio product visualization based on the functional prototype"
-                className="h-full w-full object-cover object-center"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-white/5" />
-              <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/85 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-700 backdrop-blur sm:left-7 sm:top-7 sm:text-xs">
-                <CircleDot className="h-3.5 w-3.5 text-emerald-600" />
-                Prototype-informed product view
-              </div>
-              <figcaption className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-slate-950/75 p-5 text-sm leading-6 text-slate-200 backdrop-blur-xl sm:inset-x-7 sm:bottom-7 sm:p-6">
-                The enclosure shown is a design visualization based on the functional prototype. Final industrial design may change.
-              </figcaption>
-            </figure>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100} className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700">Built in hardware</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">
-              A physical device—not a software mockup.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-              Development is anchored in a working functional prototype and successive bench builds. The next engineering phase focuses on measurement quality, usability, and repeatability.
-            </p>
-
-            <div className="mt-8 border-y border-slate-200">
-              {[
-                [Layers3, "Functional prototype", "Physical build"],
-                [Gauge, "Caregiver preload sensing", "In development"],
-                [Activity, "Percussion output characterization", "Bench program"],
-              ].map(([Icon, title, status]) => {
-                const ItemIcon = Icon as typeof Layers3;
-                return (
-                  <div key={String(title)} className="flex items-center justify-between gap-5 border-b border-slate-200 py-4 last:border-0">
-                    <div className="flex items-center gap-3.5">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-700 shadow-sm">
-                        <ItemIcon className="h-5 w-5" />
-                      </span>
-                      <span className="text-sm font-semibold text-slate-800 sm:text-base">{String(title)}</span>
-                    </div>
-                    <span className="text-right text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400 sm:text-xs">{String(status)}</span>
-                  </div>
-                );
-              })}
-            </div>
-
-            <Button asChild variant="ghost" className="mt-7 h-auto rounded-full px-0 py-3 text-sm font-bold text-blue-700 hover:bg-transparent hover:text-blue-900">
-              <NavLink to="/device" className="flex items-center gap-2">
-                Explore engineering and measurement
-                <ArrowRight className="h-4 w-4" />
-              </NavLink>
-            </Button>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#07111f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
-        <div className="pointer-events-none absolute right-[-12rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full bg-blue-600/20 blur-[110px]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <ScrollReveal className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-sky-300">Measurement architecture</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
-              Two force signals. Kept distinct.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg">
-              Caregiver preload and device percussion output play different roles. Smart Lung Physio is being engineered to evaluate them separately—not collapse them into one number.
-            </p>
-
-            <div className="mt-8 space-y-6">
-              <div className="flex gap-4">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-blue-400/25 bg-blue-400/10 text-blue-300">
-                  <Hand className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="text-base font-bold text-white">Caregiver input</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">Steady contact pressure used during positioning and setup.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-300">
-                  <Activity className="h-5 w-5" />
-                </span>
-                <div>
-                  <h3 className="text-base font-bold text-white">Device output</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">Repeating mechanical output characterized through bench testing.</p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <div className="relative rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-4 shadow-[0_35px_90px_-45px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:p-6">
-              <div className="rounded-[1.35rem] border border-slate-200 bg-slate-50 p-5 text-slate-950 sm:p-7">
-                <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">Illustrative session view</p>
-                    <p className="mt-1.5 text-lg font-bold">Guided setup · Left lower zone</p>
-                  </div>
-                  <span className="inline-flex w-fit items-center gap-2 rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-bold text-emerald-700">
-                    <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" /> Live concept
-                  </span>
-                </div>
-
-                <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-blue-700">Caregiver preload</p>
-                    <p className="mt-3 text-4xl font-bold tracking-[-0.05em]">17.4 <span className="text-base font-semibold text-slate-400">N</span></p>
-                    <div className="relative mt-6 h-2 overflow-hidden rounded-full bg-slate-200">
-                      <div className="absolute inset-y-0 left-0 w-[58%] rounded-full bg-gradient-to-r from-blue-700 to-cyan-500" />
-                      <span className="absolute left-[58%] top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-cyan-500 shadow-md" />
-                    </div>
-                    <div className="mt-2 flex justify-between text-[10px] font-semibold text-slate-400"><span>0</span><span>Illustrative only</span><span>30</span></div>
-                  </div>
-
-                  <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                    <div className="flex items-center justify-between">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-700">Output trace</p>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400">Bench view</span>
-                    </div>
-                    <svg viewBox="0 0 280 95" className="mt-4 h-20 w-full" role="img" aria-label="Illustrative device output trace">
-                      <path d="M0 20 H280 M0 48 H280 M0 76 H280" stroke="#e2e8f0" strokeWidth="1" />
-                      <path d="M0 55 C18 55 19 20 29 20 S39 76 50 76 S62 31 74 31 S86 65 98 65 S112 26 124 26 S137 71 149 71 S162 35 174 35 S189 61 201 61 S216 28 228 28 S243 68 255 68 S267 42 280 42" fill="none" stroke="#0891b2" strokeWidth="3" strokeLinecap="round" className="animate-trace-draw" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex flex-col gap-3 rounded-2xl bg-slate-950 px-5 py-4 text-white sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-3">
-                    <Wifi className="h-5 w-5 text-sky-300" />
-                    <div>
-                      <p className="text-sm font-bold">Structured session record</p>
-                      <p className="mt-0.5 text-xs text-slate-400">Platform workflow under development</p>
-                    </div>
-                  </div>
-                  <ArrowRight className="hidden h-4 w-4 text-slate-500 sm:block" />
-                </div>
-              </div>
-            </div>
-            <p className="mt-4 text-center text-[11px] leading-5 text-slate-500">
-              Interface values and ranges are illustrative. Platform features remain under development.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
-          <ScrollReveal>
-            <div className="relative overflow-hidden rounded-[2rem] bg-slate-200">
-              <img
-                src={publicAsset("media/workflow-handling.webp")}
-                alt="Early Smart Lung Physio prototype reviewed in a supervised-care workflow"
-                className="aspect-[5/4] w-full scale-[1.08] object-cover object-[72%_58%] sm:aspect-[16/10]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-transparent" />
-              <div className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-5 sm:inset-x-7 sm:bottom-7">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-sky-200 sm:text-xs">Design in context</p>
-                  <p className="mt-2 max-w-md text-lg font-bold leading-6 text-white sm:text-2xl">Shaped around the way supervised care actually happens.</p>
-                </div>
-                <Users className="hidden h-8 w-8 text-white/70 sm:block" />
-              </div>
-            </div>
-            <p className="mt-3 text-xs leading-5 text-slate-400">Early prototype workflow review; not clinical validation.</p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100} className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700">Workflow-informed development</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">
-              New technology has to fit real care.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-              More than 100 discovery conversations with respiratory, rehabilitation, long-term care, and healthcare stakeholders have shaped the development direction.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              {[
-                [CheckCircle2, "Caregiver handling", "Designed around supervised use and practical positioning."],
-                [ShieldCheck, "Safety-focused development", "Feedback and limits remain subject to engineering and clinical validation."],
-                [ClipboardCheck, "Documentation fit", "Session records are being designed for care-team communication."],
-              ].map(([Icon, title, description]) => {
-                const ItemIcon = Icon as typeof CheckCircle2;
-                return (
-                  <div key={String(title)} className="flex gap-4 border-t border-slate-200 pt-4 first:border-0 first:pt-0">
-                    <ItemIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-700" />
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900">{String(title)}</h3>
-                      <p className="mt-1 text-sm leading-6 text-slate-500">{String(description)}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-[#f5f7f9] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-blue-700">
-                <Sparkles className="h-3.5 w-3.5" /> Development dashboard
-              </div>
-              <h2 className="mt-5 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">What is real today.</h2>
-              <p className="mt-4 max-w-md text-base leading-7 text-slate-600">
-                Clear status is part of credibility. We separate completed work from active development and future validation.
-              </p>
-            </div>
-
-            <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-xl shadow-slate-900/5">
-              {developmentStatus.map((item, index) => (
-                <div key={item.label} className="grid gap-3 border-b border-slate-200 p-5 last:border-0 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6 sm:px-6">
-                  <div className="flex items-start gap-4">
-                    <span className="mt-1 text-xs font-bold text-slate-300">0{index + 1}</span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900">{item.label}</h3>
-                      <p className="mt-1 text-sm leading-5 text-slate-500">{item.detail}</p>
-                    </div>
-                  </div>
-                  <span className={`ml-8 w-fit rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.13em] sm:ml-0 ${item.tone}`}>
-                    {item.status}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="mx-auto max-w-7xl">
+      {/* Support Ecosystem Section */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[hsl(202,42%,97%)] to-[hsl(200,35%,96%)] pb-10 pt-12 lg:pb-12 lg:pt-16">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/70 via-[hsl(204,45%,97%)]/60 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[hsl(200,35%,96%)] to-transparent" />
+        <div className="container relative z-10 mx-auto px-6 sm:px-8 lg:px-12">
           <ScrollReveal className="text-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-slate-400 sm:text-xs">Development ecosystem</p>
-            <div className="mt-8 grid grid-cols-2 items-center gap-x-7 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-              {supportOrganizations.map((organization) => (
-                <div key={organization.name} className="flex h-14 items-center justify-center">
-                  <img
-                    src={organization.src}
-                    alt={organization.name}
-                    className="max-h-12 max-w-[9rem] object-contain grayscale opacity-65 transition duration-300 hover:grayscale-0 hover:opacity-100"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            <p className="mx-auto mt-7 max-w-3xl text-[11px] leading-5 text-slate-400">
-              Logos identify program participation, ecosystem engagement, or development support. They do not indicate clinical endorsement or product validation.
-            </p>
+            <span className="block text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-500/80">
+              Ecosystem Engagement
+            </span>
+            <h2 className="mx-auto mt-3 max-w-5xl text-lg font-semibold uppercase tracking-[0.08em] text-slate-600 md:text-2xl md:tracking-[0.14em]">
+              Connected to Canada's health innovation community
+            </h2>
           </ScrollReveal>
+        </div>
+
+        <div className="relative z-10 mt-7 py-2 md:mt-9 md:py-3">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[hsl(204,45%,97%)] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[hsl(204,45%,97%)] to-transparent" />
+
+          <div className="support-logo-track flex w-max items-center gap-8 px-8 md:gap-14 md:px-10">
+            {[...SUPPORT_ORGANIZATIONS, ...SUPPORT_ORGANIZATIONS].map((org, index) => (
+              <div
+                key={`${org.name}-${index}`}
+                className={`${org.square ? "w-28 md:w-36" : "w-56 md:w-72"} flex h-24 flex-shrink-0 items-center justify-center overflow-hidden px-2 transition duration-300 md:h-28`}
+              >
+                {org.src ? (
+                  <img
+                    src={org.src}
+                    alt={org.name}
+                    className={`${org.logoClassName ?? `${org.square ? "max-h-[88px]" : "max-h-[82px]"} max-w-full`} object-contain opacity-95 drop-shadow-sm transition duration-300 hover:scale-[1.04] hover:opacity-100`}
+                  />
+                ) : (
+                  <span className={`text-center text-lg font-semibold tracking-wide transition-colors duration-300 ${org.brandClassName ?? "text-slate-500"}`}>
+                    {org.name}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="relative z-10 mx-auto mt-5 max-w-3xl px-6 text-center text-xs leading-relaxed text-slate-500">
+          Logos identify programs, ecosystem participation, or development support. They do not indicate clinical endorsement or product validation.
+        </p>
+      </section>
+
+      {/* The Challenge Section - Unified styling */}
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
+        <div className="container mx-auto">
+          <ScrollReveal className="mb-10 space-y-3 text-center sm:mb-16 sm:space-y-4">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">The Operational Challenge</h2>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Respiratory care delivery in LTC is shaped by staffing, time, documentation, and resident complexity.
+              </p>
+            </ScrollReveal>
+          </ScrollReveal>
+          
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                icon: Users,
+                title: "Staffing Constraints",
+                description: "Limited staff availability makes time-intensive manual chest physiotherapy difficult to deliver consistently across resident populations."
+              },
+              {
+                icon: Clock,
+                title: "Time Requirements",
+                  description: "Manual airway-clearance routines can be difficult to repeat consistently when care teams are balancing many resident needs."
+              },
+              {
+                icon: Heart,
+                title: "Complex Resident Needs",
+                  description: "Residents with frailty and multiple conditions require careful, supervised support aligned with clinical judgment."
+              }
+            ].map((item, index) => (
+              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
+                <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 group rounded-2xl">
+                  <CardContent className="space-y-4 p-6 sm:p-8 lg:p-10 lg:space-y-5">
+                    <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <item.icon className="h-7 w-7 text-blue-700" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
-        <ScrollReveal className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-sky-300">Build the evidence with us</p>
-          <h2 className="mt-5 text-3xl font-bold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">
-            Help shape the next stage of respiratory-care technology.
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-            We are speaking with long-term care operators, respiratory and rehabilitation teams, clinical collaborators, and product-development partners.
-          </p>
-          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-auto rounded-full bg-sky-400 px-8 py-4 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:text-base">
-              <NavLink to="/contact" className="flex items-center gap-2">
-                Start a Conversation
-                <ArrowRight className="h-4 w-4" />
-              </NavLink>
-            </Button>
-            <Button asChild variant="ghost" size="lg" className="h-auto rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base">
-              <NavLink to="/clinical-evidence">Review Development Evidence</NavLink>
-            </Button>
+      {/* Our Approach Section - Soft Blue Gradient */}
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
+        <div className="container mx-auto">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-8">
+              <div className="space-y-4">
+                <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Guided Airway Clearance Support</span>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">
+                  A Practical Tool for Supervised Care Settings
+                </h2>
+              </div>
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
+                Smart Lung Physio™ is a sensor-guided airway-clearance support system being developed for long-term care and supervised care settings. It is intended to help trained caregivers follow structured routines with clearer setup, feedback, and documentation.
+              </p>
+              <p className="text-base lg:text-lg text-slate-600 leading-relaxed">
+                The system is designed to support caregiver-guided sessions, capture relevant session information, and make airway-clearance workflows easier to repeat across shifts.
+              </p>
+              <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
+                <NavLink to="/device" className="flex items-center gap-2">
+                  View Device Workflow
+                  <ChevronRight className="w-4 h-4" />
+                </NavLink>
+              </Button>
+            </ScrollReveal>
+            
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              {[
+                {
+                  icon: Activity,
+                  title: "Sensor-Guided",
+                  desc: "Sensor feedback is being evaluated for guided delivery"
+                },
+                {
+                  icon: Clock,
+                  title: "Workflow-Aware",
+                  desc: "Built around practical routines in supervised care"
+                },
+                {
+                  icon: Shield,
+                  title: "Structured Workflow",
+                  desc: "Step-by-step guidance for care staff"
+                },
+                {
+                  icon: BarChart3,
+                  title: "Documentation",
+                  desc: "Session records designed to support care communication"
+                }
+              ].map((item, index) => (
+                <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
+                  <Card className="h-full backdrop-blur-xl bg-white/70 border border-white/60 shadow-lg shadow-slate-900/5 hover:shadow-xl transition-all duration-300 rounded-2xl">
+                    <CardContent className="space-y-3 p-4 sm:p-6 sm:space-y-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md shadow-blue-500/30">
+                        <item.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="font-semibold text-base text-slate-800">{item.title}</h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
-        </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Design in context */}
+      <section className="border-y border-slate-100 bg-white px-6 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="container mx-auto max-w-7xl">
+          <ScrollReveal className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">Design in Context</p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.03em] text-slate-950 sm:text-4xl lg:text-[2.75rem]">
+              Shaped by the way care actually happens.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
+              Four practical priorities from early supervised workflow reviews.
+            </p>
+          </ScrollReveal>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {workflowInsights.map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 50}>
+                <article className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                  <div className="relative aspect-[5/3] overflow-hidden bg-slate-200">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                      className={`h-full w-full object-cover ${item.crop}`}
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[0.65rem] font-bold tracking-[0.16em] text-slate-700 backdrop-blur">
+                      {(index + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="flex gap-3 p-4">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+                      <item.icon className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</p>
+                    </div>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-5 text-slate-400">
+            Early prototype workflow reviews; not clinical validation.
+          </p>
+        </div>
+      </section>
+
+      {/* LTC Focus Section - Unified styling */}
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-32">
+        <div className="container mx-auto">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20 items-center">
+            <ScrollReveal className="space-y-5 lg:space-y-8">
+              <span className="inline-block text-sm font-semibold text-blue-600 uppercase tracking-wider">Purpose-Built</span>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-800">Designed for Long-Term Care</h2>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Long-term care teams face increasing resident complexity, staffing pressure, and limited time for respiratory-care routines. Smart Lung Physio™ is being developed to support more structured airway-clearance workflows through guided setup, safety-focused feedback concepts, and practical documentation.
+              </p>
+              <Button asChild size="lg" className="h-auto w-full rounded-full px-8 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:w-auto sm:py-6">
+                <NavLink to="/long-term-care" className="flex items-center gap-2">
+                  View LTC Implementation Details
+                  <ArrowRight className="w-4 h-4" />
+                </NavLink>
+              </Button>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={100}>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                {[
+                  {
+                    icon: Clock,
+                    title: "Setup Focus",
+                    desc: "Simplified bedside workflow under evaluation"
+                  },
+                  {
+                    icon: Shield,
+                    title: "Safety Focused",
+                    desc: "Feedback and limits designed for supervised use"
+                  },
+                  {
+                    icon: Users,
+                    title: "Caregiver Guided",
+                    desc: "Structured workflow guidance"
+                  },
+                  {
+                    icon: BarChart3,
+                    title: "Documentation",
+                    desc: "Structured session records"
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl">
+                    <CardContent className="space-y-3 p-4 text-center sm:p-6 sm:space-y-4">
+                      <div className="w-12 h-12 mx-auto rounded-xl bg-blue-100 flex items-center justify-center">
+                        <item.icon className="w-5 h-5 text-blue-700" />
+                      </div>
+                      <h4 className="font-semibold text-sm text-slate-800">{item.title}</h4>
+                      <p className="text-xs text-slate-600">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Soft Blue Gradient */}
+      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-36 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
+        <div className="container mx-auto max-w-3xl">
+          <ScrollReveal className="space-y-6 text-center sm:space-y-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
+              Discuss Pilot Readiness or Clinical Collaboration
+            </h2>
+            <ScrollReveal delay={100}>
+              <p className="text-lg text-slate-600 max-w-xl mx-auto">
+                We welcome conversations with LTC operators, clinical partners, rehabilitation teams, respiratory-care stakeholders, and healthcare innovation reviewers.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={150}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center pt-2 sm:pt-4">
+                <Button asChild size="lg" className="h-auto rounded-full px-10 py-5 text-base bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 sm:py-7">
+                  <NavLink to="/contact">Discuss a Pilot</NavLink>
+                </Button>
+                <Button asChild size="lg" className="h-auto rounded-full border-2 border-white/60 bg-white/80 px-10 py-5 text-base text-slate-700 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl sm:py-7">
+                  <NavLink to="/about">About Our Team</NavLink>
+                </Button>
+              </div>
+            </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </section>
     </div>
   );

@@ -40,7 +40,7 @@ const ProductFilm = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative aspect-video overflow-hidden rounded-[1.5rem] border border-white/15 bg-[#d9d9d9] shadow-[0_35px_90px_-35px_rgba(0,0,0,0.85)] sm:rounded-[2rem]">
+      <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/60 bg-[#e2e2e2] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.45)] sm:rounded-[1.75rem] lg:rounded-none lg:border-0 lg:shadow-none lg:[mask-image:linear-gradient(to_right,transparent_0%,black_13%,black_100%)]">
         <video
           ref={videoRef}
           className="h-full w-full cursor-pointer object-cover"
@@ -63,22 +63,14 @@ const ProductFilm = () => {
             }
           }}
         />
-        <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between bg-gradient-to-b from-slate-950/55 to-transparent p-4 text-white sm:p-6">
-          <div className="flex items-center gap-2 rounded-full border border-white/20 bg-slate-950/35 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.16em] backdrop-blur-md sm:text-[10px]">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-            Product in motion
-          </div>
-          <span className="rounded-full border border-white/20 bg-slate-950/35 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.14em] backdrop-blur-md sm:text-[10px]">
-            Sound {isMuted ? "off" : "on"}
-          </span>
-        </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent px-4 pb-4 pt-14 text-white sm:px-6 sm:pb-6">
-          <span className="block text-xs font-bold uppercase tracking-[0.16em] sm:text-sm">Smart Lung Physio™</span>
-          <span className="mt-1 block text-[9px] font-medium text-slate-200 sm:text-[11px]">
-            Product visualization informed by our functional prototype
+        <div className="pointer-events-none absolute bottom-2 right-2 z-10 rounded-xl border border-white/15 bg-slate-950/90 px-3 py-2 text-right text-white shadow-lg backdrop-blur sm:bottom-3 sm:right-3">
+          <span className="block text-[10px] font-bold uppercase tracking-[0.16em] sm:text-xs">Concept Film</span>
+          <span className="mt-0.5 block text-[8px] font-medium tracking-normal text-slate-200 sm:text-[9px]">
+            Based on our functional prototype
           </span>
         </div>
       </div>
+
     </div>
   );
 };
