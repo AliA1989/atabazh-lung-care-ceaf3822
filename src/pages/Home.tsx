@@ -22,6 +22,7 @@ import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
 import elevateIpLogo from "@/assets/support/elevate-ip.svg";
+import baycrestLogo from "@/assets/support/baycrest.png";
 import { publicAsset } from "@/lib/publicAsset";
 
 const SUPPORT_ORGANIZATIONS = [
@@ -34,6 +35,7 @@ const SUPPORT_ORGANIZATIONS = [
   { name: "ElevateIP", src: elevateIpLogo, logoClassName: "h-20 max-h-none max-w-none sm:h-24" },
   { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
   { name: "Mitacs", src: mitacsLogo },
+  { name: "Baycrest", src: baycrestLogo, logoClassName: "max-h-8 max-w-full brightness-0 sm:max-h-9" },
 ];
 
 const challengeItems = [
@@ -226,7 +228,7 @@ const Home = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-5">
+            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-5">
               {SUPPORT_ORGANIZATIONS.map((org) => (
                 <div
                   key={org.name}
