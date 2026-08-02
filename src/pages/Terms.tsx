@@ -1,10 +1,10 @@
 import { NavLink } from "@/components/NavLink";
 
 const Terms = () => (
-  <div className="min-h-screen px-6 pb-24 pt-32 sm:px-8 lg:px-12">
-    <article className="container mx-auto max-w-4xl rounded-3xl border border-white/70 bg-white/85 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-10 lg:p-14">
+  <div className="min-h-screen bg-[#f8fafc] px-6 pb-24 pt-32 text-slate-950 sm:px-8 lg:px-12">
+    <article className="container mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10 lg:p-14">
       <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Legal</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Website Terms</h1>
+      <h1 className="mt-3 text-4xl font-bold tracking-[-0.04em] text-slate-950 sm:text-5xl">Website Terms</h1>
       <p className="mt-4 text-sm text-slate-500">Effective August 1, 2026</p>
       <p className="mt-8 text-base leading-relaxed text-slate-600">
         These terms govern use of atabazh.com. By using the website, you agree to these terms. If you do not agree, do not use the website.
@@ -67,7 +67,7 @@ const Terms = () => (
         </section>
       </div>
 
-      <section className="mt-10 rounded-2xl border border-blue-100 bg-blue-50/60 p-6">
+      <section className="mt-10 rounded-2xl border border-blue-200 bg-blue-50 p-6">
         <h2 className="text-xl font-bold text-slate-900">Questions</h2>
         <p className="mt-2 text-slate-600">
           Atabazh Medical Inc., Ontario, Canada<br />

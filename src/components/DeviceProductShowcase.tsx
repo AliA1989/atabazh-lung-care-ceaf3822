@@ -26,8 +26,7 @@ const DeviceProductShowcase = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-sky-50/80 to-transparent" />
+    <section className="relative overflow-hidden border-b border-slate-200 bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
       <div className="container relative mx-auto max-w-6xl">
         <ScrollReveal>
           <div className="mb-10 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-16">
@@ -35,7 +34,7 @@ const DeviceProductShowcase = () => {
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-blue-600">
                 Product in motion
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-800 md:text-4xl lg:text-[2.75rem]">
+              <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.75rem]">
                 A closer look at Smart Lung Physio™
               </h2>
             </div>
@@ -48,8 +47,8 @@ const DeviceProductShowcase = () => {
 
         <ScrollReveal delay={100}>
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-r from-sky-200/45 via-blue-100/25 to-slate-200/45 blur-2xl" />
-            <div className="relative aspect-video overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-[#dedede] shadow-[0_35px_80px_-45px_rgba(15,23,42,0.5)] sm:rounded-[2rem]">
+            <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-blue-100/60 blur-3xl" />
+            <div className="relative aspect-video overflow-hidden rounded-2xl border-[8px] border-white bg-[#dedede] shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] ring-1 ring-slate-200 sm:rounded-[1.75rem]">
               <video
                 ref={videoRef}
                 className="h-full w-full object-cover"

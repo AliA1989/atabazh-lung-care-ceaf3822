@@ -42,12 +42,12 @@ const supportingSignals = [
 
 const DeviceMeasurementSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
+    <section className="relative overflow-hidden border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
       <div className="pointer-events-none absolute left-[-12rem] top-24 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl" />
       <div className="container relative mx-auto max-w-7xl">
         <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">Measurement architecture</p>
-          <h2 className="mt-4 text-3xl font-bold tracking-[-0.035em] text-slate-950 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
             Two force signals. Kept distinct.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
@@ -57,7 +57,7 @@ const DeviceMeasurementSection = () => {
 
         <div className="grid items-stretch gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           <ScrollReveal>
-            <figure className="group relative h-full min-h-[30rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-[#dddddd] shadow-[0_30px_80px_-45px_rgba(15,23,42,0.55)] sm:min-h-[36rem]">
+            <figure className="group relative h-full min-h-[30rem] overflow-hidden rounded-2xl border border-slate-200 bg-[#dddddd] shadow-sm sm:min-h-[36rem]">
               <img
                 src={publicAsset("media/smart-lung-physio-product-showcase-poster.webp")}
                 alt="Smart Lung Physio product visualization based on the functional prototype"
@@ -80,7 +80,7 @@ const DeviceMeasurementSection = () => {
           <div className="flex flex-col gap-5">
             {primarySignals.map((signal, index) => (
               <ScrollReveal key={signal.title} delay={index === 0 ? 80 : 140}>
-                <article className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5 sm:p-7">
+                <article className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
                   <div className={`absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b ${signal.accent}`} />
                   <div className="flex items-start justify-between gap-5">
                     <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${signal.accent} text-white shadow-lg shadow-blue-900/15`}>

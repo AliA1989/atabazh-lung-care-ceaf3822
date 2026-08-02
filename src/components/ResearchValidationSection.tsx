@@ -242,19 +242,18 @@ const ResearchValidationSection = () => {
   const ActiveIcon = activePathway.icon;
 
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_50%_0%,rgba(14,165,233,0.12),transparent_30%),linear-gradient(180deg,#f9fcff_0%,#ffffff_46%,#f6fafc_100%)] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,87,0.032)_1px,transparent_1px),linear-gradient(180deg,rgba(8,43,87,0.032)_1px,transparent_1px)] bg-[size:84px_84px] opacity-60" />
-      <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-[38rem] -translate-x-1/2 rounded-full bg-sky-200/24 blur-3xl" />
+    <section className="relative overflow-hidden border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,87,0.025)_1px,transparent_1px),linear-gradient(180deg,rgba(8,43,87,0.025)_1px,transparent_1px)] bg-[size:84px_84px]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl">
         <ScrollReveal className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-sky-100 bg-white/80 px-4 py-2 text-xs font-bold text-primary shadow-sm backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm">
             <span className="h-2 w-2 rounded-full bg-sky-500" />
             Research & Development
           </span>
-          <h2 className="mx-auto mt-5 max-w-4xl text-3xl font-bold leading-[1.08] text-slate-900 md:text-5xl lg:text-6xl">
+          <h2 className="mx-auto mt-5 max-w-4xl text-3xl font-bold leading-[1.08] tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.8rem]">
             Development workstreams for
-            <span className="block bg-gradient-to-r from-sky-600 via-primary to-indigo-600 bg-clip-text text-transparent">
+            <span className="block text-blue-700">
               Smart Lung Physio
             </span>
           </h2>
@@ -295,7 +294,7 @@ const ResearchValidationSection = () => {
                 {networkStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="group rounded-xl border border-slate-200/70 bg-white/86 p-4 shadow-[0_10px_30px_rgba(8,43,87,0.06)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_44px_rgba(8,43,87,0.1)] sm:p-5"
+                    className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:border-blue-200 sm:p-5"
                   >
                     <div className="flex items-center gap-4">
                       <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${stat.tone}`}>
@@ -330,7 +329,7 @@ const ResearchValidationSection = () => {
                         type="button"
                         onClick={() => setActiveIndex(index)}
                         onMouseEnter={() => setActiveIndex(index)}
-                        className={`group flex min-h-[5.05rem] items-center gap-3 rounded-xl border bg-white/82 p-3.5 text-left shadow-sm backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-lg sm:p-4 ${
+                        className={`group flex min-h-[5.05rem] items-center gap-3 rounded-xl border bg-white p-3.5 text-left shadow-sm transition duration-300 hover:border-sky-300 sm:p-4 ${
                           isActive
                             ? "border-sky-400 bg-sky-50/80 shadow-[0_16px_45px_rgba(14,165,233,0.16)]"
                             : "border-slate-200"
@@ -355,7 +354,7 @@ const ResearchValidationSection = () => {
                   })}
                 </div>
 
-                <div className="relative min-h-[32rem] overflow-hidden rounded-[1.35rem] bg-[#071225] p-6 text-white shadow-[0_26px_80px_rgba(8,43,87,0.22)] ring-1 ring-slate-900/10">
+                <div className="relative min-h-[32rem] overflow-hidden rounded-2xl bg-[#071321] p-6 text-white shadow-[0_24px_70px_-35px_rgba(8,43,87,0.45)] ring-1 ring-slate-900/10">
                   <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px]" />
                   <div className="pointer-events-none absolute left-1/2 top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-sky-500/18 blur-3xl" />
                   <div className="pointer-events-none absolute left-1/2 top-[9.5rem] h-64 w-64 -translate-x-1/2 rounded-full border border-sky-300/10 validation-orbit" />
@@ -406,7 +405,7 @@ const ResearchValidationSection = () => {
                   </div>
                 </div>
 
-                <div className="rounded-[1.35rem] border border-slate-200 bg-white/86 p-6 shadow-[0_20px_62px_rgba(8,43,87,0.1)] backdrop-blur">
+                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <InstitutionMark pathway={activePathway} />
                   <h4 className="mt-4 text-2xl font-bold leading-tight text-slate-900">{activePathway.category}</h4>
                   <p className="mt-5 text-sm leading-relaxed text-slate-600">{activePathway.description}</p>
@@ -436,7 +435,7 @@ const ResearchValidationSection = () => {
               {pipelineStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-xl border border-slate-200/80 bg-white/85 p-4 shadow-[0_10px_30px_rgba(8,43,87,0.06)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_44px_rgba(8,43,87,0.1)] sm:p-5"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:border-blue-200 sm:p-5"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{stat.eyebrow}</span>
@@ -450,7 +449,7 @@ const ResearchValidationSection = () => {
               ))}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-slate-200/80 bg-white/84 p-6 shadow-[0_16px_48px_rgba(8,43,87,0.07)] backdrop-blur sm:p-7">
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Validation Timeline</p>
@@ -503,7 +502,7 @@ const ResearchValidationSection = () => {
               {pillars.map((pillar) => (
                 <div
                   key={pillar.title}
-                  className="rounded-xl border border-slate-200/80 bg-white/86 p-5 shadow-[0_14px_42px_rgba(8,43,87,0.07)] backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-[0_20px_58px_rgba(8,43,87,0.12)]"
+                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:border-sky-200"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-slate-600">
@@ -526,7 +525,7 @@ const ResearchValidationSection = () => {
               ))}
             </div>
 
-            <div className="mt-10 rounded-2xl bg-gradient-to-r from-slate-900 to-[#082b57] p-6 text-white shadow-[0_22px_64px_rgba(8,43,87,0.18)] sm:p-8">
+            <div className="mt-10 rounded-2xl bg-[#0b1b2f] p-6 text-white shadow-sm sm:p-8">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 text-sky-300 ring-1 ring-white/10">
                   <ShieldCheck className="h-6 w-6" />

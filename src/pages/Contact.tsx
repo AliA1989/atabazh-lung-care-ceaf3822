@@ -102,21 +102,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
       {/* Hero Section - Master Design System */}
-      <section className="relative overflow-hidden py-16 pt-28 lg:py-32 lg:pt-32">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f8fafc] px-5 pb-20 pt-32 sm:px-8 lg:px-12 lg:pb-24 lg:pt-36">
         {/* Soft blue gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
         
         {/* Abstract wave pattern */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        <div className="hidden">
           <svg className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 opacity-[0.06]" viewBox="0 0 1400 200" preserveAspectRatio="none">
             <path d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100" stroke="hsl(200, 80%, 60%)" strokeWidth="3" fill="none" />
           </svg>
         </div>
         
-        <div className="container mx-auto relative z-10 max-w-4xl space-y-4 px-6 text-center sm:px-8 lg:px-12 lg:space-y-6">
-          <h1 className="text-4xl font-bold text-slate-800 animate-fade-in md:text-5xl lg:text-6xl">
+        <div className="relative z-10 mx-auto max-w-4xl space-y-4 text-center lg:space-y-6">
+          <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 animate-fade-in md:text-5xl lg:text-[3.6rem]">
             Discuss Pilot Fit or Collaboration
           </h1>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 animate-fade-in md:text-xl">
@@ -124,16 +124,16 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/50 to-transparent" />
       </section>
 
       {/* Contact Form & Info - Unified styling */}
-      <section className="px-6 py-14 sm:px-8 lg:px-12 lg:py-32">
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
             {/* Contact Form */}
             <ScrollReveal>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-5 sm:p-8 lg:p-10">
                   <h2 className="mb-6 text-2xl font-bold text-slate-800 md:mb-8 md:text-3xl">Send a Collaboration Inquiry</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -272,7 +272,7 @@ const Contact = () => {
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full rounded-full py-6 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-300"
+                      className="h-auto w-full rounded-xl bg-blue-700 py-4 font-semibold shadow-sm transition hover:bg-blue-800"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Preparing..." : "Prepare Email"}
@@ -340,10 +340,10 @@ const Contact = () => {
                         )
                       }
                     ].map((item, index) => (
-                      <Card key={index} className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-lg shadow-slate-900/5 rounded-2xl">
+                      <Card key={index} className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <CardContent className="p-6">
                           <div className="flex items-start space-x-4">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-500/30">
+                            <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-700">
                               <item.icon className="h-6 w-6 text-white" />
                             </div>
                             <div>
@@ -357,7 +357,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Card className="bg-gradient-to-br from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] text-white rounded-2xl shadow-xl">
+                <Card className="rounded-2xl border border-slate-800 bg-[#0b1b2f] text-white shadow-sm">
                   <CardContent className="p-6 space-y-3">
                     <h3 className="text-xl font-semibold">What to Include</h3>
                     <p className="text-sm opacity-90">
