@@ -23,7 +23,7 @@ const networkStats = [
 ];
 
 const pipelineStats = [
-  { value: "50+", label: "Stakeholder Interviews", eyebrow: "Discovery", icon: Users, tone: "text-indigo-600 bg-indigo-50" },
+  { value: "100+", label: "Stakeholder Interviews", eyebrow: "Discovery", icon: Users, tone: "text-indigo-600 bg-indigo-50" },
   { value: "3", label: "Prototype Generations", eyebrow: "Hardware", icon: Cpu, tone: "text-sky-600 bg-sky-50" },
   { value: "U.S.", label: "Utility Patent Filed", eyebrow: "Intellectual Property", icon: FileText, tone: "text-amber-600 bg-amber-50" },
   { value: "2", label: "Accepted Presentations", eyebrow: "Dissemination", icon: LineChart, tone: "text-emerald-600 bg-emerald-50" },
@@ -109,7 +109,7 @@ const pathways = [
     badgeTone: "bg-amber-50 text-amber-700",
     description:
       "Discovery activities capturing care-team needs, workflow constraints, clinical context, and early market assumptions.",
-    deliverables: ["Workflow Analysis", "50+ Stakeholder Interviews", "User Need Review", "Care-Team Feedback"],
+    deliverables: ["Workflow Analysis", "100+ Stakeholder Interviews", "User Need Review", "Care-Team Feedback"],
   },
   {
     short: "McM",
@@ -136,7 +136,7 @@ const timeline = [
     step: "01",
     eyebrow: "Discovery",
     title: "Stakeholder Discovery",
-    body: "50+ interviews with respiratory therapists, physiotherapists, long-term care professionals, caregivers, and healthcare stakeholders.",
+    body: "100+ interviews with respiratory therapists, physiotherapists, long-term care professionals, caregivers, and healthcare stakeholders.",
   },
   {
     step: "02",

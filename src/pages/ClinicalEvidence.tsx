@@ -18,7 +18,7 @@ import ResearchValidationSection from "@/components/ResearchValidationSection";
 const learningCards = [
   {
     icon: Users,
-    stat: "50+",
+    stat: "100+",
     title: "Stakeholder Interviews",
     desc: "Discovery with respiratory therapists, physiotherapists, LTC professionals, caregivers, and healthcare stakeholders.",
   },

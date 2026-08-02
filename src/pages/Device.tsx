@@ -1,9 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { Smartphone, Database, Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import DeviceProductShowcase from "@/components/DeviceProductShowcase";
+import DeviceMeasurementSection from "@/components/DeviceMeasurementSection";
+import LivePlatformSection from "@/components/LivePlatformSection";
 
 const Device = () => {
   return (
@@ -73,49 +75,9 @@ const Device = () => {
 
       <DeviceProductShowcase />
 
-      {/* System Components - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
-        <div className="container mx-auto max-w-6xl">
-          <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">A Workflow System for Caregiver-Guided Sessions</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Hardware, software, and documentation concepts being developed to support guided, repeatable, and reviewable supervised airway-clearance routines.
-            </p>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              {
-                icon: Smartphone,
-                title: "Companion App",
-                description: "Bluetooth-enabled prototype work is exploring step-by-step setup guidance, session prompts, and documentation support for trained care staff."
-              },
-              {
-                icon: Database,
-                title: "Session Dashboard",
-                description: "Interface concept intended to help care teams review session history, generate summaries, and support care documentation. Security and privacy architecture remain under development."
-              },
-              {
-                icon: Shield,
-                title: "Safety-Focused Feedback",
-                description: "Development priorities include configurable force limits, planned oxygen-saturation context, and session logging. These features remain subject to engineering validation and regulatory review."
-              }
-            ].map((item, index) => (
-              <ScrollReveal key={index} delay={index === 0 ? 0 : index === 1 ? 100 : 150}>
-                <Card className="h-full backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:shadow-slate-900/10 transition-all duration-300 group rounded-2xl">
-                  <CardContent className="p-8 lg:p-10 space-y-5">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-800">{item.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DeviceMeasurementSection />
+
+      <LivePlatformSection />
 
       {/* Designed for Care Settings - Unified styling */}
       <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
