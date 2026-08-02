@@ -13,12 +13,12 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   "/device": {
     title: "Smart Lung Physio™ Device | Atabazh Medical",
     description:
-      "Explore the current Smart Lung Physio™ development concept, including guided setup, sensing, caregiver workflow, and documentation priorities.",
+      "Explore the Smart Lung Physio™ functional prototype program, measurement architecture, caregiver-guided workflow, and platform direction.",
   },
   "/clinical-evidence": {
     title: "Evidence & Development | Atabazh Medical",
     description:
-      "Review Atabazh Medical's stakeholder discovery, prototype learning, validation workstreams, and pilot-readiness planning.",
+      "Review Smart Lung Physio™ stakeholder discovery, prototype iterations, bench-development work, evidence boundaries, and clinical-validation plans.",
   },
   "/long-term-care": {
     title: "Long-Term Care Workflow | Atabazh Medical",
@@ -63,10 +63,12 @@ const RouteSeo = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const metadata = pageMetadata[pathname];
+    const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+    const metadata = pageMetadata[normalizedPath];
     const title = metadata?.title ?? "Page Not Found | Atabazh Medical";
     const description = metadata?.description ?? "The requested page could not be found.";
-    const canonicalUrl = `${SITE_URL}${pathname === "/" ? "/" : pathname}`;
+    const canonicalPath = normalizedPath === "/" ? "/" : `${normalizedPath}/`;
+    const canonicalUrl = `${SITE_URL}${canonicalPath}`;
 
     document.title = title;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -92,7 +94,7 @@ const RouteSeo = () => {
 
     const schemaId = "atabazh-organization-schema";
     const existingSchema = document.getElementById(schemaId);
-    if (pathname === "/") {
+    if (normalizedPath === "/") {
       const schema = existingSchema ?? document.createElement("script");
       schema.id = schemaId;
       schema.setAttribute("type", "application/ld+json");

@@ -1,76 +1,114 @@
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Cable,
+  ClipboardCheck,
+  Hand,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import DeviceProductShowcase from "@/components/DeviceProductShowcase";
 import DeviceMeasurementSection from "@/components/DeviceMeasurementSection";
 import LivePlatformSection from "@/components/LivePlatformSection";
+import { publicAsset } from "@/lib/publicAsset";
+
+const careRealityItems = [
+  {
+    icon: Hand,
+    title: "Caregiver handling",
+    description: "Handheld use, positioning, and guided setup are being refined around supervised workflows.",
+    status: "Active development",
+  },
+  {
+    icon: Cable,
+    title: "Power and portability",
+    description: "The current functional prototype is mains-powered. Final portability requirements remain under review.",
+    status: "Current build",
+  },
+  {
+    icon: Wrench,
+    title: "Cleaning pathway",
+    description: "A removable patient-contact interface and suitable cleaning materials are part of the design direction.",
+    status: "Under review",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Onboarding and records",
+    description: "Guided prompts and structured session documentation are being designed for care-team use.",
+    status: "Interface development",
+  },
+];
 
 const Device = () => {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section - Master Design System */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-24">
-        {/* Soft blue gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
-        
-        {/* Bold circular gradient accent */}
-        <div className="absolute top-0 right-0 w-[60%] h-full z-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,75%,75%)] via-[hsl(200,70%,80%)] to-transparent rounded-bl-[40%]" />
-        </div>
-        
-        {/* Abstract wave pattern */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-          <svg className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 opacity-[0.06]" viewBox="0 0 1400 200" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="wave-gradient-device" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="hsl(200, 80%, 50%)" stopOpacity="0" />
-                <stop offset="30%" stopColor="hsl(200, 80%, 60%)" stopOpacity="1" />
-                <stop offset="70%" stopColor="hsl(210, 85%, 55%)" stopOpacity="1" />
-                <stop offset="100%" stopColor="hsl(210, 80%, 50%)" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <path d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100 C1400,60 1600,140 1800,100" stroke="url(#wave-gradient-device)" strokeWidth="3" fill="none" />
-          </svg>
-        </div>
-        
-        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-blue-50/90 border border-blue-100/70 shadow-sm animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-xs font-semibold text-blue-600/90 uppercase tracking-wider">Respiratory Workflow Technology</span>
+    <div className="min-h-screen overflow-hidden bg-white">
+      <section className="relative isolate overflow-hidden bg-[#07111f] px-5 pb-20 pt-32 text-white sm:px-8 lg:px-12 lg:pb-28 lg:pt-36">
+        <div className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(rgba(148,163,184,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.055)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_92%)]" />
+        <div className="pointer-events-none absolute -right-48 top-[-14rem] -z-10 h-[44rem] w-[44rem] rounded-full bg-blue-600/25 blur-[120px]" />
+
+        <div className="mx-auto grid max-w-[90rem] items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+          <div className="relative z-10 max-w-2xl">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-sky-300/20 bg-sky-300/10 px-3.5 py-2 opacity-0 animate-fade-in">
+              <Sparkles className="h-3.5 w-3.5 text-sky-300" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-200 sm:text-xs">Smart Lung Physio™</span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-slate-800 animate-fade-in">
-              Smart Lung Physio™
-              <span className="block mt-3 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] bg-clip-text text-transparent">
-                Guided Airway-Clearance Workflow
-              </span>
+
+            <h1 className="mt-7 max-w-2xl text-[2.8rem] font-bold leading-[0.99] tracking-[-0.055em] text-white opacity-0 animate-fade-in sm:text-6xl lg:text-[4.55rem]">
+              A respiratory-care device built to make <span className="text-sky-300">setup measurable.</span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              A medical device under development exploring sensor-guided setup, assisted airway-clearance workflows, and structured session documentation for long-term care and supervised care settings.
+
+            <p className="mt-7 max-w-xl text-base leading-7 text-slate-300 opacity-0 animate-fade-in sm:text-lg sm:leading-8">
+              A caregiver-guided airway-clearance system in development, combining localized mechanical percussion, force-aware setup, and structured session documentation.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4 animate-fade-in">
-              <Button 
-                asChild 
-                size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-[hsl(210,80%,45%)]/25 hover:shadow-xl hover:-translate-y-0.5"
-              >
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Request More Information
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </NavLink>
+
+            <div className="mt-9 flex flex-col gap-3 opacity-0 animate-fade-in sm:flex-row">
+              <Button asChild size="lg" className="h-auto rounded-full bg-white px-7 py-4 text-sm font-bold text-slate-950 shadow-xl transition hover:-translate-y-0.5 hover:bg-sky-50 sm:text-base">
+                <a href="#measurement" className="flex items-center gap-2">
+                  See the Measurement System
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="ghost" size="lg" className="h-auto rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base">
+                <NavLink to="/contact">Discuss Technical Review</NavLink>
               </Button>
             </div>
+
+            <div className="mt-10 grid max-w-xl gap-3 border-t border-white/10 pt-6 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-white/10">
+              {[
+                ["Built", "Functional prototype"],
+                ["Mains", "Current power source"],
+                ["Planned", "Clinical validation"],
+              ].map(([value, label]) => (
+                <div key={label} className="sm:px-4 sm:first:pl-0">
+                  <p className="text-sm font-bold text-white sm:text-base">{value}</p>
+                  <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative opacity-0 animate-fade-in lg:translate-x-5">
+            <div className="absolute -inset-6 rounded-[2.75rem] bg-gradient-to-br from-blue-500/25 via-cyan-400/5 to-transparent blur-2xl" />
+            <figure className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/15 bg-[#dddddd] shadow-[0_35px_90px_-35px_rgba(0,0,0,0.9)]">
+              <img
+                src={publicAsset("media/smart-lung-physio-product-showcase-poster.webp")}
+                alt="Smart Lung Physio product visualization informed by the functional prototype"
+                className="h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-slate-950/15" />
+              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-slate-950/45 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md sm:left-6 sm:top-6 sm:text-[10px]">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                Prototype-informed product view
+              </div>
+              <figcaption className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/15 bg-slate-950/70 p-4 text-xs leading-5 text-slate-200 backdrop-blur-xl sm:inset-x-6 sm:bottom-6 sm:p-5 sm:text-sm">
+                Product enclosure and interface are design visualizations. Final industrial design and specifications may change.
+              </figcaption>
+            </figure>
           </div>
         </div>
-        
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
       </section>
 
       <DeviceProductShowcase />
@@ -79,89 +117,63 @@ const Device = () => {
 
       <LivePlatformSection />
 
-      {/* Designed for Care Settings - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Built Around Caregiver Usability</h2>
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal className="grid gap-8 border-b border-slate-200 pb-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-end lg:gap-16">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-blue-700">Designed for care reality</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-[-0.045em] text-slate-950 sm:text-4xl lg:text-5xl">
+                Engineering beyond the demo.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              Product development also has to address handling, power, cleaning, training, and documentation—not only the core mechanism.
+            </p>
           </ScrollReveal>
 
-          <div className="space-y-6">
-            <ScrollReveal>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
-                <CardContent className="p-8 lg:p-10">
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="space-y-4">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Structured Onboarding</h3>
-                      <p className="text-base text-slate-600">
-                        The system is designed to support caregiver onboarding with guided workflows, visual prompts, and practical reference material.
-                      </p>
-                    </div>
-                    <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
-                      <ul className="space-y-3 text-sm">
-                        {["Intuitive companion app interface", "Instructional content in the app", "Session guidance and documentation prompts", "Technical support planning"].map((item, i) => (
-                          <li key={i} className="flex items-start text-slate-700">
-                            <span className="text-blue-600 font-bold mr-3">✓</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
-                <CardContent className="p-8 lg:p-10">
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="order-2 md:order-1 bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
-                      <ul className="space-y-3 text-sm">
-                        {["Portable handheld prototype", "Current prototype uses mains power", "Removable patient-contact interface concept", "Cleaning and material requirements under review"].map((item, i) => (
-                          <li key={i} className="flex items-start text-slate-700">
-                            <span className="text-blue-600 font-bold mr-3">✓</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="space-y-4 order-1 md:order-2">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Portability and Hygiene</h3>
-                      <p className="text-base text-slate-600">
-                        The current handheld prototype is mains-powered. Portability, patient-interface materials, and cleaning workflows are being evaluated for supervised care environments.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
+          <div className="mt-2">
+            {careRealityItems.map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 40}>
+                <div className="grid gap-4 border-b border-slate-200 py-6 sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-6 lg:grid-cols-[3rem_0.55fr_1fr_auto]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 text-blue-700">
+                    <item.icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-950">{item.title}</h3>
+                  <p className="text-sm leading-6 text-slate-500 sm:col-start-2 lg:col-start-auto">{item.description}</p>
+                  <span className="w-fit rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.13em] text-slate-500 sm:col-start-3 sm:row-start-1 lg:col-start-auto">
+                    {item.status}
+                  </span>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
+
+          <ScrollReveal className="mt-8 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+            <ShieldCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-700" />
+            <p>Smart Lung Physio™ is intended for future supervised use and is not designed to replace clinical judgment, licensed respiratory care, or facility protocols.</p>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* CTA Section - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Discuss Product Fit for Your Care Setting</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              For clinical workflow questions, pilot discussions, or technical review, connect with the Atabazh Medical team.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
-              <Button 
-                asChild 
-                size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Request More Information
-                  <ArrowRight className="w-4 h-4" />
-                </NavLink>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
+      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
+        <ScrollReveal className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-sky-300">Product collaboration</p>
+          <h2 className="mt-5 text-3xl font-bold tracking-[-0.045em] text-white sm:text-4xl lg:text-5xl">Help evaluate the system around real care.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+            We welcome technical review, clinical-workflow feedback, and pilot-readiness discussions with care organizations and research partners.
+          </p>
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="h-auto rounded-full bg-sky-400 px-8 py-4 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:text-base">
+              <NavLink to="/contact" className="flex items-center gap-2">
+                Start a Product Conversation
+                <ArrowRight className="h-4 w-4" />
+              </NavLink>
+            </Button>
+            <Button asChild variant="ghost" size="lg" className="h-auto rounded-full border border-white/15 px-8 py-4 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base">
+              <NavLink to="/clinical-evidence">Review Development Evidence</NavLink>
+            </Button>
+          </div>
+        </ScrollReveal>
       </section>
     </div>
   );

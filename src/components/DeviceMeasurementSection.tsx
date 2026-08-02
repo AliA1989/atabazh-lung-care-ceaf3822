@@ -42,7 +42,7 @@ const supportingSignals = [
 
 const DeviceMeasurementSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
+    <section id="measurement" className="relative scroll-mt-24 overflow-hidden bg-gradient-to-b from-white via-slate-50/70 to-white px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="pointer-events-none absolute left-[-12rem] top-24 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl" />
       <div className="container relative mx-auto max-w-7xl">
         <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
