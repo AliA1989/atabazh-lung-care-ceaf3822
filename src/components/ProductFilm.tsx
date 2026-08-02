@@ -40,37 +40,40 @@ const ProductFilm = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/60 bg-[#e2e2e2] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.45)] sm:rounded-[1.75rem] lg:rounded-none lg:border-0 lg:shadow-none lg:[mask-image:linear-gradient(to_right,transparent_0%,black_13%,black_100%)]">
-        <video
-          ref={videoRef}
-          className="h-full w-full cursor-pointer object-cover"
-          src={publicAsset("media/smart-lung-physio-concept-film.mp4")}
-          poster={publicAsset("media/smart-lung-physio-concept-poster.webp")}
-          preload="metadata"
-          autoPlay
-          playsInline
-          muted={isMuted}
-          loop
-          role="button"
-          tabIndex={0}
-          aria-pressed={!isMuted}
-          aria-label={isMuted ? "Play background music" : "Mute background music"}
-          onClick={toggleMusic}
-          onKeyDown={(event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              toggleMusic();
-            }
-          }}
-        />
-        <div className="pointer-events-none absolute bottom-2 right-2 z-10 rounded-xl border border-white/15 bg-slate-950/90 px-3 py-2 text-right text-white shadow-lg backdrop-blur sm:bottom-3 sm:right-3">
-          <span className="block text-[10px] font-bold uppercase tracking-[0.16em] sm:text-xs">Concept Film</span>
-          <span className="mt-0.5 block text-[8px] font-medium tracking-normal text-slate-200 sm:text-[9px]">
-            Based on our functional prototype
-          </span>
+      <div className="pointer-events-none absolute -inset-5 -z-10 rounded-[2.5rem] bg-blue-200/45 blur-3xl" />
+      <div className="rounded-[1.4rem] border border-slate-200/90 bg-white p-2 shadow-[0_30px_80px_-38px_rgba(15,23,42,0.45)] sm:rounded-[1.8rem] sm:p-2.5">
+        <div className="relative aspect-video overflow-hidden rounded-[1rem] bg-[#dedede] sm:rounded-[1.3rem]">
+          <video
+            ref={videoRef}
+            className="h-full w-full cursor-pointer object-cover saturate-[0.94]"
+            src={publicAsset("media/smart-lung-physio-concept-film.mp4")}
+            poster={publicAsset("media/smart-lung-physio-concept-poster.webp")}
+            preload="metadata"
+            autoPlay
+            playsInline
+            muted={isMuted}
+            loop
+            role="button"
+            tabIndex={0}
+            aria-pressed={!isMuted}
+            aria-label={isMuted ? "Play background music" : "Mute background music"}
+            onClick={toggleMusic}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleMusic();
+              }
+            }}
+          />
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-slate-950/5" />
+          <div className="pointer-events-none absolute bottom-3 right-3 z-10 rounded-lg border border-white/15 bg-slate-950/85 px-3 py-2 text-right text-white shadow-lg backdrop-blur-md sm:bottom-4 sm:right-4">
+            <span className="block text-[9px] font-bold uppercase tracking-[0.16em] sm:text-[10px]">Concept Film</span>
+            <span className="mt-0.5 block text-[8px] font-medium tracking-normal text-slate-200 sm:text-[9px]">
+              Based on our functional prototype
+            </span>
+          </div>
         </div>
       </div>
-
     </div>
   );
 };

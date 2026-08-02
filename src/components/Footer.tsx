@@ -4,7 +4,7 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1e3a5f] border-t border-[#2a4a70]">
+    <footer className="border-t border-white/10 bg-[#071321]">
       <div className="container mx-auto px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-14">
           {/* Logo and Tagline */}
@@ -14,7 +14,7 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="" 
-                  className="h-[3.25rem] w-[3.25rem] object-contain brightness-0 invert opacity-90 drop-shadow-[0_2px_10px_rgba(125,211,252,0.18)] sm:h-[4.25rem] sm:w-[4.25rem]"
+                className="h-[3.25rem] w-[3.25rem] object-contain brightness-0 invert opacity-85 sm:h-[4.25rem] sm:w-[4.25rem]"
                 />
               </span>
               <span className="flex flex-col leading-none pt-0.5">
@@ -26,18 +26,18 @@ const Footer = () => {
                 </span>
               </span>
             </NavLink>
-            <p className="max-w-[18rem] text-sm leading-relaxed text-slate-300/85">
+            <p className="max-w-[18rem] text-sm leading-relaxed text-slate-400">
               Developing workflow-informed respiratory-care technology for long-term care and supervised care settings.
             </p>
             <a 
               href="https://www.linkedin.com/company/atabazh-medical-inc" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-5 text-sm text-slate-400 hover:text-blue-400 transition-colors"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-sky-300"
               aria-label="Follow Atabazh Medical on LinkedIn"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                <Linkedin className="h-4 w-4 text-blue-400" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+                <Linkedin className="h-4 w-4 text-sky-300" />
               </div>
               <span>Follow us on LinkedIn</span>
             </a>
@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-slate-700/50 my-10" />
+        <div className="my-10 h-px bg-white/10" />
         
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
