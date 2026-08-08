@@ -2,8 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { Activity, ArrowRight, ClipboardList, Clock, FileText, Users } from "lucide-react";
-import ltcCare from "@/assets/ltc-care.jpg";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { publicAsset } from "@/lib/publicAsset";
 
 const careGaps = [
   {
@@ -90,8 +90,18 @@ const LongTermCare = () => {
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: "150ms" }}>
-              <div className="relative overflow-hidden rounded-2xl border-[8px] border-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] ring-1 ring-slate-200">
-                <img src={ltcCare} alt="Supervised long-term care environment" className="h-auto w-full" />
+              <div className="relative overflow-hidden rounded-2xl border-[8px] border-white bg-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] ring-1 ring-slate-200">
+                <img
+                  src={publicAsset("media/smart-lung-physio-ltc-hero.webp")}
+                  alt="Illustrative long-term care training environment with Smart Lung Physio, a caregiver, and a clinical mannequin"
+                  className="aspect-video h-full w-full object-cover object-center"
+                />
+                <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-[#0b1b2f]/92 px-4 py-3 text-white backdrop-blur-sm sm:px-5 sm:py-3.5">
+                  <p className="text-xs font-semibold sm:text-sm">Illustrative care-setting visualization</p>
+                  <p className="mt-1 text-[0.6rem] leading-relaxed text-slate-300 sm:text-[0.68rem]">
+                    Training and workflow context shown for illustration; not a clinical evaluation or pilot-site photograph.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
