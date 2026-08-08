@@ -3,10 +3,10 @@ import { ClipboardCheck, Cloud, Database, HeartPulse, Wifi } from "lucide-react"
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const demoFrames = [
-  { force: 16.8, spo2: 96, heartRate: 78, trace: "M0 48 C28 42 44 50 70 44 S110 36 138 42 S180 51 210 41 S252 34 290 40" },
-  { force: 17.4, spo2: 96, heartRate: 79, trace: "M0 45 C25 38 48 48 72 42 S112 39 142 45 S182 47 212 38 S250 36 290 43" },
-  { force: 18.1, spo2: 97, heartRate: 79, trace: "M0 43 C30 47 45 37 75 42 S115 48 145 39 S185 34 214 42 S255 48 290 39" },
-  { force: 17.7, spo2: 96, heartRate: 78, trace: "M0 46 C27 40 48 44 76 39 S116 35 145 43 S180 50 212 42 S254 35 290 41" },
+  { signal: 56, trace: "M0 48 C28 42 44 50 70 44 S110 36 138 42 S180 51 210 41 S252 34 290 40" },
+  { signal: 61, trace: "M0 45 C25 38 48 48 72 42 S112 39 142 45 S182 47 212 38 S250 36 290 43" },
+  { signal: 65, trace: "M0 43 C30 47 45 37 75 42 S115 48 145 39 S185 34 214 42 S255 48 290 39" },
+  { signal: 59, trace: "M0 46 C27 40 48 44 76 39 S116 35 145 43 S180 50 212 42 S254 35 290 41" },
 ];
 
 const platformBenefits = [
@@ -42,7 +42,7 @@ const LivePlatformSection = () => {
   }, []);
 
   const frame = demoFrames[frameIndex];
-  const forcePosition = useMemo(() => Math.min(100, Math.max(0, (frame.force / 30) * 100)), [frame.force]);
+  const signalPosition = useMemo(() => Math.min(100, Math.max(0, frame.signal)), [frame.signal]);
 
   return (
     <section className="relative overflow-hidden bg-[#071321] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
@@ -80,7 +80,7 @@ const LivePlatformSection = () => {
           </div>
 
           <p className="mt-8 border-l-2 border-sky-400/50 pl-4 text-xs leading-5 text-slate-400">
-            Interactive interface concept. Values, ranges, alerts, integrations, and clinical workflows are illustrative and remain under development.
+            Illustrative interface concept. Values shown are for demonstration only and do not represent clinical recommendations, validated thresholds, or treatment guidance.
           </p>
         </ScrollReveal>
 
@@ -94,7 +94,7 @@ const LivePlatformSection = () => {
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-700 text-sm font-bold text-white">SL</span>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Demo session</p>
-                      <p className="mt-1 font-semibold text-slate-800">Training profile · Room 214</p>
+                      <p className="mt-1 font-semibold text-slate-800">Training profile · Demonstration</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -102,7 +102,7 @@ const LivePlatformSection = () => {
                       <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
                       Live demo
                     </span>
-                    <span className="text-sm font-semibold text-slate-500">01:42</span>
+                    <span className="text-sm font-semibold text-slate-500">Session active</span>
                   </div>
                 </div>
 
@@ -110,21 +110,19 @@ const LivePlatformSection = () => {
                   <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Caregiver preload</p>
-                        <p className="mt-2 text-4xl font-bold tracking-[-0.05em] text-slate-950">
-                          {frame.force.toFixed(1)} <span className="text-base font-semibold text-slate-400">N</span>
-                        </p>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Contact-force signal</p>
+                        <p className="mt-2 text-2xl font-bold tracking-[-0.04em] text-slate-950">Signal tracking</p>
                       </div>
-                      <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">In demo range</span>
+                      <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-blue-700">Illustrative</span>
                     </div>
                     <div className="relative mt-7 h-2.5 overflow-hidden rounded-full bg-slate-200">
-                      <div className="absolute inset-y-0 left-[53%] w-[14%] bg-emerald-200" />
-                      <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-700" style={{ width: `${forcePosition}%` }} />
+                      <div className="absolute inset-y-0 left-[48%] w-[22%] bg-blue-100" />
+                      <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-700" style={{ width: `${signalPosition}%` }} />
                     </div>
                     <div className="mt-2 flex justify-between text-[10px] font-semibold text-slate-400">
-                      <span>0</span>
-                      <span>Illustrative range 16–20 N</span>
-                      <span>30</span>
+                      <span>Low</span>
+                      <span>Demonstration guidance band</span>
+                      <span>High</span>
                     </div>
                   </div>
 
@@ -132,12 +130,12 @@ const LivePlatformSection = () => {
                     <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Planned session context</p>
                     <div className="mt-4 grid grid-cols-2 gap-3">
                       <div className="rounded-xl bg-blue-50 p-3">
-                        <p className="text-xs font-semibold text-slate-500">SpO₂</p>
-                        <p className="mt-1 text-2xl font-bold text-blue-800">{frame.spo2}%</p>
+                        <p className="text-xs font-semibold text-slate-500">Optional SpO₂</p>
+                        <p className="mt-1 text-base font-bold text-blue-800">Context only</p>
                       </div>
                       <div className="rounded-xl bg-rose-50 p-3">
-                        <p className="text-xs font-semibold text-slate-500">Heart rate</p>
-                        <p className="mt-1 text-2xl font-bold text-rose-700">{frame.heartRate}</p>
+                        <p className="text-xs font-semibold text-slate-500">Optional heart rate</p>
+                        <p className="mt-1 text-base font-bold text-rose-700">Context only</p>
                       </div>
                     </div>
                     <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
@@ -158,7 +156,7 @@ const LivePlatformSection = () => {
                         <span className="absolute bottom-5 left-5 h-3 w-3 rounded-full bg-blue-600 shadow-[0_0_0_6px_rgba(37,99,235,0.12)]" />
                       </div>
                       <div>
-                        <p className="font-semibold text-slate-800">Left lower zone</p>
+                        <p className="font-semibold text-slate-800">Example target zone</p>
                         <p className="mt-1 text-xs leading-5 text-slate-500">Placement cue shown for interface demonstration only.</p>
                       </div>
                     </div>
@@ -166,7 +164,7 @@ const LivePlatformSection = () => {
 
                   <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                     <div className="flex items-center justify-between gap-4">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Output trace · last 60 s</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Illustrative output trace</p>
                       <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Live
                       </span>

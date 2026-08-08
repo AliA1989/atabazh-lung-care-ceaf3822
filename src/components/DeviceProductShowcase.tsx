@@ -64,6 +64,10 @@ const DeviceProductShowcase = () => {
               <div className="pointer-events-none absolute left-3 top-3 rounded-full border border-white/60 bg-white/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-5 sm:top-5 sm:px-4 sm:py-2 sm:text-xs">
                 Product visualization
               </div>
+              <div className="pointer-events-none absolute bottom-0 right-0 min-w-[13rem] rounded-tl-xl border-l border-t border-white/15 bg-[#0b1b2f] px-4 py-3 text-white shadow-[-12px_-12px_30px_-18px_rgba(15,23,42,0.8)] sm:min-w-[17rem] sm:px-5 sm:py-4">
+                <span className="block text-[8px] font-bold uppercase tracking-[0.18em] text-sky-300 sm:text-[9px]">Physical device concept</span>
+                <span className="mt-1 block text-[10px] font-semibold sm:text-xs">Based on our functional prototype</span>
+              </div>
             </div>
           </div>
 

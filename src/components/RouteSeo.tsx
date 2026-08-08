@@ -8,12 +8,12 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Atabazh Medical | Smart Lung Physio™",
     description:
-      "Atabazh Medical is developing Smart Lung Physio™, a sensor-guided airway-clearance workflow concept for long-term care and supervised care settings.",
+      "Smart Lung Physio™ is a physical airway-clearance medical device under development, combining localized mechanical chest percussion with sensing, guidance, and session documentation.",
   },
   "/device": {
     title: "Smart Lung Physio™ Device | Atabazh Medical",
     description:
-      "Explore the current Smart Lung Physio™ development concept, including guided setup, sensing, caregiver workflow, and documentation priorities.",
+      "Explore the Smart Lung Physio™ physical device, localized mechanical chest percussion, sensing architecture, caregiver guidance, and documentation concepts.",
   },
   "/clinical-evidence": {
     title: "Evidence & Development | Atabazh Medical",
@@ -21,14 +21,14 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
       "Review Atabazh Medical's stakeholder discovery, prototype learning, validation workstreams, and pilot-readiness planning.",
   },
   "/long-term-care": {
-    title: "Long-Term Care Workflow | Atabazh Medical",
+    title: "Smart Lung Physio™ for Long-Term Care | Atabazh Medical",
     description:
-      "See how Smart Lung Physio™ is being designed around long-term care staffing, supervised workflows, documentation, and resident complexity.",
+      "See what an LTC pilot of Smart Lung Physio™ could evaluate, including workflow fit, usability, documentation, and technical performance.",
   },
   "/about": {
     title: "About Atabazh Medical",
     description:
-      "Meet the Atabazh Medical team developing workflow-informed respiratory-care technology for supervised care settings.",
+      "Meet the Atabazh Medical team developing a sensor-guided physical airway-clearance device for supervised care settings.",
   },
   "/news": {
     title: "News & Resources | Atabazh Medical",

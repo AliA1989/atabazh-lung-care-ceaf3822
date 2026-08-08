@@ -262,7 +262,7 @@ const ResearchValidationSection = () => {
             activities supporting Smart Lung Physio development.
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-slate-500">
-            Organization names are used to describe validation-workstream context and are not presented as endorsements.
+            Organization names describe development, research, or market-learning context and are not presented as clinical validation or endorsement.
           </p>
 
           <div className="mt-7 inline-flex rounded-xl border border-slate-200 bg-slate-100/80 p-1 shadow-inner">
@@ -452,7 +452,7 @@ const ResearchValidationSection = () => {
             <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Validation Timeline</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Development & Validation Timeline</p>
                   <h3 className="mt-2 text-2xl font-bold text-slate-900">From care workflow insight to validation planning</h3>
                 </div>
                 <span className="inline-flex w-fit items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700">
@@ -492,7 +492,7 @@ const ResearchValidationSection = () => {
             </div>
 
             <div className="mt-10 text-center">
-              <h3 className="text-2xl font-bold text-slate-900">Validation pillars</h3>
+              <h3 className="text-2xl font-bold text-slate-900">Development & validation areas</h3>
               <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-relaxed text-slate-600">
                 A structured view of workflow learning, scientific activity, technical development, and readiness planning.
               </p>
