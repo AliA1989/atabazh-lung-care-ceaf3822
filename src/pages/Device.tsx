@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import DeviceProductShowcase from "@/components/DeviceProductShowcase";
 import DeviceMeasurementSection from "@/components/DeviceMeasurementSection";
 import LivePlatformSection from "@/components/LivePlatformSection";
+import { publicAsset } from "@/lib/publicAsset";
 
 const Device = () => {
   return (
@@ -36,25 +37,26 @@ const Device = () => {
         </div>
         
         <div className="relative z-10 mx-auto w-full max-w-7xl">
-          <div className="mx-auto max-w-4xl space-y-7 text-center">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
+            <div className="space-y-7">
             {/* Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-blue-200 bg-white/80 px-4 py-2.5 shadow-sm animate-fade-in">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Respiratory Workflow Technology</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Physical airway-clearance device</span>
             </div>
             
             <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 animate-fade-in md:text-5xl lg:text-[3.6rem]">
               Smart Lung Physio™
               <span className="mt-3 block text-blue-700">
-                Guided Airway-Clearance Workflow
+                Localized Therapy. Guided by Sensing.
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              A medical device under development exploring sensor-guided setup, assisted airway-clearance workflows, and structured session documentation for long-term care and supervised care settings.
+            <p className="max-w-2xl text-lg leading-relaxed text-slate-600 animate-fade-in md:text-xl">
+              A handheld medical device under development that combines localized mechanical chest percussion with sensing, caregiver guidance, and structured session documentation.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4 animate-fade-in">
+            <div className="flex flex-col gap-5 pt-4 animate-fade-in sm:flex-row">
               <Button 
                 asChild 
                 size="lg" 
@@ -65,6 +67,20 @@ const Device = () => {
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </NavLink>
               </Button>
+            </div>
+            </div>
+
+            <div className="animate-fade-in" style={{ animationDelay: "150ms" }}>
+              <div className="relative overflow-hidden rounded-2xl border-[8px] border-white bg-[#dedede] shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] ring-1 ring-slate-200">
+                <img
+                  src={publicAsset("media/smart-lung-physio-product-showcase-poster.webp")}
+                  alt="Smart Lung Physio physical device visualization based on the functional prototype"
+                  className="aspect-video h-full w-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 border-t border-white/20 bg-slate-950/85 px-4 py-3 text-xs font-semibold text-white backdrop-blur-sm">
+                  Product visualization based on our functional prototype
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -101,7 +117,7 @@ const Device = () => {
                       <ul className="space-y-3 text-sm">
                         {["Intuitive companion app interface", "Instructional content in the app", "Session guidance and documentation prompts", "Technical support planning"].map((item, i) => (
                           <li key={i} className="flex items-start text-slate-700">
-                            <span className="text-blue-600 font-bold mr-3">✓</span>
+                            <span className="mr-3 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -118,16 +134,16 @@ const Device = () => {
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="order-2 md:order-1 bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
                       <ul className="space-y-3 text-sm">
-                        {["Portable handheld prototype", "Current prototype uses mains power", "Removable patient-contact interface concept", "Cleaning and material requirements under review"].map((item, i) => (
+                        {["Handheld functional prototype", "Current prototype uses mains power", "Patient-contact interface under development", "Cleaning and material requirements under review"].map((item, i) => (
                           <li key={i} className="flex items-start text-slate-700">
-                            <span className="text-blue-600 font-bold mr-3">✓</span>
+                            <span className="mr-3 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div className="space-y-4 order-1 md:order-2">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Portability and Hygiene</h3>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Form Factor and Hygiene Development</h3>
                       <p className="text-base text-slate-600">
                         The current handheld prototype is mains-powered. Portability, patient-interface materials, and cleaning workflows are being evaluated for supervised care environments.
                       </p>

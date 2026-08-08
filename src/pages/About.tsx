@@ -18,7 +18,6 @@ import aliHosseiniImage from "@/assets/team/ali-hosseini.png";
 import ahmedTablImage from "@/assets/team/ahmed-tabl.jpg";
 import jeffKofmanImage from "@/assets/team/jeff-kofman.png";
 import kamranAzmaImage from "@/assets/team/kamran-azma.png";
-import taraShahImage from "@/assets/team/tara-shah.jpeg";
 import valentinaCeballosImage from "@/assets/team/valentina-ceballos-jimenez.jpeg";
 import asuLogo from "@/assets/support/asu.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
@@ -83,12 +82,6 @@ const technicalContributors = [
     role: "Embedded Systems & Biomechanics Contributor",
     description: "Supports embedded systems development, data acquisition, and prototype testing activities.",
     image: ahmedTablImage,
-  },
-  {
-    name: "Tara Shah",
-    role: "Regulatory & Pilot Readiness Contributor",
-    description: "Supports pilot-readiness planning, stakeholder research, workflow mapping, and regulatory documentation activities.",
-    image: taraShahImage,
   },
   {
     name: "Valentina Ceballos Jimenez",

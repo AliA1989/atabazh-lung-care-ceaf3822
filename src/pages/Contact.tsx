@@ -299,7 +299,8 @@ const Contact = () => {
                         title: "Address",
                         content: (
                           <p className="text-sm text-slate-600">
-                            Ontario, Canada<br />
+                            20 Dundas St W, Suite 921<br />
+                            Toronto, ON M5G 2C2<br />
                             Meetings by appointment
                           </p>
                         )

@@ -27,7 +27,7 @@ const Footer = () => {
               </span>
             </NavLink>
             <p className="max-w-[18rem] text-sm leading-relaxed text-slate-400">
-              Developing workflow-informed respiratory-care technology for long-term care and supervised care settings.
+              Developing a sensor-guided physical airway-clearance device for long-term care and supervised care settings.
             </p>
             <a 
               href="https://www.linkedin.com/company/atabazh-medical-inc" 

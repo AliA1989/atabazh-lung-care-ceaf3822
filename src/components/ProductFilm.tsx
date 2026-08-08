@@ -66,13 +66,16 @@ const ProductFilm = () => {
             }}
           />
           <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-slate-950/5" />
-          <div className="pointer-events-none absolute bottom-3 right-3 z-10 rounded-lg border border-white/15 bg-slate-950/85 px-3 py-2 text-right text-white shadow-lg backdrop-blur-md sm:bottom-4 sm:right-4">
-            <span className="block text-[9px] font-bold uppercase tracking-[0.16em] sm:text-[10px]">Concept Film</span>
-            <span className="mt-0.5 block text-[8px] font-medium tracking-normal text-slate-200 sm:text-[9px]">
+          <div className="pointer-events-none absolute bottom-0 right-0 z-10 min-w-[13rem] rounded-tl-xl border-l border-t border-white/15 bg-[#0b1b2f] px-4 py-3 text-left text-white shadow-[-12px_-12px_30px_-18px_rgba(15,23,42,0.8)] sm:min-w-[17rem] sm:px-5 sm:py-4">
+            <span className="block text-[8px] font-bold uppercase tracking-[0.18em] text-sky-300 sm:text-[9px]">Product visualization</span>
+            <span className="mt-1 block text-[10px] font-semibold tracking-normal text-white sm:text-xs">
               Based on our functional prototype
             </span>
           </div>
         </div>
+        <p className="px-2 pb-1 pt-2 text-[9px] font-medium leading-4 text-slate-500 sm:px-3 sm:text-[10px]">
+          Interface values shown in the film are illustrative and do not represent clinical recommendations or validated treatment thresholds.
+        </p>
       </div>
     </div>
   );
