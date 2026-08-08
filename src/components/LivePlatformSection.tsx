@@ -45,7 +45,7 @@ const LivePlatformSection = () => {
   const forcePosition = useMemo(() => Math.min(100, Math.max(0, (frame.force / 30) * 100)), [frame.force]);
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 px-6 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
+    <section className="relative overflow-hidden bg-[#071321] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
       <div className="pointer-events-none absolute -right-40 top-0 h-[34rem] w-[34rem] rounded-full bg-blue-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
 
@@ -58,7 +58,7 @@ const LivePlatformSection = () => {
             </span>
             Live platform preview
           </div>
-          <h2 className="mt-6 text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:text-[2.8rem]">
             Every session becomes a clearer record.
           </h2>
           <p className="mt-5 text-base leading-7 text-slate-300 sm:text-lg">
@@ -86,8 +86,8 @@ const LivePlatformSection = () => {
 
         <ScrollReveal delay={120}>
           <div className="relative">
-            <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-blue-500/25 via-cyan-400/5 to-transparent blur-2xl" />
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-slate-900/90 p-3 shadow-[0_35px_90px_-35px_rgba(2,8,23,0.9)] backdrop-blur-xl sm:p-5 lg:p-6">
+            <div className="absolute -inset-5 rounded-[2.5rem] bg-blue-500/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-slate-900/90 p-3 shadow-[0_28px_70px_-35px_rgba(2,8,23,0.9)] sm:p-5 lg:p-6">
               <div className="rounded-[1.35rem] border border-slate-200 bg-slate-50 p-4 text-slate-900 sm:p-6">
                 <div className="flex flex-col gap-4 border-b border-slate-200 pb-5 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-3">

@@ -125,10 +125,10 @@ const ecosystemSupport = [
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen bg-[#f8fafc] pt-20 text-slate-950">
       {/* Hero */}
-      <section className="relative overflow-hidden px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,98%)] via-[hsl(200,50%,96%)] to-[hsl(220,40%,94%)]" />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
         <div className="absolute left-10 top-20 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
         <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-[hsl(200,60%,90%)]/40 blur-3xl" />
 
@@ -137,7 +137,7 @@ const About = () => {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
               About Atabazh Medical
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-800 md:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 md:text-5xl lg:text-[3.6rem]">
               Building practical respiratory-care technology for long-term care and home-care settings.
             </h1>
             <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
@@ -148,7 +148,7 @@ const About = () => {
       </section>
 
       {/* Why We Exist */}
-      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <ScrollReveal className="space-y-4">
@@ -186,8 +186,8 @@ const About = () => {
       </section>
 
       {/* What We Are Building */}
-      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,97%)] via-[hsl(200,50%,95%)] to-[hsl(220,40%,96%)]" />
+      <section className="relative overflow-hidden border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="absolute inset-0 bg-transparent" />
         <div className="absolute right-16 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
 
         <div className="container relative mx-auto max-w-6xl">
@@ -208,7 +208,7 @@ const About = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <Card className="border-white/70 bg-white/75 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="space-y-5 p-6 sm:p-8">
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20">
@@ -241,7 +241,7 @@ const About = () => {
       </section>
 
       {/* Our Focus */}
-      <section className="px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-6xl">
           <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -257,7 +257,7 @@ const About = () => {
               const Icon = area.icon;
               return (
                 <ScrollReveal key={area.title} delay={index * 75}>
-                  <Card className="h-full border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-blue-200">
                     <CardContent className="space-y-4 p-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100">
                         <Icon className="h-6 w-6 text-blue-700" />
@@ -274,10 +274,10 @@ const About = () => {
       </section>
 
       {/* Development Status */}
-      <section className="px-6 py-12 sm:px-8 lg:px-12 lg:py-20">
+      <section className="bg-white px-5 py-12 sm:px-8 lg:px-12 lg:py-20">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <div className="rounded-3xl border border-primary/15 bg-gradient-to-br from-blue-50 via-white to-blue-50/70 p-6 shadow-lg shadow-slate-900/5 sm:p-8 lg:p-10">
+            <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-6 shadow-sm sm:p-8 lg:p-10">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-white">
                   <Settings className="h-6 w-6" />
@@ -300,8 +300,8 @@ const About = () => {
       </section>
 
       {/* Team, Contributors & Ecosystem Support */}
-      <section className="relative overflow-hidden px-6 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,60%,97%)] via-[hsl(200,50%,95%)] to-[hsl(220,40%,96%)]" />
+      <section className="relative overflow-hidden border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="absolute inset-0 bg-transparent" />
         <div className="absolute left-10 top-20 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
         <div className="absolute bottom-10 right-10 h-64 w-64 rounded-full bg-blue-200/30 blur-3xl" />
 
@@ -320,14 +320,14 @@ const About = () => {
 
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
             <ScrollReveal>
-              <Card className="h-full overflow-hidden border-white/80 bg-white/80 shadow-2xl shadow-blue-950/10 backdrop-blur-xl">
+              <Card className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-0">
-                  <div className="bg-gradient-to-br from-primary via-primary/95 to-blue-700 p-7 text-white sm:p-8">
+                  <div className="bg-[#0b1b2f] p-7 text-white sm:p-8">
                     <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                       Founder Profile
                     </p>
                     <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-                      <div className="h-32 w-32 flex-shrink-0 overflow-hidden rounded-3xl bg-white/10 ring-4 ring-white/20 shadow-xl sm:h-36 sm:w-36">
+                      <div className="h-32 w-32 flex-shrink-0 overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/20 sm:h-36 sm:w-36">
                         <img src={founder.image} alt={founder.name} className="h-full w-full object-cover" />
                       </div>
                       <div>
@@ -358,7 +358,7 @@ const About = () => {
             <ScrollReveal delay={100}>
               <div className="grid h-full gap-5 sm:grid-cols-2">
                 {technicalContributors.map((member, index) => (
-                  <Card key={member.name} className="border-white/70 bg-white/75 shadow-lg shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <Card key={member.name} className="rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-blue-200">
                     <CardContent className="flex h-full flex-col gap-4 p-5">
                       <div className="flex items-center gap-4">
                         <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-sm font-bold text-primary ring-1 ring-blue-100">
@@ -393,7 +393,7 @@ const About = () => {
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {clinicalStrategicGuidance.map((advisor, index) => (
               <ScrollReveal key={advisor.name} delay={index * 100}>
-                <Card className="h-full border-white/70 bg-white/80 shadow-lg shadow-slate-900/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-blue-200">
                   <CardContent className="flex gap-5 p-6 sm:p-7">
                     <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200">
                       <img src={advisor.image} alt={advisor.name} className="h-full w-full object-cover" />
@@ -410,7 +410,7 @@ const About = () => {
           </div>
 
           <ScrollReveal className="mt-14">
-            <Card className="overflow-hidden border-white/70 bg-white/75 shadow-xl shadow-slate-900/5 backdrop-blur-sm">
+            <Card className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <CardContent className="p-6 sm:p-8 lg:p-10">
                 <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
                   <div className="space-y-4">
@@ -450,14 +450,14 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
+      <section className="relative overflow-hidden bg-[#0b1b2f] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+        <div className="absolute inset-0 bg-transparent" />
         <div className="absolute left-10 top-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
 
         <div className="container relative mx-auto max-w-4xl text-center">
           <ScrollReveal className="space-y-7">
-            <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] text-white md:text-4xl lg:text-[2.8rem]">
               Interested in discussing airway-clearance workflows in long-term care?
             </h2>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">
@@ -467,7 +467,7 @@ const About = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-auto rounded-full bg-white px-8 py-5 text-base font-semibold text-primary shadow-lg hover:bg-white/90 sm:px-10"
+                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:px-8"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Book a 15-minute discovery conversation

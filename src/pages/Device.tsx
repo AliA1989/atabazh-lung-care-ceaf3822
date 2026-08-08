@@ -9,19 +9,19 @@ import LivePlatformSection from "@/components/LivePlatformSection";
 
 const Device = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
       {/* Hero Section - Master Design System */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-24">
+      <section className="relative flex min-h-[42rem] items-center overflow-hidden border-b border-slate-200 bg-[#f8fafc] px-5 pb-20 pt-32 sm:px-8 lg:px-12">
         {/* Soft blue gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)] z-0" />
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
         
         {/* Bold circular gradient accent */}
-        <div className="absolute top-0 right-0 w-[60%] h-full z-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-bl from-[hsl(205,75%,75%)] via-[hsl(200,70%,80%)] to-transparent rounded-bl-[40%]" />
+        <div className="absolute right-[-12rem] top-10 z-0 hidden h-[34rem] w-[34rem] rounded-full bg-blue-100/70 blur-3xl lg:block">
+          <div className="absolute inset-0" />
         </div>
         
         {/* Abstract wave pattern */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        <div className="hidden">
           <svg className="absolute top-1/2 left-0 w-[200%] h-[400px] -translate-y-1/2 opacity-[0.06]" viewBox="0 0 1400 200" preserveAspectRatio="none">
             <defs>
               <linearGradient id="wave-gradient-device" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -35,17 +35,17 @@ const Device = () => {
           </svg>
         </div>
         
-        <div className="container mx-auto relative z-10 px-6 sm:px-8 lg:px-12">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
+        <div className="relative z-10 mx-auto w-full max-w-7xl">
+          <div className="mx-auto max-w-4xl space-y-7 text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-blue-50/90 border border-blue-100/70 shadow-sm animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-xs font-semibold text-blue-600/90 uppercase tracking-wider">Respiratory Workflow Technology</span>
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-blue-200 bg-white/80 px-4 py-2.5 shadow-sm animate-fade-in">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Respiratory Workflow Technology</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-slate-800 animate-fade-in">
+            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 animate-fade-in md:text-5xl lg:text-[3.6rem]">
               Smart Lung Physio™
-              <span className="block mt-3 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] bg-clip-text text-transparent">
+              <span className="mt-3 block text-blue-700">
                 Guided Airway-Clearance Workflow
               </span>
             </h1>
@@ -58,7 +58,7 @@ const Device = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto group transition-all duration-300 bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-[hsl(210,80%,45%)]/25 hover:shadow-xl hover:-translate-y-0.5"
+                className="group h-auto rounded-xl bg-blue-700 px-7 py-4 text-base shadow-[0_14px_30px_-16px_rgba(29,78,216,0.7)] transition hover:-translate-y-0.5 hover:bg-blue-800"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Request More Information
@@ -70,7 +70,7 @@ const Device = () => {
         </div>
         
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-[5]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/50 to-transparent" />
       </section>
 
       <DeviceProductShowcase />
@@ -80,7 +80,7 @@ const Device = () => {
       <LivePlatformSection />
 
       {/* Designed for Care Settings - Unified styling */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12">
+      <section className="border-t border-slate-200 bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal className="text-center space-y-4 mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Built Around Caregiver Usability</h2>
@@ -88,7 +88,7 @@ const Device = () => {
 
           <div className="space-y-6">
             <ScrollReveal>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-8 lg:p-10">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
@@ -113,7 +113,7 @@ const Device = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <Card className="backdrop-blur-xl bg-white/80 border border-white/60 shadow-xl shadow-slate-900/5 rounded-2xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-8 lg:p-10">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="order-2 md:order-1 bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
@@ -141,18 +141,18 @@ const Device = () => {
       </section>
 
       {/* CTA Section - Soft Blue Gradient */}
-      <section className="py-24 lg:py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)]">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
+      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
+        <div className="container mx-auto max-w-4xl space-y-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Discuss Product Fit for Your Care Setting</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss Product Fit for Your Care Setting</h2>
+            <p className="mx-auto max-w-2xl text-lg text-slate-300">
               For clinical workflow questions, pilot discussions, or technical review, connect with the Atabazh Medical team.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
               <Button 
                 asChild 
                 size="lg" 
-                className="rounded-full text-base px-9 py-7 h-auto bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Request More Information

@@ -44,20 +44,20 @@ const learningCards = [
 
 const ClinicalEvidence = () => {
   return (
-    <div className="min-h-screen">
-      <section className="relative overflow-hidden py-24 pt-32 lg:py-32">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[hsl(200,40%,98%)] via-[hsl(200,50%,95%)] to-[hsl(210,60%,90%)]" />
-        <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f8fafc] px-5 pb-20 pt-32 sm:px-8 lg:px-12 lg:pb-24 lg:pt-36">
+        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
+        <div className="hidden">
           <svg className="absolute left-0 top-1/2 h-[400px] w-[200%] -translate-y-1/2 opacity-[0.06]" viewBox="0 0 1400 200" preserveAspectRatio="none">
             <path d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100" stroke="hsl(200, 80%, 60%)" strokeWidth="3" fill="none" />
           </svg>
         </div>
 
-        <div className="container relative z-10 mx-auto max-w-4xl space-y-6 px-6 text-center sm:px-8 lg:px-12">
-          <p className="mx-auto inline-flex items-center rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
+        <div className="relative z-10 mx-auto max-w-4xl space-y-6 text-center">
+          <p className="mx-auto inline-flex items-center rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
             Research & Workflow Learning
           </p>
-          <h1 className="animate-fade-in text-4xl font-bold tracking-tight text-slate-800 md:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-in text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 md:text-5xl lg:text-[3.6rem]">
             From Prototype Learning to Pilot Readiness
           </h1>
           <p className="mx-auto max-w-2xl animate-fade-in text-lg leading-relaxed text-slate-600 md:text-xl">
@@ -65,10 +65,10 @@ const ClinicalEvidence = () => {
           </p>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 z-[5] h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/50 to-transparent" />
       </section>
 
-      <section className="px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto">
           <ScrollReveal className="mb-16 space-y-4 text-center">
             <h2 className="text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">What We Are Learning</h2>
@@ -80,9 +80,9 @@ const ClinicalEvidence = () => {
           <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
             {learningCards.map((item, index) => (
               <ScrollReveal key={item.title} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
-                <Card className="h-full rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/10">
+                <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-blue-200">
                   <CardContent className="space-y-4 p-8 text-center">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] shadow-lg shadow-blue-500/30">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-blue-700">
                       <item.icon className="h-8 w-8 text-white" />
                     </div>
                     <div className="text-3xl font-bold tracking-tight text-blue-700">{item.stat}</div>
@@ -98,7 +98,7 @@ const ClinicalEvidence = () => {
 
       <ResearchValidationSection />
 
-      <section className="bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)] px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Operational Learning Areas</h2>
@@ -106,7 +106,7 @@ const ClinicalEvidence = () => {
 
           <div className="grid gap-8 md:grid-cols-2">
             <ScrollReveal>
-              <Card className="h-full rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+              <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-8">
                   <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Workflow Fit</h3>
                   <p className="mb-6 text-slate-600">
@@ -127,7 +127,7 @@ const ClinicalEvidence = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <Card className="h-full rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+              <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-8">
                   <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Care-Team Feedback Themes</h3>
                   <p className="mb-6 text-slate-600">
@@ -152,7 +152,7 @@ const ClinicalEvidence = () => {
           </div>
 
           <ScrollReveal delay={150} className="mt-8">
-            <Card className="rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+            <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
               <CardContent className="p-8">
                 <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Pilot-Readiness Questions</h3>
                 <p className="mb-4 text-slate-600">
@@ -177,14 +177,14 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      <section className="px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Safety & Usability Considerations</h2>
           </ScrollReveal>
 
           <ScrollReveal>
-            <Card className="rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+            <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
               <CardContent className="p-8">
                 <div className="mb-6 flex items-start gap-4">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-100">
@@ -225,7 +225,7 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[hsl(200,40%,97%)] via-[hsl(200,50%,95%)] to-[hsl(210,50%,92%)] px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Pilot-Readiness Roadmap</h2>
@@ -233,7 +233,7 @@ const ClinicalEvidence = () => {
 
           <div className="space-y-6">
             <ScrollReveal>
-              <Card className="rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-8">
                   <div className="mb-6 flex items-start gap-4">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-100">
@@ -277,7 +277,7 @@ const ClinicalEvidence = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <Card className="rounded-2xl border border-white/60 bg-white/80 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
+              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <CardContent className="p-6">
                   <h3 className="mb-4 text-lg font-semibold text-slate-800">Related Materials</h3>
                   <div className="space-y-4">
@@ -301,7 +301,7 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      <section className="border-t border-slate-200/50 px-6 py-8 sm:px-8 lg:px-12">
+      <section className="border-t border-slate-200 bg-white px-5 py-8 sm:px-8 lg:px-12">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-start gap-3 text-sm text-slate-500">
             <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-slate-400" />
@@ -312,18 +312,18 @@ const ClinicalEvidence = () => {
         </div>
       </section>
 
-      <section className="px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
+      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-4xl space-y-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Discuss Research or Pilot Collaboration</h2>
-            <p className="text-lg text-slate-600">
+            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss Research or Pilot Collaboration</h2>
+            <p className="text-lg text-slate-300">
               We welcome conversations with clinicians, researchers, LTC operators, rehabilitation teams, and innovation partners.
             </p>
             <div className="flex flex-col justify-center gap-5 pt-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="h-auto rounded-full bg-gradient-to-r from-[hsl(200,75%,50%)] to-[hsl(210,80%,45%)] px-9 py-7 text-base shadow-lg shadow-blue-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:from-[hsl(200,80%,45%)] hover:to-[hsl(210,85%,40%)] hover:shadow-xl"
+                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Connect for Clinical Collaboration
@@ -334,7 +334,7 @@ const ClinicalEvidence = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="h-auto rounded-full border-slate-200 bg-white/80 px-9 py-7 text-base text-slate-700 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-white hover:shadow-lg"
+                className="h-auto rounded-xl border-white/20 bg-white/5 px-7 py-4 text-base text-white transition hover:border-white/35 hover:bg-white/10 hover:text-white"
               >
                 <NavLink to="/device">View Device Workflow</NavLink>
               </Button>
