@@ -71,14 +71,25 @@ const Device = () => {
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: "150ms" }}>
-              <div className="relative overflow-hidden rounded-2xl border-[8px] border-white bg-[#dedede] shadow-[0_30px_80px_-40px_rgba(15,23,42,0.45)] ring-1 ring-slate-200">
-                <img
-                  src={publicAsset("media/smart-lung-physio-product-showcase-poster.webp")}
-                  alt="Smart Lung Physio physical device visualization based on the functional prototype"
-                  className="aspect-video h-full w-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 border-t border-white/20 bg-slate-950/85 px-4 py-3 text-xs font-semibold text-white backdrop-blur-sm">
-                  Product visualization based on our functional prototype
+              <div className="relative mx-auto w-full max-w-[30rem]">
+                <div className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-blue-100/80 blur-3xl" />
+                <div className="relative overflow-hidden rounded-[2rem] border-[8px] border-white bg-white shadow-[0_34px_90px_-42px_rgba(15,23,42,0.5)] ring-1 ring-slate-200">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-white">
+                    <img
+                      src={publicAsset("media/smart-lung-physio-device-hero.webp")}
+                      alt="Illustrative Smart Lung Physio physical device visualization based on the functional prototype"
+                      className="h-full w-full object-cover object-center"
+                    />
+                    <div className="absolute left-4 top-4 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-5 sm:top-5">
+                      Product visualization
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-[#0b1b2f]/95 px-4 py-3.5 text-white backdrop-blur-sm sm:px-5 sm:py-4">
+                      <p className="text-xs font-semibold sm:text-sm">Based on our functional prototype</p>
+                      <p className="mt-1 text-[0.58rem] leading-relaxed text-slate-300 sm:text-[0.65rem]">
+                        Current functional prototype is mains-powered. Displayed interface values are illustrative and are not clinical recommendations.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
