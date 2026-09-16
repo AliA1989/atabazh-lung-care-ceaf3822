@@ -1,3 +1,4 @@
+import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "@/components/NavLink";
@@ -334,6 +335,14 @@ const About = () => {
                     <p className="text-base leading-relaxed text-slate-600">
                       {founder.description}
                     </p>
+                    <div className="border-l-2 border-blue-600 pl-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Featured in The Eyeopener</p>
+                      <a href={eyeopenerFeature.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-blue-700 underline decoration-blue-200 underline-offset-4 hover:decoration-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+                        Read the story behind Smart Lung Physio™
+                        <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                        <span className="sr-only"> (opens in a new tab)</span>
+                      </a>
+                    </div>
                     <a
                       href={founder.linkedin}
                       target="_blank"
