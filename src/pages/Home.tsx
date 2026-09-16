@@ -1,3 +1,4 @@
+import MediaFeature from "@/components/MediaFeature";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import {
@@ -337,6 +338,12 @@ const Home = () => {
           </div>
 
           <p className="mt-6 text-xs leading-5 text-slate-500">Early prototype workflow reviews; not clinical validation.</p>
+        </div>
+      </section>
+
+      <section aria-label="Media coverage" className="border-b border-slate-200 bg-[#f8fafc] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="mx-auto max-w-6xl">
+          <MediaFeature />
         </div>
       </section>
 
