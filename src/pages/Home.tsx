@@ -1,3 +1,4 @@
+import { eyeopenerFeature } from "@/data/mediaCoverage";
 import MediaFeature from "@/components/MediaFeature";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
@@ -147,6 +148,15 @@ const Home = () => {
 
         <div className="mx-auto grid min-h-[46rem] max-w-[90rem] items-center gap-12 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:px-12 lg:pb-20 lg:pt-32">
           <div className="relative z-10 max-w-[36rem]">
+            <a href={eyeopenerFeature.url} target="_blank" rel="noopener noreferrer" className="mb-6 flex items-center gap-3 rounded-xl border border-blue-200 bg-white p-3 shadow-sm transition hover:border-blue-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
+              <img src={publicAsset("media/eyeopener-ali-smart-lung.jpg")} alt="" width={816} height={544} className="h-14 w-[5.25rem] shrink-0 rounded-lg object-cover" />
+              <span className="min-w-0">
+                <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-blue-700">Featured in The Eyeopener</span>
+                <span className="mt-1 block text-sm font-semibold leading-5 text-slate-900">The story behind Smart Lung Physio™</span>
+              </span>
+              <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-blue-700" aria-hidden="true" />
+              <span className="sr-only">Read the article (opens in a new tab)</span>
+            </a>
             <div
               className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/85 px-3.5 py-2 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-blue-800 opacity-0 shadow-sm animate-fade-in"
               style={{ animationDelay: "80ms", animationFillMode: "forwards" }}
@@ -204,6 +214,12 @@ const Home = () => {
               <span className="rounded-lg border border-slate-200 bg-white px-2 py-2.5">Session record</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Media coverage" className="border-b border-slate-200 bg-[#f8fafc] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="mx-auto max-w-6xl">
+          <MediaFeature />
         </div>
       </section>
 
@@ -338,12 +354,6 @@ const Home = () => {
           </div>
 
           <p className="mt-6 text-xs leading-5 text-slate-500">Early prototype workflow reviews; not clinical validation.</p>
-        </div>
-      </section>
-
-      <section aria-label="Media coverage" className="border-b border-slate-200 bg-[#f8fafc] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="mx-auto max-w-6xl">
-          <MediaFeature />
         </div>
       </section>
 
