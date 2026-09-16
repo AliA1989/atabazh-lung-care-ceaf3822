@@ -471,8 +471,8 @@ const About = () => {
                 size="lg"
                 className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:px-8"
               >
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Book a 15-minute discovery conversation
+                <NavLink to="/contact?intent=call" className="flex items-center gap-2">
+                  Request a 15-minute discovery call
                   <ArrowRight className="h-5 w-5" />
                 </NavLink>
               </Button>
