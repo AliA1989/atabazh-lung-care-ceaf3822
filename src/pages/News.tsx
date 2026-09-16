@@ -1,3 +1,4 @@
+import MediaFeature from "@/components/MediaFeature";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
@@ -30,6 +31,12 @@ const News = () => {
         </div>
         
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-transparent to-transparent z-[5]" />
+      </section>
+
+      <section aria-label="Featured media coverage" className="border-b border-slate-200 bg-[#f8fafc] px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
+        <div className="mx-auto max-w-5xl">
+          <MediaFeature expanded />
+        </div>
       </section>
 
       {/* Featured News - Glassmorphism Cards */}
