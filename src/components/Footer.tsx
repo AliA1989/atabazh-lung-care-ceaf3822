@@ -1,3 +1,4 @@
+import { BOOKING_URL } from "@/lib/contact";
 import { NavLink } from "./NavLink";
 import logo from "@/assets/atabazh-logo.webp";
 import { Linkedin } from "lucide-react";
@@ -90,16 +91,11 @@ const Footer = () => {
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
-                { to: "/contact?intent=call", label: "Request a Discovery Call" },
+                { to: BOOKING_URL, label: "Book a Discovery Call" },
                 { to: "/long-term-care", label: "View LTC Fit" }
               ].map((link) => (
                 <li key={link.to}>
-                  <NavLink 
-                    to={link.to} 
-                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </NavLink>
+                  {link.to === BOOKING_URL ? <a href={link.to} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</a> : <NavLink to={link.to} className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</NavLink>}
                 </li>
               ))}
             </ul>

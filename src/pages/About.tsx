@@ -1,3 +1,4 @@
+import { BOOKING_URL } from "@/lib/contact";
 import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -471,10 +472,10 @@ const About = () => {
                 size="lg"
                 className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:px-8"
               >
-                <NavLink to="/contact?intent=call" className="flex items-center gap-2">
-                  Request a 15-minute discovery call
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Book a discovery call
                   <ArrowRight className="h-5 w-5" />
-                </NavLink>
+                </a>
               </Button>
               <p className="text-sm font-medium text-white/85">
                 Contact: <a href="mailto:support@atabazh-med.com" className="underline underline-offset-4">support@atabazh-med.com</a>
