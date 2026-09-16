@@ -5,17 +5,20 @@ import { publicAsset } from "@/lib/publicAsset";
 export default function MediaFeature({ expanded = false }: { expanded?: boolean }) {
   return (
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="grid md:grid-cols-[0.65fr_1.35fr]">
-        <div className="relative bg-slate-950">
+      <div className="grid lg:grid-cols-2 lg:items-center">
+        <figure className="bg-slate-950">
           <img
-            src={publicAsset("media/founder-ali-abedinpour.jpg")}
-            alt="Ali Abedinpour, founder of Atabazh Medical"
-            width={800}
-            height={800}
+            src={publicAsset("media/eyeopener-ali-smart-lung.jpg")}
+            alt="Ali Abedinpour with the Smart Lung Physio prototype in the IBZ studio"
+            width={816}
+            height={544}
             loading="lazy"
-            className="aspect-[4/3] w-full object-cover object-[center_30%] md:absolute md:inset-0 md:h-full md:aspect-auto"
+            className="aspect-[3/2] h-auto w-full object-contain"
           />
-        </div>
+          <figcaption className="px-4 py-3 text-xs leading-5 text-slate-300">
+            Photo: Daniel Opasinis / The Eyeopener
+          </figcaption>
+        </figure>
         <div className="p-6 sm:p-8 lg:p-10">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
             <span className="font-bold uppercase tracking-[0.18em] text-blue-700">In the Media</span>
