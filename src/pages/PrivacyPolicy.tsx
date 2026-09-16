@@ -5,7 +5,7 @@ const sections = [
     title: "1. Scope",
     body: (
       <p>
-        This policy explains how Atabazh Medical Inc. ("Atabazh Medical," "we," "us") handles personal information received through website-enabled email and related business communications. It does not govern information collected in a future clinical study, device pilot, employment process, or regulated healthcare service; those activities would require separate notices and controls.
+        This policy explains how Atabazh Medical Inc. ("Atabazh Medical," "we," "us") handles personal information received through website contact forms, call requests, email, and related business communications. It does not govern information collected in a future clinical study, device pilot, employment process, or regulated healthcare service; those activities would require separate notices and controls.
       </p>
     ),
   },
@@ -13,7 +13,7 @@ const sections = [
     title: "2. Information we collect",
     body: (
       <div className="space-y-3">
-        <p>When you email us, we may receive your name, business email, telephone number, organization, professional role, inquiry type, message, and correspondence history. The website form prepares an email draft in your own email application and does not submit the form to a third-party form processor.</p>
+        <p>When you contact us, we may receive your name, email address, organization, request type, message, preferred meeting times and time zone, and correspondence history. Our website contact form is provided by Jotform. Submitted information is processed and stored through Jotform so we can review and respond to your request. A call request does not automatically reserve a calendar appointment.</p>
         <p>Our hosting and security providers may also process basic technical information such as IP address, browser type, device type, requested pages, timestamps, and security logs.</p>
         <p className="font-medium text-slate-800">Do not submit patient names, health-card numbers, medical records, or other identifiable health information through the website form.</p>
       </div>
@@ -34,7 +34,7 @@ const sections = [
     title: "4. Consent and choices",
     body: (
       <p>
-        By choosing to send an email, you consent to our use of the information for the purposes described at the point of contact and in this policy. You may withdraw consent for optional future communications at any time, subject to legal or contractual restrictions, by contacting us.
+        By choosing to submit a contact form, request a call, or send an email, you consent to our use of the information for the purposes described at the point of contact and in this policy. You may withdraw consent for optional future communications at any time, subject to legal or contractual restrictions, by contacting us.
       </p>
     ),
   },
@@ -42,7 +42,7 @@ const sections = [
     title: "5. Service providers and transfers",
     body: (
       <p>
-        We use service providers for website hosting, security, and corporate email. Our hosting providers may process technical logs, while your email provider and our corporate email provider process correspondence according to their respective terms and privacy practices. Some providers may operate outside your province or Canada, where local laws may apply. We do not sell personal information or share it for third-party advertising.
+        We use service providers for website hosting, security, contact forms, and corporate email. Jotform provides the embedded contact form and processes form submissions and technical information needed to operate it. Our hosting providers may process technical logs, while your email provider and our corporate email provider process correspondence according to their respective terms and privacy practices. Some providers may operate outside your province or Canada, where local laws may apply. We do not sell personal information or share it for third-party advertising.
       </p>
     ),
   },
@@ -66,7 +66,7 @@ const sections = [
     title: "8. Cookies, links, and changes",
     body: (
       <p>
-        This website does not currently use advertising cookies. Essential hosting or interface technologies may be used for security and basic functionality. External websites are governed by their own privacy practices. We may update this policy as our website or practices change; the effective date below identifies the current version.
+        This website does not currently use advertising cookies. Essential hosting or interface technologies may be used for security and basic functionality. The embedded Jotform form may use its own cookies or similar technologies under its privacy practices. See <a href="https://www.jotform.com/privacy/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline underline-offset-4">Jotform’s Privacy Policy</a>. External websites are governed by their own privacy practices. We may update this policy as our website or practices change; the effective date below identifies the current version.
       </p>
     ),
   },
@@ -77,7 +77,7 @@ const PrivacyPolicy = () => (
     <article className="container mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10 lg:p-14">
       <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Legal</p>
       <h1 className="mt-3 text-4xl font-bold tracking-[-0.04em] text-slate-950 sm:text-5xl">Privacy Policy</h1>
-      <p className="mt-4 text-sm text-slate-500">Effective August 1, 2026</p>
+      <p className="mt-4 text-sm text-slate-500">Effective September 16, 2026</p>
       <p className="mt-8 text-base leading-relaxed text-slate-600">
         Atabazh Medical is committed to handling website contact information transparently and proportionately. This policy is designed around the privacy principles that apply to Canadian private-sector organizations.
       </p>

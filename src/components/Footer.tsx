@@ -90,7 +90,7 @@ const Footer = () => {
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
             <ul className="space-y-3">
               {[
-                { to: "/contact", label: "Book a Discovery Call" },
+                { to: "/contact?intent=call", label: "Request a Discovery Call" },
                 { to: "/long-term-care", label: "View LTC Fit" }
               ].map((link) => (
                 <li key={link.to}>
