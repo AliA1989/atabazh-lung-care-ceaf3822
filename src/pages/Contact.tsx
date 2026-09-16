@@ -1,3 +1,5 @@
+import productLogo from "@/assets/smart-lung-physio-logo.png";
+import { BOOKING_URL } from "@/lib/contact";
 import { useSearchParams } from "react-router-dom";
 import { Mail, Phone, MapPin, CalendarDays, MessageSquare, ArrowUpRight } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
@@ -8,8 +10,8 @@ const EMAIL = "support@atabazh-med.com";
 const Contact = () => {
   const [params, setParams] = useSearchParams();
   const wantsCall = params.get("intent") === "call";
-  const requestType = wantsCall ? "Request a 15-minute call" : "Send a message";
-  const formUrl = `${FORM_URL}?q6_radio4=${encodeURIComponent(requestType)}`;
+  const requestType = wantsCall ? "Book a discovery call" : "Send a message";
+  const formUrl = `${FORM_URL}?q6_radio4=Send%20a%20message`;
 
   return (
     <div className="min-h-screen bg-[#f8fafc] px-5 pb-20 pt-28 text-slate-950 sm:px-8 lg:px-12 lg:pt-32">
@@ -22,8 +24,8 @@ const Contact = () => {
 
         <div className="mt-9 grid gap-4 sm:grid-cols-2" aria-label="Choose how to connect">
           {[
-            { call: false, icon: MessageSquare, title: "Send a message", text: "Share your question or collaboration idea. Submit directly here, without opening an email app." },
-            { call: true, icon: CalendarDays, title: "Request a 15-minute call", text: "Tell us what you would like to discuss and suggest a time. We will agree on a time by email." },
+            { call: false, icon: MessageSquare, title: "Send a message", text: "Share your question or collaboration idea. We’ll follow up by email." },
+            { call: true, icon: CalendarDays, title: "Book a discovery call", text: "Choose an available time on Calendly for a conversation with Ali Abedinpour." },
           ].map(({ call, icon: Icon, title, text }) => (
             <button key={title} type="button" aria-pressed={wantsCall === call} onClick={() => setParams(call ? { intent: "call" } : {}, { replace: true, preventScrollReset: true })}
               className={`rounded-2xl border-2 p-6 text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700 ${wantsCall === call ? "border-blue-700 bg-blue-50" : "border-slate-200 bg-white hover:border-blue-300"}`}>
@@ -39,14 +41,24 @@ const Contact = () => {
             <div className="border-b border-slate-200 p-5 sm:p-7">
               <h2 id="contact-form-title" className="text-2xl font-bold">{requestType}</h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                {wantsCall ? "A short conversation with Ali Abedinpour about your care setting or collaboration idea. Your appointment is confirmed only after we agree on a time by email." : "Your request is recorded when you submit the form. You will see a confirmation after a successful submission."}
+                {wantsCall ? "Choose a time on our Calendly booking page. Complete the booking there to receive your confirmation and meeting details." : "Your message is recorded when you submit the form. To reserve a time, use Book a discovery call above; a form submission does not create a booking."}
               </p>
               <p className="mt-3 text-xs leading-5 text-slate-500">Please do not include identifiable patient or medical information.</p>
             </div>
-            <iframe key={formUrl} src={formUrl} title="Atabazh Medical contact and discovery call request form" className="block h-[1250px] w-full border-0 sm:h-[1150px]" />
+            {wantsCall ? (
+              <div className="space-y-5 bg-gradient-to-b from-white to-slate-50 p-6 sm:p-8">
+                <div className="flex flex-col gap-5 border-b border-slate-200 pb-6 sm:flex-row sm:items-center">
+                  <img src={productLogo} alt="Smart Lung Physio" width={1000} height={800} className="h-auto w-36 shrink-0 mix-blend-multiply" />
+                  <div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Discovery call</p><h3 className="mt-2 text-xl font-semibold tracking-tight">Let’s explore the fit.</h3><p className="mt-2 text-sm text-slate-600">With Ali Abedinpour · Atabazh Medical</p></div>
+                </div>
+                <p className="text-base leading-7 text-slate-600">Discuss workflow fit, a staff demonstration, or research and collaboration opportunities.</p>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">Choose a time on Calendly <ArrowUpRight className="h-5 w-5" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+                <p className="text-sm leading-6 text-slate-500">Check the time zone shown on the booking page. If no suitable time is available, use Send a message to contact us.</p>
+              </div>
+            ) : <iframe src={formUrl} title="Atabazh Medical contact form" className="block h-[1050px] w-full border-0" />}
             <div className="border-t border-slate-200 p-5 text-sm leading-6 text-slate-600">
-              <a href={formUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline underline-offset-4">Open the form in a new tab <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>
-              <p>Form provided by Jotform. Read our <NavLink to="/privacy" className="text-blue-700 underline underline-offset-4">Privacy Policy</NavLink>.</p>
+              {!wantsCall && <a href={formUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline underline-offset-4">Open the form in a new tab <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>}
+              <p>{wantsCall ? "Booking provided by Calendly." : "Form provided by Jotform."} Read our <NavLink to="/privacy" className="text-blue-700 underline underline-offset-4">Privacy Policy</NavLink>.</p>
             </div>
           </section>
 
@@ -54,9 +66,15 @@ const Contact = () => {
             <div className="rounded-2xl bg-[#0b1b2f] p-6 text-white">
               <h2 className="text-xl font-semibold">What happens next?</h2>
               <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm leading-6 text-slate-200">
-                <li>Send your message or call request.</li>
-                <li>We review it and follow up by email.</li>
-                <li>For a call, we confirm the time and meeting details together.</li>
+                {wantsCall ? <>
+                  <li>Open Calendly and choose an available time.</li>
+                  <li>Enter your details and complete the booking.</li>
+                  <li>Check your confirmation for the meeting details.</li>
+                </> : <>
+                  <li>Submit your message using the form.</li>
+                  <li>Look for the submission confirmation.</li>
+                  <li>We review your inquiry and follow up by email.</li>
+                </>}
               </ol>
             </div>
             <div className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6">
