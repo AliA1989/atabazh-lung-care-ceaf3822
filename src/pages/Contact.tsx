@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import productLogo from "@/assets/smart-lung-physio-logo.png";
 import { BOOKING_URL } from "@/lib/contact";
 import { useSearchParams } from "react-router-dom";
@@ -8,6 +9,22 @@ const FORM_URL = "https://form.jotform.com/262583951966069";
 const EMAIL = "support@atabazh-med.com";
 
 const Contact = () => {
+  const formFrame = useRef<HTMLIFrameElement>(null);
+  const [formHeight, setFormHeight] = useState(1250);
+  useEffect(() => {
+    const resizeForm = (event: MessageEvent) => {
+      if (event.source !== formFrame.current?.contentWindow ||
+          !["https://form.jotform.com", "https://submit.jotform.com"].includes(event.origin) ||
+          typeof event.data !== "string") return;
+      const [action, value] = event.data.split(":");
+      const height = Number(value);
+      if (action === "setHeight" && Number.isFinite(height) && height > 0 && height < 20000) {
+        setFormHeight(Math.ceil(height) + 24);
+      }
+    };
+    window.addEventListener("message", resizeForm);
+    return () => window.removeEventListener("message", resizeForm);
+  }, []);
   const [params, setParams] = useSearchParams();
   const wantsCall = params.get("intent") === "call";
   const requestType = wantsCall ? "Book a discovery call" : "Send a message";
@@ -36,12 +53,12 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1.7fr_1fr] lg:items-start">
+        <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:items-start">
           <section aria-labelledby="contact-form-title" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-200 p-5 sm:p-7">
               <h2 id="contact-form-title" className="text-2xl font-bold">{requestType}</h2>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                {wantsCall ? "Choose a time on our Calendly booking page. Complete the booking there to receive your confirmation and meeting details." : "Your message is recorded when you submit the form. To reserve a time, use Book a discovery call above; a form submission does not create a booking."}
+                {wantsCall ? "Choose a time on our Calendly booking page. Complete the booking there to receive your confirmation and meeting details." : "We’ll follow up by email. To schedule a conversation, select Book a discovery call above."}
               </p>
               <p className="mt-3 text-xs leading-5 text-slate-500">Please do not include identifiable patient or medical information.</p>
             </div>
@@ -52,10 +69,10 @@ const Contact = () => {
                   <div><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-700">Discovery call</p><h3 className="mt-2 text-xl font-semibold tracking-tight">Let’s explore the fit.</h3><p className="mt-2 text-sm text-slate-600">With Ali Abedinpour · Atabazh Medical</p></div>
                 </div>
                 <p className="text-base leading-7 text-slate-600">Discuss workflow fit, a staff demonstration, or research and collaboration opportunities.</p>
-                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">Choose a time on Calendly <ArrowUpRight className="h-5 w-5" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl text-center sm:w-auto bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">Choose a time on Calendly <ArrowUpRight className="h-5 w-5" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
                 <p className="text-sm leading-6 text-slate-500">Check the time zone shown on the booking page. If no suitable time is available, use Send a message to contact us.</p>
               </div>
-            ) : <iframe src={formUrl} title="Atabazh Medical contact form" className="block h-[1050px] w-full border-0" />}
+            ) : <iframe ref={formFrame} id="JotFormIFrame-262583951966069" src={formUrl} title="Atabazh Medical contact form" style={{ height: formHeight }} className="block w-full border-0" />}
             <div className="border-t border-slate-200 p-5 text-sm leading-6 text-slate-600">
               {!wantsCall && <a href={formUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline underline-offset-4">Open the form in a new tab <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>}
               <p>{wantsCall ? "Booking provided by Calendly." : "Form provided by Jotform."} Read our <NavLink to="/privacy" className="text-blue-700 underline underline-offset-4">Privacy Policy</NavLink>.</p>
