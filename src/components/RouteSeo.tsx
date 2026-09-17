@@ -63,10 +63,11 @@ const RouteSeo = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const metadata = pageMetadata[pathname];
+    const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+    const metadata = pageMetadata[normalizedPath];
     const title = metadata?.title ?? "Page Not Found | Atabazh Medical";
     const description = metadata?.description ?? "The requested page could not be found.";
-    const canonicalUrl = `${SITE_URL}${pathname === "/" ? "/" : pathname}`;
+    const canonicalUrl = `${SITE_URL}${normalizedPath}`;
 
     document.title = title;
     upsertMeta('meta[name="description"]', "name", "description", description);
@@ -92,7 +93,7 @@ const RouteSeo = () => {
 
     const schemaId = "atabazh-organization-schema";
     const existingSchema = document.getElementById(schemaId);
-    if (pathname === "/") {
+    if (normalizedPath === "/") {
       const schema = existingSchema ?? document.createElement("script");
       schema.id = schemaId;
       schema.setAttribute("type", "application/ld+json");

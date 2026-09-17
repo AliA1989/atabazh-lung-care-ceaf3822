@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import productLogo from "@/assets/smart-lung-physio-logo.png";
 import { BOOKING_URL } from "@/lib/contact";
 import { useSearchParams } from "react-router-dom";
@@ -9,21 +9,25 @@ const FORM_URL = "https://form.jotform.com/262583951966069";
 const EMAIL = "support@atabazh-med.com";
 
 const Contact = () => {
-  const formFrame = useRef<HTMLIFrameElement>(null);
-  const [formHeight, setFormHeight] = useState(1250);
   useEffect(() => {
-    const resizeForm = (event: MessageEvent) => {
-      if (event.source !== formFrame.current?.contentWindow ||
-          !["https://form.jotform.com", "https://submit.jotform.com"].includes(event.origin) ||
-          typeof event.data !== "string") return;
-      const [action, value] = event.data.split(":");
-      const height = Number(value);
-      if (action === "setHeight" && Number.isFinite(height) && height > 0 && height < 20000) {
-        setFormHeight(Math.ceil(height) + 24);
-      }
+    const selector = 'iframe[id="JotFormIFrame-262583951966069"]';
+    const initialize = () => {
+      const handler = (window as Window & { jotformEmbedHandler?: (selector: string, origin: string) => void }).jotformEmbedHandler;
+      handler?.(selector, "https://form.jotform.com/");
     };
-    window.addEventListener("message", resizeForm);
-    return () => window.removeEventListener("message", resizeForm);
+    const existing = document.querySelector<HTMLScriptElement>('script[data-jotform-embed-handler]');
+    if (existing) {
+      initialize();
+      existing.addEventListener("load", initialize, { once: true });
+      return () => existing.removeEventListener("load", initialize);
+    }
+    const script = document.createElement("script");
+    script.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    script.async = true;
+    script.dataset.jotformEmbedHandler = "true";
+    script.addEventListener("load", initialize, { once: true });
+    document.body.appendChild(script);
+    return () => script.removeEventListener("load", initialize);
   }, []);
   const [params, setParams] = useSearchParams();
   const wantsCall = params.get("intent") === "call";
@@ -72,7 +76,7 @@ const Contact = () => {
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl text-center sm:w-auto bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">Choose a time on Calendly <ArrowUpRight className="h-5 w-5" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
                 <p className="text-sm leading-6 text-slate-500">Check the time zone shown on the booking page. If no suitable time is available, use Send a message to contact us.</p>
               </div>
-            ) : <iframe ref={formFrame} id="JotFormIFrame-262583951966069" src={formUrl} title="Atabazh Medical contact form" style={{ height: formHeight }} className="block w-full border-0" />}
+            ) : <iframe id="JotFormIFrame-262583951966069" src={formUrl} title="Atabazh Medical contact form" scrolling="no" className="block h-[1250px] w-full border-0" />}
             <div className="border-t border-slate-200 p-5 text-sm leading-6 text-slate-600">
               {!wantsCall && <a href={formUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline underline-offset-4">Open the form in a new tab <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a>}
               <p>{wantsCall ? "Booking provided by Calendly." : "Form provided by Jotform."} Read our <NavLink to="/privacy" className="text-blue-700 underline underline-offset-4">Privacy Policy</NavLink>.</p>
