@@ -18,7 +18,7 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   "/clinical-evidence": {
     title: "Evidence & Development | Atabazh Medical",
     description:
-      "Review Atabazh Medical's stakeholder discovery, prototype learning, validation workstreams, and pilot-readiness planning.",
+      "Review Atabazh Medical's prototype progress, current evidence, technical evaluation priorities, and pilot-readiness planning.",
   },
   "/long-term-care": {
     title: "Smart Lung Physio™ for Long-Term Care | Atabazh Medical",
@@ -31,8 +31,8 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
       "Meet the Atabazh Medical team developing a sensor-guided physical airway-clearance device for supervised care settings.",
   },
   "/news": {
-    title: "News & Resources | Atabazh Medical",
-    description: "Company updates, development milestones, and resources from Atabazh Medical.",
+    title: "News & Milestones | Atabazh Medical",
+    description: "Company updates, media coverage, and research milestones from Atabazh Medical.",
   },
   "/contact": {
     title: "Contact Atabazh Medical",

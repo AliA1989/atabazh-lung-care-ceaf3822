@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-14">
           {/* Logo and Tagline */}
           <div className="col-span-1 md:col-span-1">
-            <NavLink to="/" className="group mb-6 inline-flex items-center gap-3.5 sm:gap-4" aria-label="Atabazh Med home">
+            <NavLink to="/" className="group mb-6 inline-flex items-center gap-3.5 sm:gap-4" aria-label="Atabazh Medical home">
               <span className="flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] sm:h-[4.5rem] sm:w-[4.5rem]">
                 <img 
                   src={logo} 
@@ -23,7 +23,7 @@ const Footer = () => {
                   Atabazh
                 </span>
                 <span className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-sky-200">
-                  Med
+                  Medical
                 </span>
               </span>
             </NavLink>
