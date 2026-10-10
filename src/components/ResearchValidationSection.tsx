@@ -1,33 +1,11 @@
-import { useState } from "react";
 import {
-  Activity,
-  BriefcaseBusiness,
   ClipboardList,
-  Cpu,
-  FileText,
-  Globe2,
-  Handshake,
-  LineChart,
-  Microscope,
-  Network,
-  ShieldCheck,
   Users,
+  ShieldCheck,
   Wrench,
+  Handshake,
+  BriefcaseBusiness,
 } from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
-
-const networkStats = [
-  { value: "6", label: "Development Pathways", icon: Network, tone: "text-sky-600 bg-sky-50" },
-  { value: "2", label: "Countries (CA & US)", icon: Globe2, tone: "text-indigo-600 bg-indigo-50" },
-  { value: "1", label: "Unified Mission", icon: Activity, tone: "text-emerald-600 bg-emerald-50" },
-];
-
-const pipelineStats = [
-  { value: "100+", label: "Stakeholder Interviews", eyebrow: "Discovery", icon: Users, tone: "text-indigo-600 bg-indigo-50" },
-  { value: "3", label: "Prototype Generations", eyebrow: "Hardware", icon: Cpu, tone: "text-sky-600 bg-sky-50" },
-  { value: "U.S.", label: "Utility Patent Filed", eyebrow: "Intellectual Property", icon: FileText, tone: "text-amber-600 bg-amber-50" },
-  { value: "2", label: "Accepted Presentations", eyebrow: "Dissemination", icon: LineChart, tone: "text-emerald-600 bg-emerald-50" },
-];
 
 const pathways = [
   {
@@ -96,7 +74,12 @@ const pathways = [
     badgeTone: "bg-blue-50 text-blue-700",
     description:
       "Engineering-focused development work supporting prototype refinement, technical review, and iterative device improvement.",
-    deliverables: ["Mechanical Design", "Prototyping", "Engineering Testing", "Iterative Refinement"],
+    deliverables: [
+      "Mechanical Design",
+      "Prototyping",
+      "Engineering Testing",
+      "Iterative Refinement",
+    ],
   },
   {
     short: "VM",
@@ -109,7 +92,12 @@ const pathways = [
     badgeTone: "bg-amber-50 text-amber-700",
     description:
       "Discovery activities capturing care-team needs, workflow constraints, clinical context, and early market assumptions.",
-    deliverables: ["Workflow Analysis", "100+ Stakeholder Interviews", "User Need Review", "Care-Team Feedback"],
+    deliverables: [
+      "Workflow Analysis",
+      "100+ Stakeholder Interviews",
+      "User Need Review",
+      "Care-Team Feedback",
+    ],
   },
   {
     short: "McM",
@@ -131,419 +119,37 @@ const pathways = [
   },
 ];
 
-const timeline = [
-  {
-    step: "01",
-    eyebrow: "Discovery",
-    title: "Stakeholder Discovery",
-    body: "100+ interviews with respiratory therapists, physiotherapists, long-term care professionals, caregivers, and healthcare stakeholders.",
-  },
-  {
-    step: "02",
-    eyebrow: "Medical Abstract",
-    title: "NACFC 2026",
-    body: "Abstract accepted for presentation on variability and inefficiencies in manual airway-clearance delivery.",
-  },
-  {
-    step: "03",
-    eyebrow: "Technology Pitch",
-    title: "WCB TTPC",
-    body: "Invited to present in the Poster Competition section of the World Congress of Biomechanics Translational Technology Pitch Competition.",
-  },
-  {
-    step: "04",
-    eyebrow: "Readiness",
-    title: "IP & Regulatory Mapping",
-    body: "U.S. Utility Patent filed and regulatory pathway assessment underway.",
-  },
-];
-
-const pillars = [
-  {
-    eyebrow: "Workflow Evidence",
-    title: "Clinical Problem Discovery",
-    icon: ClipboardList,
-    tone: "text-sky-600 bg-sky-50",
-    items: [
-      "Long-term care workflow assessment",
-      "Airway-clearance delivery analysis",
-      "Caregiver burden exploration",
-      "Delivery consistency and workflow gap identification",
-    ],
-  },
-  {
-    eyebrow: "Research Traction",
-    title: "Scientific Dissemination",
-    icon: Microscope,
-    tone: "text-indigo-600 bg-indigo-50",
-    items: [
-      "NACFC 2026 abstract accepted for presentation",
-      "WCB TTPC invitation",
-      "Research focused on delivery variability",
-    ],
-  },
-  {
-    eyebrow: "Build Pathway",
-    title: "Academic & Technical Development",
-    icon: Activity,
-    tone: "text-amber-600 bg-amber-50",
-    items: [
-      "Toronto Metropolitan University workstream",
-      "Lab2Market Validate activity",
-      "Northeastern University Toronto readiness work",
-      "Prototype and usability exploration",
-    ],
-  },
-  {
-    eyebrow: "Readiness Path",
-    title: "Regulatory & Commercial Readiness",
-    icon: ShieldCheck,
-    tone: "text-emerald-600 bg-emerald-50",
-    items: [
-      "U.S. Utility Patent Filed",
-      "ElevateIP Recipient",
-      "Regulatory pathway assessment underway",
-      "Commercialization planning activities",
-    ],
-  },
-];
-
-const InstitutionMark = ({
-  pathway,
-  compact = false,
-}: {
-  pathway: (typeof pathways)[number];
-  compact?: boolean;
-}) => (
-  <div className="flex min-w-0 items-center gap-3">
-    <span
-      className={`flex flex-shrink-0 items-center justify-center rounded-xl font-bold ${pathway.badgeTone} ${
-        compact ? "h-9 w-9 text-[11px]" : "h-11 w-11 text-xs"
-      }`}
-    >
-      {pathway.short}
-    </span>
-    <span className="min-w-0">
-      <span className={`block truncate font-bold leading-tight ${pathway.brandTone} ${compact ? "text-sm" : "text-base"}`}>
-        {pathway.brandName}
-      </span>
-      <span className="mt-0.5 block truncate text-[10px] font-semibold uppercase tracking-[0.08em] text-slate-400">
-        {pathway.brandSub}
-      </span>
-    </span>
-  </div>
-);
-
-const ResearchValidationSection = () => {
-  const [activeTab, setActiveTab] = useState<"validation" | "pipeline">("validation");
-  const [activeIndex, setActiveIndex] = useState(5);
-  const [activeStep, setActiveStep] = useState(0);
-  const activePathway = pathways[activeIndex];
-  const ActiveIcon = activePathway.icon;
-
-  return (
-    <section className="relative overflow-hidden border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,87,0.025)_1px,transparent_1px),linear-gradient(180deg,rgba(8,43,87,0.025)_1px,transparent_1px)] bg-[size:84px_84px]" />
-
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <ScrollReveal className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-sky-500" />
-            Research & Development
-          </span>
-          <h2 className="mx-auto mt-5 max-w-4xl text-3xl font-bold leading-[1.08] tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.8rem]">
-            Development workstreams for
-            <span className="block text-blue-700">
-              Smart Lung Physio
-            </span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-slate-600 md:text-[1.05rem]">
-            A clear view of the academic, technical, clinical-workflow, regulatory-readiness, and market-learning
-            activities supporting Smart Lung Physio development.
-          </p>
-          <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-slate-500">
-            Organization names describe development, research, or market-learning context and are not presented as clinical validation or endorsement.
-          </p>
-
-          <div className="mt-7 inline-flex rounded-xl border border-slate-200 bg-slate-100/80 p-1 shadow-inner">
-            {[
-              { id: "validation" as const, label: "Development Network", icon: Network },
-              { id: "pipeline" as const, label: "Research Pipeline", icon: LineChart },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveTab(tab.id)}
-                className={`inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-bold transition sm:px-5 ${
-                  activeTab === tab.id
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-500 hover:bg-white/60 hover:text-slate-900"
-                }`}
-              >
-                <tab.icon className="h-4 w-4" />
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        {activeTab === "validation" ? (
-          <>
-            <ScrollReveal delay={80}>
-              <div className="mx-auto mt-9 grid max-w-6xl gap-4 md:grid-cols-3">
-                {networkStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="group rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:border-blue-200 sm:p-5"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${stat.tone}`}>
-                        <stat.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <p className="text-3xl font-bold leading-none text-slate-900">{stat.value}</p>
-                        <p className="mt-1.5 text-xs font-bold uppercase tracking-[0.1em] text-slate-500">{stat.label}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={140} className="mt-12">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-slate-900 md:text-[1.85rem]">Interactive development hub</h3>
-                <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 md:text-base">
-                  Select a pathway to see the specific responsibilities connected to Smart Lung Physio development.
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.2fr_0.95fr] lg:items-stretch">
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-                  {pathways.map((pathway, index) => {
-                    const isActive = activeIndex === index;
-
-                    return (
-                      <button
-                        key={pathway.name}
-                        type="button"
-                        onClick={() => setActiveIndex(index)}
-                        onMouseEnter={() => setActiveIndex(index)}
-                        className={`group flex min-h-[5.05rem] items-center gap-3 rounded-xl border bg-white p-3.5 text-left shadow-sm transition duration-300 hover:border-sky-300 sm:p-4 ${
-                          isActive
-                            ? "border-sky-400 bg-sky-50/80 shadow-[0_16px_45px_rgba(14,165,233,0.16)]"
-                            : "border-slate-200"
-                        }`}
-                        aria-pressed={isActive}
-                      >
-                        <span className="min-w-0 flex-1">
-                          <InstitutionMark pathway={pathway} compact />
-                          <span className="mt-2 block text-sm font-bold leading-snug text-slate-900">
-                            {pathway.category}
-                          </span>
-                        </span>
-                        <span
-                          className={`text-xl transition ${
-                            isActive ? "translate-x-0.5 text-primary" : "text-slate-400 group-hover:text-primary"
-                          }`}
-                        >
-                          ›
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                <div className="relative min-h-[32rem] overflow-hidden rounded-2xl bg-[#071321] p-6 text-white shadow-[0_24px_70px_-35px_rgba(8,43,87,0.45)] ring-1 ring-slate-900/10">
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:64px_64px]" />
-                  <div className="pointer-events-none absolute left-1/2 top-16 h-72 w-72 -translate-x-1/2 rounded-full bg-sky-500/18 blur-3xl" />
-                  <div className="pointer-events-none absolute left-1/2 top-[9.5rem] h-64 w-64 -translate-x-1/2 rounded-full border border-sky-300/10 validation-orbit" />
-                  <div className="relative z-10 flex justify-end">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs font-bold text-sky-200 backdrop-blur">
-                      <span className="validation-hub-pulse h-2.5 w-2.5 rounded-full bg-sky-400" />
-                      Workstream View
-                    </span>
-                  </div>
-
-                  <div className="relative z-10 mt-8 flex min-h-[21rem] flex-col items-center justify-center">
-                    <div className="validation-device-float relative flex w-full max-w-[21.5rem] flex-col items-center justify-center rounded-[2rem] border border-sky-300/15 bg-white/[0.06] px-8 py-10 text-center shadow-[0_30px_60px_rgba(0,0,0,0.35)] backdrop-blur">
-                      <div className="absolute inset-8 rounded-full bg-sky-400/20 blur-3xl" />
-                      <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-3xl bg-sky-400/10 text-sky-200 ring-1 ring-sky-300/20">
-                        <Activity className="h-10 w-10" aria-hidden="true" />
-                      </div>
-                      <p className="relative z-10 mt-6 text-xs font-bold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</p>
-                      <p className="relative z-10 mt-2 text-2xl font-bold text-white">Product Development</p>
-                      <p className="relative z-10 mt-3 max-w-xs text-sm leading-relaxed text-slate-300">Concept and prototype work under active review</p>
-                    </div>
-
-                    <div className="mt-7 grid w-full max-w-md grid-cols-3 gap-3">
-                      {[
-                        ["Pathway", "Mapped"],
-                        ["Status", "Active"],
-                        ["Readiness", "Planning"],
-                      ].map(([label, value]) => (
-                        <div key={label} className="rounded-xl border border-white/10 bg-white/[0.055] px-3 py-3 text-center backdrop-blur">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">{label}</p>
-                          <p className="mt-1 text-xs font-bold text-sky-100">{value}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-4 w-full max-w-md rounded-full border border-white/10 bg-white/[0.06] p-1">
-                      <div className="validation-loading-bar h-1.5 rounded-full bg-gradient-to-r from-sky-400 via-cyan-200 to-sky-500" />
-                    </div>
-                  </div>
-
-                  <div className="relative z-10 mt-8 flex items-end justify-between border-t border-white/10 pt-5">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.13em] text-slate-400">Active Pathway</p>
-                      <p className="mt-1 text-lg font-bold text-white">{activePathway.category}</p>
-                    </div>
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/10 text-sky-300 ring-1 ring-sky-400/20">
-                      <ActiveIcon className="h-5 w-5" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <InstitutionMark pathway={activePathway} />
-                  <h4 className="mt-4 text-2xl font-bold leading-tight text-slate-900">{activePathway.category}</h4>
-                  <p className="mt-5 text-sm leading-relaxed text-slate-600">{activePathway.description}</p>
-
-                  <div className="my-6 h-px bg-slate-200" />
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-400">Key responsibilities</p>
-                  <ul className="mt-4 space-y-3">
-                    {activePathway.deliverables.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-slate-700">
-                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-7 rounded-xl bg-slate-50 p-4 text-sm leading-relaxed text-slate-600">
-                    <span className="font-bold text-primary">Development focus:</span> reducing uncertainty across workflow,
-                    usability, technical readiness, documentation, and commercial adoption planning.
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </>
-        ) : (
-          <ScrollReveal delay={80} className="mt-9">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {pipelineStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:border-blue-200 sm:p-5"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{stat.eyebrow}</span>
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${stat.tone}`}>
-                      <stat.icon className="h-4 w-4" />
-                    </span>
-                  </div>
-                  <p className="mt-4 text-3xl font-bold text-slate-900">{stat.value}</p>
-                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">Development & Validation Timeline</p>
-                  <h3 className="mt-2 text-2xl font-bold text-slate-900">From care workflow insight to validation planning</h3>
-                </div>
-                <span className="inline-flex w-fit items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700">
-                  <LineChart className="h-4 w-4" />
-                  Research traction + readiness planning
-                </span>
-              </div>
-
-              <div className="mt-8 grid gap-4 md:grid-cols-5">
-                {timeline.map((item, index) => {
-                  const isActive = activeStep === index;
-
-                  return (
-                    <button
-                      key={item.title}
-                      type="button"
-                      onClick={() => setActiveStep(index)}
-                      onMouseEnter={() => setActiveStep(index)}
-                      className={`relative rounded-xl border p-5 text-left transition duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-md ${
-                        isActive ? "border-indigo-400 bg-indigo-50/50 shadow-md" : "border-slate-200 bg-white"
-                      }`}
-                    >
-                      <span
-                        className={`absolute -top-3 left-5 flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold shadow-sm ${
-                          isActive ? "bg-indigo-600 text-white" : "bg-slate-200 text-slate-600"
-                        }`}
-                      >
-                        {item.step}
-                      </span>
-                      <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-400">{item.eyebrow}</p>
-                      <h4 className="mt-1 text-sm font-bold leading-tight text-slate-900">{item.title}</h4>
-                      <p className="mt-3 text-xs font-medium leading-relaxed text-slate-600">{item.body}</p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-10 text-center">
-              <h3 className="text-2xl font-bold text-slate-900">Development & validation areas</h3>
-              <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-relaxed text-slate-600">
-                A structured view of workflow learning, scientific activity, technical development, and readiness planning.
-              </p>
-            </div>
-
-            <div className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {pillars.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:border-sky-200"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-slate-600">
-                      {pillar.eyebrow}
-                    </span>
-                    <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${pillar.tone}`}>
-                      <pillar.icon className="h-4 w-4" />
-                    </span>
-                  </div>
-                  <h4 className="mt-4 text-base font-bold leading-tight text-slate-900">{pillar.title}</h4>
-                  <ul className="mt-4 space-y-2.5">
-                    {pillar.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-xs leading-relaxed text-slate-600">
-                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 rounded-2xl bg-[#0b1b2f] p-6 text-white shadow-sm sm:p-8">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 text-sky-300 ring-1 ring-white/10">
-                  <ShieldCheck className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-sky-200">Validation Focus</p>
-                  <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-200">
-                    Reducing variability in airway-clearance delivery, supporting caregiver workflow, and enabling more
-                    structured respiratory-care support.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        )}
+const ResearchValidationSection = () => (
+  <section className="company-section bg-white">
+    <div className="company-container">
+      <p className="company-eyebrow">Development contributions</p>
+      <h2 className="company-heading mt-4">
+        Specialist input across the program.
+      </h2>
+      <p className="mt-5 max-w-3xl text-slate-600">
+        Academic projects, placements, and commercialization programs contribute
+        to specific development activities. Atabazh coordinates these inputs
+        within its product-development work.
+      </p>
+      <div className="mt-8 grid gap-x-10 md:grid-cols-2">
+        {pathways.map((item) => (
+          <article key={item.name} className="border-t border-slate-200 py-6">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#164d69]">
+              {item.category}
+            </p>
+            <h3 className="mt-2 text-lg font-semibold">{item.name}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              {item.description}
+            </p>
+          </article>
+        ))}
       </div>
-    </section>
-  );
-};
-
+      <p className="mt-4 border-t border-slate-200 pt-5 text-xs leading-6 text-slate-500">
+        These connections describe development and program activities, not
+        institutional endorsement, clinical validation, or regulatory approval
+        of Smart Lung Physio™.
+      </p>
+    </div>
+  </section>
+);
 export default ResearchValidationSection;

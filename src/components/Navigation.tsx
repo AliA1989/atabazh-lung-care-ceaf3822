@@ -16,10 +16,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { to: "/device", label: "Product" },
+    { to: "/device", label: "Technology" },
     { to: "/clinical-evidence", label: "Evidence" },
     { to: "/long-term-care", label: "Long-Term Care" },
-    { to: "/about", label: "About" },
+    { to: "/about", label: "Company" },
+    { to: "/news", label: "News" },
     { to: "/contact", label: "Contact", emphasis: true },
   ];
 
@@ -32,7 +33,7 @@ const Navigation = () => {
       <div className="relative mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-[4.5rem]"}`}>
           {/* Logo */}
-          <NavLink to="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Atabazh Med home">
+          <NavLink to="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Atabazh Medical home">
             <span className="flex h-10 w-10 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] sm:h-11 sm:w-11">
               <img 
                 src={logo} 
@@ -45,7 +46,7 @@ const Navigation = () => {
                 Atabazh
               </span>
               <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-blue-700 sm:text-[10px]">
-                Med
+                Medical
               </span>
             </div>
           </NavLink>

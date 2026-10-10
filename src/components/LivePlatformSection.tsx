@@ -166,10 +166,10 @@ const LivePlatformSection = () => {
                     <div className="flex items-center justify-between gap-4">
                       <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-700">Illustrative output trace</p>
                       <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Live
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Demo
                       </span>
                     </div>
-                    <svg viewBox="0 0 290 80" className="mt-4 h-20 w-full" role="img" aria-label="Illustrative live session trace">
+                    <svg viewBox="0 0 290 80" className="mt-4 h-20 w-full" role="img" aria-label="Illustrative session trace">
                       <path d="M0 64 H290 M0 40 H290 M0 16 H290" stroke="#e2e8f0" strokeWidth="1" />
                       <path d={frame.trace} fill="none" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" className="transition-all duration-700" />
                       <circle cx="288" cy="40" r="4" fill="#06b6d4" className="animate-pulse" />

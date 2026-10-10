@@ -1,479 +1,357 @@
-import { eyeopenerFeature } from "@/data/mediaCoverage";
-import MediaFeature from "@/components/MediaFeature";
-import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
 import {
-  Activity,
   ArrowRight,
-  BarChart3,
-  ChevronRight,
+  ArrowUpRight,
+  Activity,
+  Gauge,
   ClipboardList,
-  Clock,
-  Crosshair,
-  Shield,
-  Users,
 } from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import ProductFilm from "@/components/ProductFilm";
-import techAllianceLogo from "@/assets/support/techalliance.svg";
-import mitacsLogo from "@/assets/support/mitacs.svg";
-import lab2MarketValidateLogo from "@/assets/support/lab2market-validate.webp";
-import springLogo from "@/assets/support/spring.svg";
+import { NavLink } from "@/components/NavLink";
+import { eyeopenerFeature } from "@/data/mediaCoverage";
+import { publicAsset } from "@/lib/publicAsset";
+import { developmentFacts, developmentPriorities } from "@/data/development";
+import { CompanyCTA } from "@/components/CompanyCTA";
 import marsLogo from "@/assets/support/mars.svg";
-import h2iLogo from "@/assets/support/h2i.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
-import elevateIpLogo from "@/assets/support/elevate-ip.svg";
+import lab2MarketLogo from "@/assets/support/lab2market-validate.webp";
+import mitacsLogo from "@/assets/support/mitacs.svg";
 import baycrestLogo from "@/assets/support/baycrest.png";
-import { publicAsset } from "@/lib/publicAsset";
 
-const SUPPORT_ORGANIZATIONS = [
-  { name: "MaRS Discovery District", src: marsLogo, square: true },
-  { name: "Health Innovation Hub", src: h2iLogo, logoClassName: "h-20 max-h-none max-w-none sm:h-24" },
-  { name: "Innovation Boost Zone", src: ibzLogo, logoClassName: "h-20 max-h-none max-w-none sm:h-24" },
-  { name: "Spring", src: springLogo, square: true },
-  { name: "TechAlliance", src: techAllianceLogo },
-  { name: "Innovation Factory", src: innovationFactoryLogo, logoClassName: "h-20 max-h-none max-w-none sm:h-24" },
-  { name: "ElevateIP", src: elevateIpLogo, logoClassName: "h-20 max-h-none max-w-none sm:h-24" },
-  { name: "Lab2Market Validate", src: lab2MarketValidateLogo },
-  { name: "Mitacs", src: mitacsLogo },
-  { name: "Baycrest", src: baycrestLogo, logoClassName: "max-h-8 max-w-full brightness-0 sm:max-h-9" },
-];
+const Home = () => (
+  <div className="company-page">
+    <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
+      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-16">
+        <div>
+          <p className="company-eyebrow !text-sky-300">
+            Atabazh Medical · Toronto, Canada
+          </p>
+          <h1 className="mt-6 max-w-xl text-[2.6rem] leading-[1.07] tracking-[-0.045em] sm:text-5xl xl:text-[3.65rem]">
+            Engineering more measurable airway clearance.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+            <strong className="font-semibold text-white">
+              Smart Lung Physio™
+            </strong>{" "}
+            is a handheld medical device under development, combining localized
+            mechanical chest percussion with sensing, caregiver guidance, and
+            session documentation.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <NavLink
+              to="/device"
+              className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200"
+            >
+              Explore the technology{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </NavLink>
+            <NavLink
+              to="/clinical-evidence"
+              className="company-button border border-white/25 text-white hover:bg-white/10"
+            >
+              Review our progress
+            </NavLink>
+          </div>
+          <p className="mt-6 text-xs leading-5 text-slate-400">
+            Functional prototype stage · Not yet commercially available
+          </p>
+        </div>
+        <figure className="overflow-hidden rounded-2xl border border-white/15 bg-white/5">
+          <img
+            src={publicAsset("media/eyeopener-ali-smart-lung.jpg")}
+            alt="Atabazh founder Ali Abedinpour holding the Smart Lung Physio prototype"
+            width={816}
+            height={544}
+            loading="eager"
+            className="aspect-[3/2] w-full object-cover"
+          />
+          <figcaption className="p-5 sm:p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-sky-300">
+              From engineering to application
+            </p>
+            <p className="mt-2 text-sm text-slate-200">
+              Founder Ali Abedinpour with the physical prototype.
+            </p>
+            <p className="mt-2 text-[11px] text-slate-400">
+              Photo: Daniel Opasinis / The Eyeopener
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <a
+        href={eyeopenerFeature.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block border-t border-white/15 bg-white/5 transition-colors hover:bg-white/10"
+      >
+        <div className="company-container flex items-center gap-4 py-4">
+          <img
+            src={publicAsset("media/eyeopener-ali-smart-lung.jpg")}
+            alt=""
+            width={64}
+            height={44}
+            className="h-11 w-16 shrink-0 rounded object-cover"
+          />
+          <div className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-5">
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-sky-300">
+              In the news · The Eyeopener
+            </span>
+            <span className="mt-1 block text-sm text-white sm:mt-0">
+              The story behind Smart Lung Physio™
+            </span>
+          </div>
+          <ArrowUpRight
+            className="h-5 w-5 shrink-0 text-sky-300"
+            aria-hidden="true"
+          />
+          <span className="sr-only">Read the article (opens in a new tab)</span>
+        </div>
+      </a>
+    </section>
 
-const productPillars = [
-  {
-    icon: Shield,
-    title: "Guide",
-    description: "Provide real-time feedback concepts during supervised therapy delivery.",
-  },
-  {
-    icon: BarChart3,
-    title: "Measure",
-    description: "Capture force, motion, orientation, and session parameters for review.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Document",
-    description: "Create structured session records designed to support care communication.",
-  },
-];
+    <section
+      aria-label="Development at a glance"
+      className="border-b border-slate-200 bg-white"
+    >
+      <div className="company-container grid divide-y divide-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        {developmentFacts.map((fact) => (
+          <div key={fact.label} className="py-7 sm:px-7 sm:first:pl-0">
+            <p className="text-3xl font-semibold tracking-tight text-[#164d69]">
+              {fact.value}
+            </p>
+            <h2 className="mt-1 text-sm font-semibold tracking-normal">
+              {fact.label}
+            </h2>
+            <p className="mt-2 text-xs leading-5 text-slate-500">
+              {fact.context}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-const howItWorks = [
-  {
-    icon: Crosshair,
-    title: "Position",
-    description: "Identify the intended chest region and place the patient-contact interface.",
-  },
-  {
-    icon: Activity,
-    title: "Deliver",
-    description: "Apply localized mechanical chest percussion through the handheld device.",
-  },
-  {
-    icon: BarChart3,
-    title: "Measure",
-    description: "Prototype sensing captures contact force, motion, orientation, and session parameters.",
-  },
-  {
-    icon: Shield,
-    title: "Guide",
-    description: "Interface concepts provide real-time feedback to the trained caregiver.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Document",
-    description: "Session information is organized into a structured record concept.",
-  },
-];
+    <section className="company-section bg-white">
+      <div className="company-container grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <figure className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+          <div className="relative h-[340px] sm:h-[400px] overflow-hidden bg-white">
+            <img
+              src={publicAsset("media/smart-lung-physio-device-hero.webp")}
+              alt="Illustrative design of the Smart Lung Physio handheld device"
+              width={896}
+              height={1173}
+              loading="lazy"
+              className="h-full w-full object-cover object-top"
+            />
+            <div className="absolute bottom-0 inset-x-0 bg-[#0b1b2f] px-5 py-3 text-xs font-semibold text-white">
+              Smart Lung Physio™ · Product visualization
+            </div>
+          </div>
+          <figcaption className="p-5 text-xs leading-5 text-slate-500">
+            Illustrative design based on our functional prototype. The current
+            prototype is mains-powered; displayed values are not clinical
+            recommendations.
+          </figcaption>
+        </figure>
+        <div>
+          <p className="company-eyebrow">The technology</p>
+          <h2 className="company-heading mt-4">
+            Physical delivery.
+            <br />
+            Measurable feedback.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            We are developing a connected approach to localized chest
+            percussion: a physical device, integrated sensing, and a guided
+            session interface.
+          </p>
+          <div className="mt-7 divide-y divide-slate-200">
+            {[
+              {
+                icon: Activity,
+                title: "Localized mechanical percussion",
+                text: "A handheld form factor for delivery to a selected chest region by a trained caregiver.",
+              },
+              {
+                icon: Gauge,
+                title: "Force, motion & orientation sensing",
+                text: "Prototype sensing to characterize how a session is delivered and inform caregiver feedback.",
+              },
+              {
+                icon: ClipboardList,
+                title: "Guidance & session records",
+                text: "Interface concepts that connect caregiver prompts with structured documentation.",
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <div key={title} className="flex gap-4 py-5">
+                <Icon
+                  className="mt-1 h-5 w-5 shrink-0 text-[#164d69]"
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 className="text-base font-semibold">{title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
+                    {text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <NavLink to="/device" className="company-text-link mt-4">
+            Explore the device and intended workflow{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
+      </div>
+    </section>
 
-const challengeItems = [
-  {
-    icon: Users,
-    title: "Staffing",
-    description: "Care teams need respiratory-support approaches that can fit supervised routines without unnecessary complexity.",
-  },
-  {
-    icon: Activity,
-    title: "Consistency",
-    description: "Manual delivery can vary by caregiver, positioning, and care setting.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Documentation",
-    description: "Care teams need a clearer record of what was delivered and when.",
-  },
-];
-
-const workflowInsights = [
-  {
-    icon: Clock,
-    title: "Bedside Setup",
-    desc: "Clear placement and a simpler start.",
-    src: publicAsset("media/workflow-bedside.webp"),
-    alt: "Early prototype workflow review in a supervised care setting",
-    crop: "scale-[1.22] object-[47%_72%]",
-  },
-  {
-    icon: Users,
-    title: "Caregiver Handling",
-    desc: "Practical handling during supervised care.",
-    src: publicAsset("media/workflow-handling.webp"),
-    alt: "Prototype positioning review during respiratory care workflow",
-    crop: "scale-[1.16] object-[76%_58%]",
-  },
-  {
-    icon: Activity,
-    title: "Patient Positioning",
-    desc: "Reviewed across common care positions.",
-    src: publicAsset("media/workflow-positioning.webp"),
-    alt: "Supine positioning review with early Smart Lung Physio prototype",
-    crop: "scale-[1.2] object-[38%_68%]",
-  },
-];
-
-const developmentAreas = ["Technical", "Human Factors", "Clinical Workflow", "Regulatory Readiness", "Market Learning"];
-
-const ltcHighlights = [
-  { icon: Crosshair, label: "Clearer supervised setup" },
-  { icon: BarChart3, label: "More measurable delivery" },
-  { icon: ClipboardList, label: "Structured session documentation" },
-];
-
-const Home = () => {
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
-      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-[#f8fafc]">
-        <div className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_92%)]" />
-        <div className="pointer-events-none absolute -right-48 top-8 -z-10 h-[38rem] w-[38rem] rounded-full bg-blue-100/60 blur-3xl" />
-
-        <div className="mx-auto grid min-h-[46rem] max-w-[90rem] items-center gap-12 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14 lg:px-12 lg:pb-20 lg:pt-32">
-          <div className="relative z-10 max-w-[36rem]">
-            <a href={eyeopenerFeature.url} target="_blank" rel="noopener noreferrer" className="mb-6 flex items-center gap-3 rounded-xl border border-blue-200 bg-white p-3 shadow-sm transition hover:border-blue-400 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700">
-              <img src={publicAsset("media/eyeopener-ali-smart-lung.jpg")} alt="" width={816} height={544} className="h-14 w-[5.25rem] shrink-0 rounded-lg object-cover" />
-              <span className="min-w-0">
-                <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-blue-700">Featured in The Eyeopener</span>
-                <span className="mt-1 block text-sm font-semibold leading-5 text-slate-900">The story behind Smart Lung Physio™</span>
+    <section className="border-t border-slate-200 bg-white pb-14 pt-10">
+      <div className="company-container">
+        <h2 className="text-xl font-semibold">
+          How Smart Lung Physio is being designed to work
+        </h2>
+        <ol className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {[
+            ["Position", "Select the intended chest region."],
+            ["Deliver", "Apply localized mechanical percussion."],
+            ["Measure", "Capture force, motion, and session parameters."],
+            ["Guide", "Provide feedback to the trained caregiver."],
+            ["Document", "Organize a structured session record."],
+          ].map(([title, detail], index) => (
+            <li key={title} className="border-t-2 border-slate-200 pt-4">
+              <span className="text-xs font-semibold text-[#164d69]">
+                0{index + 1}
               </span>
-              <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-blue-700" aria-hidden="true" />
-              <span className="sr-only">Read the article (opens in a new tab)</span>
-            </a>
-            <div
-              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/85 px-3.5 py-2 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-blue-800 opacity-0 shadow-sm animate-fade-in"
-              style={{ animationDelay: "80ms", animationFillMode: "forwards" }}
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-              Physical airway-clearance device
-            </div>
+              <h3 className="mt-2 text-base font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-xs text-slate-500">
+          Intended workflow under development; not instructions for clinical
+          use.
+        </p>
+      </div>
+    </section>
 
-            <h1
-              className="mt-7 text-[2.7rem] font-bold leading-[1.02] tracking-[-0.055em] text-slate-950 opacity-0 animate-fade-in sm:text-[3.35rem] lg:text-[3.7rem] xl:text-[4.1rem]"
-              style={{ animationDelay: "130ms", animationFillMode: "forwards" }}
-            >
-              Making Airway Clearance <span className="text-blue-700">More Measurable.</span>
-            </h1>
-
-            <p
-              className="mt-6 max-w-[34rem] text-base leading-7 text-slate-600 opacity-0 animate-fade-in sm:text-lg sm:leading-8"
-              style={{ animationDelay: "180ms", animationFillMode: "forwards" }}
-            >
-              Smart Lung Physio™ is being developed to combine localized mechanical chest percussion with real-time sensing, guided delivery, and session documentation.
-            </p>
-
-            <div
-              className="mt-8 flex flex-col gap-3 opacity-0 animate-fade-in sm:flex-row sm:items-center"
-              style={{ animationDelay: "230ms", animationFillMode: "forwards" }}
-            >
-              <Button asChild size="lg" className="h-auto rounded-xl bg-blue-700 px-6 py-3.5 text-sm font-semibold shadow-[0_14px_30px_-16px_rgba(29,78,216,0.75)] transition hover:-translate-y-0.5 hover:bg-blue-800 sm:text-base">
-                <NavLink to="/device" className="flex items-center gap-2">
-                  Explore Smart Lung Physio
-                  <ArrowRight className="h-4 w-4" />
-                </NavLink>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="h-auto rounded-xl border-slate-300 bg-white/80 px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-white sm:text-base">
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Discuss a Pilot
-                  <ChevronRight className="h-4 w-4" />
-                </NavLink>
-              </Button>
-            </div>
-
-            <p
-              className="mt-7 flex items-center gap-2.5 text-xs font-medium text-slate-500 opacity-0 animate-fade-in"
-              style={{ animationDelay: "280ms", animationFillMode: "forwards" }}
-            >
-              <span className="h-2 w-2 rounded-full border-2 border-amber-500 bg-amber-100" />
-              Medical device under development · Not yet commercially available
-            </p>
-          </div>
-
-          <div className="relative w-full opacity-0 animate-fade-in" style={{ animationDelay: "260ms", animationFillMode: "forwards" }}>
-            <ProductFilm />
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center text-[0.65rem] font-bold uppercase tracking-[0.12em] text-slate-500 sm:text-xs">
-              <span className="rounded-lg border border-slate-200 bg-white px-2 py-2.5">Physical device</span>
-              <span className="rounded-lg border border-slate-200 bg-white px-2 py-2.5">Sensor guidance</span>
-              <span className="rounded-lg border border-slate-200 bg-white px-2 py-2.5">Session record</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section aria-label="Media coverage" className="border-b border-slate-200 bg-[#f8fafc] px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
-        <div className="mx-auto max-w-6xl">
-          <MediaFeature />
-        </div>
-      </section>
-
-      <section className="border-b border-slate-200 bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end lg:gap-16">
-            <div>
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">What it does</p>
-              <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-                Guided. Measurable. Documented.
-              </h2>
-            </div>
-            <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              The physical device remains the core. Sensing, caregiver guidance, and software are being developed to make delivery more repeatable and reviewable.
-            </p>
-          </ScrollReveal>
-
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-3">
-            {productPillars.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 70} className="h-full bg-[#f8fafc]">
-                <article className="h-full p-7 sm:p-8">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-700 text-white">
-                      <item.icon className="h-5 w-5" />
-                    </span>
-                    <span className="text-[0.65rem] font-bold tracking-[0.18em] text-slate-400">0{index + 1}</span>
-                  </div>
-                  <h3 className="mt-8 text-xl font-semibold text-slate-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="mx-auto max-w-3xl text-center">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">How Smart Lung Physio Works</p>
-            <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-              From localized therapy to a structured session record.
-            </h2>
-          </ScrollReveal>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-5">
-            {howItWorks.map((step, index) => (
-              <ScrollReveal key={step.title} delay={index * 60}>
-                <article className="relative h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
-                      <step.icon className="h-5 w-5" />
-                    </span>
-                    <span className="text-[0.65rem] font-bold tracking-[0.16em] text-slate-400">0{index + 1}</span>
-                  </div>
-                  <h3 className="mt-6 font-semibold text-slate-950">{step.title}</h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-600">{step.description}</p>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <p className="mt-6 text-center text-xs leading-5 text-slate-500">
-            Intended operation, interface details, and feedback parameters remain under development and require technical and clinical validation.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-            <div>
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">Why it matters</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-                Three practical gaps in supervised care.
-              </h2>
-            </div>
-            <div className="border-t border-slate-300">
-              {challengeItems.map((item, index) => (
-                <article key={item.title} className="grid gap-4 border-b border-slate-300 py-6 sm:grid-cols-[3.5rem_1fr] sm:gap-5 sm:py-7">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 text-blue-700">
-                    <item.icon className="h-5 w-5" />
-                  </span>
-                  <div className="grid gap-2 sm:grid-cols-[0.55fr_1fr] sm:gap-8">
-                    <h3 className="text-base font-semibold text-slate-900 sm:text-lg">
-                      <span className="mr-3 text-xs font-bold text-slate-400">0{index + 1}</span>
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-slate-600">{item.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-6 border-b border-slate-300 pb-8 md:grid-cols-[0.38fr_1fr] md:items-end">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">Design in Context</p>
-            <div>
-              <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-                Shaped by the way care actually happens.
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
-                Early supervised reviews inform setup, handling, and positioning priorities.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {workflowInsights.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index * 60}>
-                <article className="group grid gap-4 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:grid-cols-[9rem_1fr] sm:items-center md:block">
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 md:aspect-[16/10]">
-                    <img src={item.src} alt={item.alt} loading="lazy" className={`h-full w-full object-cover saturate-[0.88] transition duration-500 group-hover:scale-[1.03] group-hover:saturate-100 ${item.crop}`} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/15 to-transparent" />
-                  </div>
-                  <div className="flex items-start gap-3 p-2 md:pt-3">
-                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-blue-200 bg-blue-50 text-blue-700">
-                      <item.icon className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-                      <p className="mt-1 text-xs leading-5 text-slate-500">{item.desc}</p>
-                    </div>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <p className="mt-6 text-xs leading-5 text-slate-500">Early prototype workflow reviews; not clinical validation.</p>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          <ScrollReveal>
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">Designed for Long-Term Care</p>
-            <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-              Technology designed around a real care setting.
-            </h2>
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-              Smart Lung Physio™ is being developed for trained caregivers who need a practical way to deliver, review, and document localized airway-clearance support.
-            </p>
-            <Button asChild size="lg" className="mt-8 h-auto rounded-xl bg-blue-700 px-6 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:bg-blue-800">
-              <NavLink to="/long-term-care" className="flex items-center gap-2">
-                Explore LTC Pilot Fit
-                <ArrowRight className="h-4 w-4" />
-              </NavLink>
-            </Button>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-[#f8fafc]">
-              {ltcHighlights.map((item, index) => (
-                <div key={item.label} className="grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-slate-200 p-6 last:border-0">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
-                    <item.icon className="h-[1.1rem] w-[1.1rem]" />
-                  </span>
-                  <p className="text-sm font-semibold text-slate-900 sm:text-base">{item.label}</p>
-                  <span className="text-[0.65rem] font-bold tracking-[0.18em] text-slate-400">0{index + 1}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-20">
-            <div>
-              <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-blue-700">Development & Validation</p>
-              <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-                Progress shown with clear boundaries.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                More than 100 stakeholder interviews have informed product requirements, workflow priorities, and pilot-readiness questions. This is discovery and development activity—not evidence of clinical efficacy.
-              </p>
-              <NavLink to="/clinical-evidence" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800">
-                View Evidence & Development
-                <ArrowRight className="h-4 w-4" />
-              </NavLink>
-            </div>
-
-            <div className="grid gap-5">
-              <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-5">
-                {developmentAreas.map((area, index) => (
-                  <div key={area} className="bg-white p-4 text-center sm:min-h-28 sm:p-5">
-                    <span className="text-[0.65rem] font-bold tracking-[0.16em] text-slate-400">0{index + 1}</span>
-                    <p className="mt-3 text-xs font-semibold leading-5 text-slate-800">{area}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-2xl bg-[#0b1b2f] p-6 text-white sm:p-7">
-                {["Under development", "Not yet commercially available", "Clinical and technical validation activities ongoing"].map((status) => (
-                  <div key={status} className="flex items-center gap-3 border-b border-white/10 py-3 first:pt-0 last:border-0 last:pb-0">
-                    <span className="h-2 w-2 rounded-full bg-sky-300" />
-                    <span className="text-sm font-medium text-slate-200">{status}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <section className="bg-white py-14 lg:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-          <ScrollReveal className="grid gap-8 lg:grid-cols-[0.34fr_1fr] lg:items-center">
-            <div>
-              <span className="block text-[0.66rem] font-bold uppercase tracking-[0.24em] text-blue-700">Ecosystem Engagement</span>
-              <h2 className="mt-3 max-w-xs text-lg font-semibold leading-6 tracking-[-0.02em] text-slate-800 sm:text-xl">
-                Connected to Canada's health innovation community
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-5">
-              {SUPPORT_ORGANIZATIONS.map((org) => (
-                <div key={org.name} className="flex h-24 items-center justify-center overflow-hidden bg-white px-4 sm:h-28">
-                  <img src={org.src} alt={org.name} className={`${org.logoClassName ?? `${org.square ? "max-h-14" : "max-h-12"} max-w-full`} object-contain opacity-75 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0`} loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <p className="mt-5 text-xs leading-5 text-slate-500 lg:ml-[calc(34%+2rem)]">
-            Logos identify programs, ecosystem participation, or development support. They do not indicate clinical endorsement or product validation.
-          </p>
-        </div>
-      </section>
-
-      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
-        <ScrollReveal className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-end">
+    <section className="company-section border-y border-slate-200 bg-[#f3f6f8]">
+      <div className="company-container">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-sky-300">Pilot readiness</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight tracking-[-0.04em] text-white sm:text-4xl lg:text-[2.8rem]">
-              Evaluate Smart Lung Physio in Your Care Setting
+            <p className="company-eyebrow">Development program</p>
+            <h2 className="company-heading mt-4">
+              A defined path from prototype to evaluation.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-              Discuss workflow fit, technical review, or a structured pilot-readiness pathway with Atabazh Medical.
-            </p>
           </div>
-          <Button asChild size="lg" className="h-auto rounded-xl bg-sky-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300">
-            <NavLink to="/contact">Discuss Pilot Readiness</NavLink>
-          </Button>
-        </ScrollReveal>
-      </section>
-    </div>
-  );
-};
+          <p className="text-lg leading-8 text-slate-600 lg:pt-8">
+            Three prototype generations and stakeholder discovery have informed
+            the design. The next phase focuses on technical performance,
+            usability, and preparation for structured evaluation.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {developmentPriorities.map((item, i) => (
+            <article
+              key={item.title}
+              className="rounded-xl border border-slate-200 bg-white p-7"
+            >
+              <p className="text-xs font-semibold tracking-widest text-[#164d69]">
+                0{i + 1} / DEVELOPMENT PRIORITY
+              </p>
+              <h3 className="mt-5 text-xl">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                {item.summary}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-7 flex flex-col justify-between gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center">
+          <p className="max-w-2xl text-sm text-slate-500">
+            Formal clinical validation has not yet been completed. Development
+            milestones are separate from evidence of clinical effectiveness.
+          </p>
+          <NavLink
+            to="/clinical-evidence"
+            className="company-text-link shrink-0"
+          >
+            Evidence & development{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
+      </div>
+    </section>
 
+    <section className="company-section bg-white">
+      <div className="company-container grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <p className="company-eyebrow">Initial care-setting focus</p>
+          <h2 className="company-heading mt-4">
+            Built around the realities of long-term care.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Care teams need practical setup, clear training, and documentation
+            that fits their routines. Our development work connects those needs
+            to device design and evaluation planning.
+          </p>
+          <NavLink to="/long-term-care" className="company-text-link mt-6">
+            Explore LTC evaluation priorities{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
+        <div className="rounded-2xl bg-[#0b1b2f] p-8 text-white sm:p-10">
+          <p className="company-eyebrow !text-sky-300">Company & team</p>
+          <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
+            Engineering, clinical input, and commercialization.
+          </h2>
+          <p className="mt-5 leading-7 text-slate-300">
+            Led by biomedical engineer Ali Abedinpour, Atabazh brings together
+            technical contributors and advisors across mechanical design,
+            electronics, embedded systems, respiratory care, and market
+            development.
+          </p>
+          <NavLink to="/about" className="company-text-link mt-6 !text-sky-300">
+            Meet the team <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
+      </div>
+    </section>
+
+    <section className="border-t border-slate-200 bg-[#f8fafc] py-12">
+      <div className="company-container">
+        <div className="flex flex-col justify-between gap-3 sm:flex-row">
+          <h2 className="text-base font-semibold tracking-normal">
+            Innovation & development ecosystem
+          </h2>
+          <NavLink to="/about" className="company-text-link text-sm">
+            View company background{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
+        <div className="mt-8 grid grid-cols-3 items-center gap-7 md:grid-cols-6">
+          {[
+            { name: "MaRS", src: marsLogo },
+            { name: "Innovation Boost Zone", src: ibzLogo },
+            { name: "Innovation Factory", src: innovationFactoryLogo },
+            { name: "Lab2Market Validate", src: lab2MarketLogo },
+            { name: "Mitacs", src: mitacsLogo },
+            { name: "Baycrest", src: baycrestLogo },
+          ].map((item) => (
+            <div className="flex h-16 justify-center" key={item.name}>
+              <img
+                src={item.src}
+                alt={item.name}
+                loading="lazy"
+                className="max-h-14 max-w-[110px] object-contain grayscale"
+              />
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-xs leading-5 text-slate-500">
+          Organizations shown reflect development, mentorship, or program
+          connections. Their inclusion does not imply product endorsement or
+          clinical validation.
+        </p>
+      </div>
+    </section>
+    <CompanyCTA />
+  </div>
+);
 export default Home;

@@ -1,349 +1,222 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import {
-  AlertCircle,
-  ArrowRight,
-  ClipboardList,
-  FileText,
-  FlaskConical,
-  HeartPulse,
-  LayoutList,
-  Shield,
-  Users,
-} from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
+import { CompanyCTA } from "@/components/CompanyCTA";
 import ResearchValidationSection from "@/components/ResearchValidationSection";
+import { developmentFacts, developmentPriorities } from "@/data/development";
+import { publicAsset } from "@/lib/publicAsset";
 
-const learningCards = [
+const evidenceAreas = [
   {
-    icon: Users,
-    stat: "100+",
-    title: "Stakeholder Interviews",
-    desc: "Discovery with respiratory therapists, physiotherapists, LTC professionals, caregivers, and healthcare stakeholders.",
+    area: "Engineering",
+    status: "Prototype development",
+    current:
+      "Three generations of hardware and software iteration. A functional, mains-powered physical prototype.",
+    next: "Define test methods and acceptance criteria; document mechanical, sensor, and system performance.",
   },
   {
-    icon: LayoutList,
-    stat: "3",
-    title: "Prototype Generations",
-    desc: "Hardware and software iterations informed by usability, handling, setup, and documentation considerations.",
+    area: "Customer discovery",
+    status: "100+ interviews",
+    current:
+      "Input from respiratory therapists, physiotherapists, LTC professionals, caregivers, and healthcare stakeholders.",
+    next: "Translate identified needs into prioritized requirements and site-specific evaluation questions.",
   },
   {
-    icon: HeartPulse,
-    stat: "Supervised",
-    title: "Prototype Reviews",
-    desc: "Early reviews helped identify bedside setup, patient positioning, and caregiver workflow considerations.",
+    area: "Usability",
+    status: "Early supervised review",
+    current:
+      "Prototype handling, bedside setup, patient positioning, and documentation needs explored in early reviews.",
+    next: "Structured usability evaluation with defined tasks, training requirements, and measures.",
   },
   {
-    icon: ClipboardList,
-    stat: "Planned",
-    title: "Pilot Preparation",
-    desc: "Readiness activities focus on site workflow, training, documentation, and evaluation planning.",
+    area: "Clinical evaluation",
+    status: "Planning",
+    current:
+      "Pilot-readiness planning and definition of appropriate workflows. Formal clinical validation has not been completed.",
+    next: "Agree protocols, oversight, site requirements, and necessary approvals before any clinical evaluation.",
+  },
+  {
+    area: "Intellectual property",
+    status: "Application filed",
+    current:
+      "A U.S. utility patent application has been filed for the technology.",
+    next: "Continue the application process. Filing does not mean that a patent has been granted.",
+  },
+  {
+    area: "Regulatory & quality",
+    status: "Pathway assessment",
+    current:
+      "Regulatory pathway assessment and documentation planning are underway.",
+    next: "Refine intended use, risk documentation, quality-system needs, and evidence requirements.",
   },
 ];
 
-const ClinicalEvidence = () => {
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-[#f8fafc] px-5 pb-20 pt-32 sm:px-8 lg:px-12 lg:pb-24 lg:pt-36">
-        <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
-        <div className="hidden">
-          <svg className="absolute left-0 top-1/2 h-[400px] w-[200%] -translate-y-1/2 opacity-[0.06]" viewBox="0 0 1400 200" preserveAspectRatio="none">
-            <path d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100" stroke="hsl(200, 80%, 60%)" strokeWidth="3" fill="none" />
-          </svg>
+const ClinicalEvidence = () => (
+  <div className="company-page">
+    <header className="border-b border-slate-200 bg-[#f3f6f8] pb-14 pt-32 lg:pb-16 lg:pt-36">
+      <div className="company-container">
+        <p className="company-eyebrow">Evidence & development</p>
+        <h1 className="mt-5 max-w-4xl text-4xl leading-[1.08] tracking-[-0.04em] sm:text-5xl">
+          Progress you can assess.
+          <br />A development path you can follow.
+        </h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          A clear view of Smart Lung Physio™: the work completed to date, the
+          questions still being evaluated, and the priorities for the next
+          phase.
+        </p>
+        <p className="mt-6 inline-flex rounded-md border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700">
+          Current stage: functional prototype · Not yet commercially available
+        </p>
+      </div>
+    </header>
+    <section className="company-section">
+      <div className="company-container">
+        <p className="company-eyebrow">Progress to date</p>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {developmentFacts.map((item) => (
+            <article
+              key={item.label}
+              className="border-l-2 border-[#164d69] pl-6"
+            >
+              <p className="text-4xl font-semibold text-[#164d69]">
+                {item.value}
+              </p>
+              <h2 className="mt-3 text-lg font-semibold">{item.label}</h2>
+              <p className="mt-2 text-sm text-slate-600">{item.context}</p>
+            </article>
+          ))}
         </div>
-
-        <div className="relative z-10 mx-auto max-w-4xl space-y-6 text-center">
-          <p className="mx-auto inline-flex items-center rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-blue-700 shadow-sm">
-            Research & Workflow Learning
-          </p>
-          <h1 className="animate-fade-in text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 md:text-5xl lg:text-[3.6rem]">
-            From Prototype Learning to Pilot Readiness
-          </h1>
-          <p className="mx-auto max-w-2xl animate-fade-in text-lg leading-relaxed text-slate-600 md:text-xl">
-            A regulatory-safe view of Smart Lung Physio™ development activities, stakeholder discovery, supervised prototype review, and pilot-readiness planning.
-          </p>
-        </div>
-
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/50 to-transparent" />
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="container mx-auto">
-          <ScrollReveal className="mb-16 space-y-4 text-center">
-            <h2 className="text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">What We Are Learning</h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Current work focuses on workflow fit, caregiver usability, documentation needs, and pilot-readiness planning. Formal clinical validation has not yet been completed.
-            </p>
-          </ScrollReveal>
-
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {learningCards.map((item, index) => (
-              <ScrollReveal key={item.title} delay={index === 0 ? 0 : index === 1 ? 100 : index === 2 ? 150 : 200}>
-                <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-blue-200">
-                  <CardContent className="space-y-4 p-8 text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-blue-700">
-                      <item.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="text-3xl font-bold tracking-tight text-blue-700">{item.stat}</div>
-                    <h3 className="text-lg font-semibold text-slate-800">{item.title}</h3>
-                    <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              </ScrollReveal>
+        <p className="mt-8 text-sm text-slate-500">
+          These are company-reported development milestones. Stakeholder
+          discovery and prototype reviews do not establish clinical safety or
+          effectiveness.
+        </p>
+      </div>
+    </section>
+    <section className="border-y border-slate-200 bg-[#f8fafc] company-section">
+      <div className="company-container">
+        <h2 className="company-heading">
+          Current status & next evidence needs
+        </h2>
+        <p className="mt-4 max-w-3xl text-slate-600">
+          Each workstream has a different purpose. Current activity is shown
+          separately from planned testing and evaluation.
+        </p>
+        <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white">
+          <div className="hidden grid-cols-[0.65fr_1.2fr_1.2fr] gap-8 bg-[#0b1b2f] px-7 py-4 text-xs font-bold uppercase tracking-wider text-white md:grid">
+            <span>Workstream</span>
+            <span>Current position</span>
+            <span>Next evidence need</span>
+          </div>
+          <div className="divide-y divide-slate-200">
+            {evidenceAreas.map((item) => (
+              <article
+                key={item.area}
+                className="grid gap-5 p-6 md:grid-cols-[0.65fr_1.2fr_1.2fr] md:gap-8 md:p-7"
+              >
+                <div>
+                  <h3 className="text-lg font-semibold">{item.area}</h3>
+                  <p className="mt-2 text-xs font-medium text-[#164d69]">
+                    {item.status}
+                  </p>
+                </div>
+                <div>
+                  <p className="mb-2 text-xs font-bold uppercase text-slate-500 md:hidden">
+                    Current position
+                  </p>
+                  <p className="text-sm leading-7 text-slate-600">
+                    {item.current}
+                  </p>
+                </div>
+                <div>
+                  <p className="mb-2 text-xs font-bold uppercase text-slate-500 md:hidden">
+                    Next evidence need
+                  </p>
+                  <p className="text-sm leading-7 text-slate-600">
+                    {item.next}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
-      </section>
-
-      <ResearchValidationSection />
-
-      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Operational Learning Areas</h2>
-          </ScrollReveal>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            <ScrollReveal>
-              <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <CardContent className="p-8">
-                  <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Workflow Fit</h3>
-                  <p className="mb-6 text-slate-600">
-                    Development work is focused on reducing friction in setup, session flow, and documentation while preserving clinical oversight.
-                  </p>
-                  <div className="rounded-xl border border-blue-100/50 bg-blue-50/50 p-6">
-                    <ul className="space-y-3 text-sm text-slate-600">
-                      {["Setup clarity for trained caregivers", "Repeatable session prompts", "Practical documentation flow", "Fit with scheduled care routines"].map((item) => (
-                        <li key={item} className="flex items-start gap-2">
-                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <Card className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <CardContent className="p-8">
-                  <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Care-Team Feedback Themes</h3>
-                  <p className="mb-6 text-slate-600">
-                    Stakeholder conversations continue to shape product decisions around caregiver usability, resident comfort, and operational adoption.
-                  </p>
-                  <ul className="space-y-3 text-sm text-slate-600">
-                    {[
-                      "Care teams need clear prompts that do not add cognitive burden",
-                      "Documentation must be simple enough for routine use",
-                      "Positioning guidance should reflect real bedside conditions",
-                      "Training materials need to support staff turnover and onboarding",
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <span className="mt-0.5 text-blue-600">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </div>
-
-          <ScrollReveal delay={150} className="mt-8">
-            <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <CardContent className="p-8">
-                <h3 className="mb-4 text-xl font-semibold text-slate-800 md:text-2xl">Pilot-Readiness Questions</h3>
-                <p className="mb-4 text-slate-600">
-                  Current validation planning is organized around practical questions that matter to care settings and future pilot sites.
-                </p>
-                <ul className="space-y-3 text-sm text-slate-600">
-                  {[
-                    "Which residents and workflows are appropriate for evaluation?",
-                    "How should session delivery and documentation be captured?",
-                    "What training and support do care teams need before deployment?",
-                    "How can implementation be measured without adding unnecessary workload?",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-0.5 text-blue-600">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
+      </div>
+    </section>
+    <section className="company-section">
+      <div className="company-container grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p className="company-eyebrow">Prototype learning</p>
+          <h2 className="company-heading mt-4">
+            Connecting device design to supervised care.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            Early prototype reviews have informed handling, positioning, and
+            bedside setup. These observations help define the questions for
+            structured usability and workflow evaluation.
+          </p>
+          <NavLink to="/long-term-care" className="company-text-link mt-6">
+            What an LTC evaluation could measure{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
         </div>
-      </section>
-
-      <section className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Safety & Usability Considerations</h2>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <CardContent className="p-8">
-                <div className="mb-6 flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                    <Shield className="h-6 w-6 text-blue-700" />
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl font-semibold text-slate-800">Designed for Supervised Use</h3>
-                    <p className="text-slate-600">
-                      Smart Lung Physio™ development focuses on caregiver prompts, pressure-limit concepts, oxygen-saturation context, and clear pause or stop workflows. It is not intended to replace clinical judgment or licensed respiratory care.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="rounded-xl border border-blue-100/50 bg-blue-50/50 p-6">
-                    <h4 className="mb-3 font-semibold text-slate-800">Resident Comfort Considerations</h4>
-                    <ul className="space-y-2 text-sm text-slate-600">
-                      <li>• Positioning and session pacing</li>
-                      <li>• Caregiver observation and escalation workflow</li>
-                      <li>• Compatibility with facility protocols</li>
-                      <li>• Clear role for clinical judgment</li>
-                    </ul>
-                  </div>
-
-                  <div className="rounded-xl border border-blue-100/50 bg-blue-50/50 p-6">
-                    <h4 className="mb-3 font-semibold text-slate-800">Device Safety Design Direction</h4>
-                    <ul className="space-y-2 text-sm text-slate-600">
-                      <li>• Pressure-limit concepts</li>
-                      <li>• SpO₂ context during sessions</li>
-                      <li>• Pause and stop prompts</li>
-                      <li>• Session documentation support</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
+        <figure className="overflow-hidden rounded-xl border border-slate-200">
+          <img
+            src={publicAsset("media/workflow-bedside.webp")}
+            alt="Early supervised prototype review of bedside setup"
+            loading="lazy"
+            className="aspect-[3/2] w-full object-cover"
+          />
+          <figcaption className="bg-slate-50 p-4 text-xs leading-5 text-slate-500">
+            Early prototype workflow review. This image does not represent a
+            completed clinical trial or validated patient outcomes.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section className="company-section bg-[#0b1b2f] text-white">
+      <div className="company-container">
+        <p className="company-eyebrow !text-sky-300">Next development phase</p>
+        <h2 className="company-heading mt-4">
+          Three priorities for structured evaluation.
+        </h2>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {developmentPriorities.map((item, i) => (
+            <article key={item.title} className="border-t border-white/25 pt-6">
+              <p className="text-sm text-sky-300">0{i + 1}</p>
+              <h3 className="mt-3 text-xl">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                {item.summary}
+              </p>
+              <p className="mt-5 text-sm font-medium leading-6 text-sky-200">
+                {item.output}
+              </p>
+            </article>
+          ))}
         </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-[#f8fafc] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <h2 className="mb-12 text-center text-3xl font-bold text-slate-800 md:text-4xl lg:text-[2.75rem]">Pilot-Readiness Roadmap</h2>
-          </ScrollReveal>
-
-          <div className="space-y-6">
-            <ScrollReveal>
-              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <CardContent className="p-8">
-                  <div className="mb-6 flex items-start gap-4">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-blue-100">
-                      <FlaskConical className="h-6 w-6 text-blue-700" />
-                    </div>
-                    <div>
-                      <h3 className="mb-2 text-xl font-semibold text-slate-800">Ongoing Activities</h3>
-                      <p className="text-slate-600">
-                        We are building a structured evidence plan through stakeholder discovery, prototype review, and pilot preparation.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-4">
-                      <h4 className="font-semibold text-slate-800">Current Activities</h4>
-                      <ul className="space-y-2 text-sm text-slate-600">
-                        {["Stakeholder discovery and workflow mapping", "Prototype usability and handling review", "Pilot-readiness documentation and evaluation planning"].map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-blue-600">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h4 className="font-semibold text-slate-800">Planned Next Steps</h4>
-                      <ul className="space-y-2 text-sm text-slate-600">
-                        {["Structured pilot protocols", "Site-specific workflow evaluation", "Preparation of findings for appropriate scientific dissemination"].map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-blue-600">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={100}>
-              <Card className="rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <CardContent className="p-6">
-                  <h3 className="mb-4 text-lg font-semibold text-slate-800">Related Materials</h3>
-                  <div className="space-y-4">
-                    {[
-                      { title: "Workflow Learning Brief: Airway-Clearance Support in LTC", source: "Internal development brief, Atabazh Medical Inc." },
-                      { title: "Pilot-Readiness Summary: Early Product Development Questions", source: "Internal planning summary, Atabazh Medical Inc." },
-                    ].map((doc) => (
-                      <div key={doc.title} className="flex items-start space-x-4">
-                        <FileText className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
-                        <div>
-                          <h4 className="mb-1 text-base font-medium text-slate-800">{doc.title}</h4>
-                          <p className="text-sm text-slate-500">{doc.source}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-white px-5 py-8 sm:px-8 lg:px-12">
-        <div className="container mx-auto max-w-4xl">
-          <div className="flex items-start gap-3 text-sm text-slate-500">
-            <AlertCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-slate-400" />
-            <p>
-              <strong className="text-slate-700">Important Note:</strong> This page summarizes product-development learning and readiness activities. It does not present clinical efficacy claims, regulatory clearance, or peer-reviewed outcome results. Smart Lung Physio™ is under development and validation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
-        <div className="container mx-auto max-w-4xl space-y-8 text-center">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss Research or Pilot Collaboration</h2>
-            <p className="text-lg text-slate-300">
-              We welcome conversations with clinicians, researchers, LTC operators, rehabilitation teams, and innovation partners.
-            </p>
-            <div className="flex flex-col justify-center gap-5 pt-4 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
-              >
-                <NavLink to="/contact" className="flex items-center gap-2">
-                  Connect for Clinical Collaboration
-                  <ArrowRight className="h-4 w-4" />
-                </NavLink>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="h-auto rounded-xl border-white/20 bg-white/5 px-7 py-4 text-base text-white transition hover:border-white/35 hover:bg-white/10 hover:text-white"
-              >
-                <NavLink to="/device">View Device Workflow</NavLink>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </div>
-  );
-};
-
+        <p className="mt-10 border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">
+          Activities depend on technical readiness, collaborators, resources,
+          and applicable oversight. No study start date or regulatory clearance
+          is implied.
+        </p>
+      </div>
+    </section>
+    <ResearchValidationSection />
+    <section className="border-t border-slate-200 bg-slate-50 py-8">
+      <div className="company-container">
+        <p className="text-sm leading-7 text-slate-600">
+          <strong className="text-slate-900">Development status:</strong> Smart
+          Lung Physio™ is under development. This website does not present
+          completed clinical validation, regulatory clearance, or peer-reviewed
+          clinical outcome results. Scientific presentation acceptance and media
+          coverage are distinct from product validation.
+        </p>
+        <NavLink to="/news" className="company-text-link mt-3 text-sm">
+          View company and research updates{" "}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </NavLink>
+      </div>
+    </section>
+    <CompanyCTA />
+  </div>
+);
 export default ClinicalEvidence;
