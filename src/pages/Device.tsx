@@ -81,12 +81,12 @@ const Device = () => {
                       className="h-full w-full object-cover object-center"
                     />
                     <div className="absolute left-4 top-4 rounded-full border border-slate-200/80 bg-white/90 px-3.5 py-2 text-[0.62rem] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-5 sm:top-5">
-                      Product visualization
+                      Design concept
                     </div>
                     <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-[#0b1b2f]/95 px-4 py-3.5 text-white backdrop-blur-sm sm:px-5 sm:py-4">
                       <p className="text-xs font-semibold sm:text-sm">Based on our functional prototype</p>
                       <p className="mt-1 text-[0.58rem] leading-relaxed text-slate-300 sm:text-[0.65rem]">
-                        Current functional prototype is mains-powered. Displayed interface values are illustrative and are not clinical recommendations.
+                        Concept interface with sample values. Current prototype uses mains power.
                       </p>
                     </div>
                   </div>
