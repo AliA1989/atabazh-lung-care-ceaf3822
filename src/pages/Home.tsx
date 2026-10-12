@@ -20,7 +20,7 @@ import baycrestLogo from "@/assets/support/baycrest.png";
 const Home = () => (
   <div className="company-page">
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
-      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-16">
+      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-12">
         <div>
           <p className="company-eyebrow !text-sky-300">
             Atabazh Medical · Toronto, Canada
@@ -32,9 +32,9 @@ const Home = () => (
             <strong className="font-semibold text-white">
               Smart Lung Physio™
             </strong>{" "}
-            is a handheld medical device under development, combining localized
-            mechanical chest percussion with sensing, caregiver guidance, and
-            session documentation.
+            is our handheld airway-clearance technology. Its development brings
+            localized mechanical chest percussion together with contact sensing,
+            orientation feedback, and a connected caregiver interface.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <NavLink
@@ -52,27 +52,27 @@ const Home = () => (
             </NavLink>
           </div>
           <p className="mt-6 text-xs leading-5 text-slate-400">
-            Functional prototype stage · Not yet commercially available
+            Physical prototype · Integrated sensing · Engineering-led development
           </p>
         </div>
-        <figure className="overflow-hidden rounded-2xl border border-white/15 bg-white/5">
+        <figure className="mx-auto w-full max-w-[25rem] overflow-hidden rounded-xl border border-white/15 bg-white/5">
           <img
-            src={publicAsset("media/eyeopener-ali-smart-lung.jpg")}
+            src={publicAsset("media/founder-prototype-focused.webp")}
             alt="Atabazh founder Ali Abedinpour holding the Smart Lung Physio prototype"
-            width={816}
-            height={544}
+            width={1122}
+            height={1402}
             loading="eager"
-            className="aspect-[3/2] w-full object-cover"
+            className="aspect-[4/5] w-full object-cover"
           />
-          <figcaption className="p-5 sm:p-6">
+          <figcaption className="px-5 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-sky-300">
-              From engineering to application
+              Ali Abedinpour · Founder
             </p>
             <p className="mt-2 text-sm text-slate-200">
-              Founder Ali Abedinpour with the physical prototype.
+              Smart Lung Physio™ · Physical prototype
             </p>
             <p className="mt-2 text-[11px] text-slate-400">
-              Photo: Daniel Opasinis / The Eyeopener
+              AI-assisted editorial image. Original photo: Daniel Opasinis / The Eyeopener.
             </p>
           </figcaption>
         </figure>
@@ -178,7 +178,7 @@ const Home = () => (
               {
                 icon: ClipboardList,
                 title: "Guidance & session records",
-                text: "Interface concepts that connect caregiver prompts with structured documentation.",
+                text: "A companion interface for sensor feedback, with persistent session records on the development roadmap.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex gap-4 py-5">
@@ -265,8 +265,8 @@ const Home = () => (
         </div>
         <div className="mt-7 flex flex-col justify-between gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center">
           <p className="max-w-2xl text-sm text-slate-500">
-            Formal clinical validation has not yet been completed. Development
-            milestones are separate from evidence of clinical effectiveness.
+            Explore the engineering record, evaluation priorities, and current
+            development status in one place.
           </p>
           <NavLink
             to="/clinical-evidence"
