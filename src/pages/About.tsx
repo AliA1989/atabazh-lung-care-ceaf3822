@@ -147,7 +147,7 @@ const About = () => {
                 ["Lead program", "Smart Lung Physio™"],
                 [
                   "Development stage",
-                  "Functional prototype; not yet commercially available",
+                  "Physical prototype and engineering evaluation",
                 ],
                 [
                   "Next focus",

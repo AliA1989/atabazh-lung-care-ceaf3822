@@ -118,7 +118,7 @@ const Footer = () => {
           
           <div className="text-center md:text-right space-y-1">
             <p className="text-xs text-slate-500">
-              Smart Lung Physio™ is under development and is not cleared for sale.
+              <NavLink to="/clinical-evidence" className="underline underline-offset-4 hover:text-slate-300">Smart Lung Physio™ · Development status</NavLink>
             </p>
             <p className="text-xs text-slate-500">
               © 2026 Atabazh Medical Inc. All rights reserved.

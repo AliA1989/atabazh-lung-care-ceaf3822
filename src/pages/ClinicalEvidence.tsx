@@ -4,6 +4,7 @@ import { CompanyCTA } from "@/components/CompanyCTA";
 import ResearchValidationSection from "@/components/ResearchValidationSection";
 import { developmentFacts, developmentPriorities } from "@/data/development";
 import { publicAsset } from "@/lib/publicAsset";
+import { acquisitionChannels, documentedBenchRun } from "@/data/engineering";
 
 const evidenceAreas = [
   {
@@ -65,7 +66,7 @@ const ClinicalEvidence = () => (
           phase.
         </p>
         <p className="mt-6 inline-flex rounded-md border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700">
-          Current stage: functional prototype · Not yet commercially available
+          Current focus: prototype engineering & evaluation
         </p>
       </div>
     </header>
@@ -87,10 +88,42 @@ const ClinicalEvidence = () => (
           ))}
         </div>
         <p className="mt-8 text-sm text-slate-500">
-          These are company-reported development milestones. Stakeholder
-          discovery and prototype reviews do not establish clinical safety or
-          effectiveness.
+          Company-reported milestones, supported by prototype development records
+          and stakeholder discovery activity.
         </p>
+      </div>
+    </section>
+    <section id="engineering-record" className="company-section scroll-mt-24 border-t border-slate-200 bg-white">
+      <div className="company-container">
+        <p className="company-eyebrow">Engineering record</p>
+        <h2 className="company-heading mt-4">From configuration to documented testing.</h2>
+        <div className="mt-9 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <article className="rounded-xl bg-[#0b1b2f] p-7 text-white">
+            <p className="text-xs font-semibold uppercase tracking-widest text-sky-300">Recorded bench activity</p>
+            <p className="mt-6 text-5xl font-semibold">{documentedBenchRun.duration}<span className="ml-2 text-lg font-normal">minutes</span></p>
+            <h3 className="mt-5 text-xl">{documentedBenchRun.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300">{documentedBenchRun.finding}</p>
+            <dl className="mt-6 space-y-4 border-t border-white/20 pt-5 text-sm">
+              <div><dt className="text-slate-400">Test condition</dt><dd className="mt-1">{documentedBenchRun.conditions}</dd></div>
+              <div><dt className="text-slate-400">Record date</dt><dd className="mt-1"><time dateTime={documentedBenchRun.dateTime}>{documentedBenchRun.date}</time></dd></div>
+            </dl>
+            <p className="mt-6 text-xs leading-6 text-slate-400">Source: Week 5 engineering log. This is a documented communication test; it does not establish a reliability specification or clinical performance.</p>
+          </article>
+          <div>
+            <h3 className="text-xl font-semibold">Configured acquisition rates</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">The prototype architecture record describes the firmware settings below. Actual acquisition and wireless delivery rates require run-specific verification.</p>
+            <dl className="mt-5 divide-y divide-slate-200">
+              {acquisitionChannels.map((channel) => (
+                <div key={channel.name} className="flex items-start justify-between gap-5 py-5">
+                  <dt className="text-sm font-semibold">{channel.name}<span className="mt-1 block text-xs font-normal text-slate-500">{channel.hardware}</span></dt>
+                  <dd className="text-right text-xl font-semibold text-[#164d69]">{channel.rate} Hz<span className="mt-1 block text-xs font-normal text-slate-500">{channel.interval}</span></dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-4 text-xs leading-6 text-slate-500">Source: internal prototype architecture record, reviewed 7 October 2026. These are sensor and communication settings, not therapeutic settings or measured percussion frequencies.</p>
+            <NavLink to="/contact" className="company-text-link mt-6">Discuss a technical review <ArrowRight className="h-4 w-4" aria-hidden="true" /></NavLink>
+          </div>
+        </div>
       </div>
     </section>
     <section className="border-y border-slate-200 bg-[#f8fafc] company-section">
@@ -167,8 +200,7 @@ const ClinicalEvidence = () => (
             className="aspect-[3/2] w-full object-cover"
           />
           <figcaption className="bg-slate-50 p-4 text-xs leading-5 text-slate-500">
-            Early prototype workflow review. This image does not represent a
-            completed clinical trial or validated patient outcomes.
+            Early prototype workflow review: handling, positioning, and bedside setup.
           </figcaption>
         </figure>
       </div>
@@ -194,14 +226,13 @@ const ClinicalEvidence = () => (
           ))}
         </div>
         <p className="mt-10 border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">
-          Activities depend on technical readiness, collaborators, resources,
-          and applicable oversight. No study start date or regulatory clearance
-          is implied.
+          Each evaluation phase is planned around defined methods, technical
+          readiness, collaborators, and applicable oversight.
         </p>
       </div>
     </section>
     <ResearchValidationSection />
-    <section className="border-t border-slate-200 bg-slate-50 py-8">
+    <section id="development-status" className="scroll-mt-24 border-t border-slate-200 bg-slate-50 py-8">
       <div className="company-container">
         <p className="text-sm leading-7 text-slate-600">
           <strong className="text-slate-900">Development status:</strong> Smart

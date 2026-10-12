@@ -53,7 +53,7 @@ const Device = () => {
             </h1>
             
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600 animate-fade-in md:text-xl">
-              A handheld medical device under development that combines localized mechanical chest percussion with sensing, caregiver guidance, and structured session documentation.
+              A handheld airway-clearance platform bringing localized mechanical chest percussion together with contact sensing, orientation feedback, and a connected caregiver interface.
             </p>
             
             <div className="flex flex-col gap-5 pt-4 animate-fade-in sm:flex-row">

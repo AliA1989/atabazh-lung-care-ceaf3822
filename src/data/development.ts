@@ -13,7 +13,7 @@ export const developmentFacts = [
   {
     value: "Functional",
     label: "Physical prototype",
-    context: "Mains-powered device under development.",
+    context: "Mains-powered hardware with a connected sensor architecture.",
   },
 ];
 

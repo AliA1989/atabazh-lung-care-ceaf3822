@@ -9,7 +9,7 @@ const primarySignals = [
     eyebrow: "Caregiver input",
     title: "Caregiver preload",
     description:
-      "The steady contact pressure applied while the device is positioned. Prototype sensing is being developed to make this input visible and easier to repeat.",
+      "The steady contact force applied while positioning the device. A dedicated load-cell channel provides an engineering basis for contact feedback.",
     status: "Prototype sensing",
     accent: "from-blue-600 to-blue-500",
   },
@@ -19,8 +19,8 @@ const primarySignals = [
     eyebrow: "Device output",
     title: "Percussion output",
     description:
-      "The repeating mechanical output produced by the actuator. Bench characterization evaluates it independently from caregiver preload.",
-    status: "Bench characterized",
+      "The repeating mechanical output produced by the actuator. Characterization must measure this independently from caregiver preload and firmware command settings.",
+    status: "Characterization focus",
     accent: "from-cyan-600 to-sky-500",
   },
 ];
@@ -29,8 +29,8 @@ const supportingSignals = [
   {
     icon: Compass,
     title: "Orientation guidance",
-    description: "Direction and positioning feedback are being explored to support more repeatable setup.",
-    status: "In development",
+    description: "The prototype uses accelerometer and gyroscope readings to calculate filtered roll and pitch.",
+    status: "Prototype feedback",
   },
   {
     icon: HeartPulse,
@@ -48,10 +48,10 @@ const DeviceMeasurementSection = () => {
         <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">Measurement architecture</p>
           <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-            Two force signals. Kept distinct.
+            Contact input. Mechanical output.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Smart Lung Physio™ is being developed to distinguish the caregiver&apos;s steady input from the device&apos;s mechanical output—two signals with different roles in a supervised session.
+            Our measurement strategy treats caregiver contact force and actuator output as separate engineering quantities. That distinction shapes sensor selection, feedback, and bench-test design.
           </p>
         </ScrollReveal>
 
@@ -71,7 +71,7 @@ const DeviceMeasurementSection = () => {
               <figcaption className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/20 bg-slate-950/70 p-5 text-white shadow-xl backdrop-blur-xl sm:inset-x-7 sm:bottom-7 sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">Why separation matters</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200 sm:text-base">
-                  It supports clearer setup feedback without treating caregiver pressure and device percussion as the same measurement.
+                  Contact load, actuator motion, and mechanical output need distinct measurements and test conditions.
                 </p>
               </figcaption>
             </figure>
@@ -118,7 +118,7 @@ const DeviceMeasurementSection = () => {
         </div>
 
         <p className="mx-auto mt-8 max-w-4xl text-center text-xs leading-5 text-slate-500">
-          Product architecture and interface details remain under development and are subject to engineering validation and regulatory review.
+          Contact force is measured in newtons; it is distinct from local tissue pressure. Firmware command settings alone do not establish delivered percussion frequency.
         </p>
       </div>
     </section>
