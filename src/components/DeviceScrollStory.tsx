@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Pause, Play } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
+import { publicAsset } from "@/lib/publicAsset";
 import "./DeviceScrollStory.css";
 
 const steps = [
@@ -64,27 +65,20 @@ export default function DeviceScrollStory() {
                 <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</span>
                 <button type="button" onClick={() => setPaused(!paused)} disabled={reduced} aria-label={paused ? "Play device animation" : "Pause device animation"} aria-pressed={paused} className="story-control">{paused || reduced ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}<span>{reduced ? "Reduced motion" : paused ? "Play" : "Pause"}</span></button>
               </div>
-              <svg viewBox="0 0 560 390" className="story-diagram" role="img" aria-label="Schematic illustration of the handheld device, contact sensing, and connected companion interface">
-                <defs><linearGradient id="storyBody" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#3b5267"/><stop offset="1" stopColor="#0e2134"/></linearGradient><linearGradient id="storyCup"><stop stopColor="#ecf7fa"/><stop offset="1" stopColor="#97baca"/></linearGradient></defs>
-                <ellipse cx="192" cy="318" rx="116" ry="16" fill="#020b15" opacity=".6" />
-                <g className="story-device">
-                  <rect x="207" y="69" width="73" height="233" rx="15" fill="url(#storyBody)" stroke="#7793a6" strokeWidth="1.5"/>
-                  <path d="M223 86H265M223 280H265" stroke="#7593a6" opacity=".5"/>
-                  <rect x="227" y="111" width="34" height="47" rx="6" fill="#0b1b2f" stroke="#506c81"/>
-                  <circle cx="244" cy="187" r="5" fill="#73c8e2"/>
-                  <path d="M209 222H170" stroke="#b1c6d1" strokeWidth="10"/>
-                  <g className="story-contact"><path d="M169 197V247H143L123 257H104V187H123L143 197Z" fill="url(#storyCup)" stroke="#def4fc" strokeWidth="2"/><ellipse cx="104" cy="222" rx="10" ry="35" fill="#d9ecf1" stroke="#def4fc" strokeWidth="2"/></g>
-                  <circle className="story-sensor" cx="174" cy="222" r="17" fill="none" stroke="#77d4e7" strokeWidth="2"/>
-                  <circle className="story-orientation" cx="244" cy="119" r="34" fill="none" stroke="#77d4e7" strokeDasharray="4 7"/>
-                </g>
-                <path className="story-link" d="M291 211C321 211 329 161 363 161" stroke="#6fd0df" strokeWidth="2" strokeDasharray="4 7" fill="none"/>
-                <circle className="story-packet" r="4" fill="#a2eff9"><animateMotion dur="2.8s" repeatCount="indefinite" path="M291 211C321 211 329 161 363 161"/></circle>
+              <svg viewBox="0 0 560 390" className="story-diagram" role="img" aria-label="Smart Lung Physio device design with highlighted contact sensing and connected companion interface">
+                <rect x="24" y="14" width="330" height="316" rx="20" fill="#edf3f6" />
+                <image href={publicAsset("media/smart-lung-scroll-render.webp")} x="36" y="20" width="310" height="302" preserveAspectRatio="xMidYMid meet" />
+                <g className="story-contact"><ellipse cx="268" cy="106" rx="33" ry="46" fill="none" stroke="#1c88af" strokeWidth="2" /></g>
+                <circle className="story-sensor" cx="231" cy="100" r="20" fill="none" stroke="#1682aa" strokeWidth="2" />
+                <circle className="story-orientation" cx="181" cy="94" r="32" fill="none" stroke="#1682aa" strokeDasharray="4 7" />
+                <path className="story-link" d="M285 110C327 110 325 161 365 161" stroke="#6fd0df" strokeWidth="2" strokeDasharray="4 7" fill="none"/>
+                <circle className="story-packet" r="4" fill="#a2eff9"><animateMotion dur="2.8s" repeatCount="indefinite" path="M285 110C327 110 325 161 365 161"/></circle>
                 <g className="story-app"><rect x="376" y="94" width="113" height="209" rx="19" fill="#eaf3f6" stroke="#95b7c8" strokeWidth="2"/><rect x="386" y="108" width="93" height="180" rx="11" fill="#102c41"/><rect x="413" y="116" width="40" height="4" rx="2" fill="#7997a8"/><circle cx="432" cy="159" r="20" fill="#1b4b60"/><path d="M422 159H428L432 152L437 166L441 159" fill="none" stroke="#8ee2eb" strokeWidth="2"/><path d="M400 205H461M400 218H446M400 231H454" stroke="#92b9c8" strokeWidth="4" strokeLinecap="round"/><rect className="story-record" x="400" y="249" width="61" height="20" rx="4" fill="#75cad7"/></g>
                 <text x="193" y="352" textAnchor="middle" fill="#92adbd" fontSize="12">Physical device</text><text x="432" y="352" textAnchor="middle" fill="#92adbd" fontSize="12">Companion interface</text>
               </svg>
               <div className="story-stage-caption" aria-live="off"><span className="text-xs text-sky-300">0{active + 1} / 05</span><h3 className="mt-2 text-2xl font-semibold text-white">{steps[active].focus}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{steps[active].detail}</p></div>
               <div className="mt-6 flex gap-2" aria-hidden="true">{steps.map((step, i) => <span key={step.title} className={`story-progress ${i <= active ? "is-lit" : ""}`} />)}</div>
-              <p className="mt-5 text-[10px] leading-5 text-slate-500">System illustration · Motion shows the concept, not operating speed.</p>
+              <p className="mt-5 text-[10px] leading-5 text-slate-500">Device design concept · Highlights follow the system story.</p>
             </div>
           </div>
           <ol className="story-steps">
