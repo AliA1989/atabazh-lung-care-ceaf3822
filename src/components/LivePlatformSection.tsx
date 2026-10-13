@@ -29,7 +29,7 @@ const LivePlatformSection = () => (
       <ScrollReveal delay={100}>
         <div className="overflow-hidden rounded-xl border border-white/20 bg-white text-slate-950">
           <div className="border-b border-slate-200 px-6 py-5 sm:px-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#164d69]">Engineering snapshot · October 2026</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#164d69]">Engineering snapshot · October 2026</p>
             <h3 className="mt-2 text-xl font-semibold">Prototype acquisition architecture</h3>
             <p className="mt-2 text-sm leading-6 text-slate-500">Configured firmware rates</p>
           </div>
@@ -37,14 +37,14 @@ const LivePlatformSection = () => (
             {acquisitionChannels.map((channel) => (
               <div key={channel.name} className="grid grid-cols-[1fr_auto] gap-4 py-6">
                 <div><dt className="font-semibold">{channel.name}</dt><dd className="mt-1 text-xs text-[#164d69]">{channel.hardware}</dd><dd className="mt-2 max-w-xs text-sm leading-6 text-slate-500">{channel.description}</dd></div>
-                <div className="text-right"><dd className="text-3xl font-semibold tracking-tight text-[#164d69]">{channel.rate}<span className="ml-1 text-sm font-medium">Hz</span></dd><dd className="mt-2 max-w-24 text-[11px] leading-5 text-slate-500">{channel.interval}</dd></div>
+                <div className="text-right"><dd className="text-3xl font-semibold tracking-tight text-[#164d69]">{channel.rate}<span className="ml-1 text-sm font-medium">Hz</span></dd><dd className="mt-2 max-w-24 text-xs leading-5 text-slate-500">{channel.interval}</dd></div>
               </div>
             ))}
           </dl>
           <div className="border-t border-slate-200 bg-[#edf4f6] px-6 py-6 sm:px-8">
             <div className="flex items-start gap-5">
               <p className="shrink-0 text-4xl font-semibold tracking-tight text-[#164d69]">{documentedBenchRun.duration}<span className="mt-1 block text-xs font-medium tracking-normal">minutes</span></p>
-              <div><p className="text-[10px] font-bold uppercase tracking-widest text-[#164d69]">Recorded bench activity</p><h4 className="mt-1 font-semibold">{documentedBenchRun.title}</h4><p className="mt-2 text-xs leading-5 text-slate-600">{documentedBenchRun.conditions} · <time dateTime={documentedBenchRun.dateTime}>{documentedBenchRun.date}</time></p></div>
+              <div><p className="text-xs font-bold uppercase tracking-widest text-[#164d69]">Recorded bench activity</p><h4 className="mt-1 font-semibold">{documentedBenchRun.title}</h4><p className="mt-2 text-xs leading-5 text-slate-600">{documentedBenchRun.conditions} · <time dateTime={documentedBenchRun.dateTime}>{documentedBenchRun.date}</time></p></div>
             </div>
           </div>
         </div>

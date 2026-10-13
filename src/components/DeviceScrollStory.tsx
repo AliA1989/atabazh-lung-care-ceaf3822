@@ -62,7 +62,7 @@ export default function DeviceScrollStory() {
           <div className="story-visual">
             <div className="story-panel" data-phase={active}>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</span>
                 <button type="button" onClick={() => setPaused(!paused)} disabled={reduced} aria-label={paused ? "Play device animation" : "Pause device animation"} aria-pressed={paused} className="story-control">{paused || reduced ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}<span>{reduced ? "Reduced motion" : paused ? "Play" : "Pause"}</span></button>
               </div>
               <div className="story-canvas">
@@ -84,11 +84,11 @@ export default function DeviceScrollStory() {
               </div>
               <div className="story-stage-caption" aria-live="off"><span className="text-xs text-sky-300">0{active + 1} / 05</span><h3 className="mt-2 text-2xl font-semibold text-white">{steps[active].focus}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{steps[active].detail}</p></div>
               <div className="mt-6 flex gap-2" aria-hidden="true">{steps.map((step, i) => <span key={step.title} className={`story-progress ${i <= active ? "is-lit" : ""}`} />)}</div>
-              <p className="mt-5 text-[10px] leading-5 text-slate-500">Device design concept · Highlights follow the system story.</p>
+              <p className="mt-5 text-xs leading-5 text-slate-500">Device design concept · Highlights follow the system story.</p>
             </div>
           </div>
           <ol className="story-steps">
-            {steps.map((step, i) => <li key={step.title} data-story-step className={`story-step ${active === i ? "is-active" : ""}`} aria-current={active === i ? "step" : undefined}><div className="story-step-number">0{i + 1}</div><div><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">{step.label}</p><h3 className="mt-3 text-3xl font-semibold tracking-tight text-white">{step.title}</h3><p className="mt-4 max-w-md text-base leading-8 text-slate-300">{step.text}</p></div></li>)}
+            {steps.map((step, i) => <li key={step.title} data-story-step className={`story-step ${active === i ? "is-active" : ""}`} aria-current={active === i ? "step" : undefined}><div className="story-step-number">0{i + 1}</div><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">{step.label}</p><h3 className="mt-3 text-3xl font-semibold tracking-tight text-white">{step.title}</h3><p className="mt-4 max-w-md text-base leading-8 text-slate-300">{step.text}</p></div></li>)}
           </ol>
           <figure className="story-mobile-interface">
             <img src={publicAsset("media/smart-lung-companion-session.webp")} width={1200} height={884} loading="lazy" alt="Companion interface concept with example force, SpO₂, and session-timer values" />

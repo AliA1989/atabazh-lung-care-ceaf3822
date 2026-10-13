@@ -131,6 +131,11 @@ const ResearchValidationSection = () => (
         to specific development activities. Atabazh coordinates these inputs
         within its product-development work.
       </p>
+      <p className="mt-4 border-t border-slate-200 pt-5 text-xs leading-6 text-slate-500">
+        These connections describe development and program activities, not
+        institutional endorsement, clinical validation, or regulatory approval
+        of Smart Lung Physio™.
+      </p>
       <div className="mt-8 grid gap-x-10 md:grid-cols-2">
         {pathways.map((item) => (
           <article key={item.name} className="border-t border-slate-200 py-6">
@@ -144,11 +149,7 @@ const ResearchValidationSection = () => (
           </article>
         ))}
       </div>
-      <p className="mt-4 border-t border-slate-200 pt-5 text-xs leading-6 text-slate-500">
-        These connections describe development and program activities, not
-        institutional endorsement, clinical validation, or regulatory approval
-        of Smart Lung Physio™.
-      </p>
+
     </div>
   </section>
 );

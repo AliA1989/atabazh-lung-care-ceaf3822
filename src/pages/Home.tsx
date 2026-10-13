@@ -8,72 +8,42 @@ import { publicAsset } from "@/lib/publicAsset";
 import { developmentFacts, developmentPriorities } from "@/data/development";
 import DeviceScrollStory from "@/components/DeviceScrollStory";
 import { CompanyCTA } from "@/components/CompanyCTA";
-import marsLogo from "@/assets/support/mars.svg";
-import ibzLogo from "@/assets/support/ibz.svg";
-import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
-import lab2MarketLogo from "@/assets/support/lab2market-validate.webp";
-import mitacsLogo from "@/assets/support/mitacs.svg";
-import baycrestLogo from "@/assets/support/baycrest.png";
 
 const Home = () => (
   <div className="company-page">
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
-      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-12">
-        <div>
-          <p className="company-eyebrow !text-sky-300">
-            Atabazh Medical · Toronto, Canada
-          </p>
-          <h1 className="mt-6 max-w-xl text-[2.6rem] leading-[1.07] tracking-[-0.045em] sm:text-5xl xl:text-[3.65rem]">
-            Engineering more measurable airway clearance.
+      <div className="company-container grid gap-6 py-8 lg:grid-cols-[1.05fr_1fr] lg:gap-x-14 lg:py-12">
+        <header className="lg:col-start-1 lg:row-start-1">
+          <p className="company-eyebrow !text-sky-300">Atabazh Medical · Toronto, Canada</p>
+          <h1 className="mt-4 max-w-xl text-4xl leading-[1.08] tracking-[-0.04em] sm:text-5xl xl:text-[3.65rem]">
+            Developing sensor-guided airway clearance.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-            <strong className="font-semibold text-white">
-              Smart Lung Physio™
-            </strong>{" "}
-            is our handheld airway-clearance technology. Its development brings
-            localized mechanical chest percussion together with contact sensing,
-            orientation feedback, and a connected caregiver interface.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <NavLink
-              to="/device"
-              className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200"
-            >
-              Explore the technology{" "}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </NavLink>
-            <NavLink
-              to="/clinical-evidence"
-              className="company-button border border-white/25 text-white hover:bg-white/10"
-            >
-              Review our progress
-            </NavLink>
-          </div>
-          <p className="mt-6 text-xs leading-5 text-slate-400">
-            Physical prototype · Integrated sensing · Engineering-led development
-          </p>
-        </div>
-        <figure className="mx-auto w-full max-w-[25rem] overflow-hidden rounded-xl border border-white/15 bg-white/5">
-          <img
-            src={publicAsset("media/founder-prototype-focused.webp")}
-            alt="Atabazh founder Ali Abedinpour holding the Smart Lung Physio prototype"
-            width={1122}
-            height={1402}
-            loading="eager"
-            className="aspect-[4/5] w-full object-cover"
-          />
-          <figcaption className="px-5 py-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-sky-300">
-              Ali Abedinpour · Founder
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Smart Lung Physio™ · Physical prototype
-            </p>
-            <p className="mt-2 text-[11px] text-slate-400">
-              Adapted from photo: Daniel Opasinis / The Eyeopener.
-            </p>
+        </header>
+        <figure className="overflow-hidden rounded-2xl border border-white/15 bg-[#edf4f7] lg:col-start-2 lg:row-span-2 lg:row-start-1">
+          <img src={publicAsset("media/smart-lung-scroll-render.webp")}
+            alt="Smart Lung Physio handheld device design showing the chest-contact head and caregiver grip"
+            width={1086} height={1448} loading="eager" fetchPriority="high"
+            className="h-[230px] w-full object-contain p-4 sm:h-[320px] lg:h-[440px]" />
+          <figcaption className="border-t border-slate-200 px-5 py-3 text-xs leading-5 text-slate-600">
+            Smart Lung Physio™ · Device design concept based on our functional prototype
           </figcaption>
         </figure>
+        <div className="lg:col-start-1 lg:row-start-2">
+          <p className="max-w-xl text-lg leading-8 text-slate-300">
+            <strong className="font-semibold text-white">Smart Lung Physio™</strong> is a handheld device combining localized mechanical chest percussion with contact sensing and caregiver feedback. Our initial focus is supervised use in long-term care.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <NavLink to="/device" className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200">
+              Explore the device <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </NavLink>
+            <NavLink to="/contact?intent=call" className="company-button border border-white/25 text-white hover:bg-white/10">
+              Discuss a collaboration
+            </NavLink>
+          </div>
+          <NavLink to="/clinical-evidence#engineering-record" className="company-text-link mt-4 !text-sky-200">
+            Review the engineering record <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </NavLink>
+        </div>
       </div>
       <a
         href={eyeopenerFeature.url}
@@ -84,13 +54,13 @@ const Home = () => (
         <div className="company-container flex items-center gap-4 py-4">
           <img
             src={publicAsset("media/eyeopener-ali-smart-lung.jpg")}
-            alt=""
+            alt="Ali Abedinpour with the Smart Lung Physio prototype, photographed for The Eyeopener"
             width={64}
             height={44}
             className="h-11 w-16 shrink-0 rounded object-cover"
           />
           <div className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-sky-300">
+            <span className="text-xs font-bold uppercase tracking-[0.15em] text-sky-300">
               In the news · The Eyeopener
             </span>
             <span className="mt-1 block text-sm text-white sm:mt-0">
@@ -194,7 +164,10 @@ const Home = () => (
           </NavLink>
         </div>
         <div className="rounded-2xl bg-[#0b1b2f] p-8 text-white sm:p-10">
-          <p className="company-eyebrow !text-sky-300">Company & team</p>
+          <div className="flex items-center gap-5">
+            <img src={publicAsset("media/founder-prototype-focused.webp")} alt="Founder Ali Abedinpour holding the physical Smart Lung Physio prototype" width={1122} height={1402} loading="lazy" className="h-28 w-24 rounded-lg object-cover" />
+            <div><p className="company-eyebrow !text-sky-300">Company & team</p><p className="mt-2 font-semibold">Ali Abedinpour · Founder</p><p className="mt-2 text-xs leading-5 text-slate-400">Adapted from photo: Daniel Opasinis / The Eyeopener.</p></div>
+          </div>
           <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
             Engineering, clinical input, and commercialization.
           </h2>
@@ -211,43 +184,6 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="border-t border-slate-200 bg-[#f8fafc] py-12">
-      <div className="company-container">
-        <div className="flex flex-col justify-between gap-3 sm:flex-row">
-          <h2 className="text-base font-semibold tracking-normal">
-            Innovation & development ecosystem
-          </h2>
-          <NavLink to="/about" className="company-text-link text-sm">
-            View company background{" "}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </NavLink>
-        </div>
-        <div className="mt-8 grid grid-cols-3 items-center gap-7 md:grid-cols-6">
-          {[
-            { name: "MaRS", src: marsLogo },
-            { name: "Innovation Boost Zone", src: ibzLogo },
-            { name: "Innovation Factory", src: innovationFactoryLogo },
-            { name: "Lab2Market Validate", src: lab2MarketLogo },
-            { name: "Mitacs", src: mitacsLogo },
-            { name: "Baycrest", src: baycrestLogo },
-          ].map((item) => (
-            <div className="flex h-16 justify-center" key={item.name}>
-              <img
-                src={item.src}
-                alt={item.name}
-                loading="lazy"
-                className="max-h-14 max-w-[110px] object-contain grayscale"
-              />
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-xs leading-5 text-slate-500">
-          Organizations shown reflect development, mentorship, or program
-          connections. Their inclusion does not imply product endorsement or
-          clinical validation.
-        </p>
-      </div>
-    </section>
     <CompanyCTA />
   </div>
 );
