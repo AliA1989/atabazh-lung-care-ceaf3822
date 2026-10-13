@@ -65,6 +65,7 @@ export default function DeviceScrollStory() {
                 <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">Smart Lung Physio™</span>
                 <button type="button" onClick={() => setPaused(!paused)} disabled={reduced} aria-label={paused ? "Play device animation" : "Pause device animation"} aria-pressed={paused} className="story-control">{paused || reduced ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}<span>{reduced ? "Reduced motion" : paused ? "Play" : "Pause"}</span></button>
               </div>
+              <div className="story-canvas">
               <svg viewBox="0 0 560 390" className="story-diagram" role="img" aria-label="Smart Lung Physio device design with highlighted contact sensing and connected companion interface">
                 <rect x="24" y="14" width="330" height="316" rx="20" fill="#edf3f6" />
                 <image href={publicAsset("media/smart-lung-scroll-render.webp")} x="36" y="20" width="310" height="302" preserveAspectRatio="xMidYMid meet" />
@@ -73,9 +74,14 @@ export default function DeviceScrollStory() {
                 <circle className="story-orientation" cx="181" cy="94" r="32" fill="none" stroke="#1682aa" strokeDasharray="4 7" />
                 <path className="story-link" d="M285 110C327 110 325 161 365 161" stroke="#6fd0df" strokeWidth="2" strokeDasharray="4 7" fill="none"/>
                 <circle className="story-packet" r="4" fill="#a2eff9"><animateMotion dur="2.8s" repeatCount="indefinite" path="M285 110C327 110 325 161 365 161"/></circle>
-                <g className="story-app"><rect x="376" y="94" width="113" height="209" rx="19" fill="#eaf3f6" stroke="#95b7c8" strokeWidth="2"/><rect x="386" y="108" width="93" height="180" rx="11" fill="#102c41"/><rect x="413" y="116" width="40" height="4" rx="2" fill="#7997a8"/><circle cx="432" cy="159" r="20" fill="#1b4b60"/><path d="M422 159H428L432 152L437 166L441 159" fill="none" stroke="#8ee2eb" strokeWidth="2"/><path d="M400 205H461M400 218H446M400 231H454" stroke="#92b9c8" strokeWidth="4" strokeLinecap="round"/><rect className="story-record" x="400" y="249" width="61" height="20" rx="4" fill="#75cad7"/></g>
+                <g className="story-app"><rect x="366" y="111" width="175" height="139" rx="13" fill="#f4f8fb" stroke="#93b4c4"/><image href={publicAsset("media/smart-lung-companion-session.webp")} x="371" y="117" width="165" height="124" preserveAspectRatio="xMidYMid meet" /></g>
                 <text x="193" y="352" textAnchor="middle" fill="#92adbd" fontSize="12">Physical device</text><text x="432" y="352" textAnchor="middle" fill="#92adbd" fontSize="12">Companion interface</text>
               </svg>
+              <figure className="story-interface" aria-hidden={active < 3}>
+                <img src={publicAsset("media/smart-lung-companion-session.webp")} width={1200} height={884} loading="lazy" alt="Companion interface concept showing a sample session: 17.5 N applied force, 96% SpO₂, and 04:08 elapsed" />
+                <figcaption>Sample session · Example values</figcaption>
+              </figure>
+              </div>
               <div className="story-stage-caption" aria-live="off"><span className="text-xs text-sky-300">0{active + 1} / 05</span><h3 className="mt-2 text-2xl font-semibold text-white">{steps[active].focus}</h3><p className="mt-2 text-sm leading-6 text-slate-400">{steps[active].detail}</p></div>
               <div className="mt-6 flex gap-2" aria-hidden="true">{steps.map((step, i) => <span key={step.title} className={`story-progress ${i <= active ? "is-lit" : ""}`} />)}</div>
               <p className="mt-5 text-[10px] leading-5 text-slate-500">Device design concept · Highlights follow the system story.</p>
@@ -84,6 +90,10 @@ export default function DeviceScrollStory() {
           <ol className="story-steps">
             {steps.map((step, i) => <li key={step.title} data-story-step className={`story-step ${active === i ? "is-active" : ""}`} aria-current={active === i ? "step" : undefined}><div className="story-step-number">0{i + 1}</div><div><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-300">{step.label}</p><h3 className="mt-3 text-3xl font-semibold tracking-tight text-white">{step.title}</h3><p className="mt-4 max-w-md text-base leading-8 text-slate-300">{step.text}</p></div></li>)}
           </ol>
+          <figure className="story-mobile-interface">
+            <img src={publicAsset("media/smart-lung-companion-session.webp")} width={1200} height={884} loading="lazy" alt="Companion interface concept with example force, SpO₂, and session-timer values" />
+            <figcaption>Companion interface · Sample session with example values</figcaption>
+          </figure>
         </div>
         <NavLink to="/device" className="company-text-link mt-10 !text-sky-300">Explore the technology <ArrowRight className="h-4 w-4" aria-hidden="true" /></NavLink>
       </div>
