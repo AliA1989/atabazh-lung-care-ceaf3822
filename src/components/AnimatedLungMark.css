@@ -1,5 +1,0 @@
-.lung-mark{display:inline-block;flex-shrink:0;vertical-align:middle;object-fit:contain}
-.lung-mark-compact{width:58px;height:38px}
-.lung-mark-hero{width:110px;height:68px}
-.lung-ink-filter{position:absolute;pointer-events:none}
-@media(max-width:639px){.lung-mark-hero{width:84px;height:52px}.lung-mark-compact{width:48px;height:34px}}

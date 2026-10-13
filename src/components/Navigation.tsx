@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "./NavLink";
 import { Menu, X } from "lucide-react";
-import AnimatedLungMark from "@/components/AnimatedLungMark";
+import logo from "@/assets/atabazh-logo.webp";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,7 +34,13 @@ const Navigation = () => {
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-[4.5rem]"}`}>
           {/* Logo */}
           <NavLink to="/" className="group flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="Atabazh Medical home">
-            <AnimatedLungMark compact />
+            <span className="flex h-10 w-10 items-center justify-center transition-transform duration-300 group-hover:scale-[1.03] sm:h-11 sm:w-11">
+              <img 
+                src={logo} 
+                alt="" 
+                className="h-9 w-9 object-contain contrast-125 saturate-110 sm:h-10 sm:w-10"
+              />
+            </span>
             <div className="flex flex-col leading-none">
               <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-slate-950 sm:text-sm">
                 Atabazh
