@@ -6,6 +6,7 @@ import { NavLink } from "@/components/NavLink";
 import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { publicAsset } from "@/lib/publicAsset";
 import { developmentFacts, developmentPriorities } from "@/data/development";
+import HeroFilm from "@/components/HeroFilm";
 import DeviceScrollStory from "@/components/DeviceScrollStory";
 import { CompanyCTA } from "@/components/CompanyCTA";
 import marsLogo from "@/assets/support/mars.svg";
@@ -18,7 +19,7 @@ import baycrestLogo from "@/assets/support/baycrest.png";
 const Home = () => (
   <div className="company-page">
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
-      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-12">
+      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-12">
         <div>
           <p className="company-eyebrow !text-sky-300">
             Atabazh Medical · Toronto, Canada
@@ -53,27 +54,7 @@ const Home = () => (
             Physical prototype · Integrated sensing · Engineering-led development
           </p>
         </div>
-        <figure className="mx-auto w-full max-w-[25rem] overflow-hidden rounded-xl border border-white/15 bg-white/5">
-          <img
-            src={publicAsset("media/founder-prototype-focused.webp")}
-            alt="Atabazh founder Ali Abedinpour holding the Smart Lung Physio prototype"
-            width={1122}
-            height={1402}
-            loading="eager"
-            className="aspect-[4/5] w-full object-cover"
-          />
-          <figcaption className="px-5 py-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-sky-300">
-              Ali Abedinpour · Founder
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Smart Lung Physio™ · Physical prototype
-            </p>
-            <p className="mt-2 text-[11px] text-slate-400">
-              Adapted from photo: Daniel Opasinis / The Eyeopener.
-            </p>
-          </figcaption>
-        </figure>
+        <HeroFilm />
       </div>
       <a
         href={eyeopenerFeature.url}
