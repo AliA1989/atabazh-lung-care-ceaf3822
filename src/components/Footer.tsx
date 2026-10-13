@@ -34,7 +34,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/atabazh-medical-inc" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="mt-5 min-h-11 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-sky-300"
+              className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-sky-300"
               aria-label="Follow Atabazh Medical on LinkedIn"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5">
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Product Column */}
           <div>
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Product</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-3">
               {[
                 { to: "/device", label: "Smart Lung Physio™" },
                 { to: "/clinical-evidence", label: "Evidence & Development" },
@@ -56,7 +56,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="inline-flex min-h-11 items-center text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
+                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -68,7 +68,7 @@ const Footer = () => {
           {/* Company Column */}
           <div>
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Company</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-3">
               {[
                 { to: "/about", label: "About Us" },
                 { to: "/news", label: "News & Resources" },
@@ -77,7 +77,7 @@ const Footer = () => {
                 <li key={link.to}>
                   <NavLink 
                     to={link.to} 
-                    className="inline-flex min-h-11 items-center text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
+                    className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200"
                   >
                     {link.label}
                   </NavLink>
@@ -89,13 +89,13 @@ const Footer = () => {
           {/* Get Started Column */}
           <div>
             <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-3">
               {[
                 { to: BOOKING_URL, label: "Book a Discovery Call" },
                 { to: "/long-term-care", label: "View LTC Fit" }
               ].map((link) => (
                 <li key={link.to}>
-                  {link.to === BOOKING_URL ? <a href={link.to} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</a> : <NavLink to={link.to} className="inline-flex min-h-11 items-center text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</NavLink>}
+                  {link.to === BOOKING_URL ? <a href={link.to} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</a> : <NavLink to={link.to} className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200">{link.label}</NavLink>}
                 </li>
               ))}
             </ul>
@@ -108,17 +108,17 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-8">
-            <NavLink to="/privacy" className="inline-flex min-h-11 items-center text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
+            <NavLink to="/privacy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
               Privacy Policy
             </NavLink>
-            <NavLink to="/terms" className="inline-flex min-h-11 items-center text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
+            <NavLink to="/terms" className="text-sm text-slate-500 hover:text-slate-300 transition-colors duration-200">
               Website Terms
             </NavLink>
           </div>
           
           <div className="text-center md:text-right space-y-1">
             <p className="text-xs text-slate-500">
-              <NavLink to="/clinical-evidence" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-slate-300">Smart Lung Physio™ · Development status</NavLink>
+              <NavLink to="/clinical-evidence" className="underline underline-offset-4 hover:text-slate-300">Smart Lung Physio™ · Development status</NavLink>
             </p>
             <p className="text-xs text-slate-500">
               © 2026 Atabazh Medical Inc. All rights reserved.

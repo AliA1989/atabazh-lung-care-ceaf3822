@@ -39,7 +39,7 @@ const evidenceAreas = [
     area: "Intellectual property",
     status: "Application filed",
     current:
-      "A U.S. patent application has been filed for the technology.",
+      "A U.S. utility patent application has been filed for the technology.",
     next: "Continue the application process. Filing does not mean that a patent has been granted.",
   },
   {
@@ -65,11 +65,9 @@ const ClinicalEvidence = () => (
           questions still being evaluated, and the priorities for the next
           phase.
         </p>
-        <dl className="mt-8 grid gap-5 rounded-xl border border-slate-200 bg-white p-6 md:grid-cols-3">
-          <div><dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Current stage</dt><dd className="mt-2 text-sm font-semibold text-slate-900">Functional prototype · Engineering evaluation</dd></div>
-          <div><dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Architecture record reviewed</dt><dd className="mt-2 text-sm font-semibold text-slate-900"><time dateTime="2026-10-07">7 October 2026</time></dd><dd className="mt-1 text-xs text-slate-500">Sensor and firmware configuration</dd></div>
-          <div><dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Next evidence priority</dt><dd className="mt-2 text-sm font-semibold text-slate-900">Defined test methods and measured mechanical output</dd></div>
-        </dl>
+        <p className="mt-6 inline-flex rounded-md border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700">
+          Current focus: prototype engineering & evaluation
+        </p>
       </div>
     </header>
     <section className="company-section">

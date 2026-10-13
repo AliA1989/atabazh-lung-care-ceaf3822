@@ -82,16 +82,16 @@ const clinicalStrategicGuidance = [
 ];
 
 const ecosystemSupport = [
-  { category: "Innovation & venture program", name: "Health Innovation Hub", logo: h2iLogo },
-  { category: "Innovation & venture program", name: "Spring", logo: springLogo },
-  { category: "Innovation & venture program", name: "TechAlliance", logo: techAllianceLogo },
-  { category: "Innovation & venture program", name: "ElevateIP", logo: elevateIpLogo },
-  { category: "Academic project", name: "Toronto Metropolitan University", logo: tmuLogo },
-  { category: "Academic project", name: "Northeastern University Toronto", logo: northeasternLogo },
-  { category: "Academic project", name: "Arizona State University", logo: asuLogo },
-  { category: "Innovation & venture program", name: "Lab2Market Validate", logo: lab2MarketLogo },
-  { category: "Innovation & venture program", name: "Innovation Factory", logo: innovationFactoryLogo },
-  { category: "Innovation & venture program", name: "MaRS Discovery District", logo: marsLogo },
+  { name: "Health Innovation Hub", logo: h2iLogo },
+  { name: "Spring", logo: springLogo },
+  { name: "TechAlliance", logo: techAllianceLogo },
+  { name: "ElevateIP", logo: elevateIpLogo },
+  { name: "Toronto Metropolitan University", logo: tmuLogo },
+  { name: "Northeastern University Toronto", logo: northeasternLogo },
+  { name: "Arizona State University", logo: asuLogo },
+  { name: "Lab2Market Validate", logo: lab2MarketLogo },
+  { name: "Innovation Factory", logo: innovationFactoryLogo },
+  { name: "MaRS Discovery District", logo: marsLogo },
 ];
 
 const About = () => {
@@ -378,7 +378,9 @@ const About = () => {
                             </span>
                           )}
                         </div>
-                        <div><p className="text-xs leading-5 text-slate-500">{item.category}</p><p className="mt-1 text-sm font-semibold leading-snug text-slate-700">{item.name}</p></div>
+                        <p className="text-sm font-semibold leading-snug text-slate-700">
+                          {item.name}
+                        </p>
                       </div>
                     ))}
                   </div>

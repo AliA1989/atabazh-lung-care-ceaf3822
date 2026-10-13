@@ -48,7 +48,7 @@ const Device = () => {
             <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 animate-fade-in md:text-5xl lg:text-[3.6rem]">
               Smart Lung Physio™
               <span className="mt-3 block text-blue-700">
-                Localized airway clearance. Guided by sensing.
+                Localized Therapy. Guided by Sensing.
               </span>
             </h1>
             

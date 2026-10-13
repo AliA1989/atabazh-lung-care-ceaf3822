@@ -65,7 +65,7 @@ const DeviceMeasurementSection = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-white/5" />
-              <span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/85 px-3.5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-7 sm:top-7 sm:text-xs">
+              <span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/85 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-7 sm:top-7 sm:text-xs">
                 Device design concept
               </span>
               <figcaption className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/20 bg-slate-950/70 p-5 text-white shadow-xl backdrop-blur-xl sm:inset-x-7 sm:bottom-7 sm:p-6">
@@ -88,7 +88,7 @@ const DeviceMeasurementSection = () => {
                     </div>
                     <span className="text-4xl font-bold tracking-[-0.05em] text-slate-100">{signal.number}</span>
                   </div>
-                  <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-blue-700">{signal.eyebrow}</p>
+                  <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">{signal.eyebrow}</p>
                   <h3 className="mt-2 text-2xl font-bold tracking-tight text-slate-900">{signal.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">{signal.description}</p>
                   <span className="mt-5 inline-flex rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600">
@@ -106,7 +106,7 @@ const DeviceMeasurementSection = () => {
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-700 shadow-sm">
                         <signal.icon className="h-5 w-5" />
                       </span>
-                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">{signal.status}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">{signal.status}</span>
                     </div>
                     <h3 className="mt-4 font-bold text-slate-900">{signal.title}</h3>
                     <p className="mt-2 text-sm leading-5 text-slate-600">{signal.description}</p>

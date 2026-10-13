@@ -99,12 +99,12 @@ const Contact = () => {
                 Smart Lung Physio™ development team
               </p>
             </div>
-            <div className="mt-6 border-t border-slate-200 pt-5">
-              <h3 className="text-base font-semibold text-[#164d69]">
+            <details className="mt-6 border-t border-slate-200 pt-5">
+              <summary className="cursor-pointer text-sm font-semibold text-[#164d69] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
                 Prefer an online contact form?
-              </h3>
+              </summary>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Send your inquiry using our online form.
+                Our existing contact form is also available on Jotform.
               </p>
               <a
                 href={FORM_URL}
@@ -116,7 +116,7 @@ const Contact = () => {
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-            </div>
+            </details>
           </section>
         </div>
         <p className="mt-6 text-xs leading-6 text-slate-500">

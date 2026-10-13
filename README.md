@@ -5,7 +5,7 @@ Public website for Atabazh Medical Inc. and the Smart Lung Physio™ medical-dev
 ## Local development
 
 ```sh
-npm ci
+npm install
 npm run dev
 ```
 
@@ -24,5 +24,3 @@ npm run lint
 - Radix UI components
 
 Smart Lung Physio™ is under development. Website product descriptions must not be presented as regulatory clearance or clinical efficacy evidence.
-
-The project uses npm and package-lock.json for reproducible local and Pages builds.

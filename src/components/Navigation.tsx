@@ -45,7 +45,7 @@ const Navigation = () => {
               <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-slate-950 sm:text-sm">
                 Atabazh
               </span>
-              <span className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-blue-700 sm:text-xs">
+              <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-blue-700 sm:text-[10px]">
                 Medical
               </span>
             </div>
@@ -57,8 +57,8 @@ const Navigation = () => {
                 key={link.to}
                 to={link.to}
                 className={link.emphasis
-                  ? "inline-flex min-h-11 items-center ml-2 rounded-lg bg-blue-700 px-4 py-2.5 text-xs font-semibold tracking-wide text-white shadow-sm transition hover:bg-blue-800"
-                  : "inline-flex min-h-11 items-center rounded-lg px-3.5 py-2.5 text-xs font-semibold tracking-wide text-slate-600 transition hover:bg-white hover:text-slate-950 xl:px-4 xl:text-[13px]"}
+                  ? "ml-2 rounded-lg bg-blue-700 px-4 py-2.5 text-xs font-semibold tracking-wide text-white shadow-sm transition hover:bg-blue-800"
+                  : "rounded-lg px-3.5 py-2.5 text-xs font-semibold tracking-wide text-slate-600 transition hover:bg-white hover:text-slate-950 xl:px-4 xl:text-[13px]"}
                 activeClassName={link.emphasis ? "bg-blue-800" : "bg-white text-blue-700 shadow-sm"}
               >
                 {link.label}
@@ -69,7 +69,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="min-h-11 min-w-11 rounded-lg border border-slate-200 bg-white p-2.5 text-slate-700 shadow-sm transition-colors duration-200 hover:bg-slate-50 lg:hidden"
+            className="rounded-lg border border-slate-200 bg-white p-2.5 text-slate-700 shadow-sm transition-colors duration-200 hover:bg-slate-50 lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
