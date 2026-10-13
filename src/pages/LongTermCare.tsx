@@ -97,9 +97,9 @@ const LongTermCare = () => {
                   className="aspect-video h-full w-full object-cover object-center"
                 />
                 <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-[#0b1b2f]/92 px-4 py-3 text-white backdrop-blur-sm sm:px-5 sm:py-3.5">
-                  <p className="text-xs font-semibold sm:text-sm">Illustrative care-setting visualization</p>
+                  <p className="text-xs font-semibold sm:text-sm">Care workflow concept</p>
                   <p className="mt-1 text-[0.6rem] leading-relaxed text-slate-300 sm:text-[0.68rem]">
-                    Training and workflow context shown for illustration; not a clinical evaluation or pilot-site photograph.
+                    Illustration of caregiver training and device setup.
                   </p>
                 </div>
               </div>

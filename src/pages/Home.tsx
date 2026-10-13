@@ -72,7 +72,7 @@ const Home = () => (
               Smart Lung Physio™ · Physical prototype
             </p>
             <p className="mt-2 text-[11px] text-slate-400">
-              AI-assisted editorial image. Original photo: Daniel Opasinis / The Eyeopener.
+              Adapted from photo: Daniel Opasinis / The Eyeopener.
             </p>
           </figcaption>
         </figure>
@@ -142,13 +142,11 @@ const Home = () => (
               className="h-full w-full object-cover object-top"
             />
             <div className="absolute bottom-0 inset-x-0 bg-[#0b1b2f] px-5 py-3 text-xs font-semibold text-white">
-              Smart Lung Physio™ · Product visualization
+              Smart Lung Physio™ · Design concept
             </div>
           </div>
           <figcaption className="p-5 text-xs leading-5 text-slate-500">
-            Illustrative design based on our functional prototype. The current
-            prototype is mains-powered; displayed values are not clinical
-            recommendations.
+            Design concept based on our physical prototype. Interface shown with sample values.
           </figcaption>
         </figure>
         <div>
