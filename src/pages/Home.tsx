@@ -6,6 +6,7 @@ import { NavLink } from "@/components/NavLink";
 import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { publicAsset } from "@/lib/publicAsset";
 import { developmentFacts, developmentPriorities } from "@/data/development";
+import AnimatedLungMark from "@/components/AnimatedLungMark";
 import DeviceScrollStory from "@/components/DeviceScrollStory";
 import { CompanyCTA } from "@/components/CompanyCTA";
 import marsLogo from "@/assets/support/mars.svg";
@@ -20,6 +21,10 @@ const Home = () => (
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
       <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-12">
         <div>
+          <div className="mb-6 flex items-center gap-4">
+            <AnimatedLungMark />
+            <div><p className="text-lg font-semibold tracking-tight text-white">Smart Lung Physio™</p><p className="mt-1 text-xs tracking-wide text-sky-200">Airway-clearance technology</p></div>
+          </div>
           <p className="company-eyebrow !text-sky-300">
             Atabazh Medical · Toronto, Canada
           </p>
