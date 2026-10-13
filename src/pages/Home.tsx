@@ -19,27 +19,42 @@ import baycrestLogo from "@/assets/support/baycrest.png";
 const Home = () => (
   <div className="company-page">
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
-      <div className="company-container py-8 sm:py-10 lg:py-12">
-        <header className="mx-auto max-w-4xl text-center">
-          <p className="company-eyebrow !text-sky-300">Atabazh Medical · Toronto, Canada</p>
-          <h1 className="mt-4 text-[2rem] leading-[1.1] tracking-[-0.045em] sm:text-5xl lg:text-[3.4rem]">
+      <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-12">
+        <div>
+          <p className="company-eyebrow !text-sky-300">
+            Atabazh Medical · Toronto, Canada
+          </p>
+          <h1 className="mt-6 max-w-xl text-[2.6rem] leading-[1.07] tracking-[-0.045em] sm:text-5xl xl:text-[3.65rem]">
             Engineering more measurable airway clearance.
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-            <strong className="font-semibold text-white">Smart Lung Physio™</strong> brings localized chest percussion, contact sensing, and caregiver feedback together in a handheld device under development.
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+            <strong className="font-semibold text-white">
+              Smart Lung Physio™
+            </strong>{" "}
+            is our handheld airway-clearance technology. Its development brings
+            localized mechanical chest percussion together with contact sensing,
+            orientation feedback, and a connected caregiver interface.
           </p>
-        </header>
-        <div className="mx-auto mt-6 max-w-5xl sm:mt-8">
-          <HeroFilm />
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <NavLink
+              to="/device"
+              className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200"
+            >
+              Explore the technology{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </NavLink>
+            <NavLink
+              to="/clinical-evidence"
+              className="company-button border border-white/25 text-white hover:bg-white/10"
+            >
+              Review our progress
+            </NavLink>
+          </div>
+          <p className="mt-6 text-xs leading-5 text-slate-400">
+            Physical prototype · Integrated sensing · Engineering-led development
+          </p>
         </div>
-        <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
-          <NavLink to="/device" className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200">
-            Explore the technology <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </NavLink>
-          <NavLink to="/clinical-evidence" className="company-button border border-white/25 text-white hover:bg-white/10">
-            Review our progress
-          </NavLink>
-        </div>
+        <HeroFilm />
       </div>
       <a
         href={eyeopenerFeature.url}
