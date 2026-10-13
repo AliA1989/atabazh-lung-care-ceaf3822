@@ -1,14 +1,12 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  Activity,
-  Gauge,
-  ClipboardList,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { publicAsset } from "@/lib/publicAsset";
 import { developmentFacts, developmentPriorities } from "@/data/development";
+import DeviceScrollStory from "@/components/DeviceScrollStory";
 import { CompanyCTA } from "@/components/CompanyCTA";
 import marsLogo from "@/assets/support/mars.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
@@ -129,106 +127,7 @@ const Home = () => (
       </div>
     </section>
 
-    <section className="company-section bg-white">
-      <div className="company-container grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <figure className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-          <div className="relative h-[340px] sm:h-[400px] overflow-hidden bg-white">
-            <img
-              src={publicAsset("media/smart-lung-physio-device-hero.webp")}
-              alt="Illustrative design of the Smart Lung Physio handheld device"
-              width={896}
-              height={1173}
-              loading="lazy"
-              className="h-full w-full object-cover object-top"
-            />
-            <div className="absolute bottom-0 inset-x-0 bg-[#0b1b2f] px-5 py-3 text-xs font-semibold text-white">
-              Smart Lung Physio™ · Design concept
-            </div>
-          </div>
-          <figcaption className="p-5 text-xs leading-5 text-slate-500">
-            Design concept based on our physical prototype. Interface shown with sample values.
-          </figcaption>
-        </figure>
-        <div>
-          <p className="company-eyebrow">The technology</p>
-          <h2 className="company-heading mt-4">
-            Physical delivery.
-            <br />
-            Measurable feedback.
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            We are developing a connected approach to localized chest
-            percussion: a physical device, integrated sensing, and a guided
-            session interface.
-          </p>
-          <div className="mt-7 divide-y divide-slate-200">
-            {[
-              {
-                icon: Activity,
-                title: "Localized mechanical percussion",
-                text: "A handheld form factor for delivery to a selected chest region by a trained caregiver.",
-              },
-              {
-                icon: Gauge,
-                title: "Force, motion & orientation sensing",
-                text: "Prototype sensing to characterize how a session is delivered and inform caregiver feedback.",
-              },
-              {
-                icon: ClipboardList,
-                title: "Guidance & session records",
-                text: "A companion interface for sensor feedback, with persistent session records on the development roadmap.",
-              },
-            ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex gap-4 py-5">
-                <Icon
-                  className="mt-1 h-5 w-5 shrink-0 text-[#164d69]"
-                  aria-hidden="true"
-                />
-                <div>
-                  <h3 className="text-base font-semibold">{title}</h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">
-                    {text}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <NavLink to="/device" className="company-text-link mt-4">
-            Explore the device and intended workflow{" "}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </NavLink>
-        </div>
-      </div>
-    </section>
-
-    <section className="border-t border-slate-200 bg-white pb-14 pt-10">
-      <div className="company-container">
-        <h2 className="text-xl font-semibold">
-          How Smart Lung Physio is being designed to work
-        </h2>
-        <ol className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {[
-            ["Position", "Select the intended chest region."],
-            ["Deliver", "Apply localized mechanical percussion."],
-            ["Measure", "Capture force, motion, and session parameters."],
-            ["Guide", "Provide feedback to the trained caregiver."],
-            ["Document", "Organize a structured session record."],
-          ].map(([title, detail], index) => (
-            <li key={title} className="border-t-2 border-slate-200 pt-4">
-              <span className="text-xs font-semibold text-[#164d69]">
-                0{index + 1}
-              </span>
-              <h3 className="mt-2 text-base font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p>
-            </li>
-          ))}
-        </ol>
-        <p className="mt-6 text-xs text-slate-500">
-          Intended workflow under development; not instructions for clinical
-          use.
-        </p>
-      </div>
-    </section>
+    <DeviceScrollStory />
 
     <section className="company-section border-y border-slate-200 bg-[#f3f6f8]">
       <div className="company-container">
