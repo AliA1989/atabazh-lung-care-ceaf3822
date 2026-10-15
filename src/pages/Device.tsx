@@ -4,7 +4,6 @@ import { NavLink } from "@/components/NavLink";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import DeviceProductShowcase from "@/components/DeviceProductShowcase";
-import LungTechnologyExplainer from "@/components/LungTechnologyExplainer";
 import DeviceMeasurementSection from "@/components/DeviceMeasurementSection";
 import LivePlatformSection from "@/components/LivePlatformSection";
 import { publicAsset } from "@/lib/publicAsset";
@@ -102,8 +101,6 @@ const Device = () => {
       </section>
 
       <DeviceProductShowcase />
-
-      <LungTechnologyExplainer />
 
       <DeviceMeasurementSection />
 
