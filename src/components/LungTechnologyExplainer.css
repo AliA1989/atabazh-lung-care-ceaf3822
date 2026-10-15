@@ -24,14 +24,55 @@
   top: var(--lung-sticky-top);
 }
 
+.lung-explainer__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--lung-line);
+}
 
+.lung-explainer__brand {
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+}
+.lung-explainer__brand span {
+  color: var(--lung-muted);
+  font-weight: 450;
+}
+.lung-explainer__badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #3b727c;
+  border-radius: 2rem;
+  color: #c0dddd;
+  font-size: 0.6rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.lung-explainer__badge > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--lung-teal);
+}
 
 .lung-explainer__grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   column-gap: clamp(2rem, 4vw, 4rem);
-  grid-template-areas: "navigation visual" "narrative visual" "note visual" "controls visual";
+  grid-template-areas: "intro visual" "navigation visual" "narrative visual" "note visual" "controls visual";
   align-items: start;
+}
+.lung-explainer__intro {
+  grid-area: intro;
+  min-width: 0;
 }
 .lung-explainer__navigation {
   grid-area: navigation;
@@ -50,6 +91,23 @@
 .lung-explainer__visual {
   grid-area: visual;
   align-self: center;
+}
+.lung-explainer__eyebrow {
+  color: var(--lung-teal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.lung-explainer__heading {
+  margin: 0.9rem 0 1.6rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1.09;
+}
+.lung-explainer__heading em {
+  font-style: normal;
+  color: var(--lung-teal);
 }
 
 .lung-explainer__steps {
@@ -444,6 +502,9 @@
   .lung-explainer__grid {
     column-gap: 2rem;
   }
+  .lung-explainer__heading {
+    font-size: 2.1rem;
+  }
   .lung-explainer__stage-copy p {
     font-size: 0.9rem;
   }
@@ -457,6 +518,13 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+  }
+  .lung-explainer__intro {
+    order: 0;
+  }
+  .lung-explainer__heading {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1.5rem;
   }
   .lung-explainer__navigation {
     order: 1;
@@ -489,6 +557,25 @@
   }
 }
 @media (max-width: 540px) {
+  .lung-explainer__topline {
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+  .lung-explainer__brand {
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+    line-height: 1.5;
+  }
+  .lung-explainer__brand span {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  .lung-explainer__badge {
+    font-size: 0.52rem;
+    padding: 0.5rem;
+    letter-spacing: 0.04em;
+  }
   .lung-explainer__visual {
     border-radius: 1rem;
   }
