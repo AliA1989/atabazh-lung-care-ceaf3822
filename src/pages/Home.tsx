@@ -9,7 +9,7 @@ import { eyeopenerFeature } from "@/data/mediaCoverage";
 import { publicAsset } from "@/lib/publicAsset";
 import { developmentFacts, developmentPriorities } from "@/data/development";
 import HeroFilm from "@/components/HeroFilm";
-import DeviceScrollStory from "@/components/DeviceScrollStory";
+import LungTechnologyExplainer from "@/components/LungTechnologyExplainer";
 import { CompanyCTA } from "@/components/CompanyCTA";
 import marsLogo from "@/assets/support/mars.svg";
 import ibzLogo from "@/assets/support/ibz.svg";
@@ -110,7 +110,7 @@ const Home = () => {
       </div>
     </section>
 
-    <DeviceScrollStory />
+    <LungTechnologyExplainer layout="compact" />
 
     <section className="company-section border-y border-slate-200 bg-[#f3f6f8]">
       <div className="company-container">
