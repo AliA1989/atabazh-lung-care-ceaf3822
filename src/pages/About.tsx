@@ -105,14 +105,14 @@ const About = () => {
         <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-[hsl(200,60%,90%)]/40 blur-3xl" />
 
         <div className="container relative mx-auto max-w-5xl text-center">
-          <ScrollReveal className="space-y-6">
+          <ScrollReveal className="space-y-5 sm:space-y-6">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
               About Atabazh Medical
             </p>
-            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 md:text-5xl lg:text-[3.6rem]">
-              A medical-device company focused on measurable respiratory care.
+            <h1 className="text-4xl font-semibold leading-[1.13] tracking-[-0.04em] text-slate-950 md:text-5xl md:leading-[1.1] lg:text-[3.6rem]">
+              A medical-device company focused on measurable respiratory care
             </h1>
-            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600 md:text-xl">
+            <p className="company-lead mx-auto text-slate-600">
               Based in Toronto, Atabazh Medical Inc. brings together
               engineering, clinical workflow input, and commercialization
               expertise to develop Smart Lung Physio™.
@@ -126,9 +126,9 @@ const About = () => {
           <div>
             <p className="company-eyebrow">Our focus</p>
             <h2 className="company-heading mt-4">
-              Make airway-clearance delivery more measurable.
+              Make airway-clearance delivery more measurable
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="company-lead mt-5 text-slate-600">
               Atabazh is developing Smart Lung Physio™ to connect localized
               mechanical chest percussion with sensing, caregiver guidance, and
               structured session records. Our initial focus is long-term care
@@ -189,7 +189,7 @@ const About = () => {
               Team
             </p>
             <h2 className="text-3xl font-bold leading-tight text-slate-800 md:text-4xl">
-              Leadership, technical contributors & advisors
+              Leadership, technical contributors and advisors
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
               Smart Lung Physio™ is being developed through founder-led product
@@ -307,7 +307,7 @@ const About = () => {
               Clinical / Strategic Guidance
             </p>
             <h3 className="mt-3 text-2xl font-bold text-slate-800 md:text-3xl">
-              Clinical and commercialization guidance.
+              Clinical and commercialization guidance
             </h3>
           </ScrollReveal>
 
@@ -388,8 +388,7 @@ const About = () => {
                       Research & Development Ecosystem
                     </p>
                     <h3 className="text-2xl font-bold leading-tight text-slate-800 md:text-3xl">
-                      Ecosystem support across academic, innovation, and
-                      entrepreneurship programs.
+                      Support across academic and innovation ecosystems
                     </h3>
                     <p className="text-base leading-relaxed text-slate-600">
                       Development activities include mentorship, academic
@@ -440,7 +439,7 @@ const About = () => {
         <div className="container relative mx-auto max-w-4xl text-center">
           <ScrollReveal className="space-y-7">
             <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] text-white md:text-4xl lg:text-[2.8rem]">
-              Build the next stage with Atabazh.
+              Build the next stage with Atabazh
             </h2>
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">
               We welcome conversations about technology evaluation,

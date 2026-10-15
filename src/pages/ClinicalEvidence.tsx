@@ -57,10 +57,9 @@ const ClinicalEvidence = () => (
       <div className="company-container">
         <p className="company-eyebrow">Evidence & development</p>
         <h1 className="mt-5 max-w-4xl text-4xl leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-          Progress you can assess.
-          <br />A development path you can follow.
+          Documenting development progress <br />and the evidence still needed
         </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+        <p className="company-lead mt-6 text-slate-600">
           A clear view of Smart Lung Physio™: the work completed to date, the
           questions still being evaluated, and the priorities for the next
           phase.
@@ -96,7 +95,7 @@ const ClinicalEvidence = () => (
     <section id="engineering-record" className="company-section scroll-mt-24 border-t border-slate-200 bg-white">
       <div className="company-container">
         <p className="company-eyebrow">Engineering record</p>
-        <h2 className="company-heading mt-4">From configuration to documented testing.</h2>
+        <h2 className="company-heading mt-4">From configuration to documented testing</h2>
         <div className="mt-9 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <article className="rounded-xl bg-[#0b1b2f] p-7 text-white">
             <p className="text-xs font-semibold uppercase tracking-widest text-sky-300">Recorded bench activity</p>
@@ -180,9 +179,9 @@ const ClinicalEvidence = () => (
         <div>
           <p className="company-eyebrow">Prototype learning</p>
           <h2 className="company-heading mt-4">
-            Connecting device design to supervised care.
+            Connecting device design to supervised care
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="company-lead mt-5 text-slate-600">
             Early prototype reviews have informed handling, positioning, and
             bedside setup. These observations help define the questions for
             structured usability and workflow evaluation.
@@ -209,7 +208,7 @@ const ClinicalEvidence = () => (
       <div className="company-container">
         <p className="company-eyebrow !text-sky-300">Next development phase</p>
         <h2 className="company-heading mt-4">
-          Three priorities for structured evaluation.
+          Three priorities for structured evaluation
         </h2>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           {developmentPriorities.map((item, i) => (

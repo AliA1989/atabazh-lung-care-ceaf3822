@@ -29,10 +29,10 @@ const Home = () => {
           <p className="company-eyebrow !text-sky-300">
             Atabazh Medical · Toronto, Canada
           </p>
-          <h1 className="mt-6 max-w-xl text-[2.6rem] leading-[1.07] tracking-[-0.045em] sm:text-5xl xl:text-[3.65rem]">
-            A human focus. An engineering approach.
+          <h1 className="mt-5 max-w-xl text-[2.6rem] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-5xl sm:leading-[1.1] xl:text-[3.65rem]">
+            Human-centred engineering for respiratory care
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+          <p className="company-lead mt-5 text-slate-300">
             <strong className="font-semibold text-white">
               Smart Lung Physio™
             </strong>{" "}
@@ -118,10 +118,10 @@ const Home = () => {
           <div>
             <p className="company-eyebrow">Development program</p>
             <h2 className="company-heading mt-4">
-              A defined path from prototype to evaluation.
+              From prototype to structured evaluation
             </h2>
           </div>
-          <p className="text-lg leading-8 text-slate-600 lg:pt-8">
+          <p className="company-lead text-slate-600 lg:pt-8">
             Three prototype generations and stakeholder discovery have informed
             the design. The next phase focuses on technical performance,
             usability, and preparation for structured evaluation.
@@ -137,7 +137,7 @@ const Home = () => {
                 0{i + 1} / DEVELOPMENT PRIORITY
               </p>
               <h3 className="mt-5 text-xl">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600">
                 {item.summary}
               </p>
             </article>
@@ -164,9 +164,9 @@ const Home = () => {
         <div>
           <p className="company-eyebrow">Initial care-setting focus</p>
           <h2 className="company-heading mt-4">
-            Built around the realities of long-term care.
+            Designing around long-term care workflows
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="company-lead mt-5 text-slate-600">
             Care teams need practical setup, clear training, and documentation
             that fits their routines. Our development work connects those needs
             to device design and evaluation planning.
@@ -178,8 +178,8 @@ const Home = () => {
         </div>
         <div className="rounded-2xl bg-[#0b1b2f] p-8 text-white sm:p-10">
           <p className="company-eyebrow !text-sky-300">Company & team</p>
-          <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-            Engineering, clinical input, and commercialization.
+          <h2 className="mt-4 text-2xl font-semibold leading-[1.2] tracking-tight sm:text-3xl">
+            Engineering, clinical input and commercialization
           </h2>
           <p className="mt-5 leading-7 text-slate-300">
             Led by biomedical engineer Ali Abedinpour, Atabazh brings together

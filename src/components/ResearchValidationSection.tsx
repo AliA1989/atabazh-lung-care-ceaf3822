@@ -124,7 +124,7 @@ const ResearchValidationSection = () => (
     <div className="company-container">
       <p className="company-eyebrow">Development contributions</p>
       <h2 className="company-heading mt-4">
-        Specialist input across the program.
+        Specialist input across the program
       </h2>
       <p className="mt-5 max-w-3xl text-slate-600">
         Academic projects, placements, and commercialization programs contribute

@@ -6,7 +6,7 @@ import "./LungTechnologyExplainer.css";
 const stages = [
   {
     label: "The challenge",
-    title: "When mucus becomes difficult to clear.",
+    title: "When mucus becomes difficult to clear",
     description:
       "Mucus accumulation can make airway clearance challenging for people living with certain respiratory conditions. Understanding the challenge comes first.",
     status: "01 · AIRWAYS",
@@ -16,7 +16,7 @@ const stages = [
   },
   {
     label: "Our design intent",
-    title: "Technology being developed to support airway clearance.",
+    title: "Developing technology to support airway clearance",
     description:
       "Smart Lung Physio™ is a handheld airway-clearance technology in development. This illustration communicates the design intent—not a demonstration of its mechanism or clinical efficacy.",
     status: "02 · DESIGN CONCEPT",
@@ -26,7 +26,7 @@ const stages = [
   },
   {
     label: "Sensing & feedback",
-    title: "Exploring a more informed care experience.",
+    title: "Exploring a more informed care experience",
     description:
       "Contact and orientation sensing inform prototype development. The companion interface illustrates how feedback could support caregivers; sample values do not establish clinical performance.",
     status: "03 · FEEDBACK CONCEPT",
@@ -187,9 +187,7 @@ export default function LungTechnologyExplainer({
                   EXPLORE THE TECHNOLOGY
                 </p>
                 <h2 id={`${id}-heading`} className="lung-explainer__heading">
-                  Breathing science.
-                  <br />
-                  <em>Thoughtfully explained.</em>
+                  Understanding the challenge <br /> <em>and our design approach</em>
                 </h2>
               </div>
               <div className="lung-explainer__navigation">

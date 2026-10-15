@@ -14,7 +14,7 @@ const LivePlatformSection = () => (
     <div className="company-container grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
       <ScrollReveal>
         <p className="company-eyebrow !text-sky-300">Inside the prototype</p>
-        <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">Hardware. Sensing.<br />A traceable data path.</h2>
+        <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.035em] sm:text-4xl">Hardware and sensing<br />A traceable data path</h2>
         <p className="mt-5 text-lg leading-8 text-slate-300">Smart Lung Physio connects mechanical percussion, a sensor hub, and a companion app. These engineering records show how the prototype acquires and communicates information.</p>
         <div className="mt-9 space-y-7">
           {engineeringFocus.map(({ icon: Icon, title, text }) => (

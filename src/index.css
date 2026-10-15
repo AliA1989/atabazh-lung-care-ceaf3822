@@ -663,8 +663,11 @@
   .company-page { @apply min-h-screen bg-white text-slate-950; }
   .company-container { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }
   .company-section { @apply py-16 lg:py-20; }
-  .company-eyebrow { @apply text-xs font-bold uppercase tracking-[0.16em] text-[#164d69]; }
-  .company-heading { @apply text-3xl font-semibold leading-[1.15] tracking-[-0.035em] sm:text-4xl; }
+  .company-eyebrow { @apply text-xs font-semibold uppercase tracking-[0.12em] text-[#164d69]; }
+  .company-heading { @apply text-3xl font-semibold leading-[1.18] tracking-[-0.035em] sm:text-4xl sm:leading-[1.15]; }
+  /* Consistent reading rhythm for introduction paragraphs on any screen. */
+  .company-lead { @apply text-base leading-7 sm:text-lg sm:leading-8; max-width: 68ch; text-wrap: pretty; }
+  .company-heading, main :is(h1, h2, h3) { text-wrap: balance; }
   .company-button { @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-lg px-6 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500; }
   .company-text-link { @apply inline-flex min-h-11 items-center gap-2 font-semibold text-[#164d69] underline decoration-slate-300 underline-offset-4 hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500; }
 }
