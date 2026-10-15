@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -16,7 +18,10 @@ import lab2MarketLogo from "@/assets/support/lab2market-validate.webp";
 import mitacsLogo from "@/assets/support/mitacs.svg";
 import baycrestLogo from "@/assets/support/baycrest.png";
 
-const Home = () => (
+const Home = () => {
+  const [storyOpen, setStoryOpen] = useState(false);
+  return (
+  <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
   <div className="company-page">
     <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
       <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-12">
@@ -25,36 +30,32 @@ const Home = () => (
             Atabazh Medical · Toronto, Canada
           </p>
           <h1 className="mt-6 max-w-xl text-[2.6rem] leading-[1.07] tracking-[-0.045em] sm:text-5xl xl:text-[3.65rem]">
-            Engineering more measurable airway clearance.
+            A human focus. An engineering approach.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
             <strong className="font-semibold text-white">
               Smart Lung Physio™
             </strong>{" "}
-            is our handheld airway-clearance technology. Its development brings
-            localized mechanical chest percussion together with contact sensing,
-            orientation feedback, and a connected caregiver interface.
+            is an airway-clearance technology in development at Atabazh Medical,
+            shaped by conversations with caregivers and care teams.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <NavLink
               to="/device"
               className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200"
             >
-              Explore the technology{" "}
+              Explore the Technology{" "}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </NavLink>
-            <NavLink
-              to="/clinical-evidence"
-              className="company-button border border-white/25 text-white hover:bg-white/10"
-            >
-              Review our progress
-            </NavLink>
+            <DialogTrigger className="company-button border border-white/25 text-white hover:bg-white/10">
+              Watch Our Story <span className="text-xs text-slate-300">· 39s</span>
+            </DialogTrigger>
           </div>
           <p className="mt-6 text-xs leading-5 text-slate-400">
-            Physical prototype · Integrated sensing · Engineering-led development
+            Smart Lung Physio™ · Toronto, Canada
           </p>
         </div>
-        <HeroFilm />
+        <HeroFilm open={storyOpen} />
       </div>
       <a
         href={eyeopenerFeature.url}
@@ -86,6 +87,7 @@ const Home = () => (
         </div>
       </a>
     </section>
+    <div className="company-container py-5"><NavLink to="/clinical-evidence" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#164d69] underline underline-offset-4">Review Our Progress <ArrowRight size={16} aria-hidden="true" /></NavLink></div>
 
     <section
       aria-label="Development at a glance"
@@ -231,5 +233,7 @@ const Home = () => (
     </section>
     <CompanyCTA />
   </div>
+  </Dialog>
 );
+};
 export default Home;
