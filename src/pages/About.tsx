@@ -345,9 +345,6 @@ const About = () => {
                     He also has a strong interest in advancing research that
                     enhances patient care and physiotherapy education.
                   </p>
-                  <p className="text-xs leading-relaxed text-slate-500">
-                    Professional background is provided for context and does not imply hospital endorsement.
-                  </p>
                 </div>
               </CardContent>
             </Card>
