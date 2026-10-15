@@ -36,7 +36,11 @@ const stages = [
   },
 ] as const;
 
-export default function LungTechnologyExplainer() {
+export default function LungTechnologyExplainer({
+  layout = "scroll",
+}: {
+  layout?: "scroll" | "compact";
+}) {
   const id = useId();
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -52,6 +56,14 @@ export default function LungTechnologyExplainer() {
     const section = sectionRef.current;
     const panel = panelRef.current;
     if (!section || !panel) return;
+
+    // The homepage uses natural section height; only /device pins the panel
+    // for scroll-driven storytelling.
+    if (layout === "compact") {
+      setScrollEnabled(false);
+      return;
+    }
+
     const desktop = window.matchMedia("(min-width: 981px)");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const measure = () => {
@@ -79,7 +91,7 @@ export default function LungTechnologyExplainer() {
       desktop.removeEventListener("change", measure);
       reduced.removeEventListener("change", measure);
     };
-  }, []);
+  }, [layout]);
 
   useEffect(() => {
     const panel = panelRef.current;
@@ -150,6 +162,7 @@ export default function LungTechnologyExplainer() {
     <section
       ref={sectionRef}
       className="lung-explainer"
+      data-layout={layout}
       data-paused={paused}
       data-visible={visible}
       data-scroll={scrollEnabled}
