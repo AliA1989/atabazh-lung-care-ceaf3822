@@ -10,6 +10,7 @@ import aliHosseiniImage from "@/assets/team/ali-hosseini.png";
 import ahmedTablImage from "@/assets/team/ahmed-tabl.jpg";
 import jeffKofmanImage from "@/assets/team/jeff-kofman.png";
 import kamranAzmaImage from "@/assets/team/kamran-azma.png";
+import gabrielSauveImage from "@/assets/team/gabriel-sauve.webp";
 import valentinaCeballosImage from "@/assets/team/valentina-ceballos-jimenez.jpeg";
 import asuLogo from "@/assets/support/asu.svg";
 import innovationFactoryLogo from "@/assets/support/innovation-factory.svg";
@@ -308,6 +309,48 @@ const About = () => {
             <h3 className="mt-3 text-2xl font-bold text-slate-800 md:text-3xl">
               Clinical and commercialization guidance.
             </h3>
+          </ScrollReveal>
+
+          <ScrollReveal className="mt-8">
+            <Card className="overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+              <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:gap-8 sm:p-8">
+                <div className="h-44 w-44 flex-shrink-0 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200 sm:h-48 sm:w-48">
+                  <img
+                    src={gabrielSauveImage}
+                    alt="Gabriel Sauvé"
+                    loading="lazy"
+                    decoding="async"
+                    width={192}
+                    height={192}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="min-w-0 max-w-3xl space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                    Clinical Advisor
+                  </p>
+                  <h4 className="text-2xl font-bold tracking-tight text-slate-800">
+                    Gabriel Sauvé
+                  </h4>
+                  <p className="text-sm font-semibold text-primary sm:text-base">
+                    Physiotherapy &amp; Critical Care
+                  </p>
+                  <p className="text-sm leading-7 text-slate-600 sm:text-base">
+                    Gabriel is an acute care physiotherapist with 15 years of
+                    hospital experience, specializing in chest physiotherapy and
+                    functional rehabilitation in a large teaching hospital
+                    intensive care unit. He is passionate about clinical
+                    education and mentorship, typically supervising 1–3
+                    physiotherapy students each year during clinical placements.
+                    He also has a strong interest in advancing research that
+                    enhances patient care and physiotherapy education.
+                  </p>
+                  <p className="text-xs leading-relaxed text-slate-500">
+                    Professional background is provided for context and does not imply hospital endorsement.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </ScrollReveal>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
