@@ -187,7 +187,9 @@ export default function LungTechnologyExplainer({
                   EXPLORE THE TECHNOLOGY
                 </p>
                 <h2 id={`${id}-heading`} className="lung-explainer__heading">
-                  Understanding the challenge <br /> <em>and our design approach</em>
+                  Understanding the challenge
+                  <br />
+                  <em>and our design approach</em>
                 </h2>
               </div>
               <div className="lung-explainer__navigation">
