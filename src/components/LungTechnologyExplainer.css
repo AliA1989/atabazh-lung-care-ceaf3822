@@ -1,154 +1,656 @@
 .lung-explainer {
+  --lung-teal: #8bf0e1;
+  --lung-muted: #adc6ce;
+  --lung-line: #2c5360;
+  --lung-sticky-top: 5rem;
+  scroll-margin-top: var(--lung-sticky-top);
   color: #eaf5f7;
-  background: radial-gradient(ellipse at 82% 20%, #0a3442 0, transparent 38%), #061724;
+  background:
+    radial-gradient(ellipse at 80% 32%, #0c3441 0, transparent 48%), #061724;
   overflow: clip;
 }
+
 .lung-explainer__sticky {
-  position: sticky;
-  top: 4.5rem;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  min-height: min(790px, calc(100svh - 4.5rem));
-  padding: 2.5rem 0;
-  background: linear-gradient(180deg, rgba(6,23,36,.98), rgba(6,23,36,.94));
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  background: linear-gradient(125deg, #061724fa, #082431f5);
 }
+
+.lung-explainer[data-scroll="true"] .lung-explainer__track {
+  min-height: calc(var(--lung-panel-height) + 140svh);
+}
+
+.lung-explainer[data-scroll="true"] .lung-explainer__sticky {
+  position: sticky;
+  top: var(--lung-sticky-top);
+}
+
 .lung-explainer__topline {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-bottom: 1.2rem;
-  margin-bottom: 2.4rem;
-  border-bottom: 1px solid rgba(142, 215, 219, .15);
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--lung-line);
 }
-.lung-explainer__brand {font-size: .7rem; font-weight: 800; letter-spacing: .17em;}
-.lung-explainer__brand span {font-weight: 500; color: #8aafb8;}
+
+.lung-explainer__brand {
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+}
+.lung-explainer__brand span {
+  color: var(--lung-muted);
+  font-weight: 450;
+}
 .lung-explainer__badge {
-  display: flex; align-items: center; gap: .5rem; flex-shrink: 0;
-  border: 1px solid #296374; border-radius: 99px;
-  padding: .52rem .75rem; color: #b4d8da; font-size: .6rem; font-weight: 700; letter-spacing: .12em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #3b727c;
+  border-radius: 2rem;
+  color: #c0dddd;
+  font-size: 0.6rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
-.lung-explainer__badge span {width: 6px; height: 6px; border-radius: 50%; background: #73ece0;}
-.lung-explainer__grid {display: grid; grid-template-columns: minmax(0,.87fr) minmax(0,1.13fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: center;}
-.lung-explainer__eyebrow {color:#75ece0; font-size: .67rem; letter-spacing:.2em; font-weight: 800;}
-.lung-explainer__heading {font-size:clamp(2.3rem,3.6vw,3.65rem);letter-spacing:-.055em;line-height:1.08;font-weight:650; margin:1.15rem 0 2.1rem;}
-.lung-explainer__heading em {font-style:normal;color:#76eadd;}
-.lung-explainer__stage-counter {display:flex;align-items:center;gap:.9rem;text-transform:uppercase;letter-spacing:.12em;color:#9bbec4;font-size:.67rem;font-weight:700;}
-.lung-explainer__stage-counter strong {color:#78ecdf;letter-spacing:0;font-size:1rem;}
-.lung-explainer__stage-counter::after {content:"";height:1px;width:5rem;background:#355d66;}
-.lung-explainer__stage-copy {margin-top:1.2rem;}
-.lung-explainer__stage-copy h3 {font-size:clamp(1.35rem,2.35vw,2.25rem);line-height:1.2;letter-spacing:-.035em;font-weight:660;min-height:2.35em;}
-.lung-explainer__stage-copy p {margin-top:.9rem;color:#b6cbd1;line-height:1.78;font-size:clamp(.85rem,1.15vw,.98rem);min-height:7.2em;max-width:29rem;}
-.lung-explainer__note {display:flex;align-items:center;gap:.7rem;margin:1.25rem 0 1.4rem;font-size:.72rem;color:#91b6bd;}
-.lung-explainer__note svg {color:#6edace;flex-shrink:0;}
-.lung-explainer__controls {display:flex;align-items:center;gap:.75rem;}
-.lung-explainer__controls button {
-  display:grid;place-items:center;width:3rem;height:3rem;
-  border:1px solid #36717d;border-radius:50%;color:#dffaf6;background:#163d4b;
-  transition:transform .2s ease,background .2s ease;
+.lung-explainer__badge > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--lung-teal);
 }
-.lung-explainer__controls button:hover:not(:disabled) {background:#205668;transform:translateY(-2px);}
-.lung-explainer__controls button:disabled {opacity:.3;cursor:not-allowed;}
-.lung-explainer__controls button:focus-visible,.lung-explainer__steps button:focus-visible {outline:2px solid #74eee0;outline-offset:4px;}
-.lung-explainer__controls>span {font-size:.65rem;color:#8dafb8;margin-left:.5rem;}
+
+.lung-explainer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
+  grid-template-areas: "intro visual" "navigation visual" "narrative visual" "note visual" "controls visual";
+  align-items: start;
+}
+.lung-explainer__intro {
+  grid-area: intro;
+  min-width: 0;
+}
+.lung-explainer__navigation {
+  grid-area: navigation;
+  min-width: 0;
+}
+.lung-explainer__narrative {
+  grid-area: narrative;
+  min-width: 0;
+}
+.lung-explainer__note {
+  grid-area: note;
+}
+.lung-explainer__controls {
+  grid-area: controls;
+}
 .lung-explainer__visual {
-  aspect-ratio:1.2;position:relative;min-height:440px;border:1px solid rgba(126,230,224,.22);
-  border-radius:1.5rem;overflow:hidden;
-  background:radial-gradient(circle at 50% 45%,#134554 0%,#0b2837 48%,#081c2b 90%);
-  box-shadow:inset 0 0 60px rgba(24,110,116,.17),0 20px 70px rgba(0,0,0,.24);
+  grid-area: visual;
+  align-self: center;
 }
-.lung-explainer__visual::before {content:"";position:absolute;inset:1rem;border:1px solid rgba(125,231,221,.08);border-radius:1rem;pointer-events:none;}
-.lung-explainer__visual-head,.lung-explainer__visual-foot {position:absolute;left:1.6rem;right:1.6rem;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:.75rem;}
-.lung-explainer__visual-head {top:1.5rem;font-size:.57rem;font-weight:750;color:#abcad0;letter-spacing:.13em;}
-.lung-explainer__visual-head span:last-child {color:#7ae9db;}
-.lung-explainer__visual-foot {bottom:1.5rem;align-items:flex-end;}
-.lung-explainer__visual-foot>span {border:1px solid #356c75;border-radius:.35rem;background:#092a38;padding:.55rem .65rem;color:#c5e9e7;font-size:.62rem;}
-.lung-explainer__visual-foot small {max-width:9.5rem;text-align:right;color:#95b5bd;line-height:1.45;font-size:.55rem;}
-.lung-explainer__anatomy {position:absolute;inset:0;width:100%;height:100%;}
-.lung-explainer__gridlines {opacity:.2;}
-.lung-explainer__lung {stroke:#78e6dc;stroke-width:1.6;stroke-opacity:.72;}
-.lung-explainer__airway {fill:none;stroke:#bcfbf0;stroke-opacity:.82;stroke-width:7;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(103,214,219,.5));}
-.lung-explainer__twig {fill:none;stroke:#9ce4d8;stroke-opacity:.55;stroke-width:3.5;stroke-linecap:round;}
-.lung-explainer__mucus {fill:#efb388;stroke:#ffdab4;stroke-width:1;filter:drop-shadow(0 0 5px rgba(234,173,132,.5));transition:opacity .55s;}
-.lung-explainer__concept,.lung-explainer__waveform,.lung-explainer__feedback {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:translateY(5px);}
-.lung-explainer__visual[data-stage="1"] .lung-explainer__concept,
-.lung-explainer__visual[data-stage="2"] .lung-explainer__waveform,
-.lung-explainer__visual[data-stage="2"] .lung-explainer__feedback {opacity:1;transform:none;}
-.lung-explainer__visual[data-stage="1"] .lung-explainer__concept {animation:lung-concept-glow 4s ease-in-out infinite;}
-@keyframes lung-concept-glow {0%,100%{opacity:.65}50%{opacity:1}}
-.lung-explainer__detail {opacity:.35;}
-.lung-explainer__lung {filter:drop-shadow(0 8px 12px #03121b);}
-.lung-explainer__motion {position:absolute;z-index:3;right:1.5rem;bottom:4rem;display:grid;place-items:center;width:44px;height:44px;border:1px solid #3a6f7b;border-radius:50%;background:#0b2937;color:#bce9e4;}
-.lung-explainer__motion:focus-visible {outline:2px solid #74eee0;outline-offset:4px;}
-.lung-explainer[data-paused="true"] *, .lung-explainer[data-visible="false"] * {animation-play-state:paused!important;}
-.lung-explainer__steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.7rem;}
-.lung-explainer__steps button {border:0;border-top:2px solid #2b4c58;background:transparent;text-align:left;color:#91adb7;display:flex;align-items:center;gap:.75rem;padding:.85rem .25rem .4rem;font-size:.78rem;transition:border-color .2s,color .2s;}
-.lung-explainer__steps button strong {font-variant-numeric:tabular-nums;font-size:.72rem;}
-.lung-explainer__steps button[aria-current="step"] {border-top-color:#7deee1;color:#e4faf5;}
-.lung-explainer__steps button[aria-current="step"] strong {color:#7deee1;}
-.lung-explainer__disclaimer {padding-top:1.3rem;padding-bottom:2rem;border-top:1px solid rgba(142,215,219,.15);font-size:.7rem;line-height:1.7;color:#9cb9bf;}
-@media (max-width:1100px) {
-  .lung-explainer__heading {font-size:clamp(2.2rem,3.35vw,3.1rem);}
-  .lung-explainer__stage-copy h3 {font-size:1.5rem;}
-  .lung-explainer__visual {min-height:360px;}
-  .lung-explainer__stage-copy p {min-height:8em;}
+.lung-explainer__eyebrow {
+  color: var(--lung-teal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
-@media (max-width:980px) {
-  .lung-explainer__sticky {position:relative;top:auto;min-height:0;padding:3.5rem 0;background:transparent;}
-  .lung-explainer__topline {margin-bottom:2rem;}
-  .lung-explainer__grid {grid-template-columns:1fr;gap:1.8rem;}
-  .lung-explainer__heading {font-size:clamp(2.5rem,5vw,3.5rem);}
-  .lung-explainer__stage-copy h3,.lung-explainer__stage-copy p {min-height:0;}
-  .lung-explainer__visual {min-height:0;aspect-ratio:1.5;}
-  .lung-explainer__chapters {display:none;}
+.lung-explainer__heading {
+  margin: 0.9rem 0 1.6rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 1.09;
 }
-@media (max-width:540px) {
-  .lung-explainer__sticky {padding:2.5rem 0;}
-  .lung-explainer__brand {font-size:.6rem;letter-spacing:.07em;}
-  .lung-explainer__brand span {display:block;margin-top:.4rem;}
-  .lung-explainer__badge {font-size:.52rem;letter-spacing:.06em;padding:.45rem .5rem;}
-  .lung-explainer__heading {font-size:2.3rem;}
-  .lung-explainer__stage-copy h3 {font-size:1.55rem;}
-  .lung-explainer__visual {aspect-ratio:1.05;border-radius:1rem;}
-  .lung-explainer__visual-head {top:1rem;left:1rem;right:1rem;font-size:.44rem;}
-  .lung-explainer__visual-foot {bottom:1rem;left:.9rem;right:.9rem;}
-  .lung-explainer__visual-foot>span {font-size:.48rem;padding:.4rem;}
-  .lung-explainer__visual-foot small {font-size:.43rem;max-width:6.5rem;}
-  .lung-explainer__steps {gap:.5rem;margin-top:1.4rem;}
-  .lung-explainer__steps button {display:block;font-size:.67rem;line-height:1.4;}
-  .lung-explainer__steps strong {display:block;margin-bottom:.4rem;}
-  .lung-explainer__controls>span {font-size:.59rem;}
+.lung-explainer__heading em {
+  font-style: normal;
+  color: var(--lung-teal);
 }
-/* Scroll distance belongs to the sticky track, so every stage stays visible. */
-@media (min-width:981px) and (min-height:760px) {
-  .lung-explainer__track {min-height:calc(min(100svh - 4.5rem, 920px) + 160svh);}
-  .lung-explainer__sticky {min-height:0;height:calc(100svh - 4.5rem);max-height:920px;padding:1.5rem 0;}
-  .lung-explainer__topline {margin-bottom:1.4rem;padding-bottom:.9rem;}
-  .lung-explainer__heading {font-size:clamp(2rem,3vw,3rem);margin:.8rem 0 1.2rem;}
-  .lung-explainer__stage-copy h3 {font-size:clamp(1.35rem,2vw,1.8rem);min-height:3.6em;}
-  .lung-explainer__stage-copy p {min-height:7.2em;font-size:.9rem;line-height:1.65;}
-  .lung-explainer__visual {min-height:0;max-height:540px;}
-  .lung-explainer__note {margin:.8rem 0 1rem;}
+
+.lung-explainer__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
 }
-@media (max-height:759px) {
-  .lung-explainer__sticky {position:relative;top:auto;}
-  .lung-explainer__hint>span {display:none;}
+.lung-explainer__steps button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-height: 4.25rem;
+  padding: 0.7rem 0.3rem;
+  border-top: 2px solid #456370;
+  text-align: left;
+  color: var(--lung-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
-@media (max-width:980px) {
-  .lung-explainer__hint>span {display:none;}
-  .lung-explainer__grid {gap:1.4rem;}
-  .lung-explainer__stage-copy {min-height:14rem;}
-  .lung-explainer__stage-copy p {font-size:.95rem;line-height:1.7;}
-  .lung-explainer__visual-head {font-size:.55rem;}
-  .lung-explainer__visual-foot small {font-size:.6rem;max-width:8rem;}
-  .lung-explainer__visual-foot>span {font-size:.6rem;max-width:10rem;}
-  .lung-explainer__steps button {min-height:64px;font-size:.75rem;}
-  .lung-explainer__visual {aspect-ratio:1.05;}
+.lung-explainer__steps button {
+  position: relative;
 }
-@media (prefers-reduced-motion:reduce) {
-  .lung-explainer *, .lung-explainer *::before {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
-  .lung-explainer__track {min-height:0;}
-  .lung-explainer__sticky {position:relative;top:auto;height:auto;max-height:none;}
-  .lung-explainer__motion,.lung-explainer__hint>span {display:none;}
+.lung-explainer__steps button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--lung-teal);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.lung-explainer__steps button[aria-selected="true"]::before {
+  transform: scaleX(1);
+}
+.lung-explainer__steps button:nth-child(1) {
+  --lung-index: 0;
+}
+.lung-explainer__steps button:nth-child(2) {
+  --lung-index: 1;
+}
+.lung-explainer__steps button:nth-child(3) {
+  --lung-index: 2;
+}
+.lung-explainer[data-follow="true"] .lung-explainer__steps button::before {
+  transform: scaleX(
+    clamp(0, calc(var(--lung-progress, 0) * 3 - var(--lung-index)), 1)
+  );
+}
+.lung-explainer__steps strong {
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+}
+.lung-explainer__steps button[aria-selected="true"] {
+  color: #edfffa;
+}
+.lung-explainer__steps button[aria-selected="true"] strong {
+  color: var(--lung-teal);
+}
+.lung-explainer__steps button:hover {
+  color: #fff;
+}
+.lung-explainer__explore-mode {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  min-height: 2.75rem;
+  color: var(--lung-muted);
+  font-size: 0.7rem;
+}
+.lung-explainer__explore-mode button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  color: var(--lung-teal);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.lung-explainer__explore-mode button[hidden] {
+  display: inline-flex;
+  visibility: hidden;
+}
+.lung-explainer__explore-mode button[aria-pressed="true"] {
+  text-decoration-thickness: 2px;
+}
+
+/* Stack all copy panels to reserve their maximum height without guessing line counts. */
+.lung-explainer__narrative {
+  display: grid;
+  margin-top: 0.65rem;
+}
+.lung-explainer__stage-copy {
+  grid-area: 1 / 1;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+.lung-explainer__stage-copy[hidden] {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.lung-explainer__stage-counter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--lung-muted);
+  font-size: 0.65rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.lung-explainer__stage-counter strong {
+  color: var(--lung-teal);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+.lung-explainer__stage-copy h3 {
+  margin-top: 0.7rem;
+  font-size: clamp(1.3rem, 1.85vw, 1.7rem);
+  font-weight: 620;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+.lung-explainer__stage-copy p {
+  margin-top: 0.8rem;
+  color: #c0d0d6;
+  line-height: 1.7;
+  font-size: 0.94rem;
+  max-width: 31rem;
+}
+.lung-explainer__note {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 1.1rem 0;
+  font-size: 0.72rem;
+  color: var(--lung-muted);
+}
+.lung-explainer__note svg {
+  color: var(--lung-teal);
+  flex-shrink: 0;
+}
+.lung-explainer__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.lung-explainer__controls button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid #55838c;
+  border-radius: 50%;
+  color: #e1faf5;
+  background: #143846;
+  transition: background 0.2s ease;
+}
+.lung-explainer__controls button:hover:not([aria-disabled="true"]) {
+  background: #235464;
+}
+.lung-explainer__controls button[aria-disabled="true"] {
+  color: #75949f;
+  border-color: #355561;
+  background: transparent;
+  cursor: default;
+}
+.lung-explainer__hint {
+  color: var(--lung-muted);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.3rem;
+}
+
+.lung-explainer__visual {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #37606d;
+  border-radius: 1.35rem;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #133f4d 0,
+    #0a2635 65%,
+    #081d2a 100%
+  );
+  box-shadow:
+    inset 0 1px 0 #74e8dc10,
+    0 24px 60px #0003;
+}
+.lung-explainer__visual-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem 0;
+  color: #b9d3d9;
+  font-size: 0.6rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+.lung-explainer__motion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 5rem;
+  min-height: 2.75rem;
+  color: #c8ebe6;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  border-radius: 0.4rem;
+}
+.lung-explainer__motion:hover {
+  background: #21505b;
+}
+.lung-explainer__anatomy-wrap {
+  position: relative;
+  aspect-ratio: 1.72;
+}
+.lung-explainer__anatomy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+.lung-explainer__gridlines {
+  opacity: 0.12;
+}
+.lung-explainer__lung {
+  stroke: #87e2d8;
+  stroke-width: 1.2;
+  stroke-opacity: 0.7;
+  filter: drop-shadow(0 10px 10px #03121ba8);
+}
+.lung-explainer__airway {
+  fill: none;
+  stroke: #b2eee2;
+  stroke-opacity: 0.85;
+  stroke-width: 7;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.lung-explainer__twig {
+  fill: none;
+  stroke: #94d2c7;
+  stroke-opacity: 0.73;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+.lung-explainer__fissure {
+  stroke: #87baba;
+  stroke-width: 1.2;
+  opacity: 0.35;
+}
+.lung-explainer__trachea {
+  stroke: #a6e7da;
+  stroke-width: 1.4;
+  opacity: 0.55;
+}
+.lung-explainer__bronchiole {
+  stroke: #7fc5bf;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+.lung-explainer__mucus {
+  fill: #edb98a;
+  stroke: #f7d5b4;
+  stroke-width: 1;
+}
+.lung-explainer__ambient {
+  transform-origin: 320px 278px;
+  animation: lung-ambient 8s ease-in-out infinite;
+}
+@keyframes lung-ambient {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+.lung-explainer__legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.2rem 1.2rem 0.9rem;
+  font-size: 0.65rem;
+  color: #b5cdd2;
+}
+.lung-explainer__legend span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.lung-explainer__legend i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #edb98a;
+}
+.lung-explainer__context {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem 1.1rem;
+  min-height: 7.5rem;
+  border-top: 1px solid #335764;
+  background: #081e2be8;
+}
+.lung-explainer__context-copy {
+  display: grid;
+}
+.lung-explainer__context-copy > div {
+  grid-area: 1 / 1;
+}
+.lung-explainer__context-copy > div[hidden] {
+  display: block;
+  visibility: hidden;
+}
+.lung-explainer__context-icon {
+  align-self: center;
+  color: var(--lung-teal);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.7rem;
+  background: #143d48;
+}
+.lung-explainer__context-icon svg {
+  width: 100%;
+  height: 100%;
+  padding: 0.3rem;
+}
+.lung-explainer__context-kicker {
+  color: #a6c9ce;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.lung-explainer__context strong {
+  display: block;
+  margin-top: 0.3rem;
+  color: #e7faf5;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.lung-explainer__context p {
+  margin-top: 0.3rem;
+  color: #b5cdd2;
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+.lung-explainer__signal {
+  stroke-dasharray: 1;
+  animation: lung-signal 5s ease-in-out infinite;
+}
+@keyframes lung-signal {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0.4;
+  }
+  30%,
+  80% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+.lung-explainer[data-paused="true"] *,
+.lung-explainer[data-visible="false"] * {
+  animation-play-state: paused !important;
+}
+.lung-explainer :is(button, [role="tabpanel"]):focus-visible {
+  outline: 2px solid #b4fff0;
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+.lung-explainer__disclaimer {
+  padding-top: 1.3rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--lung-line);
+  color: var(--lung-muted);
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+.lung-explainer__announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .lung-explainer__grid {
+    column-gap: 2rem;
+  }
+  .lung-explainer__heading {
+    font-size: 2.1rem;
+  }
+  .lung-explainer__stage-copy p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 980px) {
+  .lung-explainer__sticky {
+    padding: 2.5rem 0;
+  }
+  .lung-explainer__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .lung-explainer__intro {
+    order: 0;
+  }
+  .lung-explainer__heading {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+  .lung-explainer__navigation {
+    order: 1;
+  }
+  .lung-explainer__visual {
+    order: 2;
+    margin: 0.8rem 0 1.5rem;
+  }
+  .lung-explainer__narrative {
+    order: 3;
+    margin-top: 0;
+  }
+  .lung-explainer__note {
+    order: 4;
+  }
+  .lung-explainer__controls {
+    order: 5;
+  }
+  .lung-explainer__stage-copy h3 {
+    font-size: 1.5rem;
+  }
+  .lung-explainer__stage-copy p {
+    font-size: 1rem;
+  }
+  .lung-explainer__steps button {
+    font-size: 0.8rem;
+  }
+  .lung-explainer__anatomy-wrap {
+    aspect-ratio: 1.5;
+  }
+  .lung-explainer__context {
+    min-height: 8rem;
+  }
+}
+@media (max-width: 540px) {
+  .lung-explainer__topline {
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+  .lung-explainer__brand {
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+    line-height: 1.5;
+  }
+  .lung-explainer__brand span {
+    display: block;
+    margin-top: 0.25rem;
+  }
+  .lung-explainer__badge {
+    font-size: 0.52rem;
+    padding: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .lung-explainer__visual {
+    border-radius: 1rem;
+  }
+  .lung-explainer__visual-head {
+    padding: 0.5rem 0.8rem 0;
+    font-size: 0.57rem;
+  }
+  .lung-explainer__view-detail {
+    display: none;
+  }
+  .lung-explainer__anatomy-wrap {
+    aspect-ratio: 1.25;
+  }
+  .lung-explainer__legend {
+    padding: 0.2rem 0.9rem 0.8rem;
+  }
+  .lung-explainer__context {
+    gap: 0.65rem;
+    padding: 0.9rem;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+  .lung-explainer__context-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .lung-explainer__context strong {
+    font-size: 0.96rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lung-explainer *,
+  .lung-explainer *::before {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .lung-explainer[data-scroll="true"] .lung-explainer__track {
+    min-height: 0;
+  }
+  .lung-explainer[data-scroll="true"] .lung-explainer__sticky {
+    position: static;
+  }
+  .lung-explainer__motion {
+    visibility: hidden;
+  }
 }
