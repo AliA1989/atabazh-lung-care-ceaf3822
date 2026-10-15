@@ -23,17 +23,17 @@ const Home = () => {
   return (
   <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
   <div className="company-page">
-    <section className="bg-[#0b1b2f] pt-[4.5rem] text-white">
+    <section className="bg-gradient-to-br from-[#f8fafc] via-white to-[#eaf2f7] pt-[4.5rem] text-slate-950">
       <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-12">
         <div>
-          <p className="company-eyebrow !text-sky-300">
+          <p className="company-eyebrow !text-[#164d69]">
             Atabazh Medical · Toronto, Canada
           </p>
           <h1 className="mt-5 max-w-xl text-[2.6rem] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-5xl sm:leading-[1.1] xl:text-[3.65rem]">
             Human-centred engineering for respiratory care
           </h1>
-          <p className="company-lead mt-5 text-slate-300">
-            <strong className="font-semibold text-white">
+          <p className="company-lead mt-5 text-slate-600">
+            <strong className="font-semibold text-slate-950">
               Smart Lung Physio™
             </strong>{" "}
             is an airway-clearance technology in development at Atabazh Medical,
@@ -42,16 +42,16 @@ const Home = () => {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <NavLink
               to="/device"
-              className="company-button bg-sky-300 text-slate-950 hover:bg-sky-200"
+              className="company-button bg-[#164d69] text-white hover:bg-[#103d56]"
             >
               Explore the Technology{" "}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </NavLink>
-            <DialogTrigger className="company-button border border-white/25 text-white hover:bg-white/10">
-              Watch Our Story <span className="text-xs text-slate-300">· 39s</span>
+            <DialogTrigger className="company-button border border-slate-300 bg-white text-[#164d69] hover:bg-[#edf4f8]">
+              Watch Our Story <span className="text-xs text-slate-500">· 39s</span>
             </DialogTrigger>
           </div>
-          <p className="mt-6 text-xs leading-5 text-slate-400">
+          <p className="mt-6 text-xs leading-5 text-slate-500">
             Smart Lung Physio™ · Toronto, Canada
           </p>
         </div>
@@ -61,7 +61,7 @@ const Home = () => {
         href={eyeopenerFeature.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block border-t border-white/15 bg-white/5 transition-colors hover:bg-white/10"
+        className="block border-t border-slate-200 bg-white/90 transition-colors hover:bg-[#eaf2f7]"
       >
         <div className="company-container flex items-center gap-4 py-4">
           <img
@@ -72,15 +72,15 @@ const Home = () => {
             className="h-11 w-16 shrink-0 rounded object-cover"
           />
           <div className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-5">
-            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-sky-300">
+            <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#164d69]">
               In the news · The Eyeopener
             </span>
-            <span className="mt-1 block text-sm text-white sm:mt-0">
+            <span className="mt-1 block text-sm text-slate-900 sm:mt-0">
               The story behind Smart Lung Physio™
             </span>
           </div>
           <ArrowUpRight
-            className="h-5 w-5 shrink-0 text-sky-300"
+            className="h-5 w-5 shrink-0 text-[#164d69]"
             aria-hidden="true"
           />
           <span className="sr-only">Read the article (opens in a new tab)</span>
@@ -176,18 +176,18 @@ const Home = () => {
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </NavLink>
         </div>
-        <div className="rounded-2xl bg-[#0b1b2f] p-8 text-white sm:p-10">
-          <p className="company-eyebrow !text-sky-300">Company & team</p>
+        <div className="rounded-2xl border border-[#d2e4ea] bg-[#eaf2f7] p-8 text-slate-950 sm:p-10">
+          <p className="company-eyebrow !text-[#164d69]">Company & team</p>
           <h2 className="mt-4 text-2xl font-semibold leading-[1.2] tracking-tight sm:text-3xl">
             Engineering, clinical input and commercialization
           </h2>
-          <p className="mt-5 leading-7 text-slate-300">
+          <p className="mt-5 leading-7 text-slate-600">
             Led by biomedical engineer Ali Abedinpour, Atabazh brings together
             technical contributors and advisors across mechanical design,
             electronics, embedded systems, respiratory care, and market
             development.
           </p>
-          <NavLink to="/about" className="company-text-link mt-6 !text-sky-300">
+          <NavLink to="/about" className="company-text-link mt-6 !text-[#164d69]">
             Meet the team <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </NavLink>
         </div>

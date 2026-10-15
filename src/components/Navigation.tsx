@@ -45,7 +45,7 @@ const Navigation = () => {
               <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-slate-950 sm:text-sm">
                 Atabazh
               </span>
-              <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-blue-700 sm:text-[10px]">
+              <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-[#164d69] sm:text-[10px]">
                 Medical
               </span>
             </div>
@@ -57,9 +57,9 @@ const Navigation = () => {
                 key={link.to}
                 to={link.to}
                 className={link.emphasis
-                  ? "ml-2 rounded-lg bg-blue-700 px-4 py-2.5 text-xs font-semibold tracking-wide text-white shadow-sm transition hover:bg-blue-800"
+                  ? "ml-2 rounded-lg bg-[#164d69] px-4 py-2.5 text-xs font-semibold tracking-wide text-white shadow-sm transition hover:bg-[#103d56]"
                   : "rounded-lg px-3.5 py-2.5 text-xs font-semibold tracking-wide text-slate-600 transition hover:bg-white hover:text-slate-950 xl:px-4 xl:text-[13px]"}
-                activeClassName={link.emphasis ? "bg-blue-800" : "bg-white text-blue-700 shadow-sm"}
+                activeClassName={link.emphasis ? "bg-[#103d56]" : "bg-white text-[#164d69] shadow-sm"}
               >
                 {link.label}
               </NavLink>
@@ -88,9 +88,9 @@ const Navigation = () => {
                 key={link.to}
                 to={link.to}
                 className={link.emphasis
-                  ? "mt-3 block rounded-lg bg-blue-700 px-4 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-800"
-                  : "block rounded-lg px-4 py-3.5 text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-blue-50 hover:text-blue-700"}
-                activeClassName={link.emphasis ? "bg-blue-800" : "bg-blue-50 text-blue-700"}
+                  ? "mt-3 block rounded-lg bg-[#164d69] px-4 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#103d56]"
+                  : "block rounded-lg px-4 py-3.5 text-sm font-semibold text-slate-600 transition-all duration-200 hover:bg-[#eaf2f7] hover:text-[#164d69]"}
+                activeClassName={link.emphasis ? "bg-[#103d56]" : "bg-[#eaf2f7] text-[#164d69]"}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >

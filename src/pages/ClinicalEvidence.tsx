@@ -205,7 +205,7 @@ const ClinicalEvidence = () => (
         </figure>
       </div>
     </section>
-    <section className="company-section bg-[#0b1b2f] text-white">
+    <section className="company-section bg-[#15384d] text-white">
       <div className="company-container">
         <p className="company-eyebrow !text-sky-300">Next development phase</p>
         <h2 className="company-heading mt-4">

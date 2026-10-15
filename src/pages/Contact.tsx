@@ -27,9 +27,9 @@ const Contact = () => {
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <section
             aria-labelledby="booking-title"
-            className={`rounded-2xl bg-[#0b1b2f] p-7 text-white sm:p-9 ${wantsCall ? "ring-2 ring-sky-400 ring-offset-4" : ""}`}
+            className={`rounded-2xl bg-[#15384d] p-7 text-white sm:p-9 ${wantsCall ? "ring-2 ring-sky-400 ring-offset-4" : ""}`}
           >
-            <CalendarDays className="h-7 w-7 text-sky-300" aria-hidden="true" />
+            <CalendarDays className="h-7 w-7 text-[#bde9e3]" aria-hidden="true" />
             <h2 id="booking-title" className="mt-5 text-2xl font-semibold">
               Book a discovery call
             </h2>
@@ -51,7 +51,7 @@ const Contact = () => {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="company-button mt-7 w-full bg-sky-300 text-slate-950 hover:bg-sky-200 sm:w-auto"
+              className="company-button mt-7 w-full bg-[#bde9e3] text-[#103d56] hover:bg-[#d4f3ee] sm:w-auto"
             >
               Choose a time{" "}
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
