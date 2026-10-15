@@ -57,7 +57,8 @@ const ClinicalEvidence = () => (
       <div className="company-container">
         <p className="company-eyebrow">Evidence & development</p>
         <h1 className="mt-5 max-w-4xl text-4xl leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-          Documenting development progress <br />and the evidence still needed
+          Documenting development progress
+          <br />and the evidence still needed
         </h1>
         <p className="company-lead mt-6 text-slate-600">
           A clear view of Smart Lung Physio™: the work completed to date, the
