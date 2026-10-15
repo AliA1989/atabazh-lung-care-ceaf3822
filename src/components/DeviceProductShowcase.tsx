@@ -34,7 +34,7 @@ const DeviceProductShowcase = () => {
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-blue-600">
                 Product in motion
               </p>
-              <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.75rem]">
+              <h2 className="text-3xl font-semibold leading-[1.18] tracking-[-0.035em] text-slate-950 md:text-4xl lg:text-[2.75rem]">
                 A closer look at Smart Lung Physio™
               </h2>
             </div>

@@ -88,7 +88,7 @@ const Footer = () => {
 
           {/* Get Started Column */}
           <div>
-            <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get Started</h3>
+            <h3 className="font-semibold text-sm text-white mb-5 uppercase tracking-wider">Get started</h3>
             <ul className="space-y-3">
               {[
                 { to: BOOKING_URL, label: "Book a Discovery Call" },

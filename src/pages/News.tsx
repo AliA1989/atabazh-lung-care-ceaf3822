@@ -23,9 +23,9 @@ const News = () => (
       <div className="company-container">
         <p className="company-eyebrow">Company updates</p>
         <h1 className="mt-5 text-4xl tracking-[-0.04em] sm:text-5xl">
-          News & milestones
+          News and milestones
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+        <p className="company-lead mt-5 text-slate-600">
           Media coverage and research updates from the Smart Lung Physio™
           development program.
         </p>
@@ -38,7 +38,7 @@ const News = () => (
     </section>
     <section className="company-section border-t border-slate-200 bg-slate-50">
       <div className="company-container">
-        <h2 className="company-heading">Research & technology updates</h2>
+        <h2 className="company-heading">Research and technology updates</h2>
         <div className="mt-8 divide-y divide-slate-200">
           {updates.map((item) => (
             <article

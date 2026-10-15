@@ -48,7 +48,7 @@ const DeviceMeasurementSection = () => {
         <ScrollReveal className="mx-auto mb-12 max-w-3xl text-center lg:mb-16">
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-blue-700">Measurement architecture</p>
           <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.8rem]">
-            Contact input. Mechanical output.
+            Contact input and mechanical output
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
             Our measurement strategy treats caregiver contact force and actuator output as separate engineering quantities. That distinction shapes sensor selection, feedback, and bench-test design.

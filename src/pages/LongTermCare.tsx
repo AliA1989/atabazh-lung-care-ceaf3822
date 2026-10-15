@@ -13,7 +13,7 @@ const careGaps = [
   },
   {
     icon: Activity,
-    title: "Delivery Consistency",
+    title: "Delivery consistency",
     description: "Manual delivery can vary across caregivers, resident positioning, and shifts.",
   },
   {
@@ -26,7 +26,7 @@ const careGaps = [
 const pilotEvaluationAreas = [
   {
     icon: Clock,
-    title: "Workflow Fit",
+    title: "Workflow fit",
     description: "Can trained staff integrate the system into existing supervised care routines?",
   },
   {
@@ -41,7 +41,7 @@ const pilotEvaluationAreas = [
   },
   {
     icon: Activity,
-    title: "Technical Performance",
+    title: "Technical performance",
     description: "Does the prototype operate consistently under defined evaluation conditions?",
   },
 ];
@@ -49,17 +49,17 @@ const pilotEvaluationAreas = [
 const pilotSteps = [
   {
     number: "01",
-    title: "Site & Workflow Review",
+    title: "Site and workflow review",
     description: "Clarify the care setting, staff roles, resident context, and evaluation questions.",
   },
   {
     number: "02",
-    title: "Staff Demonstration",
+    title: "Staff demonstration",
     description: "Review the functional prototype on a mannequin or test surface with a clinical champion.",
   },
   {
     number: "03",
-    title: "Pilot-Readiness Planning",
+    title: "Pilot-readiness planning",
     description: "Define training, technical, documentation, ethics, and site-approval requirements before any resident use.",
   },
 ];
@@ -73,10 +73,10 @@ const LongTermCare = () => {
 
         <div className="relative z-10 mx-auto w-full max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16">
-            <div className="animate-fade-in space-y-7">
+            <div className="animate-fade-in space-y-6">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Long-term care</p>
               <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 md:text-5xl lg:text-[3.6rem]">
-                A More Measurable Approach to Airway-Clearance Support
+                A more measurable approach to airway-clearance support
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-slate-600 md:text-xl">
                 Smart Lung Physio™ is being developed to help trained caregivers deliver localized mechanical chest percussion with sensing, guidance, and structured documentation.
@@ -114,7 +114,7 @@ const LongTermCare = () => {
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Why it matters</p>
               <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.75rem]">
-                LTC leaders already know the constraints.
+                Long-term care teams face practical constraints
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
@@ -148,7 +148,7 @@ const LongTermCare = () => {
           <ScrollReveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Pilot questions</p>
             <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.75rem]">
-              What a Pilot Could Evaluate
+              What a pilot could evaluate
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
               A useful early pilot should answer practical questions—not imply clinical efficacy before the evidence exists.
@@ -182,7 +182,7 @@ const LongTermCare = () => {
           <ScrollReveal className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Pilot-readiness pathway</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">Start with fit—not commitment.</h2>
+              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">Start with fit, not commitment</h2>
               <p className="mt-5 text-base leading-7 text-slate-600">No resident use or clinical commitment is required at the first discussion stage.</p>
             </div>
 
@@ -204,7 +204,7 @@ const LongTermCare = () => {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">Next step</p>
             <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:text-[2.75rem]">
-              Evaluate Fit for Your LTC Setting
+              Evaluate fit for your LTC setting
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
               Discuss workflow fit, staff demonstration, technical review, or pilot-readiness planning with Atabazh Medical.

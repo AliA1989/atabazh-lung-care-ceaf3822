@@ -17,9 +17,9 @@ const Contact = () => {
         <header className="max-w-3xl">
           <p className="company-eyebrow">Contact Atabazh Medical</p>
           <h1 className="mt-5 text-4xl leading-tight tracking-[-0.04em] sm:text-5xl">
-            Let’s discuss the next step.
+            Let’s discuss the next step
           </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="company-lead mt-5 text-slate-600">
             Talk with our team about technology evaluation, research
             collaboration, long-term care pilot planning, or commercialization.
           </p>

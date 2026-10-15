@@ -39,17 +39,17 @@ const Device = () => {
         
         <div className="relative z-10 mx-auto w-full max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
-            <div className="space-y-7">
+            <div className="space-y-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-blue-200 bg-white/80 px-4 py-2.5 shadow-sm animate-fade-in">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Physical airway-clearance device</span>
             </div>
             
-            <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.05em] text-slate-950 animate-fade-in md:text-5xl lg:text-[3.6rem]">
+            <h1 className="text-4xl font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950 animate-fade-in md:text-5xl md:leading-[1.09] lg:text-[3.6rem]">
               Smart Lung Physio™
               <span className="mt-3 block text-blue-700">
-                Localized Therapy. Guided by Sensing.
+                Localized percussion, guided by sensing
               </span>
             </h1>
             
@@ -113,7 +113,7 @@ const Device = () => {
       <section className="border-t border-slate-200 bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Built Around Caregiver Usability</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-slate-800">Built around caregiver usability</h2>
           </ScrollReveal>
 
           <div className="space-y-6">
@@ -122,7 +122,7 @@ const Device = () => {
                 <CardContent className="p-8 lg:p-10">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Structured Onboarding</h3>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Structured onboarding</h3>
                       <p className="text-base text-slate-600">
                         The system is designed to support caregiver onboarding with guided workflows, visual prompts, and practical reference material.
                       </p>
@@ -157,7 +157,7 @@ const Device = () => {
                       </ul>
                     </div>
                     <div className="space-y-4 order-1 md:order-2">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Form Factor and Hygiene Development</h3>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Form factor and hygiene development</h3>
                       <p className="text-base text-slate-600">
                         The current handheld prototype is mains-powered. Portability, patient-interface materials, and cleaning workflows are being evaluated for supervised care environments.
                       </p>
@@ -174,7 +174,7 @@ const Device = () => {
       <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-4xl space-y-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss Product Fit for Your Care Setting</h2>
+            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss product fit for your care setting</h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-300">
               For clinical workflow questions, pilot discussions, or technical review, connect with the Atabazh Medical team.
             </p>
