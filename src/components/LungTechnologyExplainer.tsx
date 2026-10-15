@@ -167,31 +167,12 @@ export default function LungTechnologyExplainer({
       data-visible={visible}
       data-scroll={scrollEnabled}
       data-follow={scrollEnabled && followScroll}
-      aria-labelledby={`${id}-heading`}
+      aria-label="Smart Lung Physio technology explainer"
     >
       <div className="lung-explainer__track" ref={trackRef}>
         <div className="lung-explainer__sticky" ref={panelRef}>
           <div className="company-container">
-            <div className="lung-explainer__topline">
-              <span className="lung-explainer__brand">
-                ATABAZH MEDICAL <span> / SMART LUNG PHYSIO™</span>
-              </span>
-              <span className="lung-explainer__badge">
-                <span aria-hidden="true" /> INTERACTIVE CONCEPT
-              </span>
-            </div>
-
             <div className="lung-explainer__grid">
-              <div className="lung-explainer__intro">
-                <p className="lung-explainer__eyebrow">
-                  EXPLORE THE TECHNOLOGY
-                </p>
-                <h2 id={`${id}-heading`} className="lung-explainer__heading">
-                  Understanding the challenge
-                  <br />
-                  <em>and our design approach</em>
-                </h2>
-              </div>
               <div className="lung-explainer__navigation">
                 <div
                   className="lung-explainer__steps"
