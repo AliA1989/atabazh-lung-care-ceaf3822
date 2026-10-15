@@ -71,25 +71,22 @@
 .lung-explainer__airway {fill:none;stroke:#bcfbf0;stroke-opacity:.82;stroke-width:7;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 0 6px rgba(103,214,219,.5));}
 .lung-explainer__twig {fill:none;stroke:#9ce4d8;stroke-opacity:.55;stroke-width:3.5;stroke-linecap:round;}
 .lung-explainer__mucus {fill:#efb388;stroke:#ffdab4;stroke-width:1;filter:drop-shadow(0 0 5px rgba(234,173,132,.5));transition:opacity .55s;}
-.lung-explainer__particles {fill:#affff2;filter:drop-shadow(0 0 7px #66eadf);opacity:0;transition:opacity .55s;}
-.lung-explainer__rings {opacity:0;transform-origin:320px 260px;}
-.lung-explainer__waveform,.lung-explainer__feedback {opacity:0;transition:opacity .55s;}
-.lung-explainer__visual[data-stage="1"] .lung-explainer__mucus,
-.lung-explainer__visual[data-stage="2"] .lung-explainer__mucus {opacity:.22;}
-.lung-explainer__visual[data-stage="1"] .lung-explainer__particles {opacity:1;animation:lung-drift 2.6s ease-in-out infinite alternate;}
-.lung-explainer__visual[data-stage="1"] .lung-explainer__rings {animation:lung-pulse 2.6s ease-out infinite;}
+.lung-explainer__concept,.lung-explainer__waveform,.lung-explainer__feedback {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:translateY(5px);}
+.lung-explainer__visual[data-stage="1"] .lung-explainer__concept,
 .lung-explainer__visual[data-stage="2"] .lung-explainer__waveform,
-.lung-explainer__visual[data-stage="2"] .lung-explainer__feedback {opacity:1;}
-@keyframes lung-drift {from{transform:translate(-3px,2px)}to{transform:translate(5px,-4px)}}
-@keyframes lung-pulse {0%{transform:scale(.45);opacity:.7}100%{transform:scale(1.2);opacity:0}}
+.lung-explainer__visual[data-stage="2"] .lung-explainer__feedback {opacity:1;transform:none;}
+.lung-explainer__visual[data-stage="1"] .lung-explainer__concept {animation:lung-concept-glow 4s ease-in-out infinite;}
+@keyframes lung-concept-glow {0%,100%{opacity:.65}50%{opacity:1}}
+.lung-explainer__detail {opacity:.35;}
+.lung-explainer__lung {filter:drop-shadow(0 8px 12px #03121b);}
+.lung-explainer__motion {position:absolute;z-index:3;right:1.5rem;bottom:4rem;display:grid;place-items:center;width:44px;height:44px;border:1px solid #3a6f7b;border-radius:50%;background:#0b2937;color:#bce9e4;}
+.lung-explainer__motion:focus-visible {outline:2px solid #74eee0;outline-offset:4px;}
+.lung-explainer[data-paused="true"] *, .lung-explainer[data-visible="false"] * {animation-play-state:paused!important;}
 .lung-explainer__steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.7rem;}
 .lung-explainer__steps button {border:0;border-top:2px solid #2b4c58;background:transparent;text-align:left;color:#91adb7;display:flex;align-items:center;gap:.75rem;padding:.85rem .25rem .4rem;font-size:.78rem;transition:border-color .2s,color .2s;}
 .lung-explainer__steps button strong {font-variant-numeric:tabular-nums;font-size:.72rem;}
 .lung-explainer__steps button[aria-current="step"] {border-top-color:#7deee1;color:#e4faf5;}
 .lung-explainer__steps button[aria-current="step"] strong {color:#7deee1;}
-.lung-explainer__chapters {max-width:82rem;margin:0 auto;}
-.lung-explainer__chapter {height:65svh;min-height:390px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4rem;}
-.lung-explainer__chapter>span {font-size:.62rem;letter-spacing:.17em;text-transform:uppercase;color:#86a8b0;}
 .lung-explainer__disclaimer {padding-top:1.3rem;padding-bottom:2rem;border-top:1px solid rgba(142,215,219,.15);font-size:.7rem;line-height:1.7;color:#9cb9bf;}
 @media (max-width:1100px) {
   .lung-explainer__heading {font-size:clamp(2.2rem,3.35vw,3.1rem);}
@@ -123,9 +120,35 @@
   .lung-explainer__steps strong {display:block;margin-bottom:.4rem;}
   .lung-explainer__controls>span {font-size:.59rem;}
 }
+/* Scroll distance belongs to the sticky track, so every stage stays visible. */
+@media (min-width:981px) and (min-height:760px) {
+  .lung-explainer__track {min-height:calc(min(100svh - 4.5rem, 920px) + 160svh);}
+  .lung-explainer__sticky {min-height:0;height:calc(100svh - 4.5rem);max-height:920px;padding:1.5rem 0;}
+  .lung-explainer__topline {margin-bottom:1.4rem;padding-bottom:.9rem;}
+  .lung-explainer__heading {font-size:clamp(2rem,3vw,3rem);margin:.8rem 0 1.2rem;}
+  .lung-explainer__stage-copy h3 {font-size:clamp(1.35rem,2vw,1.8rem);min-height:3.6em;}
+  .lung-explainer__stage-copy p {min-height:7.2em;font-size:.9rem;line-height:1.65;}
+  .lung-explainer__visual {min-height:0;max-height:540px;}
+  .lung-explainer__note {margin:.8rem 0 1rem;}
+}
+@media (max-height:759px) {
+  .lung-explainer__sticky {position:relative;top:auto;}
+  .lung-explainer__hint>span {display:none;}
+}
+@media (max-width:980px) {
+  .lung-explainer__hint>span {display:none;}
+  .lung-explainer__grid {gap:1.4rem;}
+  .lung-explainer__stage-copy {min-height:14rem;}
+  .lung-explainer__stage-copy p {font-size:.95rem;line-height:1.7;}
+  .lung-explainer__visual-head {font-size:.55rem;}
+  .lung-explainer__visual-foot small {font-size:.6rem;max-width:8rem;}
+  .lung-explainer__visual-foot>span {font-size:.6rem;max-width:10rem;}
+  .lung-explainer__steps button {min-height:64px;font-size:.75rem;}
+  .lung-explainer__visual {aspect-ratio:1.05;}
+}
 @media (prefers-reduced-motion:reduce) {
-  .lung-explainer__mucus,.lung-explainer__particles,.lung-explainer__rings,
-  .lung-explainer__waveform,.lung-explainer__feedback,.lung-explainer__steps button,
-  .lung-explainer__controls button {animation:none!important;transition:none!important;}
-  .lung-explainer__visual[data-stage="1"] .lung-explainer__rings {opacity:.35;transform:none;}
+  .lung-explainer *, .lung-explainer *::before {animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .lung-explainer__track {min-height:0;}
+  .lung-explainer__sticky {position:relative;top:auto;height:auto;max-height:none;}
+  .lung-explainer__motion,.lung-explainer__hint>span {display:none;}
 }
