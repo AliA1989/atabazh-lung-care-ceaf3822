@@ -110,7 +110,7 @@ const Home = () => {
       </div>
     </section>
 
-    <LungTechnologyExplainer />
+    <LungTechnologyExplainer layout="compact" />
 
     <section className="company-section border-y border-slate-200 bg-[#f3f6f8]">
       <div className="company-container">
