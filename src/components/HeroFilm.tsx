@@ -32,7 +32,7 @@ export default function HeroFilm({ open }: { open: boolean }) {
 
   return (
     <>
-      <figure className="w-full overflow-hidden rounded-2xl border border-white/15 bg-[#071321] shadow-2xl">
+      <figure className="w-full overflow-hidden rounded-2xl border border-[#d2e4ea] bg-[#071321] shadow-[0_24px_60px_-35px_rgba(16,40,63,0.45)] ring-1 ring-slate-200/80">
         <div className="relative aspect-video">
           {motionAllowed ? (
             <video ref={videoRef} muted loop playsInline preload="metadata"

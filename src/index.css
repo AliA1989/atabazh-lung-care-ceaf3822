@@ -16,10 +16,10 @@
     --popover-foreground: 220 10% 15%;
 
     /* Reserved medical blue - used sparingly for CTAs and key elements */
-    --primary: 210 80% 35%;
+    --primary: 202 65% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 70% 50%;
-    --primary-dark: 210 90% 25%;
+    --primary-light: 202 54% 38%;
+    --primary-dark: 202 70% 19%;
 
     --secondary: 220 10% 97%;
     --secondary-foreground: 220 10% 15%;

@@ -23,7 +23,7 @@ const Home = () => {
   return (
   <Dialog open={storyOpen} onOpenChange={setStoryOpen}>
   <div className="company-page">
-    <section className="bg-[#f8fafc] pt-[4.5rem] text-slate-950">
+    <section className="bg-gradient-to-br from-[#f8fafc] via-white to-[#eaf2f7] pt-[4.5rem] text-slate-950">
       <div className="company-container grid items-center gap-10 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-12">
         <div>
           <p className="company-eyebrow !text-[#164d69]">
@@ -61,7 +61,7 @@ const Home = () => {
         href={eyeopenerFeature.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block border-t border-slate-200 bg-[#eaf2f7] transition-colors hover:bg-[#dceaf2]"
+        className="block border-t border-slate-200 bg-white/90 transition-colors hover:bg-[#eaf2f7]"
       >
         <div className="company-container flex items-center gap-4 py-4">
           <img
@@ -176,18 +176,18 @@ const Home = () => {
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </NavLink>
         </div>
-        <div className="rounded-2xl bg-[#0b1b2f] p-8 text-white sm:p-10">
-          <p className="company-eyebrow !text-sky-300">Company & team</p>
+        <div className="rounded-2xl border border-[#d2e4ea] bg-[#eaf2f7] p-8 text-slate-950 sm:p-10">
+          <p className="company-eyebrow !text-[#164d69]">Company & team</p>
           <h2 className="mt-4 text-2xl font-semibold leading-[1.2] tracking-tight sm:text-3xl">
             Engineering, clinical input and commercialization
           </h2>
-          <p className="mt-5 leading-7 text-slate-300">
+          <p className="mt-5 leading-7 text-slate-600">
             Led by biomedical engineer Ali Abedinpour, Atabazh brings together
             technical contributors and advisors across mechanical design,
             electronics, embedded systems, respiratory care, and market
             development.
           </p>
-          <NavLink to="/about" className="company-text-link mt-6 !text-sky-300">
+          <NavLink to="/about" className="company-text-link mt-6 !text-[#164d69]">
             Meet the team <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </NavLink>
         </div>

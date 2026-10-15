@@ -10,7 +10,7 @@ const engineeringFocus = [
 ];
 
 const LivePlatformSection = () => (
-  <section id="engineering-data" className="bg-[#0b1b2f] py-20 text-white lg:py-24">
+  <section id="engineering-data" className="bg-[#15384d] py-20 text-white lg:py-24">
     <div className="company-container grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
       <ScrollReveal>
         <p className="company-eyebrow !text-sky-300">Inside the prototype</p>

@@ -431,17 +431,17 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-[#0b1b2f] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
+      <section className="relative overflow-hidden border-t border-[#d2e4ea] bg-[#eaf2f7] px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="absolute inset-0 bg-transparent" />
-        <div className="absolute left-10 top-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute left-10 top-10 h-64 w-64 rounded-full bg-[#c9e4ea]/50 blur-3xl" />
+        <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-white/60 blur-3xl" />
 
         <div className="container relative mx-auto max-w-4xl text-center">
           <ScrollReveal className="space-y-7">
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] text-white md:text-4xl lg:text-[2.8rem]">
+            <h2 className="text-3xl font-bold leading-tight tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.8rem]">
               Build the next stage with Atabazh
             </h2>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/90">
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600">
               We welcome conversations about technology evaluation,
               supervised-care workflows, research collaboration, and
               commercialization.
@@ -450,7 +450,7 @@ const About = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300 sm:px-8"
+                className="h-auto rounded-xl bg-[#164d69] px-7 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#103d56] sm:px-8"
               >
                 <a
                   href={BOOKING_URL}
@@ -462,7 +462,7 @@ const About = () => {
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
-              <p className="text-sm font-medium text-white/85">
+              <p className="text-sm font-medium text-slate-600">
                 Contact:{" "}
                 <a
                   href="mailto:support@atabazh-med.com"

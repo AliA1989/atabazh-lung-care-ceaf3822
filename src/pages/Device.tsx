@@ -42,12 +42,12 @@ const Device = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2.5 rounded-full border border-blue-200 bg-white/80 px-4 py-2.5 shadow-sm animate-fade-in">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">Physical airway-clearance device</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#164d69]">Physical airway-clearance device</span>
             </div>
             
             <h1 className="text-4xl font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950 animate-fade-in md:text-5xl md:leading-[1.09] lg:text-[3.6rem]">
               Smart Lung Physio™
-              <span className="mt-3 block text-blue-700">
+              <span className="mt-3 block text-[#164d69]">
                 Localized percussion, guided by sensing
               </span>
             </h1>
@@ -60,7 +60,7 @@ const Device = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="group h-auto rounded-xl bg-blue-700 px-7 py-4 text-base shadow-[0_14px_30px_-16px_rgba(29,78,216,0.7)] transition hover:-translate-y-0.5 hover:bg-blue-800"
+                className="group h-auto rounded-xl bg-[#164d69] px-7 py-4 text-base shadow-[0_14px_30px_-16px_rgba(29,78,216,0.7)] transition hover:-translate-y-0.5 hover:bg-[#103d56]"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Request More Information
@@ -168,18 +168,18 @@ const Device = () => {
       </section>
 
       {/* CTA Section - Soft Blue Gradient */}
-      <section className="bg-[#0b1b2f] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
+      <section className="border-t border-[#d2e4ea] bg-[#eaf2f7] px-5 py-20 text-slate-950 sm:px-8 lg:px-12 lg:py-24">
         <div className="container mx-auto max-w-4xl space-y-8 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold tracking-[-0.04em] text-white md:text-4xl lg:text-[2.75rem]">Discuss product fit for your care setting</h2>
-            <p className="mx-auto max-w-2xl text-lg text-slate-300">
+            <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.75rem]">Discuss product fit for your care setting</h2>
+            <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-600">
               For clinical workflow questions, pilot discussions, or technical review, connect with the Atabazh Medical team.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
               <Button 
                 asChild 
                 size="lg" 
-                className="h-auto rounded-xl bg-sky-400 px-7 py-4 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
+                className="h-auto rounded-xl bg-[#164d69] px-7 py-4 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#103d56]"
               >
                 <NavLink to="/contact" className="flex items-center gap-2">
                   Request More Information
