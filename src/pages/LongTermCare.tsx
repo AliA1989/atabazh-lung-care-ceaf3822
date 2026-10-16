@@ -9,7 +9,7 @@ const careGaps = [
   {
     icon: Users,
     title: "Staffing",
-    description: "Respiratory-support routines must fit the time and training realities of supervised care teams.",
+    description: "Respiratory-support routines need to fit the time and training available to supervised care teams.",
   },
   {
     icon: Activity,
@@ -19,7 +19,7 @@ const careGaps = [
   {
     icon: FileText,
     title: "Documentation",
-    description: "Care leaders need a clearer record of what was delivered without adding unnecessary burden.",
+    description: "Care leaders need clear records of what was delivered without adding unnecessary work.",
   },
 ];
 
@@ -116,7 +116,7 @@ const LongTermCare = () => {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              The product is being designed around three gaps that directly affect implementation: staff capacity, delivery consistency, and documentation.
+              We are designing the product around staff capacity, delivery consistency and documentation, all of which affect its use in care settings.
             </p>
           </ScrollReveal>
 
@@ -180,7 +180,7 @@ const LongTermCare = () => {
           <ScrollReveal className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#164d69]">Pilot-readiness pathway</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">Start with fit, not commitment</h2>
+              <h2 className="mt-4 text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl">Discuss your care setting first</h2>
               <p className="mt-5 text-base leading-7 text-slate-600">No resident use or clinical commitment is required at the first discussion stage.</p>
             </div>
 
@@ -202,7 +202,7 @@ const LongTermCare = () => {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#164d69]">Next step</p>
             <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-[2.75rem]">
-              Evaluate fit for your LTC setting
+              Could it fit your LTC setting?
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
               Discuss workflow fit, staff demonstration, technical review, or pilot-readiness planning with Atabazh Medical.

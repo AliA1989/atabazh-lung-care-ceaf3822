@@ -39,21 +39,21 @@ const technicalContributors = [
     name: "Ali Azadegan Mehr",
     role: "Mechanical Design Contributor",
     description:
-      "Supports ergonomic design, mechanical refinement, and prototype development activities.",
+      "Supports ergonomic design, mechanical refinement and prototype development.",
     image: aliAzadeganImage,
   },
   {
     name: "Ali Hosseini",
     role: "Electronics & Sensor Integration Contributor",
     description:
-      "Supports electronics architecture, sensor integration, and hardware development activities.",
+      "Supports electronics architecture, sensor integration and hardware development.",
     image: aliHosseiniImage,
   },
   {
     name: "Ahmed Tabl",
     role: "Embedded Systems & Biomechanics Contributor",
     description:
-      "Supports embedded systems development, data acquisition, and prototype testing activities.",
+      "Supports embedded systems development, data acquisition and prototype testing.",
     image: ahmedTablImage,
   },
   {
@@ -70,14 +70,14 @@ const clinicalStrategicGuidance = [
     name: "Kamran Azma",
     role: "Respiratory Care & Clinical Workflow Advisor",
     description:
-      "Provides guidance on respiratory-care workflow, airway-clearance practices, and clinical implementation considerations.",
+      "Advises on respiratory-care workflows, airway-clearance practices and clinical implementation.",
     image: kamranAzmaImage,
   },
   {
     name: "Jeff Kofman",
     role: "Commercialization Advisor",
     description:
-      "Supports commercialization planning, stakeholder engagement, and market development activities.",
+      "Supports commercialization planning, stakeholder engagement and market development.",
     image: jeffKofmanImage,
   },
 ];
@@ -110,12 +110,10 @@ const About = () => {
               About Atabazh Medical
             </p>
             <h1 className="text-4xl font-semibold leading-[1.13] tracking-[-0.04em] text-slate-950 md:text-5xl md:leading-[1.1] lg:text-[3.6rem]">
-              A medical-device company focused on measurable respiratory care
+              Developing Smart Lung Physio™ in Toronto
             </h1>
             <p className="company-lead mx-auto text-slate-600">
-              Based in Toronto, Atabazh Medical Inc. brings together
-              engineering, clinical workflow input, and commercialization
-              expertise to develop Smart Lung Physio™.
+              Atabazh Medical Inc. is a Toronto medical-device company developing Smart Lung Physio™. Our work combines engineering with clinical workflow input and commercialization expertise.
             </p>
           </ScrollReveal>
         </div>
@@ -192,9 +190,7 @@ const About = () => {
               Leadership, technical contributors and advisors
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
-              Smart Lung Physio™ is being developed through founder-led product
-              development, technical contributors, clinical workflow input, and
-              project-based support from academic and innovation ecosystems.
+              Our founder leads product development with technical contributors and clinical workflow input. Academic and innovation programs provide support through specific projects.
             </p>
           </ScrollReveal>
 

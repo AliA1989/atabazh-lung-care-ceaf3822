@@ -17,11 +17,10 @@ const Contact = () => {
         <header className="max-w-3xl">
           <p className="company-eyebrow">Contact Atabazh Medical</p>
           <h1 className="mt-5 text-4xl leading-tight tracking-[-0.04em] sm:text-5xl">
-            Let’s discuss the next step
+            Talk with the Atabazh team
           </h1>
           <p className="company-lead mt-5 text-slate-600">
-            Talk with our team about technology evaluation, research
-            collaboration, long-term care pilot planning, or commercialization.
+            Contact us about technology evaluation, research collaboration, long-term care pilot planning or commercialization.
           </p>
         </header>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -44,7 +43,7 @@ const Contact = () => {
               <ul className="mt-3 space-y-2 text-sm text-slate-300">
                 <li>Discuss your care setting or development interests.</li>
                 <li>Review the current prototype stage and potential fit.</li>
-                <li>Identify an appropriate follow-up with our team.</li>
+                <li>Decide how our team should follow up.</li>
               </ul>
             </div>
             <a
@@ -104,7 +103,7 @@ const Contact = () => {
                 Prefer an online contact form?
               </summary>
               <p className="mt-3 text-sm leading-6 text-slate-600">
-                Our existing contact form is also available on Jotform.
+                You can also send a message through our Jotform contact form.
               </p>
               <a
                 href={FORM_URL}

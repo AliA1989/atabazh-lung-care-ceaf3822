@@ -51,7 +51,7 @@ const DeviceMeasurementSection = () => {
             Contact input and mechanical output
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Our measurement strategy treats caregiver contact force and actuator output as separate engineering quantities. That distinction shapes sensor selection, feedback, and bench-test design.
+            We treat caregiver contact force and actuator output as separate engineering quantities. This guides our choice of sensors, caregiver feedback and bench-test design.
           </p>
         </ScrollReveal>
 

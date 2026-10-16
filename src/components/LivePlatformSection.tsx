@@ -6,7 +6,7 @@ const progress = [
   {
     icon: CheckCircle2,
     title: "Working physical prototype",
-    description: "Functional mains-powered hardware has been built and iterated.",
+    description: "We have built and refined functional mains-powered hardware.",
   },
   {
     icon: Gauge,
@@ -25,11 +25,9 @@ const LivePlatformSection = () => (
     <div className="company-container">
       <ScrollReveal className="max-w-3xl">
         <p className="company-eyebrow">Engineering progress</p>
-        <h2 className="company-heading mt-3">Working hardware. A system being refined</h2>
+        <h2 className="company-heading mt-3">Refining the working prototype</h2>
         <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
-          Smart Lung Physio™ has a functional physical prototype. Engineering
-          work now focuses on refining mechanical output, sensing and caregiver
-          feedback before structured verification and evaluation.
+          Smart Lung Physio™ has a functional physical prototype. We are refining mechanical output, sensing and caregiver feedback before structured verification and evaluation.
         </p>
       </ScrollReveal>
 
