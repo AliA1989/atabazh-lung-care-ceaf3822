@@ -18,7 +18,7 @@ const pathways = [
     icon: ClipboardList,
     badgeTone: "bg-red-50 text-red-700",
     description:
-      "Evidence-package preparation focused on intended use, workflow definition, stakeholder context, and pilot-readiness planning.",
+      "Evidence-package preparation covering intended use, workflow definition, stakeholder context and pilot-readiness planning.",
     deliverables: [
       "Intended Use Definition",
       "Workflow Mapping",
@@ -37,7 +37,7 @@ const pathways = [
     icon: Users,
     badgeTone: "bg-rose-50 text-rose-700",
     description:
-      "Human-factors workstreams exploring caregiver workflow, usability, ergonomic fit, and practical use in care settings.",
+      "Human-factors work examining caregiver workflows, usability, ergonomic fit and practical use in care settings.",
     deliverables: [
       "Caregiver Workflow Analysis",
       "Human Factors Research",
@@ -55,7 +55,7 @@ const pathways = [
     icon: ShieldCheck,
     badgeTone: "bg-red-50 text-red-700",
     description:
-      "Regulatory pathway planning focused on assessment, documentation structure, quality-system needs, and future submission requirements.",
+      "Regulatory pathway planning covering assessment, documentation structure, quality-system needs and future submission requirements.",
     deliverables: [
       "Regulatory Strategy",
       "Documentation Framework",
@@ -73,7 +73,7 @@ const pathways = [
     icon: Wrench,
     badgeTone: "bg-blue-50 text-blue-700",
     description:
-      "Engineering-focused development work supporting prototype refinement, technical review, and iterative device improvement.",
+      "Engineering work on prototype refinement, technical review and repeated device improvements.",
     deliverables: [
       "Mechanical Design",
       "Prototyping",
@@ -91,7 +91,7 @@ const pathways = [
     icon: Handshake,
     badgeTone: "bg-amber-50 text-amber-700",
     description:
-      "Discovery activities capturing care-team needs, workflow constraints, clinical context, and early market assumptions.",
+      "Interviews and other discovery work examining care-team needs, workflow constraints, clinical context and early market assumptions.",
     deliverables: [
       "Workflow Analysis",
       "100+ Stakeholder Interviews",
@@ -109,7 +109,7 @@ const pathways = [
     icon: BriefcaseBusiness,
     badgeTone: "bg-yellow-50 text-yellow-700",
     description:
-      "Market-validation activities focused on customer discovery, value proposition fit, commercialization insight, and early adoption pathways.",
+      "Market-validation work covering customer discovery, value proposition fit, commercialization insights and early adoption pathways.",
     deliverables: [
       "Customer Discovery",
       "Value Proposition Validation",
@@ -128,8 +128,7 @@ const ResearchValidationSection = () => (
       </h2>
       <p className="mt-5 max-w-3xl text-slate-600">
         Academic projects, placements, and commercialization programs contribute
-        to specific development activities. Atabazh coordinates these inputs
-        within its product-development work.
+        to specific development activities. Atabazh coordinates these contributions as part of product development.
       </p>
       <div className="mt-8 grid gap-x-10 md:grid-cols-2">
         {pathways.map((item) => (

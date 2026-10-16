@@ -7,11 +7,10 @@ export const CompanyCTA = () => (
       <div>
         <p className="company-eyebrow !text-[#164d69]">Work with Atabazh</p>
         <h2 className="mt-4 text-3xl leading-tight tracking-tight sm:text-4xl">
-          Advance the next stage with us
+          Discuss evaluation or collaboration
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-          Connect with our team about technical evaluation, research
-          collaboration, long-term care pilot planning, or commercialization.
+          Talk with us about technical evaluation, research collaboration, long-term care pilot planning or commercialization.
         </p>
       </div>
       <NavLink

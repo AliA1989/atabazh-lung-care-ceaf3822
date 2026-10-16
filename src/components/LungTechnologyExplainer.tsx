@@ -8,7 +8,7 @@ const stages = [
     label: "The challenge",
     title: "When mucus becomes difficult to clear",
     description:
-      "Mucus accumulation can make airway clearance challenging for people living with certain respiratory conditions. Understanding the challenge comes first.",
+      "For people living with certain respiratory conditions, mucus accumulation can make airway clearance difficult.",
     status: "01 · AIRWAYS",
     visualTitle: "Mucus in the airways",
     visualDetail:
@@ -18,7 +18,7 @@ const stages = [
     label: "Our design intent",
     title: "Developing technology to support airway clearance",
     description:
-      "Smart Lung Physio™ is a handheld airway-clearance technology in development. This illustration communicates the design intent—not a demonstration of its mechanism or clinical efficacy.",
+      "We are developing Smart Lung Physio™ as a handheld airway-clearance technology. This illustration shows the design intent; it does not demonstrate the mechanism or clinical efficacy.",
     status: "02 · DESIGN CONCEPT",
     visualTitle: "Smart Lung Physio™",
     visualDetail:
@@ -26,9 +26,9 @@ const stages = [
   },
   {
     label: "Sensing & feedback",
-    title: "Exploring a more informed care experience",
+    title: "Exploring caregiver feedback",
     description:
-      "Contact and orientation sensing inform prototype development. The companion interface illustrates how feedback could support caregivers; sample values do not establish clinical performance.",
+      "Contact and orientation sensing inform our prototype development. The companion interface shows how feedback could support caregivers. Its sample values do not establish clinical performance.",
     status: "03 · FEEDBACK CONCEPT",
     visualTitle: "Sensing → caregiver feedback",
     visualDetail:

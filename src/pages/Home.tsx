@@ -36,8 +36,7 @@ const Home = () => {
             <strong className="font-semibold text-slate-950">
               Smart Lung Physio™
             </strong>{" "}
-            is an airway-clearance technology in development at Atabazh Medical,
-            shaped by conversations with caregivers and care teams.
+            is an airway-clearance technology we are developing at Atabazh Medical, with input from caregivers and care teams.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <NavLink
@@ -122,9 +121,7 @@ const Home = () => {
             </h2>
           </div>
           <p className="company-lead text-slate-600 lg:pt-8">
-            Three prototype generations and stakeholder discovery have informed
-            the design. The next phase focuses on technical performance,
-            usability, and preparation for structured evaluation.
+            We have developed three prototype generations and used stakeholder interviews to inform the design. We are now preparing to evaluate technical performance and usability under defined conditions.
           </p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -145,8 +142,7 @@ const Home = () => {
         </div>
         <div className="mt-7 flex flex-col justify-between gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:items-center">
           <p className="max-w-2xl text-sm text-slate-500">
-            Explore the engineering record, evaluation priorities, and current
-            development status in one place.
+            Review our engineering records, evaluation priorities and current stage of development.
           </p>
           <NavLink
             to="/clinical-evidence"
@@ -168,8 +164,7 @@ const Home = () => {
           </h2>
           <p className="company-lead mt-5 text-slate-600">
             Care teams need practical setup, clear training, and documentation
-            that fits their routines. Our development work connects those needs
-            to device design and evaluation planning.
+            that fits their routines. Those needs guide our device design and evaluation plans.
           </p>
           <NavLink to="/long-term-care" className="company-text-link mt-6">
             Explore LTC evaluation priorities{" "}
@@ -198,7 +193,7 @@ const Home = () => {
       <div className="company-container">
         <div className="flex flex-col justify-between gap-3 sm:flex-row">
           <h2 className="text-base font-semibold tracking-normal">
-            Innovation & development ecosystem
+            Development programs and support
           </h2>
           <NavLink to="/about" className="company-text-link text-sm">
             View company background{" "}

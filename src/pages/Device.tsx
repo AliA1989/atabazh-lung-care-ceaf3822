@@ -53,7 +53,7 @@ const Device = () => {
             </h1>
             
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600 animate-fade-in md:text-xl">
-              A handheld airway-clearance platform bringing localized mechanical chest percussion together with contact sensing, orientation feedback, and a connected caregiver interface.
+              We are developing a handheld airway-clearance device that combines localized mechanical chest percussion with contact sensing, orientation feedback and a connected caregiver interface.
             </p>
             
             <div className="flex flex-col gap-5 pt-4 animate-fade-in sm:flex-row">
@@ -118,7 +118,7 @@ const Device = () => {
                     <div className="space-y-4">
                       <h3 className="text-2xl lg:text-3xl font-bold text-slate-800">Structured onboarding</h3>
                       <p className="text-base text-slate-600">
-                        The system is designed to support caregiver onboarding with guided workflows, visual prompts, and practical reference material.
+                        The system is designed to help caregivers get started with guided workflows, visual prompts and practical reference material.
                       </p>
                     </div>
                     <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100/50">
@@ -170,7 +170,7 @@ const Device = () => {
           <ScrollReveal>
             <h2 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 md:text-4xl lg:text-[2.75rem]">Discuss product fit for your care setting</h2>
             <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-600">
-              For clinical workflow questions, pilot discussions, or technical review, connect with the Atabazh Medical team.
+              Talk with our team about clinical workflows, a possible pilot or a technical review.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center pt-4">
               <Button 

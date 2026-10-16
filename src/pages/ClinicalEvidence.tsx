@@ -16,9 +16,7 @@ const ClinicalEvidence = () => (
           <br />now being refined
         </h1>
         <p className="company-lead mt-6 text-slate-600">
-          Smart Lung Physio™ has progressed through three prototype generations
-          to functional physical hardware. We are now refining the device
-          and preparing structured technical and usability evaluation.
+          We have built three generations of Smart Lung Physio™ prototypes and now have working physical hardware. We are refining the device and preparing technical and usability evaluations.
         </p>
         <p className="mt-6 inline-flex rounded-md border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700">
           Current stage: functional prototype · engineering refinement
@@ -53,11 +51,10 @@ const ClinicalEvidence = () => (
       <div className="company-container">
         <div className="max-w-3xl">
           <p className="company-eyebrow">Current development stage</p>
-          <h2 className="company-heading mt-3">Prototype built. Refinement underway</h2>
+          <h2 className="company-heading mt-3">Refining the functional prototype</h2>
           <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Smart Lung Physio™ has a functional, mains-powered physical prototype.
-            The team is refining the engineering and preparing repeatable technical
-            and usability evaluation.
+            We are refining the engineering and preparing repeatable technical and usability evaluations.
           </p>
         </div>
 
@@ -100,7 +97,7 @@ const ClinicalEvidence = () => (
 
         <details className="group mt-5 rounded-xl border border-slate-200 bg-white">
           <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-4 px-5 py-4 text-sm font-semibold text-[#164d69] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#164d69]">
-            <span>Supporting engineering records and development workstreams</span>
+            <span>Engineering records and related development work</span>
             <span className="text-xs font-medium text-slate-500 group-open:hidden" aria-hidden="true">Expand +</span>
             <span className="hidden text-xs font-medium text-slate-500 group-open:inline" aria-hidden="true">Close −</span>
           </summary>
@@ -116,11 +113,9 @@ const ClinicalEvidence = () => (
                 Source: Week 5 engineering log. This communication test does
                 not establish a reliability specification or clinical performance.
               </p>
-              <h3 className="mt-6 text-base font-semibold">Other development workstreams</h3>
+              <h3 className="mt-6 text-base font-semibold">Related development work</h3>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Stakeholder discovery, usability planning, intellectual-property
-                prosecution and regulatory pathway assessment continue alongside
-                prototype refinement. A U.S. utility patent application has been
+                Alongside prototype refinement, we continue stakeholder interviews, usability planning, intellectual-property prosecution and assessment of the regulatory pathway. A U.S. utility patent application has been
                 filed, but a granted patent is not implied.
               </p>
             </div>
@@ -156,8 +151,7 @@ const ClinicalEvidence = () => (
           </h2>
           <p className="company-lead mt-5 text-slate-600">
             Early prototype reviews have informed handling, positioning, and
-            bedside setup. These observations help define the questions for
-            structured usability and workflow evaluation.
+            bedside setup. These observations help us decide what to test in structured usability and workflow evaluations.
           </p>
           <NavLink to="/long-term-care" className="company-text-link mt-6">
             What an LTC evaluation could measure{" "}
@@ -198,8 +192,7 @@ const ClinicalEvidence = () => (
           ))}
         </div>
         <p className="mt-10 border-t border-white/15 pt-6 text-sm leading-6 text-slate-400">
-          Each evaluation phase is planned around defined methods, technical
-          readiness, collaborators, and applicable oversight.
+          We plan each evaluation phase around defined methods, technical readiness, the collaborators involved and the oversight required.
         </p>
       </div>
     </section>
