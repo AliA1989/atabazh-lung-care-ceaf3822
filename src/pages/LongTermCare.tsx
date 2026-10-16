@@ -97,6 +97,10 @@ const LongTermCare = () => {
                   className="aspect-video h-full w-full object-cover object-center"
                 />
               </div>
+              <p className="mt-3 text-xs leading-5 text-slate-500">
+                Illustrative caregiver-training scene with a mannequin; not a
+                photograph of clinical use.
+              </p>
             </div>
           </div>
         </div>
