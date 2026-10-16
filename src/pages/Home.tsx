@@ -224,11 +224,6 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-xs leading-5 text-slate-500">
-          Organizations shown reflect development, mentorship, or program
-          connections. Their inclusion does not imply product endorsement or
-          clinical validation.
-        </p>
       </div>
     </section>
     <CompanyCTA />
