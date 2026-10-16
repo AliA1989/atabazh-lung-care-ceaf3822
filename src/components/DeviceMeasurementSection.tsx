@@ -65,9 +65,6 @@ const DeviceMeasurementSection = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-white/5" />
-              <span className="absolute left-5 top-5 rounded-full border border-white/60 bg-white/85 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-700 shadow-sm backdrop-blur-md sm:left-7 sm:top-7 sm:text-xs">
-                Device design concept
-              </span>
               <figcaption className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/20 bg-slate-950/70 p-5 text-white shadow-xl backdrop-blur-xl sm:inset-x-7 sm:bottom-7 sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">Why separation matters</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200 sm:text-base">
